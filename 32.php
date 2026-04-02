@@ -5,7 +5,7 @@ function safe_text($text) {
     if (empty($text) || is_array($text)) return '';
     return htmlspecialchars(preg_replace('/\[cite.*?\]/', '', (string)$text));
 }
-$dataRaw = json_decode(file_get_contents(__DIR__ . '/data.json'), true);
+$dataRaw = $GLOBALS['pdfData'] ?? json_decode(file_get_contents(__DIR__ . '/data.json'), true);
 $sekceDetaily = $dataRaw['stranka2']['sekce_detaily'] ?? [];
 function get_sec_icon($kat) {
     $k = mb_strtolower($kat);

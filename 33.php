@@ -7,7 +7,7 @@ if (!function_exists('safe_text')) {
     }
 }
 
-$dataRaw = json_decode(file_get_contents(__DIR__ . '/data.json'), true);
+$dataRaw = $GLOBALS['pdfData'] ?? json_decode(file_get_contents(__DIR__ . '/data.json'), true);
 $stranka3 = $dataRaw['stranka3'] ?? [];
 $polozky = $stranka3['movity_majetek'] ?? [];
 $bilance = $stranka3['bilance_majetku'] ?? [];
@@ -86,11 +86,11 @@ $hPasiva = (($bilance['pasiva'] ?? 0) / $maxVal) * 100;
                 <div class="chart-bar bar-pasiva" style="height: <?= $hPasiva ?>%;"><span class="bar-label">Pasiva</span></div>
             </div>
             <div class="table-container">
-                <div class="bil-row"><span>Aktiva</span><span class="val"><?= format_czk($bilance['aktiva']) ?> Kč</span></div>
-                <div class="bil-subrow"><span>Ziskovost aktiv</span><span><?= safe_text($bilance['ziskovost']) ?></span></div>
-                <div class="bil-row"><span>Pasiva</span><span class="val"><?= format_czk($bilance['pasiva']) ?> Kč</span></div>
-                <div class="bil-subrow"><span>Nákladovost pasiv</span><span><?= safe_text($bilance['nakladovost']) ?></span></div>
-                <div class="bil-row total"><span>Čistý majetek</span><span class="val"><?= format_czk($bilance['cisty_majetek']) ?> Kč</span></div>
+                <div class="bil-row"><span>Aktiva</span><span class="val"><?= format_czk($bilance['aktiva'] ?? 0) ?> Kč</span></div>
+                <div class="bil-subrow"><span>Ziskovost aktiv</span><span><?= safe_text($bilance['ziskovost'] ?? '') ?></span></div>
+                <div class="bil-row"><span>Pasiva</span><span class="val"><?= format_czk($bilance['pasiva'] ?? 0) ?> Kč</span></div>
+                <div class="bil-subrow"><span>Nákladovost pasiv</span><span><?= safe_text($bilance['nakladovost'] ?? '') ?></span></div>
+                <div class="bil-row total"><span>Čistý majetek</span><span class="val"><?= format_czk($bilance['cisty_majetek'] ?? 0) ?> Kč</span></div>
             </div>
         </div>
         <div class="bottom-boxes">

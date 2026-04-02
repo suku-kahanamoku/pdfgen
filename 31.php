@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/helpers.php';
-$dataRaw = json_decode(file_get_contents(__DIR__ . '/data.json'), true);
+$dataRaw = $GLOBALS['pdfData'] ?? json_decode(file_get_contents(__DIR__ . '/data.json'), true);
 $data = $dataRaw['stranka1'] ?? [];
 function get_header_icon($nazev) {
     $n = mb_strtolower($nazev);
