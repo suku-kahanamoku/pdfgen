@@ -39,9 +39,9 @@ $cistyMajetek = $totalAktiva - $totalPasiva;
     }
 
     .page {
-        width: 210mm;
-        min-height: 297mm;
-        padding: 20mm;
+        width: 100%;
+        min-height: 257mm;
+        padding: 0;
         box-sizing: border-box;
         background: white;
         font-family: 'Plus Jakarta Sans', sans-serif;

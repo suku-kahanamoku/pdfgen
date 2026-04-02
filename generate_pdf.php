@@ -75,7 +75,7 @@ try {
         ->setChromePath('/usr/bin/google-chrome')
         ->showBackground()
         ->format('A4')
-        ->margins(0, 0, 0, 0)
+        ->margins(20, 20, 20, 20)
         ->waitUntilNetworkIdle()
         ->pdf();
     header('Content-Type: application/pdf');

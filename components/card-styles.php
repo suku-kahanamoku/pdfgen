@@ -4,9 +4,9 @@
     }
 
     .page {
-        width: 210mm;
-        min-height: 297mm;
-        padding: 20mm;
+        width: 100%;
+        min-height: 257mm;
+        padding: 0;
         box-sizing: border-box;
         font-family: 'Plus Jakarta Sans', sans-serif;
         background: white;
@@ -33,6 +33,8 @@
         border-radius: 16px;
         padding: 20px;
         margin-bottom: 18px;
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
 
     .sol-header {
@@ -133,6 +135,8 @@
         align-items: center;
         gap: 25px;
         margin-top: 30px;
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
 
     .diverz-icon {
