@@ -1,0 +1,468 @@
+{
+	"target": {
+		"targets": {
+			"labels": [
+				"Krátkodobé",
+				"Střednědobé",
+				"Dlouhodobé",
+				"Rezerva",
+				"Vysoká priorita",
+				"Volitelné",
+				"Cestování"
+			],
+			"charts": [],
+			"computed": {
+				"fx": "goalsWishesSummary"
+			},
+			"header": [
+				{
+					"key": "name",
+					"label": "Název",
+					"type": "text"
+				},
+				{
+					"key": "start",
+					"label": "Počátek",
+					"type": "date"
+				},
+				{
+					"key": "targetDate",
+					"label": "Cílové datum",
+					"type": "date"
+				},
+				{
+					"key": "targetAmount",
+					"label": "Cílová částka",
+					"type": "currency"
+				},
+				{
+					"key": "currentAmount",
+					"label": "Naspořeno",
+					"type": "currency"
+				},
+				{
+					"key": "gap",
+					"label": "Zbývá",
+					"type": "currency",
+					"editable": "false"
+				},
+				{
+					"key": "notes",
+					"label": "Poznámka",
+					"type": "text"
+				}
+			],
+			"title": "Finanční cíle a přání",
+			"rows": [
+				{
+					"labels": [
+						"krátkodobé",
+						"rezerva",
+						"vysoká priorita"
+					],
+					"name": {
+						"value": "Auto",
+						"type": "text"
+					},
+					"start": {
+						"value": "2026-01-01",
+						"type": "date"
+					},
+					"targetDate": {
+						"value": "2032-12-31",
+						"type": "date"
+					},
+					"targetAmount": {
+						"value": 400000,
+						"type": "currency"
+					},
+					"currentAmount": {
+						"value": 180000,
+						"type": "currency"
+					},
+					"gap": {
+						"value": "",
+						"type": "currency"
+					},
+					"notes": {
+						"value": "Rezerva na 6 měsíců výdajů",
+						"type": "text"
+					}
+				},
+				{
+					"labels": [
+						"střednědobé",
+						"volitelné",
+						"cestování"
+					],
+					"name": {
+						"value": "Chata",
+						"type": "text"
+					},
+					"start": {
+						"value": "2026-01-01",
+						"type": "date"
+					},
+					"targetDate": {
+						"value": "2041-04-30",
+						"type": "date"
+					},
+					"targetAmount": {
+						"value": 1700000,
+						"type": "currency"
+					},
+					"currentAmount": {
+						"value": 20000,
+						"type": "currency"
+					},
+					"gap": {
+						"value": "",
+						"type": "currency"
+					},
+					"notes": {
+						"value": "Dovolená pro 2 osoby",
+						"type": "text"
+					}
+				}
+			]
+		},
+		"solutions": {
+			"labels": [
+				"Krátkodobé",
+				"Střednědobé",
+				"Dlouhodobé",
+				"Rezerva",
+				"Vysoká priorita",
+				"Volitelné",
+				"Cestování"
+			],
+			"charts": [],
+			"computed": {
+				"fx": "goalsWishesSummary"
+			},
+			"header": [
+				{
+					"key": "name",
+					"label": "Název",
+					"type": "text"
+				},
+				{
+					"key": "start",
+					"label": "Počátek",
+					"type": "date"
+				},
+				{
+					"key": "targetDate",
+					"label": "Cílové datum",
+					"type": "date"
+				},
+				{
+					"key": "invested",
+					"label": "Investice",
+					"type": "currency"
+				},
+				{
+					"key": "frequency",
+					"label": "Frekvence",
+					"type": "text"
+				},
+				{
+					"key": "interest",
+					"label": "Úrok",
+					"type": "percent"
+				},
+				{
+					"key": "notes",
+					"label": "Poznámka",
+					"type": "text"
+				}
+			],
+			"title": "Finanční plán",
+			"rows": [
+				{
+					"history": {},
+					"labels": [
+						"krátkodobé",
+						"rezerva",
+						"vysoká priorita"
+					],
+					"name": {
+						"value": "Fondy - ETF",
+						"type": "text"
+					},
+					"start": {
+						"value": "2026-01-01",
+						"type": "date"
+					},
+					"targetDate": {
+						"value": "2050-12-31",
+						"type": "date"
+					},
+					"invested": {
+						"value": 5000,
+						"type": "currency"
+					},
+					"frequency": {
+						"value": "Pravidelně",
+						"type": "text"
+					},
+					"interest": {
+						"value": 7,
+						"type": "percent"
+					},
+					"notes": {
+						"value": "",
+						"type": "text"
+					}
+				}
+			]
+		}
+	},
+	"property": {
+		"property_active": {
+			"labels": [
+				"Krátkodobé",
+				"Střednědobé",
+				"Dlouhodobé",
+				"Nízká likvidita",
+				"Střední likvidita",
+				"Vysoká likvidita",
+				"Cenné papíry",
+				"Nemovitosti",
+				"Komodity",
+				"Pravidelné investice"
+			],
+			"charts": [],
+			"computed": {
+				"fx": "propertyActiveSummary"
+			},
+			"header": [
+				{
+					"key": "name",
+					"label": "Položka",
+					"type": "text"
+				},
+				{
+					"key": "start",
+					"label": "Počátek",
+					"type": "text"
+				},
+				{
+					"key": "end",
+					"label": "Konec",
+					"type": "text"
+				},
+				{
+					"key": "invested",
+					"label": "Investovaná částka",
+					"type": "currency",
+					"editable": "false"
+				},
+				{
+					"key": "aum",
+					"label": "Aktuální hodnota",
+					"type": "currency",
+					"editable": "false"
+				},
+				{
+					"key": "yieldAnnually",
+					"label": "Roční výnos",
+					"type": "percent"
+				},
+				{
+					"key": "yieldTotal",
+					"label": "Celkový výnos",
+					"type": "percent"
+				}
+			],
+			"title": "Aktiva",
+			"rows": [
+				{
+					"labels": [
+						"střednědobé",
+						"nízká likvidita",
+						"nemovitosti"
+					],
+					"name": {
+						"value": "Cenné papíry",
+						"type": "text"
+					},
+					"start": {
+						"value": "10/2020",
+						"type": "text"
+					},
+					"end": {
+						"value": "12/2024",
+						"type": "text"
+					},
+					"invested": {
+						"value": 5000,
+						"type": "text"
+					},
+					"aum": {
+						"value": "4500",
+						"type": "text"
+					},
+					"yieldAnnually": {
+						"value": "4.5",
+						"type": "text"
+					},
+					"yieldTotal": {
+						"value": "5.0",
+						"type": "text"
+					}
+				}
+			]
+		},
+		"property_pasive": {
+			"labels": [],
+			"chartIds": [
+				"chart-property-pasive"
+			],
+			"header": [
+				{
+					"key": "name",
+					"label": "Položka",
+					"type": "text"
+				},
+				{
+					"key": "start",
+					"label": "Počátek",
+					"type": "text"
+				},
+				{
+					"key": "fixation",
+					"label": "Fixace",
+					"type": "text"
+				},
+				{
+					"key": "end",
+					"label": "Konec",
+					"type": "text"
+				},
+				{
+					"key": "invested",
+					"label": "Výše závazku",
+					"type": "currency"
+				},
+				{
+					"key": "paid",
+					"label": "Splaceno",
+					"type": "percent"
+				},
+				{
+					"key": "aum",
+					"label": "Zbývá umořit",
+					"type": "currency"
+				},
+				{
+					"key": "yield",
+					"label": "Úrok",
+					"type": "percent"
+				}
+			],
+			"title": "Pasiva",
+			"rows": [
+				{
+					"name": {
+						"value": "Hypoteční úvěr",
+						"type": "text"
+					},
+					"start": {
+						"value": "Červen 2018",
+						"type": "text"
+					},
+					"fixation": {
+						"value": "Červen 2022",
+						"type": "text"
+					},
+					"end": {
+						"value": "Červen 2028",
+						"type": "text"
+					},
+					"invested": {
+						"value": 6500000,
+						"type": "currency"
+					},
+					"paid": {
+						"value": 15.29,
+						"type": "percent"
+					},
+					"aum": {
+						"value": 5200000,
+						"type": "currency"
+					},
+					"yield": {
+						"value": 5.4,
+						"type": "percent"
+					}
+				}
+			]
+		}
+	},
+	"health": {
+		"health_client": {
+			"labels": [],
+			"header": [
+				{
+					"key": "age",
+					"label": "Věk",
+					"type": "number"
+				},
+				{
+					"key": "dependents",
+					"label": "Závislé osoby",
+					"type": "number"
+				},
+				{
+					"key": "monthly_income",
+					"label": "Příjem",
+					"type": "currency"
+				},
+				{
+					"key": "monthly_expenses",
+					"label": "Výdaje",
+					"type": "currency"
+				},
+				{
+					"key": "monthly_buffer",
+					"label": "Měsíční zůstatek",
+					"type": "currency"
+				},
+				{
+					"key": "mortgage_outstanding",
+					"label": "Závazky",
+					"type": "currency"
+				}
+			],
+			"rows": [
+				{
+					"age": {
+						"value": 45,
+						"type": "number"
+					},
+					"dependents": {
+						"value": 2,
+						"type": "number"
+					},
+					"monthly_income": {
+						"value": 60000,
+						"type": "currency"
+					},
+					"monthly_expenses": {
+						"value": 45000,
+						"type": "currency"
+					},
+					"monthly_buffer": {
+						"value": 15000,
+						"type": "currency"
+					},
+					"mortgage_outstanding": {
+						"value": 5000000,
+						"type": "currency"
+					}
+				}
+			]
+		}
+	}
+}
