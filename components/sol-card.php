@@ -32,14 +32,27 @@
 
     <div class="sol-grid">
         <?php foreach ($cardHeader as $h):
-            if ($h['key'] === $cardNameKey) continue;
+            if ($h['key'] === $cardNameKey) {
+                continue;
+            }
+
             $field = $cardRow[$h['key']] ?? ['value' => '', 'type' => $h['type']];
             $val   = $field['value'] ?? '';
-            if ($val === '' || $val === null) continue;
-            if ($field['type'] === 'currency') $display = format_czk((float)$val) . ' Kč';
-            elseif ($field['type'] === 'percent') $display = $val . ' %';
-            elseif ($field['type'] === 'date')    $display = format_date((string)$val);
-            else $display = htmlspecialchars((string)$val);
+
+            if ($val === '' || $val === null) {
+                continue;
+            }
+
+            if ($field['type'] === 'currency') {
+                $display = format_czk((float)$val) . ' Kč';
+            } elseif ($field['type'] === 'percent') {
+                $display = $val . ' %';
+            } elseif ($field['type'] === 'date') {
+                $display = format_date((string)$val);
+            } else {
+                $display = htmlspecialchars((string)$val);
+            }
+
             $isHighlight = in_array($field['type'] ?? '', ['currency', 'percent']);
         ?>
             <div class="sol-item">
