@@ -8,4 +8,11 @@ function format_czk(float|int $amount): string {
 function parse_czk(string $priceStr): float {
     $clean = preg_replace('/[^0-9\.-]/', '', str_replace(',', '.', $priceStr));
     return (float) $clean;
+}function format_date(string $date): string {
+    if (empty($date)) return '';
+    try {
+        return (new DateTime($date))->format('d.m.Y');
+    } catch (Exception $e) {
+        return $date;
+    }
 }

@@ -1,9 +1,9 @@
 <?php
 $pages = [
-    ['file' => '31.php', 'title' => 'Strana 31 – Přehled majetku',      'icon' => '📊'],
-    ['file' => '32.php', 'title' => 'Strana 32 – Detailní přehled',      'icon' => '📋'],
-    ['file' => '33.php', 'title' => 'Strana 33 – Movitý majetek',        'icon' => '🚗'],
-    ['file' => '34.php', 'title' => 'Strana 34 – Analýza portfolia',     'icon' => '📈'],
+    ['file' => '31.php', 'title' => 'Strana 1 – Přehled klienta & bilance',  'icon' => '📊'],
+    ['file' => '32.php', 'title' => 'Strana 2 – Aktiva & Pasiva',            'icon' => '🏦'],
+    ['file' => '33.php', 'title' => 'Strana 3 – Finanční cíle a přání',      'icon' => '🎯'],
+    ['file' => '34.php', 'title' => 'Strana 4 – Finanční plán',              'icon' => '📈'],
 ];
 ?>
 <!DOCTYPE html>
