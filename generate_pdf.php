@@ -64,10 +64,7 @@ ob_start();
 </head>
 
 <body>
-    <div class="page-break"><?php include '31.php'; ?></div>
-    <div class="page-break"><?php include '32.php'; ?></div>
-    <div class="page-break"><?php include '33.php'; ?></div>
-    <div><?php include '34.php'; ?></div>
+    <?php include 'page.php'; ?>
 </body>
 
 </html>
