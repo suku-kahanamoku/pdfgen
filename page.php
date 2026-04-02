@@ -40,11 +40,14 @@ $cistyMajetek = $totalAktiva - $totalPasiva;
 
     .page {
         width: 210mm;
-        height: 297mm;
+        min-height: 297mm;
         padding: 20mm;
         box-sizing: border-box;
         background: white;
         font-family: 'Plus Jakarta Sans', sans-serif;
+        page-break-after: always;
+        break-after: page;
+        overflow: visible;
     }
 
     .main-title {
@@ -322,7 +325,10 @@ $cistyMajetek = $totalAktiva - $totalPasiva;
         <?= safe_text($targets['title'] ?? 'Finanční cíle a přání') ?>
     </div>
 
-    <?php foreach ($targets['rows'] ?? [] as $cardRow):
+    <?php
+    $cardHeader  = $targets['header'] ?? [];
+    $cardNameKey = 'name';
+    foreach ($targets['rows'] ?? [] as $cardRow):
         $targetAmt  = (float)($cardRow['targetAmount']['value']  ?? 0);
         $currentAmt = (float)($cardRow['currentAmount']['value'] ?? 0);
         $gap        = $targetAmt - $currentAmt;
