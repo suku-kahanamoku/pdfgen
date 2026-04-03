@@ -398,6 +398,20 @@
 					}
 				}
 			]
+		},
+		"property_summary": {
+			"total_active": {
+				"value": 4500,
+				"type": "currency"
+			},
+			"total_pasive": {
+				"value": 5200000,
+				"type": "currency"
+			},
+			"total": {
+				"value": -5195500,
+				"type": "currency"
+			}
 		}
 	},
 	"health": {

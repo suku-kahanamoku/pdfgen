@@ -19,17 +19,9 @@ $solutions = $dataRaw['target']['solutions'] ?? [];
 
 $clientRow = $client['rows'][0] ?? [];
 
-$totalAktiva = 0;
-foreach ($actives['rows'] ?? [] as $r) {
-    $v = $r['aum']['value'] ?? $r['invested']['value'] ?? 0;
-    if (is_numeric($v)) $totalAktiva += (float)$v;
-}
-$totalPasiva = 0;
-foreach ($pasives['rows'] ?? [] as $r) {
-    $v = $r['aum']['value'] ?? 0;
-    if (is_numeric($v)) $totalPasiva += (float)$v;
-}
-$cistyMajetek = $totalAktiva - $totalPasiva;
+$total_active  = (float)($dataRaw['property']['property_summary']['total_active']['value']  ?? 0);
+$total_pasive  = (float)($dataRaw['property']['property_summary']['total_pasive']['value']  ?? 0);
+$total = (float)($dataRaw['property']['property_summary']['total']['value'] ?? 0);
 ?>
 <?php
 include __DIR__ . '/includes/main.css.php';
@@ -63,7 +55,7 @@ include __DIR__ . '/components/card-styles.php';
         </div>
         <div class="kpi-card">
             <div class="kpi-label">Čistý majetek</div>
-            <div class="kpi-value <?= $cistyMajetek >= 0 ? 'pos' : 'neg' ?>"><?= format_czk($cistyMajetek) ?> Kč</div>
+            <div class="kpi-value <?= $total >= 0 ? 'pos' : 'neg' ?>"><?= format_czk($total) ?> Kč</div>
         </div>
     </div>
 
@@ -88,11 +80,11 @@ include __DIR__ . '/components/card-styles.php';
     <!-- Bilance -->
     <div class="section-title">Bilance majetku</div>
     <?php
-    $maxB = max($totalAktiva, $totalPasiva, 1);
+    $maxB = max($total_active, $total_pasive, 1);
     $bars = [
-        ['label' => 'Aktiva',  'val' => $totalAktiva,              'color' => '#D6B89E'],
-        ['label' => 'Pasiva',  'val' => $totalPasiva,              'color' => '#927355'],
-        ['label' => 'Čistý',   'val' => max($cistyMajetek, 0),     'color' => '#2ecc71'],
+        ['label' => 'Aktiva',  'val' => $total_active,              'color' => '#D6B89E'],
+        ['label' => 'Pasiva',  'val' => $total_pasive,              'color' => '#927355'],
+        ['label' => 'Čistý',   'val' => max($total, 0),     'color' => '#2ecc71'],
     ];
     ?>
     <div class="bilance-bar-wrap">
