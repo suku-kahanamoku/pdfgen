@@ -130,6 +130,26 @@
         border-radius: 8px;
     }
 
+    .page-subtitle {
+        color: #888;
+        margin: 0 0 25px 0;
+    }
+
+    .section-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .section-icon--primary {
+        background: var(--clr-primary);
+        color: white;
+    }
+
     .bilance-bar-amount {
         width: 110px;
         text-align: right;

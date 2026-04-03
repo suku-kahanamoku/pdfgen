@@ -16,3 +16,8 @@ function parse_czk(string $priceStr): float {
         return $date;
     }
 }
+
+function safe_text($text): string {
+    if (empty($text) || is_array($text)) return '';
+    return htmlspecialchars(preg_replace('/\[cite.*?\]/', '', (string)$text));
+}

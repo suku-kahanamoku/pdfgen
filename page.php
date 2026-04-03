@@ -1,14 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/helpers.php';
 
-if (!function_exists('safe_text')) {
-    function safe_text($text)
-    {
-        if (empty($text) || is_array($text)) return '';
-        return htmlspecialchars(preg_replace('/\[cite.*?\]/', '', (string)$text));
-    }
-}
-
 $dataRaw   = $GLOBALS['pdfData'] ?? json_decode(file_get_contents(__DIR__ . '/data.json'), true);
 
 $client    = $dataRaw['health']['health_client'] ?? [];
@@ -35,7 +27,15 @@ include __DIR__ . '/components/card-styles.php';
     <h1 class="main-title">
         <span class="gray">Přehled</span><br>vašeho majetku
     </h1>
-    <p style="color:#888; font-size:13px; margin: 0 0 25px 0;">Aktuální přehled finanční situace klienta</p>
+    <p class="page-subtitle">
+        Diverzifikace příjmů, například prostřednictvím vedlejších příjmů
+        nebo investic, může zvýšit naši finanční bezpečnost. Když
+        přemýšlíme o budoucnosti a strategicky investujeme, zajišťujeme
+        si lepší životní úroveň a klidnou mysl. Důležité je také udržovat
+        si přehled o svých příjmech a pravidelně přehodnocovat své
+        finanční cíle. Tím můžeme efektivně plánovat a přizpůsobovat
+        se měnícím se podmínkám.
+    </p>
 
     <!-- KPI -->
     <div class="kpi-grid">
@@ -133,7 +133,7 @@ include __DIR__ . '/components/card-styles.php';
     ?>
         <div class="section-block">
             <div class="section-heading">
-                <span style="background:<?= $sec['color'] ?>22; color:<?= $sec['color'] ?>; width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center;">
+                <span class="section-icon" style="background:<?= $sec['color'] ?>22; color:<?= $sec['color'] ?>;">  
                     <i class="fa-solid <?= $sec['icon'] ?>"></i>
                 </span>
                 <?= safe_text($sec['data']['title'] ?? '') ?>
@@ -174,7 +174,7 @@ include __DIR__ . '/components/card-styles.php';
 <!-- ============================================================ -->
 <div class="page">
     <div class="section-heading">
-        <span style="background:#927355; color:white; width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center;">
+        <span class="section-icon section-icon--primary">
             <i class="fa-solid fa-bullseye"></i>
         </span>
         <?= safe_text($targets['title'] ?? 'Finanční cíle a přání') ?>
@@ -210,7 +210,7 @@ include __DIR__ . '/components/card-styles.php';
 <!-- ============================================================ -->
 <div class="page">
     <div class="section-heading">
-        <span style="background:#927355; color:white; width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center;">
+        <span class="section-icon section-icon--primary">
             <i class="fa-solid fa-seedling"></i>
         </span>
         <?= safe_text($solutions['title'] ?? 'Finanční plán') ?>
