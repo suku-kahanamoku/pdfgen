@@ -6,6 +6,7 @@
 				"saved": "Naspořeno",
 				"goal": "Cíl"
 			},
+			"text": "Jasné a měřitelné cíle jsou základem úspěšného finančního plánování. Vedou nás k disciplinovanému spořením a investování. Ať jsou vaše cíle krátkodobé jako dovolená nebo dlouhodobé jako penzijní zabezpečení, důležité je je pravidelně sledovat a přizpůsobovat se měnícím se podmínkám.",
 			"labels": [
 				"Krátkodobé",
 				"Střednědobé",
@@ -141,6 +142,7 @@
 				"title": "Pravidelné investování buduje bohatství",
 				"text": "Díky složenému úročení a pravidelným vkladům roste hodnota vašeho portfolia exponenciálně. Klíčem je konzistentnost a dlouhý investiční horizont."
 			},
+			"text": "Chytrý finanční plán kombinuje spořením s investováním. Volba správné strategie a diverzifikace portfolia zvyšuje šance na dosažení dlouhodobého finančního cíle. Začněte volit stabilní základy a postupně budujte na nich.",
 			"labels": [
 				"Krátkodobé",
 				"Střednědobé",
@@ -238,6 +240,7 @@
 				"left": "Investováno",
 				"right": "Aktuální hodnota"
 			},
+			"text": "Aktivní část majetku představuje vaši investiční a spořící sílu. Správná diverzifikace mezi různé třídy aktiv snižuje rizko a zlepšuje dlouhodobou výnosnost. Sledujte vyvážení portfolia a přizpůsobujte ho svému věku a cílům.",
 			"labels": [
 				"Krátkodobé",
 				"Střednědobé",
@@ -337,6 +340,7 @@
 				"left": "Splaceno",
 				"right": "Zbývá umořit"
 			},
+			"text": "Dluh a závazky jsou běžnou součástí finančního života. Důležité je je řídit odpovědně a snažit se snižovat jejich hrubý objem. Sledování splátek a úrokových sazeb vám pomůže ušetřit tisíce korun.",
 			"labels": [],
 			"chartIds": [
 				"chart-property-pasive"
@@ -422,6 +426,7 @@
 		},
 		"property_summary": {
 			"title": "Bilance majetku",
+			"text": "Bilance majetku ukazuje váš celkový finanční stav. Je klíčové znát rozdíl mezi aktivy a pasivy, abyste chápali svou finanční pozici. Zdravý čistý majetek je základem dlouhodobé finanční bezpečnosti.",
 			"labels": [
 				"Aktiva",
 				"Pasiva",
@@ -444,13 +449,13 @@
 	"health": {
 		"health_client": {
 			"title": "Profil klienta",
+			"text": "Diverzifikace příjmů, například prostřednictvím vedlejších příjmů nebo investic, může zvýšit naši finanční bezpečnost. Když přemýšlíme o budoucnosti a strategicky investujeme, zajišťujeme si lepší životní úroveň a klidnou mysl. Důležité je také udržovat si přehled o svých příjmech a pravidelně přehodnocovat své finanční cíle. Tím můžeme efektivně plánovat a přizpůsobovat se měnícím se podmínkám.",
 			"kpi_labels": {
 				"monthly_income": "Měsíční příjem",
 				"monthly_expenses": "Měsíční výdaje",
 				"monthly_balance": "Měsíční zůstatek",
 				"total": "Čistý majetek"
 			},
-			"text": "Diverzifikace příjmů, například prostřednictvím vedlejších příjmů nebo investic, může zvýšit naši finanční bezpečnost. Když přemýšlíme o budoucnosti a strategicky investujeme, zajišťujeme si lepší životní úroveň a klidnou mysl. Důležité je také udržovat si přehled o svých příjmech a pravidelně přehodnocovat své finanční cíle. Tím můžeme efektivně plánovat a přizpůsobovat se měnícím se podmínkám.",
 			"labels": [],
 			"header": [
 				{

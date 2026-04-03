@@ -99,6 +99,7 @@ $percentSuffix  = ' %';
 
     <!-- Bilance -->
     <div class="section-title"><?= safe_text($propertySummary['title'] ?? '') ?></div>
+    <p class="page-subtitle"><?= safe_text($propertySummary['text'] ?? '') ?></p>
     <?php
     $maxB = max($total_active, $total_pasive, 1);
     $bars = [
@@ -158,6 +159,7 @@ $percentSuffix  = ' %';
                 </span>
                 <?= safe_text($sec['data']['title'] ?? '') ?>
             </div>
+            <p class="page-subtitle"><?= safe_text($sec['data']['text'] ?? '') ?></p>
 
             <?php foreach ($sec['data']['rows'] ?? [] as $cardRow):
                 $cardName   = $cardRow[$cardNameKey]['value'] ?? '';
@@ -199,6 +201,7 @@ $percentSuffix  = ' %';
         </span>
         <?= safe_text($targets['title'] ?? '') ?>
     </div>
+    <p class="page-subtitle"><?= safe_text($targets['text'] ?? '') ?></p>
 
     <?php
     $cardHeader  = $targets['header'] ?? [];
@@ -235,6 +238,7 @@ $percentSuffix  = ' %';
         </span>
         <?= safe_text($solutions['title'] ?? '') ?>
     </div>
+    <p class="page-subtitle"><?= safe_text($solutions['text'] ?? '') ?></p>
 
     <?php
     $cardHeader  = $solutions['header'] ?? [];
