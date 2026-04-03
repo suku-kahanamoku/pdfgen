@@ -17,17 +17,66 @@
         </div>
     </div>
 
-    <?php if ($cardProgress !== null): ?>
+    <?php if ($cardProgress !== null): 
+        $progressId = 'progressChart_' . uniqid();
+    ?>
         <div class="progress-wrap">
             <div class="progress-row">
                 <span><?= htmlspecialchars($cardProgress['left_lbl']) ?>: <?= $cardProgress['left_val'] ?></span>
                 <span><?= htmlspecialchars($cardProgress['right_lbl']) ?>: <?= $cardProgress['right_val'] ?></span>
             </div>
-            <div class="progress-bar-outer">
-                <div class="progress-bar-inner" style="width: <?= (int)$cardProgress['pct'] ?>%;"></div>
+            <div style="position: relative; width: 100%; height: 35px;">
+                <canvas id="<?= $progressId ?>"></canvas>
             </div>
             <div class="progress-pct"><?= (int)$cardProgress['pct'] ?>% <?= htmlspecialchars($cardProgress['pct_label'] ?? '') ?></div>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const ctxProg = document.getElementById('<?= $progressId ?>');
+                if (ctxProg) {
+                    new Chart(ctxProg, {
+                        type: 'bar',
+                        data: {
+                            labels: [''],
+                            datasets: [{
+                                label: 'Dosaženo',
+                                data: [<?= (int)$cardProgress['pct'] ?>],
+                                backgroundColor: '#27ae60',
+                                borderSkipped: false
+                            }, {
+                                label: 'Zbývá',
+                                data: [<?= 100 - (int)$cardProgress['pct'] ?>],
+                                backgroundColor: '#f0f0f0',
+                                borderSkipped: false
+                            }]
+                        },
+                        options: {
+                            indexAxis: 'y',
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: { enabled: false }
+                            },
+                            scales: {
+                                x: { 
+                                    stacked: true, 
+                                    display: false, 
+                                    min: 0, 
+                                    max: 100,
+                                    grid: { display: false, drawBorder: false }
+                                },
+                                y: { 
+                                    stacked: true, 
+                                    display: false,
+                                    grid: { display: false, drawBorder: false }
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+        </script>
     <?php endif; ?>
 
     <div class="sol-grid">

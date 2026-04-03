@@ -115,36 +115,6 @@
         color: #333;
     }
 
-    .bilance-bar-wrap {
-        margin-top: 30px;
-    }
-
-    .bilance-bar-row {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 10px;
-    }
-
-    .bilance-bar-label {
-        width: 80px;
-        font-size: 12px;
-        color: #666;
-    }
-
-    .bilance-bar-outer {
-        flex: 1;
-        background: #f3f3f3;
-        height: 16px;
-        border-radius: 8px;
-        overflow: hidden;
-    }
-
-    .bilance-bar-inner {
-        height: 100%;
-        border-radius: 8px;
-    }
-
     .page-subtitle {
         color: #888;
         margin: 0 0 25px 0;
@@ -165,11 +135,41 @@
         color: white;
     }
 
-    .bilance-bar-amount {
-        width: 110px;
-        text-align: right;
-        font-size: 12px;
-        font-weight: bold;
-        color: #444;
+    .section-with-chart {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .section-text {
+        flex: 1;
+    }
+
+    .donut-container {
+        flex: 0 0 auto;
+        width: 180px;
+        text-align: center;
+    }
+
+    .chart-legend {
+        font-size: 11px;
+        line-height: 1.6;
+        margin-top: 10px;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        justify-content: center;
+        margin-bottom: 4px;
+    }
+
+    .legend-color {
+        width: 12px;
+        height: 12px;
+        border-radius: 2px;
+        flex-shrink: 0;
     }
 </style>

@@ -53,9 +53,50 @@ $percentSuffix  = ' %';
     <h1 class="main-title">
         <span class="gray">Přehled</span><br>vašeho majetku
     </h1>
-    <p class="page-subtitle">
-        <?= safe_text($client['text'] ?? '') ?>
-    </p>
+
+    <div class="section-with-chart">
+        <div class="section-text">
+            <p class="page-subtitle">
+                <?= safe_text($client['text'] ?? '') ?>
+            </p>
+        </div>
+        <div class="donut-container">
+            <canvas id="assetChart" width="160" height="160"></canvas>
+            <div style="text-align: center; margin-top: 15px; font-size: 18px; font-weight: bold; color: <?= $total >= 0 ? '#2ecc71' : '#c0392b' ?>;">
+                <?= format_czk($total) ?> Kč
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('assetChart');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Aktiva', 'Pasiva', 'Čistý majetek'],
+                        datasets: [{
+                            data: [<?= $total_active ?>, <?= $total_pasive ?>, <?= max($total, 0) ?>],
+                            backgroundColor: ['#D6B89E', '#927355', '#2ecc71'],
+                            borderColor: ['#fff', '#fff', '#fff'],
+                            borderWidth: 2,
+                            spacing: 2
+                        }]
+                    },
+                    options: {
+                        responsive: false,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 
     <!-- KPI -->
     <div class="kpi-grid">
@@ -100,25 +141,78 @@ $percentSuffix  = ' %';
     <!-- Bilance -->
     <div class="section-title"><?= safe_text($propertySummary['title'] ?? '') ?></div>
     <p class="page-subtitle"><?= safe_text($propertySummary['text'] ?? '') ?></p>
-    <?php
-    $maxB = max($total_active, $total_pasive, 1);
-    $bars = [
-        ['label' => $propertySummary['labels'][0] ?? '', 'val' => $total_active,  'color' => '#D6B89E'],
-        ['label' => $propertySummary['labels'][1] ?? '', 'val' => $total_pasive,  'color' => '#927355'],
-        ['label' => $propertySummary['labels'][2] ?? '', 'val' => max($total, 0), 'color' => '#2ecc71'],
-    ];
-    ?>
-    <div class="bilance-bar-wrap">
-        <?php foreach ($bars as $b): ?>
-            <div class="bilance-bar-row">
-                <span class="bilance-bar-label"><?= $b['label'] ?></span>
-                <div class="bilance-bar-outer">
-                    <div class="bilance-bar-inner" style="width:<?= round($b['val'] / $maxB * 100) ?>%; background:<?= $b['color'] ?>;"></div>
-                </div>
-                <span class="bilance-bar-amount"><?= format_czk($b['val']) . $currencySuffix ?></span>
-            </div>
-        <?php endforeach; ?>
+    <div style="width: 100%; margin: 0;">
+        <canvas id="bilanceChart"></canvas>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctxBilance = document.getElementById('bilanceChart');
+            if (ctxBilance) {
+                new Chart(ctxBilance, {
+                    type: 'bar',
+                    data: {
+                        labels: [
+                            '<?= htmlspecialchars($propertySummary['labels'][0] ?? 'Aktiva') ?>',
+                            '<?= htmlspecialchars($propertySummary['labels'][1] ?? 'Pasiva') ?>',
+                            '<?= htmlspecialchars($propertySummary['labels'][2] ?? 'Čistý majetek') ?>'
+                        ],
+                        datasets: [{
+                            label: 'Hodnota',
+                            data: [<?= $total_active ?>, <?= $total_pasive ?>, <?= max($total, 0) ?>],
+                            backgroundColor: ['#D6B89E', '#927355', '#2ecc71'],
+                            borderColor: ['#bca087', '#7a5f48', '#27ae60'],
+                            borderWidth: 0,
+                            borderSkipped: false
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return new Intl.NumberFormat('cs-CZ', {
+                                            style: 'currency',
+                                            currency: 'CZK'
+                                        }).format(context.raw);
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                display: false,
+                                grid: {
+                                    display: false,
+                                    drawBorder: false
+                                },
+                            },
+                            y: {
+                                display: true,
+                                ticks: {
+                                    color: '#666',
+                                    font: {
+                                        size: 12
+                                    }
+                                },
+                                grid: {
+                                    display: false,
+                                    drawBorder: false
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 </div>
 
 <!-- ============================================================ -->

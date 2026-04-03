@@ -105,19 +105,6 @@
         margin-bottom: 5px;
     }
 
-    .progress-bar-outer {
-        background: #f3f3f3;
-        height: 10px;
-        border-radius: 5px;
-        overflow: hidden;
-    }
-
-    .progress-bar-inner {
-        height: 100%;
-        border-radius: 5px;
-        background: var(--clr-primary);
-    }
-
     .progress-pct {
         text-align: right;
         font-size: 11px;
