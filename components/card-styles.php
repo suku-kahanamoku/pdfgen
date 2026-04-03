@@ -17,14 +17,14 @@
         font-family: 'Lora', serif;
         font-size: 24px;
         color: var(--clr-primary);
-        margin: 0 0 18px 0;
+        margin: 0 0 26px 0;
         display: flex;
         align-items: center;
         gap: 12px;
     }
 
     .section-block {
-        margin-bottom: 40px;
+        margin-bottom: 56px;
     }
 
     .sol-card {

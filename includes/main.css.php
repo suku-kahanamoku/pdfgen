@@ -46,9 +46,16 @@
         font-family: 'Lora', serif;
         font-size: 20px;
         color: var(--clr-primary);
-        margin: 30px 0 15px 0;
+        margin: 44px 0 20px 0;
         border-bottom: 1px solid #f0f0f0;
         padding-bottom: 8px;
+    }
+
+    .section-title--bilance {
+        font-size: 32px;
+        line-height: 1.15;
+        margin-top: 50px;
+        margin-bottom: 16px;
     }
 
     .kpi-grid {
@@ -117,7 +124,7 @@
 
     .page-subtitle {
         color: #888;
-        margin: 0 0 25px 0;
+        margin: 0 0 34px 0;
     }
 
     .section-icon {
@@ -138,17 +145,20 @@
     .section-with-chart {
         display: flex;
         gap: 20px;
-        align-items: flex-start;
+        align-items: center;
         margin-bottom: 20px;
     }
 
     .section-text {
         flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .donut-container {
         flex: 0 0 auto;
-        width: 180px;
+        width: 210px;
         text-align: center;
     }
 
@@ -171,5 +181,116 @@
         height: 12px;
         border-radius: 2px;
         flex-shrink: 0;
+    }
+
+    .bilance-layout {
+        display: flex;
+        gap: 20px;
+        align-items: stretch;
+        margin-bottom: 14px;
+    }
+
+    .bilance-chart-col {
+        flex: 0 0 50%;
+        max-width: 50%;
+        min-width: 0;
+    }
+
+    .bilance-chart-wrap {
+        position: relative;
+        width: 100%;
+        height: 305px;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .bilance-summary-col {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .bilance-stat-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .bilance-stat-item {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .bilance-stat-card {
+        border: 1px solid #f0ebe5;
+        border-radius: 12px;
+        background: #fcfaf8;
+        padding: 12px 14px;
+    }
+
+    .bilance-stat-card--inline {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+    }
+
+    .bilance-stat-label {
+        font-size: 11px;
+        color: #777;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 0;
+    }
+
+    .bilance-stat-value {
+        font-family: 'Lora', serif;
+        font-size: 20px;
+        color: #333;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .bilance-stat-note {
+        margin-top: 6px;
+        padding-left: 15px;
+        font-size: 11px;
+        color: #8a8a8a;
+    }
+
+    .bilance-net-box {
+        border: 1px solid #e7dfd8;
+        border-radius: 12px;
+        background: #f7f2ec;
+        padding: 14px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .bilance-net-label {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #7a6a5c;
+    }
+
+    .bilance-net-value {
+        font-family: 'Lora', serif;
+        font-size: 24px;
+        color: #333;
+        font-weight: 700;
+    }
+
+    .bilance-net-value.pos {
+        color: #27ae60;
+    }
+
+    .bilance-net-value.neg {
+        color: #c0392b;
     }
 </style>

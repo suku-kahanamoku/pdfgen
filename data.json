@@ -430,7 +430,7 @@
 			"labels": [
 				"Aktiva",
 				"Pasiva",
-				"Čistý"
+				"Čistý majetek"
 			],
 			"total_active": {
 				"value": 4500,
@@ -443,6 +443,14 @@
 			"total": {
 				"value": -5195500,
 				"type": "currency"
+			},
+			"asset_profitability": {
+				"value": 12,
+				"type": "percent"
+			},
+			"liability_cost": {
+				"value": 23,
+				"type": "percent"
 			}
 		}
 	},

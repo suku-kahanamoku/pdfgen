@@ -41,6 +41,8 @@ foreach ($solutions['header'] ?? [] as $h) {
 $total_active  = (float)($dataRaw['property']['property_summary']['total_active']['value']  ?? 0);
 $total_pasive  = (float)($dataRaw['property']['property_summary']['total_pasive']['value']  ?? 0);
 $total = (float)($dataRaw['property']['property_summary']['total']['value'] ?? 0);
+$assetProfitability = (float)($propertySummary['asset_profitability']['value'] ?? 0);
+$liabilityCost = (float)($propertySummary['liability_cost']['value'] ?? 0);
 
 $currencySuffix = ' Kč';
 $percentSuffix  = ' %';
@@ -50,18 +52,17 @@ $percentSuffix  = ' %';
 <!-- PAGE 1 – Přehled majetku                                     -->
 <!-- ============================================================ -->
 <div class="page">
-    <h1 class="main-title">
-        <span class="gray">Přehled</span><br>vašeho majetku
-    </h1>
-
     <div class="section-with-chart">
         <div class="section-text">
+            <h1 class="main-title">
+                <span class="gray">Přehled</span><br>vašeho majetku
+            </h1>
             <p class="page-subtitle">
                 <?= safe_text($client['text'] ?? '') ?>
             </p>
         </div>
         <div class="donut-container">
-            <canvas id="assetChart" width="160" height="160"></canvas>
+            <canvas id="assetChart" width="190" height="190"></canvas>
             <div style="text-align: center; margin-top: 15px; font-size: 18px; font-weight: bold; color: <?= $total >= 0 ? '#2ecc71' : '#c0392b' ?>;">
                 <?= format_czk($total) ?> Kč
             </div>
@@ -139,10 +140,44 @@ $percentSuffix  = ' %';
     </div>
 
     <!-- Bilance -->
-    <div class="section-title"><?= safe_text($propertySummary['title'] ?? '') ?></div>
+    <h2 class="section-title section-title--bilance"><?= safe_text($propertySummary['title'] ?? '') ?></h2>
     <p class="page-subtitle"><?= safe_text($propertySummary['text'] ?? '') ?></p>
-    <div style="width: 100%; margin: 0;">
-        <canvas id="bilanceChart"></canvas>
+    <div class="bilance-layout">
+        <div class="bilance-chart-col">
+            <div class="bilance-chart-wrap">
+                <canvas id="bilanceChart"></canvas>
+            </div>
+        </div>
+        <div class="bilance-summary-col">
+            <div class="bilance-stat-stack">
+                <div class="bilance-stat-item">
+                    <div class="bilance-stat-card bilance-stat-card--inline">
+                        <div class="bilance-stat-label"><?= safe_text($propertySummary['labels'][0] ?? 'Aktiva') ?></div>
+                        <div class="bilance-stat-value"><?= format_czk($total_active) . $currencySuffix ?></div>
+                    </div>
+                    <div class="bilance-stat-note">
+                        Ziskovost aktiv <?= round($assetProfitability, 1) . $percentSuffix ?>
+                    </div>
+                </div>
+
+                <div class="bilance-stat-item">
+                    <div class="bilance-stat-card bilance-stat-card--inline">
+                        <div class="bilance-stat-label"><?= safe_text($propertySummary['labels'][1] ?? 'Pasiva') ?></div>
+                        <div class="bilance-stat-value"><?= format_czk($total_pasive) . $currencySuffix ?></div>
+                    </div>
+                    <div class="bilance-stat-note">
+                        Nakladovost pasiv <?= round($liabilityCost, 1) . $percentSuffix ?>
+                    </div>
+                </div>
+
+                <div class="bilance-stat-item">
+                    <div class="bilance-net-box">
+                        <div class="bilance-net-label"><?= safe_text($propertySummary['labels'][2] ?? 'Cisty majetek') ?></div>
+                        <div class="bilance-net-value <?= $total >= 0 ? 'pos' : 'neg' ?>"><?= format_czk($total) . $currencySuffix ?></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -154,20 +189,20 @@ $percentSuffix  = ' %';
                     data: {
                         labels: [
                             '<?= htmlspecialchars($propertySummary['labels'][0] ?? 'Aktiva') ?>',
-                            '<?= htmlspecialchars($propertySummary['labels'][1] ?? 'Pasiva') ?>',
-                            '<?= htmlspecialchars($propertySummary['labels'][2] ?? 'Čistý majetek') ?>'
+                            '<?= htmlspecialchars($propertySummary['labels'][1] ?? 'Pasiva') ?>'
                         ],
                         datasets: [{
                             label: 'Hodnota',
-                            data: [<?= $total_active ?>, <?= $total_pasive ?>, <?= max($total, 0) ?>],
-                            backgroundColor: ['#D6B89E', '#927355', '#2ecc71'],
-                            borderColor: ['#bca087', '#7a5f48', '#27ae60'],
+                            data: [<?= $total_active ?>, <?= $total_pasive ?>],
+                            backgroundColor: ['#D6B89E', '#927355'],
+                            borderColor: ['#bca087', '#7a5f48'],
                             borderWidth: 0,
+                            categoryPercentage: 0.6,
+                            barPercentage: 0.65,
                             borderSkipped: false
                         }]
                     },
                     options: {
-                        indexAxis: 'y',
                         responsive: true,
                         maintainAspectRatio: false,
                         plugins: {
@@ -187,25 +222,25 @@ $percentSuffix  = ' %';
                         },
                         scales: {
                             x: {
+                                display: true,
+                                grid: {
+                                    display: false,
+                                    drawBorder: false
+                                },
+                                ticks: {
+                                    color: '#666',
+                                    font: {
+                                        size: 11
+                                    }
+                                }
+                            },
+                            y: {
                                 beginAtZero: true,
                                 display: false,
                                 grid: {
                                     display: false,
                                     drawBorder: false
                                 },
-                            },
-                            y: {
-                                display: true,
-                                ticks: {
-                                    color: '#666',
-                                    font: {
-                                        size: 12
-                                    }
-                                },
-                                grid: {
-                                    display: false,
-                                    drawBorder: false
-                                }
                             }
                         }
                     }
