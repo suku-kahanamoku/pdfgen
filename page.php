@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/helpers.php';
+include_once __DIR__ . '/components/card-styles.php';
 
 $dataRaw   = $GLOBALS['pdfData'] ?? json_decode(file_get_contents(__DIR__ . '/data.json'), true);
 
@@ -14,10 +15,6 @@ $clientRow = $client['rows'][0] ?? [];
 $total_active  = (float)($dataRaw['property']['property_summary']['total_active']['value']  ?? 0);
 $total_pasive  = (float)($dataRaw['property']['property_summary']['total_pasive']['value']  ?? 0);
 $total = (float)($dataRaw['property']['property_summary']['total']['value'] ?? 0);
-?>
-<?php
-include __DIR__ . '/includes/main.css.php';
-include __DIR__ . '/components/card-styles.php';
 ?>
 
 <!-- ============================================================ -->
@@ -133,7 +130,7 @@ include __DIR__ . '/components/card-styles.php';
     ?>
         <div class="section-block">
             <div class="section-heading">
-                <span class="section-icon" style="background:<?= $sec['color'] ?>22; color:<?= $sec['color'] ?>;">  
+                <span class="section-icon" style="background:<?= $sec['color'] ?>22; color:<?= $sec['color'] ?>;">
                     <i class="fa-solid <?= $sec['icon'] ?>"></i>
                 </span>
                 <?= safe_text($sec['data']['title'] ?? '') ?>

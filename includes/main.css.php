@@ -4,6 +4,21 @@
         --clr-gray: #8c8c8c;
     }
 
+    body {
+        margin: 0;
+        padding: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .page-break {
+        page-break-after: always;
+    }
+
     .page {
         width: 100%;
         min-height: 257mm;

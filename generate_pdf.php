@@ -44,24 +44,8 @@ ob_start();
     <meta charset="UTF-8">
     <title>Majetkový Report</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-
-        body {
-            margin: 0;
-            padding: 0;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-        }
-
-        .no-print {
-            display: none !important;
-        }
-
-        .page-break {
-            page-break-after: always;
-        }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+    <?php include 'includes/main.css.php'; ?>
 </head>
 
 <body>
