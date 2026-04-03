@@ -9,12 +9,41 @@ $actives   = $dataRaw['property']['property_active'] ?? [];
 $pasives   = $dataRaw['property']['property_pasive'] ?? [];
 $targets   = $dataRaw['target']['targets'] ?? [];
 $solutions = $dataRaw['target']['solutions'] ?? [];
+$propertySummary = $dataRaw['property']['property_summary'] ?? [];
 
 $clientRow = $client['rows'][0] ?? [];
+
+$clientHeaderMap = [];
+foreach ($client['header'] ?? [] as $h) {
+    $clientHeaderMap[$h['key']] = $h['label'] ?? '';
+}
+
+$activeHeaderMap = [];
+foreach ($actives['header'] ?? [] as $h) {
+    $activeHeaderMap[$h['key']] = $h['label'] ?? '';
+}
+
+$pasiveHeaderMap = [];
+foreach ($pasives['header'] ?? [] as $h) {
+    $pasiveHeaderMap[$h['key']] = $h['label'] ?? '';
+}
+
+$targetsHeaderMap = [];
+foreach ($targets['header'] ?? [] as $h) {
+    $targetsHeaderMap[$h['key']] = $h['label'] ?? '';
+}
+
+$solutionsHeaderMap = [];
+foreach ($solutions['header'] ?? [] as $h) {
+    $solutionsHeaderMap[$h['key']] = $h['label'] ?? '';
+}
 
 $total_active  = (float)($dataRaw['property']['property_summary']['total_active']['value']  ?? 0);
 $total_pasive  = (float)($dataRaw['property']['property_summary']['total_pasive']['value']  ?? 0);
 $total = (float)($dataRaw['property']['property_summary']['total']['value'] ?? 0);
+
+$currencySuffix = ' Kč';
+$percentSuffix  = ' %';
 ?>
 
 <!-- ============================================================ -->
@@ -25,39 +54,33 @@ $total = (float)($dataRaw['property']['property_summary']['total']['value'] ?? 0
         <span class="gray">Přehled</span><br>vašeho majetku
     </h1>
     <p class="page-subtitle">
-        Diverzifikace příjmů, například prostřednictvím vedlejších příjmů
-        nebo investic, může zvýšit naši finanční bezpečnost. Když
-        přemýšlíme o budoucnosti a strategicky investujeme, zajišťujeme
-        si lepší životní úroveň a klidnou mysl. Důležité je také udržovat
-        si přehled o svých příjmech a pravidelně přehodnocovat své
-        finanční cíle. Tím můžeme efektivně plánovat a přizpůsobovat
-        se měnícím se podmínkám.
+        <?= safe_text($client['text'] ?? '') ?>
     </p>
 
     <!-- KPI -->
     <div class="kpi-grid">
         <div class="kpi-card">
-            <div class="kpi-label">Měsíční příjem</div>
-            <div class="kpi-value"><?= format_czk((float)($clientRow['monthly_income']['value'] ?? 0)) ?> Kč</div>
+            <div class="kpi-label"><?= safe_text($client['kpi_labels']['monthly_income'] ?? ($clientHeaderMap['monthly_income'] ?? '')) ?></div>
+            <div class="kpi-value"><?= format_czk((float)($clientRow['monthly_income']['value'] ?? 0)) . $currencySuffix ?></div>
         </div>
         <div class="kpi-card">
-            <div class="kpi-label">Měsíční výdaje</div>
-            <div class="kpi-value"><?= format_czk((float)($clientRow['monthly_expenses']['value'] ?? 0)) ?> Kč</div>
+            <div class="kpi-label"><?= safe_text($client['kpi_labels']['monthly_expenses'] ?? ($clientHeaderMap['monthly_expenses'] ?? '')) ?></div>
+            <div class="kpi-value"><?= format_czk((float)($clientRow['monthly_expenses']['value'] ?? 0)) . $currencySuffix ?></div>
         </div>
         <div class="kpi-card">
-            <div class="kpi-label">Měsíční zůstatek</div>
+            <div class="kpi-label"><?= safe_text($client['kpi_labels']['monthly_balance'] ?? ($clientHeaderMap['monthly_buffer'] ?? '')) ?></div>
             <div class="kpi-value <?= ((float)($clientRow['monthly_buffer']['value'] ?? 0)) >= 0 ? 'pos' : 'neg' ?>">
-                <?= format_czk((float)($clientRow['monthly_buffer']['value'] ?? 0)) ?> Kč
+                <?= format_czk((float)($clientRow['monthly_buffer']['value'] ?? 0)) . $currencySuffix ?>
             </div>
         </div>
         <div class="kpi-card">
-            <div class="kpi-label">Čistý majetek</div>
-            <div class="kpi-value <?= $total >= 0 ? 'pos' : 'neg' ?>"><?= format_czk($total) ?> Kč</div>
+            <div class="kpi-label"><?= safe_text($client['kpi_labels']['total'] ?? '') ?></div>
+            <div class="kpi-value <?= $total >= 0 ? 'pos' : 'neg' ?>"><?= format_czk($total) . $currencySuffix ?></div>
         </div>
     </div>
 
     <!-- Info klienta -->
-    <div class="section-title">Profil klienta</div>
+    <div class="section-title"><?= safe_text($client['title'] ?? '') ?></div>
     <div class="info-grid">
         <?php
         $headerMap = [];
@@ -65,7 +88,7 @@ $total = (float)($dataRaw['property']['property_summary']['total']['value'] ?? 0
         foreach ($clientRow as $key => $field):
             if (!isset($headerMap[$key])) continue;
             $val = $field['value'] ?? '';
-            if ($field['type'] === 'currency') $val = format_czk((float)$val) . ' Kč';
+            if ($field['type'] === 'currency') $val = format_czk((float)$val) . $currencySuffix;
         ?>
             <div class="info-row">
                 <span class="info-label"><?= htmlspecialchars($headerMap[$key]) ?></span>
@@ -75,13 +98,13 @@ $total = (float)($dataRaw['property']['property_summary']['total']['value'] ?? 0
     </div>
 
     <!-- Bilance -->
-    <div class="section-title">Bilance majetku</div>
+    <div class="section-title"><?= safe_text($propertySummary['title'] ?? '') ?></div>
     <?php
     $maxB = max($total_active, $total_pasive, 1);
     $bars = [
-        ['label' => 'Aktiva',  'val' => $total_active,              'color' => '#D6B89E'],
-        ['label' => 'Pasiva',  'val' => $total_pasive,              'color' => '#927355'],
-        ['label' => 'Čistý',   'val' => max($total, 0),     'color' => '#2ecc71'],
+        ['label' => $propertySummary['labels'][0] ?? '', 'val' => $total_active,  'color' => '#D6B89E'],
+        ['label' => $propertySummary['labels'][1] ?? '', 'val' => $total_pasive,  'color' => '#927355'],
+        ['label' => $propertySummary['labels'][2] ?? '', 'val' => max($total, 0), 'color' => '#2ecc71'],
     ];
     ?>
     <div class="bilance-bar-wrap">
@@ -91,7 +114,7 @@ $total = (float)($dataRaw['property']['property_summary']['total']['value'] ?? 0
                 <div class="bilance-bar-outer">
                     <div class="bilance-bar-inner" style="width:<?= round($b['val'] / $maxB * 100) ?>%; background:<?= $b['color'] ?>;"></div>
                 </div>
-                <span class="bilance-bar-amount"><?= format_czk($b['val']) ?> Kč</span>
+                <span class="bilance-bar-amount"><?= format_czk($b['val']) . $currencySuffix ?></span>
             </div>
         <?php endforeach; ?>
     </div>
@@ -109,9 +132,9 @@ $total = (float)($dataRaw['property']['property_summary']['total']['value'] ?? 0
             'color'         => '#2ecc71',
             'bar_pct_key'   => null,
             'bar_left_key'  => 'invested',
-            'bar_left_lbl'  => 'Investováno',
+            'bar_left_lbl'  => $actives['progress_labels']['left'] ?? ($activeHeaderMap['invested'] ?? ''),
             'bar_right_key' => 'aum',
-            'bar_right_lbl' => 'Aktuální hodnota',
+            'bar_right_lbl' => $actives['progress_labels']['right'] ?? ($activeHeaderMap['aum'] ?? ''),
         ],
         [
             'data'          => $pasives,
@@ -119,9 +142,9 @@ $total = (float)($dataRaw['property']['property_summary']['total']['value'] ?? 0
             'color'         => '#e67e22',
             'bar_pct_key'   => 'paid',
             'bar_left_key'  => null,
-            'bar_left_lbl'  => 'Splaceno',
+            'bar_left_lbl'  => $pasives['progress_labels']['left'] ?? ($pasiveHeaderMap['paid'] ?? ''),
             'bar_right_key' => 'aum',
-            'bar_right_lbl' => 'Zbývá umořit',
+            'bar_right_lbl' => $pasives['progress_labels']['right'] ?? ($pasiveHeaderMap['aum'] ?? ''),
         ],
     ];
     foreach ($sections as $sec):
@@ -142,14 +165,14 @@ $total = (float)($dataRaw['property']['property_summary']['total']['value'] ?? 0
 
                 if ($sec['bar_pct_key'] !== null) {
                     $pct      = min(100, max(0, (float)($cardRow[$sec['bar_pct_key']]['value'] ?? 0)));
-                    $leftVal  = $pct . ' %';
-                    $rightVal = format_czk((float)($cardRow[$sec['bar_right_key']]['value'] ?? 0)) . ' Kč';
+                    $leftVal  = $pct . $percentSuffix;
+                    $rightVal = format_czk((float)($cardRow[$sec['bar_right_key']]['value'] ?? 0)) . $currencySuffix;
                 } else {
                     $invested = (float)($cardRow[$sec['bar_left_key']]['value']  ?? 0);
                     $aum      = (float)($cardRow[$sec['bar_right_key']]['value'] ?? 0);
                     $pct      = $invested > 0 ? min(100, round($aum / $invested * 100)) : 0;
-                    $leftVal  = format_czk($invested) . ' Kč';
-                    $rightVal = format_czk($aum) . ' Kč';
+                    $leftVal  = format_czk($invested) . $currencySuffix;
+                    $rightVal = format_czk($aum) . $currencySuffix;
                 }
 
                 $cardProgress = [
@@ -174,7 +197,7 @@ $total = (float)($dataRaw['property']['property_summary']['total']['value'] ?? 0
         <span class="section-icon section-icon--primary">
             <i class="fa-solid fa-bullseye"></i>
         </span>
-        <?= safe_text($targets['title'] ?? 'Finanční cíle a přání') ?>
+        <?= safe_text($targets['title'] ?? '') ?>
     </div>
 
     <?php
@@ -191,10 +214,10 @@ $total = (float)($dataRaw['property']['property_summary']['total']['value'] ?? 0
         $cardName     = $cardRow['name']['value'] ?? '';
         $cardLabels   = $cardRow['labels'] ?? [];
         $cardProgress = [
-            'left_lbl'  => 'Naspořeno',
-            'left_val'  => format_czk($currentAmt) . ' Kč',
-            'right_lbl' => 'Cíl',
-            'right_val' => format_czk($targetAmt) . ' Kč',
+            'left_lbl'  => $targets['progress_labels']['saved'] ?? ($targetsHeaderMap['currentAmount'] ?? ''),
+            'left_val'  => format_czk($currentAmt) . $currencySuffix,
+            'right_lbl' => $targets['progress_labels']['goal'] ?? ($targetsHeaderMap['targetAmount'] ?? ''),
+            'right_val' => format_czk($targetAmt) . $currencySuffix,
             'pct'       => $pct,
             'pct_label' => '',
         ];
@@ -210,7 +233,7 @@ $total = (float)($dataRaw['property']['property_summary']['total']['value'] ?? 0
         <span class="section-icon section-icon--primary">
             <i class="fa-solid fa-seedling"></i>
         </span>
-        <?= safe_text($solutions['title'] ?? 'Finanční plán') ?>
+        <?= safe_text($solutions['title'] ?? '') ?>
     </div>
 
     <?php
@@ -236,12 +259,12 @@ $total = (float)($dataRaw['property']['property_summary']['total']['value'] ?? 0
         }
 
         $cardProgress = [
-            'left_lbl'  => 'Začátek',
+            'left_lbl'  => $solutions['progress_labels']['start'] ?? ($solutionsHeaderMap['start'] ?? ''),
             'left_val'  => format_date($startRaw),
-            'right_lbl' => 'Cílové datum',
+            'right_lbl' => $solutions['progress_labels']['target_date'] ?? ($solutionsHeaderMap['targetDate'] ?? ''),
             'right_val' => format_date($endRaw),
             'pct'       => $pct,
-            'pct_label' => 'doby uplynulo',
+            'pct_label' => $solutions['progress_labels']['elapsed'] ?? '',
         ];
         include __DIR__ . '/components/sol-card.php';
     endforeach; ?>
@@ -249,8 +272,8 @@ $total = (float)($dataRaw['property']['property_summary']['total']['value'] ?? 0
     <div class="diverz-box">
         <div class="diverz-icon"><i class="fa-solid fa-seedling"></i></div>
         <div class="diverz-text">
-            <h3>Pravidelné investování buduje bohatství</h3>
-            <p>Díky složenému úročení a pravidelným vkladům roste hodnota vašeho portfolia exponenciálně. Klíčem je konzistentnost a dlouhý investiční horizont.</p>
+            <h3><?= safe_text($solutions['tip']['title'] ?? '') ?></h3>
+            <p><?= safe_text($solutions['tip']['text'] ?? '') ?></p>
         </div>
     </div>
 </div>

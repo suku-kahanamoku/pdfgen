@@ -1,6 +1,11 @@
 {
 	"target": {
 		"targets": {
+			"title": "Finanční cíle a přání",
+			"progress_labels": {
+				"saved": "Naspořeno",
+				"goal": "Cíl"
+			},
 			"labels": [
 				"Krátkodobé",
 				"Střednědobé",
@@ -52,7 +57,6 @@
 					"type": "text"
 				}
 			],
-			"title": "Finanční cíle a přání",
 			"rows": [
 				{
 					"labels": [
@@ -127,6 +131,16 @@
 			]
 		},
 		"solutions": {
+			"title": "Finanční plán",
+			"progress_labels": {
+				"start": "Začátek",
+				"target_date": "Cílové datum",
+				"elapsed": "doby uplynulo"
+			},
+			"tip": {
+				"title": "Pravidelné investování buduje bohatství",
+				"text": "Díky složenému úročení a pravidelným vkladům roste hodnota vašeho portfolia exponenciálně. Klíčem je konzistentnost a dlouhý investiční horizont."
+			},
 			"labels": [
 				"Krátkodobé",
 				"Střednědobé",
@@ -177,7 +191,6 @@
 					"type": "text"
 				}
 			],
-			"title": "Finanční plán",
 			"rows": [
 				{
 					"history": {},
@@ -220,6 +233,11 @@
 	},
 	"property": {
 		"property_active": {
+			"title": "Aktiva",
+			"progress_labels": {
+				"left": "Investováno",
+				"right": "Aktuální hodnota"
+			},
 			"labels": [
 				"Krátkodobé",
 				"Střednědobé",
@@ -275,7 +293,6 @@
 					"type": "percent"
 				}
 			],
-			"title": "Aktiva",
 			"rows": [
 				{
 					"labels": [
@@ -315,6 +332,11 @@
 			]
 		},
 		"property_pasive": {
+			"title": "Pasiva",
+			"progress_labels": {
+				"left": "Splaceno",
+				"right": "Zbývá umořit"
+			},
 			"labels": [],
 			"chartIds": [
 				"chart-property-pasive"
@@ -361,7 +383,6 @@
 					"type": "percent"
 				}
 			],
-			"title": "Pasiva",
 			"rows": [
 				{
 					"name": {
@@ -400,6 +421,12 @@
 			]
 		},
 		"property_summary": {
+			"title": "Bilance majetku",
+			"labels": [
+				"Aktiva",
+				"Pasiva",
+				"Čistý"
+			],
 			"total_active": {
 				"value": 4500,
 				"type": "currency"
@@ -416,6 +443,14 @@
 	},
 	"health": {
 		"health_client": {
+			"title": "Profil klienta",
+			"kpi_labels": {
+				"monthly_income": "Měsíční příjem",
+				"monthly_expenses": "Měsíční výdaje",
+				"monthly_balance": "Měsíční zůstatek",
+				"total": "Čistý majetek"
+			},
+			"text": "Diverzifikace příjmů, například prostřednictvím vedlejších příjmů nebo investic, může zvýšit naši finanční bezpečnost. Když přemýšlíme o budoucnosti a strategicky investujeme, zajišťujeme si lepší životní úroveň a klidnou mysl. Důležité je také udržovat si přehled o svých příjmech a pravidelně přehodnocovat své finanční cíle. Tím můžeme efektivně plánovat a přizpůsobovat se měnícím se podmínkám.",
 			"labels": [],
 			"header": [
 				{
