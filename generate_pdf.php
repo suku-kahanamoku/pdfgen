@@ -6,21 +6,31 @@ require 'vendor/autoload.php';
 
 use Spatie\Browsershot\Browsershot;
 
-// 1) Raw JSON body (Content-Type: application/json)
+// 1) POST or GET field named 'data'
 $inputData = null;
-$rawInput = file_get_contents('php://input');
-if (!empty($rawInput)) {
-    $decoded = json_decode($rawInput, true);
+if (!empty($_REQUEST['data'])) {
+    $decoded = json_decode($_REQUEST['data'], true);
     if (json_last_error() === JSON_ERROR_NONE) {
         $inputData = $decoded;
     }
 }
 
-// 2) POST or GET field named 'data'
-if ($inputData === null && !empty($_REQUEST['data'])) {
-    $decoded = json_decode($_REQUEST['data'], true);
-    if (json_last_error() === JSON_ERROR_NONE) {
-        $inputData = $decoded;
+// 2) Raw JSON body (Content-Type: application/json)
+if ($inputData === null) {
+    $rawInput = file_get_contents('php://input');
+    if (!empty($rawInput)) {
+        $decoded = json_decode($rawInput, true);
+        if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
+            // Unwrap {"data": "json_string"} or {"data": {...}}
+            if (isset($decoded['data']) && !isset($decoded['property'])) {
+                $inner = is_string($decoded['data']) ? json_decode($decoded['data'], true) : $decoded['data'];
+                if (json_last_error() === JSON_ERROR_NONE && is_array($inner)) {
+                    $inputData = $inner;
+                }
+            } else {
+                $inputData = $decoded;
+            }
+        }
     }
 }
 
@@ -45,8 +55,25 @@ ob_start();
     <title>Majetkový Report</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <?php include 'includes/main.css.php'; ?>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+
+    <style>
+        html {
+            font-size: 12px;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .font-lora {
+            font-family: 'Lora', serif;
+        }
+    </style>
 </head>
 
 <body>

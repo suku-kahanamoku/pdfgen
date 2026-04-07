@@ -1,528 +1,272 @@
 {
-	"target": {
-		"targets": {
-			"title": "Finanční cíle a přání",
-			"progress_labels": {
-				"saved": "Naspořeno",
-				"goal": "Cíl"
-			},
-			"text": "Jasné a měřitelné cíle jsou základem úspěšného finančního plánování. Vedou nás k disciplinovanému spořením a investování. Ať jsou vaše cíle krátkodobé jako dovolená nebo dlouhodobé jako penzijní zabezpečení, důležité je je pravidelně sledovat a přizpůsobovat se měnícím se podmínkám.",
-			"labels": [
-				"Krátkodobé",
-				"Střednědobé",
-				"Dlouhodobé",
-				"Rezerva",
-				"Vysoká priorita",
-				"Volitelné",
-				"Cestování"
-			],
-			"charts": [],
-			"computed": {
-				"fx": "goalsWishesSummary"
-			},
-			"header": [
-				{
-					"key": "name",
-					"label": "Název",
-					"type": "text"
-				},
-				{
-					"key": "start",
-					"label": "Počátek",
-					"type": "date"
-				},
-				{
-					"key": "targetDate",
-					"label": "Cílové datum",
-					"type": "date"
-				},
-				{
-					"key": "targetAmount",
-					"label": "Cílová částka",
-					"type": "currency"
-				},
-				{
-					"key": "currentAmount",
-					"label": "Naspořeno",
-					"type": "currency"
-				},
-				{
-					"key": "gap",
-					"label": "Zbývá",
-					"type": "currency",
-					"editable": "false"
-				},
-				{
-					"key": "notes",
-					"label": "Poznámka",
-					"type": "text"
-				}
-			],
+	"summary": {
+		"netto": {
+			"currency": "CZK",
+			"value": 2250000
+		},
+		"active": {
+			"currency": "CZK",
+			"value": 25,
 			"rows": [
 				{
-					"labels": [
-						"krátkodobé",
-						"rezerva",
-						"vysoká priorita"
-					],
-					"name": {
-						"value": "Auto",
-						"type": "text"
-					},
-					"start": {
-						"value": "2026-01-01",
-						"type": "date"
-					},
-					"targetDate": {
-						"value": "2032-12-31",
-						"type": "date"
-					},
-					"targetAmount": {
-						"value": 400000,
-						"type": "currency"
-					},
-					"currentAmount": {
-						"value": 180000,
-						"type": "currency"
-					},
-					"gap": {
-						"value": "",
-						"type": "currency"
-					},
-					"notes": {
-						"value": "Rezerva na 6 měsíců výdajů",
-						"type": "text"
-					}
+					"currency": "CZK",
+					"value": 25,
+					"title": "Hotovost",
+					"status": "success"
 				},
 				{
-					"labels": [
-						"střednědobé",
-						"volitelné",
-						"cestování"
-					],
-					"name": {
-						"value": "Chata",
-						"type": "text"
-					},
-					"start": {
-						"value": "2026-01-01",
-						"type": "date"
-					},
-					"targetDate": {
-						"value": "2041-04-30",
-						"type": "date"
-					},
-					"targetAmount": {
-						"value": 1700000,
-						"type": "currency"
-					},
-					"currentAmount": {
-						"value": 20000,
-						"type": "currency"
-					},
-					"gap": {
-						"value": "",
-						"type": "currency"
-					},
-					"notes": {
-						"value": "Dovolená pro 2 osoby",
-						"type": "text"
-					}
+					"currency": "CZK",
+					"value": 25,
+					"title": "Deriváty",
+					"status": "warning"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Kryptoměny",
+					"status": "danger"
 				}
 			]
 		},
-		"solutions": {
-			"title": "Finanční plán",
-			"progress_labels": {
-				"start": "Začátek",
-				"target_date": "Cílové datum",
-				"elapsed": "doby uplynulo"
-			},
-			"tip": {
-				"title": "Pravidelné investování buduje bohatství",
-				"text": "Díky složenému úročení a pravidelným vkladům roste hodnota vašeho portfolia exponenciálně. Klíčem je konzistentnost a dlouhý investiční horizont."
-			},
-			"text": "Chytrý finanční plán kombinuje spořením s investováním. Volba správné strategie a diverzifikace portfolia zvyšuje šance na dosažení dlouhodobého finančního cíle. Začněte volit stabilní základy a postupně budujte na nich.",
-			"labels": [
-				"Krátkodobé",
-				"Střednědobé",
-				"Dlouhodobé",
-				"Rezerva",
-				"Vysoká priorita",
-				"Volitelné",
-				"Cestování"
-			],
-			"charts": [],
-			"computed": {
-				"fx": "goalsWishesSummary"
-			},
-			"header": [
-				{
-					"key": "name",
-					"label": "Název",
-					"type": "text"
-				},
-				{
-					"key": "start",
-					"label": "Počátek",
-					"type": "date"
-				},
-				{
-					"key": "targetDate",
-					"label": "Cílové datum",
-					"type": "date"
-				},
-				{
-					"key": "invested",
-					"label": "Investice",
-					"type": "currency"
-				},
-				{
-					"key": "frequency",
-					"label": "Frekvence",
-					"type": "text"
-				},
-				{
-					"key": "interest",
-					"label": "Úrok",
-					"type": "percent"
-				},
-				{
-					"key": "notes",
-					"label": "Poznámka",
-					"type": "text"
-				}
-			],
+		"estate": {
+			"currency": "CZK",
+			"value": 25,
 			"rows": [
 				{
-					"history": {},
-					"labels": [
-						"krátkodobé",
-						"rezerva",
-						"vysoká priorita"
-					],
-					"name": {
-						"value": "Fondy - ETF",
-						"type": "text"
-					},
-					"start": {
-						"value": "2026-01-01",
-						"type": "date"
-					},
-					"targetDate": {
-						"value": "2050-12-31",
-						"type": "date"
-					},
-					"invested": {
-						"value": 5000,
-						"type": "currency"
-					},
-					"frequency": {
-						"value": "Pravidelně",
-						"type": "text"
-					},
-					"interest": {
-						"value": 7,
-						"type": "percent"
-					},
-					"notes": {
-						"value": "",
-						"type": "text"
-					}
+					"currency": "CZK",
+					"value": 25,
+					"title": "Vlastní bydlení",
+					"status": "success"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Hypotéka",
+					"status": "warning"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Investiční nemovitost",
+					"status": "danger"
+				}
+			]
+		},
+		"properties": {
+			"currency": "CZK",
+			"value": -25,
+			"rows": [
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Vlastní bydlení",
+					"status": "success"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Hypotéka",
+					"status": "warning"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Investiční nemovitost",
+					"status": "danger"
 				}
 			]
 		}
 	},
 	"property": {
-		"property_active": {
-			"title": "Aktiva",
-			"progress_labels": {
-				"left": "Investováno",
-				"right": "Aktuální hodnota"
-			},
-			"text": "Aktivní část majetku představuje vaši investiční a spořící sílu. Správná diverzifikace mezi různé třídy aktiv snižuje rizko a zlepšuje dlouhodobou výnosnost. Sledujte vyvážení portfolia a přizpůsobujte ho svému věku a cílům.",
-			"labels": [
-				"Krátkodobé",
-				"Střednědobé",
-				"Dlouhodobé",
-				"Nízká likvidita",
-				"Střední likvidita",
-				"Vysoká likvidita",
-				"Cenné papíry",
-				"Nemovitosti",
-				"Komodity",
-				"Pravidelné investice"
-			],
-			"charts": [],
-			"computed": {
-				"fx": "propertyActiveSummary"
-			},
-			"header": [
-				{
-					"key": "name",
-					"label": "Položka",
-					"type": "text"
-				},
-				{
-					"key": "start",
-					"label": "Počátek",
-					"type": "text"
-				},
-				{
-					"key": "end",
-					"label": "Konec",
-					"type": "text"
-				},
-				{
-					"key": "invested",
-					"label": "Investovaná částka",
-					"type": "currency",
-					"editable": "false"
-				},
-				{
-					"key": "aum",
-					"label": "Aktuální hodnota",
-					"type": "currency",
-					"editable": "false"
-				},
-				{
-					"key": "yieldAnnually",
-					"label": "Roční výnos",
-					"type": "percent"
-				},
-				{
-					"key": "yieldTotal",
-					"label": "Celkový výnos",
-					"type": "percent"
-				}
-			],
+		"estate": {
 			"rows": [
 				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Vlastní bydlení",
+					"status": "success",
+					"note": "Brno, Jugoslávská 15 – 8,5 % p.a.",
+					"description": "2+1, 50 m², 3. patro bez výtahu",
 					"labels": [
-						"střednědobé",
-						"nízká likvidita",
-						"nemovitosti"
-					],
-					"name": {
-						"value": "Cenné papíry",
-						"type": "text"
-					},
-					"start": {
-						"value": "10/2020",
-						"type": "text"
-					},
-					"end": {
-						"value": "12/2024",
-						"type": "text"
-					},
-					"invested": {
-						"value": 5000,
-						"type": "text"
-					},
-					"aum": {
-						"value": "4500",
-						"type": "text"
-					},
-					"yieldAnnually": {
-						"value": "4.5",
-						"type": "text"
-					},
-					"yieldTotal": {
-						"value": "5.0",
-						"type": "text"
-					}
+						"Investiční nemovitost",
+						"Aktiva",
+						"Střednědobý"
+					]
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Hypotéka",
+					"status": "warning",
+					"note": "Komerční banka 3,5 % p.a.",
+					"description": "od 15. 8. 2020 do 15. 8. 2030",
+					"labels": [
+						"Hypotéka",
+						"Pasiva",
+						"Dlouhodobý"
+					]
 				}
 			]
 		},
-		"property_pasive": {
-			"title": "Pasiva",
-			"progress_labels": {
-				"left": "Splaceno",
-				"right": "Zbývá umořit"
-			},
-			"text": "Dluh a závazky jsou běžnou součástí finančního života. Důležité je je řídit odpovědně a snažit se snižovat jejich hrubý objem. Sledování splátek a úrokových sazeb vám pomůže ušetřit tisíce korun.",
-			"labels": [],
-			"chartIds": [
-				"chart-property-pasive"
-			],
-			"header": [
-				{
-					"key": "name",
-					"label": "Položka",
-					"type": "text"
-				},
-				{
-					"key": "start",
-					"label": "Počátek",
-					"type": "text"
-				},
-				{
-					"key": "fixation",
-					"label": "Fixace",
-					"type": "text"
-				},
-				{
-					"key": "end",
-					"label": "Konec",
-					"type": "text"
-				},
-				{
-					"key": "invested",
-					"label": "Výše závazku",
-					"type": "currency"
-				},
-				{
-					"key": "paid",
-					"label": "Splaceno",
-					"type": "percent"
-				},
-				{
-					"key": "aum",
-					"label": "Zbývá umořit",
-					"type": "currency"
-				},
-				{
-					"key": "yield",
-					"label": "Úrok",
-					"type": "percent"
-				}
-			],
+		"active": {
 			"rows": [
 				{
-					"name": {
-						"value": "Hypoteční úvěr",
-						"type": "text"
-					},
-					"start": {
-						"value": "Červen 2018",
-						"type": "text"
-					},
-					"fixation": {
-						"value": "Červen 2022",
-						"type": "text"
-					},
-					"end": {
-						"value": "Červen 2028",
-						"type": "text"
-					},
-					"invested": {
-						"value": 6500000,
-						"type": "currency"
-					},
-					"paid": {
-						"value": 15.29,
-						"type": "percent"
-					},
-					"aum": {
-						"value": 5200000,
-						"type": "currency"
-					},
-					"yield": {
-						"value": 5.4,
-						"type": "percent"
-					}
+					"currency": "CZK",
+					"value": 25,
+					"title": "Hotovost",
+					"status": "success",
+					"note": "Účet v ČSOB, 0,01 % p.a.",
+					"description": "Největší část má být v hotovosti pro nečekané výdaje",
+					"labels": [
+						"Hotovost",
+						"Aktiva",
+						"Krátkodobý"
+					]
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Deriváty",
+					"status": "warning",
+					"note": "Opce na akcie, 20 % p.a.",
+					"description": "Vysoká rizikovost, ale i potenciální zisk",
+					"labels": [
+						"Deriváty",
+						"Aktiva",
+						"Krátkodobý"
+					]
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Kryptoměny",
+					"status": "danger",
+					"note": "Bitcoin, 100 % p.a.",
+					"description": "Velká volatilita, ale i potenciální zisk",
+					"labels": [
+						"Kryptoměny",
+						"Aktiva",
+						"Krátkodobý"
+					]
 				}
 			]
 		},
-		"property_summary": {
-			"title": "Bilance majetku",
-			"text": "Bilance majetku ukazuje váš celkový finanční stav. Je klíčové znát rozdíl mezi aktivy a pasivy, abyste chápali svou finanční pozici. Zdravý čistý majetek je základem dlouhodobé finanční bezpečnosti.",
-			"labels": [
-				"Aktiva",
-				"Pasiva",
-				"Čistý majetek"
-			],
-			"total_active": {
-				"value": 4500,
-				"type": "currency"
+		"properties": {
+			"rows": [
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "BMW 320i",
+					"status": "success",
+					"note": "Auto 5 – 8,5 % p.a.",
+					"description": "Rok 2015, najeto 100 000 km, bez nehody",
+					"labels": [
+						"Auta & stroje",
+						"Aktiva",
+						"Dlouhodobý"
+					]
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Moneta a.s.",
+					"status": "warning",
+					"note": "Spotřebitelský úvěr 5 – 8,5 % p.a.",
+					"description": "od 15. 8. 2020 do 15. 8. 2030",
+					"labels": [
+						"Úvěr",
+						"Pasiva",
+						"Dlouhodobý"
+					]
+				}
+			]
+		},
+		"bilance": {
+			"active": {
+				"currency": "CZK",
+				"value": 25,
+				"title": "Aktiva",
+				"yeld": {
+					"title": "Ziskovost aktiv",
+					"percent": 7.67
+				}
 			},
-			"total_pasive": {
-				"value": 5200000,
-				"type": "currency"
+			"pasive": {
+				"currency": "CZK",
+				"value": 25,
+				"title": "Pasiva",
+				"yeld": {
+					"title": "Nákladovost pasiv",
+					"percent": 4.5
+				}
 			},
-			"total": {
-				"value": -5195500,
-				"type": "currency"
+			"netto": {
+				"currency": "CZK",
+				"value": 25,
+				"title": "Čistý majetek"
 			},
-			"asset_profitability": {
-				"value": 12,
-				"type": "percent"
-			},
-			"liability_cost": {
-				"value": 23,
-				"type": "percent"
+			"footer": {
+				"percent": 3.17,
+				"status": "success"
 			}
-		}
-	},
-	"health": {
-		"health_client": {
-			"title": "Profil klienta",
-			"text": "Diverzifikace příjmů, například prostřednictvím vedlejších příjmů nebo investic, může zvýšit naši finanční bezpečnost. Když přemýšlíme o budoucnosti a strategicky investujeme, zajišťujeme si lepší životní úroveň a klidnou mysl. Důležité je také udržovat si přehled o svých příjmech a pravidelně přehodnocovat své finanční cíle. Tím můžeme efektivně plánovat a přizpůsobovat se měnícím se podmínkám.",
-			"kpi_labels": {
-				"monthly_income": "Měsíční příjem",
-				"monthly_expenses": "Měsíční výdaje",
-				"monthly_balance": "Měsíční zůstatek",
-				"total": "Čistý majetek"
-			},
-			"labels": [],
-			"header": [
-				{
-					"key": "age",
-					"label": "Věk",
-					"type": "number"
-				},
-				{
-					"key": "dependents",
-					"label": "Závislé osoby",
-					"type": "number"
-				},
-				{
-					"key": "monthly_income",
-					"label": "Příjem",
-					"type": "currency"
-				},
-				{
-					"key": "monthly_expenses",
-					"label": "Výdaje",
-					"type": "currency"
-				},
-				{
-					"key": "monthly_buffer",
-					"label": "Měsíční zůstatek",
-					"type": "currency"
-				},
-				{
-					"key": "mortgage_outstanding",
-					"label": "Závazky",
-					"type": "currency"
-				}
-			],
+		},
+		"horizon": {
 			"rows": [
 				{
-					"age": {
-						"value": 45,
-						"type": "number"
-					},
-					"dependents": {
-						"value": 2,
-						"type": "number"
-					},
-					"monthly_income": {
-						"value": 60000,
-						"type": "currency"
-					},
-					"monthly_expenses": {
-						"value": 45000,
-						"type": "currency"
-					},
-					"monthly_buffer": {
-						"value": 15000,
-						"type": "currency"
-					},
-					"mortgage_outstanding": {
-						"value": 5000000,
-						"type": "currency"
-					}
+					"currency": "CZK",
+					"value": 25,
+					"title": "Krátkodobý",
+					"status": "success"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Střednědobý",
+					"status": "warning"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Dlouhodobý",
+					"status": "danger"
+				}
+			]
+		},
+		"active_pasive": {
+			"rows": [
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Krátkodobý",
+					"status": "success"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Dlouhodobý",
+					"status": "warning"
+				}
+			]
+		},
+		"liquidity": {
+			"rows": [
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Vysoká",
+					"status": "success"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Střední",
+					"status": "warning"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Nízká",
+					"status": "danger"
 				}
 			]
 		}
