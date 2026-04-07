@@ -2,7 +2,7 @@
 require_once __DIR__ . '/includes/helpers.php';
 include_once __DIR__ . '/components/card-styles.php';
 
-$dataRaw   = $GLOBALS['pdfData'] ?? json_decode(file_get_contents(__DIR__ . '/data.json'), true);
+$dataRaw   = $GLOBALS['pdfData'];
 
 $client    = $dataRaw['health']['health_client'] ?? [];
 $actives   = $dataRaw['property']['property_active'] ?? [];
@@ -80,42 +80,71 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
         </tr>
     </table>
 
-    <!-- KPI -->
-    <div class="kpi-grid">
-        <div class="kpi-card">
-            <div class="kpi-label">Měsíční příjem</div>
-            <div class="kpi-value"><?= format_czk((float)($clientRow['monthly_income']['value'] ?? 0)) ?> Kč</div>
-        </div>
-        <div class="kpi-card">
-            <div class="kpi-label">Měsíční výdaje</div>
-            <div class="kpi-value"><?= format_czk((float)($clientRow['monthly_expenses']['value'] ?? 0)) ?> Kč</div>
-        </div>
-        <div class="kpi-card">
-            <div class="kpi-label">Měsíční zůstatek</div>
-            <div class="kpi-value <?= ((float)($clientRow['monthly_buffer']['value'] ?? 0)) >= 0 ? 'pos' : 'neg' ?>">
-                <?= format_czk((float)($clientRow['monthly_buffer']['value'] ?? 0)) ?> Kč
-            </div>
-        </div>
-        <div class="kpi-card">
-            <div class="kpi-label">Čistý majetek</div>
-            <div class="kpi-value <?= $total >= 0 ? 'pos' : 'neg' ?>"><?= format_czk($total) ?> Kč</div>
-        </div>
-    </div>
+    <!-- 3-column property overview -->
+    <?php
+    $summary = $dataRaw['summary'] ?? [];
 
-    <!-- Info klienta -->
-    <div class="section-title">Profil klienta</div>
-    <div class="info-grid">
-        <?php
-        $headerMap = [];
-        foreach ($client['header'] ?? [] as $h) $headerMap[$h['key']] = $h['label'];
-        foreach ($clientRow as $key => $field):
-            if (!isset($headerMap[$key])) continue;
-            $val = $field['value'] ?? '';
-            if ($field['type'] === 'currency') $val = format_czk((float)$val) . ' Kč';
-        ?>
-            <div class="info-row">
-                <span class="info-label"><?= htmlspecialchars($headerMap[$key]) ?></span>
-                <span class="info-val"><?= htmlspecialchars((string)$val) ?></span>
+    $statusIconMap = [
+        'success' => ['cls' => 'fa-solid fa-check',       'clr' => '#2ecc71'],
+        'warning' => ['cls' => 'fa-solid fa-exclamation', 'clr' => '#e67e22'],
+        'danger'  => ['cls' => 'fa-solid fa-xmark', 'clr' => '#042444'],
+    ];
+
+    $propertyColumns = [
+        [
+            'title' => 'Finanční aktiva',
+            'icon'  => 'fa-solid fa-money-bill-1',
+            'total' => (float)($summary['active']['value'] ?? 0),
+            'rows'  => $summary['active']['rows'] ?? [],
+        ],
+        [
+            'title' => 'Nemovitosti',
+            'icon'  => 'fa-solid fa-house',
+            'total' => (float)($summary['estate']['value'] ?? 0),
+            'rows'  => $summary['estate']['rows'] ?? [],
+        ],
+        [
+            'title' => 'Movitý majetek',
+            'icon'  => 'fa-solid fa-car',
+            'total' => (float)($summary['properties']['value'] ?? 0),
+            'rows'  => $summary['properties']['rows'] ?? [],
+        ],
+    ];
+    ?>
+    <div style="display: flex; gap: 15px; margin-top: 10px;">
+        <?php foreach ($propertyColumns as $col): ?>
+            <div style="flex: 1; min-width: 0;">
+                <div style="border: 1px solid #927355; border-radius: 12px; padding: 12px; margin-bottom: 15px; background: #fcfaf8; display: flex; align-items: center; gap: 10px;">
+                    <div style="color: #927355; font-size: 18px; width: 24px; text-align: center;">
+                        <i class="<?= $col['icon'] ?>"></i>
+                    </div>
+                    <div>
+                        <div style="font-weight: bold; color: #927355; font-size: 14px; font-family: 'Lora', serif;"><?= htmlspecialchars($col['title']) ?></div>
+                        <div style="font-size: 12px; color: #666;"><?= format_czk($col['total']) ?> Kč</div>
+                    </div>
+                </div>
+
+                <?php foreach ($col['rows'] as $row):
+                    $val     = (float)($row['value'] ?? 0);
+                    $name    = $row['title'] ?? '';
+                    $status  = $row['status'] ?? 'success';
+                    $iconCls = $statusIconMap[$status]['cls'] ?? 'fa-solid fa-check';
+                    $iconClr = $statusIconMap[$status]['clr'] ?? '#2ecc71';
+                ?>
+                    <div style="background: #fff; border: 1px solid #f0f0f0; padding: 12px; border-radius: 10px; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; page-break-inside: avoid; break-inside: avoid;">
+                        <div style="border-radius: 50%; width: 17px; height: 17px; display: flex; justify-content: center; align-items: center; font-size: 9px; flex-shrink: 0; border: 1.2px solid; color: <?= $iconClr ?>; border-color: <?= $iconClr ?>;">
+                            <i class="<?= $iconCls ?>"></i>
+                        </div>
+                        <div style="overflow: hidden;">
+                            <div style="font-size: 10px; color: #888; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><?= htmlspecialchars($name) ?></div>
+                            <div style="font-weight: normal; font-size: 13px;"><?= format_czk($val) ?> Kč</div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+
+                <?php if (empty($col['rows'])): ?>
+                    <div style="color: #aaa; font-size: 12px; text-align: center; padding: 20px 0;">Žádné položky</div>
+                <?php endif; ?>
             </div>
         <?php endforeach; ?>
     </div>
