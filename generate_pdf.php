@@ -34,11 +34,11 @@ if ($inputData === null) {
     }
 }
 
-// 3) Fallback: read from result.json file
+// 3) Fallback: read from data.json file
 if ($inputData === null) {
-    $jsonFile = __DIR__ . '/result.json';
+    $jsonFile = __DIR__ . '/data.json';
     if (!file_exists($jsonFile)) {
-        die("Chyba: Soubor result.json nebyl nalezen ve složce " . __DIR__);
+        die("Chyba: Soubor data.json nebyl nalezen ve složce " . __DIR__);
     }
     $inputData = json_decode(file_get_contents($jsonFile), true);
 }

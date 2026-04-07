@@ -1,725 +1,273 @@
 {
-	"target": {
-		"targets": {
-			"labels": [
-				"Krátkodobé",
-				"Střednědobé",
-				"Dlouhodobé",
-				"Rezerva",
-				"Vysoká priorita",
-				"Volitelné",
-				"Cestování"
-			],
-			"charts": [],
-			"computed": {
-				"fx": "goalsWishesSummary"
-			},
-			"header": [
-				{
-					"key": "name",
-					"label": "Název",
-					"type": "text"
-				},
-				{
-					"key": "start",
-					"label": "Počátek",
-					"type": "date"
-				},
-				{
-					"key": "targetDate",
-					"label": "Cílové datum",
-					"type": "date"
-				},
-				{
-					"key": "targetAmount",
-					"label": "Cílová částka",
-					"type": "currency"
-				},
-				{
-					"key": "currentAmount",
-					"label": "Naspořeno",
-					"type": "currency"
-				},
-				{
-					"key": "gap",
-					"label": "Zbývá",
-					"type": "currency",
-					"editable": "false"
-				},
-				{
-					"key": "notes",
-					"label": "Poznámka",
-					"type": "text"
-				}
-			],
-			"title": "Finanční cíle a přání",
+	"summary": {
+		"netto": {
+			"currency": "CZK",
+			"value": 25,
+			"total": 100
+		},
+		"active": {
+			"currency": "CZK",
+			"value": 25,
 			"rows": [
 				{
-					"labels": [
-						"krátkodobé",
-						"rezerva",
-						"vysoká priorita"
-					],
-					"name": {
-						"value": "Auto",
-						"type": "text"
-					},
-					"start": {
-						"value": "2026-01-01",
-						"type": "date"
-					},
-					"targetDate": {
-						"value": "2032-12-31",
-						"type": "date"
-					},
-					"targetAmount": {
-						"value": 400000,
-						"type": "currency"
-					},
-					"currentAmount": {
-						"value": 180000,
-						"type": "currency"
-					},
-					"gap": {
-						"value": "",
-						"type": "currency"
-					},
-					"notes": {
-						"value": "Rezerva na 6 měsíců výdajů",
-						"type": "text"
-					}
+					"currency": "CZK",
+					"value": 25,
+					"title": "Hotovost",
+					"status": "success"
 				},
 				{
-					"labels": [
-						"střednědobé",
-						"volitelné",
-						"cestování"
-					],
-					"name": {
-						"value": "Chata",
-						"type": "text"
-					},
-					"start": {
-						"value": "2026-01-01",
-						"type": "date"
-					},
-					"targetDate": {
-						"value": "2041-04-30",
-						"type": "date"
-					},
-					"targetAmount": {
-						"value": 1700000,
-						"type": "currency"
-					},
-					"currentAmount": {
-						"value": 20000,
-						"type": "currency"
-					},
-					"gap": {
-						"value": "",
-						"type": "currency"
-					},
-					"notes": {
-						"value": "Dovolená pro 2 osoby",
-						"type": "text"
-					}
+					"currency": "CZK",
+					"value": 25,
+					"title": "Derivaty",
+					"status": "warning"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Kryptomeny",
+					"status": "danger"
 				}
 			]
 		},
-		"solutions": {
-			"labels": [
-				"Krátkodobé",
-				"Střednědobé",
-				"Dlouhodobé",
-				"Rezerva",
-				"Vysoká priorita",
-				"Volitelné",
-				"Cestování"
-			],
-			"charts": [],
-			"computed": {
-				"fx": "goalsWishesSummary"
-			},
-			"header": [
-				{
-					"key": "name",
-					"label": "Název",
-					"type": "text"
-				},
-				{
-					"key": "start",
-					"label": "Počátek",
-					"type": "date"
-				},
-				{
-					"key": "targetDate",
-					"label": "Cílové datum",
-					"type": "date"
-				},
-				{
-					"key": "invested",
-					"label": "Investice",
-					"type": "currency"
-				},
-				{
-					"key": "frequency",
-					"label": "Frekvence",
-					"type": "text"
-				},
-				{
-					"key": "interest",
-					"label": "Úrok",
-					"type": "percent"
-				},
-				{
-					"key": "notes",
-					"label": "Poznámka",
-					"type": "text"
-				}
-			],
-			"title": "Finanční plán",
+		"estate": {
+			"currency": "CZK",
+			"value": 25,
 			"rows": [
 				{
-					"history": {},
-					"labels": [
-						"krátkodobé",
-						"rezerva",
-						"vysoká priorita"
-					],
-					"name": {
-						"value": "Fondy - ETF",
-						"type": "text"
-					},
-					"start": {
-						"value": "2026-01-01",
-						"type": "date"
-					},
-					"targetDate": {
-						"value": "2050-12-31",
-						"type": "date"
-					},
-					"invested": {
-						"value": 5000,
-						"type": "currency"
-					},
-					"frequency": {
-						"value": "Pravidelně",
-						"type": "text"
-					},
-					"interest": {
-						"value": 7,
-						"type": "percent"
-					},
-					"notes": {
-						"value": "",
-						"type": "text"
-					}
+					"currency": "CZK",
+					"value": 25,
+					"title": "Vlastni bydleni",
+					"status": "success"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Hypoteka",
+					"status": "warning"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Investiccni nemovitost",
+					"status": "danger"
+				}
+			]
+		},
+		"properties": {
+			"currency": "CZK",
+			"value": -25,
+			"rows": [
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Vlastni bydleni",
+					"status": "success"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Hypoteka",
+					"status": "warning"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Investiccni nemovitost",
+					"status": "danger"
 				}
 			]
 		}
 	},
 	"property": {
-		"property_active": {
-			"labels": [
-				"Krátkodobé",
-				"Střednědobé",
-				"Dlouhodobé",
-				"Nízká likvidita",
-				"Střední likvidita",
-				"Vysoká likvidita",
-				"Cenné papíry",
-				"Nemovitosti",
-				"Komodity",
-				"Pravidelné investice"
-			],
-			"charts": [],
-			"computed": {
-				"fx": "propertyActiveSummary"
-			},
-			"header": [
-				{
-					"key": "name",
-					"label": "Položka",
-					"type": "text"
-				},
-				{
-					"key": "start",
-					"label": "Počátek",
-					"type": "text"
-				},
-				{
-					"key": "end",
-					"label": "Konec",
-					"type": "text"
-				},
-				{
-					"key": "invested",
-					"label": "Investovaná částka",
-					"type": "currency",
-					"editable": "false"
-				},
-				{
-					"key": "aum",
-					"label": "Aktuální hodnota",
-					"type": "currency",
-					"editable": "false"
-				},
-				{
-					"key": "yieldAnnually",
-					"label": "Roční výnos",
-					"type": "percent"
-				},
-				{
-					"key": "yieldTotal",
-					"label": "Celkový výnos",
-					"type": "percent"
-				}
-			],
-			"title": "Aktiva",
+		"estate": {
 			"rows": [
 				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Vlastni bydleni",
+					"status": "success",
+					"note": "Brno, Jugoslavska 1 5 - 8,5 % p.a.",
+					"description": "2+1, 50 m2, 3. patro bez výtahu",
 					"labels": [
-						"střednědobé",
-						"nízká likvidita",
-						"nemovitosti"
-					],
-					"name": {
-						"value": "Cenné papíry",
-						"type": "text"
-					},
-					"start": {
-						"value": "10/2020",
-						"type": "text"
-					},
-					"end": {
-						"value": "12/2024",
-						"type": "text"
-					},
-					"invested": {
-						"value": 5000,
-						"type": "text"
-					},
-					"aum": {
-						"value": "4500",
-						"type": "text"
-					},
-					"yieldAnnually": {
-						"value": "4.5",
-						"type": "text"
-					},
-					"yieldTotal": {
-						"value": "5.0",
-						"type": "text"
-					}
+						"Investicni nemovitost",
+						"Aktiva",
+						"Strednedoby"
+					]
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Hypoteka",
+					"status": "warning",
+					"note": "Komercni banka 3,5 % p.a.",
+					"description": "od 15.8.2020 do 15.8.2030",
+					"labels": [
+						"Hypoteka",
+						"Pasiva",
+						"Dlouhodoby"
+					]
 				}
 			]
 		},
-		"property_pasive": {
-			"labels": [],
-			"chartIds": [
-				"chart-property-pasive"
-			],
-			"header": [
-				{
-					"key": "name",
-					"label": "Položka",
-					"type": "text"
-				},
-				{
-					"key": "start",
-					"label": "Počátek",
-					"type": "text"
-				},
-				{
-					"key": "fixation",
-					"label": "Fixace",
-					"type": "text"
-				},
-				{
-					"key": "end",
-					"label": "Konec",
-					"type": "text"
-				},
-				{
-					"key": "invested",
-					"label": "Výše závazku",
-					"type": "currency"
-				},
-				{
-					"key": "paid",
-					"label": "Splaceno",
-					"type": "percent"
-				},
-				{
-					"key": "aum",
-					"label": "Zbývá umořit",
-					"type": "currency"
-				},
-				{
-					"key": "yield",
-					"label": "Úrok",
-					"type": "percent"
-				}
-			],
-			"title": "Pasiva",
+		"active": {
 			"rows": [
 				{
-					"name": {
-						"value": "Hypoteční úvěr",
-						"type": "text"
-					},
-					"start": {
-						"value": "Červen 2018",
-						"type": "text"
-					},
-					"fixation": {
-						"value": "Červen 2022",
-						"type": "text"
-					},
-					"end": {
-						"value": "Červen 2028",
-						"type": "text"
-					},
-					"invested": {
-						"value": 6500000,
-						"type": "currency"
-					},
-					"paid": {
-						"value": 15.29,
-						"type": "percent"
-					},
-					"aum": {
-						"value": 5200000,
-						"type": "currency"
-					},
-					"yield": {
-						"value": 5.4,
-						"type": "percent"
-					}
+					"currency": "CZK",
+					"value": 25,
+					"title": "Hotovost",
+					"status": "success",
+					"note": "Ucet v CSOB, 0,01 % p.a.",
+					"description": "Nejvetsi cast ma byt v hotovosti pro necekane vydaje",
+					"labels": [
+						"Hotovost",
+						"Aktiva",
+						"Kratkodoby"
+					]
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Derivaty",
+					"status": "warning",
+					"note": "Opce na akcie, 20 % p.a.",
+					"description": "Vysoka rizikovost, ale i potencialni zisk",
+					"labels": [
+						"Derivaty",
+						"Aktiva",
+						"Kratkodoby"
+					]
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Kryptomeny",
+					"status": "danger",
+					"note": "Bitcoin, 100 % p.a.",
+					"description": "Velka volatilita, ale i potencialni zisk",
+					"labels": [
+						"Kryptomeny",
+						"Aktiva",
+						"Kratkodoby"
+					]
 				}
 			]
 		},
-		"property_summary": {
-			"total_active": {
-				"value": 4500,
-				"type": "currency"
+		"properties": {
+			"rows": [
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "BMW 320i",
+					"status": "success",
+					"note": "Auto 5 - 8,5 % p.a.",
+					"description": "Rok 2015, najeto 100 000 km, bez nehody",
+					"labels": [
+						"Auta & stroje",
+						"Aktiva",
+						"Dlouhodoby"
+					]
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Moneta a.s.",
+					"status": "warning",
+					"note": "Spotrebitelsky uver 5 - 8,5 % p.a.",
+					"description": "od 15.8.2020 do 15.8.2030",
+					"labels": [
+						"Uver",
+						"Pasiva",
+						"Dlouhodoby"
+					]
+				}
+			]
+		},
+		"bilance": {
+			"active": {
+				"currency": "CZK",
+				"value": 25,
+				"title": "Aktiva",
+				"yeld": {
+					"title": "Ziskovost aktiv",
+					"percent": 7.67
+				}
 			},
-			"total_pasive": {
-				"value": 5200000,
-				"type": "currency"
+			"pasive": {
+				"currency": "CZK",
+				"value": 25,
+				"title": "Pasiva",
+				"yeld": {
+					"title": "Nakladovost pasiv",
+					"percent": 4.5
+				}
 			},
-			"total": {
-				"value": -5195500,
-				"type": "currency"
+			"netto": {
+				"currency": "CZK",
+				"value": 25,
+				"title": "Cisty majetek"
+			},
+			"footer": {
+				"percent": 3.17,
+				"status": "success"
 			}
-		}
-	},
-	"health": {
-		"health_client": {
-			"labels": [],
-			"header": [
-				{
-					"key": "age",
-					"label": "Věk",
-					"type": "number"
-				},
-				{
-					"key": "dependents",
-					"label": "Závislé osoby",
-					"type": "number"
-				},
-				{
-					"key": "monthly_income",
-					"label": "Příjem",
-					"type": "currency"
-				},
-				{
-					"key": "monthly_expenses",
-					"label": "Výdaje",
-					"type": "currency"
-				},
-				{
-					"key": "monthly_buffer",
-					"label": "Měsíční zůstatek",
-					"type": "currency"
-				},
-				{
-					"key": "mortgage_outstanding",
-					"label": "Závazky",
-					"type": "currency"
-				},
-				{
-					"key": "short_term_status",
-					"label": "Stav neschopnosti",
-					"type": "text"
-				},
-				{
-					"key": "sick_leave_pay",
-					"label": "Nemocenská",
-					"type": "currency"
-				},
-				{
-					"key": "short_term_gap",
-					"label": "Chybí měsíčně",
-					"type": "currency"
-				},
-				{
-					"key": "reserve_survival",
-					"label": "Výdrž rezervy",
-					"type": "text"
-				},
-				{
-					"key": "invalidity_1_gap",
-					"label": "Inv. I stupeň chybí",
-					"type": "currency"
-				},
-				{
-					"key": "invalidity_2_gap",
-					"label": "Inv. II stupeň chybí",
-					"type": "currency"
-				},
-				{
-					"key": "invalidity_3_insurance",
-					"label": "Inv. III stupeň pojistka",
-					"type": "currency"
-				},
-				{
-					"key": "death_mortgage",
-					"label": "Závazek Hypotéka",
-					"type": "currency"
-				},
-				{
-					"key": "death_loans",
-					"label": "Závazek Úvěry",
-					"type": "currency"
-				},
-				{
-					"key": "death_insurance_total",
-					"label": "Pojistné krytí smrti",
-					"type": "currency"
-				},
-				{
-					"key": "death_surplus",
-					"label": "Přesah krytí",
-					"type": "currency"
-				}
-			],
+		},
+		"horizon": {
 			"rows": [
 				{
-					"age": {
-						"value": 45,
-						"type": "number"
-					},
-					"dependents": {
-						"value": 2,
-						"type": "number"
-					},
-					"monthly_income": {
-						"value": 60000,
-						"type": "currency"
-					},
-					"monthly_expenses": {
-						"value": 45000,
-						"type": "currency"
-					},
-					"monthly_buffer": {
-						"value": 15000,
-						"type": "currency"
-					},
-					"mortgage_outstanding": {
-						"value": 5000000,
-						"type": "currency"
-					},
-					"short_term_status": {
-						"value": "Nedostatečné",
-						"type": "text"
-					},
-					"sick_leave_pay": {
-						"value": 8000,
-						"type": "currency"
-					},
-					"short_term_gap": {
-						"value": -15000,
-						"type": "currency"
-					},
-					"reserve_survival": {
-						"value": "3,24 měsíce",
-						"type": "text"
-					},
-					"invalidity_1_gap": {
-						"value": -2000,
-						"type": "currency"
-					},
-					"invalidity_2_gap": {
-						"value": -7000,
-						"type": "currency"
-					},
-					"invalidity_3_insurance": {
-						"value": 1500000,
-						"type": "currency"
-					},
-					"death_mortgage": {
-						"value": -3000000,
-						"type": "currency"
-					},
-					"death_loans": {
-						"value": -180000,
-						"type": "currency"
-					},
-					"death_insurance_total": {
-						"value": 4020000,
-						"type": "currency"
-					},
-					"death_surplus": {
-						"value": 350000,
-						"type": "currency"
-					}
+					"currency": "CZK",
+					"value": 25,
+					"title": "Kratkodoby",
+					"status": "success"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Strednedoby",
+					"status": "warning"
+				},
+				{
+					"currency": "CZK",
+					"value": 25,
+					"title": "Dlouhodoby",
+					"status": "danger"
 				}
 			]
 		},
-		"mortgage_capacity": {
-			"title": "Úvěrová kapacita a bonita",
-			"indicators": {
-				"dti": {
-					"label": "DTI - Předluženost",
-					"value": 6.2,
-					"max": 8,
-					"desc": "Nebudu předlužený?"
-				},
-				"dsti": {
-					"label": "DSTI - Splácení",
-					"value": 28,
-					"max": 45,
-					"desc": "Zvládnu splácet?"
-				},
-				"ltv": {
-					"label": "LTV - Zástavní prostor",
-					"value": 10,
-					"max": 80,
-					"desc": "Vlastní zdroje vs. úvěr"
-				}
-			},
-			"capital_table": [
+		"active_pasive": {
+			"rows": [
 				{
-					"label": "Vlastní úspory",
-					"value": {
-						"value": 450000,
-						"type": "currency"
-					}
+					"currency": "CZK",
+					"value": 25,
+					"title": "Kratkodoby",
+					"status": "success"
 				},
 				{
-					"label": "Dostupná bonita z Nemovitost 1",
-					"value": {
-						"value": 900000,
-						"type": "currency"
-					}
-				},
-				{
-					"label": "Dostupná bonita z Nemovitost 2",
-					"value": {
-						"value": 2000000,
-						"type": "currency"
-					}
-				},
-				{
-					"label": "Vlastní zdroje (20%)",
-					"value": {
-						"value": 350000,
-						"type": "currency"
-					}
-				},
-				{
-					"label": "Maximální výše úvěru",
-					"value": {
-						"value": 16750000,
-						"type": "currency"
-					}
+					"currency": "CZK",
+					"value": 25,
+					"title": "Dlouhodoby",
+					"status": "warning"
 				}
 			]
 		},
-		"protection": {
-			"title": "Chraňte svůj majetek a své příjmy",
-			"items": [
+		"liquidity": {
+			"rows": [
 				{
-					"name": "BMW x320d",
-					"value": 450000,
-					"date_to": "20.12.2025",
-					"badges": [
-						"POV",
-						"HAV",
-						"Asistence"
-					]
+					"currency": "CZK",
+					"value": 25,
+					"title": "Vysoka",
+					"status": "success"
 				},
 				{
-					"name": "Byt 3+1, Jugoslávská",
-					"value": 2450000,
-					"date_to": "20.12.2025",
-					"badges": [
-						"Nemovitost",
-						"Domácnost"
-					]
-				}
-			]
-		},
-		"dreams": {
-			"title": "A teď společně naplníme vaše sny!",
-			"goals": [
-				{
-					"name": "Koupit nové auto",
-					"amount": 400000,
-					"deadline": "14.05.2025",
-					"priority": "Střední priorita",
-					"type": "Krátkodobý cíl",
-					"monthly": 33769
+					"currency": "CZK",
+					"value": 25,
+					"title": "Stredni",
+					"status": "warning"
 				},
 				{
-					"name": "Cesta kolem světa",
-					"amount": 280000,
-					"deadline": "14.05.2025",
-					"priority": "Nízká priorita",
-					"type": "Střednědobý cíl",
-					"monthly": 15500
-				},
-				{
-					"name": "Renta",
-					"amount": 50000,
-					"deadline": "2055-08-15",
-					"priority": "Vysoká",
-					"type": "Dlouhodobý cíl"
-				}
-			]
-		},
-		"investment_plan": {
-			"monthly_savings": 5000,
-			"expected_yield": 7.54,
-			"timeline": [
-				{
-					"amount": 450000,
-					"company": "INVESTIKA a.s.",
-					"period": "od 15. 8. 2024 do 15. 8. 2034",
-					"fund_name": "Otevřený podílový fond NEMO",
-					"yield_range": "5 – 8,5 % p.a.",
-					"target_type": "Dlouhodobý cíl",
-					"action": "Výběr a reinvestice 450 000 Kč ze stavebního spoření"
-				},
-				{
-					"amount": 5000,
-					"is_monthly": true,
-					"company": "EFEKTA o.c.p.",
-					"period": "od 15. 8. 2024 do 15. 8. 2034",
-					"fund_name": "CREIF nemovitostní investiční fond",
-					"yield_range": "5 – 8,5 % p.a.",
-					"target_type": "Krátkodobý cíl",
-					"action": "Pravidelná investice"
-				},
-				{
-					"amount": 5000000,
-					"company": "Realitní projekt",
-					"period": "od 15. 8. 2024 do 15. 8. 2034",
-					"fund_name": "Palackého třída 15, 3+1",
-					"yield_range": "5 – 8,5 % p.a.",
-					"target_type": "Dlouhodobý cíl",
-					"action": "Prodej bytu"
+					"currency": "CZK",
+					"value": 25,
+					"title": "Nizka",
+					"status": "danger"
 				}
 			]
 		}
