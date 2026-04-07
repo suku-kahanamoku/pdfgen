@@ -32,30 +32,66 @@
         $p3rows  = $property[$p3sec['key']]['rows'] ?? [];
         $p3total = array_sum(array_column($p3rows, 'value'));
         if ($p3total <= 0) $p3total = 1;
+        $p3chartData   = [];
+        $p3chartColors = [];
+        foreach ($p3rows as $r) {
+            $p3chartData[]   = (float)($r['value'] ?? 0);
+            $p3chartColors[] = $p3StatusColor[$r['status'] ?? 'success'] ?? '#2ecc71';
+        }
+        $p3chartId = 'chart-p3-' . $p3sec['key'];
     ?>
         <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-4">
-            <div class="flex flex-col gap-1.5">
+            <div class="flex flex-col gap-1">
                 <div class="font-lora text-[#927355] text-lg"><?= htmlspecialchars($p3sec['title']) ?></div>
-                <div class="text-[#777] leading-relaxed"><?= htmlspecialchars($p3sec['desc']) ?></div>
+                <div class="text-[#777] text-sm leading-relaxed"><?= htmlspecialchars($p3sec['desc']) ?></div>
             </div>
-            <div class="flex flex-col gap-6">
-                <?php foreach ($p3rows as $p3row):
-                    $p3val = (float)($p3row['value'] ?? 0);
-                    $p3pct = round($p3val / $p3total * 100);
-                    $p3clr = $p3StatusColor[$p3row['status'] ?? 'success'] ?? '#2ecc71';
-                ?>
-                    <div class="flex flex-col gap-1">
-                        <div class="flex justify-between text-xs">
-                            <span><?= htmlspecialchars($p3row['title'] ?? '') ?> (<?= format_czk($p3val) ?> <?= $cur ?>)</span>
-                            <span class="font-bold"><?= $p3pct ?>%</span>
+            <div class="flex gap-6 items-center">
+                <!-- Rows as colored label badges -->
+                <div class="flex-1 flex flex-col gap-3">
+                    <?php foreach ($p3rows as $p3row):
+                        $p3val = (float)($p3row['value'] ?? 0);
+                        $p3pct = round($p3val / $p3total * 100);
+                        $p3clr = $p3StatusColor[$p3row['status'] ?? 'success'] ?? '#2ecc71';
+                    ?>
+                        <div class="flex justify-between items-center px-3 py-2 rounded-lg border text-sm"
+                            style="color: <?= $p3clr ?>; border-color: <?= $p3clr ?>; background: <?= $p3clr ?>18;">
+                            <span class="font-semibold"><?= htmlspecialchars($p3row['title'] ?? '') ?></span>
+                            <span><?= format_czk($p3val) ?> <?= $cur ?></span>
                         </div>
-                        <div class="bg-[#f3f3f3] h-2.5 rounded-full overflow-hidden">
-                            <div class="h-full rounded-full" style="width: <?= $p3pct ?>%; background: <?= $p3clr ?>;"></div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </div>
+                <!-- Donut chart -->
+                <div style="width:110px; height:110px; position:relative; flex-shrink:0;">
+                    <canvas id="<?= $p3chartId ?>"></canvas>
+                </div>
             </div>
         </div>
+        <script>
+            new Chart(document.getElementById('<?= $p3chartId ?>'), {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [<?= implode(',', $p3chartData) ?>],
+                        backgroundColor: [<?= implode(',', array_map(fn($c) => "'$c'", $p3chartColors)) ?>],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    animation: false,
+                    cutout: '70%',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: false
+                        }
+                    }
+                }
+            });
+        </script>
     <?php endforeach; ?>
 
     <!-- Diverzifikace box -->
