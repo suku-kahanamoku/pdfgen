@@ -6,21 +6,31 @@ require 'vendor/autoload.php';
 
 use Spatie\Browsershot\Browsershot;
 
-// 1) Raw JSON body (Content-Type: application/json)d
+// 1) POST or GET field named 'data'
 $inputData = null;
-$rawInput = file_get_contents('php://input');
-if (!empty($rawInput)) {
-    $decoded = json_decode($rawInput, true);
+if (!empty($_REQUEST['data'])) {
+    $decoded = json_decode($_REQUEST['data'], true);
     if (json_last_error() === JSON_ERROR_NONE) {
         $inputData = $decoded;
     }
 }
 
-// 2) POST or GET field named 'data'
-if ($inputData === null && !empty($_REQUEST['data'])) {
-    $decoded = json_decode($_REQUEST['data'], true);
-    if (json_last_error() === JSON_ERROR_NONE) {
-        $inputData = $decoded;
+// 2) Raw JSON body (Content-Type: application/json)
+if ($inputData === null) {
+    $rawInput = file_get_contents('php://input');
+    if (!empty($rawInput)) {
+        $decoded = json_decode($rawInput, true);
+        if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
+            // Unwrap {"data": "json_string"} or {"data": {...}}
+            if (isset($decoded['data']) && !isset($decoded['property'])) {
+                $inner = is_string($decoded['data']) ? json_decode($decoded['data'], true) : $decoded['data'];
+                if (json_last_error() === JSON_ERROR_NONE && is_array($inner)) {
+                    $inputData = $inner;
+                }
+            } else {
+                $inputData = $decoded;
+            }
+        }
     }
 }
 
@@ -66,7 +76,7 @@ ob_start();
 $html = ob_get_clean();
 try {
     $pdfContent = Browsershot::html($html)
-        #->setChromePath('/usr/bin/google-chrome')
+        ->setChromePath('/usr/bin/google-chrome')
         ->showBackground()
         ->format('A4')
         ->margins(20, 20, 20, 20)
