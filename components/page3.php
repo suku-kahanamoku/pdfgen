@@ -13,17 +13,17 @@
         [
             'key'   => 'horizon',
             'title' => 'Investiční horizont',
-            'desc'  => 'Rozložení majetku podle délky investičního horizontu – krátkodobé, střednědobé a dlouhodobé.',
+            'desc'  => 'Investiční horizont vyjadřuje, na jak dlouhou dobu jsou vaše prostředky vázány a kdy očekáváte jejich využití. Krátkodobé investice poskytují rychlou likviditu, ale nižší výnosy. Střednědobé umožňují větší zhodnocení při přijatelném riziku. Dlouhodobé investice mají potenciál nejvyšších výnosů díky složenému úroku a schopnosti překonat tržní výkyvy.',
         ],
         [
             'key'   => 'active_pasive',
             'title' => 'Aktiva a pasiva',
-            'desc'  => 'Poměr aktiv a pasiv v portfoliu ukazuje míru zadlužení vůči celkovému majetku.',
+            'desc'  => 'Poměr aktiv a pasiv je jedním z klíčových ukazatelů finanční kondice. Aktiva představují vše, co vlastníte a co má hodnotu – nemovitosti, investice, hotovost. Pasiva jsou vaše závazky – hypotéky, úvěry, leasingy. Zdravá bilance znamená, že aktiva výrazně převyšují pasiva, což zajišťuje finanční stabilitu a odolnost vůči neočekávaným událostem.',
         ],
         [
             'key'   => 'liquidity',
             'title' => 'Likvidita',
-            'desc'  => 'Přehled likvidity majetku – jak rychle lze jednotlivé složky převést na hotovost.',
+            'desc'  => 'Likvidita měří, jak rychle a bez ztráty hodnoty lze jednotlivé složky majetku převést na hotovost. Vysoce likvidní aktiva jako bankovní účty či obchodovatelné cenné papíry jsou dostupná okamžitě. Nemovitosti nebo soukromé investice mají nízkou likviditu – jejich prodej trvá déle a může vyžadovat slevu z ceny. Vyvážená likvidita portfolia je zárukou finanční flexibility.',
         ],
     ];
     ?>
@@ -42,7 +42,7 @@
     ?>
         <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
             <div class="font-lora text-4xl font-semibold"><?= htmlspecialchars($p3sec['title']) ?></div>
-            <div class="flex gap-8 items-start">
+            <div class="flex gap-8 items-center">
                 <div class="flex-1 flex flex-col gap-8">
                     <div class="text-[#666] leading-relaxed"><?= htmlspecialchars($p3sec['desc']) ?></div>
                     <!-- Rows as colored label badges -->
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <!-- Donut chart -->
-                <div style="width:140px; height:140px; position:relative; flex-shrink:0;">
+                <div style="width:180px; height:180px; position:relative; flex-shrink:0;">
                     <canvas id="<?= $p3chartId ?>"></canvas>
                 </div>
             </div>
@@ -100,13 +100,13 @@
     $p3total_pct = (int)($p3netto['total'] ?? 0);
     ?>
     <div class="flex items-center gap-8">
-        <div class="bg-[#936746] text-white rounded-3xl px-8 py-6 flex items-center gap-8 flex-1">
+        <div class="bg-[#936746] text-white rounded-3xl px-6 py-4 flex items-center gap-6 flex-1">
             <div class="text-5xl font-bold font-lora flex-shrink-0"><?= $p3total_pct ?>%</div>
-            <div class="flex flex-col gap-2 flex-1">
+            <div class="flex flex-col gap-1 flex-1">
                 <div class="text-lg font-bold">Diverzifikace portfolia</div>
                 <div class="opacity-90 leading-relaxed">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
             </div>
         </div>
-        <i class="fa-solid fa-trophy text-[#BD8D66] text-7xl flex-shrink-0 w-44 text-right"></i>
+        <i class="fa-solid fa-trophy text-[#BD8D66] text-7xl flex-shrink-0 w-48 text-right"></i>
     </div>
 </div>
