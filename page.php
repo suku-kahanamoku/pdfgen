@@ -6,15 +6,22 @@ $dataRaw = $GLOBALS['pdfData'];
 $bilance       = $dataRaw['property']['bilance'] ?? [];
 $total_active  = (float)($bilance['active']['value'] ?? 0);
 $total_pasive  = (float)($bilance['pasive']['value'] ?? 0);
-$cisty_majetek = (float)($bilance['netto']['value'] ?? 0);
 
-$ratio_active = ($total_active > 0) ? round(($total_active / ($total_active + abs($total_pasive))) * 100) : 0;
-$ratio_pasive = 100 - $ratio_active;
-
+$summary       = $dataRaw['summary'] ?? [];
+$cisty_majetek = (float)($summary['netto']['value'] ?? 0);
 $cisty_majetek_color = ($cisty_majetek >= 0) ? '#927355' : '#e74c3c';
 
 $curMap = ['CZK' => 'Kč', 'EUR' => '€', 'USD' => '$'];
-$cur    = $curMap[$bilance['active']['currency'] ?? 'CZK'] ?? 'Kč';
+$cur    = $curMap[$summary['netto']['currency'] ?? $bilance['active']['currency'] ?? 'CZK'] ?? 'Kč';
+
+// Donut segments from summary (positive values only)
+$donut_active     = max(0, (float)($summary['active']['value']     ?? 0));
+$donut_estate     = max(0, (float)($summary['estate']['value']     ?? 0));
+$donut_properties = max(0, (float)($summary['properties']['value'] ?? 0));
+$donut_total      = $donut_active + $donut_estate + $donut_properties;
+$donut_pct_active     = $donut_total > 0 ? round($donut_active     / $donut_total * 100) : 0;
+$donut_pct_estate     = $donut_total > 0 ? round($donut_estate     / $donut_total * 100) : 0;
+$donut_pct_properties = $donut_total > 0 ? (100 - $donut_pct_active - $donut_pct_estate) : 0;
 
 $property = $dataRaw['property'] ?? [];
 ?>

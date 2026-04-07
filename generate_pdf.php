@@ -59,6 +59,9 @@ ob_start();
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 
     <style>
+        html {
+            font-size: 12px;
+        }
         body {
             margin: 0;
             padding: 0;

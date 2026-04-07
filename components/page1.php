@@ -1,7 +1,7 @@
 <!-- ============================================================ -->
 <!-- PAGE 1 – Přehled majetku                                     -->
 <!-- ============================================================ -->
-<div class="w-full px-6 py-4 box-border bg-white [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16">
+<div class="w-full px-3 py-2 box-border bg-white [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16">
     <div class="flex justify-between items-start gap-12">
         <div class="flex-1 flex flex-col gap-6">
             <h1 class="font-lora text-5xl font-semibold leading-[1.1] m-0">
@@ -16,8 +16,8 @@
                 finanční cíle.
             </p>
         </div>
-        <div class="w-80 text-center flex flex-col items-center flex-shrink-0 gap-8">
-            <div class="w-48 h-48 flex-shrink-0">
+        <div class="w-80 text-center flex flex-col items-center flex-shrink-0 gap-8 self-center">
+            <div class="w-36 h-36 flex-shrink-0">
                 <canvas id="chart-donut-p1" width="140" height="140"></canvas>
             </div>
             <script>
@@ -25,8 +25,8 @@
                     type: 'doughnut',
                     data: {
                         datasets: [{
-                            data: [<?= $ratio_active ?>, <?= $ratio_pasive ?>],
-                            backgroundColor: ['#927355', '#eeeeee'],
+                            data: [<?= $donut_pct_active ?>, <?= $donut_pct_estate ?>, <?= $donut_pct_properties ?>],
+                            backgroundColor: ['#927355', '#b89a7a', '#eeeeee'],
                             borderWidth: 0
                         }]
                     },
@@ -103,7 +103,7 @@
                         $iconClr = $statusIconMap[$status]['clr'] ?? '#2ecc71';
                     ?>
                         <div class="bg-white border border-[#f0f0f0] p-3 rounded-xl flex items-center gap-4 [page-break-inside:avoid] [break-inside:avoid]">
-                            <div class="rounded-full w-6 h-6 flex justify-center items-center text-xs flex-shrink-0 border"
+                            <div class="rounded-full w-6 h-6 flex justify-center items-center flex-shrink-0 border"
                                 style="color: <?= $iconClr ?>; border-color: <?= $iconClr ?>;">
                                 <i class="<?= $iconCls ?>"></i>
                             </div>

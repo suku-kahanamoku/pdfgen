@@ -1,7 +1,7 @@
 <!-- ============================================================ -->
 <!-- PAGE 3 – Analýza portfolia                                   -->
 <!-- ============================================================ -->
-<div class="w-full min-h-[257mm] px-6 py-4 box-border bg-white [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16">
+<div class="w-full min-h-[257mm] px-3 py-2 box-border bg-white [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16">
     <?php
     $p3StatusColor = [
         'success' => '#2ecc71',
