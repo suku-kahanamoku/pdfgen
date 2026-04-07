@@ -1,12 +1,6 @@
 {
 	"target": {
 		"targets": {
-			"title": "Finanční cíle a přání",
-			"progress_labels": {
-				"saved": "Naspořeno",
-				"goal": "Cíl"
-			},
-			"text": "Jasné a měřitelné cíle jsou základem úspěšného finančního plánování. Vedou nás k disciplinovanému spořením a investování. Ať jsou vaše cíle krátkodobé jako dovolená nebo dlouhodobé jako penzijní zabezpečení, důležité je je pravidelně sledovat a přizpůsobovat se měnícím se podmínkám.",
 			"labels": [
 				"Krátkodobé",
 				"Střednědobé",
@@ -58,6 +52,7 @@
 					"type": "text"
 				}
 			],
+			"title": "Finanční cíle a přání",
 			"rows": [
 				{
 					"labels": [
@@ -132,17 +127,6 @@
 			]
 		},
 		"solutions": {
-			"title": "Finanční plán",
-			"progress_labels": {
-				"start": "Začátek",
-				"target_date": "Cílové datum",
-				"elapsed": "doby uplynulo"
-			},
-			"tip": {
-				"title": "Pravidelné investování buduje bohatství",
-				"text": "Díky složenému úročení a pravidelným vkladům roste hodnota vašeho portfolia exponenciálně. Klíčem je konzistentnost a dlouhý investiční horizont."
-			},
-			"text": "Chytrý finanční plán kombinuje spořením s investováním. Volba správné strategie a diverzifikace portfolia zvyšuje šance na dosažení dlouhodobého finančního cíle. Začněte volit stabilní základy a postupně budujte na nich.",
 			"labels": [
 				"Krátkodobé",
 				"Střednědobé",
@@ -193,6 +177,7 @@
 					"type": "text"
 				}
 			],
+			"title": "Finanční plán",
 			"rows": [
 				{
 					"history": {},
@@ -235,12 +220,6 @@
 	},
 	"property": {
 		"property_active": {
-			"title": "Aktiva",
-			"progress_labels": {
-				"left": "Investováno",
-				"right": "Aktuální hodnota"
-			},
-			"text": "Aktivní část majetku představuje vaši investiční a spořící sílu. Správná diverzifikace mezi různé třídy aktiv snižuje rizko a zlepšuje dlouhodobou výnosnost. Sledujte vyvážení portfolia a přizpůsobujte ho svému věku a cílům.",
 			"labels": [
 				"Krátkodobé",
 				"Střednědobé",
@@ -296,6 +275,7 @@
 					"type": "percent"
 				}
 			],
+			"title": "Aktiva",
 			"rows": [
 				{
 					"labels": [
@@ -335,12 +315,6 @@
 			]
 		},
 		"property_pasive": {
-			"title": "Pasiva",
-			"progress_labels": {
-				"left": "Splaceno",
-				"right": "Zbývá umořit"
-			},
-			"text": "Dluh a závazky jsou běžnou součástí finančního života. Důležité je je řídit odpovědně a snažit se snižovat jejich hrubý objem. Sledování splátek a úrokových sazeb vám pomůže ušetřit tisíce korun.",
 			"labels": [],
 			"chartIds": [
 				"chart-property-pasive"
@@ -387,6 +361,7 @@
 					"type": "percent"
 				}
 			],
+			"title": "Pasiva",
 			"rows": [
 				{
 					"name": {
@@ -425,13 +400,6 @@
 			]
 		},
 		"property_summary": {
-			"title": "Bilance majetku",
-			"text": "Bilance majetku ukazuje váš celkový finanční stav. Je klíčové znát rozdíl mezi aktivy a pasivy, abyste chápali svou finanční pozici. Zdravý čistý majetek je základem dlouhodobé finanční bezpečnosti.",
-			"labels": [
-				"Aktiva",
-				"Pasiva",
-				"Čistý majetek"
-			],
 			"total_active": {
 				"value": 4500,
 				"type": "currency"
@@ -443,27 +411,11 @@
 			"total": {
 				"value": -5195500,
 				"type": "currency"
-			},
-			"asset_profitability": {
-				"value": 12,
-				"type": "percent"
-			},
-			"liability_cost": {
-				"value": 23,
-				"type": "percent"
 			}
 		}
 	},
 	"health": {
 		"health_client": {
-			"title": "Profil klienta",
-			"text": "Diverzifikace příjmů, například prostřednictvím vedlejších příjmů nebo investic, může zvýšit naši finanční bezpečnost. Když přemýšlíme o budoucnosti a strategicky investujeme, zajišťujeme si lepší životní úroveň a klidnou mysl. Důležité je také udržovat si přehled o svých příjmech a pravidelně přehodnocovat své finanční cíle. Tím můžeme efektivně plánovat a přizpůsobovat se měnícím se podmínkám.",
-			"kpi_labels": {
-				"monthly_income": "Měsíční příjem",
-				"monthly_expenses": "Měsíční výdaje",
-				"monthly_balance": "Měsíční zůstatek",
-				"total": "Čistý majetek"
-			},
 			"labels": [],
 			"header": [
 				{
@@ -495,8 +447,63 @@
 					"key": "mortgage_outstanding",
 					"label": "Závazky",
 					"type": "currency"
-				}
-			],
+				},
+				{ 
+				"key": "short_term_status",
+				"label": "Stav neschopnosti",
+				"type": "text" 
+				},
+          		{
+				"key": "sick_leave_pay",
+				"label": "Nemocenská",
+				"type": "currency"
+				},
+            	{ 
+				"key": "short_term_gap",
+				"label": "Chybí měsíčně",
+				"type": "currency" 
+				},
+            	{ 
+				"key": "reserve_survival",
+				"label": "Výdrž rezervy",
+				"type": "text" 
+				},
+            	{
+				"key": "invalidity_1_gap",
+				"label": "Inv. I stupeň chybí",
+				"type": "currency" 
+				},
+            	{ 
+				"key": "invalidity_2_gap",
+				"label": "Inv. II stupeň chybí",
+				"type": "currency" 
+				},
+            	{ 
+				"key": "invalidity_3_insurance",
+				"label": "Inv. III stupeň pojistka",
+				"type": "currency" 
+				},
+            	{
+                "key": "death_mortgage",
+                "label": "Závazek Hypotéka",
+                "type": "currency"
+           		},
+            	{
+                "key": "death_loans",
+                "label": "Závazek Úvěry",
+                "type": "currency"
+            	},
+            	{
+                "key": "death_insurance_total",
+                "label": "Pojistné krytí smrti",
+                "type": "currency"
+            	},
+            	{
+                "key": "death_surplus",
+                "label": "Přesah krytí",
+                "type": "currency"
+            	}
+        	],
 			"rows": [
 				{
 					"age": {
@@ -522,9 +529,148 @@
 					"mortgage_outstanding": {
 						"value": 5000000,
 						"type": "currency"
-					}
-				}
+					},
+					"short_term_status": {
+						"value": "Nedostatečné", 
+						"type": "text" 
+					},
+                	"sick_leave_pay": { 
+						"value": 8000, 
+						"type": "currency" 
+					},
+                	"short_term_gap": { 
+						"value": -15000, 
+						"type": "currency" 
+					},
+                	"reserve_survival": { 
+						"value": "3,24 měsíce", 
+						"type": "text" 
+					},
+                	"invalidity_1_gap": { 
+						"value": -2000, 
+						"type": "currency" 
+					},
+                	"invalidity_2_gap": { 
+						"value": -7000, 
+						"type": "currency" 
+					},
+                	"invalidity_3_insurance": { 
+						"value": 1500000, 
+						"type": "currency" 
+					},
+                	"death_mortgage": {
+                    	"value": -3000000,
+                    	"type": "currency"
+                	},
+                	"death_loans": {
+                    	"value": -180000,
+                    	"type": "currency"
+                	},
+                	"death_insurance_total": {
+                    	"value": 4020000,
+                    	"type": "currency"
+                	},
+                	"death_surplus": {
+                    	"value": 350000,
+                    	"type": "currency"
+                	}
+            	}
 			]
-		}
+		},
+		"mortgage_capacity": {
+    		"title": "Úvěrová kapacita a bonita",
+   			"indicators": {
+       		"dti": { "label": "DTI - Předluženost", "value": 6.2, "max": 8, "desc": "Nebudu předlužený?" },
+        	"dsti": { "label": "DSTI - Splácení", "value": 28, "max": 45, "desc": "Zvládnu splácet?" },
+        	"ltv": { "label": "LTV - Zástavní prostor", "value": 10, "max": 80, "desc": "Vlastní zdroje vs. úvěr" }
+    	},
+
+    	"capital_table": [
+        { "label": "Vlastní úspory", "value": { "value": 450000, "type": "currency" } },
+        { "label": "Dostupná bonita z Nemovitost 1", "value": { "value": 900000, "type": "currency" } },
+        { "label": "Dostupná bonita z Nemovitost 2", "value": { "value": 2000000, "type": "currency" } },
+        { "label": "Vlastní zdroje (20%)", "value": { "value": 350000, "type": "currency" } },
+        { "label": "Maximální výše úvěru", "value": { "value": 16750000, "type": "currency" } }
+    ]
+},
+"protection": {
+            "title": "Chraňte svůj majetek a své příjmy",
+            "items": [
+                {
+                    "name": "BMW x320d",
+                    "value": 450000,
+                    "date_to": "20.12.2025",
+                    "badges": ["POV", "HAV", "Asistence"]
+                },
+                {
+                    "name": "Byt 3+1, Jugoslávská",
+                    "value": 2450000,
+                    "date_to": "20.12.2025",
+                    "badges": ["Nemovitost", "Domácnost"]
+                }
+            ]
+        },
+        "dreams": {
+            "title": "A teď společně naplníme vaše sny!",
+            "goals": [
+                {
+                    "name": "Koupit nové auto",
+                    "amount": 400000,
+                    "deadline": "14.05.2025",
+                    "priority": "Střední priorita",
+                    "type": "Krátkodobý cíl",
+                    "monthly": 33769
+                },
+                {
+                    "name": "Cesta kolem světa",
+                    "amount": 280000,
+                    "deadline": "14.05.2025",
+                    "priority": "Nízká priorita",
+                    "type": "Střednědobý cíl",
+                    "monthly": 15500
+				},
+                {
+                    "name": "Renta",
+                    "amount": 50000,
+                    "deadline": "2055-08-15",
+                    "priority": "Vysoká",
+                    "type": "Dlouhodobý cíl"
+                }
+            ]
+        },
+	"investment_plan": {
+    "monthly_savings": 5000,
+    "expected_yield": 7.54,
+    "timeline": [
+        {
+            "amount": 450000,
+            "company": "INVESTIKA a.s.",
+            "period": "od 15. 8. 2024 do 15. 8. 2034",
+            "fund_name": "Otevřený podílový fond NEMO",
+            "yield_range": "5 – 8,5 % p.a.",
+            "target_type": "Dlouhodobý cíl",
+            "action": "Výběr a reinvestice 450 000 Kč ze stavebního spoření"
+        },
+        {
+            "amount": 5000,
+            "is_monthly": true,
+            "company": "EFEKTA o.c.p.",
+            "period": "od 15. 8. 2024 do 15. 8. 2034",
+            "fund_name": "CREIF nemovitostní investiční fond",
+            "yield_range": "5 – 8,5 % p.a.",
+            "target_type": "Krátkodobý cíl",
+            "action": "Pravidelná investice"
+        },
+		{
+                    "amount": 5000000,
+                    "company": "Realitní projekt",
+                    "period": "od 15. 8. 2024 do 15. 8. 2034",
+                    "fund_name": "Palackého třída 15, 3+1",
+                    "yield_range": "5 – 8,5 % p.a.",
+                    "target_type": "Dlouhodobý cíl",
+                    "action": "Prodej bytu"
+                }
+    ]
+}
 	}
 }
