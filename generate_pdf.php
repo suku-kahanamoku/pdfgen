@@ -44,15 +44,6 @@ if ($inputData === null) {
 }
 
 $GLOBALS['pdfData'] = $inputData;
-$aktiva = $inputData['property']['property_summary']['total_active']['value'] ?? 0;
-$pasiva = $inputData['property']['property_summary']['total_pasive']['value'] ?? 0;
-$cisty_majetek = $inputData['property']['property_summary']['total']['value'] ?? 0;
-$GLOBALS['protection'] = $inputData['health']['protection'] ?? [];
-$GLOBALS['dreams'] = $inputData['health']['dreams'] ?? [];
-$GLOBALS['investment_plan'] = $inputData['health']['investment_plan'] ?? [];
-$chart_url = "https://chart.googleapis.com/chart?cht=pd&chs=500x500&chd=t:$aktiva,$pasiva&chco=b38b5d,e74c3c&chp=0.1";
-$GLOBALS['chartUrl'] = $chart_url;
-$GLOBALS['cistyMajetek'] = $cisty_majetek;
 
 ob_start();
 ?>
@@ -65,6 +56,7 @@ ob_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 
     <style>
         body {
@@ -72,6 +64,11 @@ ob_start();
             padding: 0;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .font-lora {
+            font-family: 'Lora', serif;
         }
     </style>
 </head>
