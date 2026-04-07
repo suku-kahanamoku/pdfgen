@@ -87,6 +87,17 @@ $html = ob_get_clean();
 try {
     $pdfContent = Browsershot::html($html)
         ->setChromePath(getenv('CHROME_PATH') ?: '/usr/bin/google-chrome')
+        ->noSandbox()
+        ->addChromiumArguments([
+            '--disable-gpu',
+            '--disable-dev-shm-usage',
+            '--disable-extensions',
+            '--disable-background-networking',
+            '--disable-sync',
+            '--metrics-recording-only',
+            '--mute-audio',
+            '--no-first-run',
+        ])
         ->showBackground()
         ->format('A4')
         ->margins(20, 20, 20, 20)
