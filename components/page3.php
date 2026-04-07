@@ -42,7 +42,7 @@
     ?>
         <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-4">
             <div class="flex flex-col gap-1">
-                <div class="font-lora text-[#927355] text-lg"><?= htmlspecialchars($p3sec['title']) ?></div>
+                <div class="font-lora text-[#936746] text-lg"><?= htmlspecialchars($p3sec['title']) ?></div>
                 <div class="text-[#777] text-sm leading-relaxed"><?= htmlspecialchars($p3sec['desc']) ?></div>
             </div>
             <div class="flex gap-6 items-center">
@@ -99,7 +99,7 @@
     $p3netto     = $dataRaw['summary']['netto'] ?? [];
     $p3total_pct = (int)($p3netto['total'] ?? 0);
     ?>
-    <div class="bg-[#927355] text-white rounded-3xl px-8 py-6 flex items-center gap-8">
+    <div class="bg-[#936746] text-white rounded-3xl px-8 py-6 flex items-center gap-8">
         <div class="text-5xl font-bold font-lora flex-shrink-0"><?= $p3total_pct ?>%</div>
         <div class="flex flex-col gap-2">
             <div class="text-lg font-bold">Diverzifikace portfolia</div>

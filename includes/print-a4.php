@@ -1,10 +1,10 @@
 <style>
 :root {
-    --clr-primary:    #927355;
-    --clr-text:       #3d3229;
-    --clr-text-light: #554a42;
+    --clr-primary:    #936746;
+    --clr-text:       #38291F;
+    --clr-text-light: #534035;
     --clr-gray:       #8c8c8c;
-    --clr-bg-light:   #f9f7f5;
+    --clr-bg-light:   #F5EFEA;
     --clr-success:    #2ecc71;
     --clr-warning:    #f39c12;
     --clr-danger:     #e74c3c;

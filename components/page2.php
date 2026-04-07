@@ -19,11 +19,11 @@
         if (empty($rows)) continue;
     ?>
         <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
-            <div class="flex items-center gap-4 text-[#927355] font-lora text-3xl border-b border-[#eee] pb-2.5">
-                <i class="fa-solid <?= $sec['icon'] ?>"></i>
+            <div class="flex items-center gap-4 font-lora text-4xl font-semibold">
                 <?= htmlspecialchars($sec['title']) ?>
+                <i class="fa-solid text-[#936746] <?= $sec['icon'] ?>"></i>
             </div>
-            <div class="text-sm text-[#888]"><?= htmlspecialchars($sec['desc']) ?></div>
+            <div class="text-[#666]"><?= htmlspecialchars($sec['desc']) ?></div>
             <div class="flex flex-col gap-6">
                 <?php foreach ($rows as $row):
                     $val     = (float)($row['value'] ?? 0);
@@ -40,18 +40,18 @@
                             style="color: <?= $iconClr ?>; border-color: <?= $iconClr ?>;">
                             <i class="fa-solid <?= $iconCls ?>"></i>
                         </div>
-                        <div class="flex-1 bg-white border border-[#f0f0f0] rounded-xl px-4 py-3.5 flex gap-4 items-center">
-                            <div class="bg-[#f8f8f8] px-3.5 py-2.5 rounded-lg min-w-36 flex-shrink-0 flex flex-col gap-0.5">
-                                <div class="text-base text-[#927355] font-lora"><?= format_czk($val) ?> <?= $cur ?></div>
-                                <div class="text-[#777] font-semibold uppercase"><?= htmlspecialchars($title) ?></div>
+                        <div class="flex-1 bg-white border border-[#f0f0f0] rounded-xl px-4 py-3.5 flex gap-4 items-center shadow-sm">
+                            <div class="bg-[#f8f8f8] px-3.5 py-2.5 rounded-lg w-48 flex-shrink-0 flex flex-col gap-0.5">
+                                <div class="text-base text-[#936746] font-lora"><?= format_czk($val) ?> <?= $cur ?></div>
+                                <div class="text-[#777] font-semibold"><?= htmlspecialchars($note) ?></div>
                             </div>
                             <div class="flex-1 min-w-0 flex flex-col gap-1">
-                                <div class="font-bold text-[#333] whitespace-nowrap overflow-hidden text-ellipsis"><?= htmlspecialchars($note) ?></div>
-                                <div class="text-[#888]"><?= htmlspecialchars($desc) ?></div>
+                                <div class="font-bold text-[#333] font-lora whitespace-nowrap overflow-hidden text-ellipsis"><?= htmlspecialchars($title) ?></div>
+                                <div class="text-[#888] font-lora"><?= htmlspecialchars($desc) ?></div>
                             </div>
                             <div class="flex flex-col gap-1.5 items-end w-44 flex-shrink-0">
                                 <?php foreach ($labels as $lbl): ?>
-                                    <div class="text-xs uppercase border border-[#d4c4b5] px-2 py-1 rounded-md text-[#927355] text-center w-full box-border whitespace-nowrap"><?= htmlspecialchars($lbl) ?></div>
+                                    <div class="text-xs border border-[#D4B9A6] px-2 py-1 rounded-md text-center w-full box-border whitespace-nowrap"><?= htmlspecialchars($lbl) ?></div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                             ],
                             datasets: [{
                                 data: [<?= $total_active ?>, <?= $total_pasive ?>],
-                                backgroundColor: ['#ededed', '#8d6e53'],
+                                backgroundColor: ['#ededed', '#8D6144'],
                                 borderRadius: 6,
                                 borderWidth: 0
                             }]
@@ -123,9 +123,9 @@
             </div>
             <!-- Table -->
             <div class="flex-1 flex flex-col gap-2">
-                <h2 class="font-lora text-2xl text-[#333] mb-2">Bilance majetku</h2>
+                <h2 class="font-lora text-3xl font-semibold mb-2">Bilance majetku</h2>
                 <div class="flex justify-between px-3.5 py-2.5 border border-[#ddd] rounded-lg">
-                    <span><?= htmlspecialchars($bilance['active']['title'] ?? 'Aktiva') ?></span>
+                    <span class="font-lora font-semibold"><?= htmlspecialchars($bilance['active']['title'] ?? 'Aktiva') ?></span>
                     <span class="font-bold"><?= format_czk($total_active) ?> <?= $cur ?></span>
                 </div>
                 <div class="flex justify-between px-3.5 pt-1 pb-2.5 text-[#888]">
@@ -133,14 +133,14 @@
                     <span><?= number_format($bilance['active']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
                 </div>
                 <div class="flex justify-between px-3.5 py-2.5 border border-[#ddd] rounded-lg">
-                    <span><?= htmlspecialchars($bilance['pasive']['title'] ?? 'Pasiva') ?></span>
+                    <span class="font-lora font-semibold"><?= htmlspecialchars($bilance['pasive']['title'] ?? 'Pasiva') ?></span>
                     <span class="font-bold"><?= format_czk($total_pasive) ?> <?= $cur ?></span>
                 </div>
                 <div class="flex justify-between px-3.5 pt-1 pb-2.5 text-[#888]">
                     <span><?= htmlspecialchars($bilance['pasive']['yeld']['title'] ?? '') ?></span>
                     <span><?= number_format($bilance['pasive']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
                 </div>
-                <div class="flex justify-between px-3.5 py-3 bg-[#8d6e53] text-white rounded-lg font-bold">
+                <div class="flex justify-between px-3.5 py-3 bg-[#8D6144] text-white rounded-lg font-bold font-lora">
                     <span><?= htmlspecialchars($bilance['netto']['title'] ?? 'Čistý majetek') ?></span>
                     <span><?= format_czk($cisty_majetek) ?> <?= $cur ?></span>
                 </div>
@@ -148,9 +148,9 @@
         </div>
         <!-- Footer row -->
         <?php if ($bilPercent < 30): ?>
-            <div class="bg-[#fff5f5] border border-[#f8d7da] rounded-xl px-5 py-4 flex items-center gap-4">
+            <div class="bg-[#fbf2f2] border border-[#f8d7da] rounded-xl px-5 py-4 flex items-center gap-4">
                 <div class="w-16 h-14 rounded-xl flex items-center justify-center font-bold text-base flex-shrink-0 text-white"
-                    style="background: #e74c3c;">
+                    style="background: #c35252;">
                     <?= number_format($bilPercent, 2, ',', ' ') ?>%
                 </div>
                 <div class="flex flex-col gap-1">

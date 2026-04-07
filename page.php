@@ -9,7 +9,6 @@ $total_pasive  = (float)($bilance['pasive']['value'] ?? 0);
 
 $summary       = $dataRaw['summary'] ?? [];
 $cisty_majetek = (float)($summary['netto']['value'] ?? 0);
-$cisty_majetek_color = ($cisty_majetek >= 0) ? '#927355' : '#e74c3c';
 
 $curMap = ['CZK' => 'Kč', 'EUR' => '€', 'USD' => '$'];
 $cur    = $curMap[$summary['netto']['currency'] ?? $bilance['active']['currency'] ?? 'CZK'] ?? 'Kč';

@@ -17,8 +17,8 @@
             </p>
         </div>
         <div class="w-80 text-center flex flex-col items-center flex-shrink-0 gap-8 self-center">
-            <div class="w-36 h-36 flex-shrink-0">
-                <canvas id="chart-donut-p1" width="140" height="140"></canvas>
+            <div class="w-48 h-48 flex-shrink-0">
+                <canvas id="chart-donut-p1"></canvas>
             </div>
             <script>
                 new Chart(document.getElementById('chart-donut-p1'), {
@@ -26,13 +26,14 @@
                     data: {
                         datasets: [{
                             data: [<?= $donut_pct_active ?>, <?= $donut_pct_estate ?>, <?= $donut_pct_properties ?>],
-                            backgroundColor: ['#927355', '#b89a7a', '#eeeeee'],
+                            backgroundColor: ['#936746', '#BD8D66', '#eeeeee'],
                             borderWidth: 0
                         }]
                     },
                     options: {
                         animation: false,
-                        cutout: '80%',
+                        responsive: true,
+                        maintainAspectRatio: false,
                         plugins: {
                             legend: {
                                 display: false
@@ -44,7 +45,7 @@
                     }
                 });
             </script>
-            <div class="w-full box-border px-3 py-2.5 rounded-xl font-bold text-white whitespace-nowrap text-center" style="background: <?= $cisty_majetek_color ?>;">
+            <div class="w-full box-border px-3 py-2.5 rounded-xl font-semibold text-white whitespace-nowrap text-center bg-[#936746] font-lora">
                 Čistá hodnota majetku <?= number_format($cisty_majetek, 0, ',', ' ') ?> <?= $cur ?>
             </div>
         </div>
@@ -55,9 +56,9 @@
     $summary = $dataRaw['summary'] ?? [];
 
     $statusIconMap = [
-        'success' => ['cls' => 'fa-solid fa-check',       'clr' => '#2ecc71'],
-        'warning' => ['cls' => 'fa-solid fa-exclamation', 'clr' => '#e67e22'],
-        'danger'  => ['cls' => 'fa-solid fa-xmark',       'clr' => '#042444'],
+        'success' => ['cls' => 'fa-solid fa-check',       'tw' => 'text-[#2ecc71] border-[#2ecc71]'],
+        'warning' => ['cls' => 'fa-solid fa-exclamation', 'tw' => 'text-[#e67e22] border-[#e67e22]'],
+        'danger'  => ['cls' => 'fa-solid fa-xmark',       'tw' => 'text-[#042444] border-[#042444]'],
     ];
 
     $propertyColumns = [
@@ -84,12 +85,12 @@
     <div class="flex gap-8">
         <?php foreach ($propertyColumns as $col): ?>
             <div class="flex-1 min-w-0 flex flex-col gap-8">
-                <div class="border border-[#927355] rounded-xl p-3 bg-[#fcfaf8] flex items-center gap-6">
-                    <div class="text-[#927355] text-3xl w-10 text-center">
+                <div class="border border-[#936746] rounded-xl p-3 flex items-center gap-6">
+                    <div class="text-[#936746] text-3xl w-10 text-center">
                         <i class="<?= $col['icon'] ?>"></i>
                     </div>
                     <div class="ml-auto text-right">
-                        <div class="font-bold text-[#927355] font-lora"><?= htmlspecialchars($col['title']) ?></div>
+                        <div class="font-bold text-[#936746] font-lora"><?= htmlspecialchars($col['title']) ?></div>
                         <div class="text-sm text-[#666]"><?= format_czk($col['total']) ?> <?= $cur ?></div>
                     </div>
                 </div>
@@ -100,11 +101,10 @@
                         $name    = $row['title'] ?? '';
                         $status  = $row['status'] ?? 'success';
                         $iconCls = $statusIconMap[$status]['cls'] ?? 'fa-solid fa-check';
-                        $iconClr = $statusIconMap[$status]['clr'] ?? '#2ecc71';
+                        $iconTw  = $statusIconMap[$status]['tw']  ?? 'text-[#2ecc71] border-[#2ecc71]';
                     ?>
-                        <div class="bg-white border border-[#f0f0f0] p-3 rounded-xl flex items-center gap-4 [page-break-inside:avoid] [break-inside:avoid]">
-                            <div class="rounded-full w-6 h-6 flex justify-center items-center flex-shrink-0 border"
-                                style="color: <?= $iconClr ?>; border-color: <?= $iconClr ?>;">
+                        <div class="bg-white border border-[#f0f0f0] p-3 rounded-xl flex items-center gap-4 shadow-sm [page-break-inside:avoid] [break-inside:avoid]">
+                            <div class="rounded-full w-6 h-6 flex justify-center items-center flex-shrink-0 border <?= $iconTw ?>">
                                 <i class="<?= $iconCls ?>"></i>
                             </div>
                             <div class="overflow-hidden">
