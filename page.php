@@ -43,14 +43,14 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
 <!-- ============================================================ -->
 <!-- PAGE 1 – Přehled majetku                                     -->
 <!-- ============================================================ -->
-<div class="page">
-    <table style="width: 100%; table-layout: fixed; border-collapse: separate; border-spacing: 0 8px; font-size: 12px;">
+<div class="w-full min-h-[257mm] px-10 py-[30px] box-border bg-white font-['Plus_Jakarta_Sans',sans-serif] [page-break-after:always] [break-after:page] overflow-visible">
+    <table class="w-full table-fixed [border-collapse:separate] [border-spacing:0_8px] text-xs">
         <tr>
-            <td style="width: 65%; vertical-align: top; padding-right: 20px;">
-                <h1 class="main-title" style="margin-top: 0;">
-                    <span class="gray">Přehled</span><br>vašeho majetku
+            <td class="w-[65%] align-top pr-5">
+                <h1 class="font-['Lora',serif] text-[47px] leading-[1.1] m-0 mb-2 mt-0">
+                    <span class="text-[#8c8c8c]">Přehled</span><br>vašeho majetku
                 </h1>
-                <p class="page-subtitle">
+                <p class="text-[#888] m-0 mb-[25px]">
                     Diverzifikace příjmů, například prostřednictvím vedlejších příjmů
                     nebo investic, může zvýšit naši finanční bezpečnost. Když
                     přemýšlíme o budoucnosti a strategicky investujeme, zajišťujeme
@@ -60,16 +60,16 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
                 </p>
             </td>
 
-            <td style="width: 35%; vertical-align: middle; text-align: center;">
-                <div class="chart-container" style="width: 160px; margin: 0 auto;">
+            <td class="w-[35%] align-middle text-center">
+                <div class="relative w-[200px] mx-auto">
                     <?php if ($chartUrl): ?>
-                        <img src="<?= $chartUrl ?>" style="width: 160px; height: auto; display: block; margin-bottom: 10px;" />
+                        <img src="<?= $chartUrl ?>" class="w-40 h-auto block mb-2.5" />
 
-                        <div style="text-align: center; width: 100%;">
-                            <div style="font-size: 10px; color: #8c8c8c; text-transform: uppercase; letter-spacing: 1px; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.2;">
+                        <div class="text-center w-full">
+                            <div class="text-[10px] text-[#8c8c8c] uppercase tracking-[1px] leading-tight">
                                 Čistý majetek
                             </div>
-                            <div style="font-size: 16px; font-weight: 700; color: <?= $cisty_majetek_color ?>; font-family: 'Plus Jakarta Sans', sans-serif; margin-top: 4px;">
+                            <div class="text-base font-bold mt-1" style="color: <?= $cisty_majetek_color ?>;">
                                 <?= number_format($cisty_majetek, 0, ',', ' ') ?> Kč
                             </div>
                         </div>
@@ -86,7 +86,7 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
     $statusIconMap = [
         'success' => ['cls' => 'fa-solid fa-check',       'clr' => '#2ecc71'],
         'warning' => ['cls' => 'fa-solid fa-exclamation', 'clr' => '#e67e22'],
-        'danger'  => ['cls' => 'fa-solid fa-xmark', 'clr' => '#042444'],
+        'danger'  => ['cls' => 'fa-solid fa-xmark',       'clr' => '#042444'],
     ];
 
     $propertyColumns = [
@@ -110,16 +110,16 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
         ],
     ];
     ?>
-    <div style="display: flex; gap: 15px; margin-top: 10px;">
+    <div class="flex gap-[15px] mt-2.5">
         <?php foreach ($propertyColumns as $col): ?>
-            <div style="flex: 1; min-width: 0;">
-                <div style="border: 1px solid #927355; border-radius: 12px; padding: 12px; margin-bottom: 15px; background: #fcfaf8; display: flex; align-items: center; gap: 10px;">
-                    <div style="color: #927355; font-size: 18px; width: 24px; text-align: center;">
+            <div class="flex-1 min-w-0">
+                <div class="border border-[#927355] rounded-xl p-3 mb-[15px] bg-[#fcfaf8] flex items-center gap-2.5">
+                    <div class="text-[#927355] text-lg w-6 text-center">
                         <i class="<?= $col['icon'] ?>"></i>
                     </div>
                     <div>
-                        <div style="font-weight: bold; color: #927355; font-size: 14px; font-family: 'Lora', serif;"><?= htmlspecialchars($col['title']) ?></div>
-                        <div style="font-size: 12px; color: #666;"><?= format_czk($col['total']) ?> Kč</div>
+                        <div class="font-bold text-[#927355] text-sm font-['Lora',serif]"><?= htmlspecialchars($col['title']) ?></div>
+                        <div class="text-xs text-[#666]"><?= format_czk($col['total']) ?> Kč</div>
                     </div>
                 </div>
 
@@ -130,19 +130,20 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
                     $iconCls = $statusIconMap[$status]['cls'] ?? 'fa-solid fa-check';
                     $iconClr = $statusIconMap[$status]['clr'] ?? '#2ecc71';
                 ?>
-                    <div style="background: #fff; border: 1px solid #f0f0f0; padding: 12px; border-radius: 10px; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; page-break-inside: avoid; break-inside: avoid;">
-                        <div style="border-radius: 50%; width: 17px; height: 17px; display: flex; justify-content: center; align-items: center; font-size: 9px; flex-shrink: 0; border: 1.2px solid; color: <?= $iconClr ?>; border-color: <?= $iconClr ?>;">
+                    <div class="bg-white border border-[#f0f0f0] p-3 rounded-[10px] mb-2 flex items-center gap-2.5 [page-break-inside:avoid] [break-inside:avoid]">
+                        <div class="rounded-full w-[17px] h-[17px] flex justify-center items-center text-[9px] flex-shrink-0 border-[1.2px]"
+                             style="color: <?= $iconClr ?>; border-color: <?= $iconClr ?>;">
                             <i class="<?= $iconCls ?>"></i>
                         </div>
-                        <div style="overflow: hidden;">
-                            <div style="font-size: 10px; color: #888; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><?= htmlspecialchars($name) ?></div>
-                            <div style="font-weight: normal; font-size: 13px;"><?= format_czk($val) ?> Kč</div>
+                        <div class="overflow-hidden">
+                            <div class="text-[10px] text-[#888] whitespace-nowrap overflow-hidden text-ellipsis"><?= htmlspecialchars($name) ?></div>
+                            <div class="font-normal text-[13px]"><?= format_czk($val) ?> Kč</div>
                         </div>
                     </div>
                 <?php endforeach; ?>
 
                 <?php if (empty($col['rows'])): ?>
-                    <div style="color: #aaa; font-size: 12px; text-align: center; padding: 20px 0;">Žádné položky</div>
+                    <div class="text-[#aaa] text-xs text-center py-5">Žádné položky</div>
                 <?php endif; ?>
             </div>
         <?php endforeach; ?>
@@ -152,7 +153,7 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
 <!-- ============================================================ -->
 <!-- PAGE 2 – Aktiva & Pasiva                                     -->
 <!-- ============================================================ -->
-<div class="page">
+<div class="w-full min-h-[257mm] px-10 py-[30px] box-border bg-white font-['Plus_Jakarta_Sans',sans-serif] [page-break-after:always] [break-after:page] overflow-visible">
     <?php
     $property = $dataRaw['property'] ?? [];
     $p2StatusMap = [
@@ -170,8 +171,8 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
         $rows = $property[$sec['key']]['rows'] ?? [];
         if (empty($rows)) continue;
     ?>
-        <div class="p2-sec-block">
-            <div class="p2-sec-title">
+        <div class="mb-[30px]">
+            <div class="flex items-center gap-3 text-[#927355] font-['Lora',serif] text-xl mb-3 border-b border-[#eee] pb-2.5">
                 <i class="fa-solid <?= $sec['icon'] ?>"></i>
                 <?= htmlspecialchars($sec['title']) ?>
             </div>
@@ -185,20 +186,21 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
                 $iconCls = $p2StatusMap[$status]['cls'] ?? 'fa-check';
                 $iconClr = $p2StatusMap[$status]['clr'] ?? '#2ecc71';
             ?>
-                <div class="p2-card-row">
-                    <div class="p2-status-icon" style="color: <?= $iconClr ?>; border-color: <?= $iconClr ?>;"><i class="fa-solid <?= $iconCls ?>"></i></div>
-                    <div class="p2-detail-card">
-                        <div class="p2-price-box">
-                            <div class="p2-val-amount"><?= format_czk($val) ?> Kč</div>
-                            <div class="p2-val-label"><?= htmlspecialchars($title) ?></div>
+                <div class="flex items-center gap-3 mb-2.5 [page-break-inside:avoid] [break-inside:avoid]">
+                    <div class="rounded-full w-[22px] h-[22px] flex justify-center items-center text-[10px] flex-shrink-0 border-[1.2px]"
+                         style="color: <?= $iconClr ?>; border-color: <?= $iconClr ?>;"><i class="fa-solid <?= $iconCls ?>"></i></div>
+                    <div class="flex-1 bg-white border border-[#f0f0f0] rounded-xl px-4 py-[14px] flex gap-[15px] items-center">
+                        <div class="bg-[#f8f8f8] px-[14px] py-[10px] rounded-lg min-w-[145px] flex-shrink-0">
+                            <div class="text-base text-[#927355] font-['Lora',serif] mb-[2px]"><?= format_czk($val) ?> Kč</div>
+                            <div class="text-[10px] text-[#777] font-bold uppercase tracking-[0.5px]"><?= htmlspecialchars($title) ?></div>
                         </div>
-                        <div class="p2-middle">
-                            <div class="p2-text-main"><?= htmlspecialchars($note) ?></div>
-                            <div class="p2-text-minor"><?= htmlspecialchars($desc) ?></div>
+                        <div class="flex-1 min-w-0">
+                            <div class="font-bold text-[13px] text-[#333] mb-[3px] whitespace-nowrap overflow-hidden text-ellipsis"><?= htmlspecialchars($note) ?></div>
+                            <div class="text-[11px] text-[#888]"><?= htmlspecialchars($desc) ?></div>
                         </div>
-                        <div class="p2-tag-cloud">
+                        <div class="flex flex-col gap-[5px] items-end w-[130px] flex-shrink-0">
                             <?php foreach ($labels as $lbl): ?>
-                                <div class="p2-tag"><?= htmlspecialchars($lbl) ?></div>
+                                <div class="text-[9px] uppercase border border-[#d4c4b5] px-2 py-1 rounded-md text-[#927355] text-center w-full box-border whitespace-nowrap"><?= htmlspecialchars($lbl) ?></div>
                             <?php endforeach; ?>
                         </div>
                     </div>
@@ -221,51 +223,52 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
     $bilStatus  = $bilFooter['status'] ?? 'success';
     $bilFootClr = ($bilStatus === 'success') ? '#2ecc71' : (($bilStatus === 'warning') ? '#e67e22' : '#e74c3c');
     ?>
-    <div style="margin-top: 40px; page-break-before: always; break-before: page;">
-        <h2 style="font-family: 'Lora', serif; font-size: 26px; color: #333; margin-bottom: 25px;">Bilance majetku</h2>
-        <div style="display: flex; gap: 30px; align-items: flex-start; margin-bottom: 30px;">
+    <div class="mt-10 [page-break-before:always] [break-before:page]">
+        <h2 class="font-['Lora',serif] text-[26px] text-[#333] mb-[25px]">Bilance majetku</h2>
+        <div class="flex gap-[30px] items-start mb-[30px]">
             <!-- Bar chart -->
-            <div style="flex: 1; height: 200px; display: flex; align-items: flex-end; gap: 30px; border-bottom: 2px solid #eee; padding: 0 30px 10px 30px;">
-                <div style="flex: 1; position: relative; border-radius: 8px 8px 0 0; background: #ededed; height: <?= $bilHAkt ?>%;">
-                    <span style="position: absolute; bottom: -24px; left: 50%; transform: translateX(-50%); font-size: 12px; color: #666; white-space: nowrap;">Aktiva</span>
+            <div class="flex-1 h-[200px] flex items-end gap-[30px] border-b-2 border-[#eee] px-[30px] pb-[10px]">
+                <div class="flex-1 relative rounded-t-lg bg-[#ededed]" style="height: <?= $bilHAkt ?>%;">
+                    <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs text-[#666] whitespace-nowrap">Aktiva</span>
                 </div>
-                <div style="flex: 1; position: relative; border-radius: 8px 8px 0 0; background: #8d6e53; height: <?= $bilHPas ?>%;">
-                    <span style="position: absolute; bottom: -24px; left: 50%; transform: translateX(-50%); font-size: 12px; color: #666; white-space: nowrap;">Pasiva</span>
+                <div class="flex-1 relative rounded-t-lg bg-[#8d6e53]" style="height: <?= $bilHPas ?>%;">
+                    <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs text-[#666] whitespace-nowrap">Pasiva</span>
                 </div>
             </div>
             <!-- Table -->
-            <div style="flex: 1;">
-                <div style="display: flex; justify-content: space-between; padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 4px; font-size: 13px;">
+            <div class="flex-1">
+                <div class="flex justify-between px-[14px] py-[10px] border border-[#ddd] rounded-lg mb-1 text-[13px]">
                     <span><?= htmlspecialchars($bilance['active']['title'] ?? 'Aktiva') ?></span>
-                    <span style="font-weight: bold;"><?= format_czk($bilActive) ?> Kč</span>
+                    <span class="font-bold"><?= format_czk($bilActive) ?> Kč</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; padding: 4px 14px 10px; font-size: 12px; color: #888;">
+                <div class="flex justify-between px-[14px] pt-1 pb-[10px] text-xs text-[#888]">
                     <span><?= htmlspecialchars($bilance['active']['yeld']['title'] ?? '') ?></span>
                     <span><?= number_format($bilance['active']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 4px; font-size: 13px;">
+                <div class="flex justify-between px-[14px] py-[10px] border border-[#ddd] rounded-lg mb-1 text-[13px]">
                     <span><?= htmlspecialchars($bilance['pasive']['title'] ?? 'Pasiva') ?></span>
-                    <span style="font-weight: bold;"><?= format_czk($bilPasive) ?> Kč</span>
+                    <span class="font-bold"><?= format_czk($bilPasive) ?> Kč</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; padding: 4px 14px 10px; font-size: 12px; color: #888;">
+                <div class="flex justify-between px-[14px] pt-1 pb-[10px] text-xs text-[#888]">
                     <span><?= htmlspecialchars($bilance['pasive']['yeld']['title'] ?? '') ?></span>
                     <span><?= number_format($bilance['pasive']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; padding: 12px 14px; background: #8d6e53; color: white; border-radius: 8px; font-size: 13px; font-weight: bold;">
+                <div class="flex justify-between px-[14px] py-3 bg-[#8d6e53] text-white rounded-lg text-[13px] font-bold">
                     <span><?= htmlspecialchars($bilance['netto']['title'] ?? 'Čistý majetek') ?></span>
                     <span><?= format_czk($bilNetto) ?> Kč</span>
                 </div>
             </div>
         </div>
         <!-- Footer row -->
-        <div style="display: flex; gap: 15px; align-items: stretch;">
-            <div style="flex: 3; background: #fff5f5; border: 1px solid #f8d7da; border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; gap: 18px;">
-                <div style="background: #b56565; color: white; width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; flex-shrink: 0; color: <?= $bilFootClr ?>; background: <?= $bilFootClr ?>22; border: 1px solid <?= $bilFootClr ?>;">
+        <div class="flex gap-[15px] items-stretch">
+            <div class="flex-[3] bg-[#fff5f5] border border-[#f8d7da] rounded-xl px-5 py-4 flex items-center gap-[18px]">
+                <div class="w-12 h-12 rounded-[10px] flex items-center justify-center font-bold text-base flex-shrink-0"
+                     style="color: <?= $bilFootClr ?>; background: <?= $bilFootClr ?>22; border: 1px solid <?= $bilFootClr ?>;">
                     <?= number_format($bilPercent, 2, ',', ' ') ?>%
                 </div>
                 <div>
-                    <div style="font-weight: bold; font-size: 15px; margin-bottom: 4px;">Čistý výnos majetku</div>
-                    <div style="font-size: 12px; color: #666;">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
+                    <div class="font-bold text-[15px] mb-1">Čistý výnos majetku</div>
+                    <div class="text-xs text-[#666]">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
                 </div>
             </div>
         </div>
@@ -273,9 +276,9 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
 </div>
 
 <!-- ============================================================ -->
-<!-- PAGE 3 – Finanční cíle                                       -->
+<!-- PAGE 3 – Analýza portfolia                                   -->
 <!-- ============================================================ -->
-<div class="page">
+<div class="w-full min-h-[257mm] px-10 py-[30px] box-border bg-white font-['Plus_Jakarta_Sans',sans-serif] [page-break-after:always] [break-after:page] overflow-visible">
     <?php
     $p3StatusColor = [
         'success' => '#2ecc71',
@@ -301,85 +304,43 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
         ],
     ];
     ?>
-    <style>
-        .p3-analysis-section {
-            margin-bottom: 30px;
-        }
-
-        .p3-analysis-title {
-            font-family: 'Lora', serif;
-            color: #927355;
-            font-size: 18px;
-            margin-bottom: 6px;
-        }
-
-        .p3-analysis-desc {
-            font-size: 12px;
-            color: #777;
-            line-height: 1.5;
-            margin-bottom: 14px;
-        }
-
-        .p3-bar-container {
-            margin-bottom: 10px;
-        }
-
-        .p3-bar-label-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            margin-bottom: 4px;
-        }
-
-        .p3-bar-outer {
-            background: #f3f3f3;
-            height: 10px;
-            border-radius: 6px;
-            overflow: hidden;
-        }
-
-        .p3-bar-inner {
-            height: 100%;
-            border-radius: 6px;
-        }
-    </style>
 
     <?php foreach ($p3Sections as $p3sec):
         $p3rows = $property[$p3sec['key']]['rows'] ?? [];
         $p3total = array_sum(array_column($p3rows, 'value'));
         if ($p3total <= 0) $p3total = 1;
     ?>
-        <div class="p3-analysis-section">
-            <div class="p3-analysis-title"><?= htmlspecialchars($p3sec['title']) ?></div>
-            <div class="p3-analysis-desc"><?= htmlspecialchars($p3sec['desc']) ?></div>
+        <div class="mb-[30px]">
+            <div class="font-['Lora',serif] text-[#927355] text-lg mb-1.5"><?= htmlspecialchars($p3sec['title']) ?></div>
+            <div class="text-xs text-[#777] leading-relaxed mb-[14px]"><?= htmlspecialchars($p3sec['desc']) ?></div>
             <?php foreach ($p3rows as $p3row):
                 $p3val  = (float)($p3row['value'] ?? 0);
                 $p3pct  = round($p3val / $p3total * 100);
                 $p3clr  = $p3StatusColor[$p3row['status'] ?? 'success'] ?? '#2ecc71';
             ?>
-                <div class="p3-bar-container">
-                    <div class="p3-bar-label-row">
+                <div class="mb-2.5">
+                    <div class="flex justify-between text-xs mb-1">
                         <span><?= htmlspecialchars($p3row['title'] ?? '') ?> (<?= format_czk($p3val) ?> Kč)</span>
-                        <span style="font-weight: bold;"><?= $p3pct ?>%</span>
+                        <span class="font-bold"><?= $p3pct ?>%</span>
                     </div>
-                    <div class="p3-bar-outer">
-                        <div class="p3-bar-inner" style="width: <?= $p3pct ?>%; background: <?= $p3clr ?>;"></div>
+                    <div class="bg-[#f3f3f3] h-2.5 rounded-full overflow-hidden">
+                        <div class="h-full rounded-full" style="width: <?= $p3pct ?>%; background: <?= $p3clr ?>;"></div>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
     <?php endforeach; ?>
 
-    <!-- diverzifikace box -->
+    <!-- Diverzifikace box -->
     <?php
     $p3netto = $dataRaw['summary']['netto'] ?? [];
     $p3total_pct = (int)($p3netto['total'] ?? 0);
     ?>
-    <div style="background: #927355; color: white; border-radius: 20px; padding: 25px 30px; display: flex; align-items: center; gap: 30px; margin-top: 30px;">
-        <div style="font-size: 44px; font-weight: bold; font-family: 'Lora', serif; flex-shrink: 0;"><?= $p3total_pct ?>%</div>
+    <div class="bg-[#927355] text-white rounded-[20px] px-[30px] py-[25px] flex items-center gap-[30px] mt-[30px]">
+        <div class="text-[44px] font-bold font-['Lora',serif] flex-shrink-0"><?= $p3total_pct ?>%</div>
         <div>
-            <div style="font-size: 17px; font-weight: bold; margin-bottom: 8px;">Diverzifikace portfolia</div>
-            <div style="font-size: 12px; opacity: 0.9; line-height: 1.5;">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
+            <div class="text-[17px] font-bold mb-2">Diverzifikace portfolia</div>
+            <div class="text-xs opacity-90 leading-relaxed">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
         </div>
     </div>
 </div>
