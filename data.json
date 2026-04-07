@@ -2,27 +2,27 @@
 	"summary": {
 		"netto": {
 			"currency": "CZK",
-			"value": 2250000
+			"value": 4850000
 		},
 		"active": {
 			"currency": "CZK",
-			"value": 25,
+			"value": 1350000,
 			"rows": [
 				{
 					"currency": "CZK",
-					"value": 25,
+					"value": 480000,
 					"title": "Hotovost",
 					"status": "success"
 				},
 				{
 					"currency": "CZK",
-					"value": 25,
+					"value": 620000,
 					"title": "Deriváty",
 					"status": "warning"
 				},
 				{
 					"currency": "CZK",
-					"value": 25,
+					"value": 250000,
 					"title": "Kryptoměny",
 					"status": "danger"
 				}
@@ -30,49 +30,49 @@
 		},
 		"estate": {
 			"currency": "CZK",
-			"value": 25,
+			"value": 5200000,
 			"rows": [
 				{
 					"currency": "CZK",
-					"value": 25,
+					"value": 3800000,
 					"title": "Vlastní bydlení",
 					"status": "success"
 				},
 				{
 					"currency": "CZK",
-					"value": 25,
+					"value": -1800000,
 					"title": "Hypotéka",
 					"status": "warning"
 				},
 				{
 					"currency": "CZK",
-					"value": 25,
+					"value": 3200000,
 					"title": "Investiční nemovitost",
-					"status": "danger"
+					"status": "success"
 				}
 			]
 		},
 		"properties": {
 			"currency": "CZK",
-			"value": -25,
+			"value": 680000,
 			"rows": [
 				{
 					"currency": "CZK",
-					"value": 25,
-					"title": "Vlastní bydlení",
+					"value": 520000,
+					"title": "Vozidla",
 					"status": "success"
 				},
 				{
 					"currency": "CZK",
-					"value": 25,
-					"title": "Hypotéka",
-					"status": "warning"
+					"value": -380000,
+					"title": "Spotřeb. úvěr",
+					"status": "danger"
 				},
 				{
 					"currency": "CZK",
-					"value": 25,
-					"title": "Investiční nemovitost",
-					"status": "danger"
+					"value": 540000,
+					"title": "Vybavení",
+					"status": "success"
 				}
 			]
 		}
@@ -82,28 +82,41 @@
 			"rows": [
 				{
 					"currency": "CZK",
-					"value": 25,
+					"value": 3800000,
 					"title": "Vlastní bydlení",
 					"status": "success",
-					"note": "Brno, Jugoslávská 15 – 8,5 % p.a.",
-					"description": "2+1, 50 m², 3. patro bez výtahu",
+					"note": "Brno, Jugoslávská 15 – tržní hodnota",
+					"description": "3+1, 85 m², 2. patro, výtah, po rekonstrukci",
 					"labels": [
-						"Investiční nemovitost",
+						"Vlastní bydlení",
 						"Aktiva",
-						"Střednědobý"
+						"Dlouhodobý"
 					]
 				},
 				{
 					"currency": "CZK",
-					"value": 25,
+					"value": -1800000,
 					"title": "Hypotéka",
 					"status": "warning",
-					"note": "Komerční banka 3,5 % p.a.",
-					"description": "od 15. 8. 2020 do 15. 8. 2030",
+					"note": "Komerční banka – 3,49 % p.a.",
+					"description": "od 15. 3. 2019 do 15. 3. 2034, zbývá 126 splátek",
 					"labels": [
 						"Hypotéka",
 						"Pasiva",
 						"Dlouhodobý"
+					]
+				},
+				{
+					"currency": "CZK",
+					"value": 3200000,
+					"title": "Investiční nemovitost",
+					"status": "success",
+					"note": "Praha 10, Vršovická 8 – výnos 6,2 % p.a.",
+					"description": "2+kk, 52 m², pronajato za 16 500 Kč/měs.",
+					"labels": [
+						"Investiční nemovitost",
+						"Aktiva",
+						"Střednědobý"
 					]
 				}
 			]
@@ -112,11 +125,11 @@
 			"rows": [
 				{
 					"currency": "CZK",
-					"value": 25,
+					"value": 480000,
 					"title": "Hotovost",
 					"status": "success",
-					"note": "Účet v ČSOB, 0,01 % p.a.",
-					"description": "Největší část má být v hotovosti pro nečekané výdaje",
+					"note": "Spořicí účet ČSOB – 4,2 % p.a.",
+					"description": "Pohotovostní rezerva na 6 měsíců výdajů",
 					"labels": [
 						"Hotovost",
 						"Aktiva",
@@ -125,24 +138,24 @@
 				},
 				{
 					"currency": "CZK",
-					"value": 25,
-					"title": "Deriváty",
-					"status": "warning",
-					"note": "Opce na akcie, 20 % p.a.",
-					"description": "Vysoká rizikovost, ale i potenciální zisk",
+					"value": 620000,
+					"title": "Akcie & ETF",
+					"status": "success",
+					"note": "Portfolio S&P 500 ETF – průměr 9,4 % p.a.",
+					"description": "Diverzifikované ETF portfolio přes Degiro",
 					"labels": [
-						"Deriváty",
+						"Cenné papíry",
 						"Aktiva",
-						"Krátkodobý"
+						"Dlouhodobý"
 					]
 				},
 				{
 					"currency": "CZK",
-					"value": 25,
+					"value": 250000,
 					"title": "Kryptoměny",
 					"status": "danger",
-					"note": "Bitcoin, 100 % p.a.",
-					"description": "Velká volatilita, ale i potenciální zisk",
+					"note": "Bitcoin + Ethereum – volatilní",
+					"description": "Velká volatilita, doporučeno max. 5 % portfolia",
 					"labels": [
 						"Kryptoměny",
 						"Aktiva",
@@ -155,27 +168,40 @@
 			"rows": [
 				{
 					"currency": "CZK",
-					"value": 25,
-					"title": "BMW 320i",
+					"value": 520000,
+					"title": "BMW 520d",
 					"status": "success",
-					"note": "Auto 5 – 8,5 % p.a.",
-					"description": "Rok 2015, najeto 100 000 km, bez nehody",
+					"note": "Tržní hodnota – odpis 8 % ročně",
+					"description": "Rok 2021, najeto 62 000 km, servisní kniha",
 					"labels": [
-						"Auta & stroje",
+						"Vozidlo",
 						"Aktiva",
-						"Dlouhodobý"
+						"Střednědobý"
 					]
 				},
 				{
 					"currency": "CZK",
-					"value": 25,
-					"title": "Moneta a.s.",
-					"status": "warning",
-					"note": "Spotřebitelský úvěr 5 – 8,5 % p.a.",
-					"description": "od 15. 8. 2020 do 15. 8. 2030",
+					"value": -380000,
+					"title": "Spotřebitelský úvěr",
+					"status": "danger",
+					"note": "Moneta Money Bank – 7,9 % p.a.",
+					"description": "od 1. 6. 2023 do 1. 6. 2028, zbývá 49 splátek",
 					"labels": [
 						"Úvěr",
 						"Pasiva",
+						"Střednědobý"
+					]
+				},
+				{
+					"currency": "CZK",
+					"value": 540000,
+					"title": "Vybavení & stroje",
+					"status": "success",
+					"note": "Fotovoltaika + domácí vybavení",
+					"description": "FVE 10 kWp (návratnost 7 let) + elektronika",
+					"labels": [
+						"Majetek",
+						"Aktiva",
 						"Dlouhodobý"
 					]
 				}
@@ -184,29 +210,29 @@
 		"bilance": {
 			"active": {
 				"currency": "CZK",
-				"value": 25,
+				"value": 8910000,
 				"title": "Aktiva",
 				"yeld": {
 					"title": "Ziskovost aktiv",
-					"percent": 7.67
+					"percent": 7.20
 				}
 			},
 			"pasive": {
 				"currency": "CZK",
-				"value": 25,
+				"value": 2180000,
 				"title": "Pasiva",
 				"yeld": {
 					"title": "Nákladovost pasiv",
-					"percent": 4.5
+					"percent": 4.10
 				}
 			},
 			"netto": {
 				"currency": "CZK",
-				"value": 25,
+				"value": 6730000,
 				"title": "Čistý majetek"
 			},
 			"footer": {
-				"percent": 3.17,
+				"percent": 3.10,
 				"status": "success"
 			}
 		},
@@ -214,19 +240,19 @@
 			"rows": [
 				{
 					"currency": "CZK",
-					"value": 25,
+					"value": 730000,
 					"title": "Krátkodobý",
 					"status": "success"
 				},
 				{
 					"currency": "CZK",
-					"value": 25,
+					"value": 2450000,
 					"title": "Střednědobý",
 					"status": "warning"
 				},
 				{
 					"currency": "CZK",
-					"value": 25,
+					"value": 5730000,
 					"title": "Dlouhodobý",
 					"status": "danger"
 				}
@@ -236,14 +262,14 @@
 			"rows": [
 				{
 					"currency": "CZK",
-					"value": 25,
-					"title": "Krátkodobý",
+					"value": 8910000,
+					"title": "Aktiva",
 					"status": "success"
 				},
 				{
 					"currency": "CZK",
-					"value": 25,
-					"title": "Dlouhodobý",
+					"value": 2180000,
+					"title": "Pasiva",
 					"status": "warning"
 				}
 			]
@@ -252,19 +278,19 @@
 			"rows": [
 				{
 					"currency": "CZK",
-					"value": 25,
+					"value": 1350000,
 					"title": "Vysoká",
 					"status": "success"
 				},
 				{
 					"currency": "CZK",
-					"value": 25,
+					"value": 3700000,
 					"title": "Střední",
 					"status": "warning"
 				},
 				{
 					"currency": "CZK",
-					"value": 25,
+					"value": 3860000,
 					"title": "Nízká",
 					"status": "danger"
 				}

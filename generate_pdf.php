@@ -62,6 +62,7 @@ ob_start();
         html {
             font-size: 12px;
         }
+
         body {
             margin: 0;
             padding: 0;
@@ -85,7 +86,7 @@ ob_start();
 $html = ob_get_clean();
 try {
     $pdfContent = Browsershot::html($html)
-        ->setChromePath('/usr/bin/google-chrome')
+        ->setChromePath(getenv('CHROME_PATH') ?: '/usr/bin/google-chrome')
         ->showBackground()
         ->format('A4')
         ->margins(20, 20, 20, 20)
