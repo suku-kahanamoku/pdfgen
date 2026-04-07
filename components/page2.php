@@ -65,7 +65,6 @@
     $bilFooter  = $bilance['footer'] ?? [];
     $bilPercent = $bilFooter['percent'] ?? 0;
     $bilStatus  = $bilFooter['status'] ?? 'success';
-    $bilFootClr = ($bilStatus === 'success') ? '#2ecc71' : (($bilStatus === 'warning') ? '#e67e22' : '#e74c3c');
     ?>
     <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-6">
         <div class="flex gap-8 items-center">
@@ -151,17 +150,32 @@
             </div>
         </div>
         <!-- Footer row -->
-        <div class="flex gap-4 items-stretch">
-            <div class="flex-[3] bg-[#fff5f5] border border-[#f8d7da] rounded-xl px-5 py-4 flex items-center gap-4">
-                <div class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-base flex-shrink-0"
-                    style="color: <?= $bilFootClr ?>; background: <?= $bilFootClr ?>22; border: 1px solid <?= $bilFootClr ?>;">
-                    <?= number_format($bilPercent, 2, ',', ' ') ?>%
-                </div>
-                <div class="flex flex-col gap-1">
-                    <div class="font-bold text-base">Čistý výnos majetku</div>
-                    <div class="text-[#666]">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
+        <?php if ($bilPercent < 30): ?>
+            <div class="flex gap-4 items-stretch">
+                <div class="flex bg-[#fff5f5] border border-[#f8d7da] rounded-xl px-5 py-4 flex items-center gap-4">
+                    <div class="w-16 h-14 rounded-xl flex items-center justify-center font-bold text-base flex-shrink-0 text-white"
+                        style="background: #e74c3c;">
+                        <?= number_format($bilPercent, 2, ',', ' ') ?>%
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <div class="font-bold text-base">Pozor! Vaše pasiva jsou vysoká.</div>
+                        <div class="text-[#666]">Výše vašich aktiv se blíží hodnotě vašich pasiv. Kvůli tomu budete méně odolní v případě tržního výkyvu.</div>
+                    </div>
                 </div>
             </div>
-        </div>
+        <?php else: ?>
+            <div class="flex gap-4 items-stretch">
+                <div class="flex bg-[#f0faf4] border border-[#b7e5c8] rounded-xl px-5 py-4 flex items-center gap-4">
+                    <div class="w-16 h-14 rounded-xl flex items-center justify-center font-bold text-base flex-shrink-0 text-white"
+                        style="background: #2ecc71;">
+                        <?= number_format($bilPercent, 2, ',', ' ') ?>%
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <div class="font-bold text-base">Čistý výnos majetku</div>
+                        <div class="text-[#666]">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
     </div>
 </div>
