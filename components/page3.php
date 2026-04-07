@@ -4,9 +4,9 @@
 <div class="w-full min-h-[257mm] px-3 py-2 box-border bg-white [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16">
     <?php
     $p3StatusColor = [
-        'success' => '#2ecc71',
-        'warning' => '#e67e22',
-        'danger'  => '#e74c3c',
+        'success' => '#EAAF80',
+        'warning' => '#7B5E42',
+        'danger'  => '#E5E5E5',
     ];
 
     $p3Sections = [
@@ -40,28 +40,28 @@
         }
         $p3chartId = 'chart-p3-' . $p3sec['key'];
     ?>
-        <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-4">
-            <div class="flex flex-col gap-1">
-                <div class="font-lora text-[#936746] text-lg"><?= htmlspecialchars($p3sec['title']) ?></div>
-                <div class="text-[#777] text-sm leading-relaxed"><?= htmlspecialchars($p3sec['desc']) ?></div>
-            </div>
-            <div class="flex gap-6 items-center">
-                <!-- Rows as colored label badges -->
-                <div class="flex-1 flex flex-col gap-3">
-                    <?php foreach ($p3rows as $p3row):
-                        $p3val = (float)($p3row['value'] ?? 0);
-                        $p3pct = round($p3val / $p3total * 100);
-                        $p3clr = $p3StatusColor[$p3row['status'] ?? 'success'] ?? '#2ecc71';
-                    ?>
-                        <div class="flex justify-between items-center px-3 py-2 rounded-lg border text-sm"
-                            style="color: <?= $p3clr ?>; border-color: <?= $p3clr ?>; background: <?= $p3clr ?>18;">
-                            <span class="font-semibold"><?= htmlspecialchars($p3row['title'] ?? '') ?></span>
-                            <span><?= format_czk($p3val) ?> <?= $cur ?></span>
-                        </div>
-                    <?php endforeach; ?>
+        <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
+            <div class="font-lora text-4xl font-semibold"><?= htmlspecialchars($p3sec['title']) ?></div>
+            <div class="flex gap-8 items-start">
+                <div class="flex-1 flex flex-col gap-8">
+                    <div class="text-[#666] leading-relaxed"><?= htmlspecialchars($p3sec['desc']) ?></div>
+                    <!-- Rows as colored label badges -->
+                    <div class="flex flex-col gap-4">
+                        <?php foreach ($p3rows as $p3row):
+                            $p3val = (float)($p3row['value'] ?? 0);
+                            $p3pct = round($p3val / $p3total * 100);
+                            $p3clr = $p3StatusColor[$p3row['status'] ?? 'success'] ?? '#2ecc71';
+                        ?>
+                            <div class="flex justify-between items-center px-3 py-2 rounded-lg border text-sm"
+                                style="border-color: <?= $p3clr ?>;">
+                                <span class="font-semibold"><?= htmlspecialchars($p3row['title'] ?? '') ?></span>
+                                <span><?= format_czk($p3val) ?> <?= $cur ?></span>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
                 <!-- Donut chart -->
-                <div style="width:110px; height:110px; position:relative; flex-shrink:0;">
+                <div style="width:140px; height:140px; position:relative; flex-shrink:0;">
                     <canvas id="<?= $p3chartId ?>"></canvas>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                 },
                 options: {
                     animation: false,
-                    cutout: '70%',
+                    cutout: '80%',
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
@@ -99,11 +99,14 @@
     $p3netto     = $dataRaw['summary']['netto'] ?? [];
     $p3total_pct = (int)($p3netto['total'] ?? 0);
     ?>
-    <div class="bg-[#936746] text-white rounded-3xl px-8 py-6 flex items-center gap-8">
-        <div class="text-5xl font-bold font-lora flex-shrink-0"><?= $p3total_pct ?>%</div>
-        <div class="flex flex-col gap-2">
-            <div class="text-lg font-bold">Diverzifikace portfolia</div>
-            <div class="opacity-90 leading-relaxed">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
+    <div class="flex items-center gap-8">
+        <div class="bg-[#936746] text-white rounded-3xl px-8 py-6 flex items-center gap-8 flex-1">
+            <div class="text-5xl font-bold font-lora flex-shrink-0"><?= $p3total_pct ?>%</div>
+            <div class="flex flex-col gap-2 flex-1">
+                <div class="text-lg font-bold">Diverzifikace portfolia</div>
+                <div class="opacity-90 leading-relaxed">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
+            </div>
         </div>
+        <i class="fa-solid fa-trophy text-[#BD8D66] text-7xl flex-shrink-0 w-44 text-right"></i>
     </div>
 </div>
