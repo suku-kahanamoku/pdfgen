@@ -22,7 +22,7 @@
     .page {
         width: 100%;
         min-height: 257mm;
-        padding: 0;
+        padding: 30px 40px;
         box-sizing: border-box;
         background: white;
         font-family: 'Plus Jakarta Sans', sans-serif;
@@ -33,7 +33,7 @@
 
     .main-title {
         font-family: 'Lora', serif;
-        font-size: 42px;
+        font-size: 47px;
         line-height: 1.1;
         margin: 0 0 8px 0;
     }
@@ -46,16 +46,9 @@
         font-family: 'Lora', serif;
         font-size: 20px;
         color: var(--clr-primary);
-        margin: 44px 0 20px 0;
+        margin: 30px 0 15px 0;
         border-bottom: 1px solid #f0f0f0;
         padding-bottom: 8px;
-    }
-
-    .section-title--bilance {
-        font-size: 32px;
-        line-height: 1.15;
-        margin-top: 50px;
-        margin-bottom: 16px;
     }
 
     .kpi-grid {
@@ -73,7 +66,7 @@
     }
 
     .kpi-label {
-        font-size: 11px;
+        font-size: 10px;
         color: #888;
         text-transform: uppercase;
         letter-spacing: 0.05em;
@@ -82,7 +75,7 @@
 
     .kpi-value {
         font-family: 'Lora', serif;
-        font-size: 22px;
+        font-size: 15px;
         color: var(--clr-primary);
         font-weight: bold;
     }
@@ -122,9 +115,39 @@
         color: #333;
     }
 
+    .bilance-bar-wrap {
+        margin-top: 30px;
+    }
+
+    .bilance-bar-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+    }
+
+    .bilance-bar-label {
+        width: 80px;
+        font-size: 12px;
+        color: #666;
+    }
+
+    .bilance-bar-outer {
+        flex: 1;
+        background: #f3f3f3;
+        height: 16px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .bilance-bar-inner {
+        height: 100%;
+        border-radius: 8px;
+    }
+
     .page-subtitle {
         color: #888;
-        margin: 0 0 34px 0;
+        margin: 0 0 25px 0;
     }
 
     .section-icon {
@@ -142,155 +165,266 @@
         color: white;
     }
 
-    .section-with-chart {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        margin-bottom: 20px;
+    .bilance-bar-amount {
+        width: 110px;
+        text-align: right;
+        font-size: 12px;
+        font-weight: bold;
+        color: #444;
     }
 
-    .section-text {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    .chart-container {
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    } 
+
+    .chart-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    }
+    
+    .protection-wrapper {
+        width: 100%;
+        margin-top: 20px;
     }
 
-    .donut-container {
-        flex: 0 0 auto;
-        width: 210px;
-        text-align: center;
+    .protection-table {
+        width: 100%;
+        border-spacing: 12px 0;
+        margin-left: -12px; 
     }
 
-    .chart-legend {
-        font-size: 11px;
-        line-height: 1.6;
-        margin-top: 10px;
+    .protection-card {
+        background: #fcfaf8;
+        border: 1px solid #f0ebe5;
+        border-radius: 18px;
+        padding: 20px;
+        width: 50%;
+        vertical-align: top;
     }
 
-    .legend-item {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        justify-content: center;
+    .protection-card-title {
+        font-weight: 700;
+        font-size: 16px;
+        color: #3d3229;
         margin-bottom: 4px;
     }
 
-    .legend-color {
-        width: 12px;
-        height: 12px;
-        border-radius: 2px;
-        flex-shrink: 0;
+    .protection-card-value {
+        font-size: 15px;
+        font-weight: 700;
+        color: #3d3229;
+        margin-bottom: 12px;
     }
 
-    .bilance-layout {
-        display: flex;
-        gap: 20px;
-        align-items: stretch;
-        margin-bottom: 14px;
+    .badge-container {
+        margin-bottom: 12px;
     }
 
-    .bilance-chart-col {
-        flex: 0 0 50%;
-        max-width: 50%;
-        min-width: 0;
+    .badge-item {
+        display: inline-block;
+        background: #D6B89E; 
+        color: white;
+        padding: 3px 10px;
+        border-radius: 6px;
+        font-size: 9px;
+        font-weight: 600;
+        margin-right: 4px;
+        margin-bottom: 4px;
+        text-transform: uppercase;
     }
 
-    .bilance-chart-wrap {
-        position: relative;
-        width: 100%;
-        height: 305px;
-        background: transparent;
-        border: 0;
-        border-radius: 0;
-        padding: 0;
-        box-sizing: border-box;
+    .protection-date {
+        font-size: 11px;
+        color: #8c8c8c;
     }
 
-    .bilance-summary-col {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .bilance-stat-stack {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .bilance-stat-item {
-        flex: 1;
-        min-width: 0;
-    }
-
-    .bilance-stat-card {
+    .goal-row {
+        background: white;
         border: 1px solid #f0ebe5;
-        border-radius: 12px;
+        border-radius: 18px;
+        padding: 15px 20px;
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .goal-icon-circle {
+        width: 40px;
+        height: 40px;
         background: #fcfaf8;
-        padding: 12px 14px;
-    }
-
-    .bilance-stat-card--inline {
+        border-radius: 50%;
         display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 12px;
-    }
-
-    .bilance-stat-label {
-        font-size: 11px;
-        color: #777;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        margin-bottom: 0;
-    }
-
-    .bilance-stat-value {
-        font-family: 'Lora', serif;
+        align-items: center;
+        justify-content: center;
+        color: #D6B89E;
         font-size: 20px;
-        color: #333;
-        font-weight: 700;
-        line-height: 1.2;
+        font-weight: bold;
     }
 
-    .bilance-stat-note {
-        margin-top: 6px;
-        padding-left: 15px;
+    .goal-meta {
         font-size: 11px;
-        color: #8a8a8a;
+        color: #8c8c8c;
+        margin-top: 2px;
     }
 
-    .bilance-net-box {
-        border: 1px solid #e7dfd8;
-        border-radius: 12px;
-        background: #f7f2ec;
-        padding: 14px 16px;
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
+    .goal-progress-bar {
+        background: #fcfaf8;
+        padding: 8px 15px;
+        border-radius: 10px;
+        margin-top: 10px;
+        font-size: 11px;
+        color: #3d3229;
     }
 
-    .bilance-net-label {
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: #7a6a5c;
-    }
-
-    .bilance-net-value {
-        font-family: 'Lora', serif;
-        font-size: 24px;
-        color: #333;
+    .goal-amount {
         font-weight: 700;
+        color: #3d3229;
+        font-size: 15px;
     }
 
-    .bilance-net-value.pos {
-        color: #27ae60;
+    .p7-box {
+    background-color: #4d4540;
+    border-radius: 25px;
+    padding: 20px 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
     }
 
-    .bilance-net-value.neg {
-        color: #c0392b;
+    .timeline-section {
+    padding-top: 10px;
+    }
+
+    .timeline-wrapper {
+    position: relative;
+    padding-left: 40px;
+    border-left: 2px dashed #f0ebe5;
+    margin-left: 60px;
+    margin-top: 40px;
+    }
+
+    .timeline-year {
+    position: absolute;
+    left: -1px;
+    transform: translateX(-50%);
+    top: -30;
+    background: white;
+    padding: 0px 5px;
+    font-weight: 700;
+    color: #3d3229;
+    font-size: 14px;
+    white-space: nowrap;
+    }
+
+    .invest-card {
+    background: white;
+    border: 1px solid #f0ebe5;
+    border-radius: 20px;
+    padding: 12px 20px;
+    margin-bottom: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    display: table;
+    }
+
+    .invest-amount-box {
+    background: #fcfaf8;
+    border-radius: 12px;
+    padding: 10px 15px;
+    width: 150px;
+    text-align: left;
+    }
+
+    /* PAGE 8 */
+    .timeline-container {
+        position: relative;
+        padding-left: 60px;
+        margin-top: 40px;
+    }
+
+    .timeline-line {
+        position: absolute;
+        left: 25px;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        border-left: 1px dashed #d0d0d0;
+    }
+
+    .timeline-year-label {
+        position: absolute;
+        left: -60px;
+        width: 45px;
+        text-align: right;
+        font-weight: 700;
+        color: #3d3229;
+        font-size: 14px;
+        line-height: 50px; 
+    }
+
+    .timeline-card {
+        background: #fff;
+        border: 1px solid #2ecc71; 
+        border-radius: 12px;
+        padding: 12px 20px;
+        margin-bottom: 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .timeline-card--future {
+        border-color: #f0ebe5; 
+    }
+
+    .timeline-card-main {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .timeline-icon-circle {
+        width: 36px;
+        height: 36px;
+        border: 1px solid #2ecc71;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #2ecc71;
+    }
+
+    .timeline-card-info h4 {
+        margin: 0;
+        font-size: 15px;
+        color: #3d3229;
+    }
+
+    .timeline-card-info span {
+        font-size: 11px;
+        color: #2ecc71;
+        font-weight: 600;
+    }
+
+    .timeline-card-right {
+        display: flex;
+        gap: 10px;
+    }
+
+    .tag-box {
+        border: 1px solid #dcdcdc;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 11px;
+        color: #3d3229;
     }
 </style>
