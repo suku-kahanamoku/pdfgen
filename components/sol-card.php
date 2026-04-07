@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <?php if ($cardProgress !== null): 
+    <?php if ($cardProgress !== null):
         $progressId = 'progressChart_' . uniqid();
     ?>
         <div class="progress-wrap">
@@ -55,21 +55,31 @@
                             responsive: true,
                             maintainAspectRatio: false,
                             plugins: {
-                                legend: { display: false },
-                                tooltip: { enabled: false }
+                                legend: {
+                                    display: false
+                                },
+                                tooltip: {
+                                    enabled: false
+                                }
                             },
                             scales: {
-                                x: { 
-                                    stacked: true, 
-                                    display: false, 
-                                    min: 0, 
-                                    max: 100,
-                                    grid: { display: false, drawBorder: false }
-                                },
-                                y: { 
-                                    stacked: true, 
+                                x: {
+                                    stacked: true,
                                     display: false,
-                                    grid: { display: false, drawBorder: false }
+                                    min: 0,
+                                    max: 100,
+                                    grid: {
+                                        display: false,
+                                        drawBorder: false
+                                    }
+                                },
+                                y: {
+                                    stacked: true,
+                                    display: false,
+                                    grid: {
+                                        display: false,
+                                        drawBorder: false
+                                    }
                                 }
                             }
                         }

@@ -448,62 +448,62 @@
 					"label": "Závazky",
 					"type": "currency"
 				},
-				{ 
-				"key": "short_term_status",
-				"label": "Stav neschopnosti",
-				"type": "text" 
+				{
+					"key": "short_term_status",
+					"label": "Stav neschopnosti",
+					"type": "text"
 				},
-          		{
-				"key": "sick_leave_pay",
-				"label": "Nemocenská",
-				"type": "currency"
+				{
+					"key": "sick_leave_pay",
+					"label": "Nemocenská",
+					"type": "currency"
 				},
-            	{ 
-				"key": "short_term_gap",
-				"label": "Chybí měsíčně",
-				"type": "currency" 
+				{
+					"key": "short_term_gap",
+					"label": "Chybí měsíčně",
+					"type": "currency"
 				},
-            	{ 
-				"key": "reserve_survival",
-				"label": "Výdrž rezervy",
-				"type": "text" 
+				{
+					"key": "reserve_survival",
+					"label": "Výdrž rezervy",
+					"type": "text"
 				},
-            	{
-				"key": "invalidity_1_gap",
-				"label": "Inv. I stupeň chybí",
-				"type": "currency" 
+				{
+					"key": "invalidity_1_gap",
+					"label": "Inv. I stupeň chybí",
+					"type": "currency"
 				},
-            	{ 
-				"key": "invalidity_2_gap",
-				"label": "Inv. II stupeň chybí",
-				"type": "currency" 
+				{
+					"key": "invalidity_2_gap",
+					"label": "Inv. II stupeň chybí",
+					"type": "currency"
 				},
-            	{ 
-				"key": "invalidity_3_insurance",
-				"label": "Inv. III stupeň pojistka",
-				"type": "currency" 
+				{
+					"key": "invalidity_3_insurance",
+					"label": "Inv. III stupeň pojistka",
+					"type": "currency"
 				},
-            	{
-                "key": "death_mortgage",
-                "label": "Závazek Hypotéka",
-                "type": "currency"
-           		},
-            	{
-                "key": "death_loans",
-                "label": "Závazek Úvěry",
-                "type": "currency"
-            	},
-            	{
-                "key": "death_insurance_total",
-                "label": "Pojistné krytí smrti",
-                "type": "currency"
-            	},
-            	{
-                "key": "death_surplus",
-                "label": "Přesah krytí",
-                "type": "currency"
-            	}
-        	],
+				{
+					"key": "death_mortgage",
+					"label": "Závazek Hypotéka",
+					"type": "currency"
+				},
+				{
+					"key": "death_loans",
+					"label": "Závazek Úvěry",
+					"type": "currency"
+				},
+				{
+					"key": "death_insurance_total",
+					"label": "Pojistné krytí smrti",
+					"type": "currency"
+				},
+				{
+					"key": "death_surplus",
+					"label": "Přesah krytí",
+					"type": "currency"
+				}
+			],
 			"rows": [
 				{
 					"age": {
@@ -531,146 +531,197 @@
 						"type": "currency"
 					},
 					"short_term_status": {
-						"value": "Nedostatečné", 
-						"type": "text" 
+						"value": "Nedostatečné",
+						"type": "text"
 					},
-                	"sick_leave_pay": { 
-						"value": 8000, 
-						"type": "currency" 
+					"sick_leave_pay": {
+						"value": 8000,
+						"type": "currency"
 					},
-                	"short_term_gap": { 
-						"value": -15000, 
-						"type": "currency" 
+					"short_term_gap": {
+						"value": -15000,
+						"type": "currency"
 					},
-                	"reserve_survival": { 
-						"value": "3,24 měsíce", 
-						"type": "text" 
+					"reserve_survival": {
+						"value": "3,24 měsíce",
+						"type": "text"
 					},
-                	"invalidity_1_gap": { 
-						"value": -2000, 
-						"type": "currency" 
+					"invalidity_1_gap": {
+						"value": -2000,
+						"type": "currency"
 					},
-                	"invalidity_2_gap": { 
-						"value": -7000, 
-						"type": "currency" 
+					"invalidity_2_gap": {
+						"value": -7000,
+						"type": "currency"
 					},
-                	"invalidity_3_insurance": { 
-						"value": 1500000, 
-						"type": "currency" 
+					"invalidity_3_insurance": {
+						"value": 1500000,
+						"type": "currency"
 					},
-                	"death_mortgage": {
-                    	"value": -3000000,
-                    	"type": "currency"
-                	},
-                	"death_loans": {
-                    	"value": -180000,
-                    	"type": "currency"
-                	},
-                	"death_insurance_total": {
-                    	"value": 4020000,
-                    	"type": "currency"
-                	},
-                	"death_surplus": {
-                    	"value": 350000,
-                    	"type": "currency"
-                	}
-            	}
+					"death_mortgage": {
+						"value": -3000000,
+						"type": "currency"
+					},
+					"death_loans": {
+						"value": -180000,
+						"type": "currency"
+					},
+					"death_insurance_total": {
+						"value": 4020000,
+						"type": "currency"
+					},
+					"death_surplus": {
+						"value": 350000,
+						"type": "currency"
+					}
+				}
 			]
 		},
 		"mortgage_capacity": {
-    		"title": "Úvěrová kapacita a bonita",
-   			"indicators": {
-       		"dti": { "label": "DTI - Předluženost", "value": 6.2, "max": 8, "desc": "Nebudu předlužený?" },
-        	"dsti": { "label": "DSTI - Splácení", "value": 28, "max": 45, "desc": "Zvládnu splácet?" },
-        	"ltv": { "label": "LTV - Zástavní prostor", "value": 10, "max": 80, "desc": "Vlastní zdroje vs. úvěr" }
-    	},
-
-    	"capital_table": [
-        { "label": "Vlastní úspory", "value": { "value": 450000, "type": "currency" } },
-        { "label": "Dostupná bonita z Nemovitost 1", "value": { "value": 900000, "type": "currency" } },
-        { "label": "Dostupná bonita z Nemovitost 2", "value": { "value": 2000000, "type": "currency" } },
-        { "label": "Vlastní zdroje (20%)", "value": { "value": 350000, "type": "currency" } },
-        { "label": "Maximální výše úvěru", "value": { "value": 16750000, "type": "currency" } }
-    ]
-},
-"protection": {
-            "title": "Chraňte svůj majetek a své příjmy",
-            "items": [
-                {
-                    "name": "BMW x320d",
-                    "value": 450000,
-                    "date_to": "20.12.2025",
-                    "badges": ["POV", "HAV", "Asistence"]
-                },
-                {
-                    "name": "Byt 3+1, Jugoslávská",
-                    "value": 2450000,
-                    "date_to": "20.12.2025",
-                    "badges": ["Nemovitost", "Domácnost"]
-                }
-            ]
-        },
-        "dreams": {
-            "title": "A teď společně naplníme vaše sny!",
-            "goals": [
-                {
-                    "name": "Koupit nové auto",
-                    "amount": 400000,
-                    "deadline": "14.05.2025",
-                    "priority": "Střední priorita",
-                    "type": "Krátkodobý cíl",
-                    "monthly": 33769
-                },
-                {
-                    "name": "Cesta kolem světa",
-                    "amount": 280000,
-                    "deadline": "14.05.2025",
-                    "priority": "Nízká priorita",
-                    "type": "Střednědobý cíl",
-                    "monthly": 15500
+			"title": "Úvěrová kapacita a bonita",
+			"indicators": {
+				"dti": {
+					"label": "DTI - Předluženost",
+					"value": 6.2,
+					"max": 8,
+					"desc": "Nebudu předlužený?"
 				},
-                {
-                    "name": "Renta",
-                    "amount": 50000,
-                    "deadline": "2055-08-15",
-                    "priority": "Vysoká",
-                    "type": "Dlouhodobý cíl"
-                }
-            ]
-        },
-	"investment_plan": {
-    "monthly_savings": 5000,
-    "expected_yield": 7.54,
-    "timeline": [
-        {
-            "amount": 450000,
-            "company": "INVESTIKA a.s.",
-            "period": "od 15. 8. 2024 do 15. 8. 2034",
-            "fund_name": "Otevřený podílový fond NEMO",
-            "yield_range": "5 – 8,5 % p.a.",
-            "target_type": "Dlouhodobý cíl",
-            "action": "Výběr a reinvestice 450 000 Kč ze stavebního spoření"
-        },
-        {
-            "amount": 5000,
-            "is_monthly": true,
-            "company": "EFEKTA o.c.p.",
-            "period": "od 15. 8. 2024 do 15. 8. 2034",
-            "fund_name": "CREIF nemovitostní investiční fond",
-            "yield_range": "5 – 8,5 % p.a.",
-            "target_type": "Krátkodobý cíl",
-            "action": "Pravidelná investice"
-        },
-		{
-                    "amount": 5000000,
-                    "company": "Realitní projekt",
-                    "period": "od 15. 8. 2024 do 15. 8. 2034",
-                    "fund_name": "Palackého třída 15, 3+1",
-                    "yield_range": "5 – 8,5 % p.a.",
-                    "target_type": "Dlouhodobý cíl",
-                    "action": "Prodej bytu"
-                }
-    ]
-}
+				"dsti": {
+					"label": "DSTI - Splácení",
+					"value": 28,
+					"max": 45,
+					"desc": "Zvládnu splácet?"
+				},
+				"ltv": {
+					"label": "LTV - Zástavní prostor",
+					"value": 10,
+					"max": 80,
+					"desc": "Vlastní zdroje vs. úvěr"
+				}
+			},
+			"capital_table": [
+				{
+					"label": "Vlastní úspory",
+					"value": {
+						"value": 450000,
+						"type": "currency"
+					}
+				},
+				{
+					"label": "Dostupná bonita z Nemovitost 1",
+					"value": {
+						"value": 900000,
+						"type": "currency"
+					}
+				},
+				{
+					"label": "Dostupná bonita z Nemovitost 2",
+					"value": {
+						"value": 2000000,
+						"type": "currency"
+					}
+				},
+				{
+					"label": "Vlastní zdroje (20%)",
+					"value": {
+						"value": 350000,
+						"type": "currency"
+					}
+				},
+				{
+					"label": "Maximální výše úvěru",
+					"value": {
+						"value": 16750000,
+						"type": "currency"
+					}
+				}
+			]
+		},
+		"protection": {
+			"title": "Chraňte svůj majetek a své příjmy",
+			"items": [
+				{
+					"name": "BMW x320d",
+					"value": 450000,
+					"date_to": "20.12.2025",
+					"badges": [
+						"POV",
+						"HAV",
+						"Asistence"
+					]
+				},
+				{
+					"name": "Byt 3+1, Jugoslávská",
+					"value": 2450000,
+					"date_to": "20.12.2025",
+					"badges": [
+						"Nemovitost",
+						"Domácnost"
+					]
+				}
+			]
+		},
+		"dreams": {
+			"title": "A teď společně naplníme vaše sny!",
+			"goals": [
+				{
+					"name": "Koupit nové auto",
+					"amount": 400000,
+					"deadline": "14.05.2025",
+					"priority": "Střední priorita",
+					"type": "Krátkodobý cíl",
+					"monthly": 33769
+				},
+				{
+					"name": "Cesta kolem světa",
+					"amount": 280000,
+					"deadline": "14.05.2025",
+					"priority": "Nízká priorita",
+					"type": "Střednědobý cíl",
+					"monthly": 15500
+				},
+				{
+					"name": "Renta",
+					"amount": 50000,
+					"deadline": "2055-08-15",
+					"priority": "Vysoká",
+					"type": "Dlouhodobý cíl"
+				}
+			]
+		},
+		"investment_plan": {
+			"monthly_savings": 5000,
+			"expected_yield": 7.54,
+			"timeline": [
+				{
+					"amount": 450000,
+					"company": "INVESTIKA a.s.",
+					"period": "od 15. 8. 2024 do 15. 8. 2034",
+					"fund_name": "Otevřený podílový fond NEMO",
+					"yield_range": "5 – 8,5 % p.a.",
+					"target_type": "Dlouhodobý cíl",
+					"action": "Výběr a reinvestice 450 000 Kč ze stavebního spoření"
+				},
+				{
+					"amount": 5000,
+					"is_monthly": true,
+					"company": "EFEKTA o.c.p.",
+					"period": "od 15. 8. 2024 do 15. 8. 2034",
+					"fund_name": "CREIF nemovitostní investiční fond",
+					"yield_range": "5 – 8,5 % p.a.",
+					"target_type": "Krátkodobý cíl",
+					"action": "Pravidelná investice"
+				},
+				{
+					"amount": 5000000,
+					"company": "Realitní projekt",
+					"period": "od 15. 8. 2024 do 15. 8. 2034",
+					"fund_name": "Palackého třída 15, 3+1",
+					"yield_range": "5 – 8,5 % p.a.",
+					"target_type": "Dlouhodobý cíl",
+					"action": "Prodej bytu"
+				}
+			]
+		}
 	}
 }

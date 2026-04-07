@@ -45,7 +45,7 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
 <!-- PAGE 1 – Přehled majetku                                     -->
 <!-- ============================================================ -->
 <div class="page">
-<table style="width: 100%; table-layout: fixed; border-collapse: separate; border-spacing: 0 8px; font-size: 12px;">
+    <table style="width: 100%; table-layout: fixed; border-collapse: separate; border-spacing: 0 8px; font-size: 12px;">
         <tr>
             <td style="width: 65%; vertical-align: top; padding-right: 20px;">
                 <h1 class="main-title" style="margin-top: 0;">
@@ -65,14 +65,14 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
                 <div class="chart-container" style="width: 160px; margin: 0 auto;">
                     <?php if ($chartUrl): ?>
                         <img src="<?= $chartUrl ?>" style="width: 160px; height: auto; display: block; margin-bottom: 10px;" />
-            
-                <div style="text-align: center; width: 100%;">
-                    <div style="font-size: 10px; color: #8c8c8c; text-transform: uppercase; letter-spacing: 1px; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.2;">
-                    Čistý majetek
-                    </div>
-                <div style="font-size: 16px; font-weight: 700; color: <?= $cisty_majetek_color ?>; font-family: 'Plus Jakarta Sans', sans-serif; margin-top: 4px;">
-                    <?= number_format($cisty_majetek, 0, ',', ' ') ?> Kč
-                </div>
+
+                        <div style="text-align: center; width: 100%;">
+                            <div style="font-size: 10px; color: #8c8c8c; text-transform: uppercase; letter-spacing: 1px; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.2;">
+                                Čistý majetek
+                            </div>
+                            <div style="font-size: 16px; font-weight: 700; color: <?= $cisty_majetek_color ?>; font-family: 'Plus Jakarta Sans', sans-serif; margin-top: 4px;">
+                                <?= number_format($cisty_majetek, 0, ',', ' ') ?> Kč
+                            </div>
                         </div>
                     <?php endif; ?>
                 </div>
@@ -314,7 +314,7 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
     </div>
 
     <div style="display: flex; justify-content: space-around; margin: 40px 0; text-align: center;">
-        <?php foreach (($mortgage_cap['indicators'] ?? []) as $key => $ind): 
+        <?php foreach (($mortgage_cap['indicators'] ?? []) as $key => $ind):
             $val = (float)($ind['value'] ?? 0);
             $max = (float)($ind['max'] ?? 1);
             $percent = ($val / $max) * 100;
@@ -324,10 +324,10 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
             <div style="width: 150px;">
                 <div style="position: relative; width: 100px; height: 100px; margin: 0 auto;">
                     <svg width="100" height="100" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="45" fill="transparent" stroke="#f0f0f0" stroke-width="8"/>
+                        <circle cx="50" cy="50" r="45" fill="transparent" stroke="#f0f0f0" stroke-width="8" />
                         <circle cx="50" cy="50" r="45" fill="transparent" stroke="var(--clr-primary)" stroke-width="8"
-                                stroke-dasharray="<?= $dashArray ?>" stroke-dashoffset="<?= $dashOffset ?>"
-                                stroke-linecap="round" transform="rotate(-90 50 50)"/>
+                            stroke-dasharray="<?= $dashArray ?>" stroke-dashoffset="<?= $dashOffset ?>"
+                            stroke-linecap="round" transform="rotate(-90 50 50)" />
                     </svg>
                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight: bold; font-size: 16px;">
                         <?= $ind['value'] ?><?= $key === 'dti' ? '' : '%' ?>
@@ -341,19 +341,19 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
 
     <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px;">
         <div>
-        <div class="section-title">Dostupný kapitál</div>
-        <div class="info-grid" style="grid-template-columns: 1fr;">
-        <?php 
-        $rows = $mortgage_cap['capital_table'] ?? []; 
-        foreach ($rows as $row): 
-        $rawVal = $row['value']['value'] ?? 0;
-        ?>
-        <div class="info-row" style="padding: 10px 15px;">
-            <span class="info-label"><?= htmlspecialchars($row['label'] ?? '') ?></span>
-            <span class="info-val"><?= format_czk((float)$rawVal) ?> Kč</span>
-        </div>
-    <?php endforeach; ?>
-</div>
+            <div class="section-title">Dostupný kapitál</div>
+            <div class="info-grid" style="grid-template-columns: 1fr;">
+                <?php
+                $rows = $mortgage_cap['capital_table'] ?? [];
+                foreach ($rows as $row):
+                    $rawVal = $row['value']['value'] ?? 0;
+                ?>
+                    <div class="info-row" style="padding: 10px 15px;">
+                        <span class="info-label"><?= htmlspecialchars($row['label'] ?? '') ?></span>
+                        <span class="info-val"><?= format_czk((float)$rawVal) ?> Kč</span>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
 
         <div>
@@ -393,29 +393,29 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
         <span class="gray">Chraňte svůj majetek</span><br>a své příjmy
     </h1>
     <p class="page-subtitle">
-        Chránit svůj obytný majetek je klíčové pro zajištění bezpečí a stability domova. 
+        Chránit svůj obytný majetek je klíčové pro zajištění bezpečí a stability domova.
         Kvalitní pojištění poskytuje finanční ochranu před nepředvídatelnými událostmi.
     </p>
 
     <div class="protection-wrapper">
         <table class="protection-table" style="width: 100%; border-spacing: 15px 0; border-collapse: separate; margin-left: -15px;">
             <tr>
-                <?php 
+                <?php
                 $protectionItems = $GLOBALS['protection']['items'] ?? [];
-                foreach ($protectionItems as $item): 
+                foreach ($protectionItems as $item):
                 ?>
-                <td class="protection-card" style="width: 50%; background: #fcfaf8; border: 1px solid #f0ebe5; border-radius: 18px; padding: 20px; vertical-align: top;">
-                    <div class="protection-card-title" style="font-weight: 700; font-size: 16px; color: #3d3229; margin-bottom: 4px;"><?= htmlspecialchars($item['name']) ?></div>
-                    <div class="protection-card-value" style="font-size: 15px; font-weight: 700; color: #3d3229; margin-bottom: 12px;"><?= number_format((float)$item['value'], 0, ',', ' ') ?> Kč</div>
-                    
-                    <div class="badge-container" style="margin-bottom: 12px;">
-                        <?php foreach (($item['badges'] ?? []) as $badge): ?>
-                            <span class="badge-item" style="display: inline-block; background: #D6B89E; color: white; padding: 3px 10px; border-radius: 6px; font-size: 9px; font-weight: 600; margin-right: 4px; text-transform: uppercase;"><?= htmlspecialchars($badge) ?></span>
-                        <?php endforeach; ?>
-                    </div>
-                    
-                    <div class="protection-date" style="font-size: 11px; color: #8c8c8c;">Pojištěno do: <?= htmlspecialchars($item['date_to']) ?></div>
-                </td>
+                    <td class="protection-card" style="width: 50%; background: #fcfaf8; border: 1px solid #f0ebe5; border-radius: 18px; padding: 20px; vertical-align: top;">
+                        <div class="protection-card-title" style="font-weight: 700; font-size: 16px; color: #3d3229; margin-bottom: 4px;"><?= htmlspecialchars($item['name']) ?></div>
+                        <div class="protection-card-value" style="font-size: 15px; font-weight: 700; color: #3d3229; margin-bottom: 12px;"><?= number_format((float)$item['value'], 0, ',', ' ') ?> Kč</div>
+
+                        <div class="badge-container" style="margin-bottom: 12px;">
+                            <?php foreach (($item['badges'] ?? []) as $badge): ?>
+                                <span class="badge-item" style="display: inline-block; background: #D6B89E; color: white; padding: 3px 10px; border-radius: 6px; font-size: 9px; font-weight: 600; margin-right: 4px; text-transform: uppercase;"><?= htmlspecialchars($badge) ?></span>
+                            <?php endforeach; ?>
+                        </div>
+
+                        <div class="protection-date" style="font-size: 11px; color: #8c8c8c;">Pojištěno do: <?= htmlspecialchars($item['date_to']) ?></div>
+                    </td>
                 <?php endforeach; ?>
             </tr>
         </table>
@@ -426,38 +426,38 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
             A teď společně <span style="color: var(--clr-primary);">naplníme vaše sny!</span>
         </h2>
 
-        <?php 
+        <?php
         $dreamGoals = $GLOBALS['dreams']['goals'] ?? [];
-        foreach ($dreamGoals as $goal): 
+        foreach ($dreamGoals as $goal):
         ?>
-        <div class="goal-row" style="background: white; border: 1px solid #f0ebe5; border-radius: 18px; padding: 15px 20px; margin-bottom: 15px;">
-            <table style="width: 100%; border-collapse: collapse;">
-                <tr>
-                    <td style="width: 60px; vertical-align: middle;">
-                        <div class="goal-icon-circle" style="width: 40px; height: 40px; background: #fcfaf8; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #D6B89E; font-size: 20px; font-weight: bold;">+</div>
-                    </td>
-                    <td style="vertical-align: middle;">
-                        <div style="font-weight: 700; color: #3d3229; font-size: 16px; line-height: 1.2;">
-                            <?= htmlspecialchars($goal['name']) ?>
-                        </div>
-                        <div class="goal-meta" style="font-size: 11px; color: #8c8c8c;">
-                            <?= htmlspecialchars($goal['type'] ?? '') ?> • <?= htmlspecialchars($goal['priority'] ?? '') ?>
-                        </div>
-                    </td>
-                    <td style="text-align: right; vertical-align: middle;">
-                        <div class="goal-amount" style="font-weight: 700; color: #3d3229; font-size: 15px;">
-                            <?= number_format((float)$goal['amount'], 0, ',', ' ') ?> Kč
-                        </div>
-                        <div class="goal-meta" style="font-size: 11px; color: #8c8c8c;">
-                            Splnit do: <?= htmlspecialchars($goal['deadline'] ?? '') ?>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-            <div style="background: #fcfaf8; padding: 8px 15px; border-radius: 10px; margin-top: 10px; font-size: 11px; color: #3d3229; border: 1px solid #f0f0f0;">
-                Zbývá: <span style="font-weight: 700;"><?= number_format((float)$goal['amount'], 0, ',', ' ') ?> Kč</span> / <?= number_format((float)($goal['monthly'] ?? 0), 0, ',', ' ') ?> Kč p.m.
+            <div class="goal-row" style="background: white; border: 1px solid #f0ebe5; border-radius: 18px; padding: 15px 20px; margin-bottom: 15px;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <td style="width: 60px; vertical-align: middle;">
+                            <div class="goal-icon-circle" style="width: 40px; height: 40px; background: #fcfaf8; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #D6B89E; font-size: 20px; font-weight: bold;">+</div>
+                        </td>
+                        <td style="vertical-align: middle;">
+                            <div style="font-weight: 700; color: #3d3229; font-size: 16px; line-height: 1.2;">
+                                <?= htmlspecialchars($goal['name']) ?>
+                            </div>
+                            <div class="goal-meta" style="font-size: 11px; color: #8c8c8c;">
+                                <?= htmlspecialchars($goal['type'] ?? '') ?> • <?= htmlspecialchars($goal['priority'] ?? '') ?>
+                            </div>
+                        </td>
+                        <td style="text-align: right; vertical-align: middle;">
+                            <div class="goal-amount" style="font-weight: 700; color: #3d3229; font-size: 15px;">
+                                <?= number_format((float)$goal['amount'], 0, ',', ' ') ?> Kč
+                            </div>
+                            <div class="goal-meta" style="font-size: 11px; color: #8c8c8c;">
+                                Splnit do: <?= htmlspecialchars($goal['deadline'] ?? '') ?>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div style="background: #fcfaf8; padding: 8px 15px; border-radius: 10px; margin-top: 10px; font-size: 11px; color: #3d3229; border: 1px solid #f0f0f0;">
+                    Zbývá: <span style="font-weight: 700;"><?= number_format((float)$goal['amount'], 0, ',', ' ') ?> Kč</span> / <?= number_format((float)($goal['monthly'] ?? 0), 0, ',', ' ') ?> Kč p.m.
+                </div>
             </div>
-        </div>
         <?php endforeach; ?>
     </div>
 </div>
@@ -470,12 +470,14 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
 <div style="page-break-before: always; clear: both;"></div>
 
 <div class="page" style="background: white;">
-    
+
     <div class="p7-box">
         <div style="width: 280px; background: rgba(255,255,255,0.08); padding: 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
             <div style="width: 35px; height: 35px; margin-bottom: 10px;">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#D6B89E" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+                    <circle cx="12" cy="12" r="10" />
+                    <circle cx="12" cy="12" r="6" />
+                    <circle cx="12" cy="12" r="2" />
                 </svg>
             </div>
             <div style="font-size: 17px; line-height: 1.3;">
@@ -484,7 +486,7 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
         </div>
 
         <div style="flex-grow: 1; margin-left: 30px; height: 150px; position: relative;">
-             <canvas id="investmentChart"></canvas>
+            <canvas id="investmentChart"></canvas>
         </div>
     </div>
 
@@ -499,9 +501,9 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
 
     <div class="timeline-wrapper" style="margin-top: 10px;">
         <div class="timeline-year">2024</div>
-        <?php 
+        <?php
         $timeline = $GLOBALS['investment_plan']['timeline'] ?? [];
-        foreach ($timeline as $inv): 
+        foreach ($timeline as $inv):
         ?>
             <div class="invest-card">
                 <table style="width: 100%; border-collapse: collapse;">
@@ -541,47 +543,63 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
 </div>
 
 <script>
-(function() {
-    const ctx = document.getElementById('investmentChart').getContext('2d');
-    const dataValues = <?= json_encode($GLOBALS['investment_plan']['chart_data'] ?? [450000, 520000, 610000, 780000, 950000, 1200000]) ?>;
-    const labels = <?= json_encode($GLOBALS['investment_plan']['chart_labels'] ?? ['2024', '2026', '2028', '2030', '2032', '2034']) ?>;
+    (function() {
+        const ctx = document.getElementById('investmentChart').getContext('2d');
+        const dataValues = <?= json_encode($GLOBALS['investment_plan']['chart_data'] ?? [450000, 520000, 610000, 780000, 950000, 1200000]) ?>;
+        const labels = <?= json_encode($GLOBALS['investment_plan']['chart_labels'] ?? ['2024', '2026', '2028', '2030', '2032', '2034']) ?>;
 
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [{
-                data: dataValues,
-                borderColor: '#D6B89E',
-                backgroundColor: 'rgba(214, 184, 158, 0.15)',
-                borderWidth: 3,
-                fill: true,
-                tension: 0.4,
-                pointRadius: 0
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            animation: false,
-            plugins: { legend: { display: false } },
-            scales: {
-                x: { grid: { display: false }, ticks: { color: 'rgba(255,255,255,0.4)', font: { size: 9 } } },
-                y: { display: false }
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: dataValues,
+                    borderColor: '#D6B89E',
+                    backgroundColor: 'rgba(214, 184, 158, 0.15)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: 'rgba(255,255,255,0.4)',
+                            font: {
+                                size: 9
+                            }
+                        }
+                    },
+                    y: {
+                        display: false
+                    }
+                }
             }
-        }
-    });
-})();
+        });
+    })();
 </script>
 
 <!-- ============================================================ -->
 <!-- PAGE 8 – Životní pojištění                                   -->
 <!-- ============================================================ -->
- 
+
 <div style="page-break-before: always; clear: both;"></div>
 
 <div class="page">
-    
+
     <div class="timeline-container">
         <div class="timeline-line"></div>
 
@@ -607,7 +625,8 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
             <div class="timeline-year-label">2034</div>
             <div class="timeline-card timeline-card--future" style="border-color: #f0f0f0;">
                 <div class="timeline-card-main">
-                    <div style="width: 36px;"></div> <div class="timeline-card-info">
+                    <div style="width: 36px;"></div>
+                    <div class="timeline-card-info">
                         <h4 style="font-size: 16px;">5 000 000 Kč</h4>
                         <div style="color: #8c8c8c; font-size: 11px;">Palackého třída 15, 3+1</div>
                     </div>
@@ -666,7 +685,7 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
 
     <h2 style="font-family: 'Lora', serif; font-size: 32px; color: #3d3229; margin-bottom: 10px;">Životní pojištění</h2>
     <p style="font-size: 12px; color: #3d3229; line-height: 1.5; margin-bottom: 25px;">
-        Pojistné částky v případě smrti a podobných událostí jsou často podceňovaným, ale velmi důležitým aspektem našeho života. 
+        Pojistné částky v případě smrti a podobných událostí jsou často podceňovaným, ale velmi důležitým aspektem našeho života.
         Může se zdát nepříjemné přemýšlet o takových situacích, ale mít v těchto případech pojistnou ochranu znamená, že vaše rodina bude finančně zajištěna.
     </p>
 
@@ -685,17 +704,17 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
         </div>
     </div>
 
-    
+
 </div>
 
 <!-- ============================================================ -->
 <!-- PAGE 9 – Výpadky příjmu                                      -->
 <!-- ============================================================ -->
- 
+
 <div style="page-break-before: always; clear: both;"></div>
 
 <div class="page">
-    
+
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 30px;">
         <div>
             <h2 style="font-family: 'Lora', serif; font-size: 28px; color: #3d3229; margin: 0;">Aktuální nastavení vašeho zabezpečení</h2>
@@ -720,7 +739,7 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
                 <div style="flex: 1; height: 90%; background: #eee; border-radius: 3px 3px 0 0;"></div>
                 <div style="flex: 1; height: 80%; background: #eee; border-radius: 3px 3px 0 0;"></div>
                 <div style="flex: 1; height: 60%; background: #D6B89E; border-radius: 3px 3px 0 0; position: relative;">
-                     <div style="position: absolute; top: -20px; width: 100%; text-align: center; font-size: 10px; font-weight: bold;">Nemoc</div>
+                    <div style="position: absolute; top: -20px; width: 100%; text-align: center; font-size: 10px; font-weight: bold;">Nemoc</div>
                 </div>
                 <div style="flex: 1; height: 60%; background: #3d3229; border-radius: 3px 3px 0 0;"></div>
             </div>
@@ -748,28 +767,58 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
 
     <div>
         <h3 style="color: #3d3229; border-left: 4px solid #3d3229; padding-left: 15px; margin-bottom: 15px;">Dlouhodobý výpadek příjmu (Invalidita)</h3>
-        
+
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
-            
+
             <div style="border: 1px solid #f0ebe5; border-radius: 15px; padding: 15px; background: #fff;">
                 <h4 style="margin: 0 0 10px 0; font-size: 14px; color: #D6B89E;">I. stupeň</h4>
                 <table style="width: 100%; font-size: 11px; border-collapse: collapse;">
-                    <tr style="border-bottom: 1px solid #f9f9f9;"><td style="padding: 4px 0;">Státní důchod</td><td style="text-align: right;">14 485 Kč</td></tr>
-                    <tr style="border-bottom: 1px solid #f9f9f9;"><td style="padding: 4px 0;">Příjem partnera</td><td style="text-align: right;">23 000 Kč</td></tr>
-                    <tr style="border-bottom: 1px solid #f9f9f9;"><td style="padding: 4px 0;">Ostatní příjmy</td><td style="text-align: right;">2 000 Kč</td></tr>
-                    <tr style="border-bottom: 1px solid #3d3229;"><td style="padding: 4px 0;">Nezbytné výdaje</td><td style="text-align: right; color: #e74c3c;">-42 000 Kč</td></tr>
-                    <tr><td style="padding: 8px 0; font-weight: bold;">Měsíčně zbývá</td><td style="text-align: right; font-weight: bold; color: #e74c3c;">-2 000 Kč</td></tr>
+                    <tr style="border-bottom: 1px solid #f9f9f9;">
+                        <td style="padding: 4px 0;">Státní důchod</td>
+                        <td style="text-align: right;">14 485 Kč</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #f9f9f9;">
+                        <td style="padding: 4px 0;">Příjem partnera</td>
+                        <td style="text-align: right;">23 000 Kč</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #f9f9f9;">
+                        <td style="padding: 4px 0;">Ostatní příjmy</td>
+                        <td style="text-align: right;">2 000 Kč</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #3d3229;">
+                        <td style="padding: 4px 0;">Nezbytné výdaje</td>
+                        <td style="text-align: right; color: #e74c3c;">-42 000 Kč</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px 0; font-weight: bold;">Měsíčně zbývá</td>
+                        <td style="text-align: right; font-weight: bold; color: #e74c3c;">-2 000 Kč</td>
+                    </tr>
                 </table>
             </div>
 
             <div style="border: 1px solid #f0ebe5; border-radius: 15px; padding: 15px; background: #fff;">
                 <h4 style="margin: 0 0 10px 0; font-size: 14px; color: #D6B89E;">II. stupeň</h4>
                 <table style="width: 100%; font-size: 11px; border-collapse: collapse;">
-                    <tr style="border-bottom: 1px solid #f9f9f9;"><td style="padding: 4px 0;">Státní důchod</td><td style="text-align: right;">14 485 Kč</td></tr>
-                    <tr style="border-bottom: 1px solid #f9f9f9;"><td style="padding: 4px 0;">Příjem partnera</td><td style="text-align: right;">23 000 Kč</td></tr>
-                    <tr style="border-bottom: 1px solid #f9f9f9;"><td style="padding: 4px 0;">Ostatní příjmy</td><td style="text-align: right;">2 000 Kč</td></tr>
-                    <tr style="border-bottom: 1px solid #3d3229;"><td style="padding: 4px 0;">Nezbytné výdaje</td><td style="text-align: right; color: #e74c3c;">-42 000 Kč</td></tr>
-                    <tr><td style="padding: 8px 0; font-weight: bold;">Měsíčně zbývá</td><td style="text-align: right; font-weight: bold; color: #e74c3c;">-7 000 Kč</td></tr>
+                    <tr style="border-bottom: 1px solid #f9f9f9;">
+                        <td style="padding: 4px 0;">Státní důchod</td>
+                        <td style="text-align: right;">14 485 Kč</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #f9f9f9;">
+                        <td style="padding: 4px 0;">Příjem partnera</td>
+                        <td style="text-align: right;">23 000 Kč</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #f9f9f9;">
+                        <td style="padding: 4px 0;">Ostatní příjmy</td>
+                        <td style="text-align: right;">2 000 Kč</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #3d3229;">
+                        <td style="padding: 4px 0;">Nezbytné výdaje</td>
+                        <td style="text-align: right; color: #e74c3c;">-42 000 Kč</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px 0; font-weight: bold;">Měsíčně zbývá</td>
+                        <td style="text-align: right; font-weight: bold; color: #e74c3c;">-7 000 Kč</td>
+                    </tr>
                 </table>
             </div>
 
@@ -800,7 +849,8 @@ $cisty_majetek_color = ($cisty_majetek >= 0) ? '#3d3229' : '#e74c3c';
 $clientRow = isset($data['health']['health_client']['rows'][0]) ? $data['health']['health_client']['rows'][0] : null;
 
 if (!function_exists('getVal')) {
-    function getVal($obj, $suffix = ' Kč') {
+    function getVal($obj, $suffix = ' Kč')
+    {
         if (!isset($obj['value']) || $obj['value'] === "") return '0' . $suffix;
         $val = $obj['value'];
         if (is_numeric($val)) {
@@ -816,10 +866,10 @@ if (!function_exists('getVal')) {
 ?>
 
 <div class="page" style="padding: 40px; font-family: 'Arial', sans-serif; color: #3d3229; background: #fff;">
-    
+
     <h1 style="font-size: 26px; font-weight: bold; margin-bottom: 5px;">Pojištění pro případ smrti</h1>
     <p style="font-size: 11px; line-height: 1.4; margin-bottom: 30px; color: #555; max-width: 85%;">
-        Pojistné částky v případě smrti a podobných událostí jsou často podceňovaným, ale velmi důležitým aspektem našeho života. 
+        Pojistné částky v případě smrti a podobných událostí jsou často podceňovaným, ale velmi důležitým aspektem našeho života.
         Mít v těchto případech pojistnou ochranu znamená, že vaše rodina bude finančně zajištěna i v nečekaných situacích.
     </p>
 
@@ -873,441 +923,445 @@ if (!function_exists('getVal')) {
     </div>
 
     <h2 style="font-size: 26px; font-weight: bold; margin-bottom: 5px;">Celkový přehled Vašeho životního pojištění.</h2>
-<p style="font-size: 12px; font-style: italic; margin-bottom: 25px; color: #666;">Hlavní pojištěný</p>
+    <p style="font-size: 12px; font-style: italic; margin-bottom: 25px; color: #666;">Hlavní pojištěný</p>
 
-<table style="width: 100%; border-collapse: separate; border-spacing: 0 4px; font-size: 12px;">
-    <thead>
-        <tr style="color: #666; font-size: 11px;">
-            <th style="width: 25px;"></th>
-            <th style="width: 33%; text-align: left; padding: 6px 0 6px 10px; background: #f4f4f4; border-radius: 5px 0 0 0;">Pojistná rizika</th>
-            <th style="width: 32%; text-align: center; background: #8c6239; color: white;">Aktuální stav</th>
-            <th style="width: 32%; text-align: center; background: #a5836a; color: white; border-radius: 0 5px 0 0;">Navrhovaný stav</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan="5" style="background: #fff4e6; width: 25px; padding: 0; text-align: center; border-radius: 8px 0 0 8px; vertical-align: middle;">
-                <div style="writing-mode: vertical-lr; transform: rotate(180deg); font-weight: bold; text-transform: uppercase; font-size: 8px; letter-spacing: 1px; color: #3d3229; line-height: 25px; margin: 0 auto;">
-                    Závazky
-                </div>
-            </td>
-            <td colspan="3" style="padding: 10px 0 4px 10px; font-weight: bold; font-size: 13px; color: #3d3229;">Smrt obecná</td>
-        </tr>
-        <tr>
-            <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">Konstantní</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">1 500 000 Kč</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">2 500 000 Kč</td>
-        </tr>
-        <tr>
-            <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">Klesající</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">0 Kč</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">1 500 000 Kč</td>
-        </tr>
-        <tr>
-            <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">Úvěry</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">750 000 Kč</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">1 750 000 Kč</td>
-        </tr>
-        <tr>
-            <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">Smrt úrazem</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">500 000 Kč</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">2 500 000 Kč</td>
-        </tr>
-
-        <tr><td colspan="4" style="height: 10px; padding: 0; border: none;"></td></tr>
-
-        <tr>
-            <td rowspan="9" style="background: #e5e5e5; width: 25px; text-align: center; border-radius: 8px 0 0 8px; vertical-align: middle; padding: 0;">
-                <div style="writing-mode: vertical-lr; transform: rotate(180deg); font-weight: bold; text-transform: uppercase; font-size: 8px; letter-spacing: 1px; white-space: nowrap; color: #3d3229; line-height: 25px; margin: 0 auto;">
-                    Krátkodobý výpadek příjmu
-                </div>
-            </td>
-            <td colspan="3" style="padding: 10px 0 4px 10px; font-weight: bold; font-size: 13px; color: #3d3229;">Denní odškodné</td>
-        </tr>
-        <tr>
-            <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">od 21. dne</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">800 Kč</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">700 Kč</td>
-        </tr>
-        <tr>
-            <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">od 28. dne</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">0 Kč</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">700 Kč</td>
-        </tr>
-        <tr>
-            <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">od 42. dne</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">500 Kč</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">700 Kč</td>
-        </tr>
-        <tr>
-            <td colspan="3" style="padding: 14px 0 4px 10px; font-weight: bold; font-size: 13px; color: #3d3229;">Pracovní neschopnost</td>
-        </tr>
-        <tr>
-            <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">od 21. dne</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">800 Kč</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">700 Kč</td>
-        </tr>
-        <tr>
-            <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">od 28. dne</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">0 Kč</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">700 Kč</td>
-        </tr>
-        <tr>
-            <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">od 42. dne</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">500 Kč</td>
-            <td style="text-align: center; background: white; border: 1px solid #eee;">700 Kč</td>
-        </tr>
-    </tbody>
-</table>
-
-<!-- ============================================================ -->
-<!-- PAGE 11                                                      -->
-<!-- ============================================================ -->
-
-<div class="page" style="padding: 40px; font-family: 'Arial', sans-serif; color: #3d3229; background: #fff;">
-    <table style="width: 100%; border-collapse: separate; border-spacing: 0 4px; font-size: 12px; table-layout: fixed; margin-left: -25px;">
+    <table style="width: 100%; border-collapse: separate; border-spacing: 0 4px; font-size: 12px;">
         <thead>
-            <tr style="height: 0; line-height: 0;">
-                <th style="width: 25px; padding: 0; border: none;"></th>
-                <th style="width: 240px; padding: 0; border: none;"></th>
-                <th style="width: 220px; padding: 0; border: none;"></th>
-                <th style="width: 225px; padding: 0; border: none;"></th>
+            <tr style="color: #666; font-size: 11px;">
+                <th style="width: 25px;"></th>
+                <th style="width: 33%; text-align: left; padding: 6px 0 6px 10px; background: #f4f4f4; border-radius: 5px 0 0 0;">Pojistná rizika</th>
+                <th style="width: 32%; text-align: center; background: #8c6239; color: white;">Aktuální stav</th>
+                <th style="width: 32%; text-align: center; background: #a5836a; color: white; border-radius: 0 5px 0 0;">Navrhovaný stav</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td rowspan="6" style="background: #dbd8cd; padding: 0; text-align: center; border-radius: 8px 0 0 8px; vertical-align: middle;">
+                <td rowspan="5" style="background: #fff4e6; width: 25px; padding: 0; text-align: center; border-radius: 8px 0 0 8px; vertical-align: middle;">
                     <div style="writing-mode: vertical-lr; transform: rotate(180deg); font-weight: bold; text-transform: uppercase; font-size: 8px; letter-spacing: 1px; color: #3d3229; line-height: 25px; margin: 0 auto;">
+                        Závazky
+                    </div>
+                </td>
+                <td colspan="3" style="padding: 10px 0 4px 10px; font-weight: bold; font-size: 13px; color: #3d3229;">Smrt obecná</td>
+            </tr>
+            <tr>
+                <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">Konstantní</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">1 500 000 Kč</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">2 500 000 Kč</td>
+            </tr>
+            <tr>
+                <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">Klesající</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">0 Kč</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">1 500 000 Kč</td>
+            </tr>
+            <tr>
+                <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">Úvěry</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">750 000 Kč</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">1 750 000 Kč</td>
+            </tr>
+            <tr>
+                <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">Smrt úrazem</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">500 000 Kč</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">2 500 000 Kč</td>
+            </tr>
+
+            <tr>
+                <td colspan="4" style="height: 10px; padding: 0; border: none;"></td>
+            </tr>
+
+            <tr>
+                <td rowspan="9" style="background: #e5e5e5; width: 25px; text-align: center; border-radius: 8px 0 0 8px; vertical-align: middle; padding: 0;">
+                    <div style="writing-mode: vertical-lr; transform: rotate(180deg); font-weight: bold; text-transform: uppercase; font-size: 8px; letter-spacing: 1px; white-space: nowrap; color: #3d3229; line-height: 25px; margin: 0 auto;">
                         Krátkodobý výpadek příjmu
                     </div>
                 </td>
-                <td colspan="3" style="padding: 10px 0 4px 10px; font-weight: bold; font-size: 13px;">Hospitalizace</td>
+                <td colspan="3" style="padding: 10px 0 4px 10px; font-weight: bold; font-size: 13px; color: #3d3229;">Denní odškodné</td>
             </tr>
             <tr>
-                <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">úraz</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">800 Kč</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">700 Kč</td>
+                <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">od 21. dne</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">800 Kč</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">700 Kč</td>
             </tr>
             <tr>
-                <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">úraz / nemoc</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">0 Kč</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">700 Kč</td>
+                <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">od 28. dne</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">0 Kč</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">700 Kč</td>
             </tr>
             <tr>
-                <td colspan="3" style="padding: 14px 0 4px 10px; font-weight: bold; font-size: 13px;">Vážné onemocnění</td>
+                <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">od 42. dne</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">500 Kč</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">700 Kč</td>
             </tr>
             <tr>
-                <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">Konstantní</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">800 Kč</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">700 Kč</td>
+                <td colspan="3" style="padding: 14px 0 4px 10px; font-weight: bold; font-size: 13px; color: #3d3229;">Pracovní neschopnost</td>
             </tr>
             <tr>
-                <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">Klesající</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">0 Kč</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">700 Kč</td>
-            </tr>
-
-            <tr><td colspan="4" style="height: 10px; border: none;"></td></tr>
-
-            <tr>
-                <td rowspan="8" style="background: #b2a688; padding: 0; text-align: center; border-radius: 8px 0 0 8px; vertical-align: middle;">
-                    <div style="writing-mode: vertical-lr; transform: rotate(180deg); font-weight: bold; text-transform: uppercase; font-size: 8px; letter-spacing: 1px; color: #fff; line-height: 25px; margin: 0 auto;">
-                        Dlouhodobý výpadek příjmu
-                    </div>
-                </td>
-                <td colspan="3" style="padding: 10px 0 4px 10px; font-weight: bold; font-size: 13px;">Trvalé následky (progresivní plnění)</td>
+                <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">od 21. dne</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">800 Kč</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">700 Kč</td>
             </tr>
             <tr>
-                <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">od 0,1 %</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">1 500 000 Kč</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">2 500 000 Kč</td>
+                <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">od 28. dne</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">0 Kč</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">700 Kč</td>
             </tr>
             <tr>
-                <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">od 10 %</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">0 Kč</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">1 500 000 Kč</td>
-            </tr>
-            <tr>
-                <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">autonehoda od 25 %</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">750 000 Kč</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">1 750 000 Kč</td>
-            </tr>
-            <tr>
-                <td colspan="3" style="padding: 14px 0 4px 10px; font-weight: bold; font-size: 13px;">Invalidita</td>
-            </tr>
-            <tr>
-                <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">III. stupeň</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">800 Kč</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">700 Kč</td>
-            </tr>
-            <tr>
-                <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">II. stupeň</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">0 Kč</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">700 Kč</td>
-            </tr>
-            <tr>
-                <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">I. stupeň</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">500 Kč</td>
-                <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">700 Kč</td>
+                <td style="padding: 6px 12px; background: white; border: 1px solid #eee;">od 42. dne</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">500 Kč</td>
+                <td style="text-align: center; background: white; border: 1px solid #eee;">700 Kč</td>
             </tr>
         </tbody>
     </table>
-</div>
 
-<!-- ============================================================ -->
-<!-- PAGE 12                                                      -->
-<!-- ============================================================ -->
+    <!-- ============================================================ -->
+    <!-- PAGE 11                                                      -->
+    <!-- ============================================================ -->
 
-<div class="page" style="padding: 50px 40px; font-family: 'Arial', sans-serif; color: #3d3229; background: #fff; line-height: 1.5;">
-    
-    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 25px;">
-        <div style="font-size: 64px; font-weight: bold; color: #3d3229;">64%</div>
-        <div style="margin-top: 10px;">
-            <svg width="34" height="26" viewBox="0 0 34 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 24H32" stroke="#8c6239" stroke-width="2" stroke-linecap="square"/>
-                <rect x="5" y="15" width="6" height="9" stroke="#8c6239" stroke-width="2" stroke-linecap="square"/>
-                <rect x="14" y="9" width="6" height="15" stroke="#8c6239" stroke-width="2" stroke-linecap="square"/>
-                <rect x="23" y="2" width="6" height="22" stroke="#8c6239" stroke-width="2" stroke-linecap="square"/>
-            </svg>
-        </div>
+    <div class="page" style="padding: 40px; font-family: 'Arial', sans-serif; color: #3d3229; background: #fff;">
+        <table style="width: 100%; border-collapse: separate; border-spacing: 0 4px; font-size: 12px; table-layout: fixed; margin-left: -25px;">
+            <thead>
+                <tr style="height: 0; line-height: 0;">
+                    <th style="width: 25px; padding: 0; border: none;"></th>
+                    <th style="width: 240px; padding: 0; border: none;"></th>
+                    <th style="width: 220px; padding: 0; border: none;"></th>
+                    <th style="width: 225px; padding: 0; border: none;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="6" style="background: #dbd8cd; padding: 0; text-align: center; border-radius: 8px 0 0 8px; vertical-align: middle;">
+                        <div style="writing-mode: vertical-lr; transform: rotate(180deg); font-weight: bold; text-transform: uppercase; font-size: 8px; letter-spacing: 1px; color: #3d3229; line-height: 25px; margin: 0 auto;">
+                            Krátkodobý výpadek příjmu
+                        </div>
+                    </td>
+                    <td colspan="3" style="padding: 10px 0 4px 10px; font-weight: bold; font-size: 13px;">Hospitalizace</td>
+                </tr>
+                <tr>
+                    <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">úraz</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">800 Kč</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">700 Kč</td>
+                </tr>
+                <tr>
+                    <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">úraz / nemoc</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">0 Kč</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">700 Kč</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="padding: 14px 0 4px 10px; font-weight: bold; font-size: 13px;">Vážné onemocnění</td>
+                </tr>
+                <tr>
+                    <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">Konstantní</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">800 Kč</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">700 Kč</td>
+                </tr>
+                <tr>
+                    <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">Klesající</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">0 Kč</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">700 Kč</td>
+                </tr>
+
+                <tr>
+                    <td colspan="4" style="height: 10px; border: none;"></td>
+                </tr>
+
+                <tr>
+                    <td rowspan="8" style="background: #b2a688; padding: 0; text-align: center; border-radius: 8px 0 0 8px; vertical-align: middle;">
+                        <div style="writing-mode: vertical-lr; transform: rotate(180deg); font-weight: bold; text-transform: uppercase; font-size: 8px; letter-spacing: 1px; color: #fff; line-height: 25px; margin: 0 auto;">
+                            Dlouhodobý výpadek příjmu
+                        </div>
+                    </td>
+                    <td colspan="3" style="padding: 10px 0 4px 10px; font-weight: bold; font-size: 13px;">Trvalé následky (progresivní plnění)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">od 0,1 %</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">1 500 000 Kč</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">2 500 000 Kč</td>
+                </tr>
+                <tr>
+                    <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">od 10 %</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">0 Kč</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">1 500 000 Kč</td>
+                </tr>
+                <tr>
+                    <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">autonehoda od 25 %</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">750 000 Kč</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">1 750 000 Kč</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="padding: 14px 0 4px 10px; font-weight: bold; font-size: 13px;">Invalidita</td>
+                </tr>
+                <tr>
+                    <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">III. stupeň</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">800 Kč</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">700 Kč</td>
+                </tr>
+                <tr>
+                    <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">II. stupeň</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">0 Kč</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">700 Kč</td>
+                </tr>
+                <tr>
+                    <td style="padding: 6px 12px; background: white; border: 1px solid #eee; border-radius: 5px;">I. stupeň</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">500 Kč</td>
+                    <td style="text-align: center; background: white; border: 1px solid #eee; border-radius: 5px;">700 Kč</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <p style="font-size: 13px; color: #666; margin-bottom: 45px; max-width: 900px;">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Itaque earum rerum hic tenetur asapiente delectus, ut
-        aut reiciendis voluptatibus maiores alias consequatur aut perferendisdoloribus asperiores.
-    </p>
+    <!-- ============================================================ -->
+    <!-- PAGE 12                                                      -->
+    <!-- ============================================================ -->
 
-    <div style="display: flex; flex-direction: column; gap: 20px;">
+    <div class="page" style="padding: 50px 40px; font-family: 'Arial', sans-serif; color: #3d3229; background: #fff; line-height: 1.5;">
 
-        <div style="display: flex; align-items: center; gap: 20px;">
-            <div style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #c5dcb2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.5 6L6 10.5L14.5 1.5" stroke="#7ab55c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 25px;">
+            <div style="font-size: 64px; font-weight: bold; color: #3d3229;">64%</div>
+            <div style="margin-top: 10px;">
+                <svg width="34" height="26" viewBox="0 0 34 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 24H32" stroke="#8c6239" stroke-width="2" stroke-linecap="square" />
+                    <rect x="5" y="15" width="6" height="9" stroke="#8c6239" stroke-width="2" stroke-linecap="square" />
+                    <rect x="14" y="9" width="6" height="15" stroke="#8c6239" stroke-width="2" stroke-linecap="square" />
+                    <rect x="23" y="2" width="6" height="22" stroke="#8c6239" stroke-width="2" stroke-linecap="square" />
                 </svg>
             </div>
-            <div style="background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 25px 30px; display: flex; flex-grow: 1; align-items: flex-start; gap: 40px; border: 1px solid #f0f0f0;">
-                <div style="width: 180px; flex-shrink: 0;">
-                    <div style="font-weight: bold; font-size: 15px; margin-bottom: 4px;">Rozvaha</div>
-                    <div style="font-size: 12px; color: #666;">Cashflow a finanční bilance</div>
-                </div>
-                <div style="flex-grow: 1;">
-                    <div style="font-size: 14px; font-weight: bold; margin-bottom: 8px; color: #3d3229;">78%</div>
-                    <div style="font-size: 12px; color: #666;">Je potřeba snížit zbytečné výdaje.</div>
-                </div>
-            </div>
         </div>
 
-        <div style="display: flex; align-items: center; gap: 20px;">
-            <div style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #f8dfc2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 1V10M2 14V15" stroke="#f09639" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </div>
-            <div style="background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 25px 30px; display: flex; flex-grow: 1; align-items: flex-start; gap: 40px; border: 1px solid #f0f0f0;">
-                <div style="width: 180px; flex-shrink: 0;">
-                    <div style="font-weight: bold; font-size: 15px; margin-bottom: 4px;">Portfolio</div>
-                    <div style="font-size: 12px; color: #666;">Aktiva & Pasiva</div>
-                </div>
-                <div style="flex-grow: 1; display: flex; justify-content: space-between; align-items: flex-start;">
-                    <div style="max-width: 300px;">
-                        <div style="font-size: 14px; font-weight: bold; margin-bottom: 8px; color: #3d3229;">28 %</div>
-                        <div style="font-size: 12px; color: #666;">Váš majetek je výrazně zatížen pasivy.</div>
-                    </div>
-                    <a href="#" style="font-size: 11px; color: #3d3229; text-decoration: none; border: 1px solid #d2c8bc; padding: 7px 20px; border-radius: 4px; white-space: nowrap; margin-top: 5px;">Akční plán na straně 21.</a>
-                </div>
-            </div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 20px;">
-            <div style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #f8dfc2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 1V10M2 14V15" stroke="#f09639" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </div>
-            <div style="background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 25px 30px; display: flex; flex-grow: 1; align-items: flex-start; gap: 40px; border: 1px solid #f0f0f0;">
-                <div style="width: 180px; flex-shrink: 0;">
-                    <div style="font-weight: bold; font-size: 15px; margin-bottom: 4px;">Zajištění majetku</div>
-                    <div style="font-size: 12px; color: #666;">Pojištění vašich aktiv</div>
-                </div>
-                <div style="flex-grow: 1; display: flex; justify-content: space-between; align-items: flex-start;">
-                    <div style="max-width: 300px;">
-                        <div style="font-size: 14px; font-weight: bold; margin-bottom: 8px; color: #3d3229;">55 %</div>
-                        <div style="font-size: 12px; color: #666;">Téměř polovina majetku není chráněná.</div>
-                    </div>
-                    <a href="#" style="font-size: 11px; color: #3d3229; text-decoration: none; border: 1px solid #d2c8bc; padding: 7px 20px; border-radius: 4px; white-space: nowrap; margin-top: 5px;">Akční plán na straně 21.</a>
-                </div>
-            </div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 20px;">
-            <div style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #c5dcb2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.5 6L6 10.5L14.5 1.5" stroke="#7ab55c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <div style="background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 25px 30px; display: flex; flex-grow: 1; align-items: flex-start; gap: 40px; border: 1px solid #f0f0f0;">
-                <div style="width: 180px; flex-shrink: 0;">
-                    <div style="font-weight: bold; font-size: 15px; margin-bottom: 4px;">Finanční cíle</div>
-                    <div style="font-size: 12px; color: #666;">Plánování a dosažení cílů</div>
-                </div>
-                <div style="flex-grow: 1;">
-                    <div style="font-size: 14px; font-weight: bold; margin-bottom: 8px; color: #3d3229;">100 %</div>
-                    <div style="font-size: 12px; color: #666;">Všechny cíle se nám podaří splnit.</div>
-                </div>
-            </div>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 20px;">
-            <div style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #c5dcb2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.5 6L6 10.5L14.5 1.5" stroke="#7ab55c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <div style="background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 25px 30px; display: flex; flex-grow: 1; align-items: flex-start; gap: 40px; border: 1px solid #f0f0f0;">
-                <div style="width: 180px; flex-shrink: 0;">
-                    <div style="font-weight: bold; font-size: 15px; margin-bottom: 4px;">Zajištění zdraví</div>
-                    <div style="font-size: 12px; color: #666;">Životní pojištění vás a vaší rodiny</div>
-                </div>
-                <div style="flex-grow: 1;">
-                    <div style="font-size: 14px; font-weight: bold; margin-bottom: 8px; color: #3d3229;">65 %</div>
-                    <div style="font-size: 12px; color: #666;">Některé oblasti je možné dále zlepšit.</div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<!-- ============================================================ -->
-<!-- PAGE 13 – Akční plán                                         -->
-<!-- ============================================================ -->
-
-<div class="page" style="padding: 50px 40px; font-family: 'Arial', sans-serif; color: #3d3229; background: #fff; line-height: 1.4;">
-    
-    <div style="display: flex; justify-content: flex-start; align-items: center; margin-bottom: 25px;">
-        <h1 style="font-size: 38px; font-weight: bold; margin: 0; color: #3d3229;">Akční plán</h1>
-    </div>
-
-    <p style="font-size: 12px; color: #666; margin-bottom: 40px; max-width: 850px;">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Itaque earum rerum hic tenetur asapiente delectus, ut
-        aut reiciendis voluptatibus maiores alias consequatur aut perferendisdoloribus asperiores.
-    </p>
-
-    <div style="margin-bottom: 40px;">
-        <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 15px;">
-            <div style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid #f8dfc2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <span style="color: #f09639; font-weight: bold; font-size: 16px;">!</span>
-            </div>
-            <div style="background: #f8f8f8; border-radius: 8px; padding: 15px 25px; display: flex; gap: 40px; align-items: center; flex-grow: 1;">
-                <div style="width: 140px;">
-                    <div style="font-weight: bold; font-size: 14px;">Portfolio</div>
-                    <div style="font-size: 11px; color: #888;">Aktiva & Pasiva</div>
-                </div>
-                <div>
-                    <div style="font-size: 14px; font-weight: bold; margin-bottom: 2px;">28 %</div>
-                    <div style="font-size: 12px;">Váš majetek je výrazně zatížen pasivy.</div>
-                </div>
-            </div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-left: 50px;">
-            <div style="border: 1px solid #c5dcb2; border-radius: 12px; padding: 15px 20px;">
-                <div style="font-weight: bold; font-size: 13px; margin-bottom: 8px;">Stavební spoření</div>
-                <div style="font-size: 11px; color: #666;">V říjnu zažádat výpověď smlouvy. Ověříme podpis na formuláři. Prostředky budou k dispozici v únoru 2025</div>
-            </div>
-            <div style="border: 1px solid #c5dcb2; border-radius: 12px; padding: 15px 20px;">
-                <div style="font-weight: bold; font-size: 13px; margin-bottom: 8px;">Penzijní připojištění</div>
-                <div style="font-size: 11px; color: #666;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis pulvinar. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.</div>
-            </div>
-            <div style="grid-column: span 2; border: 1px solid #c5dcb2; border-radius: 12px; padding: 15px 20px;">
-                <div style="font-weight: bold; font-size: 13px; margin-bottom: 8px;">Investice do zlata</div>
-                <div style="font-size: 11px; color: #666;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis pulvinar. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis pulvinar. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.</div>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 15px;">
-            <div style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid #f8dfc2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <span style="color: #f09639; font-weight: bold; font-size: 16px;">!</span>
-            </div>
-            <div style="background: #f8f8f8; border-radius: 8px; padding: 15px 25px; display: flex; gap: 40px; align-items: center; flex-grow: 1;">
-                <div style="width: 140px;">
-                    <div style="font-weight: bold; font-size: 14px;">Zajištění majetku</div>
-                    <div style="font-size: 11px; color: #888;">Pojištění vašich aktiv</div>
-                </div>
-                <div>
-                    <div style="font-size: 14px; font-weight: bold; margin-bottom: 2px;">55 %</div>
-                    <div style="font-size: 12px;">Téměř polovina majetku není chráněná.</div>
-                </div>
-            </div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-left: 50px;">
-            <div style="border: 1px solid #c5dcb2; border-radius: 12px; padding: 15px 20px;">
-                <div style="font-weight: bold; font-size: 13px; margin-bottom: 8px;">Havarijní pojištění na auto</div>
-                <div style="font-size: 11px; color: #666;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis pulvinar.</div>
-            </div>
-            <div style="border: 1px solid #c5dcb2; border-radius: 12px; padding: 15px 20px;">
-                <div style="font-weight: bold; font-size: 13px; margin-bottom: 8px;">Pojištění odpovědnosti ve výkonu práce</div>
-                <div style="font-size: 11px; color: #666;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis pulvinar. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.</div>
-            </div>
-            <div style="grid-column: span 2; border: 1px solid #c5dcb2; border-radius: 12px; padding: 15px 20px;">
-                <div style="font-weight: bold; font-size: 13px; margin-bottom: 8px;">Pojištění stroje</div>
-                <div style="font-size: 11px; color: #666;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis pulvinar.</div>
-            </div>
-        </div>
-    </div>
-
-
-
-</div>
-
-<!-- ============================================================ -->
-<!-- PAGE 14                                                      -->
-<!-- ============================================================ -->
- 
-<div class="page" style="padding: 60px 40px; font-family: 'Arial', sans-serif; color: #3d3229; background: #fff; line-height: 1.5; position: relative; min-height: 1000px;">
-    
-    <div style="margin-bottom: 50px;">
-        <h1 style="font-size: 52px; font-weight: bold; margin: 0; line-height: 1.1; color: #3d3229;">
-            Měníme vaše sny<br>
-            <span style="color: #8c6239;">ve skutečnost</span>
-        </h1>
-        <p style="font-size: 16px; color: #666; margin-top: 25px; max-width: 550px;">
-            Pro další informace a případné dotazy mě neváhejte kontaktovat!
+        <p style="font-size: 13px; color: #666; margin-bottom: 45px; max-width: 900px;">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Itaque earum rerum hic tenetur asapiente delectus, ut
+            aut reiciendis voluptatibus maiores alias consequatur aut perferendisdoloribus asperiores.
         </p>
+
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #c5dcb2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 6L6 10.5L14.5 1.5" stroke="#7ab55c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div style="background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 25px 30px; display: flex; flex-grow: 1; align-items: flex-start; gap: 40px; border: 1px solid #f0f0f0;">
+                    <div style="width: 180px; flex-shrink: 0;">
+                        <div style="font-weight: bold; font-size: 15px; margin-bottom: 4px;">Rozvaha</div>
+                        <div style="font-size: 12px; color: #666;">Cashflow a finanční bilance</div>
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <div style="font-size: 14px; font-weight: bold; margin-bottom: 8px; color: #3d3229;">78%</div>
+                        <div style="font-size: 12px; color: #666;">Je potřeba snížit zbytečné výdaje.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #f8dfc2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 1V10M2 14V15" stroke="#f09639" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div style="background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 25px 30px; display: flex; flex-grow: 1; align-items: flex-start; gap: 40px; border: 1px solid #f0f0f0;">
+                    <div style="width: 180px; flex-shrink: 0;">
+                        <div style="font-weight: bold; font-size: 15px; margin-bottom: 4px;">Portfolio</div>
+                        <div style="font-size: 12px; color: #666;">Aktiva & Pasiva</div>
+                    </div>
+                    <div style="flex-grow: 1; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div style="max-width: 300px;">
+                            <div style="font-size: 14px; font-weight: bold; margin-bottom: 8px; color: #3d3229;">28 %</div>
+                            <div style="font-size: 12px; color: #666;">Váš majetek je výrazně zatížen pasivy.</div>
+                        </div>
+                        <a href="#" style="font-size: 11px; color: #3d3229; text-decoration: none; border: 1px solid #d2c8bc; padding: 7px 20px; border-radius: 4px; white-space: nowrap; margin-top: 5px;">Akční plán na straně 21.</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #f8dfc2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 1V10M2 14V15" stroke="#f09639" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div style="background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 25px 30px; display: flex; flex-grow: 1; align-items: flex-start; gap: 40px; border: 1px solid #f0f0f0;">
+                    <div style="width: 180px; flex-shrink: 0;">
+                        <div style="font-weight: bold; font-size: 15px; margin-bottom: 4px;">Zajištění majetku</div>
+                        <div style="font-size: 12px; color: #666;">Pojištění vašich aktiv</div>
+                    </div>
+                    <div style="flex-grow: 1; display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div style="max-width: 300px;">
+                            <div style="font-size: 14px; font-weight: bold; margin-bottom: 8px; color: #3d3229;">55 %</div>
+                            <div style="font-size: 12px; color: #666;">Téměř polovina majetku není chráněná.</div>
+                        </div>
+                        <a href="#" style="font-size: 11px; color: #3d3229; text-decoration: none; border: 1px solid #d2c8bc; padding: 7px 20px; border-radius: 4px; white-space: nowrap; margin-top: 5px;">Akční plán na straně 21.</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #c5dcb2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 6L6 10.5L14.5 1.5" stroke="#7ab55c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div style="background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 25px 30px; display: flex; flex-grow: 1; align-items: flex-start; gap: 40px; border: 1px solid #f0f0f0;">
+                    <div style="width: 180px; flex-shrink: 0;">
+                        <div style="font-weight: bold; font-size: 15px; margin-bottom: 4px;">Finanční cíle</div>
+                        <div style="font-size: 12px; color: #666;">Plánování a dosažení cílů</div>
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <div style="font-size: 14px; font-weight: bold; margin-bottom: 8px; color: #3d3229;">100 %</div>
+                        <div style="font-size: 12px; color: #666;">Všechny cíle se nám podaří splnit.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #c5dcb2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 6L6 10.5L14.5 1.5" stroke="#7ab55c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div style="background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 25px 30px; display: flex; flex-grow: 1; align-items: flex-start; gap: 40px; border: 1px solid #f0f0f0;">
+                    <div style="width: 180px; flex-shrink: 0;">
+                        <div style="font-weight: bold; font-size: 15px; margin-bottom: 4px;">Zajištění zdraví</div>
+                        <div style="font-size: 12px; color: #666;">Životní pojištění vás a vaší rodiny</div>
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <div style="font-size: 14px; font-weight: bold; margin-bottom: 8px; color: #3d3229;">65 %</div>
+                        <div style="font-size: 12px; color: #666;">Některé oblasti je možné dále zlepšit.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-    <div style="margin-bottom: 60px;">
-        <img src="https://collegas.cz/img/logo/collegas_hands.svg" alt="Collegas Logo" style="height: 60px; width: auto;">
-    </div>
+    <!-- ============================================================ -->
+    <!-- PAGE 13 – Akční plán                                         -->
+    <!-- ============================================================ -->
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; max-width: 800px;">
-        
-        <div style="border: 1px solid #eee; border-radius: 12px; padding: 25px; background: #fff;">
-            <div style="font-weight: bold; font-size: 15px; margin-bottom: 8px; color: #3d3229;">Sídlo</div>
-            <div style="font-size: 13px; color: #666; line-height: 1.6;">Pražákova 1008/69 Brno-město, 649 00 Brno</div>
+    <div class="page" style="padding: 50px 40px; font-family: 'Arial', sans-serif; color: #3d3229; background: #fff; line-height: 1.4;">
+
+        <div style="display: flex; justify-content: flex-start; align-items: center; margin-bottom: 25px;">
+            <h1 style="font-size: 38px; font-weight: bold; margin: 0; color: #3d3229;">Akční plán</h1>
         </div>
 
-        <div style="border: 1px solid #eee; border-radius: 12px; padding: 25px; background: #fff;">
-            <div style="font-weight: bold; font-size: 15px; margin-bottom: 8px; color: #3d3229;">Kancelář</div>
-            <div style="font-size: 13px; color: #666; line-height: 1.6;">Tovačovského 2784/24, Kroměříž</div>
-        </div>
+        <p style="font-size: 12px; color: #666; margin-bottom: 40px; max-width: 850px;">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Itaque earum rerum hic tenetur asapiente delectus, ut
+            aut reiciendis voluptatibus maiores alias consequatur aut perferendisdoloribus asperiores.
+        </p>
 
-        <div style="border: 1px solid #eee; border-radius: 12px; padding: 25px; background: #fff;">
-            <div style="font-weight: bold; font-size: 15px; margin-bottom: 8px; color: #3d3229;">Centrála</div>
-            <div style="font-size: 13px; color: #666; line-height: 1.6;">AZ TOWER, 11. Patro, Pražákova 1008/69, 639 00 Brno</div>
-        </div>
+        <div style="margin-bottom: 40px;">
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 15px;">
+                <div style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid #f8dfc2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <span style="color: #f09639; font-weight: bold; font-size: 16px;">!</span>
+                </div>
+                <div style="background: #f8f8f8; border-radius: 8px; padding: 15px 25px; display: flex; gap: 40px; align-items: center; flex-grow: 1;">
+                    <div style="width: 140px;">
+                        <div style="font-weight: bold; font-size: 14px;">Portfolio</div>
+                        <div style="font-size: 11px; color: #888;">Aktiva & Pasiva</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 14px; font-weight: bold; margin-bottom: 2px;">28 %</div>
+                        <div style="font-size: 12px;">Váš majetek je výrazně zatížen pasivy.</div>
+                    </div>
+                </div>
+            </div>
 
-        <div style="border: 1px solid #eee; border-radius: 12px; padding: 25px; background: #fff;">
-            <div style="font-weight: bold; font-size: 15px; margin-bottom: 8px; color: #3d3229;">Collegas s.r.o.</div>
-            <div style="font-size: 13px; color: #666; line-height: 1.6;">
-                IČO: 022 62 975<br>
-                Spisová značka: C 80725
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-left: 50px;">
+                <div style="border: 1px solid #c5dcb2; border-radius: 12px; padding: 15px 20px;">
+                    <div style="font-weight: bold; font-size: 13px; margin-bottom: 8px;">Stavební spoření</div>
+                    <div style="font-size: 11px; color: #666;">V říjnu zažádat výpověď smlouvy. Ověříme podpis na formuláři. Prostředky budou k dispozici v únoru 2025</div>
+                </div>
+                <div style="border: 1px solid #c5dcb2; border-radius: 12px; padding: 15px 20px;">
+                    <div style="font-weight: bold; font-size: 13px; margin-bottom: 8px;">Penzijní připojištění</div>
+                    <div style="font-size: 11px; color: #666;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis pulvinar. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.</div>
+                </div>
+                <div style="grid-column: span 2; border: 1px solid #c5dcb2; border-radius: 12px; padding: 15px 20px;">
+                    <div style="font-weight: bold; font-size: 13px; margin-bottom: 8px;">Investice do zlata</div>
+                    <div style="font-size: 11px; color: #666;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis pulvinar. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis pulvinar. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.</div>
+                </div>
             </div>
         </div>
 
+        <div>
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 15px;">
+                <div style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid #f8dfc2; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <span style="color: #f09639; font-weight: bold; font-size: 16px;">!</span>
+                </div>
+                <div style="background: #f8f8f8; border-radius: 8px; padding: 15px 25px; display: flex; gap: 40px; align-items: center; flex-grow: 1;">
+                    <div style="width: 140px;">
+                        <div style="font-weight: bold; font-size: 14px;">Zajištění majetku</div>
+                        <div style="font-size: 11px; color: #888;">Pojištění vašich aktiv</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 14px; font-weight: bold; margin-bottom: 2px;">55 %</div>
+                        <div style="font-size: 12px;">Téměř polovina majetku není chráněná.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-left: 50px;">
+                <div style="border: 1px solid #c5dcb2; border-radius: 12px; padding: 15px 20px;">
+                    <div style="font-weight: bold; font-size: 13px; margin-bottom: 8px;">Havarijní pojištění na auto</div>
+                    <div style="font-size: 11px; color: #666;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis pulvinar.</div>
+                </div>
+                <div style="border: 1px solid #c5dcb2; border-radius: 12px; padding: 15px 20px;">
+                    <div style="font-weight: bold; font-size: 13px; margin-bottom: 8px;">Pojištění odpovědnosti ve výkonu práce</div>
+                    <div style="font-size: 11px; color: #666;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis pulvinar. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.</div>
+                </div>
+                <div style="grid-column: span 2; border: 1px solid #c5dcb2; border-radius: 12px; padding: 15px 20px;">
+                    <div style="font-weight: bold; font-size: 13px; margin-bottom: 8px;">Pojištění stroje</div>
+                    <div style="font-size: 11px; color: #666;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis pulvinar.</div>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
 
-</div>
+    <!-- ============================================================ -->
+    <!-- PAGE 14                                                      -->
+    <!-- ============================================================ -->
+
+    <div class="page" style="padding: 60px 40px; font-family: 'Arial', sans-serif; color: #3d3229; background: #fff; line-height: 1.5; position: relative; min-height: 1000px;">
+
+        <div style="margin-bottom: 50px;">
+            <h1 style="font-size: 52px; font-weight: bold; margin: 0; line-height: 1.1; color: #3d3229;">
+                Měníme vaše sny<br>
+                <span style="color: #8c6239;">ve skutečnost</span>
+            </h1>
+            <p style="font-size: 16px; color: #666; margin-top: 25px; max-width: 550px;">
+                Pro další informace a případné dotazy mě neváhejte kontaktovat!
+            </p>
+        </div>
+
+        <div style="margin-bottom: 60px;">
+            <img src="https://collegas.cz/img/logo/collegas_hands.svg" alt="Collegas Logo" style="height: 60px; width: auto;">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; max-width: 800px;">
+
+            <div style="border: 1px solid #eee; border-radius: 12px; padding: 25px; background: #fff;">
+                <div style="font-weight: bold; font-size: 15px; margin-bottom: 8px; color: #3d3229;">Sídlo</div>
+                <div style="font-size: 13px; color: #666; line-height: 1.6;">Pražákova 1008/69 Brno-město, 649 00 Brno</div>
+            </div>
+
+            <div style="border: 1px solid #eee; border-radius: 12px; padding: 25px; background: #fff;">
+                <div style="font-weight: bold; font-size: 15px; margin-bottom: 8px; color: #3d3229;">Kancelář</div>
+                <div style="font-size: 13px; color: #666; line-height: 1.6;">Tovačovského 2784/24, Kroměříž</div>
+            </div>
+
+            <div style="border: 1px solid #eee; border-radius: 12px; padding: 25px; background: #fff;">
+                <div style="font-weight: bold; font-size: 15px; margin-bottom: 8px; color: #3d3229;">Centrála</div>
+                <div style="font-size: 13px; color: #666; line-height: 1.6;">AZ TOWER, 11. Patro, Pražákova 1008/69, 639 00 Brno</div>
+            </div>
+
+            <div style="border: 1px solid #eee; border-radius: 12px; padding: 25px; background: #fff;">
+                <div style="font-weight: bold; font-size: 15px; margin-bottom: 8px; color: #3d3229;">Collegas s.r.o.</div>
+                <div style="font-size: 13px; color: #666; line-height: 1.6;">
+                    IČO: 022 62 975<br>
+                    Spisová značka: C 80725
+                </div>
+            </div>
+
+        </div>
+
+    </div>

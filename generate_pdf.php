@@ -49,7 +49,7 @@ $pasiva = $inputData['property']['property_summary']['total_pasive']['value'] ??
 $cisty_majetek = $inputData['property']['property_summary']['total']['value'] ?? 0;
 $GLOBALS['protection'] = $inputData['health']['protection'] ?? [];
 $GLOBALS['dreams'] = $inputData['health']['dreams'] ?? [];
-$GLOBALS['investment_plan'] = $inputData['health']['investment_plan'] ?? []; 
+$GLOBALS['investment_plan'] = $inputData['health']['investment_plan'] ?? [];
 $chart_url = "https://chart.googleapis.com/chart?cht=pd&chs=500x500&chd=t:$aktiva,$pasiva&chco=b38b5d,e74c3c&chp=0.1";
 $GLOBALS['chartUrl'] = $chart_url;
 $GLOBALS['cistyMajetek'] = $cisty_majetek;
@@ -92,4 +92,3 @@ try {
     echo "<h1>Chyba při generování</h1>";
     echo "<pre>" . $e->getMessage() . "</pre>";
 }
-
