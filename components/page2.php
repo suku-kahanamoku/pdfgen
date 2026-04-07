@@ -9,9 +9,9 @@
         'danger'  => ['cls' => 'fa-exclamation', 'clr' => '#e74c3c'],
     ];
     $p2Sections = [
-        ['key' => 'estate',     'title' => 'Nemovitosti',     'icon' => 'fa-house'],
-        ['key' => 'active',     'title' => 'Finanční aktiva', 'icon' => 'fa-money-bill-1'],
-        ['key' => 'properties', 'title' => 'Movitý majetek',  'icon' => 'fa-car'],
+        ['key' => 'estate',     'title' => 'Nemovitosti',     'icon' => 'fa-house',        'desc' => 'Přehled vašich nemovitostí – vlastní bydlení, investiční objekty a související závazky jako hypotéky.'],
+        ['key' => 'active',     'title' => 'Finanční aktiva', 'icon' => 'fa-money-bill-1', 'desc' => 'Finanční nástroje a investice – hotovost, cenné papíry, deriváty, kryptoměny a další likvidní aktiva.'],
+        ['key' => 'properties', 'title' => 'Movitý majetek',  'icon' => 'fa-car',          'desc' => 'Hmotný majetek movité povahy – vozidla, stroje, vybavení a případné spotřebitelské úvěry s nimi spojené.'],
     ];
     ?>
     <?php foreach ($p2Sections as $sec):
@@ -23,6 +23,7 @@
                 <i class="fa-solid <?= $sec['icon'] ?>"></i>
                 <?= htmlspecialchars($sec['title']) ?>
             </div>
+            <div class="text-sm text-[#888]"><?= htmlspecialchars($sec['desc']) ?></div>
             <div class="flex flex-col gap-6">
                 <?php foreach ($rows as $row):
                     $val     = (float)($row['value'] ?? 0);
@@ -121,27 +122,23 @@
                 </script>
             </div>
             <!-- Table -->
-            <div class="flex-1 flex flex-col gap-4">
-                <h2 class="font-lora text-2xl text-[#333] mb-4">Bilance majetku</h2>
-                <div class="flex flex-col gap-2">
-                    <div class="flex justify-between px-3.5 py-2.5 border border-[#ddd] rounded-lg">
-                        <span><?= htmlspecialchars($bilance['active']['title'] ?? 'Aktiva') ?></span>
-                        <span class="font-bold"><?= format_czk($total_active) ?> <?= $cur ?></span>
-                    </div>
-                    <div class="flex justify-between px-3.5 pt-1 pb-2.5 text-[#888]">
-                        <span><?= htmlspecialchars($bilance['active']['yeld']['title'] ?? '') ?></span>
-                        <span><?= number_format($bilance['active']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
-                    </div>
+            <div class="flex-1 flex flex-col gap-2">
+                <h2 class="font-lora text-2xl text-[#333] mb-2">Bilance majetku</h2>
+                <div class="flex justify-between px-3.5 py-2.5 border border-[#ddd] rounded-lg">
+                    <span><?= htmlspecialchars($bilance['active']['title'] ?? 'Aktiva') ?></span>
+                    <span class="font-bold"><?= format_czk($total_active) ?> <?= $cur ?></span>
                 </div>
-                <div class="flex flex-col gap-2">
-                    <div class="flex justify-between px-3.5 py-2.5 border border-[#ddd] rounded-lg">
-                        <span><?= htmlspecialchars($bilance['pasive']['title'] ?? 'Pasiva') ?></span>
-                        <span class="font-bold"><?= format_czk($total_pasive) ?> <?= $cur ?></span>
-                    </div>
-                    <div class="flex justify-between px-3.5 pt-1 pb-2.5 text-[#888]">
-                        <span><?= htmlspecialchars($bilance['pasive']['yeld']['title'] ?? '') ?></span>
-                        <span><?= number_format($bilance['pasive']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
-                    </div>
+                <div class="flex justify-between px-3.5 pt-1 pb-2.5 text-[#888]">
+                    <span><?= htmlspecialchars($bilance['active']['yeld']['title'] ?? '') ?></span>
+                    <span><?= number_format($bilance['active']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
+                </div>
+                <div class="flex justify-between px-3.5 py-2.5 border border-[#ddd] rounded-lg">
+                    <span><?= htmlspecialchars($bilance['pasive']['title'] ?? 'Pasiva') ?></span>
+                    <span class="font-bold"><?= format_czk($total_pasive) ?> <?= $cur ?></span>
+                </div>
+                <div class="flex justify-between px-3.5 pt-1 pb-2.5 text-[#888]">
+                    <span><?= htmlspecialchars($bilance['pasive']['yeld']['title'] ?? '') ?></span>
+                    <span><?= number_format($bilance['pasive']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
                 </div>
                 <div class="flex justify-between px-3.5 py-3 bg-[#8d6e53] text-white rounded-lg font-bold">
                     <span><?= htmlspecialchars($bilance['netto']['title'] ?? 'Čistý majetek') ?></span>
@@ -151,29 +148,25 @@
         </div>
         <!-- Footer row -->
         <?php if ($bilPercent < 30): ?>
-            <div class="flex gap-4 items-stretch">
-                <div class="flex bg-[#fff5f5] border border-[#f8d7da] rounded-xl px-5 py-4 flex items-center gap-4">
-                    <div class="w-16 h-14 rounded-xl flex items-center justify-center font-bold text-base flex-shrink-0 text-white"
-                        style="background: #e74c3c;">
-                        <?= number_format($bilPercent, 2, ',', ' ') ?>%
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <div class="font-bold text-base">Pozor! Vaše pasiva jsou vysoká.</div>
-                        <div class="text-[#666]">Výše vašich aktiv se blíží hodnotě vašich pasiv. Kvůli tomu budete méně odolní v případě tržního výkyvu.</div>
-                    </div>
+            <div class="bg-[#fff5f5] border border-[#f8d7da] rounded-xl px-5 py-4 flex items-center gap-4">
+                <div class="w-16 h-14 rounded-xl flex items-center justify-center font-bold text-base flex-shrink-0 text-white"
+                    style="background: #e74c3c;">
+                    <?= number_format($bilPercent, 2, ',', ' ') ?>%
+                </div>
+                <div class="flex flex-col gap-1">
+                    <div class="font-bold text-base">Pozor! Vaše pasiva jsou vysoká.</div>
+                    <div class="text-[#666]">Výše vašich aktiv se blíží hodnotě vašich pasiv. Kvůli tomu budete méně odolní v případě tržního výkyvu.</div>
                 </div>
             </div>
         <?php else: ?>
-            <div class="flex gap-4 items-stretch">
-                <div class="flex bg-[#f0faf4] border border-[#b7e5c8] rounded-xl px-5 py-4 flex items-center gap-4">
-                    <div class="w-16 h-14 rounded-xl flex items-center justify-center font-bold text-base flex-shrink-0 text-white"
-                        style="background: #2ecc71;">
-                        <?= number_format($bilPercent, 2, ',', ' ') ?>%
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <div class="font-bold text-base">Čistý výnos majetku</div>
-                        <div class="text-[#666]">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
-                    </div>
+            <div class="bg-[#f0faf4] border border-[#b7e5c8] rounded-xl px-5 py-4 flex items-center gap-4">
+                <div class="w-16 h-14 rounded-xl flex items-center justify-center font-bold text-base flex-shrink-0 text-white"
+                    style="background: #2ecc71;">
+                    <?= number_format($bilPercent, 2, ',', ' ') ?>%
+                </div>
+                <div class="flex flex-col gap-1">
+                    <div class="font-bold text-base">Čistý výnos majetku</div>
+                    <div class="text-[#666]">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
                 </div>
             </div>
         <?php endif; ?>
