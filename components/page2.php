@@ -158,8 +158,23 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
             },
             scales: {
                 y: {
-                    display: false,
-                    beginAtZero: true
+                    display: true,
+                    beginAtZero: true,
+                    grid: {
+                        display: true,
+                        color: '#f0f0f0'
+                    },
+                    ticks: {
+                        stepSize: 500000,
+                        color: '#888888',
+                        font: {
+                            size: 10
+                        },
+                        callback: function(value) {
+                            if (value === 0) return '0';
+                            return new Intl.NumberFormat('cs-CZ').format(value);
+                        }
+                    }
                 },
                 x: {
                     grid: {
