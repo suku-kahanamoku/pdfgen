@@ -45,7 +45,7 @@
                     }
                 });
             </script>
-            <div class="w-full box-border px-3 py-2.5 rounded-lg font-semibold text-white bg-[#936746] font-lora flex justify-between items-center gap-2">
+            <div class="w-full box-border px-3 py-2.5 rounded-lg font-semibold text-white bg-primary font-lora flex justify-between items-center gap-2">
                 <span>Čistá hodnota majetku</span>
                 <span class="whitespace-nowrap"><?= number_format($cisty_majetek, 0, ',', ' ') ?> <?= $cur ?></span>
             </div>
@@ -57,9 +57,9 @@
     $summary = $dataRaw['summary'] ?? [];
 
     $statusIconMap = [
-        'success' => ['cls' => 'fa-solid fa-check',       'tw' => 'text-[#2ecc71] border-[#2ecc71]'],
-        'warning' => ['cls' => 'fa-solid fa-exclamation', 'tw' => 'text-[#e67e22] border-[#e67e22]'],
-        'danger'  => ['cls' => 'fa-solid fa-xmark',       'tw' => 'text-[#042444] border-[#042444]'],
+        'success' => ['cls' => 'fa-solid fa-check',       'tw' => 'text-success border-success'],
+        'warning' => ['cls' => 'fa-solid fa-exclamation', 'tw' => 'text-warning border-warning'],
+        'danger'  => ['cls' => 'fa-solid fa-xmark',       'tw' => 'text-danger border-danger'],
     ];
 
     $propertyColumns = [
@@ -86,12 +86,12 @@
     <div class="flex gap-8">
         <?php foreach ($propertyColumns as $col): ?>
             <div class="flex-1 min-w-0 flex flex-col gap-8">
-                <div class="border border-[#936746] rounded-md py-1 px-2 flex items-center">
-                    <div class="text-[#936746] text-3xl w-10 text-center">
+                <div class="border border-primary rounded-md py-1 px-2 flex items-center">
+                    <div class="text-primary text-3xl w-10 text-center">
                         <i class="<?= $col['icon'] ?>"></i>
                     </div>
                     <div class="ml-auto text-right">
-                        <div class="font-bold text-[#936746] font-lora"><?= htmlspecialchars($col['title']) ?></div>
+                        <div class="font-bold text-primary font-lora"><?= htmlspecialchars($col['title']) ?></div>
                         <div class="text-sm text-[#666]"><?= format_czk($col['total']) ?> <?= $cur ?></div>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                         $name    = $row['title'] ?? '';
                         $status  = $row['status'] ?? 'success';
                         $iconCls = $statusIconMap[$status]['cls'] ?? 'fa-solid fa-check';
-                        $iconTw  = $statusIconMap[$status]['tw']  ?? 'text-[#2ecc71] border-[#2ecc71]';
+                        $iconTw  = $statusIconMap[$status]['tw']  ?? 'text-success border-success';
                     ?>
                         <div class="bg-white border border-[#f0f0f0] p-3 rounded-lg flex items-center gap-4 shadow-sm [page-break-inside:avoid] [break-inside:avoid]">
                             <div class="rounded-full w-5 h-5 flex justify-center items-center flex-shrink-0 border <?= $iconTw ?>">

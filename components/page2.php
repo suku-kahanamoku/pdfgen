@@ -21,7 +21,7 @@
         <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
             <div class="flex items-center gap-4 font-lora text-4xl font-semibold">
                 <?= htmlspecialchars($sec['title']) ?>
-                <i class="fa-solid text-[#936746] <?= $sec['icon'] ?>"></i>
+                <i class="fa-solid text-primary <?= $sec['icon'] ?>"></i>
             </div>
             <div class="text-[#666]"><?= htmlspecialchars($sec['desc']) ?></div>
             <div class="flex flex-col gap-8">
@@ -42,7 +42,7 @@
                         </div>
                         <div class="flex-1 bg-white border border-[#f0f0f0] rounded-xl px-4 py-3.5 flex gap-4 items-center shadow-sm">
                             <div class="bg-[#f8f8f8] px-3.5 py-2.5 rounded-lg w-48 flex-shrink-0 flex flex-col gap-0.5">
-                                <div class="text-base text-[#936746] font-lora"><?= format_czk($val) ?> <?= $cur ?></div>
+                                <div class="text-base text-primary font-lora"><?= format_czk($val) ?> <?= $cur ?></div>
                                 <div class="text-[#777] font-semibold"><?= htmlspecialchars($note) ?></div>
                             </div>
                             <div class="flex-1 min-w-0 flex flex-col gap-1">
@@ -125,7 +125,7 @@
             <div class="flex-1 flex flex-col gap-2">
                 <h2 class="font-lora text-3xl font-semibold mb-4">Bilance majetku</h2>
                 <div class="flex justify-between px-3.5 py-2.5 border border-[#ddd] rounded-lg">
-                    <span class="font-lora font-semibold text-[#8D6144]"><?= htmlspecialchars($bilance['active']['title'] ?? 'Aktiva') ?></span>
+                    <span class="font-lora font-semibold text-secondary"><?= htmlspecialchars($bilance['active']['title'] ?? 'Aktiva') ?></span>
                     <span class="font-bold"><?= format_czk($total_active) ?> <?= $cur ?></span>
                 </div>
                 <div class="flex justify-between px-3.5 pt-1 pb-2.5 text-[#888]">
@@ -133,14 +133,14 @@
                     <span><?= number_format($bilance['active']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
                 </div>
                 <div class="flex justify-between px-3.5 py-2.5 border border-[#ddd] rounded-lg">
-                    <span class="font-lora font-semibold text-[#8D6144]"><?= htmlspecialchars($bilance['pasive']['title'] ?? 'Pasiva') ?></span>
+                    <span class="font-lora font-semibold text-secondary"><?= htmlspecialchars($bilance['pasive']['title'] ?? 'Pasiva') ?></span>
                     <span class="font-bold"><?= format_czk($total_pasive) ?> <?= $cur ?></span>
                 </div>
                 <div class="flex justify-between px-3.5 pt-1 pb-2.5 text-[#888]">
                     <span><?= htmlspecialchars($bilance['pasive']['yeld']['title'] ?? '') ?></span>
                     <span><?= number_format($bilance['pasive']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
                 </div>
-                <div class="flex justify-between px-3.5 py-3 bg-[#8D6144] text-white rounded-lg font-bold font-lora">
+                <div class="flex justify-between px-3.5 py-3 bg-secondary text-white rounded-lg font-bold font-lora">
                     <span><?= htmlspecialchars($bilance['netto']['title'] ?? 'Čistý majetek') ?></span>
                     <span><?= format_czk($cisty_majetek) ?> <?= $cur ?></span>
                 </div>

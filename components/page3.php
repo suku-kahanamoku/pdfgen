@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <!-- Donut chart -->
-                <div style="width:180px; height:180px; position:relative; flex-shrink:0;">
+                <div style="width:160px; height:160px; position:relative; flex-shrink:0;">
                     <canvas id="<?= $p3chartId ?>"></canvas>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                 },
                 options: {
                     animation: false,
-                    cutout: '80%',
+                    cutout: '90%',
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
@@ -100,13 +100,13 @@
     $p3total_pct = (int)($p3netto['total'] ?? 0);
     ?>
     <div class="flex items-center gap-8">
-        <div class="bg-[#936746] text-white rounded-3xl px-6 py-4 flex items-center gap-6 flex-1">
+        <div class="bg-primary text-white rounded-3xl px-6 py-4 flex items-center gap-6 flex-1">
             <div class="text-5xl font-bold font-lora flex-shrink-0"><?= $p3total_pct ?>%</div>
             <div class="flex flex-col gap-1 flex-1">
                 <div class="text-lg font-bold">Diverzifikace portfolia</div>
                 <div class="opacity-90 leading-relaxed">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
             </div>
         </div>
-        <i class="fa-solid fa-trophy text-[#BD8D66] text-7xl flex-shrink-0 w-48 text-right"></i>
+        <i class="fa-solid fa-trophy text-primary-light text-7xl flex-shrink-0 w-48 text-right"></i>
     </div>
 </div>

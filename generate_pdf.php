@@ -56,6 +56,24 @@ ob_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#936746',
+                        'primary-light': '#BD8D66',
+                        secondary: '#8D6144',
+                        success: '#2ecc71',
+                        warning: '#e67e22',
+                        danger:  '#042444',
+                        error:   '#e74c3c',
+                        info:    '#3498db',
+                    }
+                }
+            }
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 
     <style>
