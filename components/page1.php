@@ -71,7 +71,7 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
                         <i class="<?= $col['icon'] ?>"></i>
                     </div>
                     <div class="ml-auto text-right">
-                        <div class="font-bold text-primary font-lora"><?= htmlspecialchars($col['title']) ?></div>
+                        <div class="font-semibold text-primary font-lora"><?= htmlspecialchars($col['title']) ?></div>
                         <div class="text-sm text-[#666]"><?= number_format($col['total'], 0, ',', ' ') ?> <?= $cur ?></div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
                     ?>
                         <div class="bg-white border border-[#f0f0f0] p-3 rounded-lg flex items-center gap-4 shadow-sm [page-break-inside:avoid] [break-inside:avoid]">
                             <div class="rounded-full w-5 h-5 flex justify-center items-center flex-shrink-0 border <?= $iconTw ?>">
-                                <i class="<?= $iconCls ?> text-[10px] leading-none"></i>
+                                <i class="<?= $iconCls ?> text-[10px]"></i>
                             </div>
                             <div class="overflow-hidden">
                                 <div class="text-[#888] whitespace-nowrap overflow-hidden text-ellipsis"><?= htmlspecialchars($name) ?></div>

@@ -81,9 +81,9 @@ $p3total_pct = (int)($p3netto['percent'] ?? 0);
     <!-- Diverzifikace box -->
     <div class="flex items-center gap-8">
         <div class="bg-primary text-white rounded-3xl px-6 py-4 flex items-center gap-6 flex-1">
-            <div class="text-5xl font-bold font-lora flex-shrink-0"><?= $p3total_pct ?>%</div>
+            <div class="text-5xl font-semibold font-lora flex-shrink-0"><?= $p3total_pct ?>%</div>
             <div class="flex flex-col gap-1 flex-1">
-                <div class="text-lg font-bold">Diverzifikace portfolia</div>
+                <div class="text-lg font-semibold">Diverzifikace portfolia</div>
                 <div class="leading-relaxed">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
             </div>
         </div>
