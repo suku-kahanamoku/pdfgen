@@ -36,7 +36,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
                 <?= htmlspecialchars($sec['title']) ?>
                 <i class="text-primary <?= $sec['icon'] ?>"></i>
             </h2>
-            <div class="text-base/60"><?= htmlspecialchars($sec['desc']) ?></div>
+            <div class="text-base/70"><?= htmlspecialchars($sec['desc']) ?></div>
             <div class="flex flex-col gap-8">
                 <?php foreach ($rows as $row):
                     $val     = (float)($row['value'] ?? 0);
@@ -116,7 +116,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
                 </div>
                 <div class="flex flex-col gap-1">
                     <div class="font-semibold text-base">Pomer mezi aktivy a pasivy je vyrovnany</div>
-                    <div class="text-base/60">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
+                    <div class="text-base/70">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
                 </div>
             </div>
         <?php else: ?>
@@ -126,7 +126,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
                 </div>
                 <div class="flex flex-col gap-1">
                     <div class="font-semibold text-base">Pozor! Vaše pasiva jsou vysoká.</div>
-                    <div class="text-base/60">Výše vašich aktiv se blíží hodnotě vašich pasiv. Kvůli tomu budete méně odolní v případě tržního výkyvu.</div>
+                    <div class="text-base/70">Výše vašich aktiv se blíží hodnotě vašich pasiv. Kvůli tomu budete méně odolní v případě tržního výkyvu.</div>
                 </div>
             </div>
         <?php endif; ?>

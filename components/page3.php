@@ -58,7 +58,7 @@ $p3total_pct = (int)($p3netto['percent'] ?? 0);
             <h2 class="font-lora text-4xl font-semibold"><?= htmlspecialchars($p3sec['title']) ?></h2>
             <div class="flex gap-8 items-center">
                 <div class="flex-1 flex flex-col gap-8">
-                    <div class="text-base/60 leading-relaxed"><?= htmlspecialchars($p3sec['desc']) ?></div>
+                    <div class="text-base/70 leading-relaxed"><?= htmlspecialchars($p3sec['desc']) ?></div>
                     <div class="flex flex-col gap-4">
                         <?php foreach ($p3rows as $p3row):
                             $p3val = (float)($p3row['value'] ?? 0);

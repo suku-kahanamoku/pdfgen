@@ -43,7 +43,7 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
             <h1 class="font-lora text-5xl font-semibold leading-[1.1] m-0">
                 <span class="text-base/50">Přehled</span><br>vašeho majetku
             </h1>
-            <p class="text-base/60 leading-relaxed m-0">
+            <p class="text-base/70 leading-relaxed m-0">
                 Diverzifikace příjmů, například prostřednictvím vedlejších příjmů
                 nebo investic, může zvýšit naši finanční bezpečnost. Když
                 přemýšlíme o budoucnosti a strategicky investujeme, zajišťujeme
@@ -72,7 +72,7 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
                     </div>
                     <div class="ml-auto text-right">
                         <div class="font-semibold text-primary font-lora"><?= htmlspecialchars($col['title']) ?></div>
-                        <div class="text-sm text-base/60"><?= number_format($col['total'], 0, ',', ' ') ?> <?= $cur ?></div>
+                        <div class="text-sm text-base/70"><?= number_format($col['total'], 0, ',', ' ') ?> <?= $cur ?></div>
                     </div>
                 </div>
 

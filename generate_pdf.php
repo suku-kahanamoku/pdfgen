@@ -86,6 +86,7 @@ ob_start();
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
             font-family: 'Host Grotesk', sans-serif;
+            color: #4A4541;
         }
 
         .font-lora {
