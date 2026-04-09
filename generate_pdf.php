@@ -62,13 +62,11 @@ ob_start();
                 extend: {
                     colors: {
                         primary: '#936746',
-                        'primary-light': '#BD8D66',
-                        secondary: '#8D6144',
-                        success: '#2ecc71',
-                        warning: '#e67e22',
-                        danger:  '#042444',
-                        error:   '#e74c3c',
-                        info:    '#3498db',
+                        secondary: '#b68557',
+                        success: '#59bf52',
+                        warning: '#ebb081',
+                        danger: '#042444',
+                        error: '#C35252',
                     }
                 }
             }

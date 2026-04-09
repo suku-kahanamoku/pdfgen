@@ -2,7 +2,8 @@
 	"summary": {
 		"netto": {
 			"currency": "CZK",
-			"value": 4850000
+			"value": 4850000,
+			"percent": 72
 		},
 		"active": {
 			"currency": "CZK",

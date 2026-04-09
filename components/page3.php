@@ -1,33 +1,33 @@
 <!-- ============================================================ -->
 <!-- PAGE 3 – Analýza portfolia                                   -->
 <!-- ============================================================ -->
-<div class="w-full min-h-[257mm] px-3 py-2 box-border bg-white [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16">
-    <?php
-    $p3StatusColor = [
-        'success' => '#EAAF80',
-        'warning' => '#7B5E42',
-        'danger'  => '#E5E5E5',
-    ];
+<?php
+$p3StatusMap = [
+    'success' => ['hex' => '#ebb081', 'tw' => 'border-warning'],
+    'warning' => ['hex' => '#936746', 'tw' => 'border-primary'],
+    'danger'  => ['hex' => '#E5E5E5', 'tw' => 'border-[#E5E5E5]'],
+];
 
-    $p3Sections = [
-        [
-            'key'   => 'horizon',
-            'title' => 'Investiční horizont',
-            'desc'  => 'Investiční horizont vyjadřuje, na jak dlouhou dobu jsou vaše prostředky vázány a kdy očekáváte jejich využití. Krátkodobé investice poskytují rychlou likviditu, ale nižší výnosy. Střednědobé umožňují větší zhodnocení při přijatelném riziku. Dlouhodobé investice mají potenciál nejvyšších výnosů díky složenému úroku a schopnosti překonat tržní výkyvy.',
-        ],
-        [
-            'key'   => 'active_pasive',
-            'title' => 'Aktiva a pasiva',
-            'desc'  => 'Poměr aktiv a pasiv je jedním z klíčových ukazatelů finanční kondice. Aktiva představují vše, co vlastníte a co má hodnotu – nemovitosti, investice, hotovost. Pasiva jsou vaše závazky – hypotéky, úvěry, leasingy. Zdravá bilance znamená, že aktiva výrazně převyšují pasiva, což zajišťuje finanční stabilitu a odolnost vůči neočekávaným událostem.',
-        ],
-        [
-            'key'   => 'liquidity',
-            'title' => 'Likvidita',
-            'desc'  => 'Likvidita měří, jak rychle a bez ztráty hodnoty lze jednotlivé složky majetku převést na hotovost. Vysoce likvidní aktiva jako bankovní účty či obchodovatelné cenné papíry jsou dostupná okamžitě. Nemovitosti nebo soukromé investice mají nízkou likviditu – jejich prodej trvá déle a může vyžadovat slevu z ceny. Vyvážená likvidita portfolia je zárukou finanční flexibility.',
-        ],
-    ];
-    ?>
+$p3Sections = [
+    [
+        'key'   => 'horizon',
+        'title' => 'Investiční horizont',
+        'desc'  => 'Investiční horizont vyjadřuje, na jak dlouhou dobu jsou vaše prostředky vázány. Krátkodobé investice nabízejí likviditu, střednědobé větší zhodnocení, dlouhodobé nejvyšší výnosy díky složenému úroku.',
+    ],
+    [
+        'key'   => 'active_pasive',
+        'title' => 'Aktiva a pasiva',
+        'desc'  => 'Poměr aktiv a pasiv je klíčovým ukazatelem finanční kondice. Aktiva jsou vše, co vlastníte – nemovitosti, investice, hotovost. Pasiva jsou vaše závazky. Zdravá bilance zajišťuje finanční stabilitu.',
+    ],
+    [
+        'key'   => 'liquidity',
+        'title' => 'Likvidita',
+        'desc'  => 'Likvidita měří, jak rychle lze majetek převést na hotovost. Bankovní účty jsou dostupné okamžitě, nemovitosti mají nízkou likviditu. Vyvážená likvidita portfolia zajišťuje finanční flexibilitu.',
+    ],
+];
+?>
 
+<div class="w-full px-3 py-2 box-border bg-white [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16">
     <?php foreach ($p3Sections as $p3sec):
         $p3rows  = $property[$p3sec['key']]['rows'] ?? [];
         $p3total = array_sum(array_column($p3rows, 'value'));
@@ -36,7 +36,7 @@
         $p3chartColors = [];
         foreach ($p3rows as $r) {
             $p3chartData[]   = (float)($r['value'] ?? 0);
-            $p3chartColors[] = $p3StatusColor[$r['status'] ?? 'success'] ?? '#2ecc71';
+            $p3chartColors[] = $p3StatusMap[$r['status'] ?? 'success']['hex'] ?? '#936746';
         }
         $p3chartId = 'chart-p3-' . $p3sec['key'];
     ?>
@@ -50,10 +50,9 @@
                         <?php foreach ($p3rows as $p3row):
                             $p3val = (float)($p3row['value'] ?? 0);
                             $p3pct = round($p3val / $p3total * 100);
-                            $p3clr = $p3StatusColor[$p3row['status'] ?? 'success'] ?? '#2ecc71';
+                            $p3tw  = $p3StatusMap[$p3row['status'] ?? 'success']['tw'] ?? 'border-primary';
                         ?>
-                            <div class="flex justify-between items-center px-3 py-2 rounded-lg border text-sm"
-                                style="border-color: <?= $p3clr ?>;">
+                            <div class="flex justify-between items-center px-3 py-2 rounded-lg border text-sm <?= $p3tw ?>">
                                 <span class="font-semibold"><?= htmlspecialchars($p3row['title'] ?? '') ?></span>
                                 <span><?= format_czk($p3val) ?> <?= $cur ?></span>
                             </div>
@@ -97,16 +96,18 @@
     <!-- Diverzifikace box -->
     <?php
     $p3netto     = $dataRaw['summary']['netto'] ?? [];
-    $p3total_pct = (int)($p3netto['total'] ?? 0);
+    $p3total_pct = (int)($p3netto['percent'] ?? 0);
     ?>
     <div class="flex items-center gap-8">
         <div class="bg-primary text-white rounded-3xl px-6 py-4 flex items-center gap-6 flex-1">
             <div class="text-5xl font-bold font-lora flex-shrink-0"><?= $p3total_pct ?>%</div>
             <div class="flex flex-col gap-1 flex-1">
                 <div class="text-lg font-bold">Diverzifikace portfolia</div>
-                <div class="opacity-90 leading-relaxed">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
+                <div class="leading-relaxed">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
             </div>
         </div>
-        <i class="fa-solid fa-trophy text-primary-light text-7xl flex-shrink-0 w-48 text-right"></i>
+        <div class="text-7xl flex-shrink-0 w-48 text-right text-primary">
+            <i class="fa-solid fa-trophy"></i>
+        </div>
     </div>
 </div>
