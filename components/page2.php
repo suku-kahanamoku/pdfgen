@@ -9,9 +9,9 @@ $p2StatusMap = [
 ];
 
 $p2Sections = [
-    ['key' => 'estate',     'title' => 'Nemovitosti',     'icon' => 'fa-solid fa-house',        'desc' => 'Přehled vašich nemovitostí – vlastní bydlení, investiční objekty a související závazky jako hypotéky.'],
-    ['key' => 'active',     'title' => 'Finanční aktiva', 'icon' => 'fa-solid fa-money-bill-1', 'desc' => 'Finanční nástroje a investice – hotovost, cenné papíry, deriváty, kryptoměny a další likvidní aktiva.'],
-    ['key' => 'properties', 'title' => 'Movitý majetek',  'icon' => 'fa-solid fa-car',          'desc' => 'Hmotný majetek movité povahy – vozidla, stroje, vybavení a případné spotřebitelské úvěry s nimi spojené.'],
+    ['key' => 'estate',     'title' => 'Nemovitosti',     'icon' => 'fa-solid fa-house',        'desc' => 'Přehled vašich nemovitostí – vlastní bydlení, investiční objekty a související závazky jako hypotéky. Zahrnuje také tržní ocenění a míru zadluženosti.'],
+    ['key' => 'active',     'title' => 'Finanční aktiva', 'icon' => 'fa-solid fa-money-bill-1', 'desc' => 'Finanční nástroje a investice – hotovost, cenné papíry, deriváty, kryptoměny a další likvidní aktiva. Zobrazuje celkovou hodnotu portfolia a jeho výnosnost.'],
+    ['key' => 'properties', 'title' => 'Movitý majetek',  'icon' => 'fa-solid fa-car',          'desc' => 'Hmotný majetek movité povahy – vozidla, stroje, vybavení a případné spotřebitelské úvěry s nimi spojené. Reflektuje aktuální zůstatkovou hodnotu majetku.'],
 ];
 
 $bilFooter  = $bilance['footer'] ?? [];
@@ -55,15 +55,16 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
                         <div class="flex-1 bg-white border border-base/15 rounded-xl px-4 py-3 flex gap-4 items-center shadow-sm">
                             <div class="bg-base/5 px-3 py-2 rounded-lg w-48 flex-shrink-0 flex flex-col gap-0.5">
                                 <div class="text-primary text-lg font-lora"><?= number_format($val, 0, ',', ' ') ?> <?= $cur ?></div>
-                                <div><?= htmlspecialchars($note) ?></div>
+                                <div class="text-xs"><?= htmlspecialchars($note) ?></div>
                             </div>
                             <div class="flex-1 min-w-0 flex flex-col gap-1">
                                 <div class="font-semibold font-lora whitespace-nowrap overflow-hidden text-ellipsis"><?= htmlspecialchars($title) ?></div>
-                                <div class="font-lora"><?= htmlspecialchars($desc) ?></div>
+                                <div class="text-xs font-lora"><?= htmlspecialchars($desc) ?></div>
                             </div>
-                            <div class="flex flex-col gap-1.5 items-end w-44 flex-shrink-0">
-                                <?php foreach ($labels as $lbl): ?>
-                                    <div class="text-xs border border-primary px-2 py-1 rounded-md text-center w-full box-border whitespace-nowrap"><?= htmlspecialchars($lbl) ?></div>
+                            <?php $lblCount = count($labels); ?>
+                            <div class="<?= $lblCount > 3 ? 'grid grid-cols-2' : 'flex flex-col' ?> gap-1 min-w-72 flex-shrink-0">
+                                <?php foreach ($labels as $i => $lbl): ?>
+                                    <div class="text-xs border border-primary px-2 py-1 rounded-md text-center w-full box-border whitespace-nowrap <?= ($lblCount > 3 && $lblCount % 2 === 1 && $i === $lblCount - 1) ? 'col-span-2' : '' ?>"><?= htmlspecialchars($lbl) ?></div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -89,19 +90,19 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
                     <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($bilance['active']['title'] ?? 'Aktiva') ?></span>
                     <span class="font-semibold"><?= number_format($total_active, 0, ',', ' ') ?> <?= $cur ?></span>
                 </div>
-                <div class="flex justify-between px-3 pt-1 pb-2 text-base/70">
+                <div class="flex justify-between px-3 pt-1 pb-2 mb-2 text-base/70 border-b border-base/20">
                     <span><?= htmlspecialchars($bilance['active']['yeld']['title'] ?? '') ?></span>
                     <span><?= number_format($bilance['active']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
                 </div>
-                <div class="flex justify-between px-3 py-2 border border-base/30 rounded-lg">
+                <div class="flex justify-between px-3 py-2 mt-2 border border-base/30 rounded-lg">
                     <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($bilance['pasive']['title'] ?? 'Pasiva') ?></span>
                     <span class="font-semibold"><?= number_format($total_pasive, 0, ',', ' ') ?> <?= $cur ?></span>
                 </div>
-                <div class="flex justify-between px-3 pt-1 pb-2 text-base/70">
+                <div class="flex justify-between px-3 pt-1 pb-2 mb-2 text-base/70 border-b border-base/20">
                     <span><?= htmlspecialchars($bilance['pasive']['yeld']['title'] ?? '') ?></span>
                     <span><?= number_format($bilance['pasive']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
                 </div>
-                <div class="flex justify-between px-3 py-2 bg-primary text-white rounded-lg font-semibold font-lora">
+                <div class="flex justify-between px-3 py-2 mt-2 bg-primary text-white rounded-lg font-semibold font-lora">
                     <span><?= htmlspecialchars($bilance['netto']['title'] ?? 'Čistý majetek') ?></span>
                     <span><?= number_format($cisty_majetek, 0, ',', ' ') ?> <?= $cur ?></span>
                 </div>
@@ -111,7 +112,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
         <?php if ($bilStatus === 'success'): ?>
             <div class="bg-green-50 border border-success rounded-xl px-5 py-4 flex items-center gap-4">
                 <div class="w-16 h-14 rounded-xl flex items-center justify-center font-semibold flex-shrink-0 text-white bg-success">
-                    <?= number_format($bilPercent, 2, ',', ' ') ?>%
+                    <?= number_format($bilPercent, 0, ',', ' ') ?>%
                 </div>
                 <div class="flex flex-col gap-1">
                     <div class="font-semibold text-base">Pomer mezi aktivy a pasivy je vyrovnany</div>
