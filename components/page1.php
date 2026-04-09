@@ -2,7 +2,7 @@
 // ============================================================
 // PAGE 1 – CONTROLLER
 // ============================================================
-$summary = $dataRaw['summary'] ?? [];
+$summary = $dataRaw['property']['summary'] ?? [];
 
 $statusIconMap = [
     'success' => ['icon' => 'fa-solid fa-check',       'cls' => 'text-success border-success'],

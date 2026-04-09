@@ -1,85 +1,85 @@
 {
-	"summary": {
-		"netto": {
-			"currency": "CZK",
-			"value": 4850000,
-			"total": 6730000,
-			"percent": 72
-		},
-		"active": {
-			"currency": "CZK",
-			"value": 1350000,
-			"rows": [
-				{
-					"currency": "CZK",
-					"value": 480000,
-					"title": "Hotovost",
-					"status": "success"
-				},
-				{
-					"currency": "CZK",
-					"value": 620000,
-					"title": "Deriváty",
-					"status": "warning"
-				},
-				{
-					"currency": "CZK",
-					"value": 250000,
-					"title": "Kryptoměny",
-					"status": "danger"
-				}
-			]
-		},
-		"estate": {
-			"currency": "CZK",
-			"value": 5200000,
-			"rows": [
-				{
-					"currency": "CZK",
-					"value": 3800000,
-					"title": "Vlastní bydlení",
-					"status": "success"
-				},
-				{
-					"currency": "CZK",
-					"value": -1800000,
-					"title": "Hypotéka",
-					"status": "warning"
-				},
-				{
-					"currency": "CZK",
-					"value": 3200000,
-					"title": "Investiční nemovitost",
-					"status": "success"
-				}
-			]
-		},
-		"properties": {
-			"currency": "CZK",
-			"value": 680000,
-			"rows": [
-				{
-					"currency": "CZK",
-					"value": 520000,
-					"title": "Vozidla",
-					"status": "success"
-				},
-				{
-					"currency": "CZK",
-					"value": -380000,
-					"title": "Spotřeb. úvěr",
-					"status": "danger"
-				},
-				{
-					"currency": "CZK",
-					"value": 540000,
-					"title": "Vybavení",
-					"status": "success"
-				}
-			]
-		}
-	},
 	"property": {
+		"summary": {
+			"netto": {
+				"currency": "CZK",
+				"value": 4850000,
+				"total": 6730000,
+				"percent": 72
+			},
+			"active": {
+				"currency": "CZK",
+				"value": 1350000,
+				"rows": [
+					{
+						"currency": "CZK",
+						"value": 480000,
+						"title": "Hotovost",
+						"status": "success"
+					},
+					{
+						"currency": "CZK",
+						"value": 620000,
+						"title": "Deriváty",
+						"status": "warning"
+					},
+					{
+						"currency": "CZK",
+						"value": 250000,
+						"title": "Kryptoměny",
+						"status": "danger"
+					}
+				]
+			},
+			"estate": {
+				"currency": "CZK",
+				"value": 5200000,
+				"rows": [
+					{
+						"currency": "CZK",
+						"value": 3800000,
+						"title": "Vlastní bydlení",
+						"status": "success"
+					},
+					{
+						"currency": "CZK",
+						"value": -1800000,
+						"title": "Hypotéka",
+						"status": "warning"
+					},
+					{
+						"currency": "CZK",
+						"value": 3200000,
+						"title": "Investiční nemovitost",
+						"status": "success"
+					}
+				]
+			},
+			"properties": {
+				"currency": "CZK",
+				"value": 680000,
+				"rows": [
+					{
+						"currency": "CZK",
+						"value": 520000,
+						"title": "Vozidla",
+						"status": "success"
+					},
+					{
+						"currency": "CZK",
+						"value": -380000,
+						"title": "Spotřeb. úvěr",
+						"status": "danger"
+					},
+					{
+						"currency": "CZK",
+						"value": 540000,
+						"title": "Vybavení",
+						"status": "success"
+					}
+				]
+			}
+		},
 		"estate": {
 			"rows": [
 				{

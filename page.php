@@ -5,7 +5,7 @@ $bilance       = $dataRaw['property']['bilance'] ?? [];
 $total_active  = (float)($bilance['active']['value'] ?? 0);
 $total_pasive  = (float)($bilance['pasive']['value'] ?? 0);
 
-$summary       = $dataRaw['summary'] ?? [];
+$summary       = $dataRaw['property']['summary'] ?? [];
 $cisty_majetek = (float)($summary['netto']['value'] ?? 0);
 $total = (float)($summary['netto']['total'] ?? 0);
 
