@@ -114,7 +114,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
                     <?= number_format($bilPercent, 2, ',', ' ') ?>%
                 </div>
                 <div class="flex flex-col gap-1">
-                    <div class="font-semibold text-base">Čistý výnos majetku</div>
+                    <div class="font-semibold text-base">Pomer mezi aktivy a pasivy je vyrovnany</div>
                     <div class="text-[#666]">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
                 </div>
             </div>

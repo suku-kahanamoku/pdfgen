@@ -109,8 +109,8 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
         type: 'doughnut',
         data: {
             datasets: [{
-                data: [<?= $donut_pct_active ?>, <?= $donut_pct_estate ?>, <?= $donut_pct_properties ?>],
-                backgroundColor: [<?= implode(',', array_map(fn($c) => "'$c'", $p1DonutColors)) ?>],
+                data: [<?= $donut_pct_value ?>, <?= $donut_pct_remainder ?>],
+                backgroundColor: ['#8D6144', '#eeeeee'],
                 borderWidth: 0
             }]
         },
