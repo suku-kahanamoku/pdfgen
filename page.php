@@ -1,6 +1,4 @@
 <?php
-require_once __DIR__ . '/includes/helpers.php';
-
 $dataRaw = $GLOBALS['pdfData'];
 
 $bilance       = $dataRaw['property']['bilance'] ?? [];

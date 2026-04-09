@@ -1,3 +1,39 @@
+<?php
+// ============================================================
+// PAGE 1 – CONTROLLER
+// ============================================================
+$summary = $dataRaw['summary'] ?? [];
+
+$statusIconMap = [
+    'success' => ['icon' => 'fa-solid fa-check',       'cls' => 'text-success border-success'],
+    'warning' => ['icon' => 'fa-solid fa-exclamation', 'cls' => 'text-warning border-warning'],
+    'danger'  => ['icon' => 'fa-solid fa-xmark',       'cls' => 'text-danger border-danger'],
+];
+
+$propertyColumns = [
+    [
+        'title' => 'Finanční aktiva',
+        'icon'  => 'fa-solid fa-money-bill-1',
+        'total' => (float)($summary['active']['value'] ?? 0),
+        'rows'  => $summary['active']['rows'] ?? [],
+    ],
+    [
+        'title' => 'Nemovitosti',
+        'icon'  => 'fa-solid fa-house',
+        'total' => (float)($summary['estate']['value'] ?? 0),
+        'rows'  => $summary['estate']['rows'] ?? [],
+    ],
+    [
+        'title' => 'Movitý majetek',
+        'icon'  => 'fa-solid fa-car',
+        'total' => (float)($summary['properties']['value'] ?? 0),
+        'rows'  => $summary['properties']['rows'] ?? [],
+    ],
+];
+
+$p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
+?>
+
 <!-- ============================================================ -->
 <!-- PAGE 1 – Přehled majetku                                     -->
 <!-- ============================================================ -->
@@ -20,31 +56,6 @@
             <div class="w-48 h-48 flex-shrink-0">
                 <canvas id="chart-donut-p1"></canvas>
             </div>
-            <script>
-                new Chart(document.getElementById('chart-donut-p1'), {
-                    type: 'doughnut',
-                    data: {
-                        datasets: [{
-                            data: [<?= $donut_pct_active ?>, <?= $donut_pct_estate ?>, <?= $donut_pct_properties ?>],
-                            backgroundColor: ['#936746', '#BD8D66', '#eeeeee'],
-                            borderWidth: 0
-                        }]
-                    },
-                    options: {
-                        animation: false,
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                display: false
-                            },
-                            tooltip: {
-                                enabled: false
-                            }
-                        }
-                    }
-                });
-            </script>
             <div class="w-full box-border px-3 py-2.5 rounded-lg font-semibold text-white bg-primary font-lora flex justify-between items-center gap-2">
                 <span>Čistá hodnota majetku</span>
                 <span class="whitespace-nowrap"><?= number_format($cisty_majetek, 0, ',', ' ') ?> <?= $cur ?></span>
@@ -52,37 +63,6 @@
         </div>
     </div>
 
-    <!-- 3-column property overview -->
-    <?php
-    $summary = $dataRaw['summary'] ?? [];
-
-    $statusIconMap = [
-        'success' => ['cls' => 'fa-solid fa-check',       'tw' => 'text-success border-success'],
-        'warning' => ['cls' => 'fa-solid fa-exclamation', 'tw' => 'text-warning border-warning'],
-        'danger'  => ['cls' => 'fa-solid fa-xmark',       'tw' => 'text-danger border-danger'],
-    ];
-
-    $propertyColumns = [
-        [
-            'title' => 'Finanční aktiva',
-            'icon'  => 'fa-solid fa-money-bill-1',
-            'total' => (float)($summary['active']['value'] ?? 0),
-            'rows'  => $summary['active']['rows'] ?? [],
-        ],
-        [
-            'title' => 'Nemovitosti',
-            'icon'  => 'fa-solid fa-house',
-            'total' => (float)($summary['estate']['value'] ?? 0),
-            'rows'  => $summary['estate']['rows'] ?? [],
-        ],
-        [
-            'title' => 'Movitý majetek',
-            'icon'  => 'fa-solid fa-car',
-            'total' => (float)($summary['properties']['value'] ?? 0),
-            'rows'  => $summary['properties']['rows'] ?? [],
-        ],
-    ];
-    ?>
     <div class="flex gap-8">
         <?php foreach ($propertyColumns as $col): ?>
             <div class="flex-1 min-w-0 flex flex-col gap-8">
@@ -92,7 +72,7 @@
                     </div>
                     <div class="ml-auto text-right">
                         <div class="font-bold text-primary font-lora"><?= htmlspecialchars($col['title']) ?></div>
-                        <div class="text-sm text-[#666]"><?= format_czk($col['total']) ?> <?= $cur ?></div>
+                        <div class="text-sm text-[#666]"><?= number_format($col['total'], 0, ',', ' ') ?> <?= $cur ?></div>
                     </div>
                 </div>
 
@@ -101,8 +81,8 @@
                         $val     = (float)($row['value'] ?? 0);
                         $name    = $row['title'] ?? '';
                         $status  = $row['status'] ?? 'success';
-                        $iconCls = $statusIconMap[$status]['cls'] ?? 'fa-solid fa-check';
-                        $iconTw  = $statusIconMap[$status]['tw']  ?? 'text-success border-success';
+                        $iconCls = $statusIconMap[$status]['icon'] ?? 'fa-solid fa-check';
+                        $iconTw  = $statusIconMap[$status]['cls']  ?? 'text-success border-success';
                     ?>
                         <div class="bg-white border border-[#f0f0f0] p-3 rounded-lg flex items-center gap-4 shadow-sm [page-break-inside:avoid] [break-inside:avoid]">
                             <div class="rounded-full w-5 h-5 flex justify-center items-center flex-shrink-0 border <?= $iconTw ?>">
@@ -110,7 +90,7 @@
                             </div>
                             <div class="overflow-hidden">
                                 <div class="text-[#888] whitespace-nowrap overflow-hidden text-ellipsis"><?= htmlspecialchars($name) ?></div>
-                                <div class="font-normal"><?= format_czk($val) ?> <?= $cur ?></div>
+                                <div class="font-normal"><?= number_format($val, 0, ',', ' ') ?> <?= $cur ?></div>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -123,3 +103,29 @@
         <?php endforeach; ?>
     </div>
 </div>
+
+<script>
+    new Chart(document.getElementById('chart-donut-p1'), {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                data: [<?= $donut_pct_active ?>, <?= $donut_pct_estate ?>, <?= $donut_pct_properties ?>],
+                backgroundColor: [<?= implode(',', array_map(fn($c) => "'$c'", $p1DonutColors)) ?>],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            animation: false,
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    enabled: false
+                }
+            }
+        }
+    });
+</script>
