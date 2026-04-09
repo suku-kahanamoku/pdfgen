@@ -45,8 +45,9 @@
                     }
                 });
             </script>
-            <div class="w-full box-border px-3 py-2.5 rounded-xl font-semibold text-white whitespace-nowrap text-center bg-[#936746] font-lora">
-                Čistá hodnota majetku <?= number_format($cisty_majetek, 0, ',', ' ') ?> <?= $cur ?>
+            <div class="w-full box-border px-3 py-2.5 rounded-lg font-semibold text-white bg-[#936746] font-lora flex justify-between items-center gap-2">
+                <span>Čistá hodnota majetku</span>
+                <span class="whitespace-nowrap"><?= number_format($cisty_majetek, 0, ',', ' ') ?> <?= $cur ?></span>
             </div>
         </div>
     </div>
@@ -85,7 +86,7 @@
     <div class="flex gap-8">
         <?php foreach ($propertyColumns as $col): ?>
             <div class="flex-1 min-w-0 flex flex-col gap-8">
-                <div class="border border-[#936746] rounded-xl p-3 flex items-center gap-6">
+                <div class="border border-[#936746] rounded-md py-1 px-2 flex items-center">
                     <div class="text-[#936746] text-3xl w-10 text-center">
                         <i class="<?= $col['icon'] ?>"></i>
                     </div>
@@ -103,9 +104,9 @@
                         $iconCls = $statusIconMap[$status]['cls'] ?? 'fa-solid fa-check';
                         $iconTw  = $statusIconMap[$status]['tw']  ?? 'text-[#2ecc71] border-[#2ecc71]';
                     ?>
-                        <div class="bg-white border border-[#f0f0f0] p-3 rounded-xl flex items-center gap-4 shadow-sm [page-break-inside:avoid] [break-inside:avoid]">
-                            <div class="rounded-full w-6 h-6 flex justify-center items-center flex-shrink-0 border <?= $iconTw ?>">
-                                <i class="<?= $iconCls ?>"></i>
+                        <div class="bg-white border border-[#f0f0f0] p-3 rounded-lg flex items-center gap-4 shadow-sm [page-break-inside:avoid] [break-inside:avoid]">
+                            <div class="rounded-full w-5 h-5 flex justify-center items-center flex-shrink-0 border <?= $iconTw ?>">
+                                <i class="<?= $iconCls ?> text-[10px] leading-none"></i>
                             </div>
                             <div class="overflow-hidden">
                                 <div class="text-[#888] whitespace-nowrap overflow-hidden text-ellipsis"><?= htmlspecialchars($name) ?></div>

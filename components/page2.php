@@ -24,7 +24,7 @@
                 <i class="fa-solid text-[#936746] <?= $sec['icon'] ?>"></i>
             </div>
             <div class="text-[#666]"><?= htmlspecialchars($sec['desc']) ?></div>
-            <div class="flex flex-col gap-6">
+            <div class="flex flex-col gap-8">
                 <?php foreach ($rows as $row):
                     $val     = (float)($row['value'] ?? 0);
                     $title   = $row['title'] ?? '';
@@ -123,9 +123,9 @@
             </div>
             <!-- Table -->
             <div class="flex-1 flex flex-col gap-2">
-                <h2 class="font-lora text-3xl font-semibold mb-2">Bilance majetku</h2>
+                <h2 class="font-lora text-3xl font-semibold mb-4">Bilance majetku</h2>
                 <div class="flex justify-between px-3.5 py-2.5 border border-[#ddd] rounded-lg">
-                    <span class="font-lora font-semibold"><?= htmlspecialchars($bilance['active']['title'] ?? 'Aktiva') ?></span>
+                    <span class="font-lora font-semibold text-[#8D6144]"><?= htmlspecialchars($bilance['active']['title'] ?? 'Aktiva') ?></span>
                     <span class="font-bold"><?= format_czk($total_active) ?> <?= $cur ?></span>
                 </div>
                 <div class="flex justify-between px-3.5 pt-1 pb-2.5 text-[#888]">
@@ -133,7 +133,7 @@
                     <span><?= number_format($bilance['active']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
                 </div>
                 <div class="flex justify-between px-3.5 py-2.5 border border-[#ddd] rounded-lg">
-                    <span class="font-lora font-semibold"><?= htmlspecialchars($bilance['pasive']['title'] ?? 'Pasiva') ?></span>
+                    <span class="font-lora font-semibold text-[#8D6144]"><?= htmlspecialchars($bilance['pasive']['title'] ?? 'Pasiva') ?></span>
                     <span class="font-bold"><?= format_czk($total_pasive) ?> <?= $cur ?></span>
                 </div>
                 <div class="flex justify-between px-3.5 pt-1 pb-2.5 text-[#888]">
@@ -147,18 +147,7 @@
             </div>
         </div>
         <!-- Footer row -->
-        <?php if ($bilPercent < 30): ?>
-            <div class="bg-[#fbf2f2] border border-[#f8d7da] rounded-xl px-5 py-4 flex items-center gap-4">
-                <div class="w-16 h-14 rounded-xl flex items-center justify-center font-bold text-base flex-shrink-0 text-white"
-                    style="background: #c35252;">
-                    <?= number_format($bilPercent, 2, ',', ' ') ?>%
-                </div>
-                <div class="flex flex-col gap-1">
-                    <div class="font-bold text-base">Pozor! Vaše pasiva jsou vysoká.</div>
-                    <div class="text-[#666]">Výše vašich aktiv se blíží hodnotě vašich pasiv. Kvůli tomu budete méně odolní v případě tržního výkyvu.</div>
-                </div>
-            </div>
-        <?php else: ?>
+        <?php if ($bilStatus === 'success'): ?>
             <div class="bg-[#f0faf4] border border-[#b7e5c8] rounded-xl px-5 py-4 flex items-center gap-4">
                 <div class="w-16 h-14 rounded-xl flex items-center justify-center font-bold text-base flex-shrink-0 text-white"
                     style="background: #2ecc71;">
@@ -167,6 +156,17 @@
                 <div class="flex flex-col gap-1">
                     <div class="font-bold text-base">Čistý výnos majetku</div>
                     <div class="text-[#666]">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
+                </div>
+            </div>
+        <?php else: ?>
+            <div class="bg-[#fbf2f2] border border-[#f8d7da] rounded-xl px-5 py-4 flex items-center gap-4">
+                <div class="w-16 h-14 rounded-xl flex items-center justify-center font-bold text-base flex-shrink-0 text-white"
+                    style="background: #c35252;">
+                    <?= number_format($bilPercent, 2, ',', ' ') ?>%
+                </div>
+                <div class="flex flex-col gap-1">
+                    <div class="font-bold text-base">Pozor! Vaše pasiva jsou vysoká.</div>
+                    <div class="text-[#666]">Výše vašich aktiv se blíží hodnotě vašich pasiv. Kvůli tomu budete méně odolní v případě tržního výkyvu.</div>
                 </div>
             </div>
         <?php endif; ?>
