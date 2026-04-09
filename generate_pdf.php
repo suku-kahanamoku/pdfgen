@@ -54,7 +54,7 @@ ob_start();
     <meta charset="UTF-8">
     <title>Majetkový Report</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Host+Grotesk:wght@400;500;600;700&display=swap">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -67,6 +67,7 @@ ob_start();
                         warning: '#ebb081',
                         danger: '#042444',
                         error: '#C35252',
+                        base: '#4A4541',
                     }
                 }
             }
@@ -84,7 +85,7 @@ ob_start();
             padding: 0;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Host Grotesk', sans-serif;
         }
 
         .font-lora {

@@ -23,7 +23,7 @@ $p3Sections = [
 $p3StatusMap = [
     'success' => ['hex' => '#ebb081', 'cls' => 'border-warning'],
     'warning' => ['hex' => '#936746', 'cls' => 'border-primary'],
-    'danger'  => ['hex' => '#E5E5E5', 'cls' => 'border-[#E5E5E5]'],
+    'danger'  => ['hex' => '#E5E5E5', 'cls' => 'border-base/20'],
 ];
 
 
@@ -55,10 +55,10 @@ $p3total_pct = (int)($p3netto['percent'] ?? 0);
         $p3chartId = 'chart-p3-' . $p3sec['key'];
     ?>
         <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
-            <div class="font-lora text-4xl font-semibold"><?= htmlspecialchars($p3sec['title']) ?></div>
+            <h2 class="font-lora text-4xl font-semibold"><?= htmlspecialchars($p3sec['title']) ?></h2>
             <div class="flex gap-8 items-center">
                 <div class="flex-1 flex flex-col gap-8">
-                    <div class="text-[#666] leading-relaxed"><?= htmlspecialchars($p3sec['desc']) ?></div>
+                    <div class="text-base/60 leading-relaxed"><?= htmlspecialchars($p3sec['desc']) ?></div>
                     <div class="flex flex-col gap-4">
                         <?php foreach ($p3rows as $p3row):
                             $p3val = (float)($p3row['value'] ?? 0);

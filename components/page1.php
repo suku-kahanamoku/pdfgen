@@ -41,9 +41,9 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
     <div class="flex justify-between items-start gap-12">
         <div class="flex-1 flex flex-col gap-6">
             <h1 class="font-lora text-5xl font-semibold leading-[1.1] m-0">
-                <span class="text-[#8c8c8c]">Přehled</span><br>vašeho majetku
+                <span class="text-base/50">Přehled</span><br>vašeho majetku
             </h1>
-            <p class="text-[#666] leading-relaxed m-0">
+            <p class="text-base/60 leading-relaxed m-0">
                 Diverzifikace příjmů, například prostřednictvím vedlejších příjmů
                 nebo investic, může zvýšit naši finanční bezpečnost. Když
                 přemýšlíme o budoucnosti a strategicky investujeme, zajišťujeme
@@ -72,7 +72,7 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
                     </div>
                     <div class="ml-auto text-right">
                         <div class="font-semibold text-primary font-lora"><?= htmlspecialchars($col['title']) ?></div>
-                        <div class="text-sm text-[#666]"><?= number_format($col['total'], 0, ',', ' ') ?> <?= $cur ?></div>
+                        <div class="text-sm text-base/60"><?= number_format($col['total'], 0, ',', ' ') ?> <?= $cur ?></div>
                     </div>
                 </div>
 
@@ -84,19 +84,19 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
                         $iconCls = $statusIconMap[$status]['icon'] ?? 'fa-solid fa-check';
                         $iconTw  = $statusIconMap[$status]['cls']  ?? 'text-success border-success';
                     ?>
-                        <div class="bg-white border border-[#f0f0f0] p-3 rounded-lg flex items-center gap-4 shadow-sm [page-break-inside:avoid] [break-inside:avoid]">
+                        <div class="bg-white border border-base/15 p-3 rounded-lg flex items-center gap-4 shadow-sm [page-break-inside:avoid] [break-inside:avoid]">
                             <div class="rounded-full w-5 h-5 flex justify-center items-center flex-shrink-0 border <?= $iconTw ?>">
-                                <i class="<?= $iconCls ?> text-[10px]"></i>
+                                <i class="<?= $iconCls ?> text-xs"></i>
                             </div>
                             <div class="overflow-hidden">
-                                <div class="text-[#888] whitespace-nowrap overflow-hidden text-ellipsis"><?= htmlspecialchars($name) ?></div>
+                                <div class="text-base/70 whitespace-nowrap overflow-hidden text-ellipsis"><?= htmlspecialchars($name) ?></div>
                                 <div class="font-normal"><?= number_format($val, 0, ',', ' ') ?> <?= $cur ?></div>
                             </div>
                         </div>
                     <?php endforeach; ?>
 
                     <?php if (empty($col['rows'])): ?>
-                        <div class="text-[#aaa] text-center py-5">Žádné položky</div>
+                        <div class="text-base/35 text-center py-5">Žádné položky</div>
                     <?php endif; ?>
                 </div>
             </div>
@@ -118,6 +118,7 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
             animation: false,
             responsive: true,
             maintainAspectRatio: false,
+            cutout: '65%',
             plugins: {
                 legend: {
                     display: false
