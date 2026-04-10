@@ -110,14 +110,16 @@ $petsRows     = $userData['pets']['rows']     ?? [];
     </div>
 
     <!-- Sekce: Děti -->
-    <?php if (!empty($childrenRows)): ?>
+    <?php if (!empty($childrenRows)):
+        $childrenCols = '240px ' . implode(' ', array_fill(0, count($childrenRows), '1fr'));
+    ?>
         <div class="mb-10 rounded-3xl bg-white/60 px-10 py-8 shadow-sm">
             <h3 class="mb-6 font-lora text-3xl font-semibold">
                 Děti
             </h3>
 
             <div class="divide-y divide-mist">
-                <div class="grid grid-cols-[240px_1fr_1fr] items-center py-3">
+                <div class="grid items-center py-3" style="grid-template-columns: <?= $childrenCols ?>">
                     <div class="flex items-center gap-3 text-ink/70">
                         <i class="fa-regular fa-user text-primary"></i>
                         <span>Jméno</span>
@@ -127,7 +129,7 @@ $petsRows     = $userData['pets']['rows']     ?? [];
                     <?php endforeach; ?>
                 </div>
 
-                <div class="grid grid-cols-[240px_1fr_1fr] items-center py-3">
+                <div class="grid items-center py-3" style="grid-template-columns: <?= $childrenCols ?>">
                     <div class="flex items-center gap-3 text-ink/70">
                         <i class="fa-regular fa-calendar text-primary"></i>
                         <span>Věk</span>
@@ -141,14 +143,16 @@ $petsRows     = $userData['pets']['rows']     ?? [];
     <?php endif; ?>
 
     <!-- Sekce: Mazlíčci -->
-    <?php if (!empty($petsRows)): ?>
+    <?php if (!empty($petsRows)):
+        $petsCols = '240px ' . implode(' ', array_fill(0, count($petsRows), '1fr'));
+    ?>
         <div class="rounded-3xl bg-white/60 px-10 py-8 shadow-sm">
             <h3 class="mb-6 font-lora text-3xl font-semibold">
                 Mazlíčci
             </h3>
 
             <div class="divide-y divide-mist">
-                <div class="grid grid-cols-[240px_1fr_1fr] items-center py-3">
+                <div class="grid items-center py-3" style="grid-template-columns: <?= $petsCols ?>">
                     <div class="flex items-center gap-3 text-ink/70">
                         <i class="fa-solid fa-paw text-primary"></i>
                         <span>Jméno</span>
@@ -158,7 +162,7 @@ $petsRows     = $userData['pets']['rows']     ?? [];
                     <?php endforeach; ?>
                 </div>
 
-                <div class="grid grid-cols-[240px_1fr_1fr] items-center py-3">
+                <div class="grid items-center py-3" style="grid-template-columns: <?= $petsCols ?>">
                     <div class="flex items-center gap-3 text-ink/70">
                         <i class="fa-regular fa-calendar text-primary"></i>
                         <span>Věk</span>
