@@ -76,6 +76,8 @@ ob_start();
                         ink: '#4A4541',
                         surface: '#4F4742',
                         answer: '#FCDEC5',
+                        peach: '#F0D3BC',
+                        caramel: '#CE9B73',
                     }
                 }
             }

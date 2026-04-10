@@ -21,6 +21,7 @@ $property = $dataRaw['property'] ?? [];
 
 <?php include __DIR__ . '/components/finanalys1.php'; ?>
 <?php include __DIR__ . '/components/finanalys2.php'; ?>
+<?php include __DIR__ . '/components/finanalys3.php'; ?>
 <?php include __DIR__ . '/components/property1.php'; ?>
 <?php include __DIR__ . '/components/property2.php'; ?>
 <?php include __DIR__ . '/components/property3.php'; ?>
