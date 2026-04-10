@@ -1,4 +1,44 @@
 {
+	"user": {
+		"client": {
+			"name": "Karel Novotný",
+			"birth_date": "22. 09. 1980",
+			"address": "U stojanu 2794, Kroměříž, 645 00",
+			"marital_status": "ženatý",
+			"phone": "737 122 016",
+			"email": "novotny.kaja@gmail.com"
+		},
+		"partner": {
+			"name": "Kateřina Novotná",
+			"birth_date": "22. 09. 1981",
+			"address": "U stojanu 2794, Kroměříž, 645 00",
+			"marital_status": "vdaná"
+		},
+		"children": {
+			"rows": [
+				{
+					"name": "Michal Novotný",
+					"age": "7 let"
+				},
+				{
+					"name": "Petra Novotná",
+					"age": "2 roky"
+				}
+			]
+		},
+		"pets": {
+			"rows": [
+				{
+					"name": "Maxipes Fík",
+					"age": "7 let"
+				},
+				{
+					"name": "Klokan Karel",
+					"age": "2 roky"
+				}
+			]
+		}
+	},
 	"property": {
 		"summary": {
 			"netto": {
