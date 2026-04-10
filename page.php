@@ -16,16 +16,17 @@ $cur    = $curMap[$summary['netto']['currency'] ?? $bilance['active']['currency'
 $donut_pct_value     = $total > 0 ? round($cisty_majetek / $total * 100) : 0;
 $donut_pct_remainder = 100 - $donut_pct_value;
 
+$user = $dataRaw['user'] ?? [];
 $property = $dataRaw['property'] ?? [];
-?>
 
-<?php include __DIR__ . '/components/finanalys1.php'; ?>
-<?php include __DIR__ . '/components/finanalys2.php'; ?>
-<?php include __DIR__ . '/components/finanalys3.php'; ?>
+if (!empty($user)) {
+    include __DIR__ . '/components/finanalys1.php';
+    include __DIR__ . '/components/finanalys2.php';
+    include __DIR__ . '/components/finanalys3.php';
 
-<?php include __DIR__ . '/components/user1.php'; ?>
+    include __DIR__ . '/components/user1.php';
+}
 
-<?php include __DIR__ . '/components/property1.php'; ?>
-<?php include __DIR__ . '/components/property2.php'; ?>
-<?php include __DIR__ . '/components/property3.php'; ?>
-
+include __DIR__ . '/components/property1.php';
+include __DIR__ . '/components/property2.php';
+include __DIR__ . '/components/property3.php';
