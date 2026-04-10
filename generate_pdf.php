@@ -76,6 +76,7 @@ ob_start();
                         danger: '#042444',
                         error: '#C35252',
                         ink: '#4A4541',
+                        surface: '#4F4742',
                     }
                 }
             }

@@ -1,149 +1,147 @@
-<div class="m-0 bg-white text-ink">
-    <div class="min-h-screen w-full bg-white">
-        <section class="mx-auto flex min-h-screen w-full flex-col overflow-hidden bg-white">
-            <!-- Horní obsah -->
-            <div class="px-10 pt-11">
-                <!-- Nadpis -->
-                <header class="mb-10">
-                    <h1 class="font-lora text-[38px] font-bold leading-[0.98] tracking-[-0.02em] text-ink">
-                        Hodnoty <span class="text-primary">&amp;</span><br>
-                        očekávání
-                    </h1>
-                </header>
+<div class="w-full box-border [page-break-after:always] [break-after:page] overflow-hidden">
+    <div class="mx-auto flex h-screen w-full flex-col">
+        <!-- Horní obsah -->
+        <div>
+            <!-- Nadpis -->
+            <header class="mb-10">
+                <h2 class="font-lora text-5xl font-bold leading-none tracking-tight text-ink">
+                    Hodnoty <span class="text-primary">&amp;</span><br>
+                    očekávání
+                </h2>
+            </header>
 
-                <!-- Intro text -->
-                <section class="mb-14 max-w-[500px]">
-                    <p class="text-[13px] leading-[1.55] text-ink/70">
-                        Hodnoty jsou základní přesvědčení, principy nebo ideály, které určují,
-                        co je pro člověka důležité. Jsou to vnitřní normy, podle kterých se lidé
-                        rozhodují v různých životních situacích. Hodnoty ovlivňují chování,
-                        motivaci, jednání a jsou často spojeny s morálkou, etikou a osobními
-                        prioritami. Proto vnímáme důležité znát ty vaše.
-                    </p>
-                </section>
-
-                <!-- Otázka -->
-                <section class="mb-10">
-                    <h2 class="mb-6 font-lora text-[18px] font-bold leading-tight text-ink">
-                        S jakým pocitem jste dnes přišel?
-                    </h2>
-
-                    <div class="relative flex items-end gap-10">
-                        <!-- Ikona 1 -->
-                        <div class="flex flex-col items-center">
-                            <div class="flex h-[64px] w-[64px] items-center justify-center rounded-full border-[3px] border-primary-700 text-[34px] leading-none text-primary-700">
-                                😬
-                            </div>
-                        </div>
-
-                        <!-- Ikona 2 -->
-                        <div class="flex flex-col items-center">
-                            <div class="flex h-[64px] w-[64px] items-center justify-center rounded-full border-[3px] border-primary-700 text-[34px] leading-none text-primary-700">
-                                😐
-                            </div>
-                        </div>
-
-                        <!-- Ikona 3 aktivní -->
-                        <div class="relative flex flex-col items-center">
-                            <div class="absolute -top-10 left-1/2 -translate-x-[6%]">
-                                <div class="rounded-xl bg-primary px-4 py-2 text-white shadow-sm">
-                                    <div class="text-[13px] font-semibold leading-tight">Rozpačitost</div>
-                                    <div class="text-[11px] leading-tight text-white/85">Nevím co se bude dít.</div>
-                                </div>
-                            </div>
-
-                            <div class="flex h-[82px] w-[82px] items-center justify-center rounded-2xl border border-primary bg-primary-100/40">
-                                <div class="flex h-[64px] w-[64px] items-center justify-center rounded-full border-[3px] border-primary-700 text-[34px] leading-none text-primary-700">
-                                    😕
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Ikona 4 -->
-                        <div class="flex flex-col items-center">
-                            <div class="flex h-[64px] w-[64px] items-center justify-center rounded-full border-[3px] border-primary-700 text-[34px] leading-none text-primary-700">
-                                🙂
-                            </div>
-                        </div>
-
-                        <!-- Ikona 5 -->
-                        <div class="flex flex-col items-center">
-                            <div class="flex h-[64px] w-[64px] items-center justify-center rounded-full border-[3px] border-primary-700 text-[34px] leading-none text-primary-700">
-                                😍
-                            </div>
-                        </div>
-                    </div>
-                </section>
+            <!-- Intro text -->
+            <div class="mb-14">
+                <p class="leading-relaxed text-ink/70">
+                    Hodnoty jsou základní přesvědčení, principy nebo ideály, které určují,
+                    co je pro člověka důležité. Jsou to vnitřní normy, podle kterých se lidé
+                    rozhodují v různých životních situacích. Hodnoty ovlivňují chování,
+                    motivaci, jednání a jsou často spojeny s morálkou, etikou a osobními
+                    prioritami. Proto vnímáme důležité znát ty vaše.
+                </p>
             </div>
 
-            <!-- Tmavý spodní blok -->
-            <section class="mt-auto min-h-[435px] rounded-t-[16px] bg-[#4F4742] px-12 pt-10 pb-12 text-white">
-                <div class="mb-8 flex items-start justify-between gap-6">
-                    <h2 class="max-w-[330px] font-lora text-[24px] font-bold leading-[1.02] text-white">
-                        Zásadní otázky pro vaši finanční pohodu
-                    </h2>
+            <!-- Otázka -->
+            <div class="mb-10">
+                <h3 class="mb-6 font-lora text-lg font-bold leading-tight text-ink">
+                    S jakým pocitem jste dnes přišel?
+                </h3>
 
-                    <div class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/10 text-[20px] text-white/85 shadow-[0_8px_24px_rgba(0,0,0,0.12)]">
-                        ?
+                <div class="relative flex items-end gap-10">
+                    <!-- Ikona 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="flex h-32 w-32 items-center justify-center rounded-full text-8xl text-yellow-400">
+                            <i class="fa-solid fa-face-grimace"></i>
+                        </div>
+                    </div>
+
+                    <!-- Ikona 2 -->
+                    <div class="flex flex-col items-center">
+                        <div class="flex h-32 w-32 items-center justify-center rounded-full text-8xl text-yellow-400">
+                            <i class="fa-solid fa-face-meh"></i>
+                        </div>
+                    </div>
+
+                    <!-- Ikona 3 aktivní -->
+                    <div class="relative flex flex-col items-center">
+                        <div class="absolute -top-10 left-2/3">
+                            <div class="rounded-xl bg-primary px-4 py-2 text-white shadow-sm w-48">
+                                <div class="font-semibold leading-tight">Rozpačitost</div>
+                                <div class="leading-tight text-white/85">Nevím co se bude dít.</div>
+                            </div>
+                        </div>
+
+                        <div class="flex h-36 w-36 items-center justify-center rounded-2xl border border-primary bg-primary-100/40">
+                            <div class="flex h-32 w-32 items-center justify-center rounded-full text-8xl text-yellow-400">
+                                <i class="fa-solid fa-face-frown-open"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ikona 4 -->
+                    <div class="flex flex-col items-center">
+                        <div class="flex h-32 w-32 items-center justify-center rounded-full text-8xl text-yellow-400">
+                            <i class="fa-solid fa-face-smile"></i>
+                        </div>
+                    </div>
+
+                    <!-- Ikona 5 -->
+                    <div class="flex flex-col items-center">
+                        <div class="flex h-32 w-32 items-center justify-center rounded-full text-8xl text-yellow-400">
+                            <i class="fa-solid fa-face-grin-hearts"></i>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="grid grid-cols-2 gap-x-4 gap-y-4">
-                    <article class="rounded-xl border border-white/20 bg-white/[0.02] px-4 py-3">
-                        <h3 class="mb-2 text-[13px] leading-[1.35] text-white">
-                            Co by se mělo stát, abyste odcházel s pocitem, že dnešní schůzka byla úspěšná?
-                        </h3>
-                        <p class="text-[12px] leading-[1.45] text-white/70">
-                            Zajištění vlastního bydlení, a ochrana rodiny.
-                        </p>
-                    </article>
+        <!-- Tmavý spodní blok -->
+        <div class="mt-auto rounded-t-2xl bg-surface px-12 pt-10 pb-12 text-white">
+            <div class="mb-8 flex items-start justify-between gap-6">
+                <h3 class="max-w-xs font-lora text-2xl font-bold leading-none text-white">
+                    Zásadní otázky pro vaši finanční pohodu
+                </h3>
 
-                    <article class="rounded-xl border border-white/20 bg-white/[0.02] px-4 py-3">
-                        <h3 class="mb-2 text-[13px] leading-[1.35] text-white">
-                            Kdybyste už neměli žádné finanční starosti, co byste dělali jinak?
-                        </h3>
-                        <p class="text-[12px] leading-[1.45] text-white/70">
-                            Trávil bych víc času s rodinou a méně bych se stresoval.
-                        </p>
-                    </article>
-
-                    <article class="rounded-xl border border-white/20 bg-white/[0.02] px-4 py-3">
-                        <h3 class="mb-2 text-[13px] leading-[1.35] text-white">
-                            Čím jsou pro vás peníze důležité?
-                        </h3>
-                        <p class="text-[12px] leading-[1.45] text-white/70">
-                            Je to prostředek k dosahování snů a cílů.
-                        </p>
-                    </article>
-
-                    <article class="rounded-xl border border-white/20 bg-white/[0.02] px-4 py-3">
-                        <h3 class="mb-2 text-[13px] leading-[1.35] text-white">
-                            Co by se stalo, kdybyste změnili to, jak utrácíte a spoříte? Jak byste se cítil?
-                        </h3>
-                        <p class="text-[12px] leading-[1.45] text-white/70">
-                            Pořád stejně.
-                        </p>
-                    </article>
-
-                    <article class="rounded-xl border border-white/20 bg-white/[0.02] px-4 py-3">
-                        <h3 class="mb-2 text-[13px] leading-[1.35] text-white">
-                            Kdybyste dnes mohli vyřešit jakýkoliv finanční problém pouhým lusknutím prstu, co byste vyřešili?
-                        </h3>
-                        <p class="text-[12px] leading-[1.45] text-white/70">
-                            Zajištění na stáří.
-                        </p>
-                    </article>
-
-                    <article class="rounded-xl border border-white/20 bg-white/[0.02] px-4 py-3">
-                        <h3 class="mb-2 text-[13px] leading-[1.35] text-white">
-                            Jaká je vaše strategie v budování majetku?
-                        </h3>
-                        <p class="text-[12px] leading-[1.45] text-white/70">
-                            Volný kapitál dávat do nemovitostí.
-                        </p>
-                    </article>
+                <div class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10/10 text-xl text-white/85 shadow-md">
+                    ?
                 </div>
-            </section>
-        </section>
+            </div>
+
+            <div class="grid grid-cols-2 gap-x-4 gap-y-4">
+                <div class="rounded-xl border border-white/20/5 px-4 py-3">
+                    <h4 class="mb-2 leading-snug text-white">
+                        Co by se mělo stát, abyste odcházel s pocitem, že dnešní schůzka byla úspěšná?
+                    </h4>
+                    <p class="text-sm leading-snug text-warning">
+                        Zajištění vlastního bydlení, a ochrana rodiny.
+                    </p>
+                </div>
+
+                <div class="rounded-xl border border-white/20/5 px-4 py-3">
+                    <h4 class="mb-2 leading-snug text-white">
+                        Kdybyste už neměli žádné finanční starosti, co byste dělali jinak?
+                    </h4>
+                    <p class="text-sm leading-snug text-warning">
+                        Trávil bych víc času s rodinou a méně bych se stresoval.
+                    </p>
+                </div>
+
+                <div class="rounded-xl border border-white/20/5 px-4 py-3">
+                    <h4 class="mb-2 leading-snug text-white">
+                        Čím jsou pro vás peníze důležité?
+                    </h4>
+                    <p class="text-sm leading-snug text-warning">
+                        Je to prostředek k dosahování snů a cílů.
+                    </p>
+                </div>
+
+                <div class="rounded-xl border border-white/20/5 px-4 py-3">
+                    <h4 class="mb-2 leading-snug text-white">
+                        Co by se stalo, kdybyste změnili to, jak utrácíte a spoříte? Jak byste se cítil?
+                    </h4>
+                    <p class="text-sm leading-snug text-warning">
+                        Pořád stejně.
+                    </p>
+                </div>
+
+                <div class="rounded-xl border border-white/20/5 px-4 py-3">
+                    <h4 class="mb-2 leading-snug text-white">
+                        Kdybyste dnes mohli vyřešit jakýkoliv finanční problém pouhým lusknutím prstu, co byste vyřešili?
+                    </h4>
+                    <p class="text-sm leading-snug text-warning">
+                        Zajištění na stáří.
+                    </p>
+                </div>
+
+                <div class="rounded-xl border border-white/20/5 px-4 py-3">
+                    <h4 class="mb-2 leading-snug text-white">
+                        Jaká je vaše strategie v budování majetku?
+                    </h4>
+                    <p class="text-sm leading-snug text-warning">
+                        Volný kapitál dávat do nemovitostí.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

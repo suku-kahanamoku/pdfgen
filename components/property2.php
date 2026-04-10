@@ -26,7 +26,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
 <!-- ============================================================ -->
 <!-- PAGE 2 – Aktiva & Pasiva                                     -->
 <!-- ============================================================ -->
-<div class="w-full px-3 py-2 box-border bg-white [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16">
+<div class="w-full px-3 py-2 box-border [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16">
     <?php foreach ($p2Sections as $sec):
         $rows = $property[$sec['key']]['rows'] ?? [];
         if (empty($rows)) continue;
@@ -52,7 +52,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
                         <div class="rounded-full w-8 h-8 flex justify-center items-center flex-shrink-0 border <?= $iconTw ?>">
                             <i class="<?= $iconCls ?>"></i>
                         </div>
-                        <div class="flex-1 bg-white border border-ink/15 rounded-xl px-4 py-3 flex gap-4 items-center shadow-sm">
+                        <div class="flex-1 border border-ink/15 rounded-xl px-4 py-3 flex gap-4 items-center shadow-sm">
                             <div class="bg-ink/5 px-3 py-2 rounded-lg w-48 flex-shrink-0 flex flex-col gap-0.5">
                                 <div class="text-primary text-lg font-lora"><?= number_format($val, 0, ',', ' ') ?> <?= $cur ?></div>
                                 <div class="text-xs"><?= htmlspecialchars($note) ?></div>
