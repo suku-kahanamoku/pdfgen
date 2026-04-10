@@ -4,7 +4,7 @@
         <div>
             <!-- Nadpis -->
             <header class="mb-10">
-                <h2 class="font-lora text-5xl font-bold leading-none tracking-tight text-ink">
+                <h2 class="font-lora text-5xl font-semibold leading-none tracking-tight text-ink">
                     Hodnoty <span class="text-primary">&amp;</span><br>
                     očekávání
                 </h2>
@@ -23,7 +23,7 @@
 
             <!-- Otázka -->
             <div class="mb-10">
-                <h3 class="mb-6 font-lora text-lg font-bold leading-tight text-ink">
+                <h3 class="mb-6 font-lora text-lg font-semibold leading-tight text-ink">
                     S jakým pocitem jste dnes přišel?
                 </h3>
 
@@ -51,7 +51,7 @@
                             </div>
                         </div>
 
-                        <div class="flex h-36 w-36 items-center justify-center rounded-2xl border border-primary bg-primary-100/40">
+                        <div class="flex h-36 w-36 items-center justify-center rounded-2xl border border-primary bg-cream/40">
                             <div class="flex h-32 w-32 items-center justify-center rounded-full text-8xl text-yellow-400">
                                 <i class="fa-solid fa-face-frown-open"></i>
                             </div>
@@ -78,11 +78,11 @@
         <!-- Tmavý spodní blok -->
         <div class="mt-auto rounded-t-2xl bg-surface px-12 pt-10 pb-12 text-white">
             <div class="mb-8 flex items-start justify-between gap-6">
-                <h3 class="max-w-xs font-lora text-2xl font-bold leading-none text-white">
+                <h3 class="max-w-sm font-lora text-3xl font-semibold leading-none text-white">
                     Zásadní otázky pro vaši finanční pohodu
                 </h3>
 
-                <div class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10/10 text-xl text-white/85 shadow-md">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10/10 text-3xl text-white/85 shadow-md">
                     ?
                 </div>
             </div>
@@ -92,7 +92,7 @@
                     <h4 class="mb-2 leading-snug text-white">
                         Co by se mělo stát, abyste odcházel s pocitem, že dnešní schůzka byla úspěšná?
                     </h4>
-                    <p class="text-sm leading-snug text-warning">
+                    <p class="text-sm leading-snug text-answer">
                         Zajištění vlastního bydlení, a ochrana rodiny.
                     </p>
                 </div>
@@ -101,7 +101,7 @@
                     <h4 class="mb-2 leading-snug text-white">
                         Kdybyste už neměli žádné finanční starosti, co byste dělali jinak?
                     </h4>
-                    <p class="text-sm leading-snug text-warning">
+                    <p class="text-sm leading-snug text-answer">
                         Trávil bych víc času s rodinou a méně bych se stresoval.
                     </p>
                 </div>
@@ -110,7 +110,7 @@
                     <h4 class="mb-2 leading-snug text-white">
                         Čím jsou pro vás peníze důležité?
                     </h4>
-                    <p class="text-sm leading-snug text-warning">
+                    <p class="text-sm leading-snug text-answer">
                         Je to prostředek k dosahování snů a cílů.
                     </p>
                 </div>
@@ -119,7 +119,7 @@
                     <h4 class="mb-2 leading-snug text-white">
                         Co by se stalo, kdybyste změnili to, jak utrácíte a spoříte? Jak byste se cítil?
                     </h4>
-                    <p class="text-sm leading-snug text-warning">
+                    <p class="text-sm leading-snug text-answer">
                         Pořád stejně.
                     </p>
                 </div>
@@ -128,7 +128,7 @@
                     <h4 class="mb-2 leading-snug text-white">
                         Kdybyste dnes mohli vyřešit jakýkoliv finanční problém pouhým lusknutím prstu, co byste vyřešili?
                     </h4>
-                    <p class="text-sm leading-snug text-warning">
+                    <p class="text-sm leading-snug text-answer">
                         Zajištění na stáří.
                     </p>
                 </div>
@@ -137,7 +137,7 @@
                     <h4 class="mb-2 leading-snug text-white">
                         Jaká je vaše strategie v budování majetku?
                     </h4>
-                    <p class="text-sm leading-snug text-warning">
+                    <p class="text-sm leading-snug text-answer">
                         Volný kapitál dávat do nemovitostí.
                     </p>
                 </div>

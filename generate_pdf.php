@@ -61,22 +61,21 @@ ob_start();
             theme: {
                 extend: {
                     colors: {
-                        primary: {
-                            DEFAULT: '#936746',
-                            100: '#f6f1e8',
-                            200: '#e9e4de',
-                            300: '#ddd8d3',
-                            400: '#d8bf9b',
-                            500: '#c7b299',
-                            600: '#b9b0a8',
-                            700: '#b68557',
-                        },
+                        primary: '#936746',
+                        cream: '#f6f1e8',
+                        linen: '#e9e4de',
+                        mist: '#ddd8d3',
+                        sand: '#d8bf9b',
+                        taupe: '#c7b299',
+                        pebble: '#b9b0a8',
+                        bronze: '#b68557',
                         success: '#59bf52',
                         warning: '#ebb081',
                         danger: '#042444',
                         error: '#C35252',
                         ink: '#4A4541',
                         surface: '#4F4742',
+                        answer: '#FCDEC5',
                     }
                 }
             }

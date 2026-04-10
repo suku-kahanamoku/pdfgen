@@ -12,7 +12,7 @@
 
     <!-- Hlavní nadpis -->
     <div class="mb-12">
-        <h1 class="font-lora text-6xl font-bold text-ink">
+        <h1 class="font-lora text-6xl font-semibold text-ink">
             Finanční analýza
         </h1>
     </div>
@@ -25,7 +25,7 @@
             </div>
 
             <div class="max-w-lg">
-                <h3 class="mb-2.5 font-lora text-xl leading-tight font-bold text-ink">
+                <h3 class="mb-2.5 font-lora text-xl leading-tight font-semibold text-ink">
                     Životní cíle
                 </h3>
                 <p class="leading-relaxed text-ink/80">
@@ -40,7 +40,7 @@
     </div>
 
     <!-- Oddělovač -->
-    <div class="mb-10 h-px w-full bg-primary-300"></div>
+    <div class="mb-10 h-px w-full bg-mist"></div>
 
     <!-- Blok 2 -->
     <div class="mb-14">
@@ -50,7 +50,7 @@
             </div>
 
             <div class="max-w-lg">
-                <h3 class="mb-2.5 font-lora text-lg leading-tight font-bold text-ink">
+                <h3 class="mb-2.5 font-lora text-lg leading-tight font-semibold text-ink">
                     Myslete na budoucnost
                 </h3>
                 <p class="leading-relaxed text-ink/80">
@@ -66,7 +66,7 @@
     <!-- Callout box -->
     <div>
         <div class="mb-6">
-            <div class="-ml-10 w-lg rounded-r-xl border border-primary-400 bg-primary-100 px-10 py-2.5">
+            <div class="-ml-10 w-lg rounded-r-xl border border-sand bg-cream px-10 py-2.5">
                 <p class="leading-normal text-ink/80">
                     Nabízíme individuální finanční analýzy, které vám pomohou dosáhnout
                     vašich finančních cílů efektivně a s jistotou.
@@ -77,7 +77,7 @@
         <!-- Kontakt -->
         <div style="position:absolute; bottom:2rem; left:2.5rem; right:2.5rem;">
             <div class="flex items-start gap-3.5">
-                <div class="h-16 w-16 overflow-hidden rounded-xl bg-primary-200">
+                <div class="h-16 w-16 overflow-hidden rounded-xl bg-linen">
                     <img
                         src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
                         alt="Profilová fotografie"
@@ -85,19 +85,19 @@
                 </div>
 
                 <div class="pt-px">
-                    <div class="font-lora leading-tight font-bold text-primary">
+                    <div class="font-lora leading-tight font-semibold text-primary">
                         Lucie Bohatá
                     </div>
                     <div class="mb-2 leading-tight text-ink/80">
                         Finanční specialista
                     </div>
 
-                    <div class="border-l border-primary-500 pl-2 leading-snug text-ink/80">
+                    <div class="border-l border-taupe pl-2 leading-snug text-ink/80">
                         <div>lucie.bohata@collegas.cz</div>
                         <div>+420 738 465 321</div>
                     </div>
 
-                    <div class="mt-1 leading-tight text-primary-600">
+                    <div class="mt-1 leading-tight text-pebble">
                         © 2024 Collegas s.r.o. | collegas.cz
                     </div>
                 </div>
