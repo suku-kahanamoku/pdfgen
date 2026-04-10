@@ -61,8 +61,16 @@ ob_start();
             theme: {
                 extend: {
                     colors: {
-                        primary: '#936746',
-                        secondary: '#b68557',
+                        primary: {
+                            DEFAULT: '#936746',
+                            100: '#f6f1e8',
+                            200: '#e9e4de',
+                            300: '#ddd8d3',
+                            400: '#d8bf9b',
+                            500: '#c7b299',
+                            600: '#b9b0a8',
+                            700: '#b68557',
+                        },
                         success: '#59bf52',
                         warning: '#ebb081',
                         danger: '#042444',
