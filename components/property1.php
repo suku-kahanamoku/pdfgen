@@ -37,7 +37,7 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
 <!-- ============================================================ -->
 <!-- PAGE 1 – Přehled majetku                                     -->
 <!-- ============================================================ -->
-<div class="w-full px-3 py-2 box-border [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16">
+<div class="w-full box-border p-32 [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16">
     <div class="flex justify-between items-start gap-12">
         <div class="flex-1 flex flex-col gap-6">
             <h2 class="font-lora text-5xl font-semibold leading-[1.1] m-0">

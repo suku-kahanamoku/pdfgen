@@ -126,7 +126,7 @@ try {
         ])
         ->showBackground()
         ->format('A4')
-        ->margins(20, 20, 20, 20)
+        ->margins(0, 0, 0, 0)
         ->waitUntilNetworkIdle()
         ->pdf();
     header('Content-Type: application/pdf');

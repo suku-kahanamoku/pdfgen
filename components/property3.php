@@ -47,7 +47,7 @@ $p3total_pct = (int)($p3netto['percent'] ?? 0);
 <!-- ============================================================ -->
 <!-- PAGE 3 – Analýza portfolia                                   -->
 <!-- ============================================================ -->
-<div class="w-full px-3 py-2 box-border [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16">
+<div class="w-full box-border p-32 [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16">
     <?php foreach ($p3Sections as $p3sec):
         $p3rows  = $property[$p3sec['key']]['rows'] ?? [];
         $p3total = array_sum(array_column($p3rows, 'value'));

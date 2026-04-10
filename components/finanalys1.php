@@ -1,6 +1,4 @@
-<div class="w-full px-3 py-2 box-border [page-break-after:always] [break-after:page] overflow-visible">
-
-
+<div class="w-full box-border p-32 [page-break-after:always] [break-after:page] overflow-visible">
     <!-- Intro -->
     <div class="mb-14">
         <h3 class="text-3xl leading-tight text-ink">
