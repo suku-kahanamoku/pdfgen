@@ -53,7 +53,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
                             <i class="<?= $iconCls ?>"></i>
                         </div>
                         <div class="flex-1 border border-ink/15 rounded-xl px-4 py-3 flex gap-4 items-center shadow-sm">
-                            <div class="bg-ink/5 px-3 py-2 rounded-lg w-48 flex-shrink-0 flex flex-col gap-0.5">
+                            <div class="bg-ink/5 px-3 py-2 rounded-lg w-48 flex-shrink-0 flex flex-col gap-1">
                                 <div class="text-primary text-lg font-lora"><?= number_format($val, 0, ',', ' ') ?> <?= $cur ?></div>
                                 <div class="text-xs"><?= htmlspecialchars($note) ?></div>
                             </div>
@@ -85,7 +85,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
             </div>
             <!-- Table -->
             <div class="flex-1 flex flex-col gap-2">
-                <h4 class="font-lora text-3xl font-semibold mb-4">Bilance majetku</h4>
+                <h3 class="font-lora text-3xl font-semibold mb-4">Bilance majetku</h3>
                 <div class="flex justify-between px-3 py-2 border border-ink/30 rounded-lg">
                     <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($bilance['active']['title'] ?? 'Aktiva') ?></span>
                     <span class="font-semibold"><?= number_format($total_active, 0, ',', ' ') ?> <?= $cur ?></span>
@@ -115,7 +115,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
                     <?= number_format($bilPercent, 0, ',', ' ') ?>%
                 </div>
                 <div class="flex flex-col gap-1">
-                    <div class="font-semibold text-ink">Pomer mezi aktivy a pasivy je vyrovnany</div>
+                    <div class="font-semibold">Pomer mezi aktivy a pasivy je vyrovnany</div>
                     <div class="text-ink/70">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
                 </div>
             </div>
@@ -125,7 +125,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
                     <?= number_format($bilPercent, 2, ',', ' ') ?>%
                 </div>
                 <div class="flex flex-col gap-1">
-                    <div class="font-semibold text-ink">Pozor! Vaše pasiva jsou vysoká.</div>
+                    <div class="font-semibold">Pozor! Vaše pasiva jsou vysoká.</div>
                     <div class="text-ink/70">Výše vašich aktiv se blíží hodnotě vašich pasiv. Kvůli tomu budete méně odolní v případě tržního výkyvu.</div>
                 </div>
             </div>

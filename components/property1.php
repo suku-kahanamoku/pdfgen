@@ -56,7 +56,7 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
             <div class="w-48 h-48 flex-shrink-0">
                 <canvas id="chart-donut-p1"></canvas>
             </div>
-            <div class="w-full box-border px-3 py-2.5 rounded-lg font-semibold text-white bg-primary font-lora flex justify-between items-center gap-2">
+            <div class="w-full box-border px-3 py-3 rounded-lg font-semibold text-white bg-primary font-lora flex justify-between items-center gap-2">
                 <span>Čistá hodnota majetku</span>
                 <span class="whitespace-nowrap"><?= number_format($cisty_majetek, 0, ',', ' ') ?> <?= $cur ?></span>
             </div>
