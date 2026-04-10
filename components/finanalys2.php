@@ -1,11 +1,11 @@
-<div class="m-0 bg-white text-base">
+<div class="m-0 bg-white text-ink">
     <div class="min-h-screen w-full bg-white">
         <section class="mx-auto flex min-h-screen w-full flex-col overflow-hidden bg-white">
             <!-- Horní obsah -->
             <div class="px-10 pt-11">
                 <!-- Nadpis -->
                 <header class="mb-10">
-                    <h1 class="font-lora text-[38px] font-bold leading-[0.98] tracking-[-0.02em] text-base">
+                    <h1 class="font-lora text-[38px] font-bold leading-[0.98] tracking-[-0.02em] text-ink">
                         Hodnoty <span class="text-primary">&amp;</span><br>
                         očekávání
                     </h1>
@@ -13,7 +13,7 @@
 
                 <!-- Intro text -->
                 <section class="mb-14 max-w-[500px]">
-                    <p class="text-[13px] leading-[1.55] text-base/70">
+                    <p class="text-[13px] leading-[1.55] text-ink/70">
                         Hodnoty jsou základní přesvědčení, principy nebo ideály, které určují,
                         co je pro člověka důležité. Jsou to vnitřní normy, podle kterých se lidé
                         rozhodují v různých životních situacích. Hodnoty ovlivňují chování,
@@ -24,7 +24,7 @@
 
                 <!-- Otázka -->
                 <section class="mb-10">
-                    <h2 class="mb-6 font-lora text-[18px] font-bold leading-tight text-base">
+                    <h2 class="mb-6 font-lora text-[18px] font-bold leading-tight text-ink">
                         S jakým pocitem jste dnes přišel?
                     </h2>
 

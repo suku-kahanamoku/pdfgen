@@ -75,7 +75,7 @@ ob_start();
                         warning: '#ebb081',
                         danger: '#042444',
                         error: '#C35252',
-                        base: '#4A4541',
+                        ink: '#4A4541',
                     }
                 }
             }

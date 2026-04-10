@@ -19,6 +19,7 @@ $donut_pct_remainder = 100 - $donut_pct_value;
 $property = $dataRaw['property'] ?? [];
 ?>
 
+<?php include __DIR__ . '/components/finanalys1.php'; ?>
 <?php include __DIR__ . '/components/property1.php'; ?>
 <?php include __DIR__ . '/components/property2.php'; ?>
 <?php include __DIR__ . '/components/property3.php'; ?>
