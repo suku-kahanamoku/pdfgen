@@ -26,7 +26,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
 <!-- ============================================================ -->
 <!-- PAGE 2 – Aktiva & Pasiva                                     -->
 <!-- ============================================================ -->
-<div class="w-full box-border p-24 [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16">
+<div class="w-full box-border p-24 [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16 [box-decoration-break:clone]">
     <?php foreach ($p2Sections as $sec):
         $rows = $property[$sec['key']]['rows'] ?? [];
         if (empty($rows)) continue;

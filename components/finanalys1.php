@@ -1,4 +1,4 @@
-<div class="w-full box-border p-24 [page-break-after:always] [break-after:page] overflow-visible">
+<div class="w-full box-border p-24 [page-break-after:always] [break-after:page] [box-decoration-break:clone] overflow-visible">
     <!-- Intro -->
     <div class="mb-14">
         <h3 class="text-3xl leading-tight text-ink">

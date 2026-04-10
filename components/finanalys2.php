@@ -1,4 +1,4 @@
-<div class="w-full box-border p-24 flex h-screen flex-col [page-break-after:always] [break-after:page]">
+<div class="w-full box-border p-24 flex h-screen flex-col [page-break-after:always] [break-after:page] [box-decoration-break:clone]">
     <!-- Horní obsah -->
     <div>
         <!-- Nadpis -->
