@@ -1,4 +1,4 @@
-<div class="w-full box-border px-32 pt-32 flex h-screen flex-col [page-break-after:always] [break-after:page]">
+<div class="w-full box-border p-24 flex h-screen flex-col [page-break-after:always] [break-after:page]">
     <!-- Horní obsah -->
     <div>
         <!-- Nadpis -->
@@ -75,7 +75,7 @@
     </div>
 
     <!-- Tmavý spodní blok -->
-    <div class="mt-auto rounded-t-2xl bg-surface px-12 pt-10 pb-12 text-white">
+    <div class="mt-auto -mx-24 rounded-t-3xl bg-surface px-24 pt-16 pb-24 text-white">
         <div class="mb-8 flex items-start justify-between gap-6">
             <h3 class="max-w-sm font-lora text-3xl font-semibold leading-none text-white">
                 Zásadní otázky pro vaši finanční pohodu
@@ -91,7 +91,7 @@
                 <h4 class="mb-2 leading-snug text-white">
                     Co by se mělo stát, abyste odcházel s pocitem, že dnešní schůzka byla úspěšná?
                 </h4>
-                <p class="text-sm leading-snug text-answer">
+                <p class="leading-snug text-answer">
                     Zajištění vlastního bydlení, a ochrana rodiny.
                 </p>
             </div>
@@ -100,7 +100,7 @@
                 <h4 class="mb-2 leading-snug text-white">
                     Kdybyste už neměli žádné finanční starosti, co byste dělali jinak?
                 </h4>
-                <p class="text-sm leading-snug text-answer">
+                <p class="leading-snug text-answer">
                     Trávil bych víc času s rodinou a méně bych se stresoval.
                 </p>
             </div>
@@ -109,7 +109,7 @@
                 <h4 class="mb-2 leading-snug text-white">
                     Čím jsou pro vás peníze důležité?
                 </h4>
-                <p class="text-sm leading-snug text-answer">
+                <p class="leading-snug text-answer">
                     Je to prostředek k dosahování snů a cílů.
                 </p>
             </div>
@@ -118,7 +118,7 @@
                 <h4 class="mb-2 leading-snug text-white">
                     Co by se stalo, kdybyste změnili to, jak utrácíte a spoříte? Jak byste se cítil?
                 </h4>
-                <p class="text-sm leading-snug text-answer">
+                <p class="leading-snug text-answer">
                     Pořád stejně.
                 </p>
             </div>
@@ -127,7 +127,7 @@
                 <h4 class="mb-2 leading-snug text-white">
                     Kdybyste dnes mohli vyřešit jakýkoliv finanční problém pouhým lusknutím prstu, co byste vyřešili?
                 </h4>
-                <p class="text-sm leading-snug text-answer">
+                <p class="leading-snug text-answer">
                     Zajištění na stáří.
                 </p>
             </div>
@@ -136,7 +136,7 @@
                 <h4 class="mb-2 leading-snug text-white">
                     Jaká je vaše strategie v budování majetku?
                 </h4>
-                <p class="text-sm leading-snug text-answer">
+                <p class="leading-snug text-answer">
                     Volný kapitál dávat do nemovitostí.
                 </p>
             </div>
