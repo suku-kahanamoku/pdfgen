@@ -19,7 +19,7 @@ $donut_pct_remainder = 100 - $donut_pct_value;
 $property = $dataRaw['property'] ?? [];
 ?>
 
-<?php include __DIR__ . '/components/page1.php'; ?>
-<?php include __DIR__ . '/components/page2.php'; ?>
-<?php include __DIR__ . '/components/page3.php'; ?>
+<?php include __DIR__ . '/components/property1.php'; ?>
+<?php include __DIR__ . '/components/property2.php'; ?>
+<?php include __DIR__ . '/components/property3.php'; ?>
 
