@@ -32,10 +32,10 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
         if (empty($rows)) continue;
     ?>
         <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
-            <h2 class="flex items-center gap-4 font-lora text-4xl font-semibold">
+            <h3 class="flex items-center gap-4 font-lora text-4xl font-semibold">
                 <?= htmlspecialchars($sec['title']) ?>
                 <i class="text-primary <?= $sec['icon'] ?>"></i>
-            </h2>
+            </h3>
             <div class="text-base/70"><?= htmlspecialchars($sec['desc']) ?></div>
             <div class="flex flex-col gap-8">
                 <?php foreach ($rows as $row):
@@ -85,7 +85,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
             </div>
             <!-- Table -->
             <div class="flex-1 flex flex-col gap-2">
-                <h3 class="font-lora text-3xl font-semibold mb-4">Bilance majetku</h3>
+                <h4 class="font-lora text-3xl font-semibold mb-4">Bilance majetku</h4>
                 <div class="flex justify-between px-3 py-2 border border-base/30 rounded-lg">
                     <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($bilance['active']['title'] ?? 'Aktiva') ?></span>
                     <span class="font-semibold"><?= number_format($total_active, 0, ',', ' ') ?> <?= $cur ?></span>

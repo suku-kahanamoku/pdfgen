@@ -55,7 +55,7 @@ $p3total_pct = (int)($p3netto['percent'] ?? 0);
         $p3chartId = 'chart-p3-' . $p3sec['key'];
     ?>
         <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
-            <h2 class="font-lora text-4xl font-semibold"><?= htmlspecialchars($p3sec['title']) ?></h2>
+            <h3 class="font-lora text-4xl font-semibold"><?= htmlspecialchars($p3sec['title']) ?></h3>
             <div class="flex gap-8 items-center">
                 <div class="flex-1 flex flex-col gap-8">
                     <div class="text-base/70 leading-relaxed"><?= htmlspecialchars($p3sec['desc']) ?></div>

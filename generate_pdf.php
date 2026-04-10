@@ -128,6 +128,6 @@ try {
     exit;
 } catch (\Exception $e) {
     header('Content-Type: text/html; charset=utf-8');
-    echo "<h1>Chyba při generování</h1>";
+    echo "<h2>Chyba při generování</h2>";
     echo "<pre>" . $e->getMessage() . "</pre>";
 }

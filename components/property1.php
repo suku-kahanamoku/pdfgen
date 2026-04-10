@@ -40,9 +40,9 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
 <div class="w-full px-3 py-2 box-border bg-white [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16">
     <div class="flex justify-between items-start gap-12">
         <div class="flex-1 flex flex-col gap-6">
-            <h1 class="font-lora text-5xl font-semibold leading-[1.1] m-0">
+            <h2 class="font-lora text-5xl font-semibold leading-[1.1] m-0">
                 <span class="text-base/50">Přehled</span><br>vašeho majetku
-            </h1>
+            </h2>
             <p class="text-base/70 leading-relaxed m-0">
                 Diverzifikace příjmů, například prostřednictvím vedlejších příjmů
                 nebo investic, může zvýšit naši finanční bezpečnost. Když
