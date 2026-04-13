@@ -40,48 +40,49 @@
 		}
 	},
 	"finance": {
-		"currency": "CZK",
-		"categories": [
-			{
-				"title": "Domácnost",
-				"rows": [
-					{ "title": "Hypoteční úvěr", "amount": 4000,  "min": 4000  },
-					{ "title": "Ostatní úvěry",  "amount": 14000, "min": 14000 },
-					{ "title": "Rodinný stav",   "amount": 3500,  "min": 3500  }
-				]
-			},
-			{
-				"title": "Pojištění",
-				"rows": [
-					{ "title": "Životní pojištění", "amount": 3500, "min": 3500 }
-				]
-			},
-			{
-				"title": "Doprava",
-				"rows": [
-					{ "title": "Autobus", "amount": 1500, "min": 500 },
-					{ "title": "Kolo",    "amount": 500,  "min": 0   }
-				]
-			},
-			{
-				"title": "Jídlo",
-				"rows": [
-					{ "title": "Stravné", "amount": 2500, "min": 1500 },
-					{ "title": "Obědy",   "amount": 1500, "min": 500  }
-				]
-			},
-			{
-				"title": "Energie",
-				"rows": [
-					{ "title": "Elektřina", "amount": 1500, "min": 1200 },
-					{ "title": "Voda",      "amount": 500,  "min": 500  },
-					{ "title": "Plyn",      "amount": 500,  "min": 500  }
-				]
+		"expense": {
+			"categories": [
+				{
+					"title": "Domácnost",
+					"rows": [
+						{ "currency": "CZK", "title": "Hypoteční úvěr", "amount": 4000,  "min": 4000  },
+						{ "currency": "CZK", "title": "Ostatní úvěry",  "amount": 14000, "min": 14000 },
+						{ "currency": "CZK", "title": "Rodinný stav",   "amount": 3500,  "min": 3500  }
+					]
+				},
+				{
+					"title": "Pojištění",
+					"rows": [
+						{ "currency": "CZK", "title": "Životní pojištění", "amount": 3500, "min": 3500 }
+					]
+				},
+				{
+					"title": "Doprava",
+					"rows": [
+						{ "currency": "CZK", "title": "Autobus", "amount": 1500, "min": 500 },
+						{ "currency": "CZK", "title": "Kolo",    "amount": 500,  "min": 0   }
+					]
+				},
+				{
+					"title": "Jídlo",
+					"rows": [
+						{ "currency": "CZK", "title": "Stravné", "amount": 2500, "min": 1500 },
+						{ "currency": "CZK", "title": "Obědy",   "amount": 1500, "min": 500  }
+					]
+				},
+				{
+					"title": "Energie",
+					"rows": [
+						{ "currency": "CZK", "title": "Elektřina", "amount": 1500, "min": 1200 },
+						{ "currency": "CZK", "title": "Voda",      "amount": 500,  "min": 500  },
+						{ "currency": "CZK", "title": "Plyn",      "amount": 500,  "min": 500  }
+					]
+				}
+			],
+			"footer": {
+				"percent": 48,
+				"status": "danger"
 			}
-		],
-		"footer": {
-			"percent": 48,
-			"status": "danger"
 		}
 	},
 	"property": {

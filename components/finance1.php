@@ -2,9 +2,11 @@
 // ============================================================
 // FINANCE PAGE – CONTROLLER
 // ============================================================
-$finCategories = $finance['categories'] ?? [];
-$finCur        = $curMap[$finance['currency'] ?? 'CZK'] ?? 'Kč';
-$finFooter     = $finance['footer'] ?? [];
+$finExpense    = $finance['expense'] ?? [];
+$finCategories = $finExpense['categories'] ?? [];
+$finFirstRow   = $finCategories[0]['rows'][0] ?? [];
+$finCur        = $curMap[$finFirstRow['currency'] ?? 'CZK'] ?? 'Kč';
+$finFooter     = $finExpense['footer'] ?? [];
 
 // Light-to-dark brown palette from tailwind config
 $finColorPalette = ['peach', 'caramel', 'walnut', 'chestnut', 'umber'];
