@@ -37,7 +37,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
                 <i class="text-primary <?= $sec['icon'] ?>"></i>
             </h3>
             <div class="text-ink/70"><?= htmlspecialchars($sec['desc']) ?></div>
-            <div class="flex flex-col gap-8">
+            <div class="flex flex-col gap-7">
                 <?php foreach ($rows as $row):
                     $val     = (float)($row['value'] ?? 0);
                     $title   = $row['title'] ?? '';
@@ -64,7 +64,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
                             <?php $lblCount = count($labels); ?>
                             <div class="<?= $lblCount > 3 ? 'grid grid-cols-2' : 'flex flex-col' ?> gap-1 min-w-72 flex-shrink-0">
                                 <?php foreach ($labels as $i => $lbl): ?>
-                                    <div class="text-xs border border-primary px-2 py-1 rounded-md text-center w-full box-border whitespace-nowrap <?= ($lblCount > 3 && $lblCount % 2 === 1 && $i === $lblCount - 1) ? 'col-span-2' : '' ?>"><?= htmlspecialchars($lbl) ?></div>
+                                    <div class="text-xs border border-primary/40 px-2 py-1.5 rounded-md text-center w-full box-border whitespace-nowrap <?= ($lblCount > 3 && $lblCount % 2 === 1 && $i === $lblCount - 1) ? 'col-span-2' : '' ?>"><?= htmlspecialchars($lbl) ?></div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
