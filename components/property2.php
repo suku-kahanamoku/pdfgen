@@ -76,15 +76,16 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
 
     <!-- Bilance majetku -->
     <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-6">
-        <div class="flex gap-8 items-center">
+        <div class="flex gap-8 items-stretch">
             <!-- Bar chart -->
-            <div class="flex-1 flex items-center justify-center">
-                <div style="width:340px; height:340px; position:relative;">
+            <div class="flex-1 flex items-stretch bg-paper rounded-3xl p-6 min-h-[340px]">
+                <div class="rounded-2xl flex-1">
                     <canvas id="chart-bilance-p2"></canvas>
                 </div>
             </div>
-            <!-- Table -->
-            <div class="flex-1 flex flex-col gap-2">
+
+            <!-- Pravý panel -->
+            <div class="flex-1 flex flex-col gap-2 justify-end">
                 <h3 class="font-lora text-3xl font-semibold mb-4">Bilance majetku</h3>
                 <div class="flex justify-between px-3 py-2 border border-ink/30 rounded-lg">
                     <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($bilance['active']['title'] ?? 'Aktiva') ?></span>
@@ -108,7 +109,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
                 </div>
             </div>
         </div>
-        
+
         <!-- Footer row -->
         <?php if ($bilStatus === 'success'): ?>
             <div class="bg-green-50 border border-success rounded-xl px-5 py-4 flex items-center gap-4">

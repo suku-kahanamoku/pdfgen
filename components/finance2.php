@@ -48,65 +48,67 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
     </div>
 
     <!-- Hlavní obsah -->
-    <div class="flex-1 flex gap-8 items-center [page-break-inside:avoid] [break-inside:avoid]">
-        <!-- Chart -->
-        <div class="flex-1 flex items-center justify-center">
-            <div class="rounded-3xl bg-white/30 px-6 py-6" style="width: 340px; height: 370px;">
-                <canvas id="chart-finance-p3"></canvas>
-            </div>
-        </div>
-
-        <!-- Pravý panel -->
-        <div class="w-72 flex-shrink-0 flex flex-col gap-8">
-            <!-- Vaše příjmy -->
-            <div class="flex flex-col gap-3">
-                <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
-                    Vaše příjmy
+    <div class="flex-1 flex items-center [page-break-inside:avoid] [break-inside:avoid]">
+        <div class="flex gap-8 items-stretch w-full">
+            <!-- Chart -->
+            <div class="flex-1 flex items-stretch bg-paper rounded-3xl p-6">
+                <div class="rounded-2xl px-6 py-6 flex-1">
+                    <canvas id="chart-finance-p3"></canvas>
                 </div>
-                <?php foreach ($cfIncomeRows as $row): ?>
-                    <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
-                        <div><?= htmlspecialchars($row['title'] ?? '') ?></div>
-                        <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $cfCur ?></div>
+            </div>
+
+            <!-- Pravý panel -->
+            <div class="w-72 flex-shrink-0 flex flex-col gap-8">
+                <!-- Vaše příjmy -->
+                <div class="flex flex-col gap-3">
+                    <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
+                        Vaše příjmy
                     </div>
-                <?php endforeach; ?>
-            </div>
-
-            <!-- Příjmy partnera -->
-            <div class="flex flex-col gap-3">
-                <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
-                    <?= htmlspecialchars($cfPartner['title'] ?? 'Příjmy partnera') ?>
+                    <?php foreach ($cfIncomeRows as $row): ?>
+                        <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
+                            <div><?= htmlspecialchars($row['title'] ?? '') ?></div>
+                            <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $cfCur ?></div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
-                <?php foreach ($cfPartnerRows as $row): ?>
-                    <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
-                        <div><?= nl2br(htmlspecialchars($row['title'] ?? '')) ?></div>
-                        <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $cfCur ?></div>
+
+                <!-- Příjmy partnera -->
+                <div class="flex flex-col gap-3">
+                    <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
+                        <?= htmlspecialchars($cfPartner['title'] ?? 'Příjmy partnera') ?>
                     </div>
-                <?php endforeach; ?>
-            </div>
-
-            <!-- Celková bilance -->
-            <div class="flex flex-col gap-3">
-                <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
-                    Celková bilance cash-flow
+                    <?php foreach ($cfPartnerRows as $row): ?>
+                        <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
+                            <div><?= nl2br(htmlspecialchars($row['title'] ?? '')) ?></div>
+                            <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $cfCur ?></div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
 
-                <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
-                    <div><?= htmlspecialchars($cfIncome['title'] ?? 'Příjmy') ?></div>
-                    <div class="whitespace-nowrap"><?= number_format($cfIncomeTotal, 0, ',', ' ') ?> <?= $cfCur ?></div>
-                </div>
+                <!-- Celková bilance -->
+                <div class="flex flex-col gap-3">
+                    <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
+                        Celková bilance cash-flow
+                    </div>
 
-                <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
-                    <div><?= htmlspecialchars($cfExpense['title'] ?? 'Výdaje') ?></div>
-                    <div class="whitespace-nowrap"><?= number_format($cfExpenseTotal, 0, ',', ' ') ?> <?= $cfCur ?></div>
-                </div>
+                    <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
+                        <div><?= htmlspecialchars($cfIncome['title'] ?? 'Příjmy') ?></div>
+                        <div class="whitespace-nowrap"><?= number_format($cfIncomeTotal, 0, ',', ' ') ?> <?= $cfCur ?></div>
+                    </div>
 
-                <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
-                    <div>Měsíčně zbývá</div>
-                    <div><?= number_format($cfRemaining, 0, ',', ' ') ?> <?= $cfCur ?></div>
+                    <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
+                        <div><?= htmlspecialchars($cfExpense['title'] ?? 'Výdaje') ?></div>
+                        <div class="whitespace-nowrap"><?= number_format($cfExpenseTotal, 0, ',', ' ') ?> <?= $cfCur ?></div>
+                    </div>
+
+                    <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
+                        <div>Měsíčně zbývá</div>
+                        <div><?= number_format($cfRemaining, 0, ',', ' ') ?> <?= $cfCur ?></div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </div><!-- /Pravý panel -->
+        </div><!-- /vnitřní wrapper -->
+    </div><!-- /Hlavní obsah -->
 
     <!-- Footer row -->
     <div class="mt-10 grid grid-cols-[1fr_220px] gap-8 items-end">
