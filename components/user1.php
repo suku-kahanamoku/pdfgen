@@ -13,10 +13,10 @@ $leftCol        = $wideMode ? '160px' : '240px';
 $singleRightCols = $leftCol . ' 1fr';
 ?>
 
-<div class="w-full box-border p-24 flex h-screen flex-col bg-paper [page-break-after:always] [break-after:page] [box-decoration-break:clone]">
+<div class="w-full box-border p-24 flex h-screen flex-col [page-break-after:always] [break-after:page] [box-decoration-break:clone]">
 
     <!-- Sekce: Klient -->
-    <div class="mb-10 rounded-3xl bg-white/60 px-10 py-8 shadow-sm">
+    <div class="mb-10 rounded-3xl bg-white/80 px-10 py-8 shadow">
         <h3 class="mb-6 font-lora text-3xl font-semibold">
             Základní údaje o klientovi
         </h3>
@@ -73,7 +73,7 @@ $singleRightCols = $leftCol . ' 1fr';
     </div>
 
     <!-- Sekce: Partner -->
-    <div class="mb-10 rounded-3xl bg-white/60 px-10 py-8 shadow-sm">
+    <div class="mb-10 rounded-3xl bg-white/80 px-10 py-8 shadow">
         <h3 class="mb-6 font-lora text-3xl font-semibold">
             Partner
         </h3>
@@ -117,7 +117,7 @@ $singleRightCols = $leftCol . ' 1fr';
     <?php if (!empty($childrenRows)):
         $childrenCols = $leftCol . ' ' . implode(' ', array_fill(0, count($childrenRows), '1fr'));
     ?>
-        <div class="mb-10 rounded-3xl bg-white/60 px-10 py-8 shadow-sm">
+        <div class="mb-10 rounded-3xl bg-white/80 px-10 py-8 shadow">
             <h3 class="mb-6 font-lora text-3xl font-semibold">
                 Děti
             </h3>
@@ -150,7 +150,7 @@ $singleRightCols = $leftCol . ' 1fr';
     <?php if (!empty($petsRows)):
         $petsCols = $leftCol . ' ' . implode(' ', array_fill(0, count($petsRows), '1fr'));
     ?>
-        <div class="rounded-3xl bg-white/60 px-10 py-8 shadow-sm">
+        <div class="rounded-3xl bg-white/80 px-10 py-8 shadow">
             <h3 class="mb-6 font-lora text-3xl font-semibold">
                 Mazlíčci
             </h3>

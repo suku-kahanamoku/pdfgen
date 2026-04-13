@@ -80,6 +80,9 @@ ob_start();
                         answer: '#FCDEC5',
                         peach: '#F0D3BC',
                         caramel: '#CE9B73',
+                        walnut: '#AB784F',
+                        chestnut: '#6E4525',
+                        umber: '#78695C',
                     }
                 }
             }

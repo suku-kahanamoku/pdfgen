@@ -6,6 +6,9 @@ $finCategories = $finance['categories'] ?? [];
 $finCur        = $curMap[$finance['currency'] ?? 'CZK'] ?? 'Kč';
 $finFooter     = $finance['footer'] ?? [];
 
+// Light-to-dark brown palette from tailwind config
+$finColorPalette = ['peach', 'caramel', 'walnut', 'chestnut', 'umber'];
+
 $finTotalAmount  = 0;
 $finTotalmin = 0;
 foreach ($finCategories as $cat) {
@@ -55,19 +58,19 @@ $finFStatus  = $finFooter['status'] ?? 'success';
             </div>
 
             <!-- Kategorie -->
-            <?php foreach ($finCategories as $cat):
+            <?php foreach ($finCategories as $ci => $cat):
                 $rows     = $cat['rows'] ?? [];
-                $catColor = $cat['color'] ?? 'sand';
+                $catColor = $finColorPalette[$ci] ?? 'sand';
                 $catTitle = $cat['title'] ?? '';
                 if (empty($rows)) continue;
             ?>
                 <div class="flex gap-8 [page-break-inside:avoid] [break-inside:avoid]">
                     <div class="w-28 pt-2">
-                        <div class="inline-flex w-28 items-center justify-center rounded-lg bg-<?= htmlspecialchars($catColor) ?> px-4 py-2 leading-none text-sm text-white">
+                        <div class="inline-flex w-28 items-center justify-center rounded-lg bg-<?= htmlspecialchars($catColor) ?> px-4 py-2 leading-none text-sm <?= $catColor === 'peach' ? 'text-ink' : 'text-white' ?>">
                             <?= htmlspecialchars($catTitle) ?>
                         </div>
                     </div>
-                    <div class="flex-1 mb-8">
+                    <div class="flex-1 mb-10">
                         <?php foreach ($rows as $idx => $row):
                             $isLast = ($idx === count($rows) - 1);
                         ?>
@@ -82,7 +85,7 @@ $finFStatus  = $finFooter['status'] ?? 'success';
             <?php endforeach; ?>
 
             <!-- Celkem -->
-            <div class="mt-4">
+            <div class="mt-2">
                 <div class="grid grid-cols-[1fr_120px_120px] items-center border border-taupe rounded-lg px-4 py-3">
                     <div class="font-lora text-lg font-semibold text-primary">Celkem</div>
                     <div class="text-right font-lora text-lg font-semibold text-ink"><?= number_format($finTotalAmount, 0, ',', ' ') ?> <?= $finCur ?></div>
@@ -101,14 +104,14 @@ $finFStatus  = $finFooter['status'] ?? 'success';
                     $catTotal = 0;
                     foreach ($cat['rows'] ?? [] as $row) $catTotal += (float)($row['amount'] ?? 0);
                     $pct      = $finBarTotal > 0 ? round($catTotal / $finBarTotal * 100, 1) : 0;
-                    $catColor = $cat['color'] ?? 'sand';
+                    $catColor = $finColorPalette[$ci] ?? 'sand';
                     $isFirst  = ($ci === 0);
                     $isLast   = ($ci === $catCount - 1);
                     $rounding = $isFirst ? 'rounded-t-2xl' : ($isLast ? 'rounded-b-2xl' : '');
                 ?>
                     <div class="bg-<?= htmlspecialchars($catColor) ?> <?= $rounding ?> flex flex-col justify-start px-3 pt-4 pb-2 overflow-hidden"
                         style="height: <?= $pct ?>%;">
-                        <div class="text-white font-semibold leading-none"><?= number_format($pct, 1, ',', ' ') ?> %</div>
+                        <div class="text-<?= $catColor === 'peach' ? 'ink' : 'white' ?> font-semibold leading-none"><?= number_format($pct, 1, ',', ' ') ?> %</div>
                     </div>
                 <?php endforeach; ?>
             </div>
