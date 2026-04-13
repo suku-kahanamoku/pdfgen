@@ -109,30 +109,30 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
                 </div>
             </div>
         </div>
+    </div><!-- /Bilance majetku -->
 
-        <!-- Footer row -->
-        <?php if ($bilStatus === 'success'): ?>
-            <div class="bg-green-50 border border-success rounded-xl px-5 py-4 flex items-center gap-4">
-                <div class="w-16 h-14 rounded-xl flex items-center justify-center font-semibold flex-shrink-0 text-white bg-success">
-                    <?= number_format($bilPercent, 0, ',', ' ') ?>%
-                </div>
-                <div class="flex flex-col gap-1">
-                    <div class="font-semibold">Pomer mezi aktivy a pasivy je vyrovnany</div>
-                    <div class="text-ink/70">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
-                </div>
+    <!-- Footer row -->
+    <?php if ($bilStatus === 'success'): ?>
+        <div class="bg-green-50 border border-success rounded-xl px-5 py-4 flex items-center gap-4">
+            <div class="w-16 h-14 rounded-xl flex items-center justify-center font-semibold flex-shrink-0 text-white bg-success">
+                <?= number_format($bilPercent, 0, ',', ' ') ?>%
             </div>
-        <?php else: ?>
-            <div class="bg-red-50 border border-error rounded-xl px-5 py-4 flex items-center gap-4">
-                <div class="w-16 h-14 rounded-xl flex items-center justify-center font-semibold flex-shrink-0 text-white bg-error">
-                    <?= number_format($bilPercent, 2, ',', ' ') ?>%
-                </div>
-                <div class="flex flex-col gap-1">
-                    <div class="font-semibold">Pozor! Vaše pasiva jsou vysoká.</div>
-                    <div class="text-ink/70">Výše vašich aktiv se blíží hodnotě vašich pasiv. Kvůli tomu budete méně odolní v případě tržního výkyvu.</div>
-                </div>
+            <div class="flex flex-col gap-1">
+                <div class="font-semibold">Pomer mezi aktivy a pasivy je vyrovnany</div>
+                <div class="text-ink/70">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
             </div>
-        <?php endif; ?>
-    </div>
+        </div>
+    <?php else: ?>
+        <div class="bg-red-50 border border-error rounded-xl px-5 py-4 flex items-center gap-4">
+            <div class="w-16 h-14 rounded-xl flex items-center justify-center font-semibold flex-shrink-0 text-white bg-error">
+                <?= number_format($bilPercent, 2, ',', ' ') ?>%
+            </div>
+            <div class="flex flex-col gap-1">
+                <div class="font-semibold">Pozor! Vaše pasiva jsou vysoká.</div>
+                <div class="text-ink/70">Výše vašich aktiv se blíží hodnotě vašich pasiv. Kvůli tomu budete méně odolní v případě tržního výkyvu.</div>
+            </div>
+        </div>
+    <?php endif; ?>
 </div>
 
 <script>
