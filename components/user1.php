@@ -7,6 +7,10 @@ $client       = $userData['client']  ?? [];
 $partner      = $userData['partner'] ?? [];
 $childrenRows = $userData['children']['rows'] ?? [];
 $petsRows     = $userData['pets']['rows']     ?? [];
+
+$wideMode       = count($childrenRows) > 2 || count($petsRows) > 2;
+$leftCol        = $wideMode ? '160px' : '240px';
+$singleRightCols = $leftCol . ' 1fr';
 ?>
 
 <div class="w-full box-border p-24 flex h-screen flex-col bg-[#f3f2f1] [page-break-after:always] [break-after:page] [box-decoration-break:clone]">
@@ -18,7 +22,7 @@ $petsRows     = $userData['pets']['rows']     ?? [];
         </h3>
 
         <div class="divide-y divide-mist">
-            <div class="grid grid-cols-[240px_1fr] items-center py-3">
+            <div class="grid items-center py-3" style="grid-template-columns: <?= $singleRightCols ?>">
                 <div class="flex items-center gap-3 text-ink/70">
                     <i class="fa-regular fa-user text-primary"></i>
                     <span>Jméno a příjmení</span>
@@ -26,7 +30,7 @@ $petsRows     = $userData['pets']['rows']     ?? [];
                 <div class="text-ink font-semibold"><?= htmlspecialchars($client['name'] ?? '') ?></div>
             </div>
 
-            <div class="grid grid-cols-[240px_1fr] items-center py-3">
+            <div class="grid items-center py-3" style="grid-template-columns: <?= $singleRightCols ?>">
                 <div class="flex items-center gap-3 text-ink/70">
                     <i class="fa-regular fa-calendar text-primary"></i>
                     <span>Datum narození</span>
@@ -34,7 +38,7 @@ $petsRows     = $userData['pets']['rows']     ?? [];
                 <div class="text-ink font-semibold"><?= htmlspecialchars($client['birth_date'] ?? '') ?></div>
             </div>
 
-            <div class="grid grid-cols-[240px_1fr] items-center py-3">
+            <div class="grid items-center py-3" style="grid-template-columns: <?= $singleRightCols ?>">
                 <div class="flex items-center gap-3 text-ink/70">
                     <i class="fa-solid fa-location-dot text-primary"></i>
                     <span>Adresa</span>
@@ -42,7 +46,7 @@ $petsRows     = $userData['pets']['rows']     ?? [];
                 <div class="text-ink font-semibold"><?= htmlspecialchars($client['address'] ?? '') ?></div>
             </div>
 
-            <div class="grid grid-cols-[240px_1fr] items-center py-3">
+            <div class="grid items-center py-3" style="grid-template-columns: <?= $singleRightCols ?>">
                 <div class="flex items-center gap-3 text-ink/70">
                     <i class="fa-regular fa-heart text-primary"></i>
                     <span>Rodinný stav</span>
@@ -50,7 +54,7 @@ $petsRows     = $userData['pets']['rows']     ?? [];
                 <div class="text-ink font-semibold"><?= htmlspecialchars($client['marital_status'] ?? '') ?></div>
             </div>
 
-            <div class="grid grid-cols-[240px_1fr] items-center py-3">
+            <div class="grid items-center py-3" style="grid-template-columns: <?= $singleRightCols ?>">
                 <div class="flex items-center gap-3 text-ink/70">
                     <i class="fa-solid fa-phone text-primary"></i>
                     <span>Telefon</span>
@@ -58,7 +62,7 @@ $petsRows     = $userData['pets']['rows']     ?? [];
                 <div class="text-ink font-semibold"><?= htmlspecialchars($client['phone'] ?? '') ?></div>
             </div>
 
-            <div class="grid grid-cols-[240px_1fr] items-center py-3">
+            <div class="grid items-center py-3" style="grid-template-columns: <?= $singleRightCols ?>">
                 <div class="flex items-center gap-3 text-ink/70">
                     <i class="fa-regular fa-envelope text-primary"></i>
                     <span>Email</span>
@@ -75,7 +79,7 @@ $petsRows     = $userData['pets']['rows']     ?? [];
         </h3>
 
         <div class="divide-y divide-mist">
-            <div class="grid grid-cols-[240px_1fr] items-center py-3">
+            <div class="grid items-center py-3" style="grid-template-columns: <?= $singleRightCols ?>">
                 <div class="flex items-center gap-3 text-ink/70">
                     <i class="fa-regular fa-user text-primary"></i>
                     <span>Jméno a příjmení</span>
@@ -83,7 +87,7 @@ $petsRows     = $userData['pets']['rows']     ?? [];
                 <div class="text-ink font-semibold"><?= htmlspecialchars($partner['name'] ?? '') ?></div>
             </div>
 
-            <div class="grid grid-cols-[240px_1fr] items-center py-3">
+            <div class="grid items-center py-3" style="grid-template-columns: <?= $singleRightCols ?>">
                 <div class="flex items-center gap-3 text-ink/70">
                     <i class="fa-regular fa-calendar text-primary"></i>
                     <span>Datum narození</span>
@@ -91,7 +95,7 @@ $petsRows     = $userData['pets']['rows']     ?? [];
                 <div class="text-ink font-semibold"><?= htmlspecialchars($partner['birth_date'] ?? '') ?></div>
             </div>
 
-            <div class="grid grid-cols-[240px_1fr] items-center py-3">
+            <div class="grid items-center py-3" style="grid-template-columns: <?= $singleRightCols ?>">
                 <div class="flex items-center gap-3 text-ink/70">
                     <i class="fa-solid fa-location-dot text-primary"></i>
                     <span>Adresa</span>
@@ -99,7 +103,7 @@ $petsRows     = $userData['pets']['rows']     ?? [];
                 <div class="text-ink font-semibold"><?= htmlspecialchars($partner['address'] ?? '') ?></div>
             </div>
 
-            <div class="grid grid-cols-[240px_1fr] items-center py-3">
+            <div class="grid items-center py-3" style="grid-template-columns: <?= $singleRightCols ?>">
                 <div class="flex items-center gap-3 text-ink/70">
                     <i class="fa-regular fa-heart text-primary"></i>
                     <span>Rodinný stav</span>
@@ -111,7 +115,7 @@ $petsRows     = $userData['pets']['rows']     ?? [];
 
     <!-- Sekce: Děti -->
     <?php if (!empty($childrenRows)):
-        $childrenCols = '240px ' . implode(' ', array_fill(0, count($childrenRows), '1fr'));
+        $childrenCols = $leftCol . ' ' . implode(' ', array_fill(0, count($childrenRows), '1fr'));
     ?>
         <div class="mb-10 rounded-3xl bg-white/60 px-10 py-8 shadow-sm">
             <h3 class="mb-6 font-lora text-3xl font-semibold">
@@ -144,7 +148,7 @@ $petsRows     = $userData['pets']['rows']     ?? [];
 
     <!-- Sekce: Mazlíčci -->
     <?php if (!empty($petsRows)):
-        $petsCols = '240px ' . implode(' ', array_fill(0, count($petsRows), '1fr'));
+        $petsCols = $leftCol . ' ' . implode(' ', array_fill(0, count($petsRows), '1fr'));
     ?>
         <div class="rounded-3xl bg-white/60 px-10 py-8 shadow-sm">
             <h3 class="mb-6 font-lora text-3xl font-semibold">

@@ -22,7 +22,7 @@
     <div class="mt-auto">
         <!-- Otázka -->
         <div class="mb-20">
-            <h4 class="mb-6 font-lora text-2xl font-semibold leading-tight">
+            <h4 class="mb-10 font-lora text-2xl font-semibold leading-tight">
                 S jakým pocitem jste dnes přišel?
             </h4>
 
