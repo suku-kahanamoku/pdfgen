@@ -89,8 +89,8 @@
         </div>
 
         <!-- Pravá část -->
-        <div class="relative mt-20 rounded-2xl bg-[#e7e4e4] px-8 py-7 text-ink">
-            <div class="absolute left-0 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-[#e7e4e4]"></div>
+        <div class="relative mt-20 rounded-2xl bg-pearl px-8 py-7 text-ink">
+            <div class="absolute left-0 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-pearl"></div>
 
             <div class="space-y-6">
                 <div>

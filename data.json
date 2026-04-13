@@ -39,6 +39,56 @@
 			]
 		}
 	},
+	"finance": {
+		"currency": "CZK",
+		"categories": [
+			{
+				"title": "Domácnost",
+				"color": "sand",
+				"rows": [
+					{ "title": "Hypoteční úvěr", "amount": 4000,  "min": 4000  },
+					{ "title": "Ostatní úvěry",  "amount": 14000, "min": 14000 },
+					{ "title": "Rodinný stav",   "amount": 3500,  "min": 3500  }
+				]
+			},
+			{
+				"title": "Pojištění",
+				"color": "caramel",
+				"rows": [
+					{ "title": "Životní pojištění", "amount": 3500, "min": 3500 }
+				]
+			},
+			{
+				"title": "Doprava",
+				"color": "bronze",
+				"rows": [
+					{ "title": "Autobus", "amount": 1500, "min": 500 },
+					{ "title": "Kolo",    "amount": 500,  "min": 0   }
+				]
+			},
+			{
+				"title": "Jídlo",
+				"color": "primary",
+				"rows": [
+					{ "title": "Stravné", "amount": 2500, "min": 1500 },
+					{ "title": "Obědy",   "amount": 1500, "min": 500  }
+				]
+			},
+			{
+				"title": "Energie",
+				"color": "pebble",
+				"rows": [
+					{ "title": "Elektřina", "amount": 1500, "min": 1200 },
+					{ "title": "Voda",      "amount": 500,  "min": 500  },
+					{ "title": "Plyn",      "amount": 500,  "min": 500  }
+				]
+			}
+		],
+		"footer": {
+			"percent": 48,
+			"status": "danger"
+		}
+	},
 	"property": {
 		"summary": {
 			"netto": {

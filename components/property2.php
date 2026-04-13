@@ -108,6 +108,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
                 </div>
             </div>
         </div>
+        
         <!-- Footer row -->
         <?php if ($bilStatus === 'success'): ?>
             <div class="bg-green-50 border border-success rounded-xl px-5 py-4 flex items-center gap-4">

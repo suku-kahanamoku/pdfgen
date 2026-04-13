@@ -13,7 +13,7 @@ $leftCol        = $wideMode ? '160px' : '240px';
 $singleRightCols = $leftCol . ' 1fr';
 ?>
 
-<div class="w-full box-border p-24 flex h-screen flex-col bg-[#f3f2f1] [page-break-after:always] [break-after:page] [box-decoration-break:clone]">
+<div class="w-full box-border p-24 flex h-screen flex-col bg-paper [page-break-after:always] [break-after:page] [box-decoration-break:clone]">
 
     <!-- Sekce: Klient -->
     <div class="mb-10 rounded-3xl bg-white/60 px-10 py-8 shadow-sm">
