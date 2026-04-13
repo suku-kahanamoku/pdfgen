@@ -156,6 +156,27 @@
         "percent": 48,
         "status": "danger"
       }
+    },
+    "summary": {
+      "reserve": {
+        "currency": "CZK",
+        "value": 480000,
+        "title": "Vaše rezerva",
+        "rows": [
+          { "currency": "CZK", "title": "Doporučená rezerva", "value": 45000 },
+          { "currency": "CZK", "title": "Vaše rezerva", "value": 2500 },
+          {
+            "currency": "CZK",
+            "title": "Měsíční výdaje",
+            "value": 32000,
+            "disable_grap": false
+          }
+        ]
+      },
+      "footer": {
+        "percent": 85,
+        "status": "success"
+      }
     }
   },
   "property": {

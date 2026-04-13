@@ -28,6 +28,7 @@ include __DIR__ . '/components/user1.php';
 
 include __DIR__ . '/components/finance1.php';
 include __DIR__ . '/components/finance2.php';
+include __DIR__ . '/components/finance3.php';
 
 include __DIR__ . '/components/property1.php';
 include __DIR__ . '/components/property2.php';
