@@ -27,19 +27,17 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
 <!-- ============================================================ -->
 <!-- CASH-FLOW PAGE – Kde končí zisk, začíná svoboda              -->
 <!-- ============================================================ -->
-<div class="w-full box-border p-24 h-screen flex flex-col [page-break-after:always] [break-after:page] overflow-visible [box-decoration-break:clone]">
+<div class="w-full box-border p-24 flex flex-col [page-break-after:always] [break-after:page] overflow-visible gap-16 [box-decoration-break:clone]">
 
     <!-- Nadpis -->
-    <div class="mb-8">
-        <h2 class="font-lora text-6xl font-semibold leading-none tracking-tight">
-            <span class="text-pebble">Kde končí zisk,</span>
-            <span class="text-primary">začíná</span><br>
-            <span class="text-primary">svoboda</span>
-        </h2>
-    </div>
+    <h2 class="font-lora text-6xl font-semibold leading-none tracking-tight">
+        <span class="text-pebble">Kde končí zisk,</span>
+        <span class="text-primary">začíná</span><br>
+        <span class="text-primary">svoboda</span>
+    </h2>
 
     <!-- Intro -->
-    <div class="mb-10 max-w-5xl">
+    <div class="max-w-5xl">
         <p class="leading-relaxed text-ink/70">
             Příjmy jsou základem naší finanční stability a jejich efektivní správa je klíčová pro dosažení dlouhodobé prosperity.
             Správné nakládání s příjmy začíná důkladným plánováním a rozumným investováním. Je důležité nejen vydělávat, ale také
