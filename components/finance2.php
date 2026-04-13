@@ -51,14 +51,14 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
     <div class="flex-1 flex items-center [page-break-inside:avoid] [break-inside:avoid]">
         <div class="flex gap-8 items-stretch w-full">
             <!-- Chart -->
-            <div class="flex-1 flex items-stretch bg-paper rounded-3xl p-6">
+            <div class="flex-1 flex items-stretch bg-paper rounded-3xl p-6 min-h-[500px]">
                 <div class="rounded-2xl px-6 py-6 flex-1">
                     <canvas id="chart-finance-p3"></canvas>
                 </div>
             </div>
 
             <!-- Pravý panel -->
-            <div class="w-72 flex-shrink-0 flex flex-col gap-8">
+            <div class="w-80 flex flex-col gap-8 justify-end">
                 <!-- Vaše příjmy -->
                 <div class="flex flex-col gap-3">
                     <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
@@ -100,11 +100,11 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
                         <div><?= htmlspecialchars($cfExpense['title'] ?? 'Výdaje') ?></div>
                         <div class="whitespace-nowrap"><?= number_format($cfExpenseTotal, 0, ',', ' ') ?> <?= $cfCur ?></div>
                     </div>
+                </div>
 
-                    <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
-                        <div>Měsíčně zbývá</div>
-                        <div><?= number_format($cfRemaining, 0, ',', ' ') ?> <?= $cfCur ?></div>
-                    </div>
+                <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
+                    <div>Měsíčně zbývá</div>
+                    <div><?= number_format($cfRemaining, 0, ',', ' ') ?> <?= $cfCur ?></div>
                 </div>
             </div><!-- /Pravý panel -->
         </div><!-- /vnitřní wrapper -->
@@ -113,34 +113,26 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
     <!-- Footer row -->
     <div class="mt-10 grid grid-cols-[1fr_220px] gap-8 items-end">
         <?php if ($cfFooterStatus === 'success'): ?>
-            <div class="bg-green-50 border border-success rounded-xl px-5 py-4 flex items-center gap-4">
-                <div class="w-16 h-14 rounded-xl flex items-center justify-center font-semibold flex-shrink-0 text-white bg-success">
-                    <?= number_format($cfFooterPercent, 0, ',', ' ') ?>%
-                </div>
-                <div class="flex flex-col gap-1">
+            <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
+                <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">Vaše příjmy jsou o <?= number_format(58, 0, ',', ' ') ?> % vyšší než průměr.</div>
-                    <div class="text-ink/70">
-                        <?= 'Průměrný příjem jedince v ČR dosahoval v roce 2024 hodnoty 37 000 Kč. Průměrný příjem domácnosti byl 52 000 Kč.' ?>
-                    </div>
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($cfFooterPercent, 0, ',', ' ') ?>%</div>
                 </div>
+                <div class="text-ink/70"><?= 'Průměrný příjem jedince v ČR dosahoval v roce 2024 hodnoty 37 000 Kč. Průměrný příjem domácnosti byl 52 000 Kč.' ?></div>
             </div>
         <?php else: ?>
-            <div class="bg-red-50 border border-error rounded-xl px-5 py-4 flex items-center gap-4">
-                <div class="w-16 h-14 rounded-xl flex items-center justify-center font-semibold flex-shrink-0 text-white bg-error">
-                    <?= number_format($cfFooterPercent, 0, ',', ' ') ?>%
-                </div>
-                <div class="flex flex-col gap-1">
+            <div class="bg-red-50 border border-error -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
+                <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">Pozor! Vaše příjmy jsou pod průměrem.</div>
-                    <div class="text-ink/70">
-                        <?= 'Vaše příjmy jsou nižší než referenční průměr. Doporučujeme zaměřit se na posílení příjmové stránky a práci s rezervou.' ?>
-                    </div>
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($cfFooterPercent, 0, ',', ' ') ?>%</div>
                 </div>
+                <div class="text-ink/70"><?= 'Vaše příjmy jsou nižší než referenční průměr. Doporučujeme zaměřit se na posílení příjmové stránky a práci s rezervou.' ?></div>
             </div>
         <?php endif; ?>
 
         <!-- Ikona -->
-        <div class="flex items-center justify-center text-primary/90">
-            <i class="fa-solid fa-trophy text-8xl leading-none"></i>
+        <div class="flex items-center justify-end text-primary/90">
+            <?php include __DIR__ . '/trophy.php'; ?>
         </div>
     </div>
 </div>

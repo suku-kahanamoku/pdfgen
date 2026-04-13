@@ -125,24 +125,20 @@ $finFStatus  = $finFooter['status'] ?? 'success';
     <!-- Footer -->
     <div>
         <?php if ($finFStatus === 'success'): ?>
-            <div class="bg-green-50 border border-success rounded-xl px-5 py-4 flex items-center gap-4">
-                <div class="w-16 h-14 rounded-xl flex items-center justify-center font-semibold flex-shrink-0 text-white bg-success">
-                    <?= number_format($finFPercent, 0, ',', ' ') ?>%
-                </div>
-                <div class="flex flex-col gap-1">
+            <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
+                <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold font-lora text-2xl text-ink">Poměr mezi běžnými a minimálními náklady je vyrovnaný</div>
-                    <div class="text-ink/70">Vaše běžné a minimální náklady jsou velmi podobné.</div>
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($finFPercent, 0, ',', ' ') ?>%</div>
                 </div>
+                <div class="text-ink/70">Vaše běžné a minimální náklady jsou velmi podobné.</div>
             </div>
         <?php else: ?>
-            <div class="bg-red-50 border border-error rounded-xl px-5 py-4 flex items-center gap-4">
-                <div class="w-16 h-14 rounded-xl flex items-center justify-center font-semibold flex-shrink-0 text-white bg-error">
-                    <?= number_format($finFPercent, 0, ',', ' ') ?>%
-                </div>
-                <div class="flex flex-col gap-1">
+            <div class="bg-red-50 border border-error -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
+                <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold font-lora text-2xl text-ink">Pozor! Vysoké minimální náklady</div>
-                    <div class="text-ink/70">Vaše běžné a minimální náklady jsou velmi podobné. To může být problém, pokud v životě nastanou negativní nečekané události.</div>
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($finFPercent, 0, ',', ' ') ?>%</div>
                 </div>
+                <div class="text-ink/70">Vaše běžné a minimální náklady jsou velmi podobné. To může být problém, pokud v životě nastanou negativní nečekávané události.</div>
             </div>
         <?php endif; ?>
     </div>

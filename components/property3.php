@@ -42,6 +42,8 @@ foreach ($p3Sections as $p3sec) {
 
 $p3netto     = $dataRaw['property']['summary']['netto'] ?? [];
 $p3total_pct = (int)($p3netto['percent'] ?? 0);
+$p3Footer    = $bilance['footer'] ?? [];
+$p3Status    = $p3Footer['status'] ?? 'success';
 ?>
 
 <!-- ============================================================ -->
@@ -78,19 +80,30 @@ $p3total_pct = (int)($p3netto['percent'] ?? 0);
         </div>
     <?php endforeach; ?>
 
-    <!-- Diverzifikace box -->
-    <!-- <div class="flex items-center gap-8">
-        <div class="bg-primary text-white rounded-3xl px-6 py-4 flex items-center gap-6 flex-1">
-            <div class="text-5xl font-semibold font-lora flex-shrink-0"><?= $p3total_pct ?>%</div>
-            <div class="flex flex-col gap-1 flex-1">
-                <div class="text-lg font-semibold">Diverzifikace portfolia</div>
-                <div class="leading-relaxed">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
+    <!-- Footer row -->
+    <div class="grid grid-cols-[1fr_220px] gap-8 items-end">
+        <?php if ($p3Status === 'success'): ?>
+            <div class="bg-green-50 border border-success text-ink -ml-24 pl-24 max-w-2xl rounded-r-xl px-6 py-4 flex flex-col gap-1">
+                <div class="flex items-center justify-between gap-4">
+                    <div class="text-lg font-semibold">Diverzifikace portfolia</div>
+                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-success"><?= $p3total_pct ?>%</div>
+                </div>
+                <div class="leading-relaxed text-ink/70">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
             </div>
+        <?php else: ?>
+            <div class="bg-red-50 border border-error text-ink -ml-24 pl-24 max-w-2xl rounded-r-xl px-6 py-4 flex flex-col gap-1">
+                <div class="flex items-center justify-between gap-4">
+                    <div class="text-lg font-semibold">Diverzifikace portfolia</div>
+                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-error"><?= $p3total_pct ?>%</div>
+                </div>
+                <div class="leading-relaxed text-ink/70">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
+            </div>
+        <?php endif; ?>
+
+        <div class="flex items-center justify-end text-primary/90">
+            <?php include __DIR__ . '/trophy.php'; ?>
         </div>
-        <div class="text-7xl flex-shrink-0 w-48 text-right text-primary">
-            <i class="fa-solid fa-trophy"></i>
-        </div>
-    </div> -->
+    </div>
 </div>
 
 <script>

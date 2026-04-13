@@ -76,7 +76,7 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
 
     <!-- Bilance majetku -->
     <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-6">
-        <div class="flex gap-8 items-stretch">
+        <div class="flex gap-8 items-stretch w-full">
             <!-- Bar chart -->
             <div class="flex-1 flex items-stretch bg-paper rounded-3xl p-6 min-h-[340px]">
                 <div class="rounded-2xl flex-1">
@@ -85,25 +85,31 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
             </div>
 
             <!-- Pravý panel -->
-            <div class="flex-1 flex flex-col gap-2 justify-end">
-                <h3 class="font-lora text-3xl font-semibold mb-4">Bilance majetku</h3>
-                <div class="flex justify-between px-3 py-2 border border-ink/30 rounded-lg">
-                    <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($bilance['active']['title'] ?? 'Aktiva') ?></span>
-                    <span class="font-semibold"><?= number_format($total_active, 0, ',', ' ') ?> <?= $cur ?></span>
+            <div class="w-80 flex flex-col gap-8 justify-end">
+                <h3 class="font-lora text-3xl font-semibold">Bilance majetku</h3>
+                <div class="flex flex-col gap-3">
+                    <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
+                        <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($bilance['active']['title'] ?? 'Aktiva') ?></span>
+                        <span class="font-semibold"><?= number_format($total_active, 0, ',', ' ') ?> <?= $cur ?></span>
+                    </div>
+                    <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
+                        <span><?= htmlspecialchars($bilance['active']['yeld']['title'] ?? '') ?></span>
+                        <span><?= number_format($bilance['active']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
+                    </div>
                 </div>
-                <div class="flex justify-between px-3 pt-1 pb-2 mb-2 text-ink/70 border-b border-ink/20">
-                    <span><?= htmlspecialchars($bilance['active']['yeld']['title'] ?? '') ?></span>
-                    <span><?= number_format($bilance['active']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
+
+                <div class="flex flex-col gap-3">
+                    <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
+                        <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($bilance['pasive']['title'] ?? 'Pasiva') ?></span>
+                        <span class="font-semibold"><?= number_format($total_pasive, 0, ',', ' ') ?> <?= $cur ?></span>
+                    </div>
+                    <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
+                        <span><?= htmlspecialchars($bilance['pasive']['yeld']['title'] ?? '') ?></span>
+                        <span><?= number_format($bilance['pasive']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
+                    </div>
                 </div>
-                <div class="flex justify-between px-3 py-2 mt-2 border border-ink/30 rounded-lg">
-                    <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($bilance['pasive']['title'] ?? 'Pasiva') ?></span>
-                    <span class="font-semibold"><?= number_format($total_pasive, 0, ',', ' ') ?> <?= $cur ?></span>
-                </div>
-                <div class="flex justify-between px-3 pt-1 pb-2 mb-2 text-ink/70 border-b border-ink/20">
-                    <span><?= htmlspecialchars($bilance['pasive']['yeld']['title'] ?? '') ?></span>
-                    <span><?= number_format($bilance['pasive']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
-                </div>
-                <div class="flex justify-between px-3 py-2 mt-2 bg-primary text-white rounded-lg font-semibold font-lora">
+
+                <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
                     <span><?= htmlspecialchars($bilance['netto']['title'] ?? 'Čistý majetek') ?></span>
                     <span><?= number_format($cisty_majetek, 0, ',', ' ') ?> <?= $cur ?></span>
                 </div>
@@ -112,27 +118,25 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
     </div><!-- /Bilance majetku -->
 
     <!-- Footer row -->
-    <?php if ($bilStatus === 'success'): ?>
-        <div class="bg-green-50 border border-success rounded-xl px-5 py-4 flex items-center gap-4">
-            <div class="w-16 h-14 rounded-xl flex items-center justify-center font-semibold flex-shrink-0 text-white bg-success">
-                <?= number_format($bilPercent, 0, ',', ' ') ?>%
-            </div>
-            <div class="flex flex-col gap-1">
-                <div class="font-semibold">Pomer mezi aktivy a pasivy je vyrovnany</div>
+    <div class="grid grid-cols-[1fr_220px] gap-8 items-end">
+        <?php if ($bilStatus === 'success'): ?>
+            <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-1">
+                <div class="flex items-center justify-between gap-4">
+                    <div class="font-semibold">Poměr mezi aktivy a pasivy je vyrovnaný</div>
+                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($bilPercent, 0, ',', ' ') ?>%</div>
+                </div>
                 <div class="text-ink/70">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
             </div>
-        </div>
-    <?php else: ?>
-        <div class="bg-red-50 border border-error rounded-xl px-5 py-4 flex items-center gap-4">
-            <div class="w-16 h-14 rounded-xl flex items-center justify-center font-semibold flex-shrink-0 text-white bg-error">
-                <?= number_format($bilPercent, 2, ',', ' ') ?>%
-            </div>
-            <div class="flex flex-col gap-1">
-                <div class="font-semibold">Pozor! Vaše pasiva jsou vysoká.</div>
+        <?php else: ?>
+            <div class="bg-red-50 border border-error -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-1">
+                <div class="flex items-center justify-between gap-4">
+                    <div class="font-semibold">Pozor! Vaše pasiva jsou vysoká.</div>
+                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($bilPercent, 0, ',', ' ') ?>%</div>
+                </div>
                 <div class="text-ink/70">Výše vašich aktiv se blíží hodnotě vašich pasiv. Kvůli tomu budete méně odolní v případě tržního výkyvu.</div>
             </div>
-        </div>
-    <?php endif; ?>
+        <?php endif; ?>
+    </div>
 </div>
 
 <script>
