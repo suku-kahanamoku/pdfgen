@@ -41,11 +41,9 @@
 	},
 	"balance": {
 		"expense": {
-			"total": {
-				"currency": "CZK",
-				"amount": 33500,
-				"min": 29700
-			},
+			"currency": "CZK",
+			"amount": 33500,
+			"min": 29700,
 			"categories": [
 				{
 					"title": "Domácnost",
@@ -146,8 +144,7 @@
 		},
 		"income": {
 			"currency": "CZK",
-			"total": 129000,
-			"remaining": 79000,
+			"total": 79000,
 			"client": {
 				"currency": "CZK",
 				"value": 85000,
@@ -187,23 +184,6 @@
 					}
 				]
 			},
-			"expense": {
-				"currency": "CZK",
-				"value": 50000,
-				"title": "Výdaje",
-				"rows": [
-					{
-						"currency": "CZK",
-						"title": "Fixní výdaje",
-						"value": 32000
-					},
-					{
-						"currency": "CZK",
-						"title": "Variabilní výdaje",
-						"value": 18000
-					}
-				]
-			},
 			"summary": {
 				"title": "Celková bilance cash-flow",
 				"rows": [
@@ -227,8 +207,8 @@
 				"avg_household": 52000
 			}
 		},
-		"summary": {
-			"reserve": {
+		"reserve": {
+			"client": {
 				"months": 15,
 				"title": "Vydží na",
 				"rows": [

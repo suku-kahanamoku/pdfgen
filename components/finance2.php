@@ -4,7 +4,6 @@
 // ============================================================
 $cfIncome   = $balance['income']['client'] ?? [];
 $cfPartner  = $balance['income']['partner'] ?? [];
-$cfExpense  = $balance['income']['expense'] ?? [];
 $cfFooter   = $balance['income']['footer'] ?? [];
 
 $cfIncomeRows  = $cfIncome['rows'] ?? [];
@@ -20,9 +19,7 @@ $cfFooterAvgHousehold = (float)($cfFooter['avg_household'] ?? 0);
 
 $cfSummary     = $balance['income']['summary'] ?? [];
 $cfSummaryRows = $cfSummary['rows'] ?? [];
-$cfIncomeTotal  = (float)($balance['income']['total']     ?? 0);
-$cfExpenseTotal = (float)($cfExpense['value']             ?? 0);
-$cfRemaining    = (float)($balance['income']['remaining'] ?? 0);
+$cfTotal        = (float)($balance['income']['total']     ?? 0);
 
 $cfChartLabel1 = $cfSummaryRows[0]['title'] ?? 'Příjmy';
 $cfChartLabel2 = $cfSummaryRows[1]['title'] ?? 'Výdaje';
@@ -105,7 +102,7 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
 
                 <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
                     <div>Měsíčně zbývá</div>
-                    <div><?= number_format($cfRemaining, 0, ',', ' ') ?> <?= $cfCur ?></div>
+                    <div><?= number_format($cfTotal, 0, ',', ' ') ?> <?= $cfCur ?></div>
                 </div>
             </div><!-- /Pravý panel -->
         </div><!-- /vnitřní wrapper -->

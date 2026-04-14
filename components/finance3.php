@@ -2,8 +2,8 @@
 // ============================================================
 // SUMMARY PAGE – CONTROLLER
 // ============================================================
-$sumData        = $balance['summary'] ?? [];
-$sumReserve     = $sumData['reserve'] ?? [];
+$sumData        = $balance['reserve'] ?? [];
+$sumReserve     = $sumData['client'] ?? [];
 $sumReserveRows = $sumReserve['rows'] ?? [];
 $sumMonths      = (float)($sumReserve['months'] ?? 0);
 
