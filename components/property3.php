@@ -40,10 +40,12 @@ foreach ($p3Sections as $p3sec) {
     $p3ChartsData[$p3sec['key']] = ['data' => $data, 'colors' => $colors];
 }
 
-$p3netto     = $property['summary']['netto'] ?? [];
-$p3total_pct = (int)($p3netto['percent'] ?? 0);
-$p3Footer    = $property['footer'] ?? [];
-$p3Status    = $p3Footer['status'] ?? 'success';
+$summary    = $property['summary'] ?? [];
+$p3Netto    = $summary['netto'] ?? [];
+$p3TotalPct = (int)($p3Netto['percent'] ?? 0);
+$p3Footer   = $property['footer'] ?? [];
+$p3Status   = $p3Footer['status'] ?? 'success';
+$cur        = $curMap[$summary['netto']['currency'] ?? 'CZK'] ?? 'Kč';
 ?>
 
 <!-- ============================================================ -->
@@ -51,10 +53,10 @@ $p3Status    = $p3Footer['status'] ?? 'success';
 <!-- ============================================================ -->
 <div class="w-full box-border p-24 [page-break-after:always] [break-after:page] [box-decoration-break:clone] overflow-visible flex flex-col gap-16">
     <?php foreach ($p3Sections as $p3sec):
-        $p3rows  = $property[$p3sec['key']]['rows'] ?? [];
-        $p3total = array_sum(array_column($p3rows, 'value'));
-        if ($p3total <= 0) $p3total = 1;
-        $p3chartId = 'chart-p3-' . $p3sec['key'];
+        $p3Rows    = $property[$p3sec['key']]['rows'] ?? [];
+        $p3Total   = array_sum(array_column($p3Rows, 'value'));
+        if ($p3Total <= 0) $p3Total = 1;
+        $p3ChartId = 'chart-p3-' . $p3sec['key'];
     ?>
         <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
             <h3 class="font-lora text-4xl font-semibold"><?= htmlspecialchars($p3sec['title']) ?></h3>
@@ -62,19 +64,19 @@ $p3Status    = $p3Footer['status'] ?? 'success';
                 <div class="flex-1 flex flex-col gap-8">
                     <div class="text-ink/70 leading-relaxed"><?= htmlspecialchars($p3sec['desc']) ?></div>
                     <div class="flex flex-col gap-4">
-                        <?php foreach ($p3rows as $p3row):
-                            $p3val = (float)($p3row['value'] ?? 0);
-                            $p3tw  = $p3StatusMap[$p3row['status'] ?? 'success']['cls'] ?? 'border-primary';
+                        <?php foreach ($p3Rows as $p3Row):
+                            $p3Val = (float)($p3Row['value'] ?? 0);
+                            $p3Tw  = $p3StatusMap[$p3Row['status'] ?? 'success']['cls'] ?? 'border-primary';
                         ?>
-                            <div class="flex justify-between items-center px-3 py-2 rounded-lg border text-sm <?= $p3tw ?>">
-                                <span class="font-semibold"><?= htmlspecialchars($p3row['title'] ?? '') ?></span>
-                                <span><?= number_format($p3val, 0, ',', ' ') ?> <?= $cur ?></span>
+                            <div class="flex justify-between items-center px-3 py-2 rounded-lg border text-sm <?= $p3Tw ?>">
+                                <span class="font-semibold"><?= htmlspecialchars($p3Row['title'] ?? '') ?></span>
+                                <span><?= number_format($p3Val, 0, ',', ' ') ?> <?= $cur ?></span>
                             </div>
                         <?php endforeach; ?>
                     </div>
                 </div>
                 <div style="width:160px; height:160px; position:relative; flex-shrink:0;">
-                    <canvas id="<?= $p3chartId ?>"></canvas>
+                    <canvas id="<?= $p3ChartId ?>"></canvas>
                 </div>
             </div>
         </div>
@@ -86,7 +88,7 @@ $p3Status    = $p3Footer['status'] ?? 'success';
             <div class="bg-green-50 border border-success text-ink -ml-24 pl-24 max-w-2xl rounded-r-xl px-6 py-4 flex flex-col gap-1">
                 <div class="flex items-center justify-between gap-4">
                     <div class="text-lg font-semibold">Diverzifikace portfolia</div>
-                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-success"><?= $p3total_pct ?>%</div>
+                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-success"><?= $p3TotalPct ?>%</div>
                 </div>
                 <div class="leading-relaxed text-ink/70">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
             </div>
@@ -94,7 +96,7 @@ $p3Status    = $p3Footer['status'] ?? 'success';
             <div class="bg-red-50 border border-error text-ink -ml-24 pl-24 max-w-2xl rounded-r-xl px-6 py-4 flex flex-col gap-1">
                 <div class="flex items-center justify-between gap-4">
                     <div class="text-lg font-semibold">Diverzifikace portfolia</div>
-                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-error"><?= $p3total_pct ?>%</div>
+                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-error"><?= $p3TotalPct ?>%</div>
                 </div>
                 <div class="leading-relaxed text-ink/70">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
             </div>
@@ -108,10 +110,10 @@ $p3Status    = $p3Footer['status'] ?? 'success';
 
 <script>
     <?php foreach ($p3Sections as $p3sec):
-        $p3chartId  = 'chart-p3-' . $p3sec['key'];
-        $chartData  = $p3ChartsData[$p3sec['key']];
+        $p3ChartId = 'chart-p3-' . $p3sec['key'];
+        $chartData = $p3ChartsData[$p3sec['key']];
     ?>
-        new Chart(document.getElementById('<?= $p3chartId ?>'), {
+        new Chart(document.getElementById('<?= $p3ChartId ?>'), {
             type: 'doughnut',
             data: {
                 datasets: [{

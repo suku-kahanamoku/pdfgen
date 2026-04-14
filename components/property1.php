@@ -2,11 +2,12 @@
 // ============================================================
 // PAGE 1 – CONTROLLER
 // ============================================================
-$summary = $property['summary'] ?? [];
-$cisty_majetek = (float)($summary['netto']['value'] ?? 0);
-$total = (float)($summary['netto']['total'] ?? 0);
-$donut_pct_value     = $total > 0 ? round($cisty_majetek / $total * 100) : 0;
-$donut_pct_remainder = 100 - $donut_pct_value;
+$summary           = $property['summary'] ?? [];
+$netWorth          = (float)($summary['netto']['value'] ?? 0);
+$netTotal          = (float)($summary['netto']['total'] ?? 0);
+$donutPctValue     = $netTotal > 0 ? round($netWorth / $netTotal * 100) : 0;
+$donutPctRemainder = 100 - $donutPctValue;
+$cur               = $curMap[$summary['netto']['currency'] ?? 'CZK'] ?? 'Kč';
 
 $statusIconMap = [
     'success' => ['icon' => 'fa-solid fa-check',       'cls' => 'text-success border-success'],
@@ -62,7 +63,7 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
             </div>
             <div class="w-full box-border px-3 py-3 rounded-lg font-semibold text-white bg-primary font-lora flex justify-between items-center gap-2">
                 <span>Čistá hodnota majetku</span>
-                <span class="whitespace-nowrap"><?= number_format($cisty_majetek, 0, ',', ' ') ?> <?= $cur ?></span>
+                <span class="whitespace-nowrap"><?= number_format($netWorth, 0, ',', ' ') ?> <?= $cur ?></span>
             </div>
         </div>
     </div>
@@ -113,7 +114,7 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
         type: 'doughnut',
         data: {
             datasets: [{
-                data: [<?= $donut_pct_value ?>, <?= $donut_pct_remainder ?>],
+                data: [<?= $donutPctValue ?>, <?= $donutPctRemainder ?>],
                 backgroundColor: ['#8D6144', '#eeeeee'],
                 borderWidth: 0
             }]

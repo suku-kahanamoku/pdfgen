@@ -1,12 +1,10 @@
 <?php
-$dataRaw = $GLOBALS['pdfData'];
+$rawData  = $GLOBALS['pdfData'];
 
-$curMap = ['CZK' => 'Kč', 'EUR' => '€', 'USD' => '$'];
-$cur    = $curMap[$summary['netto']['currency'] ?? $property['active']['currency'] ?? 'CZK'] ?? 'Kč';
-
-$user     = $dataRaw['user']     ?? [];
-$balance  = $dataRaw['balance']  ?? [];
-$property = $dataRaw['property'] ?? [];
+$curMap   = ['CZK' => 'Kč', 'EUR' => '€', 'USD' => '$'];
+$user     = $rawData['user']     ?? [];
+$balance  = $rawData['balance']  ?? [];
+$property = $rawData['property'] ?? [];
 
 include __DIR__ . '/components/finanalys1.php';
 include __DIR__ . '/components/finanalys2.php';

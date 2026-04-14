@@ -11,12 +11,12 @@ $finFooter     = $finExpense['footer'] ?? [];
 // Light-to-dark brown palette from tailwind config
 $finColorPalette = ['peach', 'caramel', 'walnut', 'chestnut', 'umber'];
 
-$finTotalAmount  = 0;
-$finTotalmin = 0;
+$finTotalAmount = 0;
+$finTotalMin    = 0;
 foreach ($finCategories as $cat) {
     foreach ($cat['rows'] ?? [] as $row) {
-        $finTotalAmount  += (float)($row['amount']  ?? 0);
-        $finTotalmin += (float)($row['min'] ?? 0);
+        $finTotalAmount += (float)($row['amount'] ?? 0);
+        $finTotalMin    += (float)($row['min']    ?? 0);
     }
 }
 
@@ -89,7 +89,7 @@ $finFStatus  = $finFooter['status'] ?? 'success';
                 <div class="grid grid-cols-[1fr_120px_120px] items-center border border-taupe rounded-lg px-4 py-3">
                     <div class="font-lora text-lg font-semibold text-primary">Celkem</div>
                     <div class="text-right font-lora text-lg font-semibold text-ink"><?= number_format($finTotalAmount, 0, ',', ' ') ?> <?= $finCur ?></div>
-                    <div class="text-right font-lora text-lg font-semibold text-ink"><?= number_format($finTotalmin, 0, ',', ' ') ?> <?= $finCur ?></div>
+                    <div class="text-right font-lora text-lg font-semibold text-ink"><?= number_format($finTotalMin, 0, ',', ' ') ?> <?= $finCur ?></div>
                 </div>
             </div>
         </div>
