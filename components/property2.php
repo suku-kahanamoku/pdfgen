@@ -2,19 +2,19 @@
 // ============================================================
 // PAGE 2 – CONTROLLER
 // ============================================================
-$summary = $property['summary'] ?? [];
+$propertySummary = $property['summary'] ?? [];
 
-$summaryNetto = $summary['netto'] ?? [];
+$summaryNetto = $propertySummary['netto'] ?? [];
 $nettoValue   = (float)($summaryNetto['value'] ?? 0);
 $cur          = $curMap[$summaryNetto['currency'] ?? 'CZK'] ?? 'Kč';
 
-$balance             = $property['balance'] ?? [];
-$balanceActiveValue  = (float)($balance['active']['value'] ?? 0);
-$balancePassiveValue = (float)($balance['passive']['value'] ?? 0);
+$propertyBalance             = $property['balance'] ?? [];
+$balanceActiveValue  = (float)($propertyBalance['active']['value'] ?? 0);
+$balancePassiveValue = (float)($propertyBalance['passive']['value'] ?? 0);
 
-$balanceFooter        = $balance['footer'] ?? [];
-$balanceFooterPercent = $balanceFooter['percent'] ?? 0;
-$balanceFooterStatus  = $balanceFooter['status']  ?? 'success';
+$balanceFooter        = $propertyBalance['footer'] ?? [];
+$footerPercent = $balanceFooter['percent'] ?? 0;
+$footerStatus  = $balanceFooter['status']  ?? 'success';
 
 $statusMap = [
     'success' => ['icon' => 'fa-solid fa-check',       'cls' => 'text-success border-success'],
@@ -28,8 +28,8 @@ $sections = [
     ['key' => 'properties', 'title' => 'Movitý majetek',  'icon' => 'fa-solid fa-car',          'desc' => 'Hmotný majetek movité povahy – vozidla, stroje, vybavení a případné spotřebitelské úvěry s nimi spojené. Reflektuje aktuální zůstatkovou hodnotu majetku.'],
 ];
 
-$chartLabel1 = htmlspecialchars($balance['active']['title'] ?? 'Aktiva');
-$chartLabel2 = htmlspecialchars($balance['passive']['title'] ?? 'Pasiva');
+$chartLabel1 = htmlspecialchars($propertyBalance['active']['title'] ?? 'Aktiva');
+$chartLabel2 = htmlspecialchars($propertyBalance['passive']['title'] ?? 'Pasiva');
 $barColors   = ['#e7e4e4', '#936746'];
 ?>
 
@@ -99,28 +99,28 @@ $barColors   = ['#e7e4e4', '#936746'];
                 <h3 class="font-lora text-3xl font-semibold">Bilance majetku</h3>
                 <div class="flex flex-col gap-3">
                     <div class="flex items-start justify-between rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold">
-                        <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($balance['active']['title'] ?? 'Aktiva') ?></span>
+                        <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($propertyBalance['active']['title'] ?? 'Aktiva') ?></span>
                         <span><?= number_format($balanceActiveValue, 0, ',', ' ') ?> <?= $cur ?></span>
                     </div>
                     <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
-                        <span><?= htmlspecialchars($balance['active']['yeld']['title'] ?? '') ?></span>
-                        <span><?= number_format($balance['active']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
+                        <span><?= htmlspecialchars($propertyBalance['active']['yeld']['title'] ?? '') ?></span>
+                        <span><?= number_format($propertyBalance['active']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-3">
                     <div class="flex items-start justify-between rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold">
-                        <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($balance['passive']['title'] ?? 'Pasiva') ?></span>
+                        <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($propertyBalance['passive']['title'] ?? 'Pasiva') ?></span>
                         <span><?= number_format($balancePassiveValue, 0, ',', ' ') ?> <?= $cur ?></span>
                     </div>
                     <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
-                        <span><?= htmlspecialchars($balance['passive']['yeld']['title'] ?? '') ?></span>
-                        <span><?= number_format($balance['passive']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
+                        <span><?= htmlspecialchars($propertyBalance['passive']['yeld']['title'] ?? '') ?></span>
+                        <span><?= number_format($propertyBalance['passive']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
                     </div>
                 </div>
 
                 <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
-                    <span><?= htmlspecialchars($balance['netto']['title'] ?? 'Čistý majetek') ?></span>
+                    <span><?= htmlspecialchars($propertyBalance['netto']['title'] ?? 'Čistý majetek') ?></span>
                     <span><?= number_format($nettoValue, 0, ',', ' ') ?> <?= $cur ?></span>
                 </div>
             </div>
@@ -129,11 +129,11 @@ $barColors   = ['#e7e4e4', '#936746'];
 
     <!-- Footer row -->
     <div class="grid grid-cols-[1fr_220px] gap-8 items-end">
-        <?php if ($balanceFooterPercent === 'success'): ?>
+        <?php if ($footerPercent === 'success'): ?>
             <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-1">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">Poměr mezi aktivy a pasivy je vyrovnaný</div>
-                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($balanceFooterPercent, 0, ',', ' ') ?>%</div>
+                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($footerPercent, 0, ',', ' ') ?>%</div>
                 </div>
                 <div class="text-ink/70">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
             </div>
@@ -141,7 +141,7 @@ $barColors   = ['#e7e4e4', '#936746'];
             <div class="bg-red-50 border border-error -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-1">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">Pozor! Vaše pasiva jsou vysoká.</div>
-                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($balanceFooterPercent, 0, ',', ' ') ?>%</div>
+                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($footerPercent, 0, ',', ' ') ?>%</div>
                 </div>
                 <div class="text-ink/70">Výše vašich aktiv se blíží hodnotě vašich pasiv. Kvůli tomu budete méně odolní v případě tržního výkyvu.</div>
             </div>

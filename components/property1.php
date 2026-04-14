@@ -2,9 +2,9 @@
 // ============================================================
 // PAGE 1 – CONTROLLER
 // ============================================================
-$summary = $property['summary'] ?? [];
+$propertySummary = $property['summary'] ?? [];
 
-$summaryNetto          = $summary['netto'] ?? [];
+$summaryNetto          = $propertySummary['netto'] ?? [];
 $nettoValue            = (float)($summaryNetto['value']   ?? 0);
 $nettoPercent          = (int)($summaryNetto['percent']   ?? 0);
 $nettoPercentRemainder = 100 - $nettoPercent;
@@ -20,20 +20,20 @@ $propertyColumns = [
     [
         'title' => 'Finanční aktiva',
         'icon'  => 'fa-solid fa-money-bill-1',
-        'total' => (float)($summary['active']['value'] ?? 0),
-        'rows'  => $summary['active']['rows'] ?? [],
+        'total' => (float)($propertySummary['active']['value'] ?? 0),
+        'rows'  => $propertySummary['active']['rows'] ?? [],
     ],
     [
         'title' => 'Nemovitosti',
         'icon'  => 'fa-solid fa-house',
-        'total' => (float)($summary['estate']['value'] ?? 0),
-        'rows'  => $summary['estate']['rows'] ?? [],
+        'total' => (float)($propertySummary['estate']['value'] ?? 0),
+        'rows'  => $propertySummary['estate']['rows'] ?? [],
     ],
     [
         'title' => 'Movitý majetek',
         'icon'  => 'fa-solid fa-car',
-        'total' => (float)($summary['properties']['value'] ?? 0),
-        'rows'  => $summary['properties']['rows'] ?? [],
+        'total' => (float)($propertySummary['properties']['value'] ?? 0),
+        'rows'  => $propertySummary['properties']['rows'] ?? [],
     ],
 ];
 

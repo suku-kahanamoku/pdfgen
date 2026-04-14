@@ -2,20 +2,20 @@
 // ============================================================
 // SUMMARY PAGE – CONTROLLER
 // ============================================================
-$reserve = $balance['reserve'] ?? [];
+$balanceReserve = $balance['reserve'] ?? [];
 
-$reserveClient       = $reserve['client'] ?? [];
-$reserveClientRows   = $reserveClient['rows'] ?? [];
-$reserveClientMonths = (float)($reserveClient['months'] ?? 0);
+$reserveClient       = $balanceReserve['client'] ?? [];
+$clientRows   = $reserveClient['rows'] ?? [];
+$clientMonths = (float)($reserveClient['months'] ?? 0);
 
-$reserveFooter        = $reserve['footer'] ?? [];
-$reserveFooterPercent = (float)($reserveFooter['percent'] ?? 0);
-$reserveFooterStatus  = $reserveFooter['status']  ?? 'success';
+$reserveFooter        = $balanceReserve['footer'] ?? [];
+$footerPercent = (float)($reserveFooter['percent'] ?? 0);
+$footerStatus  = $reserveFooter['status']  ?? 'success';
 
-$chartLabel1 = $reserveClientRows[0]['title'] ?? '';
-$chartLabel2 = $reserveClientRows[1]['title'] ?? '';
-$chartValue1 = (float)($reserveClientRows[0]['value'] ?? 0);
-$chartValue2 = (float)($reserveClientRows[1]['value'] ?? 0);
+$chartLabel1 = $clientRows[0]['title'] ?? '';
+$chartLabel2 = $clientRows[1]['title'] ?? '';
+$chartValue1 = (float)($clientRows[0]['value'] ?? 0);
+$chartValue2 = (float)($clientRows[1]['value'] ?? 0);
 $barColors   = ['#e7e4e4', '#936746'];
 ?>
 
@@ -56,7 +56,7 @@ $barColors   = ['#e7e4e4', '#936746'];
                     <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
                         <?= htmlspecialchars($reserveClient['title'] ?? 'Vydží na') ?>
                     </div>
-                    <?php foreach ($reserveClientRows as $row): ?>
+                    <?php foreach ($clientRows as $row): ?>
                         <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                             <div><?= htmlspecialchars($row['title'] ?? '') ?></div>
                             <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $curMap[$row['currency'] ?? 'CZK'] ?? 'Kč' ?></div>
@@ -66,7 +66,7 @@ $barColors   = ['#e7e4e4', '#936746'];
 
                 <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
                     <div><?= htmlspecialchars($reserveClient['title'] ?? 'Vydží na') ?></div>
-                    <div><?= number_format($reserveClientMonths, 1, ',', ' ') ?> měsíců</div>
+                    <div><?= number_format($clientMonths, 1, ',', ' ') ?> měsíců</div>
                 </div>
             </div><!-- /Pravý panel -->
         </div><!-- /vnitřní wrapper -->
@@ -74,14 +74,14 @@ $barColors   = ['#e7e4e4', '#936746'];
 
     <!-- Footer row -->
     <div class="mt-10 grid grid-cols-[1fr_220px] gap-8 items-end">
-        <?php if ($reserveFooterStatus === 'success'): ?>
+        <?php if ($footerStatus === 'success'): ?>
             <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">
                         Gratulujeme! Vaše rezerva je dostatečná.
                     </div>
                     <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success">
-                        <?= number_format($reserveFooterPercent, 0, ',', ' ') ?>%
+                        <?= number_format($footerPercent, 0, ',', ' ') ?>%
                     </div>
                 </div>
                 <div class="text-ink/70">
@@ -95,7 +95,7 @@ $barColors   = ['#e7e4e4', '#936746'];
                         Pozor! Vaše rezerva není dostatečná.
                     </div>
                     <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error">
-                        <?= number_format($reserveFooterPercent, 0, ',', ' ') ?>%
+                        <?= number_format($footerPercent, 0, ',', ' ') ?>%
                     </div>
                 </div>
                 <div class="text-ink/70">

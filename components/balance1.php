@@ -2,16 +2,16 @@
 // ============================================================
 // FINANCE PAGE – CONTROLLER
 // ============================================================
-$expense       = $balance['expense'] ?? [];
-$expenseAmount = (float)($expense['amount'] ?? 0);
-$expenseMin    = (float)($expense['min']    ?? 0);
-$cur           = $curMap[$expense['currency'] ?? 'CZK'] ?? 'Kč';
+$balanceExpense       = $balance['expense'] ?? [];
+$expenseAmount = (float)($balanceExpense['amount'] ?? 0);
+$expenseMin    = (float)($balanceExpense['min']    ?? 0);
+$cur           = $curMap[$balanceExpense['currency'] ?? 'CZK'] ?? 'Kč';
 
-$expenseCategories = $expense['categories'] ?? [];
+$expenseCategories = $balanceExpense['categories'] ?? [];
 
-$expenseFooter        = $expense['footer'] ?? [];
-$expenseFooterPercent = $expenseFooter['percent'] ?? 0;
-$expenseFooterStatus  = $expenseFooter['status']  ?? 'success';
+$expenseFooter        = $balanceExpense['footer'] ?? [];
+$footerPercent = $expenseFooter['percent'] ?? 0;
+$footerStatus  = $expenseFooter['status']  ?? 'success';
 
 $colorPalette = ['peach', 'caramel', 'walnut', 'chestnut', 'umber'];
 ?>
@@ -112,11 +112,11 @@ $colorPalette = ['peach', 'caramel', 'walnut', 'chestnut', 'umber'];
 
     <!-- Footer -->
     <div class="mt-10">
-        <?php if ($expenseFooterStatus === 'success'): ?>
+        <?php if ($footerStatus === 'success'): ?>
             <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold font-lora text-2xl text-ink">Poměr mezi běžnými a minimálními náklady je vyrovnaný</div>
-                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($expenseFooterPercent, 0, ',', ' ') ?>%</div>
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($footerPercent, 0, ',', ' ') ?>%</div>
                 </div>
                 <div class="text-ink/70">Vaše běžné a minimální náklady jsou velmi podobné.</div>
             </div>
@@ -124,7 +124,7 @@ $colorPalette = ['peach', 'caramel', 'walnut', 'chestnut', 'umber'];
             <div class="bg-red-50 border border-error -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold font-lora text-2xl text-ink">Pozor! Vysoké minimální náklady</div>
-                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($expenseFooterPercent, 0, ',', ' ') ?>%</div>
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($footerPercent, 0, ',', ' ') ?>%</div>
                 </div>
                 <div class="text-ink/70">Vaše běžné a minimální náklady jsou velmi podobné. To může být problém, pokud v životě nastanou negativní nečekávané události.</div>
             </div>
