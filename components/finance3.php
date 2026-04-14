@@ -2,7 +2,7 @@
 // ============================================================
 // SUMMARY PAGE – CONTROLLER
 // ============================================================
-$sumData   = $finance['summary'] ?? [];
+$sumData   = $balance['summary'] ?? [];
 $sumFooter = $sumData['footer'] ?? [];
 
 $sumReserve     = $sumData['reserve'] ?? [];
@@ -13,7 +13,7 @@ $sumTotal       = (float)($sumReserve['value'] ?? 0);
 $sumFooterPercent = (float)($sumFooter['percent'] ?? 0);
 $sumFooterStatus  = $sumFooter['status'] ?? 'success';
 
-$sumChartRows   = array_filter($sumReserveRows, fn($r) => ($r['disable_grap'] ?? true) !== false);
+$sumChartRows   = array_filter($sumReserveRows, fn($r) => ($r['disable_graph'] ?? true) !== false);
 $sumChartLabels = array_map(fn($r) => htmlspecialchars($r['title'] ?? ''), $sumChartRows);
 $sumChartValues = array_map(fn($r) => (float)($r['value'] ?? 0), $sumChartRows);
 $sumBarColors   = ['#e7e4e4', '#936746'];

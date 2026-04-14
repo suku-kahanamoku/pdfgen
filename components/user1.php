@@ -2,11 +2,10 @@
 // ============================================================
 // PAGE – USER
 // ============================================================
-$userData     = $dataRaw['user'] ?? [];
-$client       = $userData['client']  ?? [];
-$partner      = $userData['partner'] ?? [];
-$childrenRows = $userData['children']['rows'] ?? [];
-$petsRows     = $userData['pets']['rows']     ?? [];
+$client       = $user['client']  ?? [];
+$partner      = $user['partner'] ?? [];
+$childrenRows = $user['children']['rows'] ?? [];
+$petsRows     = $user['pets']['rows']     ?? [];
 
 $wideMode       = count($childrenRows) > 2 || count($petsRows) > 2;
 $leftCol        = $wideMode ? '160px' : '240px';

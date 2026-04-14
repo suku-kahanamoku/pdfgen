@@ -40,9 +40,9 @@ foreach ($p3Sections as $p3sec) {
     $p3ChartsData[$p3sec['key']] = ['data' => $data, 'colors' => $colors];
 }
 
-$p3netto     = $dataRaw['property']['summary']['netto'] ?? [];
+$p3netto     = $property['summary']['netto'] ?? [];
 $p3total_pct = (int)($p3netto['percent'] ?? 0);
-$p3Footer    = $bilance['footer'] ?? [];
+$p3Footer    = $property['footer'] ?? [];
 $p3Status    = $p3Footer['status'] ?? 'success';
 ?>
 

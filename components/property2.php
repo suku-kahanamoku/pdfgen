@@ -2,6 +2,15 @@
 // ============================================================
 // PAGE 2 – CONTROLLER
 // ============================================================
+$bilance       = $property['bilance'] ?? [];
+$bilFooter  = $bilance['footer'] ?? [];
+$bilPercent = $bilFooter['percent'] ?? 0;
+$bilStatus  = $bilFooter['status'] ?? 'success';
+$cisty_majetek = (float)($summary['netto']['value'] ?? 0);
+$total = (float)($summary['netto']['total'] ?? 0);
+$total_active  = (float)($property['active']['value'] ?? 0);
+$total_pasive  = (float)($property['pasive']['value'] ?? 0);
+
 $p2StatusMap = [
     'success' => ['icon' => 'fa-solid fa-check',       'cls' => 'text-success border-success'],
     'warning' => ['icon' => 'fa-solid fa-exclamation', 'cls' => 'text-warning border-warning'],
@@ -13,10 +22,6 @@ $p2Sections = [
     ['key' => 'active',     'title' => 'Finanční aktiva', 'icon' => 'fa-solid fa-money-bill-1', 'desc' => 'Finanční nástroje a investice – hotovost, cenné papíry, deriváty, kryptoměny a další likvidní aktiva. Zobrazuje celkovou hodnotu portfolia a jeho výnosnost.'],
     ['key' => 'properties', 'title' => 'Movitý majetek',  'icon' => 'fa-solid fa-car',          'desc' => 'Hmotný majetek movité povahy – vozidla, stroje, vybavení a případné spotřebitelské úvěry s nimi spojené. Reflektuje aktuální zůstatkovou hodnotu majetku.'],
 ];
-
-$bilFooter  = $bilance['footer'] ?? [];
-$bilPercent = $bilFooter['percent'] ?? 0;
-$bilStatus  = $bilFooter['status'] ?? 'success';
 
 $p2ChartLabel1 = htmlspecialchars($bilance['active']['title'] ?? 'Aktiva');
 $p2ChartLabel2 = htmlspecialchars($bilance['pasive']['title'] ?? 'Pasiva');

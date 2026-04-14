@@ -1,35 +1,29 @@
 <?php
 $dataRaw = $GLOBALS['pdfData'];
 
-$bilance       = $dataRaw['property']['bilance'] ?? [];
-$total_active  = (float)($bilance['active']['value'] ?? 0);
-$total_pasive  = (float)($bilance['pasive']['value'] ?? 0);
-
-$summary       = $dataRaw['property']['summary'] ?? [];
-$cisty_majetek = (float)($summary['netto']['value'] ?? 0);
-$total = (float)($summary['netto']['total'] ?? 0);
-
 $curMap = ['CZK' => 'Kč', 'EUR' => '€', 'USD' => '$'];
-$cur    = $curMap[$summary['netto']['currency'] ?? $bilance['active']['currency'] ?? 'CZK'] ?? 'Kč';
-
-// Donut: netto.value vs remainder from netto.total
-$donut_pct_value     = $total > 0 ? round($cisty_majetek / $total * 100) : 0;
-$donut_pct_remainder = 100 - $donut_pct_value;
+$cur    = $curMap[$summary['netto']['currency'] ?? $property['active']['currency'] ?? 'CZK'] ?? 'Kč';
 
 $user     = $dataRaw['user']     ?? [];
+$balance  = $dataRaw['finance']  ?? [];
 $property = $dataRaw['property'] ?? [];
-$finance  = $dataRaw['finance']  ?? [];
 
 include __DIR__ . '/components/finanalys1.php';
 include __DIR__ . '/components/finanalys2.php';
 include __DIR__ . '/components/finanalys3.php';
 
-include __DIR__ . '/components/user1.php';
+if (!empty($user)) {
+    include __DIR__ . '/components/user1.php';
+}
 
-include __DIR__ . '/components/finance1.php';
-include __DIR__ . '/components/finance2.php';
-include __DIR__ . '/components/finance3.php';
+if (!empty($balance)) {
+    include __DIR__ . '/components/finance1.php';
+    include __DIR__ . '/components/finance2.php';
+    include __DIR__ . '/components/finance3.php';
+}
 
-include __DIR__ . '/components/property1.php';
-include __DIR__ . '/components/property2.php';
-include __DIR__ . '/components/property3.php';
+if (!empty($property)) {
+    include __DIR__ . '/components/property1.php';
+    include __DIR__ . '/components/property2.php';
+    include __DIR__ . '/components/property3.php';
+}

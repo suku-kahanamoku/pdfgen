@@ -2,7 +2,11 @@
 // ============================================================
 // PAGE 1 – CONTROLLER
 // ============================================================
-$summary = $dataRaw['property']['summary'] ?? [];
+$summary = $property['summary'] ?? [];
+$cisty_majetek = (float)($summary['netto']['value'] ?? 0);
+$total = (float)($summary['netto']['total'] ?? 0);
+$donut_pct_value     = $total > 0 ? round($cisty_majetek / $total * 100) : 0;
+$donut_pct_remainder = 100 - $donut_pct_value;
 
 $statusIconMap = [
     'success' => ['icon' => 'fa-solid fa-check',       'cls' => 'text-success border-success'],

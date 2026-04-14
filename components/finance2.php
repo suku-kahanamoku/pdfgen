@@ -2,10 +2,10 @@
 // ============================================================
 // CASH-FLOW PAGE – CONTROLLER
 // ============================================================
-$cfIncome   = $finance['income']['income'] ?? [];
-$cfPartner  = $finance['income']['partner'] ?? [];
-$cfExpense  = $finance['income']['expense'] ?? [];
-$cfFooter   = $finance['income']['footer'] ?? [];
+$cfIncome   = $balance['income']['income'] ?? [];
+$cfPartner  = $balance['income']['partner'] ?? [];
+$cfExpense  = $balance['income']['expense'] ?? [];
+$cfFooter   = $balance['income']['footer'] ?? [];
 $cfCur      = $curMap[$cfIncome['currency'] ?? 'CZK'] ?? 'Kč';
 
 $cfIncomeRows  = $cfIncome['rows'] ?? [];
@@ -51,7 +51,7 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
             <!-- Chart -->
             <div class="flex-1 flex items-stretch bg-paper rounded-3xl p-6 min-h-[500px]">
                 <div class="rounded-2xl px-6 py-6 flex-1">
-                    <canvas id="chart-finance-p3"></canvas>
+                    <canvas id="chart-balance-p3"></canvas>
                 </div>
             </div>
 
@@ -136,7 +136,7 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
 </div>
 
 <script>
-    new Chart(document.getElementById('chart-finance-p3'), {
+    new Chart(document.getElementById('chart-balance-p3'), {
         type: 'bar',
         data: {
             labels: ['<?= $cfChartLabel1 ?>', '<?= $cfChartLabel2 ?>'],

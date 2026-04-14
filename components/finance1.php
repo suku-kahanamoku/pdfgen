@@ -2,7 +2,7 @@
 // ============================================================
 // FINANCE PAGE – CONTROLLER
 // ============================================================
-$finExpense    = $finance['expense'] ?? [];
+$finExpense    = $balance['expense'] ?? [];
 $finCategories = $finExpense['categories'] ?? [];
 $finFirstRow   = $finCategories[0]['rows'][0] ?? [];
 $finCur        = $curMap[$finFirstRow['currency'] ?? 'CZK'] ?? 'Kč';
