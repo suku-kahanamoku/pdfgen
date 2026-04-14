@@ -15,9 +15,9 @@ if (!empty($user)) {
 }
 
 if (!empty($balance)) {
-    include __DIR__ . '/components/finance1.php';
-    include __DIR__ . '/components/finance2.php';
-    include __DIR__ . '/components/finance3.php';
+    include __DIR__ . '/components/balance1.php';
+    include __DIR__ . '/components/balance2.php';
+    include __DIR__ . '/components/balance3.php';
 }
 
 if (!empty($property)) {
