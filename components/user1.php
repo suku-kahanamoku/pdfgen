@@ -7,9 +7,7 @@ $partner      = $user['partner'] ?? [];
 $childrenRows = $user['children']['rows'] ?? [];
 $petsRows     = $user['pets']['rows']     ?? [];
 
-$wideMode       = count($childrenRows) > 2 || count($petsRows) > 2;
-$leftCol        = $wideMode ? '160px' : '240px';
-$singleRightCols = $leftCol . ' 1fr';
+$singleRightCols = '240px 1fr';
 ?>
 
 <div class="w-full box-border p-24 flex h-screen flex-col [page-break-after:always] [break-after:page] [box-decoration-break:clone]">
@@ -113,67 +111,57 @@ $singleRightCols = $leftCol . ' 1fr';
     </div>
 
     <!-- Sekce: Děti -->
-    <?php if (!empty($childrenRows)):
-        $childrenCols = $leftCol . ' ' . implode(' ', array_fill(0, count($childrenRows), '1fr'));
-    ?>
+    <?php if (!empty($childrenRows)): ?>
         <div class="mb-10 rounded-3xl bg-white/80 px-10 py-8 shadow">
             <h3 class="mb-6 font-lora text-3xl font-semibold">
                 Děti
             </h3>
 
             <div class="divide-y divide-mist">
-                <div class="grid items-center py-3" style="grid-template-columns: <?= $childrenCols ?>">
+                <div class="grid items-center py-3" style="grid-template-columns: 1fr 1fr">
                     <div class="flex items-center gap-3 text-ink/70">
                         <i class="fa-regular fa-user text-primary"></i>
                         <span>Jméno</span>
                     </div>
-                    <?php foreach ($childrenRows as $child): ?>
-                        <div class="text-ink font-semibold"><?= htmlspecialchars($child['name'] ?? '') ?></div>
-                    <?php endforeach; ?>
-                </div>
-
-                <div class="grid items-center py-3" style="grid-template-columns: <?= $childrenCols ?>">
                     <div class="flex items-center gap-3 text-ink/70">
                         <i class="fa-regular fa-calendar text-primary"></i>
                         <span>Věk</span>
                     </div>
-                    <?php foreach ($childrenRows as $child): ?>
-                        <div class="text-ink font-semibold"><?= htmlspecialchars($child['age'] ?? '') ?></div>
-                    <?php endforeach; ?>
                 </div>
+                <?php foreach ($childrenRows as $child): ?>
+                    <div class="grid items-center py-3" style="grid-template-columns: 1fr 1fr">
+                        <div class="text-ink font-semibold"><?= htmlspecialchars($child['name'] ?? '') ?></div>
+                        <div class="text-ink font-semibold"><?= htmlspecialchars($child['age'] ?? '') ?></div>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
     <?php endif; ?>
 
     <!-- Sekce: Mazlíčci -->
-    <?php if (!empty($petsRows)):
-        $petsCols = $leftCol . ' ' . implode(' ', array_fill(0, count($petsRows), '1fr'));
-    ?>
+    <?php if (!empty($petsRows)): ?>
         <div class="rounded-3xl bg-white/80 px-10 py-8 shadow">
             <h3 class="mb-6 font-lora text-3xl font-semibold">
                 Mazlíčci
             </h3>
 
             <div class="divide-y divide-mist">
-                <div class="grid items-center py-3" style="grid-template-columns: <?= $petsCols ?>">
+                <div class="grid items-center py-3" style="grid-template-columns: 1fr 1fr">
                     <div class="flex items-center gap-3 text-ink/70">
                         <i class="fa-solid fa-paw text-primary"></i>
                         <span>Jméno</span>
                     </div>
-                    <?php foreach ($petsRows as $pet): ?>
-                        <div class="text-ink font-semibold"><?= htmlspecialchars($pet['name'] ?? '') ?></div>
-                    <?php endforeach; ?>
-                </div>
-
-                <div class="grid items-center py-3" style="grid-template-columns: <?= $petsCols ?>">
                     <div class="flex items-center gap-3 text-ink/70">
                         <i class="fa-regular fa-calendar text-primary"></i>
                         <span>Věk</span>
                     </div>
-                    <?php foreach ($petsRows as $pet): ?>
-                        <div class="text-ink font-semibold"><?= htmlspecialchars($pet['age'] ?? '') ?></div>
-                    <?php endforeach; ?>
                 </div>
+                <?php foreach ($petsRows as $pet): ?>
+                    <div class="grid items-center py-3" style="grid-template-columns: 1fr 1fr">
+                        <div class="text-ink font-semibold"><?= htmlspecialchars($pet['name'] ?? '') ?></div>
+                        <div class="text-ink font-semibold"><?= htmlspecialchars($pet['age'] ?? '') ?></div>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
     <?php endif; ?>
