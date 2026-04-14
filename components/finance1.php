@@ -5,20 +5,13 @@
 $finExpense    = $balance['expense'] ?? [];
 $finCategories = $finExpense['categories'] ?? [];
 $finFooter     = $finExpense['footer'] ?? [];
-$finFirstRow   = $finCategories[0]['rows'][0] ?? [];
-$finCur        = $curMap[$finFirstRow['currency'] ?? 'CZK'] ?? 'Kč';
+$finTotal      = $finExpense['total'] ?? [];
+$finCur        = $curMap[$finTotal['currency'] ?? 'CZK'] ?? 'Kč';
+$finTotalAmount = (float)($finTotal['amount'] ?? 0);
+$finTotalMin    = (float)($finTotal['min']    ?? 0);
 
 // Light-to-dark brown palette from tailwind config
 $finColorPalette = ['peach', 'caramel', 'walnut', 'chestnut', 'umber'];
-
-$finTotalAmount = 0;
-$finTotalMin    = 0;
-foreach ($finCategories as $cat) {
-    foreach ($cat['rows'] ?? [] as $row) {
-        $finTotalAmount += (float)($row['amount'] ?? 0);
-        $finTotalMin    += (float)($row['min']    ?? 0);
-    }
-}
 
 $finFPercent = $finFooter['percent'] ?? 0;
 $finFStatus  = $finFooter['status']  ?? 'success';

@@ -3,10 +3,9 @@
 // PAGE 1 – CONTROLLER
 // ============================================================
 $summary           = $property['summary'] ?? [];
-$netWorth          = (float)($summary['netto']['value'] ?? 0);
-$netTotal          = (float)($summary['netto']['total'] ?? 0);
+$netWorth          = (float)($summary['netto']['value']   ?? 0);
 $cur               = $curMap[$summary['netto']['currency'] ?? 'CZK'] ?? 'Kč';
-$donutPctValue     = $netTotal > 0 ? round($netWorth / $netTotal * 100) : 0;
+$donutPctValue     = (int)($summary['netto']['percent']   ?? 0);
 $donutPctRemainder = 100 - $donutPctValue;
 
 $statusIconMap = [

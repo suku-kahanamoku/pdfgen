@@ -9,7 +9,7 @@ $cfFooter   = $balance['income']['footer'] ?? [];
 
 $cfIncomeRows  = $cfIncome['rows'] ?? [];
 $cfPartnerRows = $cfPartner['rows'] ?? [];
-$cfCur         = $curMap[$cfIncome['currency'] ?? 'CZK'] ?? 'Kč';
+$cfCur         = $curMap[$balance['income']['currency'] ?? 'CZK'] ?? 'Kč';
 
 $cfFooterPercent      = (float)($cfFooter['percent']       ?? 0);
 $cfFooterStatus       = $cfFooter['status']                ?? 'success';
@@ -18,12 +18,16 @@ $cfFooterYear         = (int)($cfFooter['year']            ?? 0);
 $cfFooterAvgPerson    = (float)($cfFooter['avg_person']    ?? 0);
 $cfFooterAvgHousehold = (float)($cfFooter['avg_household'] ?? 0);
 
-$cfIncomeTotal  = (float)($cfIncome['value'] ?? 0) + (float)($cfPartner['value'] ?? 0);
-$cfExpenseTotal = (float)($cfExpense['value'] ?? 0);
-$cfRemaining    = $cfIncomeTotal - $cfExpenseTotal;
+$cfSummary     = $balance['income']['summary'] ?? [];
+$cfSummaryRows = $cfSummary['rows'] ?? [];
+$cfIncomeTotal  = (float)($balance['income']['total']     ?? 0);
+$cfExpenseTotal = (float)($cfExpense['value']             ?? 0);
+$cfRemaining    = (float)($balance['income']['remaining'] ?? 0);
 
-$cfChartLabel1 = 'Příjmy';
-$cfChartLabel2 = 'Výdaje';
+$cfChartLabel1 = $cfSummaryRows[0]['title'] ?? 'Příjmy';
+$cfChartLabel2 = $cfSummaryRows[1]['title'] ?? 'Výdaje';
+$cfChartValue1 = (float)($cfSummaryRows[0]['value'] ?? 0);
+$cfChartValue2 = (float)($cfSummaryRows[1]['value'] ?? 0);
 $cfBarColors   = ['#e7e4e4', '#936746'];
 ?>
 
@@ -63,7 +67,7 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
                 <!-- Vaše příjmy -->
                 <div class="flex flex-col gap-3">
                     <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
-                        Vaše příjmy
+                        <?= htmlspecialchars($cfIncome['title'] ?? 'Vaše příjmy') ?>
                     </div>
                     <?php foreach ($cfIncomeRows as $row): ?>
                         <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
@@ -89,18 +93,14 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
                 <!-- Celková bilance -->
                 <div class="flex flex-col gap-3">
                     <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
-                        Celková bilance cash-flow
+                        <?= htmlspecialchars($cfSummary['title'] ?? '') ?>
                     </div>
-
-                    <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
-                        <div><?= htmlspecialchars($cfIncome['title'] ?? 'Příjmy') ?></div>
-                        <div class="whitespace-nowrap"><?= number_format($cfIncomeTotal, 0, ',', ' ') ?> <?= $cfCur ?></div>
-                    </div>
-
-                    <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
-                        <div><?= htmlspecialchars($cfExpense['title'] ?? 'Výdaje') ?></div>
-                        <div class="whitespace-nowrap"><?= number_format($cfExpenseTotal, 0, ',', ' ') ?> <?= $cfCur ?></div>
-                    </div>
+                    <?php foreach ($cfSummaryRows as $row): ?>
+                        <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
+                            <div><?= htmlspecialchars($row['title'] ?? '') ?></div>
+                            <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $cfCur ?></div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
 
                 <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
@@ -144,7 +144,7 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
         data: {
             labels: ['<?= $cfChartLabel1 ?>', '<?= $cfChartLabel2 ?>'],
             datasets: [{
-                data: [<?= $cfIncomeTotal ?>, <?= $cfExpenseTotal ?>],
+                data: [<?= $cfChartValue1 ?>, <?= $cfChartValue2 ?>],
                 backgroundColor: [<?= implode(',', array_map(fn($c) => "'$c'", $cfBarColors)) ?>],
                 borderRadius: 8,
                 borderWidth: 0,
@@ -175,7 +175,7 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
             scales: {
                 y: {
                     beginAtZero: true,
-                    suggestedMax: <?= max($cfIncomeTotal, $cfExpenseTotal) < 80000 ? 80000 : ceil(max($cfIncomeTotal, $cfExpenseTotal) / 10000) * 10000 ?>,
+                    suggestedMax: <?= max($cfChartValue1, $cfChartValue2) < 80000 ? 80000 : ceil(max($cfChartValue1, $cfChartValue2) / 10000) * 10000 ?>,
                     grid: {
                         display: true,
                         color: '#dfdddd'

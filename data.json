@@ -41,10 +41,13 @@
 	},
 	"balance": {
 		"income": {
+			"currency": "CZK",
+			"total": 129000,
+			"remaining": 79000,
 			"client": {
 				"currency": "CZK",
 				"value": 85000,
-				"title": "Příjmy",
+				"title": "Vaše příjmy",
 				"rows": [
 					{
 						"currency": "CZK",
@@ -92,13 +95,27 @@
 					},
 					{
 						"currency": "CZK",
-						"title": "Variabilní",
+						"title": "Variabilní výdaje",
 						"value": 18000
 					}
 				]
 			},
+			"summary": {
+				"title": "Celková bilance cash-flow",
+				"rows": [
+					{
+						"currency": "CZK",
+						"title": "Příjmy",
+						"value": 129000
+					},
+					{
+						"currency": "CZK",
+						"title": "Výdaje",
+						"value": 50000
+					}
+				]
+			},
 			"footer": {
-				"percent": 62,
 				"status": "success",
 				"currency": "CZK",
 				"year": 2024,
@@ -107,6 +124,11 @@
 			}
 		},
 		"expense": {
+			"total": {
+				"currency": "CZK",
+				"amount": 33500,
+				"min": 29700
+			},
 			"categories": [
 				{
 					"title": "Domácnost",
@@ -223,8 +245,7 @@
 					{
 						"currency": "CZK",
 						"title": "Měsíční výdaje",
-						"value": 32000,
-						"disable_graph": false
+						"value": 32000
 					}
 				]
 			},
@@ -239,7 +260,6 @@
 			"netto": {
 				"currency": "CZK",
 				"value": 4850000,
-				"total": 6730000,
 				"percent": 72
 			},
 			"active": {

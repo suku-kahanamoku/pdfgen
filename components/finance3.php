@@ -11,9 +11,10 @@ $sumFooter        = $sumData['footer'] ?? [];
 $sumFooterPercent = (float)($sumFooter['percent'] ?? 0);
 $sumFooterStatus  = $sumFooter['status']  ?? 'success';
 
-$sumChartRows   = array_filter($sumReserveRows, fn($r) => ($r['disable_graph'] ?? true) !== false);
-$sumChartLabels = array_map(fn($r) => htmlspecialchars($r['title'] ?? ''), $sumChartRows);
-$sumChartValues = array_map(fn($r) => (float)($r['value'] ?? 0), $sumChartRows);
+$sumChartLabel1 = $sumReserveRows[0]['title'] ?? '';
+$sumChartLabel2 = $sumReserveRows[1]['title'] ?? '';
+$sumChartValue1 = (float)($sumReserveRows[0]['value'] ?? 0);
+$sumChartValue2 = (float)($sumReserveRows[1]['value'] ?? 0);
 $sumBarColors   = ['#e7e4e4', '#936746'];
 ?>
 
@@ -113,9 +114,9 @@ $sumBarColors   = ['#e7e4e4', '#936746'];
     new Chart(document.getElementById('chart-summary-p4'), {
         type: 'bar',
         data: {
-            labels: [<?= implode(',', array_map(fn($l) => "'$l'", $sumChartLabels)) ?>],
+            labels: ['<?= $sumChartLabel1 ?>', '<?= $sumChartLabel2 ?>'],
             datasets: [{
-                data: [<?= implode(',', $sumChartValues) ?>],
+                data: [<?= $sumChartValue1 ?>, <?= $sumChartValue2 ?>],
                 backgroundColor: [<?= implode(',', array_map(fn($c) => "'$c'", $sumBarColors)) ?>],
                 borderRadius: 8,
                 borderWidth: 0,
@@ -146,7 +147,7 @@ $sumBarColors   = ['#e7e4e4', '#936746'];
             scales: {
                 y: {
                     beginAtZero: true,
-                    suggestedMax: <?= ($sumChartValues ? max($sumChartValues) : 0) < 160000 ? 160000 : ceil((($sumChartValues ? max($sumChartValues) : 0)) / 20000) * 20000 ?>,
+                    suggestedMax: <?= max($sumChartValue1, $sumChartValue2) < 160000 ? 160000 : ceil(max($sumChartValue1, $sumChartValue2) / 20000) * 20000 ?>,
                     grid: {
                         display: true,
                         color: '#dfdddd'
