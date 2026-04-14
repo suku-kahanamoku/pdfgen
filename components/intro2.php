@@ -1,3 +1,27 @@
+<?php
+// ============================================================
+// PAGE 1 – CONTROLLER
+// ============================================================
+$introExpect    = $intro['expect'];
+$introExecValue = $introExpect['value'] ?? '';
+$introExpectRows = $introExpect['rows'] ?? [];
+
+$introExpectIcons = [
+    'very_low'  => 'very_low.png',
+    'low'       => 'low.png',
+    'medium'    => 'medium.png',
+    'high'      => 'high.png',
+    'very_high' => 'very_high.png',
+];
+
+$introExpectIconsBase64 = [];
+foreach ($introExpectIcons as $key => $file) {
+    $path = __DIR__ . '/../img/emoticons/' . $file;
+    if (file_exists($path)) {
+        $introExpectIconsBase64[$key] = 'data:image/png;base64,' . base64_encode(file_get_contents($path));
+    }
+}
+?>
 <div class="w-full box-border p-24 flex h-screen flex-col [page-break-after:always] [break-after:page] [box-decoration-break:clone]">
     <!-- Horní obsah -->
     <!-- Nadpis -->
@@ -22,54 +46,38 @@
     <div class="mt-auto">
         <!-- Otázka -->
         <div class="mb-20">
-            <h4 class="mb-10 font-lora text-2xl font-semibold leading-tight">
+            <h4 class="mb-12 font-lora text-2xl font-semibold leading-tight">
                 S jakým pocitem jste dnes přišel?
             </h4>
 
-            <div class="relative flex items-end gap-10">
-                <!-- Ikona 1 -->
-                <div class="flex flex-col items-center">
-                    <div class="flex h-32 w-32 items-center justify-center rounded-full text-8xl text-yellow-400">
-                        <i class="fa-solid fa-face-grimace"></i>
+            <div class="relative w-full flex items-center justify-around gap-10">
+                <?php foreach ($introExpectIcons as $key => $file):
+                    $isActive = ($key === $introExecValue);
+                    $row = $introExpectRows[$key] ?? [];
+                    $src = $introExpectIconsBase64[$key] ?? '';
+                ?>
+                    <div class="relative flex flex-col items-center">
+                        <?php if ($isActive): ?>
+                            <div class="flex h-40 w-40 items-center justify-center rounded-2xl border border-primary bg-cream/40">
+                                <div class="flex h-32 w-32 items-center justify-center rounded-full">
+                                    <img src="<?= $src ?>" class="h-full w-full object-contain" alt="">
+                                </div>
+                            </div>
+                            <div class="absolute -top-12 z-10 <?= $key === 'very_high' ? 'right-2/3' : 'left-2/3' ?>">
+                                <div class="rounded-xl bg-primary px-4 py-2 text-white shadow-sm w-48">
+                                    <div class="font-semibold leading-tight"><?= htmlspecialchars($row['title'] ?? '') ?></div>
+                                    <div class="leading-tight text-white/85"><?= htmlspecialchars($row['description'] ?? '') ?></div>
+                                </div>
+                            </div>
+                        <?php else: ?>
+                            <div class="flex flex-col items-center">
+                                <div class="flex h-32 w-32 items-center justify-center rounded-full">
+                                    <img src="<?= $src ?>" class="h-full w-full object-contain" alt="">
+                                </div>
+                            </div>
+                        <?php endif; ?>
                     </div>
-                </div>
-
-                <!-- Ikona 2 -->
-                <div class="flex flex-col items-center">
-                    <div class="flex h-32 w-32 items-center justify-center rounded-full text-8xl text-yellow-400">
-                        <i class="fa-solid fa-face-meh"></i>
-                    </div>
-                </div>
-
-                <!-- Ikona 3 aktivní -->
-                <div class="relative flex flex-col items-center">
-                    <div class="absolute -top-10 left-2/3">
-                        <div class="rounded-xl bg-primary px-4 py-2 text-white shadow-sm w-48">
-                            <div class="font-semibold leading-tight">Rozpačitost</div>
-                            <div class="leading-tight text-white/85">Nevím co se bude dít.</div>
-                        </div>
-                    </div>
-
-                    <div class="flex h-36 w-36 items-center justify-center rounded-2xl border border-primary bg-cream/40">
-                        <div class="flex h-32 w-32 items-center justify-center rounded-full text-8xl text-yellow-400">
-                            <i class="fa-solid fa-face-frown-open"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ikona 4 -->
-                <div class="flex flex-col items-center">
-                    <div class="flex h-32 w-32 items-center justify-center rounded-full text-8xl text-yellow-400">
-                        <i class="fa-solid fa-face-smile"></i>
-                    </div>
-                </div>
-
-                <!-- Ikona 5 -->
-                <div class="flex flex-col items-center">
-                    <div class="flex h-32 w-32 items-center justify-center rounded-full text-8xl text-yellow-400">
-                        <i class="fa-solid fa-face-grin-hearts"></i>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
 
