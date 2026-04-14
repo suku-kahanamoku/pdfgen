@@ -40,89 +40,6 @@
 		}
 	},
 	"balance": {
-		"income": {
-			"currency": "CZK",
-			"total": 129000,
-			"remaining": 79000,
-			"client": {
-				"currency": "CZK",
-				"value": 85000,
-				"title": "Vaše příjmy",
-				"rows": [
-					{
-						"currency": "CZK",
-						"title": "Hrubá mzda",
-						"value": 65000
-					},
-					{
-						"currency": "CZK",
-						"title": "Příjem z pronájmu",
-						"value": 16500
-					},
-					{
-						"currency": "CZK",
-						"title": "Ostatní příjmy",
-						"value": 3500
-					}
-				]
-			},
-			"partner": {
-				"currency": "CZK",
-				"value": 44000,
-				"title": "Příjmy partnera",
-				"rows": [
-					{
-						"currency": "CZK",
-						"title": "Hrubá mzda partnerky",
-						"value": 42000
-					},
-					{
-						"currency": "CZK",
-						"title": "Ostatní příjmy",
-						"value": 2000
-					}
-				]
-			},
-			"expense": {
-				"currency": "CZK",
-				"value": 50000,
-				"title": "Výdaje",
-				"rows": [
-					{
-						"currency": "CZK",
-						"title": "Fixní výdaje",
-						"value": 32000
-					},
-					{
-						"currency": "CZK",
-						"title": "Variabilní výdaje",
-						"value": 18000
-					}
-				]
-			},
-			"summary": {
-				"title": "Celková bilance cash-flow",
-				"rows": [
-					{
-						"currency": "CZK",
-						"title": "Příjmy",
-						"value": 129000
-					},
-					{
-						"currency": "CZK",
-						"title": "Výdaje",
-						"value": 50000
-					}
-				]
-			},
-			"footer": {
-				"status": "success",
-				"currency": "CZK",
-				"year": 2024,
-				"avg_person": 37000,
-				"avg_household": 52000
-			}
-		},
 		"expense": {
 			"total": {
 				"currency": "CZK",
@@ -225,6 +142,89 @@
 			"footer": {
 				"percent": 48,
 				"status": "danger"
+			}
+		},
+		"income": {
+			"currency": "CZK",
+			"total": 129000,
+			"remaining": 79000,
+			"client": {
+				"currency": "CZK",
+				"value": 85000,
+				"title": "Vaše příjmy",
+				"rows": [
+					{
+						"currency": "CZK",
+						"title": "Hrubá mzda",
+						"value": 65000
+					},
+					{
+						"currency": "CZK",
+						"title": "Příjem z pronájmu",
+						"value": 16500
+					},
+					{
+						"currency": "CZK",
+						"title": "Ostatní příjmy",
+						"value": 3500
+					}
+				]
+			},
+			"partner": {
+				"currency": "CZK",
+				"value": 44000,
+				"title": "Příjmy partnera",
+				"rows": [
+					{
+						"currency": "CZK",
+						"title": "Hrubá mzda partnerky",
+						"value": 42000
+					},
+					{
+						"currency": "CZK",
+						"title": "Ostatní příjmy",
+						"value": 2000
+					}
+				]
+			},
+			"expense": {
+				"currency": "CZK",
+				"value": 50000,
+				"title": "Výdaje",
+				"rows": [
+					{
+						"currency": "CZK",
+						"title": "Fixní výdaje",
+						"value": 32000
+					},
+					{
+						"currency": "CZK",
+						"title": "Variabilní výdaje",
+						"value": 18000
+					}
+				]
+			},
+			"summary": {
+				"title": "Celková bilance cash-flow",
+				"rows": [
+					{
+						"currency": "CZK",
+						"title": "Příjmy",
+						"value": 129000
+					},
+					{
+						"currency": "CZK",
+						"title": "Výdaje",
+						"value": 50000
+					}
+				]
+			},
+			"footer": {
+				"status": "success",
+				"currency": "CZK",
+				"year": 2024,
+				"avg_person": 37000,
+				"avg_household": 52000
 			}
 		},
 		"summary": {
