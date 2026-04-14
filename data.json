@@ -41,7 +41,7 @@
 	},
 	"balance": {
 		"income": {
-			"income": {
+			"client": {
 				"currency": "CZK",
 				"value": 85000,
 				"title": "Příjmy",
@@ -445,7 +445,7 @@
 				}
 			]
 		},
-		"bilance": {
+		"balance": {
 			"active": {
 				"currency": "CZK",
 				"value": 8910000,
@@ -455,7 +455,7 @@
 					"percent": 7.2
 				}
 			},
-			"pasive": {
+			"passive": {
 				"currency": "CZK",
 				"value": 2180000,
 				"title": "Pasiva",

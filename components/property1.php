@@ -76,7 +76,7 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
                         <i class="<?= $col['icon'] ?>"></i>
                     </div>
                     <div class="ml-auto text-right">
-                        <div class="font-semibold text-primary font-lora"><?= htmlspecialchars($col['title']) ?></div>
+                        <div class="font-semibold text-primary font-lora"><?= $col['title'] ?></div>
                         <div class="text-sm text-ink/70"><?= number_format($col['total'], 0, ',', ' ') ?> <?= $cur ?></div>
                     </div>
                 </div>

@@ -66,7 +66,7 @@ $finFStatus  = $finFooter['status']  ?? 'success';
             ?>
                 <div class="flex gap-8 [page-break-inside:avoid] [break-inside:avoid]">
                     <div class="w-28 pt-2">
-                        <div class="inline-flex w-28 items-center justify-center rounded-lg bg-<?= htmlspecialchars($catColor) ?> px-4 py-2 leading-none text-sm <?= $catColor === 'peach' ? 'text-ink' : 'text-white' ?>">
+                        <div class="inline-flex w-28 items-center justify-center rounded-lg bg-<?= $catColor ?> px-4 py-2 leading-none text-sm <?= $catColor === 'peach' ? 'text-ink' : 'text-white' ?>">
                             <?= htmlspecialchars($catTitle) ?>
                         </div>
                     </div>
@@ -109,7 +109,7 @@ $finFStatus  = $finFooter['status']  ?? 'success';
                     $isLast   = ($ci === $catCount - 1);
                     $rounding = $isFirst ? 'rounded-t-2xl' : ($isLast ? 'rounded-b-2xl' : '');
                 ?>
-                    <div class="bg-<?= htmlspecialchars($catColor) ?> <?= $rounding ?> flex flex-col justify-start px-3 pt-4 pb-2 overflow-hidden"
+                    <div class="bg-<?= $catColor ?> <?= $rounding ?> flex flex-col justify-start px-3 pt-4 pb-2 overflow-hidden"
                         style="height: <?= $pct ?>%;">
                         <div class="text-<?= $catColor === 'peach' ? 'ink' : 'white' ?> font-semibold leading-none"><?= number_format($pct, 1, ',', ' ') ?> %</div>
                     </div>

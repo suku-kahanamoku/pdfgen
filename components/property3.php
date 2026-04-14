@@ -57,10 +57,10 @@ foreach ($p3Sections as $p3sec) {
         $p3ChartId = 'chart-p3-' . $p3sec['key'];
     ?>
         <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
-            <h3 class="font-lora text-4xl font-semibold"><?= htmlspecialchars($p3sec['title']) ?></h3>
+            <h3 class="font-lora text-4xl font-semibold"><?= $p3sec['title'] ?></h3>
             <div class="flex gap-8 items-center">
                 <div class="flex-1 flex flex-col gap-8">
-                    <div class="text-ink/70 leading-relaxed"><?= htmlspecialchars($p3sec['desc']) ?></div>
+                    <div class="text-ink/70 leading-relaxed"><?= $p3sec['desc'] ?></div>
                     <div class="flex flex-col gap-4">
                         <?php foreach ($p3Rows as $p3Row):
                             $p3Val = (float)($p3Row['value'] ?? 0);

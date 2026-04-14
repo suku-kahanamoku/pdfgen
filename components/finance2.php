@@ -2,7 +2,7 @@
 // ============================================================
 // CASH-FLOW PAGE – CONTROLLER
 // ============================================================
-$cfIncome   = $balance['income']['income'] ?? [];
+$cfIncome   = $balance['income']['client'] ?? [];
 $cfPartner  = $balance['income']['partner'] ?? [];
 $cfExpense  = $balance['income']['expense'] ?? [];
 $cfFooter   = $balance['income']['footer'] ?? [];

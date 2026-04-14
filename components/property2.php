@@ -7,9 +7,9 @@ $netWorth  = (float)($summary['netto']['value'] ?? 0);
 $netTotal  = (float)($summary['netto']['total'] ?? 0);
 $cur       = $curMap[$summary['netto']['currency'] ?? 'CZK'] ?? 'Kč';
 
-$propBalance        = $property['bilance'] ?? [];
+$propBalance        = $property['balance'] ?? [];
 $totalActive        = (float)($propBalance['active']['value'] ?? 0);
-$totalPassive       = (float)($propBalance['pasive']['value'] ?? 0);
+$totalPassive       = (float)($propBalance['passive']['value'] ?? 0);
 $propBalanceFooter  = $propBalance['footer'] ?? [];
 $propBalancePercent = $propBalanceFooter['percent'] ?? 0;
 $propBalanceStatus  = $propBalanceFooter['status']  ?? 'success';
@@ -27,7 +27,7 @@ $p2Sections = [
 ];
 
 $p2ChartLabel1 = htmlspecialchars($propBalance['active']['title'] ?? 'Aktiva');
-$p2ChartLabel2 = htmlspecialchars($propBalance['pasive']['title'] ?? 'Pasiva');
+$p2ChartLabel2 = htmlspecialchars($propBalance['passive']['title'] ?? 'Pasiva');
 $p2BarColors   = ['#e7e4e4', '#936746'];
 ?>
 
@@ -41,10 +41,10 @@ $p2BarColors   = ['#e7e4e4', '#936746'];
     ?>
         <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
             <h3 class="flex items-center gap-4 font-lora text-4xl font-semibold">
-                <?= htmlspecialchars($sec['title']) ?>
+                <?= $sec['title'] ?>
                 <i class="text-primary <?= $sec['icon'] ?>"></i>
             </h3>
-            <div class="text-ink/70"><?= htmlspecialchars($sec['desc']) ?></div>
+            <div class="text-ink/70"><?= $sec['desc'] ?></div>
             <div class="flex flex-col gap-7">
                 <?php foreach ($rows as $row):
                     $val     = (float)($row['value'] ?? 0);
@@ -108,12 +108,12 @@ $p2BarColors   = ['#e7e4e4', '#936746'];
 
                 <div class="flex flex-col gap-3">
                     <div class="flex items-start justify-between rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold">
-                        <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($propBalance['pasive']['title'] ?? 'Pasiva') ?></span>
+                        <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($propBalance['passive']['title'] ?? 'Pasiva') ?></span>
                         <span><?= number_format($totalPassive, 0, ',', ' ') ?> <?= $cur ?></span>
                     </div>
                     <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
-                        <span><?= htmlspecialchars($propBalance['pasive']['yeld']['title'] ?? '') ?></span>
-                        <span><?= number_format($propBalance['pasive']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
+                        <span><?= htmlspecialchars($propBalance['passive']['yeld']['title'] ?? '') ?></span>
+                        <span><?= number_format($propBalance['passive']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
                     </div>
                 </div>
 
@@ -127,10 +127,11 @@ $p2BarColors   = ['#e7e4e4', '#936746'];
 
     <!-- Footer row -->
     <div class="grid grid-cols-[1fr_220px] gap-8 items-end">
-        <?php if ($propBalanceStatus === 'success'): ?>
+        <?php if ($propBalancePercent === 'success'): ?>
             <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-1">
                 <div class="flex items-center justify-between gap-4">
-                    <div class="font-semibold">Poměr mezi aktivy a pasivy je vyrovnaný</div><?= number_format($propBalancePercent, 0, ',', ' ') ?>%</div>
+                    <div class="font-semibold">Poměr mezi aktivy a pasivy je vyrovnaný</div>
+                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($propBalancePercent, 0, ',', ' ') ?>%</div>
                 </div>
                 <div class="text-ink/70">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
             </div>
@@ -144,6 +145,7 @@ $p2BarColors   = ['#e7e4e4', '#936746'];
             </div>
         <?php endif; ?>
     </div>
+</div>
 </div>
 
 <script>
