@@ -1,4 +1,16 @@
 {
+	"intro": {
+		"title": "Collegas",
+		"motto": "Nabízíme individuální finanční analýzy, které vám pomožou dosáhnout vašich finančních cílů efektivně a s jistotou.",
+		"contact": {
+			"name": "Lucie Bohatá",
+			"position": "Finanční specialista",
+			"email": "lucie.bohata@collegas.cz",
+			"phone": "+420 738 465 321",
+			"photo": "https://collegas.cz/img/new_team/lucie_bohata.jpg",
+			"copyright": "© 2026 Collegas s.r.o. | collegas.cz"
+		}
+	},
 	"user": {
 		"client": {
 			"name": "Karel Novotný",

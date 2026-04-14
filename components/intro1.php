@@ -1,9 +1,17 @@
+<?php
+// ============================================================
+// PAGE 1 – CONTROLLER
+// ============================================================
+$introTitle   = $intro['title'] ?? 'Collegas';
+
+$introContact = $intro['contact'] ?? [];
+?>
 <div class="w-full box-border p-24 [page-break-after:always] [break-after:page] [box-decoration-break:clone] overflow-visible flex flex-col h-screen">
     <!-- Intro -->
     <div class="mb-14">
         <h3 class="text-3xl leading-tight">
             Jsme společnost
-            <span class="text-primary">Collegas,</span><br>
+            <span class="text-primary"><?php echo $introTitle; ?></span><br>
             váš partner na cestě k finančním úspěchům.
         </h3>
     </div>
@@ -64,8 +72,7 @@
     <div class="mt-auto">
         <div class="mb-32 -ml-24 pl-24 max-w-2xl rounded-r-xl border border-sand bg-cream py-3">
             <p class="leading-normal text-ink/80">
-                Nabízíme individuální finanční analýzy, které vám pomohou dosáhnout
-                vašich finančních cílů efektivně a s jistotou.
+                <?php echo $intro['motto']; ?>
             </p>
         </div>
 
@@ -73,26 +80,26 @@
         <div class="flex items-start gap-4">
             <div class="h-28 w-28 overflow-hidden rounded-xl bg-linen">
                 <img
-                    src="https://collegas.cz/img/new_team/lucie_bohata.jpg"
+                    src="<?= htmlspecialchars($introContact['photo'] ?? '') ?>"
                     alt="Profilová fotografie"
                     class="h-full w-full object-cover object-[center_top]">
             </div>
 
             <div class="pt-px">
                 <div class="font-lora leading-tight font-semibold text-primary">
-                    Lucie Bohatá
+                    <?= htmlspecialchars($introContact['name'] ?? '') ?>
                 </div>
                 <div class="mb-2 leading-tight text-ink/80">
-                    Finanční specialista
+                    <?= htmlspecialchars($introContact['position'] ?? '') ?>
                 </div>
 
                 <div class="border-l border-taupe pl-2 leading-snug text-ink/80">
-                    <div>lucie.bohata@collegas.cz</div>
-                    <div>+420 738 465 321</div>
+                    <div><?= htmlspecialchars($introContact['email'] ?? '') ?></div>
+                    <div><?= htmlspecialchars($introContact['phone'] ?? '') ?></div>
                 </div>
 
                 <div class="mt-1 leading-tight text-pebble">
-                    © 2026 Collegas s.r.o. | collegas.cz
+                    <?= htmlspecialchars($introContact['copyright'] ?? '') ?>
                 </div>
             </div>
         </div>
