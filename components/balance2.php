@@ -2,14 +2,17 @@
 // ============================================================
 // CASH-FLOW PAGE – CONTROLLER
 // ============================================================
-$incomeClient   = $balance['income']['client'] ?? [];
-$incomePartner  = $balance['income']['partner'] ?? [];
-$incomeFooter   = $balance['income']['footer'] ?? [];
+$income = $balance['income'] ?? [];
+$incomeTotal   = (float)($income['total'] ?? 0);
+$cur           = $curMap[$income['currency'] ?? 'CZK'] ?? 'Kč';
 
+$incomeClient  = $income['client'] ?? [];
 $incomeClientRows  = $incomeClient['rows'] ?? [];
-$incomePartnerRows = $incomePartner['rows'] ?? [];
-$cur         = $curMap[$balance['income']['currency'] ?? 'CZK'] ?? 'Kč';
 
+$incomePartner = $income['partner'] ?? [];
+$incomePartnerRows = $incomePartner['rows'] ?? [];
+
+$incomeFooter             = $income['footer'] ?? [];
 $incomeFooterPercent      = (float)($incomeFooter['percent']       ?? 0);
 $incomeFooterStatus       = $incomeFooter['status']                ?? 'success';
 $incomeFooterCur          = $curMap[$incomeFooter['currency']      ?? 'CZK'] ?? 'Kč';
@@ -17,9 +20,9 @@ $incomeFooterYear         = (int)($incomeFooter['year']            ?? 0);
 $incomeFooterAvgPerson    = (float)($incomeFooter['avg_person']    ?? 0);
 $incomeFooterAvgHousehold = (float)($incomeFooter['avg_household'] ?? 0);
 
-$incomeSummary     = $balance['income']['summary'] ?? [];
+
+$incomeSummary     = $income['summary'] ?? [];
 $incomeSummaryRows = $incomeSummary['rows'] ?? [];
-$incomeTotal        = (float)($balance['income']['total']     ?? 0);
 
 $chartLabel1 = $incomeSummaryRows[0]['title'] ?? 'Příjmy';
 $chartLabel2 = $incomeSummaryRows[1]['title'] ?? 'Výdaje';

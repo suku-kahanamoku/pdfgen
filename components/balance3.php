@@ -2,12 +2,13 @@
 // ============================================================
 // SUMMARY PAGE – CONTROLLER
 // ============================================================
-$balanceReserve        = $balance['reserve'] ?? [];
-$reserveClient     = $balanceReserve['client'] ?? [];
-$reserveClientRows = $reserveClient['rows'] ?? [];
-$reserveClientMonths      = (float)($reserveClient['months'] ?? 0);
+$reserve = $balance['reserve'] ?? [];
 
-$reserveFooter        = $balanceReserve['footer'] ?? [];
+$reserveClient       = $reserve['client'] ?? [];
+$reserveClientRows   = $reserveClient['rows'] ?? [];
+$reserveClientMonths = (float)($reserveClient['months'] ?? 0);
+
+$reserveFooter        = $reserve['footer'] ?? [];
 $reserveFooterPercent = (float)($reserveFooter['percent'] ?? 0);
 $reserveFooterStatus  = $reserveFooter['status']  ?? 'success';
 

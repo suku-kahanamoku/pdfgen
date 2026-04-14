@@ -2,13 +2,14 @@
 // ============================================================
 // FINANCE PAGE – CONTROLLER
 // ============================================================
-$expense    = $balance['expense'] ?? [];
-$expenseCategories = $expense['categories'] ?? [];
-$cur        = $curMap[$expense['currency'] ?? 'CZK'] ?? 'Kč';
+$expense       = $balance['expense'] ?? [];
 $expenseAmount = (float)($expense['amount'] ?? 0);
 $expenseMin    = (float)($expense['min']    ?? 0);
+$cur           = $curMap[$expense['currency'] ?? 'CZK'] ?? 'Kč';
 
-$expenseFooter     = $expense['footer'] ?? [];
+$expenseCategories = $expense['categories'] ?? [];
+
+$expenseFooter        = $expense['footer'] ?? [];
 $expenseFooterPercent = $expenseFooter['percent'] ?? 0;
 $expenseFooterStatus  = $expenseFooter['status']  ?? 'success';
 

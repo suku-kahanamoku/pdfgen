@@ -2,6 +2,12 @@
 // ============================================================
 // PAGE 3 – CONTROLLER
 // ============================================================
+$propertySummary = $property['summary'] ?? [];
+
+$summaryNetto = $propertySummary['netto'] ?? [];
+$nettoPercent = (int)($summaryNetto['percent'] ?? 0);
+$cur          = $curMap[$summaryNetto['currency'] ?? 'CZK'] ?? 'Kč';
+
 $sections = [
     [
         'key'   => 'horizon',
@@ -26,11 +32,6 @@ $statusMap = [
     'danger'  => ['hex' => '#E5E5E5', 'cls' => 'border-ink/20'],
 ];
 
-
-$propertySummary    = $property['summary'] ?? [];
-$summaryNetto    = $propertySummary['netto'] ?? [];
-$nettoPercent = (int)($summaryNetto['percent'] ?? 0);
-$cur        = $curMap[$propertySummary['netto']['currency'] ?? 'CZK'] ?? 'Kč';
 
 // Precompute chart data for all sections (property.horizon, .active_pasive, .liquidity)
 $chartsData = [];

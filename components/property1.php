@@ -2,11 +2,13 @@
 // ============================================================
 // PAGE 1 – CONTROLLER
 // ============================================================
-$propertySummary           = $property['summary'] ?? [];
-$nettoValue          = (float)($propertySummary['netto']['value']   ?? 0);
-$cur               = $curMap[$propertySummary['netto']['currency'] ?? 'CZK'] ?? 'Kč';
-$nettoPercent     = (int)($propertySummary['netto']['percent']   ?? 0);
+$summary = $property['summary'] ?? [];
+
+$summaryNetto          = $summary['netto'] ?? [];
+$nettoValue            = (float)($summaryNetto['value']   ?? 0);
+$nettoPercent          = (int)($summaryNetto['percent']   ?? 0);
 $nettoPercentRemainder = 100 - $nettoPercent;
+$cur                   = $curMap[$summaryNetto['currency'] ?? 'CZK'] ?? 'Kč';
 
 $statusIconMap = [
     'success' => ['icon' => 'fa-solid fa-check',       'cls' => 'text-success border-success'],
@@ -18,20 +20,20 @@ $propertyColumns = [
     [
         'title' => 'Finanční aktiva',
         'icon'  => 'fa-solid fa-money-bill-1',
-        'total' => (float)($propertySummary['active']['value'] ?? 0),
-        'rows'  => $propertySummary['active']['rows'] ?? [],
+        'total' => (float)($summary['active']['value'] ?? 0),
+        'rows'  => $summary['active']['rows'] ?? [],
     ],
     [
         'title' => 'Nemovitosti',
         'icon'  => 'fa-solid fa-house',
-        'total' => (float)($propertySummary['estate']['value'] ?? 0),
-        'rows'  => $propertySummary['estate']['rows'] ?? [],
+        'total' => (float)($summary['estate']['value'] ?? 0),
+        'rows'  => $summary['estate']['rows'] ?? [],
     ],
     [
         'title' => 'Movitý majetek',
         'icon'  => 'fa-solid fa-car',
-        'total' => (float)($propertySummary['properties']['value'] ?? 0),
-        'rows'  => $propertySummary['properties']['rows'] ?? [],
+        'total' => (float)($summary['properties']['value'] ?? 0),
+        'rows'  => $summary['properties']['rows'] ?? [],
     ],
 ];
 
