@@ -2,11 +2,11 @@
 // ============================================================
 // PAGE 1 – CONTROLLER
 // ============================================================
-$summary           = $property['summary'] ?? [];
-$netWorth          = (float)($summary['netto']['value']   ?? 0);
-$cur               = $curMap[$summary['netto']['currency'] ?? 'CZK'] ?? 'Kč';
-$donutPctValue     = (int)($summary['netto']['percent']   ?? 0);
-$donutPctRemainder = 100 - $donutPctValue;
+$propertySummary           = $property['summary'] ?? [];
+$nettoValue          = (float)($propertySummary['netto']['value']   ?? 0);
+$cur               = $curMap[$propertySummary['netto']['currency'] ?? 'CZK'] ?? 'Kč';
+$nettoPercent     = (int)($propertySummary['netto']['percent']   ?? 0);
+$nettoPercentRemainder = 100 - $nettoPercent;
 
 $statusIconMap = [
     'success' => ['icon' => 'fa-solid fa-check',       'cls' => 'text-success border-success'],
@@ -18,24 +18,24 @@ $propertyColumns = [
     [
         'title' => 'Finanční aktiva',
         'icon'  => 'fa-solid fa-money-bill-1',
-        'total' => (float)($summary['active']['value'] ?? 0),
-        'rows'  => $summary['active']['rows'] ?? [],
+        'total' => (float)($propertySummary['active']['value'] ?? 0),
+        'rows'  => $propertySummary['active']['rows'] ?? [],
     ],
     [
         'title' => 'Nemovitosti',
         'icon'  => 'fa-solid fa-house',
-        'total' => (float)($summary['estate']['value'] ?? 0),
-        'rows'  => $summary['estate']['rows'] ?? [],
+        'total' => (float)($propertySummary['estate']['value'] ?? 0),
+        'rows'  => $propertySummary['estate']['rows'] ?? [],
     ],
     [
         'title' => 'Movitý majetek',
         'icon'  => 'fa-solid fa-car',
-        'total' => (float)($summary['properties']['value'] ?? 0),
-        'rows'  => $summary['properties']['rows'] ?? [],
+        'total' => (float)($propertySummary['properties']['value'] ?? 0),
+        'rows'  => $propertySummary['properties']['rows'] ?? [],
     ],
 ];
 
-$p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
+$colors = ['#8D6144', '#BD8D66', '#eeeeee'];
 ?>
 
 <!-- ============================================================ -->
@@ -62,7 +62,7 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
             </div>
             <div class="w-full box-border px-3 py-3 rounded-lg font-semibold text-white bg-primary font-lora flex justify-between items-center gap-2">
                 <span>Čistá hodnota majetku</span>
-                <span class="whitespace-nowrap"><?= number_format($netWorth, 0, ',', ' ') ?> <?= $cur ?></span>
+                <span class="whitespace-nowrap"><?= number_format($nettoValue, 0, ',', ' ') ?> <?= $cur ?></span>
             </div>
         </div>
     </div>
@@ -113,7 +113,7 @@ $p1DonutColors = ['#8D6144', '#BD8D66', '#eeeeee'];
         type: 'doughnut',
         data: {
             datasets: [{
-                data: [<?= $donutPctValue ?>, <?= $donutPctRemainder ?>],
+                data: [<?= $nettoPercent ?>, <?= $nettoPercentRemainder ?>],
                 backgroundColor: ['#8D6144', '#eeeeee'],
                 borderWidth: 0
             }]

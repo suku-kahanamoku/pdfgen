@@ -2,30 +2,30 @@
 // ============================================================
 // CASH-FLOW PAGE – CONTROLLER
 // ============================================================
-$balIncome   = $balance['income']['client'] ?? [];
-$balPartner  = $balance['income']['partner'] ?? [];
-$balFooter   = $balance['income']['footer'] ?? [];
+$incomeClient   = $balance['income']['client'] ?? [];
+$incomePartner  = $balance['income']['partner'] ?? [];
+$incomeFooter   = $balance['income']['footer'] ?? [];
 
-$balIncomeRows  = $balIncome['rows'] ?? [];
-$balPartnerRows = $balPartner['rows'] ?? [];
-$balCur         = $curMap[$balance['income']['currency'] ?? 'CZK'] ?? 'Kč';
+$incomeClientRows  = $incomeClient['rows'] ?? [];
+$incomePartnerRows = $incomePartner['rows'] ?? [];
+$cur         = $curMap[$balance['income']['currency'] ?? 'CZK'] ?? 'Kč';
 
-$balFooterPercent      = (float)($balFooter['percent']       ?? 0);
-$balFooterStatus       = $balFooter['status']                ?? 'success';
-$balFooterCur          = $curMap[$balFooter['currency']      ?? 'CZK'] ?? 'Kč';
-$balFooterYear         = (int)($balFooter['year']            ?? 0);
-$balFooterAvgPerson    = (float)($balFooter['avg_person']    ?? 0);
-$balFooterAvgHousehold = (float)($balFooter['avg_household'] ?? 0);
+$incomeFooterPercent      = (float)($incomeFooter['percent']       ?? 0);
+$incomeFooterStatus       = $incomeFooter['status']                ?? 'success';
+$incomeFooterCur          = $curMap[$incomeFooter['currency']      ?? 'CZK'] ?? 'Kč';
+$incomeFooterYear         = (int)($incomeFooter['year']            ?? 0);
+$incomeFooterAvgPerson    = (float)($incomeFooter['avg_person']    ?? 0);
+$incomeFooterAvgHousehold = (float)($incomeFooter['avg_household'] ?? 0);
 
-$balSummary     = $balance['income']['summary'] ?? [];
-$balSummaryRows = $balSummary['rows'] ?? [];
-$balTotal        = (float)($balance['income']['total']     ?? 0);
+$incomeSummary     = $balance['income']['summary'] ?? [];
+$incomeSummaryRows = $incomeSummary['rows'] ?? [];
+$incomeTotal        = (float)($balance['income']['total']     ?? 0);
 
-$balChartLabel1 = $balSummaryRows[0]['title'] ?? 'Příjmy';
-$balChartLabel2 = $balSummaryRows[1]['title'] ?? 'Výdaje';
-$balChartValue1 = (float)($balSummaryRows[0]['value'] ?? 0);
-$balChartValue2 = (float)($balSummaryRows[1]['value'] ?? 0);
-$balBarColors   = ['#e7e4e4', '#936746'];
+$chartLabel1 = $incomeSummaryRows[0]['title'] ?? 'Příjmy';
+$chartLabel2 = $incomeSummaryRows[1]['title'] ?? 'Výdaje';
+$chartValue1 = (float)($incomeSummaryRows[0]['value'] ?? 0);
+$chartValue2 = (float)($incomeSummaryRows[1]['value'] ?? 0);
+$barColors   = ['#e7e4e4', '#936746'];
 ?>
 
 <!-- ============================================================ -->
@@ -64,12 +64,12 @@ $balBarColors   = ['#e7e4e4', '#936746'];
                 <!-- Vaše příjmy -->
                 <div class="flex flex-col gap-3">
                     <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
-                        <?= htmlspecialchars($balIncome['title'] ?? 'Vaše příjmy') ?>
+                        <?= htmlspecialchars($incomeClient['title'] ?? 'Vaše příjmy') ?>
                     </div>
-                    <?php foreach ($balIncomeRows as $row): ?>
+                    <?php foreach ($incomeClientRows as $row): ?>
                         <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                             <div><?= htmlspecialchars($row['title'] ?? '') ?></div>
-                            <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $balCur ?></div>
+                            <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $cur ?></div>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -77,12 +77,12 @@ $balBarColors   = ['#e7e4e4', '#936746'];
                 <!-- Příjmy partnera -->
                 <div class="flex flex-col gap-3">
                     <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
-                        <?= htmlspecialchars($balPartner['title'] ?? 'Příjmy partnera') ?>
+                        <?= htmlspecialchars($incomePartner['title'] ?? 'Příjmy partnera') ?>
                     </div>
-                    <?php foreach ($balPartnerRows as $row): ?>
+                    <?php foreach ($incomePartnerRows as $row): ?>
                         <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                             <div><?= nl2br(htmlspecialchars($row['title'] ?? '')) ?></div>
-                            <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $balCur ?></div>
+                            <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $cur ?></div>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -90,19 +90,19 @@ $balBarColors   = ['#e7e4e4', '#936746'];
                 <!-- Celková bilance -->
                 <div class="flex flex-col gap-3">
                     <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
-                        <?= htmlspecialchars($balSummary['title'] ?? '') ?>
+                        <?= htmlspecialchars($incomeSummary['title'] ?? '') ?>
                     </div>
-                    <?php foreach ($balSummaryRows as $row): ?>
+                    <?php foreach ($incomeSummaryRows as $row): ?>
                         <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                             <div><?= htmlspecialchars($row['title'] ?? '') ?></div>
-                            <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $balCur ?></div>
+                            <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $cur ?></div>
                         </div>
                     <?php endforeach; ?>
                 </div>
 
                 <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
                     <div>Měsíčně zbývá</div>
-                    <div><?= number_format($balTotal, 0, ',', ' ') ?> <?= $balCur ?></div>
+                    <div><?= number_format($incomeTotal, 0, ',', ' ') ?> <?= $cur ?></div>
                 </div>
             </div><!-- /Pravý panel -->
         </div><!-- /vnitřní wrapper -->
@@ -110,19 +110,19 @@ $balBarColors   = ['#e7e4e4', '#936746'];
 
     <!-- Footer row -->
     <div class="mt-10 grid grid-cols-[1fr_220px] gap-8 items-end">
-        <?php if ($balFooterStatus === 'success'): ?>
+        <?php if ($incomeFooterStatus === 'success'): ?>
             <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">Vaše příjmy jsou o <?= number_format(58, 0, ',', ' ') ?> % vyšší než průměr.</div>
-                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($balFooterPercent, 0, ',', ' ') ?>%</div>
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($incomeFooterPercent, 0, ',', ' ') ?>%</div>
                 </div>
-                <div class="text-ink/70">Průměrný příjem jedince v ČR dosahoval v roce <?= $balFooterYear ?> hodnoty <?= number_format($balFooterAvgPerson, 0, ',', ' ') ?> <?= $balFooterCur ?>. Průměrný příjem domácnosti byl <?= number_format($balFooterAvgHousehold, 0, ',', ' ') ?> <?= $balFooterCur ?>.</div>
+                <div class="text-ink/70">Průměrný příjem jedince v ČR dosahoval v roce <?= $incomeFooterYear ?> hodnoty <?= number_format($incomeFooterAvgPerson, 0, ',', ' ') ?> <?= $incomeFooterCur ?>. Průměrný příjem domácnosti byl <?= number_format($incomeFooterAvgHousehold, 0, ',', ' ') ?> <?= $incomeFooterCur ?>.</div>
             </div>
         <?php else: ?>
             <div class="bg-red-50 border border-error -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">Pozor! Vaše příjmy jsou pod průměrem.</div>
-                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($balFooterPercent, 0, ',', ' ') ?>%</div>
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($incomeFooterPercent, 0, ',', ' ') ?>%</div>
                 </div>
                 <div class="text-ink/70">Vaše příjmy jsou nižší než referenční průměr. Doporučujeme zaměřit se na posílení příjmové stránky a práci s rezervou.</div>
             </div>
@@ -139,10 +139,10 @@ $balBarColors   = ['#e7e4e4', '#936746'];
     new Chart(document.getElementById('chart-balance-p3'), {
         type: 'bar',
         data: {
-            labels: ['<?= $balChartLabel1 ?>', '<?= $balChartLabel2 ?>'],
+            labels: ['<?= $chartLabel1 ?>', '<?= $chartLabel2 ?>'],
             datasets: [{
-                data: [<?= $balChartValue1 ?>, <?= $balChartValue2 ?>],
-                backgroundColor: [<?= implode(',', array_map(fn($c) => "'$c'", $balBarColors)) ?>],
+                data: [<?= $chartValue1 ?>, <?= $chartValue2 ?>],
+                backgroundColor: [<?= implode(',', array_map(fn($c) => "'$c'", $barColors)) ?>],
                 borderRadius: 8,
                 borderWidth: 0,
                 borderSkipped: false,
@@ -172,7 +172,7 @@ $balBarColors   = ['#e7e4e4', '#936746'];
             scales: {
                 y: {
                     beginAtZero: true,
-                    suggestedMax: <?= max($balChartValue1, $balChartValue2) < 80000 ? 80000 : ceil(max($balChartValue1, $balChartValue2) / 10000) * 10000 ?>,
+                    suggestedMax: <?= max($chartValue1, $chartValue2) < 80000 ? 80000 : ceil(max($chartValue1, $chartValue2) / 10000) * 10000 ?>,
                     grid: {
                         display: true,
                         color: '#dfdddd'

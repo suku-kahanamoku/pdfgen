@@ -2,20 +2,20 @@
 // ============================================================
 // SUMMARY PAGE – CONTROLLER
 // ============================================================
-$balData        = $balance['reserve'] ?? [];
-$balReserve     = $balData['client'] ?? [];
-$balReserveRows = $balReserve['rows'] ?? [];
-$balMonths      = (float)($balReserve['months'] ?? 0);
+$balanceReserve        = $balance['reserve'] ?? [];
+$reserveClient     = $balanceReserve['client'] ?? [];
+$reserveClientRows = $reserveClient['rows'] ?? [];
+$reserveClientMonths      = (float)($reserveClient['months'] ?? 0);
 
-$balFooter        = $balData['footer'] ?? [];
-$balFooterPercent = (float)($balFooter['percent'] ?? 0);
-$balFooterStatus  = $balFooter['status']  ?? 'success';
+$reserveFooter        = $balanceReserve['footer'] ?? [];
+$reserveFooterPercent = (float)($reserveFooter['percent'] ?? 0);
+$reserveFooterStatus  = $reserveFooter['status']  ?? 'success';
 
-$balChartLabel1 = $balReserveRows[0]['title'] ?? '';
-$balChartLabel2 = $balReserveRows[1]['title'] ?? '';
-$balChartValue1 = (float)($balReserveRows[0]['value'] ?? 0);
-$balChartValue2 = (float)($balReserveRows[1]['value'] ?? 0);
-$balBarColors   = ['#e7e4e4', '#936746'];
+$chartLabel1 = $reserveClientRows[0]['title'] ?? '';
+$chartLabel2 = $reserveClientRows[1]['title'] ?? '';
+$chartValue1 = (float)($reserveClientRows[0]['value'] ?? 0);
+$chartValue2 = (float)($reserveClientRows[1]['value'] ?? 0);
+$barColors   = ['#e7e4e4', '#936746'];
 ?>
 
 <!-- ============================================================ -->
@@ -53,9 +53,9 @@ $balBarColors   = ['#e7e4e4', '#936746'];
             <div class="w-80 flex flex-col gap-8 justify-end">
                 <div class="flex flex-col gap-3">
                     <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
-                        <?= htmlspecialchars($balReserve['title'] ?? 'Vydží na') ?>
+                        <?= htmlspecialchars($reserveClient['title'] ?? 'Vydží na') ?>
                     </div>
-                    <?php foreach ($balReserveRows as $row): ?>
+                    <?php foreach ($reserveClientRows as $row): ?>
                         <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                             <div><?= htmlspecialchars($row['title'] ?? '') ?></div>
                             <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $curMap[$row['currency'] ?? 'CZK'] ?? 'Kč' ?></div>
@@ -64,8 +64,8 @@ $balBarColors   = ['#e7e4e4', '#936746'];
                 </div>
 
                 <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
-                    <div><?= htmlspecialchars($balReserve['title'] ?? 'Vydží na') ?></div>
-                    <div><?= number_format($balMonths, 1, ',', ' ') ?> měsíců</div>
+                    <div><?= htmlspecialchars($reserveClient['title'] ?? 'Vydží na') ?></div>
+                    <div><?= number_format($reserveClientMonths, 1, ',', ' ') ?> měsíců</div>
                 </div>
             </div><!-- /Pravý panel -->
         </div><!-- /vnitřní wrapper -->
@@ -73,14 +73,14 @@ $balBarColors   = ['#e7e4e4', '#936746'];
 
     <!-- Footer row -->
     <div class="mt-10 grid grid-cols-[1fr_220px] gap-8 items-end">
-        <?php if ($balFooterStatus === 'success'): ?>
+        <?php if ($reserveFooterStatus === 'success'): ?>
             <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">
                         Gratulujeme! Vaše rezerva je dostatečná.
                     </div>
                     <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success">
-                        <?= number_format($balFooterPercent, 0, ',', ' ') ?>%
+                        <?= number_format($reserveFooterPercent, 0, ',', ' ') ?>%
                     </div>
                 </div>
                 <div class="text-ink/70">
@@ -94,7 +94,7 @@ $balBarColors   = ['#e7e4e4', '#936746'];
                         Pozor! Vaše rezerva není dostatečná.
                     </div>
                     <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error">
-                        <?= number_format($balFooterPercent, 0, ',', ' ') ?>%
+                        <?= number_format($reserveFooterPercent, 0, ',', ' ') ?>%
                     </div>
                 </div>
                 <div class="text-ink/70">
@@ -114,10 +114,10 @@ $balBarColors   = ['#e7e4e4', '#936746'];
     new Chart(document.getElementById('chart-summary-p4'), {
         type: 'bar',
         data: {
-            labels: ['<?= $balChartLabel1 ?>', '<?= $balChartLabel2 ?>'],
+            labels: ['<?= $chartLabel1 ?>', '<?= $chartLabel2 ?>'],
             datasets: [{
-                data: [<?= $balChartValue1 ?>, <?= $balChartValue2 ?>],
-                backgroundColor: [<?= implode(',', array_map(fn($c) => "'$c'", $balBarColors)) ?>],
+                data: [<?= $chartValue1 ?>, <?= $chartValue2 ?>],
+                backgroundColor: [<?= implode(',', array_map(fn($c) => "'$c'", $barColors)) ?>],
                 borderRadius: 8,
                 borderWidth: 0,
                 borderSkipped: false,
@@ -147,7 +147,7 @@ $balBarColors   = ['#e7e4e4', '#936746'];
             scales: {
                 y: {
                     beginAtZero: true,
-                    suggestedMax: <?= max($balChartValue1, $balChartValue2) < 160000 ? 160000 : ceil(max($balChartValue1, $balChartValue2) / 20000) * 20000 ?>,
+                    suggestedMax: <?= max($chartValue1, $chartValue2) < 160000 ? 160000 : ceil(max($chartValue1, $chartValue2) / 20000) * 20000 ?>,
                     grid: {
                         display: true,
                         color: '#dfdddd'
