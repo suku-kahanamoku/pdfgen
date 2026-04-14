@@ -27,7 +27,7 @@ $p2Sections = [
 
 $p2ChartLabel1 = htmlspecialchars($propBalance['active']['title'] ?? 'Aktiva');
 $p2ChartLabel2 = htmlspecialchars($propBalance['pasive']['title'] ?? 'Pasiva');
-$p2BarColors   = ['#eeeeee', '#8D6144'];
+$p2BarColors   = ['#e7e4e4', '#936746'];
 ?>
 
 <!-- ============================================================ -->
@@ -95,9 +95,9 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
             <div class="w-80 flex flex-col gap-8 justify-end">
                 <h3 class="font-lora text-3xl font-semibold">Bilance majetku</h3>
                 <div class="flex flex-col gap-3">
-                    <div class="flex items-start justify-between rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
+                    <div class="flex items-start justify-between rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold">
                         <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($propBalance['active']['title'] ?? 'Aktiva') ?></span>
-                        <span class="font-semibold"><?= number_format($totalActive, 0, ',', ' ') ?> <?= $cur ?></span>
+                        <span><?= number_format($totalActive, 0, ',', ' ') ?> <?= $cur ?></span>
                     </div>
                     <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                         <span><?= htmlspecialchars($propBalance['active']['yeld']['title'] ?? '') ?></span>
@@ -106,9 +106,9 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
                 </div>
 
                 <div class="flex flex-col gap-3">
-                    <div class="flex items-start justify-between rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
+                    <div class="flex items-start justify-between rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold">
                         <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($propBalance['pasive']['title'] ?? 'Pasiva') ?></span>
-                        <span class="font-semibold"><?= number_format($totalPassive, 0, ',', ' ') ?> <?= $cur ?></span>
+                        <span><?= number_format($totalPassive, 0, ',', ' ') ?> <?= $cur ?></span>
                     </div>
                     <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                         <span><?= htmlspecialchars($propBalance['pasive']['yeld']['title'] ?? '') ?></span>
