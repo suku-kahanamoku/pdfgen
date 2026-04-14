@@ -2,30 +2,30 @@
 // ============================================================
 // CASH-FLOW PAGE – CONTROLLER
 // ============================================================
-$cfIncome   = $balance['income']['client'] ?? [];
-$cfPartner  = $balance['income']['partner'] ?? [];
-$cfFooter   = $balance['income']['footer'] ?? [];
+$balIncome   = $balance['income']['client'] ?? [];
+$balPartner  = $balance['income']['partner'] ?? [];
+$balFooter   = $balance['income']['footer'] ?? [];
 
-$cfIncomeRows  = $cfIncome['rows'] ?? [];
-$cfPartnerRows = $cfPartner['rows'] ?? [];
-$cfCur         = $curMap[$balance['income']['currency'] ?? 'CZK'] ?? 'Kč';
+$balIncomeRows  = $balIncome['rows'] ?? [];
+$balPartnerRows = $balPartner['rows'] ?? [];
+$balCur         = $curMap[$balance['income']['currency'] ?? 'CZK'] ?? 'Kč';
 
-$cfFooterPercent      = (float)($cfFooter['percent']       ?? 0);
-$cfFooterStatus       = $cfFooter['status']                ?? 'success';
-$cfFooterCur          = $curMap[$cfFooter['currency']      ?? 'CZK'] ?? 'Kč';
-$cfFooterYear         = (int)($cfFooter['year']            ?? 0);
-$cfFooterAvgPerson    = (float)($cfFooter['avg_person']    ?? 0);
-$cfFooterAvgHousehold = (float)($cfFooter['avg_household'] ?? 0);
+$balFooterPercent      = (float)($balFooter['percent']       ?? 0);
+$balFooterStatus       = $balFooter['status']                ?? 'success';
+$balFooterCur          = $curMap[$balFooter['currency']      ?? 'CZK'] ?? 'Kč';
+$balFooterYear         = (int)($balFooter['year']            ?? 0);
+$balFooterAvgPerson    = (float)($balFooter['avg_person']    ?? 0);
+$balFooterAvgHousehold = (float)($balFooter['avg_household'] ?? 0);
 
-$cfSummary     = $balance['income']['summary'] ?? [];
-$cfSummaryRows = $cfSummary['rows'] ?? [];
-$cfTotal        = (float)($balance['income']['total']     ?? 0);
+$balSummary     = $balance['income']['summary'] ?? [];
+$balSummaryRows = $balSummary['rows'] ?? [];
+$balTotal        = (float)($balance['income']['total']     ?? 0);
 
-$cfChartLabel1 = $cfSummaryRows[0]['title'] ?? 'Příjmy';
-$cfChartLabel2 = $cfSummaryRows[1]['title'] ?? 'Výdaje';
-$cfChartValue1 = (float)($cfSummaryRows[0]['value'] ?? 0);
-$cfChartValue2 = (float)($cfSummaryRows[1]['value'] ?? 0);
-$cfBarColors   = ['#e7e4e4', '#936746'];
+$balChartLabel1 = $balSummaryRows[0]['title'] ?? 'Příjmy';
+$balChartLabel2 = $balSummaryRows[1]['title'] ?? 'Výdaje';
+$balChartValue1 = (float)($balSummaryRows[0]['value'] ?? 0);
+$balChartValue2 = (float)($balSummaryRows[1]['value'] ?? 0);
+$balBarColors   = ['#e7e4e4', '#936746'];
 ?>
 
 <!-- ============================================================ -->
@@ -64,12 +64,12 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
                 <!-- Vaše příjmy -->
                 <div class="flex flex-col gap-3">
                     <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
-                        <?= htmlspecialchars($cfIncome['title'] ?? 'Vaše příjmy') ?>
+                        <?= htmlspecialchars($balIncome['title'] ?? 'Vaše příjmy') ?>
                     </div>
-                    <?php foreach ($cfIncomeRows as $row): ?>
+                    <?php foreach ($balIncomeRows as $row): ?>
                         <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                             <div><?= htmlspecialchars($row['title'] ?? '') ?></div>
-                            <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $cfCur ?></div>
+                            <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $balCur ?></div>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -77,12 +77,12 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
                 <!-- Příjmy partnera -->
                 <div class="flex flex-col gap-3">
                     <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
-                        <?= htmlspecialchars($cfPartner['title'] ?? 'Příjmy partnera') ?>
+                        <?= htmlspecialchars($balPartner['title'] ?? 'Příjmy partnera') ?>
                     </div>
-                    <?php foreach ($cfPartnerRows as $row): ?>
+                    <?php foreach ($balPartnerRows as $row): ?>
                         <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                             <div><?= nl2br(htmlspecialchars($row['title'] ?? '')) ?></div>
-                            <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $cfCur ?></div>
+                            <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $balCur ?></div>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -90,19 +90,19 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
                 <!-- Celková bilance -->
                 <div class="flex flex-col gap-3">
                     <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
-                        <?= htmlspecialchars($cfSummary['title'] ?? '') ?>
+                        <?= htmlspecialchars($balSummary['title'] ?? '') ?>
                     </div>
-                    <?php foreach ($cfSummaryRows as $row): ?>
+                    <?php foreach ($balSummaryRows as $row): ?>
                         <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                             <div><?= htmlspecialchars($row['title'] ?? '') ?></div>
-                            <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $cfCur ?></div>
+                            <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $balCur ?></div>
                         </div>
                     <?php endforeach; ?>
                 </div>
 
                 <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
                     <div>Měsíčně zbývá</div>
-                    <div><?= number_format($cfTotal, 0, ',', ' ') ?> <?= $cfCur ?></div>
+                    <div><?= number_format($balTotal, 0, ',', ' ') ?> <?= $balCur ?></div>
                 </div>
             </div><!-- /Pravý panel -->
         </div><!-- /vnitřní wrapper -->
@@ -110,19 +110,19 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
 
     <!-- Footer row -->
     <div class="mt-10 grid grid-cols-[1fr_220px] gap-8 items-end">
-        <?php if ($cfFooterStatus === 'success'): ?>
+        <?php if ($balFooterStatus === 'success'): ?>
             <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">Vaše příjmy jsou o <?= number_format(58, 0, ',', ' ') ?> % vyšší než průměr.</div>
-                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($cfFooterPercent, 0, ',', ' ') ?>%</div>
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($balFooterPercent, 0, ',', ' ') ?>%</div>
                 </div>
-                <div class="text-ink/70">Průměrný příjem jedince v ČR dosahoval v roce <?= $cfFooterYear ?> hodnoty <?= number_format($cfFooterAvgPerson, 0, ',', ' ') ?> <?= $cfFooterCur ?>. Průměrný příjem domácnosti byl <?= number_format($cfFooterAvgHousehold, 0, ',', ' ') ?> <?= $cfFooterCur ?>.</div>
+                <div class="text-ink/70">Průměrný příjem jedince v ČR dosahoval v roce <?= $balFooterYear ?> hodnoty <?= number_format($balFooterAvgPerson, 0, ',', ' ') ?> <?= $balFooterCur ?>. Průměrný příjem domácnosti byl <?= number_format($balFooterAvgHousehold, 0, ',', ' ') ?> <?= $balFooterCur ?>.</div>
             </div>
         <?php else: ?>
             <div class="bg-red-50 border border-error -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">Pozor! Vaše příjmy jsou pod průměrem.</div>
-                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($cfFooterPercent, 0, ',', ' ') ?>%</div>
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($balFooterPercent, 0, ',', ' ') ?>%</div>
                 </div>
                 <div class="text-ink/70">Vaše příjmy jsou nižší než referenční průměr. Doporučujeme zaměřit se na posílení příjmové stránky a práci s rezervou.</div>
             </div>
@@ -139,10 +139,10 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
     new Chart(document.getElementById('chart-balance-p3'), {
         type: 'bar',
         data: {
-            labels: ['<?= $cfChartLabel1 ?>', '<?= $cfChartLabel2 ?>'],
+            labels: ['<?= $balChartLabel1 ?>', '<?= $balChartLabel2 ?>'],
             datasets: [{
-                data: [<?= $cfChartValue1 ?>, <?= $cfChartValue2 ?>],
-                backgroundColor: [<?= implode(',', array_map(fn($c) => "'$c'", $cfBarColors)) ?>],
+                data: [<?= $balChartValue1 ?>, <?= $balChartValue2 ?>],
+                backgroundColor: [<?= implode(',', array_map(fn($c) => "'$c'", $balBarColors)) ?>],
                 borderRadius: 8,
                 borderWidth: 0,
                 borderSkipped: false,
@@ -172,7 +172,7 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
             scales: {
                 y: {
                     beginAtZero: true,
-                    suggestedMax: <?= max($cfChartValue1, $cfChartValue2) < 80000 ? 80000 : ceil(max($cfChartValue1, $cfChartValue2) / 10000) * 10000 ?>,
+                    suggestedMax: <?= max($balChartValue1, $balChartValue2) < 80000 ? 80000 : ceil(max($balChartValue1, $balChartValue2) / 10000) * 10000 ?>,
                     grid: {
                         display: true,
                         color: '#dfdddd'

@@ -2,20 +2,20 @@
 // ============================================================
 // SUMMARY PAGE – CONTROLLER
 // ============================================================
-$sumData        = $balance['reserve'] ?? [];
-$sumReserve     = $sumData['client'] ?? [];
-$sumReserveRows = $sumReserve['rows'] ?? [];
-$sumMonths      = (float)($sumReserve['months'] ?? 0);
+$balData        = $balance['reserve'] ?? [];
+$balReserve     = $balData['client'] ?? [];
+$balReserveRows = $balReserve['rows'] ?? [];
+$balMonths      = (float)($balReserve['months'] ?? 0);
 
-$sumFooter        = $sumData['footer'] ?? [];
-$sumFooterPercent = (float)($sumFooter['percent'] ?? 0);
-$sumFooterStatus  = $sumFooter['status']  ?? 'success';
+$balFooter        = $balData['footer'] ?? [];
+$balFooterPercent = (float)($balFooter['percent'] ?? 0);
+$balFooterStatus  = $balFooter['status']  ?? 'success';
 
-$sumChartLabel1 = $sumReserveRows[0]['title'] ?? '';
-$sumChartLabel2 = $sumReserveRows[1]['title'] ?? '';
-$sumChartValue1 = (float)($sumReserveRows[0]['value'] ?? 0);
-$sumChartValue2 = (float)($sumReserveRows[1]['value'] ?? 0);
-$sumBarColors   = ['#e7e4e4', '#936746'];
+$balChartLabel1 = $balReserveRows[0]['title'] ?? '';
+$balChartLabel2 = $balReserveRows[1]['title'] ?? '';
+$balChartValue1 = (float)($balReserveRows[0]['value'] ?? 0);
+$balChartValue2 = (float)($balReserveRows[1]['value'] ?? 0);
+$balBarColors   = ['#e7e4e4', '#936746'];
 ?>
 
 <!-- ============================================================ -->
@@ -53,9 +53,9 @@ $sumBarColors   = ['#e7e4e4', '#936746'];
             <div class="w-80 flex flex-col gap-8 justify-end">
                 <div class="flex flex-col gap-3">
                     <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
-                        <?= htmlspecialchars($sumReserve['title'] ?? 'Vydží na') ?>
+                        <?= htmlspecialchars($balReserve['title'] ?? 'Vydží na') ?>
                     </div>
-                    <?php foreach ($sumReserveRows as $row): ?>
+                    <?php foreach ($balReserveRows as $row): ?>
                         <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                             <div><?= htmlspecialchars($row['title'] ?? '') ?></div>
                             <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $curMap[$row['currency'] ?? 'CZK'] ?? 'Kč' ?></div>
@@ -64,8 +64,8 @@ $sumBarColors   = ['#e7e4e4', '#936746'];
                 </div>
 
                 <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
-                    <div><?= htmlspecialchars($sumReserve['title'] ?? 'Vydží na') ?></div>
-                    <div><?= number_format($sumMonths, 1, ',', ' ') ?> měsíců</div>
+                    <div><?= htmlspecialchars($balReserve['title'] ?? 'Vydží na') ?></div>
+                    <div><?= number_format($balMonths, 1, ',', ' ') ?> měsíců</div>
                 </div>
             </div><!-- /Pravý panel -->
         </div><!-- /vnitřní wrapper -->
@@ -73,14 +73,14 @@ $sumBarColors   = ['#e7e4e4', '#936746'];
 
     <!-- Footer row -->
     <div class="mt-10 grid grid-cols-[1fr_220px] gap-8 items-end">
-        <?php if ($sumFooterStatus === 'success'): ?>
+        <?php if ($balFooterStatus === 'success'): ?>
             <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">
                         Gratulujeme! Vaše rezerva je dostatečná.
                     </div>
                     <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success">
-                        <?= number_format($sumFooterPercent, 0, ',', ' ') ?>%
+                        <?= number_format($balFooterPercent, 0, ',', ' ') ?>%
                     </div>
                 </div>
                 <div class="text-ink/70">
@@ -94,7 +94,7 @@ $sumBarColors   = ['#e7e4e4', '#936746'];
                         Pozor! Vaše rezerva není dostatečná.
                     </div>
                     <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error">
-                        <?= number_format($sumFooterPercent, 0, ',', ' ') ?>%
+                        <?= number_format($balFooterPercent, 0, ',', ' ') ?>%
                     </div>
                 </div>
                 <div class="text-ink/70">
@@ -114,10 +114,10 @@ $sumBarColors   = ['#e7e4e4', '#936746'];
     new Chart(document.getElementById('chart-summary-p4'), {
         type: 'bar',
         data: {
-            labels: ['<?= $sumChartLabel1 ?>', '<?= $sumChartLabel2 ?>'],
+            labels: ['<?= $balChartLabel1 ?>', '<?= $balChartLabel2 ?>'],
             datasets: [{
-                data: [<?= $sumChartValue1 ?>, <?= $sumChartValue2 ?>],
-                backgroundColor: [<?= implode(',', array_map(fn($c) => "'$c'", $sumBarColors)) ?>],
+                data: [<?= $balChartValue1 ?>, <?= $balChartValue2 ?>],
+                backgroundColor: [<?= implode(',', array_map(fn($c) => "'$c'", $balBarColors)) ?>],
                 borderRadius: 8,
                 borderWidth: 0,
                 borderSkipped: false,
@@ -147,7 +147,7 @@ $sumBarColors   = ['#e7e4e4', '#936746'];
             scales: {
                 y: {
                     beginAtZero: true,
-                    suggestedMax: <?= max($sumChartValue1, $sumChartValue2) < 160000 ? 160000 : ceil(max($sumChartValue1, $sumChartValue2) / 20000) * 20000 ?>,
+                    suggestedMax: <?= max($balChartValue1, $balChartValue2) < 160000 ? 160000 : ceil(max($balChartValue1, $balChartValue2) / 20000) * 20000 ?>,
                     grid: {
                         display: true,
                         color: '#dfdddd'

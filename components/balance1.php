@@ -2,18 +2,18 @@
 // ============================================================
 // FINANCE PAGE – CONTROLLER
 // ============================================================
-$finExpense    = $balance['expense'] ?? [];
-$finCategories = $finExpense['categories'] ?? [];
-$finFooter     = $finExpense['footer'] ?? [];
-$finCur        = $curMap[$finExpense['currency'] ?? 'CZK'] ?? 'Kč';
-$finTotalAmount = (float)($finExpense['amount'] ?? 0);
-$finTotalMin    = (float)($finExpense['min']    ?? 0);
+$balExpense    = $balance['expense'] ?? [];
+$balCategories = $balExpense['categories'] ?? [];
+$balFooter     = $balExpense['footer'] ?? [];
+$balCur        = $curMap[$balExpense['currency'] ?? 'CZK'] ?? 'Kč';
+$balTotalAmount = (float)($balExpense['amount'] ?? 0);
+$balTotalMin    = (float)($balExpense['min']    ?? 0);
 
 // Light-to-dark brown palette from tailwind config
-$finColorPalette = ['peach', 'caramel', 'walnut', 'chestnut', 'umber'];
+$balColorPalette = ['peach', 'caramel', 'walnut', 'chestnut', 'umber'];
 
-$finFPercent = $finFooter['percent'] ?? 0;
-$finFStatus  = $finFooter['status']  ?? 'success';
+$balFPercent = $balFooter['percent'] ?? 0;
+$balFStatus  = $balFooter['status']  ?? 'success';
 ?>
 
 <!-- ============================================================ -->
@@ -50,9 +50,9 @@ $finFStatus  = $finFooter['status']  ?? 'success';
             </div>
 
             <!-- Kategorie -->
-            <?php foreach ($finCategories as $ci => $cat):
+            <?php foreach ($balCategories as $ci => $cat):
                 $rows     = $cat['rows'] ?? [];
-                $catColor = $finColorPalette[$ci] ?? 'sand';
+                $catColor = $balColorPalette[$ci] ?? 'sand';
                 $catTitle = $cat['title'] ?? '';
                 if (empty($rows)) continue;
             ?>
@@ -68,8 +68,8 @@ $finFStatus  = $finFooter['status']  ?? 'success';
                         ?>
                             <div class="grid grid-cols-[80px_1fr_1fr] items-center border-b <?= $idx === 0 ? 'border-t' : '' ?> border-mist py-2 text-ink/70">
                                 <div class="whitespace-nowrap"><?= htmlspecialchars($row['title'] ?? '') ?></div>
-                                <div class="text-right"><?= number_format((float)($row['amount'] ?? 0), 0, ',', ' ') ?> <?= $finCur ?></div>
-                                <div class="text-right"><?= number_format((float)($row['min'] ?? 0), 0, ',', ' ') ?> <?= $finCur ?></div>
+                                <div class="text-right"><?= number_format((float)($row['amount'] ?? 0), 0, ',', ' ') ?> <?= $balCur ?></div>
+                                <div class="text-right"><?= number_format((float)($row['min'] ?? 0), 0, ',', ' ') ?> <?= $balCur ?></div>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -80,8 +80,8 @@ $finFStatus  = $finFooter['status']  ?? 'success';
             <div class="mt-2">
                 <div class="grid grid-cols-[1fr_120px_120px] items-center border border-taupe rounded-lg px-4 py-3">
                     <div class="font-lora text-lg font-semibold text-primary">Celkem</div>
-                    <div class="text-right font-lora text-lg font-semibold text-ink"><?= number_format($finTotalAmount, 0, ',', ' ') ?> <?= $finCur ?></div>
-                    <div class="text-right font-lora text-lg font-semibold text-ink"><?= number_format($finTotalMin, 0, ',', ' ') ?> <?= $finCur ?></div>
+                    <div class="text-right font-lora text-lg font-semibold text-ink"><?= number_format($balTotalAmount, 0, ',', ' ') ?> <?= $balCur ?></div>
+                    <div class="text-right font-lora text-lg font-semibold text-ink"><?= number_format($balTotalMin, 0, ',', ' ') ?> <?= $balCur ?></div>
                 </div>
             </div>
         </div>
@@ -90,13 +90,13 @@ $finFStatus  = $finFooter['status']  ?? 'success';
         <div class="w-52 flex-shrink-0 flex flex-col pt-10">
             <div class="flex-1 rounded-2xl overflow-hidden flex flex-col">
                 <?php
-                $finBarTotal = $finTotalAmount;
-                $catCount    = count($finCategories);
-                foreach ($finCategories as $ci => $cat):
+                $balBarTotal = $balTotalAmount;
+                $catCount    = count($balCategories);
+                foreach ($balCategories as $ci => $cat):
                     $catTotal = 0;
                     foreach ($cat['rows'] ?? [] as $row) $catTotal += (float)($row['amount'] ?? 0);
-                    $pct      = $finBarTotal > 0 ? round($catTotal / $finBarTotal * 100, 1) : 0;
-                    $catColor = $finColorPalette[$ci] ?? 'sand';
+                    $pct      = $balBarTotal > 0 ? round($catTotal / $balBarTotal * 100, 1) : 0;
+                    $catColor = $balColorPalette[$ci] ?? 'sand';
                     $isFirst  = ($ci === 0);
                     $isLast   = ($ci === $catCount - 1);
                     $rounding = $isFirst ? 'rounded-t-2xl' : ($isLast ? 'rounded-b-2xl' : '');
@@ -112,11 +112,11 @@ $finFStatus  = $finFooter['status']  ?? 'success';
 
     <!-- Footer -->
     <div class="mt-10">
-        <?php if ($finFStatus === 'success'): ?>
+        <?php if ($balFStatus === 'success'): ?>
             <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold font-lora text-2xl text-ink">Poměr mezi běžnými a minimálními náklady je vyrovnaný</div>
-                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($finFPercent, 0, ',', ' ') ?>%</div>
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($balFPercent, 0, ',', ' ') ?>%</div>
                 </div>
                 <div class="text-ink/70">Vaše běžné a minimální náklady jsou velmi podobné.</div>
             </div>
@@ -124,7 +124,7 @@ $finFStatus  = $finFooter['status']  ?? 'success';
             <div class="bg-red-50 border border-error -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold font-lora text-2xl text-ink">Pozor! Vysoké minimální náklady</div>
-                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($finFPercent, 0, ',', ' ') ?>%</div>
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($balFPercent, 0, ',', ' ') ?>%</div>
                 </div>
                 <div class="text-ink/70">Vaše běžné a minimální náklady jsou velmi podobné. To může být problém, pokud v životě nastanou negativní nečekávané události.</div>
             </div>
