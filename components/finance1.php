@@ -21,7 +21,7 @@ foreach ($finCategories as $cat) {
 }
 
 $finFPercent = $finFooter['percent'] ?? 0;
-$finFStatus  = $finFooter['status'] ?? 'success';
+$finFStatus  = $finFooter['status']  ?? 'success';
 ?>
 
 <!-- ============================================================ -->

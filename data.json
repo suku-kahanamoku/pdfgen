@@ -99,7 +99,11 @@
 			},
 			"footer": {
 				"percent": 62,
-				"status": "success"
+				"status": "success",
+				"currency": "CZK",
+				"year": 2024,
+				"avg_person": 37000,
+				"avg_household": 52000
 			}
 		},
 		"expense": {
@@ -203,9 +207,8 @@
 		},
 		"summary": {
 			"reserve": {
-				"currency": "CZK",
-				"value": 480000,
-				"title": "Vaše rezerva",
+				"months": 15,
+				"title": "Vydží na",
 				"rows": [
 					{
 						"currency": "CZK",

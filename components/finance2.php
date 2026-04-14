@@ -11,8 +11,12 @@ $cfIncomeRows  = $cfIncome['rows'] ?? [];
 $cfPartnerRows = $cfPartner['rows'] ?? [];
 $cfCur         = $curMap[$cfIncome['currency'] ?? 'CZK'] ?? 'Kč';
 
-$cfFooterPercent = (float)($cfFooter['percent'] ?? 0);
-$cfFooterStatus  = $cfFooter['status'] ?? 'success';
+$cfFooterPercent      = (float)($cfFooter['percent']       ?? 0);
+$cfFooterStatus       = $cfFooter['status']                ?? 'success';
+$cfFooterCur          = $curMap[$cfFooter['currency']      ?? 'CZK'] ?? 'Kč';
+$cfFooterYear         = (int)($cfFooter['year']            ?? 0);
+$cfFooterAvgPerson    = (float)($cfFooter['avg_person']    ?? 0);
+$cfFooterAvgHousehold = (float)($cfFooter['avg_household'] ?? 0);
 
 $cfIncomeTotal  = (float)($cfIncome['value'] ?? 0) + (float)($cfPartner['value'] ?? 0);
 $cfExpenseTotal = (float)($cfExpense['value'] ?? 0);
@@ -115,7 +119,7 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
                     <div class="font-semibold">Vaše příjmy jsou o <?= number_format(58, 0, ',', ' ') ?> % vyšší než průměr.</div>
                     <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($cfFooterPercent, 0, ',', ' ') ?>%</div>
                 </div>
-                <div class="text-ink/70"><?= 'Průměrný příjem jedince v ČR dosahoval v roce 2024 hodnoty 37 000 Kč. Průměrný příjem domácnosti byl 52 000 Kč.' ?></div>
+                <div class="text-ink/70">Průměrný příjem jedince v ČR dosahoval v roce <?= $cfFooterYear ?> hodnoty <?= number_format($cfFooterAvgPerson, 0, ',', ' ') ?> <?= $cfFooterCur ?>. Průměrný příjem domácnosti byl <?= number_format($cfFooterAvgHousehold, 0, ',', ' ') ?> <?= $cfFooterCur ?>.</div>
             </div>
         <?php else: ?>
             <div class="bg-red-50 border border-error -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
@@ -123,7 +127,7 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
                     <div class="font-semibold">Pozor! Vaše příjmy jsou pod průměrem.</div>
                     <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($cfFooterPercent, 0, ',', ' ') ?>%</div>
                 </div>
-                <div class="text-ink/70"><?= 'Vaše příjmy jsou nižší než referenční průměr. Doporučujeme zaměřit se na posílení příjmové stránky a práci s rezervou.' ?></div>
+                <div class="text-ink/70">Vaše příjmy jsou nižší než referenční průměr. Doporučujeme zaměřit se na posílení příjmové stránky a práci s rezervou.</div>
             </div>
         <?php endif; ?>
 

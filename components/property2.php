@@ -12,7 +12,7 @@ $totalActive        = (float)($propBalance['active']['value'] ?? 0);
 $totalPassive       = (float)($propBalance['pasive']['value'] ?? 0);
 $propBalanceFooter  = $propBalance['footer'] ?? [];
 $propBalancePercent = $propBalanceFooter['percent'] ?? 0;
-$propBalanceStatus  = $propBalanceFooter['status'] ?? 'success';
+$propBalanceStatus  = $propBalanceFooter['status']  ?? 'success';
 
 $p2StatusMap = [
     'success' => ['icon' => 'fa-solid fa-check',       'cls' => 'text-success border-success'],
@@ -130,8 +130,7 @@ $p2BarColors   = ['#e7e4e4', '#936746'];
         <?php if ($propBalanceStatus === 'success'): ?>
             <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-1">
                 <div class="flex items-center justify-between gap-4">
-                    <div class="font-semibold">Poměr mezi aktivy a pasivy je vyrovnaný</div>
-                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($propBalancePercent, 0, ',', ' ') ?>%</div>
+                    <div class="font-semibold">Poměr mezi aktivy a pasivy je vyrovnaný</div><?= number_format($propBalancePercent, 0, ',', ' ') ?>%</div>
                 </div>
                 <div class="text-ink/70">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
             </div>

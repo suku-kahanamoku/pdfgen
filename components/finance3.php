@@ -5,12 +5,11 @@
 $sumData        = $balance['summary'] ?? [];
 $sumReserve     = $sumData['reserve'] ?? [];
 $sumReserveRows = $sumReserve['rows'] ?? [];
-$sumCur         = $curMap[$sumReserve['currency'] ?? 'CZK'] ?? 'Kč';
-$sumTotal       = (float)($sumReserve['value'] ?? 0);
+$sumMonths      = (float)($sumReserve['months'] ?? 0);
 
 $sumFooter        = $sumData['footer'] ?? [];
 $sumFooterPercent = (float)($sumFooter['percent'] ?? 0);
-$sumFooterStatus  = $sumFooter['status'] ?? 'success';
+$sumFooterStatus  = $sumFooter['status']  ?? 'success';
 
 $sumChartRows   = array_filter($sumReserveRows, fn($r) => ($r['disable_graph'] ?? true) !== false);
 $sumChartLabels = array_map(fn($r) => htmlspecialchars($r['title'] ?? ''), $sumChartRows);
@@ -53,7 +52,7 @@ $sumBarColors   = ['#e7e4e4', '#936746'];
             <div class="w-80 flex flex-col gap-8 justify-end">
                 <div class="flex flex-col gap-3">
                     <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
-                        <?= htmlspecialchars($sumReserve['title'] ?? 'Vaše rezerva') ?>
+                        <?= htmlspecialchars($sumReserve['title'] ?? 'Vydží na') ?>
                     </div>
                     <?php foreach ($sumReserveRows as $row): ?>
                         <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
@@ -65,7 +64,7 @@ $sumBarColors   = ['#e7e4e4', '#936746'];
 
                 <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
                     <div><?= htmlspecialchars($sumReserve['title'] ?? 'Vydží na') ?></div>
-                    <div><?= number_format($sumTotal, 2, ',', ' ') ?> <?= $sumCur ?> měsíců</div>
+                    <div><?= number_format($sumMonths, 1, ',', ' ') ?> měsíců</div>
                 </div>
             </div><!-- /Pravý panel -->
         </div><!-- /vnitřní wrapper -->
@@ -76,22 +75,30 @@ $sumBarColors   = ['#e7e4e4', '#936746'];
         <?php if ($sumFooterStatus === 'success'): ?>
             <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
-                    <div class="font-semibold">Gratulujeme! Vaše rezerva je dostatečná.</div>
+                    <div class="font-semibold">
+                        <?= htmlspecialchars('Gratulujeme! Vaše rezerva je dostatečná.') ?>
+                    </div>
                     <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success">
                         <?= number_format($sumFooterPercent, 0, ',', ' ') ?>%
                     </div>
                 </div>
-                <div class="text-ink/70">S vaší aktuální rezervou pravděpodobně zvládnete překlenout nenadálé negativní události.</div>
+                <div class="text-ink/70">
+                    <?= htmlspecialchars('S vaší aktuální rezervou pravděpodobně zvládnete překlenout nenadálé negativní události.') ?>
+                </div>
             </div>
         <?php else: ?>
             <div class="bg-red-50 border border-error -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
-                    <div class="font-semibold">Pozor! Vaše rezerva není dostatečná.</div>
+                    <div class="font-semibold">
+                        <?= htmlspecialchars('Pozor! Vaše rezerva není dostatečná.') ?>
+                    </div>
                     <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error">
                         <?= number_format($sumFooterPercent, 0, ',', ' ') ?>%
                     </div>
                 </div>
-                <div class="text-ink/70">Doporučujeme posílit rezervu, aby lépe pokryla neočekávané životní situace.</div>
+                <div class="text-ink/70">
+                    <?= htmlspecialchars('Doporučujeme posílit rezervu, aby lépe pokryla neočekávané životní situace.') ?>
+                </div>
             </div>
         <?php endif; ?>
 
