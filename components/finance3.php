@@ -2,14 +2,13 @@
 // ============================================================
 // SUMMARY PAGE – CONTROLLER
 // ============================================================
-$sumData   = $balance['summary'] ?? [];
-$sumFooter = $sumData['footer'] ?? [];
-
+$sumData        = $balance['summary'] ?? [];
 $sumReserve     = $sumData['reserve'] ?? [];
 $sumReserveRows = $sumReserve['rows'] ?? [];
 $sumCur         = $curMap[$sumReserve['currency'] ?? 'CZK'] ?? 'Kč';
 $sumTotal       = (float)($sumReserve['value'] ?? 0);
 
+$sumFooter        = $sumData['footer'] ?? [];
 $sumFooterPercent = (float)($sumFooter['percent'] ?? 0);
 $sumFooterStatus  = $sumFooter['status'] ?? 'success';
 

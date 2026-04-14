@@ -4,9 +4,9 @@
 // ============================================================
 $finExpense    = $balance['expense'] ?? [];
 $finCategories = $finExpense['categories'] ?? [];
+$finFooter     = $finExpense['footer'] ?? [];
 $finFirstRow   = $finCategories[0]['rows'][0] ?? [];
 $finCur        = $curMap[$finFirstRow['currency'] ?? 'CZK'] ?? 'Kč';
-$finFooter     = $finExpense['footer'] ?? [];
 
 // Light-to-dark brown palette from tailwind config
 $finColorPalette = ['peach', 'caramel', 'walnut', 'chestnut', 'umber'];

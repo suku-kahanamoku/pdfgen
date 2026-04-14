@@ -2,16 +2,17 @@
 // ============================================================
 // PAGE 2 – CONTROLLER
 // ============================================================
-$summary            = $property['summary'] ?? [];
+$summary   = $property['summary'] ?? [];
+$netWorth  = (float)($summary['netto']['value'] ?? 0);
+$netTotal  = (float)($summary['netto']['total'] ?? 0);
+$cur       = $curMap[$summary['netto']['currency'] ?? 'CZK'] ?? 'Kč';
+
 $propBalance        = $property['bilance'] ?? [];
+$totalActive        = (float)($propBalance['active']['value'] ?? 0);
+$totalPassive       = (float)($propBalance['pasive']['value'] ?? 0);
 $propBalanceFooter  = $propBalance['footer'] ?? [];
 $propBalancePercent = $propBalanceFooter['percent'] ?? 0;
 $propBalanceStatus  = $propBalanceFooter['status'] ?? 'success';
-$netWorth           = (float)($summary['netto']['value'] ?? 0);
-$netTotal           = (float)($summary['netto']['total'] ?? 0);
-$totalActive        = (float)($propBalance['active']['value'] ?? 0);
-$totalPassive       = (float)($propBalance['pasive']['value'] ?? 0);
-$cur                = $curMap[$summary['netto']['currency'] ?? 'CZK'] ?? 'Kč';
 
 $p2StatusMap = [
     'success' => ['icon' => 'fa-solid fa-check',       'cls' => 'text-success border-success'],

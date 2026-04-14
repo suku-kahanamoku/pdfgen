@@ -6,18 +6,17 @@ $cfIncome   = $balance['income']['income'] ?? [];
 $cfPartner  = $balance['income']['partner'] ?? [];
 $cfExpense  = $balance['income']['expense'] ?? [];
 $cfFooter   = $balance['income']['footer'] ?? [];
-$cfCur      = $curMap[$cfIncome['currency'] ?? 'CZK'] ?? 'Kč';
 
 $cfIncomeRows  = $cfIncome['rows'] ?? [];
 $cfPartnerRows = $cfPartner['rows'] ?? [];
-
-$cfIncomeTotal  = (float)($cfIncome['value'] ?? 0) + (float)($cfPartner['value'] ?? 0);
-$cfExpenseTotal = (float)($cfExpense['value'] ?? 0);
-
-$cfRemaining = $cfIncomeTotal - $cfExpenseTotal;
+$cfCur         = $curMap[$cfIncome['currency'] ?? 'CZK'] ?? 'Kč';
 
 $cfFooterPercent = (float)($cfFooter['percent'] ?? 0);
 $cfFooterStatus  = $cfFooter['status'] ?? 'success';
+
+$cfIncomeTotal  = (float)($cfIncome['value'] ?? 0) + (float)($cfPartner['value'] ?? 0);
+$cfExpenseTotal = (float)($cfExpense['value'] ?? 0);
+$cfRemaining    = $cfIncomeTotal - $cfExpenseTotal;
 
 $cfChartLabel1 = 'Příjmy';
 $cfChartLabel2 = 'Výdaje';

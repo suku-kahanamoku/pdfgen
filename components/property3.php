@@ -27,7 +27,12 @@ $p3StatusMap = [
 ];
 
 
-// Precompute chart data for all sections
+$summary    = $property['summary'] ?? [];
+$p3Netto    = $summary['netto'] ?? [];
+$p3TotalPct = (int)($p3Netto['percent'] ?? 0);
+$cur        = $curMap[$summary['netto']['currency'] ?? 'CZK'] ?? 'Kč';
+
+// Precompute chart data for all sections (property.horizon, .active_pasive, .liquidity)
 $p3ChartsData = [];
 foreach ($p3Sections as $p3sec) {
     $rows   = $property[$p3sec['key']]['rows'] ?? [];
@@ -40,12 +45,8 @@ foreach ($p3Sections as $p3sec) {
     $p3ChartsData[$p3sec['key']] = ['data' => $data, 'colors' => $colors];
 }
 
-$summary    = $property['summary'] ?? [];
-$p3Netto    = $summary['netto'] ?? [];
-$p3TotalPct = (int)($p3Netto['percent'] ?? 0);
-$p3Footer   = $property['footer'] ?? [];
-$p3Status   = $p3Footer['status'] ?? 'success';
-$cur        = $curMap[$summary['netto']['currency'] ?? 'CZK'] ?? 'Kč';
+$p3Footer = $property['footer'] ?? [];
+$p3Status = $p3Footer['status'] ?? 'success';
 ?>
 
 <!-- ============================================================ -->
