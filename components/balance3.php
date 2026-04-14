@@ -54,7 +54,7 @@ $barColors   = ['#e7e4e4', '#936746'];
             <div class="w-80 flex flex-col gap-8 justify-end">
                 <div class="flex flex-col gap-3">
                     <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
-                        <?= htmlspecialchars($reserveClient['title'] ?? 'Vydží na') ?>
+                        Vaše rezerva
                     </div>
                     <?php foreach ($clientRows as $row): ?>
                         <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
