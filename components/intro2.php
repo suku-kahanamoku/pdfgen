@@ -2,25 +2,10 @@
 // ============================================================
 // PAGE 1 – CONTROLLER
 // ============================================================
-$introExpect    = $intro['expect'] ?? [];
-$introExecValue = $introExpect['value'] ?? '';
-$introExpectRows = $introExpect['rows'] ?? [];
+$introExpectationMap = [1 => 'very_low', 2 => 'low', 3 => 'medium', 4 => 'high', 5 => 'very_high'];
+$introExecValue = $introExpectationMap[(int)($intro['expectation'] ?? 0)] ?? '';
 
-$introExpectIcons = [
-    'very_low'  => 'very_low.png',
-    'low'       => 'low.png',
-    'medium'    => 'medium.png',
-    'high'      => 'high.png',
-    'very_high' => 'very_high.png',
-];
-
-$introExpectIconsBase64 = [];
-foreach ($introExpectIcons as $key => $file) {
-    $path = __DIR__ . '/../img/emoticons/' . $file;
-    if (file_exists($path)) {
-        $introExpectIconsBase64[$key] = 'data:image/png;base64,' . base64_encode(file_get_contents($path));
-    }
-}
+$introExpectKeys = ['very_low', 'low', 'medium', 'high', 'very_high'];
 
 $introQuestions = $intro['questions'] ?? [];
 ?>
@@ -53,32 +38,10 @@ $introQuestions = $intro['questions'] ?? [];
             </h4>
 
             <div class="relative w-full flex items-center justify-around gap-10">
-                <?php foreach ($introExpectIcons as $key => $file):
+                <?php foreach ($introExpectKeys as $key):
                     $isActive = ($key === $introExecValue);
-                    $row = $introExpectRows[$key] ?? [];
-                    $src = $introExpectIconsBase64[$key] ?? '';
                 ?>
-                    <div class="relative flex flex-col items-center">
-                        <?php if ($isActive): ?>
-                            <div class="flex h-40 w-40 items-center justify-center rounded-2xl border border-primary bg-cream/40">
-                                <div class="flex h-32 w-32 items-center justify-center rounded-full">
-                                    <img src="<?= $src ?>" class="h-full w-full object-contain" alt="">
-                                </div>
-                            </div>
-                            <div class="absolute -top-12 z-10 <?= $key === 'very_high' ? 'right-2/3' : 'left-2/3' ?>">
-                                <div class="rounded-xl bg-primary px-4 py-2 text-white shadow-sm w-48">
-                                    <div class="font-semibold leading-tight"><?= htmlspecialchars($row['title'] ?? '') ?></div>
-                                    <div class="leading-tight text-white/85"><?= htmlspecialchars($row['description'] ?? '') ?></div>
-                                </div>
-                            </div>
-                        <?php else: ?>
-                            <div class="flex flex-col items-center">
-                                <div class="flex h-32 w-32 items-center justify-center rounded-full">
-                                    <img src="<?= $src ?>" class="h-full w-full object-contain" alt="">
-                                </div>
-                            </div>
-                        <?php endif; ?>
-                    </div>
+                    <?php include __DIR__ . '/expectation/' . $key . '.php'; ?>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -97,7 +60,7 @@ $introQuestions = $intro['questions'] ?? [];
 
             <div class="grid grid-cols-2 gap-x-4 gap-y-4">
                 <?php foreach ($introQuestions as $q): ?>
-                    <div class="rounded-xl border border-white/20/5 px-4 py-3">
+                    <div class="rounded-xl border border-white/20 px-4 py-3">
                         <h6 class="mb-2 leading-snug text-white">
                             <?= htmlspecialchars($q['question'] ?? '') ?>
                         </h6>

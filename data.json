@@ -10,31 +10,8 @@
 			"photo": "https://collegas.cz/img/new_team/lucie_bohata.jpg",
 			"copyright": "© 2026 Collegas s.r.o. | collegas.cz"
 		},
-		"expect": {
-			"value": "medium",
-			"rows": {
-				"very_low": {
-					"title": "Klid",
-					"description": "Nic moc nečekám, uvidím."
-				},
-				"low": {
-					"title": "Opatrnost",
-					"description": "Raději méně slibovat, víc překvapit."
-				},
-				"medium": {
-					"title": "Rozpačitost",
-					"description": "Nevím co se bude dít."
-				},
-				"high": {
-					"title": "Optimismus",
-					"description": "Věřím, že to půjde dobře."
-				},
-				"very_high": {
-					"title": "Nadšení",
-					"description": "Chci maximum a hned."
-				}
-			}
-		},
+		"expectation": 3,
+		"situation": 4,
 		"questions": [
 			{
 				"question": "Co by se mělo stát, abyste odcházel s pocitem, že dnešní schůzka byla úspěšná?",
