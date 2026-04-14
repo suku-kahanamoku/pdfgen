@@ -76,30 +76,22 @@ $sumBarColors   = ['#e7e4e4', '#936746'];
         <?php if ($sumFooterStatus === 'success'): ?>
             <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
-                    <div class="font-semibold">
-                        <?= htmlspecialchars($sumFooter['headline'] ?? 'Gratulujeme! Vaše rezerva je dostatečná.') ?>
-                    </div>
+                    <div class="font-semibold">Gratulujeme! Vaše rezerva je dostatečná.</div>
                     <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success">
                         <?= number_format($sumFooterPercent, 0, ',', ' ') ?>%
                     </div>
                 </div>
-                <div class="text-ink/70">
-                    <?= htmlspecialchars($sumFooter['text'] ?? 'S vaší aktuální rezervou pravděpodobně zvládnete překlenout nenadálé negativní události.') ?>
-                </div>
+                <div class="text-ink/70">S vaší aktuální rezervou pravděpodobně zvládnete překlenout nenadálé negativní události.</div>
             </div>
         <?php else: ?>
             <div class="bg-red-50 border border-error -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
-                    <div class="font-semibold">
-                        <?= htmlspecialchars($sumFooter['headline'] ?? 'Pozor! Vaše rezerva není dostatečná.') ?>
-                    </div>
+                    <div class="font-semibold">Pozor! Vaše rezerva není dostatečná.</div>
                     <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error">
                         <?= number_format($sumFooterPercent, 0, ',', ' ') ?>%
                     </div>
                 </div>
-                <div class="text-ink/70">
-                    <?= htmlspecialchars($sumFooter['text'] ?? 'Doporučujeme posílit rezervu, aby lépe pokryla neočekávané životní situace.') ?>
-                </div>
+                <div class="text-ink/70">Doporučujeme posílit rezervu, aby lépe pokryla neočekávané životní situace.</div>
             </div>
         <?php endif; ?>
 

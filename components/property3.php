@@ -44,9 +44,6 @@ foreach ($p3Sections as $p3sec) {
     }
     $p3ChartsData[$p3sec['key']] = ['data' => $data, 'colors' => $colors];
 }
-
-$p3Footer = $property['footer'] ?? [];
-$p3Status = $p3Footer['status'] ?? 'success';
 ?>
 
 <!-- ============================================================ -->
@@ -85,23 +82,13 @@ $p3Status = $p3Footer['status'] ?? 'success';
 
     <!-- Footer row -->
     <div class="grid grid-cols-[1fr_220px] gap-8 items-end">
-        <?php if ($p3Status === 'success'): ?>
-            <div class="bg-green-50 border border-success text-ink -ml-24 pl-24 max-w-2xl rounded-r-xl px-6 py-4 flex flex-col gap-1">
-                <div class="flex items-center justify-between gap-4">
-                    <div class="text-lg font-semibold">Diverzifikace portfolia</div>
-                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-success"><?= $p3TotalPct ?>%</div>
-                </div>
-                <div class="leading-relaxed text-ink/70">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
+        <div class="bg-green-50 border border-success text-ink -ml-24 pl-24 max-w-2xl rounded-r-xl px-6 py-4 flex flex-col gap-1">
+            <div class="flex items-center justify-between gap-4">
+                <div class="text-lg font-semibold">Diverzifikace portfolia</div>
+                <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-success"><?= $p3TotalPct ?>%</div>
             </div>
-        <?php else: ?>
-            <div class="bg-red-50 border border-error text-ink -ml-24 pl-24 max-w-2xl rounded-r-xl px-6 py-4 flex flex-col gap-1">
-                <div class="flex items-center justify-between gap-4">
-                    <div class="text-lg font-semibold">Diverzifikace portfolia</div>
-                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-error"><?= $p3TotalPct ?>%</div>
-                </div>
-                <div class="leading-relaxed text-ink/70">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
-            </div>
-        <?php endif; ?>
+            <div class="leading-relaxed text-ink/70">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
+        </div>
 
         <div class="flex items-center justify-end text-primary/90">
             <?php include __DIR__ . '/trophy.php'; ?>
