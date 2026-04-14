@@ -8,8 +8,8 @@ $bilPercent = $bilFooter['percent'] ?? 0;
 $bilStatus  = $bilFooter['status'] ?? 'success';
 $cisty_majetek = (float)($summary['netto']['value'] ?? 0);
 $total = (float)($summary['netto']['total'] ?? 0);
-$total_active  = (float)($property['active']['value'] ?? 0);
-$total_pasive  = (float)($property['pasive']['value'] ?? 0);
+$total_active  = (float)($bilance['active']['value'] ?? 0);
+$total_pasive  = (float)($bilance['pasive']['value'] ?? 0);
 
 $p2StatusMap = [
     'success' => ['icon' => 'fa-solid fa-check',       'cls' => 'text-success border-success'],
@@ -93,22 +93,22 @@ $p2BarColors   = ['#eeeeee', '#8D6144'];
             <div class="w-80 flex flex-col gap-8 justify-end">
                 <h3 class="font-lora text-3xl font-semibold">Bilance majetku</h3>
                 <div class="flex flex-col gap-3">
-                    <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
+                    <div class="flex items-start justify-between rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
                         <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($bilance['active']['title'] ?? 'Aktiva') ?></span>
                         <span class="font-semibold"><?= number_format($total_active, 0, ',', ' ') ?> <?= $cur ?></span>
                     </div>
-                    <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
+                    <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                         <span><?= htmlspecialchars($bilance['active']['yeld']['title'] ?? '') ?></span>
                         <span><?= number_format($bilance['active']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-3">
-                    <div class="rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
+                    <div class="flex items-start justify-between rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold text-primary">
                         <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($bilance['pasive']['title'] ?? 'Pasiva') ?></span>
                         <span class="font-semibold"><?= number_format($total_pasive, 0, ',', ' ') ?> <?= $cur ?></span>
                     </div>
-                    <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
+                    <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                         <span><?= htmlspecialchars($bilance['pasive']['yeld']['title'] ?? '') ?></span>
                         <span><?= number_format($bilance['pasive']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
                     </div>

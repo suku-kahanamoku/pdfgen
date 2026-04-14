@@ -57,7 +57,7 @@ $sumBarColors   = ['#e7e4e4', '#936746'];
                         <?= htmlspecialchars($sumReserve['title'] ?? 'Vaše rezerva') ?>
                     </div>
                     <?php foreach ($sumReserveRows as $row): ?>
-                        <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
+                        <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                             <div><?= htmlspecialchars($row['title'] ?? '') ?></div>
                             <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $curMap[$row['currency'] ?? 'CZK'] ?? 'Kč' ?></div>
                         </div>

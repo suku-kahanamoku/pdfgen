@@ -5,7 +5,7 @@ $curMap = ['CZK' => 'Kč', 'EUR' => '€', 'USD' => '$'];
 $cur    = $curMap[$summary['netto']['currency'] ?? $property['active']['currency'] ?? 'CZK'] ?? 'Kč';
 
 $user     = $dataRaw['user']     ?? [];
-$balance  = $dataRaw['finance']  ?? [];
+$balance  = $dataRaw['balance']  ?? [];
 $property = $dataRaw['property'] ?? [];
 
 include __DIR__ . '/components/finanalys1.php';

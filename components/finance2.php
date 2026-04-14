@@ -63,7 +63,7 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
                         Vaše příjmy
                     </div>
                     <?php foreach ($cfIncomeRows as $row): ?>
-                        <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
+                        <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                             <div><?= htmlspecialchars($row['title'] ?? '') ?></div>
                             <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $cfCur ?></div>
                         </div>
@@ -76,7 +76,7 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
                         <?= htmlspecialchars($cfPartner['title'] ?? 'Příjmy partnera') ?>
                     </div>
                     <?php foreach ($cfPartnerRows as $row): ?>
-                        <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
+                        <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                             <div><?= nl2br(htmlspecialchars($row['title'] ?? '')) ?></div>
                             <div class="whitespace-nowrap"><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $cfCur ?></div>
                         </div>
@@ -89,12 +89,12 @@ $cfBarColors   = ['#e7e4e4', '#936746'];
                         Celková bilance cash-flow
                     </div>
 
-                    <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
+                    <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                         <div><?= htmlspecialchars($cfIncome['title'] ?? 'Příjmy') ?></div>
                         <div class="whitespace-nowrap"><?= number_format($cfIncomeTotal, 0, ',', ' ') ?> <?= $cfCur ?></div>
                     </div>
 
-                    <div class="flex items-start justify-between gap-4 border-b border-mist pb-3 text-ink/75">
+                    <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
                         <div><?= htmlspecialchars($cfExpense['title'] ?? 'Výdaje') ?></div>
                         <div class="whitespace-nowrap"><?= number_format($cfExpenseTotal, 0, ',', ' ') ?> <?= $cfCur ?></div>
                     </div>
