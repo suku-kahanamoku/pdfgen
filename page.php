@@ -6,9 +6,9 @@ $user     = $rawData['user']     ?? [];
 $balance  = $rawData['balance']  ?? [];
 $property = $rawData['property'] ?? [];
 
-include __DIR__ . '/components/finanalys1.php';
-include __DIR__ . '/components/finanalys2.php';
-include __DIR__ . '/components/finanalys3.php';
+include __DIR__ . '/components/intro1.php';
+include __DIR__ . '/components/intro2.php';
+include __DIR__ . '/components/intro3.php';
 
 if (!empty($user)) {
     include __DIR__ . '/components/user1.php';
