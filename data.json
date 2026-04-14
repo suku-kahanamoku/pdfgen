@@ -34,7 +34,33 @@
 					"description": "Chci maximum a hned."
 				}
 			}
-		}
+		},
+		"questions": [
+			{
+				"question": "Co by se mělo stát, abyste odcházel s pocitem, že dnešní schůzka byla úspěšná?",
+				"answer": "Zajištění vlastního bydlení, a ochrana rodiny."
+			},
+			{
+				"question": "Kdybyste už neměli žádné finanční starosti, co byste dělali jinak?",
+				"answer": "Trávil bych víc času s rodinou a méně bych se stresoval."
+			},
+			{
+				"question": "Čím jsou pro vás peníze důležité?",
+				"answer": "Je to prostředek k dosažování snů a cílů."
+			},
+			{
+				"question": "Co by se stalo, kdybyste změnili to, jak utrácíte a spoříte? Jak byste se cítil?",
+				"answer": "Pořád stejně."
+			},
+			{
+				"question": "Kdybyste dnes mohli vyřešit jakýkoliv finanční problém pouhým lusknutím prstu, co byste vyřešili?",
+				"answer": "Zajištění na stáří."
+			},
+			{
+				"question": "Jaká je vaše strategie v budování majetku?",
+				"answer": "Volný kapitál dávat do nemovitostí."
+			}
+		]
 	},
 	"user": {
 		"client": {

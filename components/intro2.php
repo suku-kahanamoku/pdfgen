@@ -2,7 +2,7 @@
 // ============================================================
 // PAGE 1 – CONTROLLER
 // ============================================================
-$introExpect    = $intro['expect'];
+$introExpect    = $intro['expect'] ?? [];
 $introExecValue = $introExpect['value'] ?? '';
 $introExpectRows = $introExpect['rows'] ?? [];
 
@@ -21,6 +21,8 @@ foreach ($introExpectIcons as $key => $file) {
         $introExpectIconsBase64[$key] = 'data:image/png;base64,' . base64_encode(file_get_contents($path));
     }
 }
+
+$introQuestions = $intro['questions'] ?? [];
 ?>
 <div class="w-full box-border p-24 flex h-screen flex-col [page-break-after:always] [break-after:page] [box-decoration-break:clone]">
     <!-- Horní obsah -->
@@ -94,59 +96,16 @@ foreach ($introExpectIcons as $key => $file) {
             </div>
 
             <div class="grid grid-cols-2 gap-x-4 gap-y-4">
-                <div class="rounded-xl border border-white/20/5 px-4 py-3">
-                    <h6 class="mb-2 leading-snug text-white">
-                        Co by se mělo stát, abyste odcházel s pocitem, že dnešní schůzka byla úspěšná?
-                    </h6>
-                    <p class="leading-snug text-answer">
-                        Zajištění vlastního bydlení, a ochrana rodiny.
-                    </p>
-                </div>
-
-                <div class="rounded-xl border border-white/20/5 px-4 py-3">
-                    <h6 class="mb-2 leading-snug text-white">
-                        Kdybyste už neměli žádné finanční starosti, co byste dělali jinak?
-                    </h6>
-                    <p class="leading-snug text-answer">
-                        Trávil bych víc času s rodinou a méně bych se stresoval.
-                    </p>
-                </div>
-
-                <div class="rounded-xl border border-white/20/5 px-4 py-3">
-                    <h6 class="mb-2 leading-snug text-white">
-                        Čím jsou pro vás peníze důležité?
-                    </h6>
-                    <p class="leading-snug text-answer">
-                        Je to prostředek k dosahování snů a cílů.
-                    </p>
-                </div>
-
-                <div class="rounded-xl border border-white/20/5 px-4 py-3">
-                    <h6 class="mb-2 leading-snug text-white">
-                        Co by se stalo, kdybyste změnili to, jak utrácíte a spoříte? Jak byste se cítil?
-                    </h6>
-                    <p class="leading-snug text-answer">
-                        Pořád stejně.
-                    </p>
-                </div>
-
-                <div class="rounded-xl border border-white/20/5 px-4 py-3">
-                    <h6 class="mb-2 leading-snug text-white">
-                        Kdybyste dnes mohli vyřešit jakýkoliv finanční problém pouhým lusknutím prstu, co byste vyřešili?
-                    </h6>
-                    <p class="leading-snug text-answer">
-                        Zajištění na stáří.
-                    </p>
-                </div>
-
-                <div class="rounded-xl border border-white/20/5 px-4 py-3">
-                    <h6 class="mb-2 leading-snug text-white">
-                        Jaká je vaše strategie v budování majetku?
-                    </h6>
-                    <p class="leading-snug text-answer">
-                        Volný kapitál dávat do nemovitostí.
-                    </p>
-                </div>
+                <?php foreach ($introQuestions as $q): ?>
+                    <div class="rounded-xl border border-white/20/5 px-4 py-3">
+                        <h6 class="mb-2 leading-snug text-white">
+                            <?= htmlspecialchars($q['question'] ?? '') ?>
+                        </h6>
+                        <p class="leading-snug text-answer">
+                            <?= htmlspecialchars($q['answer'] ?? '') ?>
+                        </p>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
