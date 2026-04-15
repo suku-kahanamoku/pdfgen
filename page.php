@@ -5,6 +5,7 @@ $intro    = $rawData['intro']    ?? [];
 $user     = $rawData['user']     ?? [];
 $balance  = $rawData['balance']  ?? [];
 $property = $rawData['property'] ?? [];
+$insurance = $rawData['insurance'] ?? [];
 
 $curMap   = ['CZK' => 'Kč', 'EUR' => '€', 'USD' => '$'];
 
@@ -28,4 +29,8 @@ if (!empty($property)) {
     include __DIR__ . '/components/property1.php';
     include __DIR__ . '/components/property2.php';
     include __DIR__ . '/components/property3.php';
+}
+
+if (!empty($insurance)) {
+    include __DIR__ . '/components/insurance.php';
 }

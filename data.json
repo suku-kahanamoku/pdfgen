@@ -574,5 +574,132 @@
 				}
 			]
 		}
+	},
+	"insurance": {
+		"currency": "CZK",
+		"rows": [
+			{
+				"title": "Životní pojištění",
+				"value": 3500,
+				"date_label": "Pojištěno do",
+				"insured_to": "31. 12. 2045",
+				"status": "success",
+				"note": "Kooperativa – smlouva č. 7842156",
+				"tags": [
+					{
+						"title": "Životní riziko",
+						"status": "neutral"
+					},
+					{
+						"title": "Invalidita",
+						"status": "neutral"
+					},
+					{
+						"title": "Smrt",
+						"status": "neutral"
+					},
+					{
+						"title": "Úraz",
+						"status": "neutral"
+					}
+				]
+			},
+			{
+				"title": "Pojištění nemovitosti",
+				"value": 1200,
+				"date_label": "Pojištěno do",
+				"insured_to": "15. 03. 2026",
+				"status": "warning",
+				"note": "Česká pojišťovna – smlouva č. 3301847",
+				"tags": [
+					{
+						"title": "Požár & živel",
+						"status": "neutral"
+					},
+					{
+						"title": "Krádež",
+						"status": "neutral"
+					},
+					{
+						"title": "Odpovědnost",
+						"status": "neutral"
+					}
+				]
+			},
+			{
+				"title": "Pojištění domácnosti",
+				"value": 0,
+				"value_label": "Nesjednáno",
+				"date_label": "Stav",
+				"insured_to": "—",
+				"status": "danger",
+				"note": "Doporučeno sjednat co nejdříve",
+				"tags": [
+					{
+						"title": "Chybí krytí",
+						"status": "danger"
+					}
+				]
+			},
+			{
+				"title": "Autopojištění",
+				"value": 2800,
+				"date_label": "Pojištěno do",
+				"insured_to": "30. 09. 2026",
+				"status": "success",
+				"note": "Allianz – BMW 520d, smlouva č. 9910244",
+				"tags": [
+					{
+						"title": "POV",
+						"status": "neutral"
+					},
+					{
+						"title": "Havarijní",
+						"status": "neutral"
+					},
+					{
+						"title": "Úrazové připojištění",
+						"status": "neutral"
+					}
+				]
+			},
+			{
+				"title": "Pojištění partnera",
+				"value": 1800,
+				"date_label": "Pojištěno do",
+				"insured_to": "31. 12. 2040",
+				"status": "success",
+				"note": "NN Životní pojišťovna – Kateřina Novotná",
+				"tags": [
+					{
+						"title": "Životní riziko",
+						"status": "neutral"
+					},
+					{
+						"title": "Invalidita",
+						"status": "neutral"
+					},
+					{
+						"title": "Nemoc",
+						"status": "neutral"
+					}
+				]
+			},
+			{
+				"title": "Cestovní pojištění",
+				"value": 0,
+				"value_label": "Nesjednáno",
+				"date_label": "Stav",
+				"insured_to": "—",
+				"status": "danger",
+				"note": "Doporučeno pro celou rodinu",
+				"tags": [
+					{
+						"title": "Chybí krytí",
+						"status": "danger"
+					}
+				]
+			}
+		]
 	}
 }
