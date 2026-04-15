@@ -30,6 +30,7 @@ if (!empty($property)) {
     include __DIR__ . '/components/property1.php';
     include __DIR__ . '/components/property2.php';
     include __DIR__ . '/components/property3.php';
+    include __DIR__ . '/components/property4.php';
 }
 
 if (!empty($insurance)) {

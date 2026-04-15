@@ -573,6 +573,94 @@
 					"status": "danger"
 				}
 			]
+		},
+		"mortgage": {
+			"currency": "CZK",
+			"summary": {
+				"value": 2780000,
+				"status": "success"
+			},
+			"dti": {
+				"title": "DTI – Nebudu předlužený?",
+				"value": 6.2,
+				"rows": [
+					{
+						"title": "Krátkodobý",
+						"value": 200000,
+						"primary": true
+					},
+					{
+						"title": "Střednědobý",
+						"value": 500000
+					},
+					{
+						"title": "Střednědobý",
+						"value": 500000
+					},
+					{
+						"title": "Střednědobý",
+						"value": 500000
+					}
+				]
+			},
+			"dsti": {
+				"title": "DSTI – Zvádnu splácet?",
+				"value": 28,
+				"rows": [
+					{
+						"title": "Krátkodobý",
+						"value": 200000,
+						"primary": true
+					},
+					{
+						"title": "Střednědobý",
+						"value": 500000
+					},
+					{
+						"title": "Střednědobý",
+						"value": 500000
+					},
+					{
+						"title": "Střednědobý",
+						"value": 500000
+					}
+				]
+			},
+			"ltv": {
+				"title": "LTV – Zástavní prostor",
+				"rows": [
+					{
+						"title": "Vlastní úspory",
+						"value": 450000
+					},
+					{
+						"title": "Dostupná bonita – Nemovitost 1",
+						"value": 900000
+					},
+					{
+						"title": "Dostupná bonita – Nemovitost 2",
+						"value": 2000000
+					}
+				],
+				"own_resources": {
+					"title": "Vlastní zdroje (20 %)",
+					"value": 3350000
+				},
+				"max_loan": {
+					"title": "Maximální výše úvěru",
+					"value": 16750000
+				},
+				"chart": {
+					"label1": "Dostupný kapitál",
+					"label2": "Majetek",
+					"value1": 15500000,
+					"value2": 3000000
+				}
+			},
+			"footer": {
+				"percent": 74,
+				"status": "success"
+			}
 		}
 	},
 	"insurance": {

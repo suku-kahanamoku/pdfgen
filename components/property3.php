@@ -74,7 +74,7 @@ foreach ($sections as $p3sec) {
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <div style="width:160px; height:160px; position:relative; flex-shrink:0;">
+                <div class="w-52 h-52 relative flex-shrink-0">
                     <canvas id="<?= $chartId ?>"></canvas>
                 </div>
             </div>
