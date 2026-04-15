@@ -697,7 +697,7 @@
 	"goal": {
 		"currency": "CZK",
 		"summary": {
-			"monthly": 5000,
+			"value": 5000,
 			"percent": 7.54
 		},
 		"rows": [

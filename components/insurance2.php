@@ -9,9 +9,9 @@ $goalItems      = $goal['rows'] ?? [];
 
 $goalSummary      = $goal['summary'] ?? [];
 $goalSummaryIcon  = 'fa-solid fa-bullseye';
-$goalMonthly      = number_format((float)($goalSummary['monthly'] ?? 0), 0, ',', ' ');
+$goalValue      = number_format((float)($goalSummary['value'] ?? 0), 0, ',', ' ');
 $goalYield        = number_format((float)($goalSummary['percent'] ?? 0), 2, '.', '');
-$goalSummaryLine1 = 'Stačí pouze ' . $goalMonthly . ' Kč' . "\n" . 'měsíčně s výnosem ' . $goalYield . ' %';
+$goalSummaryLine1 = 'Stačí pouze ' . $goalValue . ' Kč' . "\n" . 'měsíčně s výnosem ' . $goalYield . ' %';
 $goalSummaryLine2 = "...a Vaše sny se stanou\nskutečností!";
 
 $goalCur = $curMap[$goal['currency'] ?? 'CZK'] ?? 'Kč';
