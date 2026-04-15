@@ -82,8 +82,8 @@ foreach ($sections as $p3sec) {
     <?php endforeach; ?>
 
     <!-- Footer row -->
-    <div class="grid grid-cols-[1fr_220px] gap-8 items-end">
-        <div class="bg-green-50 border border-success text-ink -ml-24 pl-24 max-w-2xl rounded-r-xl px-6 py-4 flex flex-col gap-1">
+    <div class="flex gap-8 items-center">
+        <div class="flex-1 bg-green-50 border border-success text-ink -ml-24 pl-24 max-w-2xl rounded-r-xl px-6 py-4 flex flex-col gap-1">
             <div class="flex items-center justify-between gap-4">
                 <div class="text-lg font-semibold">Diverzifikace portfolia</div>
                 <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-success"><?= $nettoPercent ?>%</div>
@@ -91,8 +91,7 @@ foreach ($sections as $p3sec) {
             <div class="leading-relaxed text-ink/70">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
         </div>
 
-        <div class="flex items-center justify-end text-primary/90">
-            <?php include __DIR__ . '/trophy.php'; ?>
+        <div class="w-56 flex-shrink-0 flex items-center justify-end text-primary/90">
         </div>
     </div>
 </div>

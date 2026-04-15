@@ -112,9 +112,9 @@ $barColors   = ['#e7e4e4', '#936746'];
     </div><!-- /Hlavní obsah -->
 
     <!-- Footer row -->
-    <div class="mt-10 grid grid-cols-[1fr_220px] gap-8 items-end">
+    <div class="mt-10 flex gap-8 items-center">
         <?php if ($footerStatus === 'success'): ?>
-            <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
+            <div class="flex-1 bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">Vaše příjmy jsou o <?= number_format(58, 0, ',', ' ') ?> % vyšší než průměr.</div>
                     <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($footerPercent, 0, ',', ' ') ?>%</div>
@@ -122,7 +122,7 @@ $barColors   = ['#e7e4e4', '#936746'];
                 <div class="text-ink/70">Průměrný příjem jedince v ČR dosahoval v roce <?= $footerYear ?> hodnoty <?= number_format($footerAvgPerson, 0, ',', ' ') ?> <?= $footerCur ?>. Průměrný příjem domácnosti byl <?= number_format($footerAvgHousehold, 0, ',', ' ') ?> <?= $footerCur ?>.</div>
             </div>
         <?php else: ?>
-            <div class="bg-red-50 border border-error -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
+            <div class="flex-1 bg-red-50 border border-error -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">Pozor! Vaše příjmy jsou pod průměrem.</div>
                     <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($footerPercent, 0, ',', ' ') ?>%</div>
@@ -132,7 +132,7 @@ $barColors   = ['#e7e4e4', '#936746'];
         <?php endif; ?>
 
         <!-- Ikona -->
-        <div class="flex items-center justify-end text-primary/90">
+        <div class="w-56 flex-shrink-0 flex items-center justify-end text-primary/90">
             <?php include __DIR__ . '/trophy.php'; ?>
         </div>
     </div>

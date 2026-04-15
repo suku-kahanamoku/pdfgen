@@ -66,7 +66,7 @@ $formatPct = function ($value) {
 <div class="w-full box-border p-24 overflow-visible flex flex-col gap-12 [page-break-after:always] [break-after:page] [box-decoration-break:clone]">
 
     <!-- Top summary row -->
-    <div class="flex gap-8 items-start">
+    <div class="flex gap-8 items-center">
         <div class="flex-1 <?= $footerOk ? 'bg-green-50 border border-success' : 'bg-red-50 border border-error' ?> -ml-24 pl-24 max-w-3xl rounded-r-xl px-5 py-4 flex flex-col gap-2">
             <div class="flex items-center justify-between gap-4">
                 <div class="font-lora text-3xl font-semibold text-ink">
