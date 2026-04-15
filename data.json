@@ -581,11 +581,10 @@
 			{
 				"title": "Životní pojištění",
 				"value": 3500,
-				"date_label": "Pojištěno do",
-				"insured_to": "31. 12. 2045",
+				"description": "Pojištěno do 31. 12. 2045",
 				"status": "success",
 				"note": "Kooperativa – smlouva č. 7842156",
-				"tags": [
+				"labels": [
 					{
 						"title": "Životní riziko",
 						"status": "neutral"
@@ -607,11 +606,10 @@
 			{
 				"title": "Pojištění nemovitosti",
 				"value": 1200,
-				"date_label": "Pojištěno do",
-				"insured_to": "15. 03. 2026",
+				"description": "Pojištěno do 15. 03. 2026",
 				"status": "warning",
 				"note": "Česká pojišťovna – smlouva č. 3301847",
-				"tags": [
+				"labels": [
 					{
 						"title": "Požár & živel",
 						"status": "neutral"
@@ -629,12 +627,10 @@
 			{
 				"title": "Pojištění domácnosti",
 				"value": 0,
-				"value_label": "Nesjednáno",
-				"date_label": "Stav",
-				"insured_to": "—",
+				"description": "Stav: nesjednáno",
 				"status": "danger",
 				"note": "Doporučeno sjednat co nejdříve",
-				"tags": [
+				"labels": [
 					{
 						"title": "Chybí krytí",
 						"status": "danger"
@@ -644,11 +640,10 @@
 			{
 				"title": "Autopojištění",
 				"value": 2800,
-				"date_label": "Pojištěno do",
-				"insured_to": "30. 09. 2026",
+				"description": "Pojištěno do 30. 09. 2026",
 				"status": "success",
 				"note": "Allianz – BMW 520d, smlouva č. 9910244",
-				"tags": [
+				"labels": [
 					{
 						"title": "POV",
 						"status": "neutral"
@@ -666,11 +661,10 @@
 			{
 				"title": "Pojištění partnera",
 				"value": 1800,
-				"date_label": "Pojištěno do",
-				"insured_to": "31. 12. 2040",
+				"description": "Pojištěno do 31. 12. 2040",
 				"status": "success",
 				"note": "NN Životní pojišťovna – Kateřina Novotná",
-				"tags": [
+				"labels": [
 					{
 						"title": "Životní riziko",
 						"status": "neutral"
@@ -688,12 +682,10 @@
 			{
 				"title": "Cestovní pojištění",
 				"value": 0,
-				"value_label": "Nesjednáno",
-				"date_label": "Stav",
-				"insured_to": "—",
+				"description": "Stav: nesjednáno",
 				"status": "danger",
 				"note": "Doporučeno pro celou rodinu",
-				"tags": [
+				"labels": [
 					{
 						"title": "Chybí krytí",
 						"status": "danger"
