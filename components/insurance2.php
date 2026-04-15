@@ -26,16 +26,11 @@ $goalIconMap = [
     'default'  => 'fa-solid fa-star',
 ];
 
-$goalPriorityMap = [
-    'low'    => 'border-success text-white/90',
-    'medium' => 'border-warning text-white/90',
-    'high'   => 'border-error text-white/90',
-];
-
-$goalTermMap = [
-    'short'  => 'Krátkodobý cíl',
-    'medium' => 'Střednědobý cíl',
-    'long'   => 'Dlouhodobý cíl',
+$goalLabelMap = [
+    'success' => 'border-success text-white/90',
+    'warning' => 'border-warning text-white/90',
+    'danger'  => 'border-error text-white/90',
+    'neutral' => 'border-white/30 text-white/90',
 ];
 ?>
 
@@ -58,15 +53,9 @@ $goalTermMap = [
             $iconCls       = $goalIconMap[$iconKey] ?? $goalIconMap['default'];
             $itemTitle     = $item['title'] ?? '';
             $itemValue     = (float)($item['value'] ?? 0);
-            $itemDate      = $item['date'] ?? '';
-            $itemRemaining = $item['remaining'] ?? '';
-            $priority      = $item['priority'] ?? 'medium';
-            $term          = $item['term'] ?? 'medium';
-
-            $priorityText = $item['priority_label']
-                ?? ($priority === 'high' ? 'Vysoká priorita' : ($priority === 'low' ? 'Nízká priorita' : 'Střední priorita'));
-            $termText = $item['term_label'] ?? ($goalTermMap[$term] ?? 'Střednědobý cíl');
-            $priorityTw = $goalPriorityMap[$priority] ?? 'border-warning text-white/90';
+            $itemDescription = $item['description'] ?? '';
+            $priority        = $item['priority'] ?? 'medium';
+            $labels          = $item['labels'] ?? [];
         ?>
             <div class="rounded-2xl bg-white/5 px-5 py-5 shadow-lg">
                 <div class="mb-4 text-answer">
@@ -81,21 +70,19 @@ $goalTermMap = [
                     <?= number_format($itemValue, 0, ',', ' ') ?> <?= $goalCur ?>
                 </div>
 
-                <div class="mb-1 text-sm text-white/70">
-                    Splnit do <?= htmlspecialchars($itemDate) ?>
-                </div>
-
                 <div class="mb-4 text-sm text-white/70">
-                    Zbývá <?= htmlspecialchars($itemRemaining) ?>
+                    <?= htmlspecialchars($itemDescription) ?>
                 </div>
 
-                <div class="mb-2 rounded-md border px-3 py-1.5 text-center text-sm <?= $priorityTw ?>">
-                    <?= htmlspecialchars($priorityText) ?>
-                </div>
-
-                <div class="rounded-md border border-white/30 px-3 py-1.5 text-center text-sm text-white/90">
-                    <?= htmlspecialchars($termText) ?>
-                </div>
+                <?php foreach ($labels as $label):
+                    $labelTitle = is_array($label) ? ($label['title'] ?? '') : $label;
+                    $labelStatus = is_array($label) ? ($label['status'] ?? 'neutral') : 'neutral';
+                    $labelTw = $goalLabelMap[$labelStatus] ?? 'border-white/30 text-white/90';
+                ?>
+                    <div class="mb-2 rounded-md border px-3 py-1.5 text-center text-sm <?= $labelTw ?>">
+                        <?= htmlspecialchars($labelTitle) ?>
+                    </div>
+                <?php endforeach; ?>
             </div>
         <?php endforeach; ?>
     </div>

@@ -705,31 +705,52 @@
 				"icon": "car",
 				"title": "Koupit nové auto",
 				"value": 400000,
-				"date": "14. 05. 2025",
-				"remaining": "400 000 Kč / 33 769 Kč p.m.",
+				"description": "Splněno do 14. 05. 2025, zbývá 400 000 Kč / 33 769 Kč p.m.",
 				"priority": "medium",
-				"priority_label": "Střední priorita",
-				"term": "short"
+				"labels": [
+					{
+						"title": "Střední priorita",
+						"status": "warning"
+					},
+					{
+						"title": "Krátkodobý cíl",
+						"status": "neutral"
+					}
+				]
 			},
 			{
 				"icon": "plane",
 				"title": "Cesta kolem světa",
 				"value": 280000,
-				"date": "14. 05. 2025",
-				"remaining": "400 000 Kč / 33 769 Kč p.m.",
+				"description": "Splněno do 14. 05. 2025, zbývá 400 000 Kč / 33 769 Kč p.m.",
 				"priority": "low",
-				"priority_label": "Nízká priorita",
-				"term": "medium"
+				"labels": [
+					{
+						"title": "Nízká priorita",
+						"status": "success"
+					},
+					{
+						"title": "Střednědobý cíl",
+						"status": "neutral"
+					}
+				]
 			},
 			{
 				"icon": "piggy",
 				"title": "Zajištění na stáří",
 				"value": 280000,
-				"date": "14. 05. 2025",
-				"remaining": "400 000 Kč / 33 769 Kč p.m.",
+				"description": "Splněno do 14. 05. 2025, zbývá 400 000 Kč / 33 769 Kč p.m.",
 				"priority": "high",
-				"priority_label": "Vysoká priorita",
-				"term": "long"
+				"labels": [
+					{
+						"title": "Vysoká priorita",
+						"status": "danger"
+					},
+					{
+						"title": "Dlouhodobý cíl",
+						"status": "neutral"
+					}
+				]
 			}
 		]
 	}
