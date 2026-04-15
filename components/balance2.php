@@ -37,7 +37,7 @@ $barColors   = ['#e7e4e4', '#936746'];
 <div class="w-full box-border p-24 flex flex-col [page-break-after:always] [break-after:page] overflow-visible gap-16 [box-decoration-break:clone]">
 
     <!-- Nadpis -->
-    <h2 class="font-lora text-6xl font-semibold leading-none tracking-tight">
+    <h2 class="font-lora text-5xl font-semibold tracking-wide">
         <span class="text-pebble">Kde končí zisk,</span>
         <span class="text-primary">začíná</span><br>
         <span class="text-primary">svoboda</span>

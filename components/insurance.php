@@ -13,7 +13,7 @@ $insuranceRows = $insurance['rows'] ?? [];
 
     <!-- Sekce -->
     <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
-        <h2 class="font-lora text-5xl font-semibold leading-none tracking-tight flex items-center justify-between gap-4">
+        <h2 class="font-lora text-5xl font-semibold leading-none flex items-center justify-between gap-4">
             Chraňte svůj majetek<br /> a své příjmy
             <i class="text-primary fa-solid fa-shield-halved text-7xl"></i>
         </h2>

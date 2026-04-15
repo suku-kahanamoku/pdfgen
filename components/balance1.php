@@ -22,7 +22,7 @@ $colorPalette = ['peach', 'caramel', 'walnut', 'chestnut', 'umber'];
 <div class="w-full box-border p-24 [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16 [box-decoration-break:clone]">
 
     <!-- Nadpis -->
-    <h2 class="font-lora text-6xl font-semibold leading-none tracking-tight text-ink">
+    <h2 class="font-lora text-6xl font-semibold leading-none text-ink">
         Výdaje
     </h2>
 

@@ -13,7 +13,7 @@ $introQuestions = $intro['questions'] ?? [];
     <!-- Horní obsah -->
     <!-- Nadpis -->
     <div class="mb-10">
-        <h2 class="font-lora text-5xl font-semibold leading-none tracking-tight">
+        <h2 class="font-lora text-5xl leading-none tracking-tight">
             Hodnoty <span class="text-primary">&amp;</span><br>
             očekávání
         </h2>

@@ -11,7 +11,7 @@ $cur          = $curMap[$summaryNetto['currency'] ?? 'CZK'] ?? 'Kč';
 $sections = [
     [
         'key'   => 'horizon',
-        'title' => 'Investiční horizont',
+        'title' => 'Horizont',
         'desc'  => 'Investiční horizont vyjadřuje, na jak dlouhou dobu jsou vaše prostředky vázány. Krátkodobé investice nabízejí likviditu, střednědobé větší zhodnocení, dlouhodobé nejvyšší výnosy díky složenému úroku.',
     ],
     [
