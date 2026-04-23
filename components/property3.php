@@ -86,10 +86,10 @@ foreach ($sections as $p3sec) {
 
     <!-- Footer row -->
     <div class="flex gap-8 items-center">
-        <div class="flex-1 bg-green-50 border border-success text-ink -ml-24 pl-24 max-w-2xl rounded-r-xl px-6 py-4 flex flex-col gap-1">
+        <div class="flex-1 bg-secondary/10 border border-secondary text-ink -ml-24 pl-24 max-w-2xl rounded-r-xl px-6 py-4 flex flex-col gap-1">
             <div class="flex items-center justify-between gap-4">
                 <div class="text-lg font-semibold">Diverzifikace portfolia</div>
-                <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-success"><?= $nettoPercent ?>%</div>
+                <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-secondary"><?= $nettoPercent ?>%</div>
             </div>
             <div class="leading-relaxed text-ink/70">Dobře diverzifikované portfolio rozložené napříč horizonty, aktivy i likviditou snižuje celkové riziko a zvyšuje stabilitu dlouhodobého výnosu.</div>
         </div>

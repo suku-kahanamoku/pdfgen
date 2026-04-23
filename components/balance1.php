@@ -113,20 +113,20 @@ $colorPalette = ['peach', 'caramel', 'walnut', 'chestnut', 'umber'];
     <!-- Footer -->
     <div class="mt-10">
         <?php if ($footerStatus === 'success'): ?>
-            <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
+            <div class="bg-secondary/10 border border-secondary -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold font-lora text-2xl text-ink">Poměr mezi běžnými a minimálními náklady je vyrovnaný</div>
-                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($footerPercent, 0, ',', ' ') ?>%</div>
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-secondary"><?= number_format($footerPercent, 0, ',', ' ') ?>%</div>
                 </div>
-                <div class="text-ink/70">Vaše běžné a minimální náklady jsou velmi podobné.</div>
+                <div>Vaše běžné a minimální náklady jsou velmi podobné.</div>
             </div>
         <?php else: ?>
-            <div class="bg-red-50 border border-error -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
+            <div class="bg-primary/10 border border-primary -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold font-lora text-2xl text-ink">Pozor! Vysoké minimální náklady</div>
-                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($footerPercent, 0, ',', ' ') ?>%</div>
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-primary"><?= number_format($footerPercent, 0, ',', ' ') ?>%</div>
                 </div>
-                <div class="text-ink/70">Vaše běžné a minimální náklady jsou velmi podobné. To může být problém, pokud v životě nastanou negativní nečekávané události.</div>
+                <div>Vaše běžné a minimální náklady jsou velmi podobné. To může být problém, pokud v životě nastanou negativní nečekávané události.</div>
             </div>
         <?php endif; ?>
     </div>

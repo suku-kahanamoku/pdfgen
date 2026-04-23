@@ -111,20 +111,20 @@ $goalFooterPercent = (float)($goalFooter['percent'] ?? 0);
     <!-- Footer -->
     <div class="mt-10">
         <?php if ($goalFooterStatus === 'success'): ?>
-            <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
+            <div class="bg-secondary/10 border border-secondary -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold font-lora text-2xl text-ink">Všechny vaše sny si splníte!</div>
-                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($goalFooterPercent, 0, ',', ' ') ?>%</div>
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-secondary"><?= number_format($goalFooterPercent, 0, ',', ' ') ?>%</div>
                 </div>
-                <div class="text-ink/70">Díky naší spolupráci se nám podaří naplnit všechny vaše sny.</div>
+                <div>Díky naší spolupráci se nám podaří naplnit všechny vaše sny.</div>
             </div>
         <?php else: ?>
-            <div class="bg-red-50 border border-danger -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
+            <div class="bg-primary/10 border border-primary -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold font-lora text-2xl text-ink">Některé cíle jsou mimo dosah</div>
-                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-danger"><?= number_format($goalFooterPercent, 0, ',', ' ') ?>%</div>
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-primary"><?= number_format($goalFooterPercent, 0, ',', ' ') ?>%</div>
                 </div>
-                <div class="text-ink/70">Bez úprav v rozpočtu nebo investiční strategii nemusíme všechny vaše sny naplnit. Pojďme to společně změnit.</div>
+                <div>Bez úprav v rozpočtu nebo investiční strategii nemusíme všechny vaše sny naplnit. Pojďme to společně změnit.</div>
             </div>
         <?php endif; ?>
     </div>

@@ -51,7 +51,7 @@ $ringMainColor = '#A97B53';
 
 // status -> footer / badge styles
 $footerOk = $footerStatus === 'success';
-$badgeCls = $footerOk ? 'bg-success text-white' : 'bg-error text-white';
+$badgeCls = $footerOk ? 'bg-secondary text-white' : 'bg-primary text-white';
 
 // helper
 $formatPct = function ($value) {
@@ -67,7 +67,7 @@ $formatPct = function ($value) {
 
     <!-- Top summary row -->
     <div class="flex gap-8 items-center">
-        <div class="flex-1 <?= $footerOk ? 'bg-green-50 border border-success' : 'bg-red-50 border border-error' ?> -ml-24 pl-24 max-w-3xl rounded-r-xl px-5 py-4 flex flex-col gap-2">
+        <div class="flex-1 <?= $footerOk ? 'bg-secondary/10 border border-secondary' : 'bg-primary/10 border border-primary' ?> -ml-24 pl-24 max-w-3xl rounded-r-xl px-5 py-4 flex flex-col gap-2">
             <div class="flex items-center justify-between gap-4">
                 <div class="font-lora text-3xl font-semibold text-ink">
                     <?= number_format($summaryValue, 0, ',', ' ') ?> <?= $cur ?>

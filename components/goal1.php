@@ -29,7 +29,7 @@ $goalIconMap = [
 $goalLabelMap = [
     'success' => 'border-success text-white/90',
     'warning' => 'border-warning text-white/90',
-    'danger'  => 'border-error text-white/90',
+    'danger'  => 'border-primary text-white/90',
     'neutral' => 'border-white/30 text-white/90',
 ];
 ?>

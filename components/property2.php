@@ -130,20 +130,20 @@ $barColors   = ['#254b34', '#936746'];
     <!-- Footer row -->
     <div class="grid grid-cols-[1fr_220px] gap-8 items-end">
         <?php if ($footerPercent === 'success'): ?>
-            <div class="bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-1">
+            <div class="bg-secondary/10 border border-secondary -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-1">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">Poměr mezi aktivy a pasivy je vyrovnaný</div>
-                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-success"><?= number_format($footerPercent, 0, ',', ' ') ?>%</div>
+                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-secondary"><?= number_format($footerPercent, 0, ',', ' ') ?>%</div>
                 </div>
-                <div class="text-ink/70">Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
+                <div>Rozdíl mezi ziskovostí aktiv a nákladovostí pasiv.</div>
             </div>
         <?php else: ?>
-            <div class="bg-red-50 border border-error -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-1">
+            <div class="bg-primary/10 border border-primary -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-1">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">Pozor! Vaše pasiva jsou vysoká.</div>
-                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-error"><?= number_format($footerPercent, 0, ',', ' ') ?>%</div>
+                    <div class="rounded-xl px-3 py-1 font-semibold flex-shrink-0 text-white bg-primary"><?= number_format($footerPercent, 0, ',', ' ') ?>%</div>
                 </div>
-                <div class="text-ink/70">Výše vašich aktiv se blíží hodnotě vašich pasiv. Kvůli tomu budete méně odolní v případě tržního výkyvu.</div>
+                <div>Výše vašich aktiv se blíží hodnotě vašich pasiv. Kvůli tomu budete méně odolní v případě tržního výkyvu.</div>
             </div>
         <?php endif; ?>
     </div>

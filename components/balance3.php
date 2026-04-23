@@ -75,30 +75,30 @@ $barColors   = ['#e7e4e4', '#936746'];
     <!-- Footer row -->
     <div class="mt-10 flex gap-8 items-center">
         <?php if ($footerStatus === 'success'): ?>
-            <div class="flex-1 bg-green-50 border border-success -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
+            <div class="flex-1 bg-secondary/10 border border-secondary -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">
                         Gratulujeme! Vaše rezerva je dostatečná.
                     </div>
-                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-success">
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-secondary">
                         <?= number_format($footerPercent, 0, ',', ' ') ?>%
                     </div>
                 </div>
-                <div class="text-ink/70">
+                <div>
                     S vaší aktuální rezervou pravděpodobně zvládnete překlenout nenadálé negativní události.
                 </div>
             </div>
         <?php else: ?>
-            <div class="flex-1 bg-red-50 border border-error -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
+            <div class="flex-1 bg-primary/10 border border-primary -ml-24 pl-24 max-w-2xl rounded-r-xl px-5 py-4 flex flex-col gap-4">
                 <div class="flex items-center justify-between gap-4">
                     <div class="font-semibold">
                         Pozor! Vaše rezerva není dostatečná.
                     </div>
-                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-error">
+                    <div class="rounded-xl px-3 py-3 font-semibold flex-shrink-0 text-white bg-primary">
                         <?= number_format($footerPercent, 0, ',', ' ') ?>%
                     </div>
                 </div>
-                <div class="text-ink/70">
+                <div>
                     Doporučujeme posílit rezervu, aby lépe pokryla neočekávané životní situace.
                 </div>
             </div>
