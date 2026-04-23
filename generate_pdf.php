@@ -91,8 +91,16 @@ ob_start();
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 
     <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
         html {
             font-size: 12px;
+            width: 794px;
+            max-width: 794px;
+            overflow-x: hidden;
         }
 
         body {
@@ -102,6 +110,8 @@ ob_start();
             print-color-adjust: exact;
             font-family: 'Host Grotesk', sans-serif;
             color: #4A4541;
+            width: 794px;
+            max-width: 794px;
             overflow-x: hidden;
         }
 
@@ -127,11 +137,11 @@ try {
             '--disable-gpu',
             '--disable-dev-shm-usage',
             '--disable-extensions',
-            '--disable-background-networking',
             '--disable-sync',
             '--metrics-recording-only',
             '--mute-audio',
             '--no-first-run',
+            '--force-device-scale-factor=1',
         ])
         ->showBackground()
         ->format('A4')
