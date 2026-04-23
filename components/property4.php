@@ -167,7 +167,7 @@ $formatPct = function ($value) {
                 <span><?= number_format($ltvOwnResourcesValue, 0, ',', ' ') ?> <?= $cur ?></span>
             </div>
 
-            <div class="flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
+            <div class="flex items-center justify-between rounded-lg bg-secondary px-4 py-3 font-lora font-semibold text-white">
                 <span><?= htmlspecialchars($ltvMaxLoanTitle) ?></span>
                 <span><?= number_format($ltvMaxLoanValue, 0, ',', ' ') ?> <?= $cur ?></span>
             </div>

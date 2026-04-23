@@ -1,0 +1,2114 @@
+{
+    "intro": {
+        "title": "Collegas",
+        "motto": "Nabízíme individuální finanční analýzy, které vám pomožou dosáhnout vašich finančních cílů efektivně a s jistotou.",
+        "contact": {
+            "name": "Iveta Butulová",
+            "position": "Specialista pro privátní klientelu",
+            "email": "iveta.butulova@collegas.cz",
+            "phone": "722953525",
+            "photo": "https://collega.cz/file/home/download/132421?key=940a5583af",
+            "copyright": "© 2026 Collega Brokers a.s.",
+            "pieUiOpen": false
+        },
+        "expectation": 3,
+        "situation": 4,
+        "questions": [
+            {
+                "question": "Co by se mělo stát, abyste odcházel s pocitem, že dnešní schůzka byla úspěšná?",
+                "answer": "Zajištění vlastního bydlení, a ochrana rodiny."
+            },
+            {
+                "question": "Kdybyste už neměli žádné finanční starosti, co byste dělali jinak?",
+                "answer": "Trávil bych víc času s rodinou a méně bych se stresoval."
+            },
+            {
+                "question": "Čím jsou pro vás peníze důležité?",
+                "answer": "Je to prostředek k dosažování snů a cílů."
+            },
+            {
+                "question": "Co by se stalo, kdybyste změnili to, jak utrácíte a spoříte? Jak byste se cítil?",
+                "answer": "Pořád stejně."
+            },
+            {
+                "question": "Kdybyste dnes mohli vyřešit jakýkoliv finanční problém pouhým lusknutím prstu, co byste vyřešili?",
+                "answer": "Zajištění na stáří."
+            },
+            {
+                "question": "Jaká je vaše strategie v budování majetku?",
+                "answer": "Volný kapitál dávat do nemovitostí."
+            }
+        ]
+    },
+    "client": {
+        "user": {
+            "client": {
+                "name": "Michal Masařík",
+                "birth_date": "",
+                "address": "Nad Borešovou 805, 66401 Bílovice nad Svitavou",
+                "marital_status": "ženatý / vdaná",
+                "phone": "+420 732 723 282",
+                "email": "masmic@email.cz"
+            },
+            "partner": {
+                "name": "Monika Masaříková",
+                "birth_date": "",
+                "address": "Nad Borešovou 805, 664 01 Bílovice nad Svitavou",
+                "marital_status": "ženatý / vdaná"
+            },
+            "children": {
+                "rows": []
+            },
+            "pets": {
+                "rows": []
+            },
+            "pieUiOpen": false
+        }
+    },
+    "target": {
+        "targets": {
+            "labels": [
+                "Krátkodobé",
+                "Střednědobé",
+                "Dlouhodobé",
+                "Rezerva",
+                "Vysoká priorita",
+                "Volitelné",
+                "Cestování"
+            ],
+            "computed": {
+                "fx": "goalsWishesSummary"
+            },
+            "header": [
+                {
+                    "key": "name",
+                    "label": "Název",
+                    "type": "text"
+                },
+                {
+                    "key": "start",
+                    "label": "Počátek",
+                    "type": "date"
+                },
+                {
+                    "key": "targetDate",
+                    "label": "Cílové datum",
+                    "type": "date"
+                },
+                {
+                    "key": "targetAmount",
+                    "label": "Cílová částka",
+                    "type": "currency"
+                },
+                {
+                    "key": "frequency",
+                    "label": "Frekvence",
+                    "type": "select",
+                    "options": [
+                        {
+                            "value": "Jednorázově",
+                            "label": "Jednorázově"
+                        },
+                        {
+                            "value": "měsíčně",
+                            "label": "měsíčně"
+                        },
+                        {
+                            "value": "kvartálně",
+                            "label": "kvartálně"
+                        },
+                        {
+                            "value": "pololetně",
+                            "label": "pololetně"
+                        },
+                        {
+                            "value": "ročně",
+                            "label": "ročně"
+                        },
+                        {
+                            "value": "každé 2 roky",
+                            "label": "každé 2 roky"
+                        },
+                        {
+                            "value": "každé 4 roky",
+                            "label": "každé 4 roky"
+                        }
+                    ]
+                },
+                {
+                    "key": "repeatUntil",
+                    "label": "Opakovat do",
+                    "type": "date"
+                },
+                {
+                    "key": "currentAmount",
+                    "label": "Naspořeno",
+                    "type": "currency"
+                },
+                {
+                    "key": "gap",
+                    "label": "Zbývá",
+                    "type": "currency",
+                    "editable": "false"
+                },
+                {
+                    "key": "notes",
+                    "label": "Poznámka",
+                    "type": "text"
+                }
+            ],
+            "title": "Finanční cíle a přání",
+            "headerButtons": [],
+            "rows": [
+                {
+                    "labels": [
+                        "krátkodobé",
+                        "rezerva",
+                        "vysoká priorita"
+                    ],
+                    "name": {
+                        "value": "Auto",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "2026-01-01",
+                        "type": "date"
+                    },
+                    "targetDate": {
+                        "value": "2032-12-31",
+                        "type": "date"
+                    },
+                    "targetAmount": {
+                        "value": 700000,
+                        "type": "currency"
+                    },
+                    "frequency": {
+                        "value": "Jednorázově",
+                        "type": "select",
+                        "options": [
+                            {
+                                "value": "Jednorázově",
+                                "label": "Jednorázově"
+                            },
+                            {
+                                "value": "měsíčně",
+                                "label": "měsíčně"
+                            },
+                            {
+                                "value": "kvartálně",
+                                "label": "kvartálně"
+                            },
+                            {
+                                "value": "pololetně",
+                                "label": "pololetně"
+                            },
+                            {
+                                "value": "ročně",
+                                "label": "ročně"
+                            },
+                            {
+                                "value": "každé 2 roky",
+                                "label": "každé 2 roky"
+                            },
+                            {
+                                "value": "každé 4 roky",
+                                "label": "každé 4 roky"
+                            }
+                        ]
+                    },
+                    "repeatUntil": {
+                        "value": "",
+                        "type": "date"
+                    },
+                    "currentAmount": {
+                        "value": 180000,
+                        "type": "currency"
+                    },
+                    "gap": {
+                        "value": "",
+                        "type": "currency"
+                    },
+                    "notes": {
+                        "value": "Auto",
+                        "type": "text"
+                    }
+                },
+                {
+                    "labels": [
+                        "střednědobé",
+                        "volitelné",
+                        "cestování"
+                    ],
+                    "name": {
+                        "value": "Chata",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "2026-01-01",
+                        "type": "date"
+                    },
+                    "targetDate": {
+                        "value": "2048-04-30",
+                        "type": "date"
+                    },
+                    "targetAmount": {
+                        "value": 1700000,
+                        "type": "currency"
+                    },
+                    "frequency": {
+                        "value": "Jednorázově",
+                        "type": "select",
+                        "options": [
+                            {
+                                "value": "Jednorázově",
+                                "label": "Jednorázově"
+                            },
+                            {
+                                "value": "měsíčně",
+                                "label": "měsíčně"
+                            },
+                            {
+                                "value": "kvartálně",
+                                "label": "kvartálně"
+                            },
+                            {
+                                "value": "pololetně",
+                                "label": "pololetně"
+                            },
+                            {
+                                "value": "ročně",
+                                "label": "ročně"
+                            },
+                            {
+                                "value": "každé 2 roky",
+                                "label": "každé 2 roky"
+                            },
+                            {
+                                "value": "každé 4 roky",
+                                "label": "každé 4 roky"
+                            }
+                        ]
+                    },
+                    "repeatUntil": {
+                        "value": "",
+                        "type": "date"
+                    },
+                    "currentAmount": {
+                        "value": 20000,
+                        "type": "currency"
+                    },
+                    "gap": {
+                        "value": "",
+                        "type": "currency"
+                    },
+                    "notes": {
+                        "value": "Chata",
+                        "type": "text"
+                    }
+                },
+                {
+                    "labels": [
+                        "střednědobé",
+                        "volitelné",
+                        "cestování"
+                    ],
+                    "name": {
+                        "value": "motorka",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "2026-01-01",
+                        "type": "date"
+                    },
+                    "targetDate": {
+                        "value": "2041-04-30",
+                        "type": "date"
+                    },
+                    "targetAmount": {
+                        "value": 500000,
+                        "type": "currency"
+                    },
+                    "frequency": {
+                        "value": "Jednorázově",
+                        "type": "select",
+                        "options": [
+                            {
+                                "value": "Jednorázově",
+                                "label": "Jednorázově"
+                            },
+                            {
+                                "value": "měsíčně",
+                                "label": "měsíčně"
+                            },
+                            {
+                                "value": "kvartálně",
+                                "label": "kvartálně"
+                            },
+                            {
+                                "value": "pololetně",
+                                "label": "pololetně"
+                            },
+                            {
+                                "value": "ročně",
+                                "label": "ročně"
+                            },
+                            {
+                                "value": "každé 2 roky",
+                                "label": "každé 2 roky"
+                            },
+                            {
+                                "value": "každé 4 roky",
+                                "label": "každé 4 roky"
+                            }
+                        ]
+                    },
+                    "repeatUntil": {
+                        "value": "",
+                        "type": "date"
+                    },
+                    "currentAmount": {
+                        "value": 20000,
+                        "type": "currency"
+                    },
+                    "gap": {
+                        "value": "",
+                        "type": "currency"
+                    },
+                    "notes": {
+                        "value": "Ducati",
+                        "type": "text"
+                    }
+                }
+            ],
+            "pieCharts": [],
+            "pieUiOpen": false
+        },
+        "solutions": {
+            "labels": [
+                "Krátkodobé",
+                "Střednědobé",
+                "Dlouhodobé",
+                "Rezerva",
+                "Vysoká priorita",
+                "Volitelné",
+                "Cestování"
+            ],
+            "computed": {
+                "fx": "goalsWishesSummary"
+            },
+            "header": [
+                {
+                    "key": "name",
+                    "label": "Název",
+                    "type": "text"
+                },
+                {
+                    "key": "start",
+                    "label": "Počátek",
+                    "type": "date"
+                },
+                {
+                    "key": "targetDate",
+                    "label": "Cílové datum",
+                    "type": "date"
+                },
+                {
+                    "key": "invested",
+                    "label": "Investice",
+                    "type": "currency"
+                },
+                {
+                    "key": "frequency",
+                    "label": "Frekvence",
+                    "type": "text"
+                },
+                {
+                    "key": "interest",
+                    "label": "Úrok",
+                    "type": "percent"
+                },
+                {
+                    "key": "notes",
+                    "label": "Poznámka",
+                    "type": "text"
+                }
+            ],
+            "title": "Finanční plán",
+            "headerButtons": [],
+            "rows": [],
+            "pieCharts": [],
+            "pieUiOpen": false
+        }
+    },
+    "property": {
+        "property_active": {
+            "labels": [
+                "Krátkodobé",
+                "Střednědobé",
+                "Dlouhodobé",
+                "Nízká likvidita",
+                "Střední likvidita",
+                "Vysoká likvidita",
+                "Cenné papíry",
+                "Nemovitosti",
+                "Komodity",
+                "Pravidelné investice"
+            ],
+            "categories": [
+                "Hotovost",
+                "Bankovní účty",
+                "Fondy & Akcie",
+                "Dluhové CP",
+                "Deriváty",
+                "Kryptoměny",
+                "Vlastní bydlení",
+                "Investiční nemovitost",
+                "Nemovitostní fondy",
+                "Auta & Stroje",
+                "Firemní podíly",
+                "Komodity",
+                "Umění",
+                "Zvířata"
+            ],
+            "status": [
+                "success",
+                "warning",
+                "danger"
+            ],
+            "computed": {
+                "fx": "propertyActiveSummary"
+            },
+            "header": [
+                {
+                    "key": "name",
+                    "label": "Položka",
+                    "type": "text"
+                },
+                {
+                    "key": "start",
+                    "label": "Počátek",
+                    "type": "text"
+                },
+                {
+                    "key": "end",
+                    "label": "Konec",
+                    "type": "text"
+                },
+                {
+                    "key": "invested",
+                    "label": "Investovaná částka",
+                    "type": "currency",
+                    "editable": "false"
+                },
+                {
+                    "key": "aum",
+                    "label": "Aktuální hodnota",
+                    "type": "currency",
+                    "editable": "false"
+                },
+                {
+                    "key": "yieldAnnually",
+                    "label": "Roční výnos",
+                    "type": "percent"
+                },
+                {
+                    "key": "yieldTotal",
+                    "label": "Celkový výnos",
+                    "type": "percent"
+                }
+            ],
+            "title": "Aktiva",
+            "headerButtons": [
+                {
+                    "label": "Importovat aktivní",
+                    "className": "btn",
+                    "onClick": "importPropertyActiveRows"
+                },
+                {
+                    "label": "Importovat ukončené",
+                    "className": "btn",
+                    "onClick": "importPropertyEndedRows"
+                },
+                {
+                    "label": "Export CSV",
+                    "className": "btn ghost",
+                    "onClick": "exportTableCsv"
+                }
+            ],
+            "rows": [
+                {
+                    "name": {
+                        "value": "💴 Cenné papíry",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 0,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 0,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": "",
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "cenné papíry"
+                    ],
+                    "class": [
+                        "separator"
+                    ],
+                    "category": "separator",
+                    "history": []
+                },
+                {
+                    "name": {
+                        "value": "GICP",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "14.06.2016",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "14.06.2038",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 1000,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 1000,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "Dlouhodobé",
+                        "Střední likvidita",
+                        "cenné papíry"
+                    ],
+                    "category": "Fondy & Akcie",
+                    "history": [
+                        {
+                            "date": "2016-06-14",
+                            "invested": 1000,
+                            "name": "počáteční vklad",
+                            "start": "",
+                            "aum": 1000,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2026-04-23",
+                            "invested": 0,
+                            "name": "odhad",
+                            "start": "",
+                            "aum": 1000,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        }
+                    ]
+                },
+                {
+                    "name": {
+                        "value": "Komisionářská smlouva",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "29.06.2016",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "29.06.2031",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 500,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": 129150,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 646248.1092,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": 143.5,
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "Dlouhodobé",
+                        "Střední likvidita",
+                        "cenné papíry"
+                    ],
+                    "category": "Fondy & Akcie",
+                    "history": [
+                        {
+                            "date": "2016-06-29",
+                            "invested": 500,
+                            "name": "počáteční vklad",
+                            "start": "",
+                            "aum": 500,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2025-09-25",
+                            "invested": "",
+                            "name": "AUM záznam",
+                            "start": "",
+                            "aum": 646248.1092,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        }
+                    ]
+                },
+                {
+                    "name": {
+                        "value": "CREIF - jednorázově ",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "07.05.2019",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "14.05.2026",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 2302,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 2302,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "Dlouhodobé",
+                        "Střední likvidita",
+                        "cenné papíry"
+                    ],
+                    "category": "Fondy & Akcie",
+                    "history": [
+                        {
+                            "date": "2025-12-15",
+                            "invested": 2302,
+                            "name": "vklad",
+                            "start": "",
+                            "aum": "",
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2026-04-23",
+                            "invested": 0,
+                            "name": "odhad",
+                            "start": "",
+                            "aum": 2302,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        }
+                    ]
+                },
+                {
+                    "name": {
+                        "value": "US Portfolio hgd (CZK)",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "28.03.2022",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "28.03.2032",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 2000,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": 8028,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 162556.46,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": 20.07,
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "Střednědobé",
+                        "Střední likvidita",
+                        "cenné papíry"
+                    ],
+                    "category": "Fondy & Akcie",
+                    "history": [
+                        {
+                            "date": "2022-03-28",
+                            "invested": 2000,
+                            "name": "počáteční vklad",
+                            "start": "",
+                            "aum": 2000,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2025-12-31",
+                            "invested": "",
+                            "name": "AUM záznam",
+                            "start": "",
+                            "aum": 160087.81,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2026-03-31",
+                            "invested": "",
+                            "name": "AUM záznam",
+                            "start": "",
+                            "aum": 162556.46,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        }
+                    ]
+                },
+                {
+                    "name": {
+                        "value": "FTSI Senice I 23 - 7,5 %",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "11.12.2023",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "14.09.2028",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 74026.69,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 74026,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "Střednědobé",
+                        "Střední likvidita",
+                        "cenné papíry"
+                    ],
+                    "category": "Fondy & Akcie",
+                    "history": [
+                        {
+                            "date": "2023-12-27",
+                            "invested": 74026.69,
+                            "name": "vklad",
+                            "start": "",
+                            "aum": "",
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2026-04-23",
+                            "invested": 0,
+                            "name": "odhad",
+                            "start": "",
+                            "aum": 74026,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        }
+                    ]
+                },
+                {
+                    "name": {
+                        "value": "Dluhopis PROPERITY - VII. emise",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "11.12.2023",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "31.12.2026",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 103027,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 103027,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "Střednědobé",
+                        "Střední likvidita",
+                        "cenné papíry"
+                    ],
+                    "category": "Dluhové CP",
+                    "history": [
+                        {
+                            "date": "2023-12-11",
+                            "invested": 103027,
+                            "name": "počáteční vklad",
+                            "start": "",
+                            "aum": 103027,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2026-04-23",
+                            "invested": 0,
+                            "name": "odhad",
+                            "start": "",
+                            "aum": 103027,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        }
+                    ]
+                },
+                {
+                    "name": {
+                        "value": "NEMO fund, třída CZK",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "13.12.2023",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "13.12.2027",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 2000,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 2000,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "Střednědobé",
+                        "Střední likvidita",
+                        "cenné papíry"
+                    ],
+                    "category": "Fondy & Akcie",
+                    "history": [
+                        {
+                            "date": "2023-12-13",
+                            "invested": 2000,
+                            "name": "vklad",
+                            "start": "",
+                            "aum": "",
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2026-04-23",
+                            "invested": 0,
+                            "name": "odhad",
+                            "start": "",
+                            "aum": 2000,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        }
+                    ]
+                },
+                {
+                    "name": {
+                        "value": "DIP - US Portfolio hgd (CZK)",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "26.03.2024",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "26.03.2029",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 1656,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": 1322,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 23546.27,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": 6.61,
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "Střednědobé",
+                        "Střední likvidita",
+                        "cenné papíry"
+                    ],
+                    "category": "Fondy & Akcie",
+                    "history": [
+                        {
+                            "date": "2024-03-26",
+                            "invested": 1656,
+                            "name": "vklad",
+                            "start": "",
+                            "aum": "",
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2025-12-31",
+                            "invested": "",
+                            "name": "AUM záznam",
+                            "start": "",
+                            "aum": 21396.54,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2026-03-31",
+                            "invested": "",
+                            "name": "AUM záznam",
+                            "start": "",
+                            "aum": 23546.27,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        }
+                    ]
+                },
+                {
+                    "name": {
+                        "value": "R.E.M.D. Funding 8,2% / 2026",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "02.04.2024",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "30.06.2026",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 150000,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 150000,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "Střednědobé",
+                        "Střední likvidita",
+                        "cenné papíry"
+                    ],
+                    "category": "Fondy & Akcie",
+                    "history": [
+                        {
+                            "date": "2024-04-02",
+                            "invested": 150000,
+                            "name": "počáteční vklad",
+                            "start": "",
+                            "aum": 150000,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2026-04-23",
+                            "invested": 0,
+                            "name": "odhad",
+                            "start": "",
+                            "aum": 150000,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        }
+                    ]
+                },
+                {
+                    "name": {
+                        "value": "Věk 0-70 let - Doplňkové penzijní spoření - ostatní smlouvy s PÚ nižším než 300 Kč -",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "01.05.2024",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "01.05.2043",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 100,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 100,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "Střednědobé",
+                        "Střední likvidita",
+                        "cenné papíry"
+                    ],
+                    "category": "Fondy & Akcie",
+                    "history": [
+                        {
+                            "date": "2024-05-01",
+                            "invested": 100,
+                            "name": "počáteční vklad",
+                            "start": "",
+                            "aum": 100,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2026-04-23",
+                            "invested": 0,
+                            "name": "odhad",
+                            "start": "",
+                            "aum": 100,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        }
+                    ]
+                },
+                {
+                    "name": {
+                        "value": "Edward - Portfolio MP7",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "17.02.2026",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "17.05.2044",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 25000,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": -100,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 0,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "Střednědobé",
+                        "Střední likvidita",
+                        "cenné papíry"
+                    ],
+                    "category": "Fondy & Akcie",
+                    "history": [
+                        {
+                            "date": "2026-02-17",
+                            "invested": 25000,
+                            "name": "vklad",
+                            "start": "",
+                            "aum": "",
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2026-03-01",
+                            "invested": "",
+                            "name": "AUM záznam",
+                            "start": "",
+                            "aum": 0,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        }
+                    ]
+                },
+                {
+                    "name": {
+                        "value": "DIAMOND_FISH_I 4 roky - 7,5%",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "06.03.2026",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "14.11.2029",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 236033,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": -100,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 0,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "Střednědobé",
+                        "Střední likvidita",
+                        "cenné papíry"
+                    ],
+                    "category": "Fondy & Akcie",
+                    "history": [
+                        {
+                            "date": "2026-03-09",
+                            "invested": 236033,
+                            "name": "vklad",
+                            "start": "",
+                            "aum": "",
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2026-03-09",
+                            "invested": "",
+                            "name": "AUM záznam",
+                            "start": "",
+                            "aum": 236033,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2026-03-09",
+                            "invested": "",
+                            "name": "AUM záznam",
+                            "start": "",
+                            "aum": 236033,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        }
+                    ]
+                },
+                {
+                    "name": {
+                        "value": "🏫 Nemovitosti",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 0,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 0,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": "",
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "nemovitosti"
+                    ],
+                    "class": [
+                        "separator"
+                    ],
+                    "category": "separator",
+                    "history": []
+                },
+                {
+                    "name": {
+                        "value": "💎 Komodity",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 0,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 0,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": "",
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "komodity"
+                    ],
+                    "class": [
+                        "separator"
+                    ],
+                    "category": "separator",
+                    "history": []
+                },
+                {
+                    "name": {
+                        "value": "Komoditní účet (zlato, stříbro, platina) ",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "06.05.2019",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "06.05.2039",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 4500,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 4500,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "Dlouhodobé",
+                        "Střední likvidita",
+                        "komodity"
+                    ],
+                    "category": "Komodity",
+                    "history": [
+                        {
+                            "date": "2019-05-06",
+                            "invested": 4500,
+                            "name": "počáteční vklad",
+                            "start": "",
+                            "aum": 4500,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2026-04-23",
+                            "invested": 0,
+                            "name": "odhad",
+                            "start": "",
+                            "aum": 4500,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        }
+                    ]
+                },
+                {
+                    "name": {
+                        "value": "Komoditní účet STŘÍBRO",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "29.04.2021",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "29.04.2041",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 0,
+                        "type": "currency"
+                    },
+                    "yieldTotal": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 0,
+                        "type": "currency"
+                    },
+                    "yieldAnnually": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "labels": [
+                        "Střednědobé",
+                        "Střední likvidita",
+                        "komodity"
+                    ],
+                    "category": "Komodity",
+                    "history": [
+                        {
+                            "date": "2021-04-29",
+                            "invested": 0,
+                            "name": "počáteční vklad",
+                            "start": "",
+                            "aum": 0,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        },
+                        {
+                            "date": "2026-04-23",
+                            "invested": 0,
+                            "name": "odhad",
+                            "start": "",
+                            "aum": 0,
+                            "yieldAnnually": "",
+                            "yieldTotal": ""
+                        }
+                    ]
+                }
+            ],
+            "pieCharts": [],
+            "pieUiOpen": false
+        },
+        "property_pasive": {
+            "labels": [],
+            "categories": [
+                "Hypotéka na bydlení",
+                "Investiční hypotéka",
+                "Úvěry"
+            ],
+            "status": [
+                "success",
+                "warning",
+                "danger"
+            ],
+            "chartIds": [
+                "chart-property-pasive"
+            ],
+            "header": [
+                {
+                    "key": "name",
+                    "label": "Položka",
+                    "type": "text"
+                },
+                {
+                    "key": "start",
+                    "label": "Počátek",
+                    "type": "text"
+                },
+                {
+                    "key": "fixation",
+                    "label": "Fixace",
+                    "type": "text"
+                },
+                {
+                    "key": "end",
+                    "label": "Konec",
+                    "type": "text"
+                },
+                {
+                    "key": "invested",
+                    "label": "Výše závazku",
+                    "type": "currency"
+                },
+                {
+                    "key": "paid",
+                    "label": "Splaceno",
+                    "type": "percent"
+                },
+                {
+                    "key": "aum",
+                    "label": "Zbývá umořit",
+                    "type": "currency"
+                },
+                {
+                    "key": "yield",
+                    "label": "Úrok",
+                    "type": "percent"
+                }
+            ],
+            "title": "Pasiva",
+            "headerButtons": [
+                {
+                    "label": "Importovat aktivní",
+                    "className": "btn",
+                    "onClick": "importPropertyActiveRows"
+                },
+                {
+                    "label": "Importovat ukončené",
+                    "className": "btn",
+                    "onClick": "importPropertyEndedRows"
+                },
+                {
+                    "label": "Export CSV",
+                    "className": "btn ghost",
+                    "onClick": "exportTableCsv"
+                }
+            ],
+            "rows": [
+                {
+                    "name": {
+                        "value": "Hypoteční úvěr",
+                        "type": "text"
+                    },
+                    "start": {
+                        "value": "29.11.2024",
+                        "type": "text"
+                    },
+                    "fixation": {
+                        "value": "19.12.2026",
+                        "type": "text"
+                    },
+                    "end": {
+                        "value": "19.12.2026",
+                        "type": "text"
+                    },
+                    "invested": {
+                        "value": 3000000,
+                        "type": "currency"
+                    },
+                    "paid": {
+                        "value": 68.05,
+                        "type": "percent"
+                    },
+                    "aum": {
+                        "value": 958546.2500000002,
+                        "type": "currency"
+                    },
+                    "yield": {
+                        "value": 0,
+                        "type": "percent"
+                    },
+                    "category": "Úvěry"
+                }
+            ],
+            "pieCharts": [],
+            "pieUiOpen": false
+        }
+    },
+    "balance": {
+        "costs": {
+            "labels": [],
+            "header": [
+                {
+                    "key": "name",
+                    "label": "Položka",
+                    "type": "text"
+                },
+                {
+                    "key": "regularAmount",
+                    "label": "Běžná výše",
+                    "type": "currency"
+                },
+                {
+                    "key": "fixedAmount",
+                    "label": "Minimální (fixní) výše",
+                    "type": "currency"
+                },
+                {
+                    "key": "note",
+                    "label": "Poznámka",
+                    "type": "text"
+                }
+            ],
+            "title": "Měsíční náklady",
+            "headerButtons": [],
+            "rows": [
+                {
+                    "name": {
+                        "value": "Bydlení",
+                        "type": "text"
+                    },
+                    "regularAmount": {
+                        "value": 18000,
+                        "type": "currency"
+                    },
+                    "fixedAmount": {
+                        "value": 18000,
+                        "type": "currency"
+                    },
+                    "note": {
+                        "value": "Nájem / hypotéka + služby",
+                        "type": "text"
+                    }
+                },
+                {
+                    "name": {
+                        "value": "Potraviny",
+                        "type": "text"
+                    },
+                    "regularAmount": {
+                        "value": 12000,
+                        "type": "currency"
+                    },
+                    "fixedAmount": {
+                        "value": 9000,
+                        "type": "currency"
+                    },
+                    "note": {
+                        "value": "Domácnost",
+                        "type": "text"
+                    }
+                },
+                {
+                    "name": {
+                        "value": "Doprava",
+                        "type": "text"
+                    },
+                    "regularAmount": {
+                        "value": 5000,
+                        "type": "currency"
+                    },
+                    "fixedAmount": {
+                        "value": 3000,
+                        "type": "currency"
+                    },
+                    "note": {
+                        "value": "Auto / MHD",
+                        "type": "text"
+                    }
+                }
+            ],
+            "pieCharts": [],
+            "pieUiOpen": false
+        },
+        "income": {
+            "labels": [],
+            "header": [
+                {
+                    "key": "name",
+                    "label": "Příjem",
+                    "type": "text"
+                },
+                {
+                    "key": "type",
+                    "label": "Typ příjmu",
+                    "type": "select",
+                    "options": [
+                        {
+                            "value": "práce",
+                            "label": "Práce"
+                        },
+                        {
+                            "value": "brigáda",
+                            "label": "Brigáda"
+                        },
+                        {
+                            "value": "podnikání",
+                            "label": "Podnikání"
+                        },
+                        {
+                            "value": "důchod",
+                            "label": "Důchod"
+                        },
+                        {
+                            "value": "pronájem",
+                            "label": "Pronájem"
+                        },
+                        {
+                            "value": "rodičovská",
+                            "label": "Rodičovská"
+                        },
+                        {
+                            "value": "podpora",
+                            "label": "Podpora"
+                        },
+                        {
+                            "value": "jiné",
+                            "label": "Jiné"
+                        }
+                    ]
+                },
+                {
+                    "key": "amount",
+                    "label": "Měsíční výše",
+                    "type": "currency"
+                },
+                {
+                    "key": "note",
+                    "label": "Poznámka",
+                    "type": "text"
+                }
+            ],
+            "title": "Měsíční příjmy",
+            "headerButtons": [],
+            "rows": [
+                {
+                    "name": {
+                        "value": "Hlavní pracovní poměr",
+                        "type": "text"
+                    },
+                    "type": {
+                        "value": "práce",
+                        "type": "select",
+                        "options": [
+                            {
+                                "value": "práce",
+                                "label": "Práce"
+                            },
+                            {
+                                "value": "brigáda",
+                                "label": "Brigáda"
+                            },
+                            {
+                                "value": "podnikání",
+                                "label": "Podnikání"
+                            },
+                            {
+                                "value": "důchod",
+                                "label": "Důchod"
+                            },
+                            {
+                                "value": "pronájem",
+                                "label": "Pronájem"
+                            },
+                            {
+                                "value": "rodičovská",
+                                "label": "Rodičovská"
+                            },
+                            {
+                                "value": "podpora",
+                                "label": "Podpora"
+                            },
+                            {
+                                "value": "jiné",
+                                "label": "Jiné"
+                            }
+                        ]
+                    },
+                    "amount": {
+                        "value": 60000,
+                        "type": "currency"
+                    },
+                    "note": {
+                        "value": "Čistý měsíční příjem",
+                        "type": "text"
+                    }
+                }
+            ],
+            "pieCharts": [],
+            "pieUiOpen": false
+        }
+    },
+    "health": {
+        "life_insurance": {
+            "clientInputs": {
+                "age": 40,
+                "gender": "muž",
+                "familyStatus": "ženatý/vdaná",
+                "dependents": 2,
+                "occupationRisk": "střední",
+                "monthlyIncome": 60000,
+                "monthlyExpenses": 45000,
+                "essentialExpenses": 35000,
+                "liquidReserveMonths": 4,
+                "loanBalance": 5000000,
+                "loanMonthlyPayment": 24000,
+                "existingLifeInsurance": 1000000,
+                "existingInvalidityInsurance": 0,
+                "sicknessReserveDays": 30,
+                "smoker": "ne",
+                "riskSports": "ne",
+                "retirementAge": 65,
+                "priority": "vyvážený poměr cena / krytí",
+                "note": "Klient chce primárně ochránit rodinu a splácení hypotéky."
+            },
+            "output": null,
+            "pieUiOpen": false
+        },
+        "life_insurance_coverages": {
+            "labels": [],
+            "header": [
+                {
+                    "key": "risk_code",
+                    "label": "Kód rizika",
+                    "type": "text",
+                    "hidden": true
+                },
+                {
+                    "key": "name",
+                    "label": "Název krytí",
+                    "type": "text"
+                },
+                {
+                    "key": "recommended_amount",
+                    "label": "Pojistná částka",
+                    "type": "currency"
+                },
+                {
+                    "key": "amount_type",
+                    "label": "Typ částky",
+                    "type": "select",
+                    "options": [
+                        {
+                            "value": "fixed",
+                            "label": "Jednorázová"
+                        },
+                        {
+                            "value": "monthly_benefit",
+                            "label": "Měsíční renta"
+                        },
+                        {
+                            "value": "daily_benefit",
+                            "label": "Denní dávka"
+                        }
+                    ]
+                },
+                {
+                    "key": "duration",
+                    "label": "Doba trvání",
+                    "type": "text"
+                },
+                {
+                    "key": "waiting_period",
+                    "label": "Čekací doba",
+                    "type": "text"
+                },
+                {
+                    "key": "note",
+                    "label": "Poznámka",
+                    "type": "text"
+                },
+                {
+                    "key": "rationale",
+                    "label": "Odůvodnění",
+                    "type": "text"
+                }
+            ],
+            "title": "Krytí životního pojištění",
+            "note": "Tabulka používá stejný manager jako ostatní sekce, takže podporuje přidávání řádků, export i další standardní akce.",
+            "headerButtons": [
+                {
+                    "label": "Export CSV",
+                    "className": "btn ghost",
+                    "onClick": "exportTableCsv"
+                }
+            ],
+            "rows": [],
+            "pieUiOpen": false
+        }
+    },
+    "insurance": {
+        "insurance_assets": {
+            "labels": [
+                "Pojištěno",
+                "Nezajištěno",
+                "Nemovitosti",
+                "Auta & Stroje",
+                "Umění",
+                "Komodity"
+            ],
+            "header": [
+                {
+                    "key": "sourceKey",
+                    "label": "Zdroj",
+                    "type": "text",
+                    "editable": "false",
+                    "hidden": true
+                },
+                {
+                    "key": "sourceName",
+                    "label": "Majetek",
+                    "type": "text",
+                    "editable": "false"
+                },
+                {
+                    "key": "category",
+                    "label": "Kategorie",
+                    "type": "text",
+                    "editable": "false"
+                },
+                {
+                    "key": "assetValue",
+                    "label": "Aktuální hodnota",
+                    "type": "currency",
+                    "editable": "false"
+                },
+                {
+                    "key": "insured",
+                    "label": "Pojištěno",
+                    "type": "select",
+                    "options": [
+                        {
+                            "value": "ano",
+                            "label": "Ano"
+                        },
+                        {
+                            "value": "ne",
+                            "label": "Ne"
+                        }
+                    ]
+                },
+                {
+                    "key": "insuranceType",
+                    "label": "Typ pojištění",
+                    "type": "text"
+                },
+                {
+                    "key": "insurer",
+                    "label": "Pojišťovna",
+                    "type": "text"
+                },
+                {
+                    "key": "policyNumber",
+                    "label": "Číslo smlouvy",
+                    "type": "text"
+                },
+                {
+                    "key": "coverageAmount",
+                    "label": "Pojistná částka",
+                    "type": "currency"
+                },
+                {
+                    "key": "validUntil",
+                    "label": "Platnost do",
+                    "type": "date"
+                },
+                {
+                    "key": "notes",
+                    "label": "Poznámka",
+                    "type": "text"
+                }
+            ],
+            "title": "Pojištění majetku",
+            "note": "Automaticky se sem propisují položky z majetku, které je vhodné majetkově pojistit. Souhrn vychází z porovnání aktuální hodnoty a pojistné částky, takže odhalí i podpojištění.",
+            "headerButtons": [
+                {
+                    "label": "Synchronizovat z majetku",
+                    "className": "btn",
+                    "onClick": "syncInsuranceFromPropertyWithAlert"
+                },
+                {
+                    "label": "Export CSV",
+                    "className": "btn ghost",
+                    "onClick": "exportTableCsv"
+                }
+            ],
+            "rows": [
+                {
+                    "sourceKey": {
+                        "value": "Komoditní účet STŘÍBRO|29.04.2021|29.04.2041",
+                        "type": "text"
+                    },
+                    "sourceName": {
+                        "value": "Komoditní účet STŘÍBRO",
+                        "type": "text"
+                    },
+                    "category": {
+                        "value": "Komodity",
+                        "type": "text"
+                    },
+                    "assetValue": {
+                        "value": 0,
+                        "type": "currency"
+                    },
+                    "insured": {
+                        "value": "ne",
+                        "type": "select",
+                        "options": [
+                            {
+                                "value": "ano",
+                                "label": "Ano"
+                            },
+                            {
+                                "value": "ne",
+                                "label": "Ne"
+                            }
+                        ]
+                    },
+                    "insuranceType": {
+                        "value": "",
+                        "type": "text"
+                    },
+                    "insurer": {
+                        "value": "",
+                        "type": "text"
+                    },
+                    "policyNumber": {
+                        "value": "",
+                        "type": "text"
+                    },
+                    "coverageAmount": {
+                        "value": 0,
+                        "type": "currency"
+                    },
+                    "validUntil": {
+                        "value": "",
+                        "type": "date"
+                    },
+                    "notes": {
+                        "value": "",
+                        "type": "text"
+                    },
+                    "labels": [
+                        "Nezajištěno",
+                        "Komodity"
+                    ],
+                    "class": [
+                        "insurance-missing"
+                    ]
+                },
+                {
+                    "sourceKey": {
+                        "value": "Komoditní účet (zlato, stříbro, platina)|06.05.2019|06.05.2039",
+                        "type": "text"
+                    },
+                    "sourceName": {
+                        "value": "Komoditní účet (zlato, stříbro, platina)",
+                        "type": "text"
+                    },
+                    "category": {
+                        "value": "Komodity",
+                        "type": "text"
+                    },
+                    "assetValue": {
+                        "value": 4500,
+                        "type": "currency"
+                    },
+                    "insured": {
+                        "value": "ne",
+                        "type": "select",
+                        "options": [
+                            {
+                                "value": "ano",
+                                "label": "Ano"
+                            },
+                            {
+                                "value": "ne",
+                                "label": "Ne"
+                            }
+                        ]
+                    },
+                    "insuranceType": {
+                        "value": "",
+                        "type": "text"
+                    },
+                    "insurer": {
+                        "value": "",
+                        "type": "text"
+                    },
+                    "policyNumber": {
+                        "value": "",
+                        "type": "text"
+                    },
+                    "coverageAmount": {
+                        "value": 0,
+                        "type": "currency"
+                    },
+                    "validUntil": {
+                        "value": "",
+                        "type": "date"
+                    },
+                    "notes": {
+                        "value": "",
+                        "type": "text"
+                    },
+                    "labels": [
+                        "Nezajištěno",
+                        "Komodity"
+                    ],
+                    "class": [
+                        "insurance-missing"
+                    ]
+                }
+            ],
+            "pieCharts": [],
+            "pieUiOpen": false
+        }
+    }
+}

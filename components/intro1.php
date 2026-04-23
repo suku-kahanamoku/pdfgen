@@ -11,7 +11,7 @@ $introContact = $intro['contact'] ?? [];
     <div class="mb-14">
         <h3 class="text-3xl leading-tight">
             Jsme společnost
-            <span class="text-primary"><?php echo $introTitle; ?></span><br>
+            <span class="text-secondary"><?php echo $introTitle; ?></span><br>
             váš partner na cestě k finančním úspěchům.
         </h3>
     </div>
@@ -26,7 +26,7 @@ $introContact = $intro['contact'] ?? [];
     <!-- Blok 1 -->
     <div class="mb-10">
         <div class="flex items-start gap-4">
-            <div class="mt-1 flex h-14 w-14 shrink-0 items-center justify-center text-primary">
+            <div class="mt-1 flex h-14 w-14 shrink-0 items-center justify-center text-secondary">
                 <i class="fa-solid fa-crosshairs text-4xl"></i>
             </div>
 
@@ -51,7 +51,7 @@ $introContact = $intro['contact'] ?? [];
     <!-- Blok 2 -->
     <div class="mb-14">
         <div class="flex items-start gap-4">
-            <div class="flex h-14 w-14 shrink-0 items-center justify-center text-primary">
+            <div class="flex h-14 w-14 shrink-0 items-center justify-center text-secondary">
                 <i class="fa-solid fa-chart-line text-4xl"></i>
             </div>
 
@@ -86,7 +86,7 @@ $introContact = $intro['contact'] ?? [];
             </div>
 
             <div class="pt-px">
-                <div class="font-lora leading-tight font-semibold text-primary">
+                <div class="font-lora leading-tight font-semibold text-secondary">
                     <?= htmlspecialchars($introContact['name'] ?? '') ?>
                 </div>
                 <div class="mb-2 leading-tight text-ink/80">

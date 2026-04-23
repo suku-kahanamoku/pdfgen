@@ -28,7 +28,7 @@ $barColors   = ['#e7e4e4', '#936746'];
     <!-- Nadpis -->
     <h2 class="font-lora text-5xl font-semibold tracking-wide">
         <span class="text-pebble">... ale stejně tak důležité je</span><br>
-        <span class="text-primary">myslet na budoucnost</span>
+        <span class="text-secondary">myslet na budoucnost</span>
     </h2>
 
     <!-- Intro -->
@@ -64,7 +64,7 @@ $barColors   = ['#e7e4e4', '#936746'];
                     <?php endforeach; ?>
                 </div>
 
-                <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
+                <div class="mt-2 flex items-center justify-between rounded-lg bg-secondary px-4 py-3 font-lora font-semibold text-white">
                     <div><?= htmlspecialchars($reserveClient['title'] ?? 'Vydží na') ?></div>
                     <div><?= number_format($clientMonths, 1, ',', ' ') ?> měsíců</div>
                 </div>

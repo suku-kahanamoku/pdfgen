@@ -15,7 +15,7 @@ $insuranceRows = $insurance['rows'] ?? [];
     <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
         <h2 class="font-lora text-5xl font-semibold leading-none flex items-center justify-between gap-4">
             Chraňte svůj majetek<br /> a své příjmy
-            <i class="text-primary fa-solid fa-shield-halved text-7xl"></i>
+            <i class="text-secondary fa-solid fa-shield-halved text-7xl"></i>
         </h2>
         <div class="text-ink/70">
             Chránit svůj obytný majetek je klíčové pro zajištění bezpečí a stability domova.

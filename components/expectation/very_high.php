@@ -13,7 +13,7 @@ if (file_exists($_path)) {
             </div>
         </div>
         <div class="absolute -top-12 z-10 right-2/3">
-            <div class="rounded-xl bg-primary px-4 py-2 text-white shadow-sm w-48">
+            <div class="rounded-xl bg-secondary px-4 py-2 text-white shadow-sm w-48">
                 <div class="font-semibold leading-tight">Nadšení</div>
                 <div class="leading-tight text-white/85">Chci maximum a hned.</div>
             </div>

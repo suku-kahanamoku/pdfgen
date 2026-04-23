@@ -62,6 +62,7 @@ ob_start();
                 extend: {
                     colors: {
                         primary: '#936746',
+                        secondary: '#254b34',
                         paper: '#f3f2f1',
                         pearl: '#e7e4e4',
                         cream: '#f6f1e8',

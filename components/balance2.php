@@ -28,7 +28,7 @@ $chartLabel1 = $summaryRows[0]['title'] ?? 'Příjmy';
 $chartLabel2 = $summaryRows[1]['title'] ?? 'Výdaje';
 $chartValue1 = (float)($summaryRows[0]['value'] ?? 0);
 $chartValue2 = (float)($summaryRows[1]['value'] ?? 0);
-$barColors   = ['#e7e4e4', '#936746'];
+$barColors   = ['#254b34', '#936746'];
 ?>
 
 <!-- ============================================================ -->
@@ -39,8 +39,8 @@ $barColors   = ['#e7e4e4', '#936746'];
     <!-- Nadpis -->
     <h2 class="font-lora text-5xl font-semibold tracking-wide">
         <span class="text-pebble">Kde končí zisk,</span>
-        <span class="text-primary">začíná</span><br>
-        <span class="text-primary">svoboda</span>
+        <span class="text-secondary">začíná</span><br>
+        <span class="text-secondary">svoboda</span>
     </h2>
 
     <!-- Intro -->
@@ -103,7 +103,7 @@ $barColors   = ['#e7e4e4', '#936746'];
                     <?php endforeach; ?>
                 </div>
 
-                <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
+                <div class="mt-2 flex items-center justify-between rounded-lg bg-secondary px-4 py-3 font-lora font-semibold text-white">
                     <div>Měsíčně zbývá</div>
                     <div><?= number_format($incomeTotal, 0, ',', ' ') ?> <?= $cur ?></div>
                 </div>

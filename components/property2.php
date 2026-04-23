@@ -44,7 +44,7 @@ $barColors   = ['#e7e4e4', '#936746'];
         <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
             <h3 class="flex items-center gap-4 font-lora text-4xl font-semibold">
                 <?= $sec['title'] ?>
-                <i class="text-primary <?= $sec['icon'] ?>"></i>
+                <i class="text-secondary <?= $sec['icon'] ?>"></i>
             </h3>
             <div class="text-ink/70"><?= $sec['desc'] ?></div>
             <div class="flex flex-col gap-7">
@@ -64,7 +64,7 @@ $barColors   = ['#e7e4e4', '#936746'];
                         </div>
                         <div class="flex-1 border border-ink/15 rounded-xl px-4 py-3 flex gap-4 items-center shadow-sm">
                             <div class="bg-ink/5 px-3 py-2 rounded-lg w-48 flex-shrink-0 flex flex-col gap-1">
-                                <div class="text-primary text-lg font-lora"><?= number_format($val, 0, ',', ' ') ?> <?= $cur ?></div>
+                                <div class="text-secondary text-lg font-lora"><?= number_format($val, 0, ',', ' ') ?> <?= $cur ?></div>
                                 <div class="text-xs"><?= htmlspecialchars($note) ?></div>
                             </div>
                             <div class="flex-1 min-w-0 flex flex-col gap-1">
@@ -119,7 +119,7 @@ $barColors   = ['#e7e4e4', '#936746'];
                     </div>
                 </div>
 
-                <div class="mt-2 flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
+                <div class="mt-2 flex items-center justify-between rounded-lg bg-secondary px-4 py-3 font-lora font-semibold text-white">
                     <span><?= htmlspecialchars($propertyBalance['netto']['title'] ?? 'Čistý majetek') ?></span>
                     <span><?= number_format($nettoValue, 0, ',', ' ') ?> <?= $cur ?></span>
                 </div>
