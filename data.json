@@ -534,7 +534,7 @@
                 }
             ]
         },
-        "balance": {
+        "bilance": {
             "active": {
                 "currency": "CZK",
                 "value": 8910000,
@@ -544,7 +544,7 @@
                     "percent": 7.2
                 }
             },
-            "passive": {
+            "pasive": {
                 "currency": "CZK",
                 "value": 2180000,
                 "title": "Pasiva",

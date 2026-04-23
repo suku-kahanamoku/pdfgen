@@ -8,9 +8,9 @@ $summaryNetto = $propertySummary['netto'] ?? [];
 $nettoValue   = (float)($summaryNetto['value'] ?? 0);
 $cur          = $curMap[$summaryNetto['currency'] ?? 'CZK'] ?? 'Kč';
 
-$propertyBalance             = $property['balance'] ?? [];
+$propertyBalance             = $property['bilance'] ?? [];
 $balanceActiveValue  = (float)($propertyBalance['active']['value'] ?? 0);
-$balancePassiveValue = (float)($propertyBalance['passive']['value'] ?? 0);
+$balancePassiveValue = (float)($propertyBalance['pasive']['value'] ?? 0);
 
 $balanceFooter        = $propertyBalance['footer'] ?? [];
 $footerPercent = $balanceFooter['percent'] ?? 0;
@@ -29,7 +29,7 @@ $sections = [
 ];
 
 $chartLabel1 = htmlspecialchars($propertyBalance['active']['title'] ?? 'Aktiva');
-$chartLabel2 = htmlspecialchars($propertyBalance['passive']['title'] ?? 'Pasiva');
+$chartLabel2 = htmlspecialchars($propertyBalance['pasive']['title'] ?? 'Pasiva');
 $barColors   = ['#e7e4e4', '#936746'];
 ?>
 
@@ -110,12 +110,12 @@ $barColors   = ['#e7e4e4', '#936746'];
 
                 <div class="flex flex-col gap-3">
                     <div class="flex items-start justify-between rounded-lg border border-primary/40 px-4 py-2 font-lora font-semibold">
-                        <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($propertyBalance['passive']['title'] ?? 'Pasiva') ?></span>
+                        <span class="font-lora font-semibold text-primary"><?= htmlspecialchars($propertyBalance['pasive']['title'] ?? 'Pasiva') ?></span>
                         <span><?= number_format($balancePassiveValue, 0, ',', ' ') ?> <?= $cur ?></span>
                     </div>
                     <div class="flex items-start justify-between gap-4 border-b border-mist px-4 pb-3 text-ink/75">
-                        <span><?= htmlspecialchars($propertyBalance['passive']['yeld']['title'] ?? '') ?></span>
-                        <span><?= number_format($propertyBalance['passive']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
+                        <span><?= htmlspecialchars($propertyBalance['pasive']['yeld']['title'] ?? '') ?></span>
+                        <span><?= number_format($propertyBalance['pasive']['yeld']['percent'] ?? 0, 2, ',', ' ') ?> %</span>
                     </div>
                 </div>
 
