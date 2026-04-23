@@ -63,7 +63,7 @@ $insuranceRows = $insurance['rows'] ?? [];
 
                         <!-- Middle -->
                         <div class="flex-1 min-w-0 flex flex-col gap-1">
-                            <div class="font-semibold font-lora whitespace-nowrap overflow-hidden text-ellipsis"><?= htmlspecialchars($title) ?></div>
+                            <div class="font-semibold font-lora overflow-hidden text-ellipsis"><?= htmlspecialchars($title) ?></div>
                             <div class="text-xs font-lora"><?= htmlspecialchars($description) ?></div>
                         </div>
 
