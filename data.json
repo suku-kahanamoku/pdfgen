@@ -935,6 +935,10 @@
                 "icon": "car",
                 "date": "2029-08-15T00:00:00Z"
             }
-        ]
+        ],
+        "footer": {
+            "percent": 85,
+            "status": "success"
+        }
     }
 }
