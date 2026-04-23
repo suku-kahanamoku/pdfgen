@@ -40,3 +40,5 @@ if (!empty($insurance)) {
 if (!empty($goal)) {
     include __DIR__ . '/components/insurance2.php';
 }
+
+echo json_encode($rawData, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP);
