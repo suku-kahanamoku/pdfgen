@@ -102,6 +102,7 @@ ob_start();
             print-color-adjust: exact;
             font-family: 'Host Grotesk', sans-serif;
             color: #4A4541;
+            overflow-x: hidden;
         }
 
         .font-lora {
@@ -120,6 +121,7 @@ $html = ob_get_clean();
 try {
     $pdfContent = Browsershot::html($html)
         ->setChromePath(getenv('CHROME_PATH') ?: '/usr/bin/google-chrome')
+        ->windowSize(794, 1123)
         ->noSandbox()
         ->addChromiumArguments([
             '--disable-gpu',
