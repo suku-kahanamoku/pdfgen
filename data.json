@@ -242,7 +242,7 @@
             "footer": {
                 "status": "success",
                 "currency": "CZK",
-                "year": 2024,
+                "year": 2026,
                 "avg_person": 37000,
                 "avg_household": 52000
             }
@@ -425,7 +425,7 @@
                     "title": "Hypotéka",
                     "status": "warning",
                     "note": "Komerční banka – 3,49 % p.a.",
-                    "description": "od 15. 3. 2019 do 15. 3. 2034, zbývá 126 splátek",
+                    "description": "od 15. 3. 2019 do 15. 3. 2036, zbývá 126 splátek",
                     "labels": [
                         "Hypotéka",
                         "Pasiva",
@@ -895,9 +895,9 @@
                 "currency": "CZK",
                 "value": 450000,
                 "title": "Otevřený podílový fond NEMO 5 - 8,5 % p.a.",
-                "status": "success",
                 "note": "INVESTIKA a.s.",
-                "description": "od 15.8. 2024 do 15. 8. 2034",
+                "description": "od 15.8. 2026 do 15. 8. 2036",
+                "date": "2026-08-15T00:00:00Z",
                 "labels": [
                     "Dlouhodobý cíl",
                     "Výběr a reinvestice 450 000 Kč ze stavebního spoření"
@@ -907,10 +907,9 @@
                 "currency": "CZK",
                 "value": 5000,
                 "title": "CREIF nemovitostní investiční fond 5 - 8,5 % p.a.",
-                "status": "success",
                 "note": "EFEKTA o.c.p.c",
                 "frequency": "měsíčně",
-                "description": "od 15.8. 2024 do 15. 8. 2034",
+                "description": "od 15.8. 2026 do 15. 8. 2036",
                 "labels": [
                     "Krátkodobý cíl"
                 ]
@@ -919,14 +918,22 @@
                 "currency": "CZK",
                 "value": 7500,
                 "title": "HORIZONT Invest 5 - 8,5 % p.a.",
-                "status": "success",
                 "note": "CONSEQ a.s.",
                 "frequency": "měsíčně",
-                "description": "od 15.8. 2024 do 15. 8. 2034",
+                "description": "od 15.8. 2026 do 15. 8. 2036",
                 "labels": [
                     "Střednědobý cíl",
                     "Pravidelná investice přebytku rozpočtu"
                 ]
+            },
+            {
+                "currency": "CZK",
+                "value": 7500,
+                "title": "Auto",
+                "status": "success",
+                "description": "Splněno",
+                "icon": "car",
+                "date": "2029-08-15T00:00:00Z"
             }
         ]
     }

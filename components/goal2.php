@@ -3,6 +3,13 @@
 // ACTION STEPS PAGE – CONTROLLER
 // ============================================================
 $steps = $goal['steps'] ?? [];
+
+$stepIconMap = [
+    'car'   => 'fa-solid fa-car',
+    'plane' => 'fa-solid fa-plane-departure',
+    'piggy' => 'fa-solid fa-piggy-bank',
+    'house' => 'fa-solid fa-house',
+];
 ?>
 
 <!-- ============================================================ -->
@@ -22,42 +29,78 @@ $steps = $goal['steps'] ?? [];
     </div>
 
     <!-- Timeline + cards -->
-    <div class="grid grid-cols-[52px_1fr] gap-8 items-start">
-        <!-- Left timeline -->
-        <div class="relative flex flex-col items-center min-h-[760px]">
-            <div class="w-full text-left font-lora text-2xl font-semibold text-ink">
-                2026
-            </div>
-            <div class="absolute left-8 top-12 bottom-0 border-l border-dashed border-mist"></div>
-        </div>
+    <div class="relative flex flex-col gap-7">
+        <!-- Dashed vertical line spanning all steps -->
+        <div class="absolute left-6 top-0 bottom-0 border-l border-dashed border-mist"></div>
 
-        <!-- Right cards -->
-        <div class="flex flex-col gap-7">
-            <?php foreach ($steps as $row):
-                $val          = (float)($row['value'] ?? 0);
-                $note         = $row['note'] ?? '';
-                $range        = $row['description'] ?? '';
-                $product      = $row['title'] ?? '';
-                $labels       = $row['labels'] ?? [];
-                $cur          = $curMap[$row['currency'] ?? 'CZK'] ?? 'Kč';
-            ?>
-                <div class="flex border border-ink/15 rounded-xl px-4 py-3 flex gap-4 items-center shadow-sm [page-break-inside:avoid] [break-inside:avoid]">
-                    <div class="bg-ink/5 px-3 py-2 rounded-lg w-48 flex-shrink-0 flex flex-col gap-1">
-                        <div class="text-secondary text-lg font-lora"><?= number_format($val, 0, ',', ' ') ?> <?= $cur ?></div>
-                        <div class="text-xs"><?= htmlspecialchars($note) ?></div>
-                    </div>
-                    <div class="flex-1 min-w-0 flex flex-col gap-1">
-                        <div class="font-semibold font-lora overflow-hidden text-ellipsis"><?= htmlspecialchars($product) ?></div>
-                        <div class="text-xs font-lora"><?= htmlspecialchars($range) ?></div>
-                    </div>
-                    <?php $lblCount = count($labels); ?>
-                    <div class="<?= $lblCount > 3 ? 'grid grid-cols-2' : 'flex flex-col' ?> gap-1 w-72 flex-shrink-0">
-                        <?php foreach ($labels as $i => $lbl): ?>
-                            <div class="text-xs border border-primary/40 px-2 py-1.5 rounded-md text-center w-full box-border <?= ($lblCount > 3 && $lblCount % 2 === 1 && $i === $lblCount - 1) ? 'col-span-2' : '' ?>"><?= htmlspecialchars($lbl) ?></div>
-                        <?php endforeach; ?>
-                    </div>
+        <?php foreach ($steps as $row):
+            $val     = (float)($row['value'] ?? 0);
+            $note    = $row['note'] ?? '';
+            $description   = $row['description'] ?? '';
+            $title = $row['title'] ?? '';
+            $labels  = $row['labels'] ?? [];
+            $cur     = $curMap[$row['currency'] ?? 'CZK'] ?? 'Kč';
+        ?>
+            <div class="flex items-center gap-6 [page-break-inside:avoid] [break-inside:avoid]">
+                <!-- Year crossing the vertical line -->
+                <div class="w-12 flex-shrink-0 flex justify-center">
+                    <?php if (!empty($row['date'])): ?>
+                        <span class="font-lora font-semibold text-ink leading-tight text-center"><?= date('Y', strtotime((string)$row['date'])) ?></span>
+                    <?php endif; ?>
                 </div>
-            <?php endforeach; ?>
-        </div>
+                <!-- Card -->
+                <?php if (($row['status'] ?? '') === 'success'): ?>
+                    <div class="flex-1 flex border border-success rounded-xl px-4 py-3 gap-4 items-center shadow-sm">
+                        <!-- Check icon – same width as left column in else branch -->
+                        <div class="w-48 flex-shrink-0 flex justify-start items-center">
+                            <div class="rounded-full w-10 h-10 flex justify-center items-center border border-success text-success">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                        </div>
+                        <!-- Goal icon + title + description – same flex-1 min-w-0 -->
+                        <div class="flex items-center gap-4 flex-1 min-w-0">
+                            <?php $iconCls = $stepIconMap[$row['icon'] ?? ''] ?? null; ?>
+                            <?php if ($iconCls): ?>
+                                <i class="<?= $iconCls ?> text-4xl flex-shrink-0"></i>
+                            <?php endif; ?>
+                            <div class="flex flex-col gap-1 min-w-0">
+                                <div class="font-semibold font-lora overflow-hidden text-ellipsis"><?= htmlspecialchars($title) ?></div>
+                                <div class="text-xs font-lora text-ink/60"><?= htmlspecialchars($description) ?></div>
+                            </div>
+                        </div>
+                        <!-- Value + year labels – same w-72 flex-shrink-0 -->
+                        <div class="flex flex-row gap-1 w-72 flex-shrink-0">
+                            <div class="text-xs border border-primary/40 px-2 py-1.5 rounded-md text-center w-full box-border">
+                                <?= number_format($val, 0, ',', ' ') ?> <?= $cur ?>
+                            </div>
+                            <?php if (!empty($row['date'])): ?>
+                                <div class="text-xs border border-primary/40 px-2 py-1.5 rounded-md text-center w-full box-border">
+                                    <?= htmlspecialchars(date('d.m.Y', strtotime((string)$row['date']))) ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+
+                <?php else: ?>
+                    <div class="flex-1 flex border border-ink/15 rounded-xl px-4 py-3 gap-4 items-center shadow-sm">
+                        <div class="bg-ink/5 px-3 py-2 rounded-lg w-48 flex-shrink-0 flex flex-col gap-1">
+                            <div class="text-secondary text-lg font-lora"><?= number_format($val, 0, ',', ' ') ?> <?= $cur ?></div>
+                            <div class="text-xs"><?= htmlspecialchars($note) ?></div>
+                        </div>
+                        <div class="flex-1 min-w-0 flex flex-col gap-1">
+                            <div class="font-semibold font-lora overflow-hidden text-ellipsis"><?= htmlspecialchars($title) ?></div>
+                            <div class="text-xs font-lora"><?= htmlspecialchars($description) ?></div>
+                        </div>
+                        <div class="flex flex-col gap-1 w-72 flex-shrink-0">
+                            <?php foreach ($labels as $i => $lbl): ?>
+                                <div class="text-xs border border-primary/40 px-2 py-1.5 rounded-md text-center w-full box-border">
+                                    <?= htmlspecialchars($lbl) ?>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
+        <?php endforeach; ?>
     </div>
 </div>
