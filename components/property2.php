@@ -30,7 +30,7 @@ $sections = [
 
 $chartLabel1 = htmlspecialchars($propertyBalance['active']['title'] ?? 'Aktiva');
 $chartLabel2 = htmlspecialchars($propertyBalance['pasive']['title'] ?? 'Pasiva');
-$barColors   = ['#e7e4e4', '#936746'];
+$barColors   = ['#254b34', '#936746'];
 ?>
 
 <!-- ============================================================ -->

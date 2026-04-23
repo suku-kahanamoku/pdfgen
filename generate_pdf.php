@@ -63,7 +63,7 @@ ob_start();
                     colors: {
                         primary: '#936746',
                         secondary: '#254b34',
-                        paper: '#f3f2f1',
+                        paper: '#fafafa',
                         pearl: '#e7e4e4',
                         cream: '#f6f1e8',
                         linen: '#e9e4de',

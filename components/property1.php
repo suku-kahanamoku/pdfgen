@@ -40,7 +40,7 @@ $propertyColumns = [
     ],
 ];
 
-$colors = ['#8D6144', '#BD8D66', '#eeeeee'];
+$colors = ['#254b34', '#eeeeee'];
 ?>
 
 <!-- ============================================================ -->
@@ -119,7 +119,7 @@ $colors = ['#8D6144', '#BD8D66', '#eeeeee'];
         data: {
             datasets: [{
                 data: [<?= $nettoPercent ?>, <?= $nettoPercentRemainder ?>],
-                backgroundColor: ['#8D6144', '#eeeeee'],
+                backgroundColor: [<?= implode(',', array_map(fn($c) => "'$c'", $colors)) ?>],
                 borderWidth: 0
             }]
         },
