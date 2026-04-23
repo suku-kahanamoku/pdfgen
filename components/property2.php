@@ -49,14 +49,14 @@ $barColors   = ['#e7e4e4', '#936746'];
             <div class="text-ink/70"><?= $sec['desc'] ?></div>
             <div class="flex flex-col gap-7">
                 <?php foreach ($rows as $row):
-                    $val     = (float)($row['value'] ?? 0);
-                    $title   = $row['title'] ?? '';
-                    $status  = $row['status'] ?? 'success';
-                    $note    = $row['note'] ?? '';
-                    $desc    = $row['description'] ?? '';
-                    $labels  = $row['labels'] ?? [];
-                    $iconCls = $statusMap[$status]['icon'] ?? 'fa-check';
-                    $iconTw  = $statusMap[$status]['cls']  ?? 'text-success border-success';
+                    $val      = (float)($row['value'] ?? 0);
+                    $title    = $row['title'] ?? '';
+                    $status   = $row['status'] ?? 'success';
+                    $note     = $row['note'] ?? '';
+                    $desc     = $row['description'] ?? '';
+                    $labels   = $row['labels'] ?? [];
+                    $iconCls  = $statusMap[$status]['icon'] ?? 'fa-check';
+                    $iconTw   = $statusMap[$status]['cls']  ?? 'text-success border-success';
                 ?>
                     <div class="flex items-center gap-6 [page-break-inside:avoid] [break-inside:avoid]">
                         <div class="rounded-full w-8 h-8 flex justify-center items-center flex-shrink-0 border <?= $iconTw ?>">

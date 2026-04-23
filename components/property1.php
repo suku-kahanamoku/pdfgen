@@ -6,7 +6,10 @@ $propertySummary = $property['summary'] ?? [];
 
 $summaryNetto          = $propertySummary['netto'] ?? [];
 $nettoValue            = (float)($summaryNetto['value']   ?? 0);
-$nettoPercent          = (int)($summaryNetto['percent']   ?? 0);
+$nettoTotal            = (float)($summaryNetto['total']   ?? 0);
+$nettoPercent          = isset($summaryNetto['percent'])
+    ? (int)$summaryNetto['percent']
+    : ($nettoTotal > 0 ? (int)round($nettoValue / $nettoTotal * 100) : 0);
 $nettoPercentRemainder = 100 - $nettoPercent;
 $cur                   = $curMap[$summaryNetto['currency'] ?? 'CZK'] ?? 'Kč';
 

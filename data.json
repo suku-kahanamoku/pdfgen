@@ -1,845 +1,894 @@
 {
-	"intro": {
-		"title": "Collegas",
-		"motto": "Nabízíme individuální finanční analýzy, které vám pomožou dosáhnout vašich finančních cílů efektivně a s jistotou.",
-		"contact": {
-			"name": "Lucie Bohatá",
-			"position": "Finanční specialista",
-			"email": "lucie.bohata@collegas.cz",
-			"phone": "+420 738 465 321",
-			"photo": "https://collegas.cz/img/new_team/lucie_bohata.jpg",
-			"copyright": "© 2026 Collegas s.r.o. | collegas.cz"
-		},
-		"expectation": 3,
-		"situation": 4,
-		"questions": [
-			{
-				"question": "Co by se mělo stát, abyste odcházel s pocitem, že dnešní schůzka byla úspěšná?",
-				"answer": "Zajištění vlastního bydlení, a ochrana rodiny."
-			},
-			{
-				"question": "Kdybyste už neměli žádné finanční starosti, co byste dělali jinak?",
-				"answer": "Trávil bych víc času s rodinou a méně bych se stresoval."
-			},
-			{
-				"question": "Čím jsou pro vás peníze důležité?",
-				"answer": "Je to prostředek k dosažování snů a cílů."
-			},
-			{
-				"question": "Co by se stalo, kdybyste změnili to, jak utrácíte a spoříte? Jak byste se cítil?",
-				"answer": "Pořád stejně."
-			},
-			{
-				"question": "Kdybyste dnes mohli vyřešit jakýkoliv finanční problém pouhým lusknutím prstu, co byste vyřešili?",
-				"answer": "Zajištění na stáří."
-			},
-			{
-				"question": "Jaká je vaše strategie v budování majetku?",
-				"answer": "Volný kapitál dávat do nemovitostí."
-			}
-		]
-	},
-	"user": {
-		"client": {
-			"name": "Karel Novotný",
-			"birth_date": "22. 09. 1980",
-			"address": "U stojanu 2794, Kroměříž, 645 00",
-			"marital_status": "ženatý",
-			"phone": "737 122 016",
-			"email": "novotny.kaja@gmail.com"
-		},
-		"partner": {
-			"name": "Kateřina Novotná",
-			"birth_date": "22. 09. 1981",
-			"address": "U stojanu 2794, Kroměříž, 645 00",
-			"marital_status": "vdaná"
-		},
-		"children": {
-			"rows": [
-				{
-					"name": "Michal Novotný",
-					"age": "7 let"
-				},
-				{
-					"name": "Petra Novotná",
-					"age": "2 roky"
-				}
-			]
-		},
-		"pets": {
-			"rows": [
-				{
-					"name": "Maxipes Fík",
-					"age": "7 let"
-				},
-				{
-					"name": "Klokan Karel",
-					"age": "2 roky"
-				}
-			]
-		}
-	},
-	"balance": {
-		"expense": {
-			"currency": "CZK",
-			"amount": 33500,
-			"min": 29700,
-			"categories": [
-				{
-					"title": "Domácnost",
-					"rows": [
-						{
-							"currency": "CZK",
-							"title": "Hypoteční úvěr",
-							"amount": 4000,
-							"min": 4000
-						},
-						{
-							"currency": "CZK",
-							"title": "Ostatní úvěry",
-							"amount": 14000,
-							"min": 14000
-						},
-						{
-							"currency": "CZK",
-							"title": "Rodinný stav",
-							"amount": 3500,
-							"min": 3500
-						}
-					]
-				},
-				{
-					"title": "Pojištění",
-					"rows": [
-						{
-							"currency": "CZK",
-							"title": "Životní pojištění",
-							"amount": 3500,
-							"min": 3500
-						}
-					]
-				},
-				{
-					"title": "Doprava",
-					"rows": [
-						{
-							"currency": "CZK",
-							"title": "Autobus",
-							"amount": 1500,
-							"min": 500
-						},
-						{
-							"currency": "CZK",
-							"title": "Kolo",
-							"amount": 500,
-							"min": 0
-						}
-					]
-				},
-				{
-					"title": "Jídlo",
-					"rows": [
-						{
-							"currency": "CZK",
-							"title": "Stravné",
-							"amount": 2500,
-							"min": 1500
-						},
-						{
-							"currency": "CZK",
-							"title": "Obědy",
-							"amount": 1500,
-							"min": 500
-						}
-					]
-				},
-				{
-					"title": "Energie",
-					"rows": [
-						{
-							"currency": "CZK",
-							"title": "Elektřina",
-							"amount": 1500,
-							"min": 1200
-						},
-						{
-							"currency": "CZK",
-							"title": "Voda",
-							"amount": 500,
-							"min": 500
-						},
-						{
-							"currency": "CZK",
-							"title": "Plyn",
-							"amount": 500,
-							"min": 500
-						}
-					]
-				}
-			],
-			"footer": {
-				"percent": 48,
-				"status": "danger"
-			}
-		},
-		"income": {
-			"currency": "CZK",
-			"total": 79000,
-			"client": {
-				"currency": "CZK",
-				"value": 85000,
-				"title": "Vaše příjmy",
-				"rows": [
-					{
-						"currency": "CZK",
-						"title": "Hrubá mzda",
-						"value": 65000
-					},
-					{
-						"currency": "CZK",
-						"title": "Příjem z pronájmu",
-						"value": 16500
-					},
-					{
-						"currency": "CZK",
-						"title": "Ostatní příjmy",
-						"value": 3500
-					}
-				]
-			},
-			"partner": {
-				"currency": "CZK",
-				"value": 44000,
-				"title": "Příjmy partnera",
-				"rows": [
-					{
-						"currency": "CZK",
-						"title": "Hrubá mzda partnerky",
-						"value": 42000
-					},
-					{
-						"currency": "CZK",
-						"title": "Ostatní příjmy",
-						"value": 2000
-					}
-				]
-			},
-			"summary": {
-				"title": "Celková bilance cash-flow",
-				"rows": [
-					{
-						"currency": "CZK",
-						"title": "Příjmy",
-						"value": 129000
-					},
-					{
-						"currency": "CZK",
-						"title": "Výdaje",
-						"value": 50000
-					}
-				]
-			},
-			"footer": {
-				"status": "success",
-				"currency": "CZK",
-				"year": 2024,
-				"avg_person": 37000,
-				"avg_household": 52000
-			}
-		},
-		"reserve": {
-			"client": {
-				"months": 15,
-				"title": "Vydží na",
-				"rows": [
-					{
-						"currency": "CZK",
-						"title": "Doporučená rezerva",
-						"value": 45000
-					},
-					{
-						"currency": "CZK",
-						"title": "Vaše rezerva",
-						"value": 2500
-					},
-					{
-						"currency": "CZK",
-						"title": "Měsíční výdaje",
-						"value": 32000
-					}
-				]
-			},
-			"footer": {
-				"percent": 85,
-				"status": "success"
-			}
-		}
-	},
-	"property": {
-		"summary": {
-			"netto": {
-				"currency": "CZK",
-				"value": 4850000,
-				"percent": 72
-			},
-			"active": {
-				"currency": "CZK",
-				"value": 1350000,
-				"rows": [
-					{
-						"currency": "CZK",
-						"value": 480000,
-						"title": "Hotovost",
-						"status": "success"
-					},
-					{
-						"currency": "CZK",
-						"value": 620000,
-						"title": "Deriváty",
-						"status": "warning"
-					},
-					{
-						"currency": "CZK",
-						"value": 250000,
-						"title": "Kryptoměny",
-						"status": "danger"
-					}
-				]
-			},
-			"estate": {
-				"currency": "CZK",
-				"value": 5200000,
-				"rows": [
-					{
-						"currency": "CZK",
-						"value": 3800000,
-						"title": "Vlastní bydlení",
-						"status": "success"
-					},
-					{
-						"currency": "CZK",
-						"value": -1800000,
-						"title": "Hypotéka",
-						"status": "warning"
-					},
-					{
-						"currency": "CZK",
-						"value": 3200000,
-						"title": "Investiční nemovitost",
-						"status": "success"
-					}
-				]
-			},
-			"properties": {
-				"currency": "CZK",
-				"value": 680000,
-				"rows": [
-					{
-						"currency": "CZK",
-						"value": 520000,
-						"title": "Vozidla",
-						"status": "success"
-					},
-					{
-						"currency": "CZK",
-						"value": -380000,
-						"title": "Spotřeb. úvěr",
-						"status": "danger"
-					},
-					{
-						"currency": "CZK",
-						"value": 540000,
-						"title": "Vybavení",
-						"status": "success"
-					}
-				]
-			}
-		},
-		"estate": {
-			"rows": [
-				{
-					"currency": "CZK",
-					"value": 3800000,
-					"title": "Vlastní bydlení",
-					"status": "success",
-					"note": "Brno, Jugoslávská 15 – tržní hodnota",
-					"description": "3+1, 85 m², 2. patro, výtah, po rekonstrukci",
-					"labels": [
-						"Vlastní bydlení",
-						"Aktiva",
-						"Dlouhodobý"
-					]
-				},
-				{
-					"currency": "CZK",
-					"value": -1800000,
-					"title": "Hypotéka",
-					"status": "warning",
-					"note": "Komerční banka – 3,49 % p.a.",
-					"description": "od 15. 3. 2019 do 15. 3. 2034, zbývá 126 splátek",
-					"labels": [
-						"Hypotéka",
-						"Pasiva",
-						"Dlouhodobý"
-					]
-				},
-				{
-					"currency": "CZK",
-					"value": 3200000,
-					"title": "Investiční nemovitost",
-					"status": "success",
-					"note": "Praha 10, Vršovická 8 – výnos 6,2 % p.a.",
-					"description": "2+kk, 52 m², pronajato za 16 500 Kč/měs.",
-					"labels": [
-						"Investiční nemovitost",
-						"Aktiva",
-						"Střednědobý",
-						"Střednědobý"
-					]
-				}
-			]
-		},
-		"active": {
-			"rows": [
-				{
-					"currency": "CZK",
-					"value": 480000,
-					"title": "Hotovost",
-					"status": "success",
-					"note": "Spořicí účet ČSOB – 4,2 % p.a.",
-					"description": "Pohotovostní rezerva na 6 měsíců výdajů",
-					"labels": [
-						"Hotovost",
-						"Aktiva",
-						"Krátkodobý"
-					]
-				},
-				{
-					"currency": "CZK",
-					"value": 620000,
-					"title": "Akcie & ETF",
-					"status": "success",
-					"note": "Portfolio S&P 500 ETF – průměr 9,4 % p.a.",
-					"description": "Diverzifikované ETF portfolio přes Degiro",
-					"labels": [
-						"Cenné papíry",
-						"Aktiva",
-						"Dlouhodobý"
-					]
-				},
-				{
-					"currency": "CZK",
-					"value": 250000,
-					"title": "Kryptoměny",
-					"status": "danger",
-					"note": "Bitcoin + Ethereum – volatilní",
-					"description": "Velká volatilita, doporučeno max. 5 % portfolia",
-					"labels": [
-						"Kryptoměny",
-						"Aktiva",
-						"Krátkodobý"
-					]
-				}
-			]
-		},
-		"properties": {
-			"rows": [
-				{
-					"currency": "CZK",
-					"value": 520000,
-					"title": "BMW 520d",
-					"status": "success",
-					"note": "Tržní hodnota – odpis 8 % ročně",
-					"description": "Rok 2021, najeto 62 000 km, servisní kniha",
-					"labels": [
-						"Vozidlo",
-						"Aktiva",
-						"Střednědobý"
-					]
-				},
-				{
-					"currency": "CZK",
-					"value": -380000,
-					"title": "Spotřebitelský úvěr",
-					"status": "danger",
-					"note": "Moneta Money Bank – 7,9 % p.a.",
-					"description": "od 1. 6. 2023 do 1. 6. 2028, zbývá 49 splátek",
-					"labels": [
-						"Úvěr",
-						"Pasiva",
-						"Střednědobý"
-					]
-				},
-				{
-					"currency": "CZK",
-					"value": 540000,
-					"title": "Vybavení & stroje",
-					"status": "success",
-					"note": "Fotovoltaika + domácí vybavení",
-					"description": "FVE 10 kWp (návratnost 7 let) + elektronika",
-					"labels": [
-						"Majetek",
-						"Aktiva",
-						"Dlouhodobý"
-					]
-				}
-			]
-		},
-		"balance": {
-			"active": {
-				"currency": "CZK",
-				"value": 8910000,
-				"title": "Aktiva",
-				"yeld": {
-					"title": "Ziskovost aktiv",
-					"percent": 7.2
-				}
-			},
-			"passive": {
-				"currency": "CZK",
-				"value": 2180000,
-				"title": "Pasiva",
-				"yeld": {
-					"title": "Nákladovost pasiv",
-					"percent": 4.1
-				}
-			},
-			"netto": {
-				"currency": "CZK",
-				"value": 6730000,
-				"title": "Čistý majetek"
-			},
-			"footer": {
-				"percent": 3.1,
-				"status": "success"
-			}
-		},
-		"horizon": {
-			"rows": [
-				{
-					"currency": "CZK",
-					"value": 730000,
-					"title": "Krátkodobý",
-					"status": "success"
-				},
-				{
-					"currency": "CZK",
-					"value": 2450000,
-					"title": "Střednědobý",
-					"status": "warning"
-				},
-				{
-					"currency": "CZK",
-					"value": 5730000,
-					"title": "Dlouhodobý",
-					"status": "danger"
-				}
-			]
-		},
-		"active_pasive": {
-			"rows": [
-				{
-					"currency": "CZK",
-					"value": 8910000,
-					"title": "Aktiva",
-					"status": "success"
-				},
-				{
-					"currency": "CZK",
-					"value": 2180000,
-					"title": "Pasiva",
-					"status": "warning"
-				}
-			]
-		},
-		"liquidity": {
-			"rows": [
-				{
-					"currency": "CZK",
-					"value": 1350000,
-					"title": "Vysoká",
-					"status": "success"
-				},
-				{
-					"currency": "CZK",
-					"value": 3700000,
-					"title": "Střední",
-					"status": "warning"
-				},
-				{
-					"currency": "CZK",
-					"value": 3860000,
-					"title": "Nízká",
-					"status": "danger"
-				}
-			]
-		},
-		"mortgage": {
-			"currency": "CZK",
-			"summary": {
-				"value": 2780000,
-				"status": "success"
-			},
-			"dti": {
-				"title": "DTI – Nebudu předlužený?",
-				"value": 6.2,
-				"rows": [
-					{
-						"title": "Krátkodobý",
-						"value": 200000,
-						"primary": true
-					},
-					{
-						"title": "Střednědobý",
-						"value": 500000
-					},
-					{
-						"title": "Střednědobý",
-						"value": 500000
-					},
-					{
-						"title": "Střednědobý",
-						"value": 500000
-					}
-				]
-			},
-			"dsti": {
-				"title": "DSTI – Zvádnu splácet?",
-				"value": 28,
-				"rows": [
-					{
-						"title": "Krátkodobý",
-						"value": 200000,
-						"primary": true
-					},
-					{
-						"title": "Střednědobý",
-						"value": 500000
-					},
-					{
-						"title": "Střednědobý",
-						"value": 500000
-					},
-					{
-						"title": "Střednědobý",
-						"value": 500000
-					}
-				]
-			},
-			"ltv": {
-				"title": "LTV – Zástavní prostor",
-				"rows": [
-					{
-						"title": "Vlastní úspory",
-						"value": 450000
-					},
-					{
-						"title": "Dostupná bonita – Nemovitost 1",
-						"value": 900000
-					},
-					{
-						"title": "Dostupná bonita – Nemovitost 2",
-						"value": 2000000
-					}
-				],
-				"own_resources": {
-					"title": "Vlastní zdroje (20 %)",
-					"value": 3350000
-				},
-				"max_loan": {
-					"title": "Maximální výše úvěru",
-					"value": 16750000
-				},
-				"chart": {
-					"label1": "Dostupný kapitál",
-					"label2": "Majetek",
-					"value1": 15500000,
-					"value2": 3000000
-				}
-			},
-			"footer": {
-				"percent": 74,
-				"status": "success"
-			}
-		}
-	},
-	"insurance": {
-		"currency": "CZK",
-		"rows": [
-			{
-				"title": "Životní pojištění",
-				"value": 3500,
-				"description": "Pojištěno do 31. 12. 2045",
-				"status": "success",
-				"note": "Kooperativa – smlouva č. 7842156",
-				"labels": [
-					{
-						"title": "Životní riziko",
-						"status": "neutral"
-					},
-					{
-						"title": "Invalidita",
-						"status": "neutral"
-					},
-					{
-						"title": "Smrt",
-						"status": "neutral"
-					},
-					{
-						"title": "Úraz",
-						"status": "neutral"
-					}
-				]
-			},
-			{
-				"title": "Pojištění nemovitosti",
-				"value": 1200,
-				"description": "Pojištěno do 15. 03. 2026",
-				"status": "warning",
-				"note": "Česká pojišťovna – smlouva č. 3301847",
-				"labels": [
-					{
-						"title": "Požár & živel",
-						"status": "neutral"
-					},
-					{
-						"title": "Krádež",
-						"status": "neutral"
-					},
-					{
-						"title": "Odpovědnost",
-						"status": "neutral"
-					}
-				]
-			},
-			{
-				"title": "Pojištění domácnosti",
-				"value": 0,
-				"description": "Stav: nesjednáno",
-				"status": "danger",
-				"note": "Doporučeno sjednat co nejdříve",
-				"labels": [
-					{
-						"title": "Chybí krytí",
-						"status": "danger"
-					}
-				]
-			},
-			{
-				"title": "Autopojištění",
-				"value": 2800,
-				"description": "Pojištěno do 30. 09. 2026",
-				"status": "success",
-				"note": "Allianz – BMW 520d, smlouva č. 9910244",
-				"labels": [
-					{
-						"title": "POV",
-						"status": "neutral"
-					},
-					{
-						"title": "Havarijní",
-						"status": "neutral"
-					},
-					{
-						"title": "Úrazové připojištění",
-						"status": "neutral"
-					}
-				]
-			},
-			{
-				"title": "Pojištění partnera",
-				"value": 1800,
-				"description": "Pojištěno do 31. 12. 2040",
-				"status": "success",
-				"note": "NN Životní pojišťovna – Kateřina Novotná",
-				"labels": [
-					{
-						"title": "Životní riziko",
-						"status": "neutral"
-					},
-					{
-						"title": "Invalidita",
-						"status": "neutral"
-					},
-					{
-						"title": "Nemoc",
-						"status": "neutral"
-					}
-				]
-			},
-			{
-				"title": "Cestovní pojištění",
-				"value": 0,
-				"description": "Stav: nesjednáno",
-				"status": "danger",
-				"note": "Doporučeno pro celou rodinu",
-				"labels": [
-					{
-						"title": "Chybí krytí",
-						"status": "danger"
-					}
-				]
-			}
-		]
-	},
-	"goal": {
-		"currency": "CZK",
-		"summary": {
-			"value": 5000,
-			"percent": 7.54
-		},
-		"rows": [
-			{
-				"icon": "car",
-				"title": "Koupit nové auto",
-				"value": 400000,
-				"description": "Splněno do 14. 05. 2025, zbývá 400 000 Kč / 33 769 Kč p.m.",
-				"priority": "medium",
-				"labels": [
-					{
-						"title": "Střední priorita",
-						"status": "warning"
-					},
-					{
-						"title": "Krátkodobý cíl",
-						"status": "neutral"
-					}
-				]
-			},
-			{
-				"icon": "plane",
-				"title": "Cesta kolem světa",
-				"value": 280000,
-				"description": "Splněno do 14. 05. 2025, zbývá 400 000 Kč / 33 769 Kč p.m.",
-				"priority": "low",
-				"labels": [
-					{
-						"title": "Nízká priorita",
-						"status": "success"
-					},
-					{
-						"title": "Střednědobý cíl",
-						"status": "neutral"
-					}
-				]
-			},
-			{
-				"icon": "piggy",
-				"title": "Zajištění na stáří",
-				"value": 280000,
-				"description": "Splněno do 14. 05. 2025, zbývá 400 000 Kč / 33 769 Kč p.m.",
-				"priority": "high",
-				"labels": [
-					{
-						"title": "Vysoká priorita",
-						"status": "danger"
-					},
-					{
-						"title": "Dlouhodobý cíl",
-						"status": "neutral"
-					}
-				]
-			}
-		]
-	}
+    "intro": {
+        "title": "Collegas",
+        "motto": "Nabízíme individuální finanční analýzy, které vám pomožou dosáhnout vašich finančních cílů efektivně a s jistotou.",
+        "contact": {
+            "name": "Lucie Bohatá",
+            "position": "Finanční specialista",
+            "email": "lucie.bohata@collegas.cz",
+            "phone": "+420 738 465 321",
+            "photo": "https://collegas.cz/img/new_team/lucie_bohata.jpg",
+            "copyright": "© 2026 Collegas s.r.o. | collegas.cz"
+        },
+        "expectation": 3,
+        "situation": 4,
+        "questions": [
+            {
+                "question": "Co by se mělo stát, abyste odcházel s pocitem, že dnešní schůzka byla úspěšná?",
+                "answer": "Zajištění vlastního bydlení, a ochrana rodiny."
+            },
+            {
+                "question": "Kdybyste už neměli žádné finanční starosti, co byste dělali jinak?",
+                "answer": "Trávil bych víc času s rodinou a méně bych se stresoval."
+            },
+            {
+                "question": "Čím jsou pro vás peníze důležité?",
+                "answer": "Je to prostředek k dosažování snů a cílů."
+            },
+            {
+                "question": "Co by se stalo, kdybyste změnili to, jak utrácíte a spoříte? Jak byste se cítil?",
+                "answer": "Pořád stejně."
+            },
+            {
+                "question": "Kdybyste dnes mohli vyřešit jakýkoliv finanční problém pouhým lusknutím prstu, co byste vyřešili?",
+                "answer": "Zajištění na stáří."
+            },
+            {
+                "question": "Jaká je vaše strategie v budování majetku?",
+                "answer": "Volný kapitál dávat do nemovitostí."
+            }
+        ]
+    },
+    "user": {
+        "client": {
+            "name": "Karel Novotný",
+            "birth_date": "22. 09. 1980",
+            "address": "U stojanu 2794, Kroměříž, 645 00",
+            "marital_status": "ženatý",
+            "phone": "737 122 016",
+            "email": "novotny.kaja@gmail.com"
+        },
+        "partner": {
+            "name": "Kateřina Novotná",
+            "birth_date": "22. 09. 1981",
+            "address": "U stojanu 2794, Kroměříž, 645 00",
+            "marital_status": "vdaná"
+        },
+        "children": {
+            "rows": [
+                {
+                    "name": "Michal Novotný",
+                    "age": "7 let"
+                },
+                {
+                    "name": "Petra Novotná",
+                    "age": "2 roky"
+                }
+            ]
+        },
+        "pets": {
+            "rows": [
+                {
+                    "name": "Maxipes Fík",
+                    "age": "7 let"
+                },
+                {
+                    "name": "Klokan Karel",
+                    "age": "2 roky"
+                }
+            ]
+        }
+    },
+    "balance": {
+        "expense": {
+            "currency": "CZK",
+            "amount": 33500,
+            "min": 29700,
+            "categories": [
+                {
+                    "title": "Domácnost",
+                    "rows": [
+                        {
+                            "currency": "CZK",
+                            "title": "Hypoteční úvěr",
+                            "amount": 4000,
+                            "min": 4000
+                        },
+                        {
+                            "currency": "CZK",
+                            "title": "Ostatní úvěry",
+                            "amount": 14000,
+                            "min": 14000
+                        },
+                        {
+                            "currency": "CZK",
+                            "title": "Rodinný stav",
+                            "amount": 3500,
+                            "min": 3500
+                        }
+                    ]
+                },
+                {
+                    "title": "Pojištění",
+                    "rows": [
+                        {
+                            "currency": "CZK",
+                            "title": "Životní pojištění",
+                            "amount": 3500,
+                            "min": 3500
+                        }
+                    ]
+                },
+                {
+                    "title": "Doprava",
+                    "rows": [
+                        {
+                            "currency": "CZK",
+                            "title": "Autobus",
+                            "amount": 1500,
+                            "min": 500
+                        },
+                        {
+                            "currency": "CZK",
+                            "title": "Kolo",
+                            "amount": 500,
+                            "min": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Jídlo",
+                    "rows": [
+                        {
+                            "currency": "CZK",
+                            "title": "Stravné",
+                            "amount": 2500,
+                            "min": 1500
+                        },
+                        {
+                            "currency": "CZK",
+                            "title": "Obědy",
+                            "amount": 1500,
+                            "min": 500
+                        }
+                    ]
+                },
+                {
+                    "title": "Energie",
+                    "rows": [
+                        {
+                            "currency": "CZK",
+                            "title": "Elektřina",
+                            "amount": 1500,
+                            "min": 1200
+                        },
+                        {
+                            "currency": "CZK",
+                            "title": "Voda",
+                            "amount": 500,
+                            "min": 500
+                        },
+                        {
+                            "currency": "CZK",
+                            "title": "Plyn",
+                            "amount": 500,
+                            "min": 500
+                        }
+                    ]
+                }
+            ],
+            "footer": {
+                "percent": 48,
+                "status": "danger"
+            }
+        },
+        "income": {
+            "currency": "CZK",
+            "total": 79000,
+            "client": {
+                "currency": "CZK",
+                "value": 85000,
+                "title": "Vaše příjmy",
+                "rows": [
+                    {
+                        "currency": "CZK",
+                        "title": "Hrubá mzda",
+                        "value": 65000
+                    },
+                    {
+                        "currency": "CZK",
+                        "title": "Příjem z pronájmu",
+                        "value": 16500
+                    },
+                    {
+                        "currency": "CZK",
+                        "title": "Ostatní příjmy",
+                        "value": 3500
+                    }
+                ]
+            },
+            "partner": {
+                "currency": "CZK",
+                "value": 44000,
+                "title": "Příjmy partnera",
+                "rows": [
+                    {
+                        "currency": "CZK",
+                        "title": "Hrubá mzda partnerky",
+                        "value": 42000
+                    },
+                    {
+                        "currency": "CZK",
+                        "title": "Ostatní příjmy",
+                        "value": 2000
+                    }
+                ]
+            },
+            "summary": {
+                "title": "Celková bilance cash-flow",
+                "rows": [
+                    {
+                        "currency": "CZK",
+                        "title": "Příjmy",
+                        "value": 129000
+                    },
+                    {
+                        "currency": "CZK",
+                        "title": "Výdaje",
+                        "value": 50000
+                    }
+                ]
+            },
+            "footer": {
+                "status": "success",
+                "currency": "CZK",
+                "year": 2024,
+                "avg_person": 37000,
+                "avg_household": 52000
+            }
+        },
+        "reserve": {
+            "client": {
+                "months": 15,
+                "title": "Vydží na",
+                "rows": [
+                    {
+                        "currency": "CZK",
+                        "title": "Doporučená rezerva",
+                        "value": 45000
+                    },
+                    {
+                        "currency": "CZK",
+                        "title": "Vaše rezerva",
+                        "value": 2500
+                    },
+                    {
+                        "currency": "CZK",
+                        "title": "Měsíční výdaje",
+                        "value": 32000
+                    }
+                ]
+            },
+            "footer": {
+                "percent": 85,
+                "status": "success"
+            }
+        }
+    },
+    "property": {
+        "summary": {
+            "netto": {
+                "currency": "CZK",
+                "value": 4850000,
+                "percent": 72,
+                "total": 8910000
+            },
+            "active": {
+                "currency": "CZK",
+                "value": 1350000,
+                "rows": [
+                    {
+                        "currency": "CZK",
+                        "value": 480000,
+                        "title": "Hotovost",
+                        "status": "success"
+                    },
+                    {
+                        "currency": "CZK",
+                        "value": 0,
+                        "title": "Bankovní účty",
+                        "status": "success"
+                    },
+                    {
+                        "currency": "CZK",
+                        "value": 620000,
+                        "title": "Fondy & Akcie",
+                        "status": "success"
+                    },
+                    {
+                        "currency": "CZK",
+                        "value": 0,
+                        "title": "Dluhové CP",
+                        "status": "warning"
+                    },
+                    {
+                        "currency": "CZK",
+                        "value": 0,
+                        "title": "Deriváty",
+                        "status": "danger"
+                    },
+                    {
+                        "currency": "CZK",
+                        "value": 250000,
+                        "title": "Kryptoměny",
+                        "status": "warning"
+                    }
+                ]
+            },
+            "estate": {
+                "currency": "CZK",
+                "value": 5200000,
+                "rows": [
+                    {
+                        "currency": "CZK",
+                        "value": 3800000,
+                        "title": "Vlastní bydlení",
+                        "status": "success"
+                    },
+                    {
+                        "currency": "CZK",
+                        "value": -1800000,
+                        "title": "Hypotéka na bydlení",
+                        "status": "warning"
+                    },
+                    {
+                        "currency": "CZK",
+                        "value": 3200000,
+                        "title": "Investiční nemovitost",
+                        "status": "success"
+                    },
+                    {
+                        "currency": "CZK",
+                        "value": 0,
+                        "title": "Investiční hypotéka",
+                        "status": "danger"
+                    },
+                    {
+                        "currency": "CZK",
+                        "value": 0,
+                        "title": "Nemovitostní fondy",
+                        "status": "danger"
+                    }
+                ]
+            },
+            "properties": {
+                "currency": "CZK",
+                "value": 680000,
+                "rows": [
+                    {
+                        "currency": "CZK",
+                        "value": 1060000,
+                        "title": "Auta & Stroje",
+                        "status": "success"
+                    },
+                    {
+                        "currency": "CZK",
+                        "value": 0,
+                        "title": "Firemní podíly",
+                        "status": "success"
+                    },
+                    {
+                        "currency": "CZK",
+                        "value": 0,
+                        "title": "Komodity",
+                        "status": "warning"
+                    },
+                    {
+                        "currency": "CZK",
+                        "value": 0,
+                        "title": "Umění",
+                        "status": "danger"
+                    },
+                    {
+                        "currency": "CZK",
+                        "value": 0,
+                        "title": "Zvířata",
+                        "status": "warning"
+                    },
+                    {
+                        "currency": "CZK",
+                        "value": -380000,
+                        "title": "Úvěry",
+                        "status": "warning"
+                    }
+                ]
+            }
+        },
+        "estate": {
+            "rows": [
+                {
+                    "currency": "CZK",
+                    "value": 3800000,
+                    "title": "Vlastní bydlení",
+                    "status": "success",
+                    "note": "Brno, Jugoslávská 15 – tržní hodnota",
+                    "description": "3+1, 85 m², 2. patro, výtah, po rekonstrukci",
+                    "labels": [
+                        "Vlastní bydlení",
+                        "Aktiva",
+                        "Dlouhodobý"
+                    ]
+                },
+                {
+                    "currency": "CZK",
+                    "value": -1800000,
+                    "title": "Hypotéka",
+                    "status": "warning",
+                    "note": "Komerční banka – 3,49 % p.a.",
+                    "description": "od 15. 3. 2019 do 15. 3. 2034, zbývá 126 splátek",
+                    "labels": [
+                        "Hypotéka",
+                        "Pasiva",
+                        "Dlouhodobý"
+                    ]
+                },
+                {
+                    "currency": "CZK",
+                    "value": 3200000,
+                    "title": "Investiční nemovitost",
+                    "status": "success",
+                    "note": "Praha 10, Vršovická 8 – výnos 6,2 % p.a.",
+                    "description": "2+kk, 52 m², pronajato za 16 500 Kč/měs.",
+                    "labels": [
+                        "Investiční nemovitost",
+                        "Aktiva",
+                        "Střednědobý",
+                        "Střednědobý"
+                    ]
+                }
+            ]
+        },
+        "active": {
+            "rows": [
+                {
+                    "currency": "CZK",
+                    "value": 480000,
+                    "title": "Hotovost",
+                    "status": "success",
+                    "note": "Spořicí účet ČSOB – 4,2 % p.a.",
+                    "description": "Pohotovostní rezerva na 6 měsíců výdajů",
+                    "labels": [
+                        "Hotovost",
+                        "Aktiva",
+                        "Krátkodobý"
+                    ]
+                },
+                {
+                    "currency": "CZK",
+                    "value": 620000,
+                    "title": "Akcie & ETF",
+                    "status": "success",
+                    "note": "Portfolio S&P 500 ETF – průměr 9,4 % p.a.",
+                    "description": "Diverzifikované ETF portfolio přes Degiro",
+                    "labels": [
+                        "Cenné papíry",
+                        "Aktiva",
+                        "Dlouhodobý"
+                    ]
+                },
+                {
+                    "currency": "CZK",
+                    "value": 250000,
+                    "title": "Kryptoměny",
+                    "status": "danger",
+                    "note": "Bitcoin + Ethereum – volatilní",
+                    "description": "Velká volatilita, doporučeno max. 5 % portfolia",
+                    "labels": [
+                        "Kryptoměny",
+                        "Aktiva",
+                        "Krátkodobý"
+                    ]
+                }
+            ]
+        },
+        "properties": {
+            "rows": [
+                {
+                    "currency": "CZK",
+                    "value": 520000,
+                    "title": "BMW 520d",
+                    "status": "success",
+                    "note": "Tržní hodnota – odpis 8 % ročně",
+                    "description": "Rok 2021, najeto 62 000 km, servisní kniha",
+                    "labels": [
+                        "Vozidlo",
+                        "Aktiva",
+                        "Střednědobý"
+                    ]
+                },
+                {
+                    "currency": "CZK",
+                    "value": -380000,
+                    "title": "Spotřebitelský úvěr",
+                    "status": "danger",
+                    "note": "Moneta Money Bank – 7,9 % p.a.",
+                    "description": "od 1. 6. 2023 do 1. 6. 2028, zbývá 49 splátek",
+                    "labels": [
+                        "Úvěr",
+                        "Pasiva",
+                        "Střednědobý"
+                    ]
+                },
+                {
+                    "currency": "CZK",
+                    "value": 540000,
+                    "title": "Vybavení & stroje",
+                    "status": "success",
+                    "note": "Fotovoltaika + domácí vybavení",
+                    "description": "FVE 10 kWp (návratnost 7 let) + elektronika",
+                    "labels": [
+                        "Majetek",
+                        "Aktiva",
+                        "Dlouhodobý"
+                    ]
+                }
+            ]
+        },
+        "balance": {
+            "active": {
+                "currency": "CZK",
+                "value": 8910000,
+                "title": "Aktiva",
+                "yeld": {
+                    "title": "Ziskovost aktiv",
+                    "percent": 7.2
+                }
+            },
+            "passive": {
+                "currency": "CZK",
+                "value": 2180000,
+                "title": "Pasiva",
+                "yeld": {
+                    "title": "Nákladovost pasiv",
+                    "percent": 4.1
+                }
+            },
+            "netto": {
+                "currency": "CZK",
+                "value": 6730000,
+                "title": "Čistý majetek"
+            },
+            "footer": {
+                "percent": 3.1,
+                "status": "success"
+            }
+        },
+        "horizon": {
+            "rows": [
+                {
+                    "currency": "CZK",
+                    "value": 730000,
+                    "title": "Krátkodobý",
+                    "status": "success"
+                },
+                {
+                    "currency": "CZK",
+                    "value": 2450000,
+                    "title": "Střednědobý",
+                    "status": "warning"
+                },
+                {
+                    "currency": "CZK",
+                    "value": 5730000,
+                    "title": "Dlouhodobý",
+                    "status": "danger"
+                }
+            ]
+        },
+        "active_pasive": {
+            "rows": [
+                {
+                    "currency": "CZK",
+                    "value": 8910000,
+                    "title": "Aktiva",
+                    "status": "success"
+                },
+                {
+                    "currency": "CZK",
+                    "value": 2180000,
+                    "title": "Pasiva",
+                    "status": "warning"
+                }
+            ]
+        },
+        "liquidity": {
+            "rows": [
+                {
+                    "currency": "CZK",
+                    "value": 1350000,
+                    "title": "Vysoká",
+                    "status": "success"
+                },
+                {
+                    "currency": "CZK",
+                    "value": 3700000,
+                    "title": "Střední",
+                    "status": "warning"
+                },
+                {
+                    "currency": "CZK",
+                    "value": 3860000,
+                    "title": "Nízká",
+                    "status": "danger"
+                }
+            ]
+        },
+        "mortgage": {
+            "currency": "CZK",
+            "summary": {
+                "value": 2780000,
+                "status": "success"
+            },
+            "dti": {
+                "title": "DTI – Nebudu předlužený?",
+                "value": 6.2,
+                "rows": [
+                    {
+                        "title": "Krátkodobý",
+                        "value": 200000,
+                        "primary": true
+                    },
+                    {
+                        "title": "Střednědobý",
+                        "value": 500000
+                    },
+                    {
+                        "title": "Střednědobý",
+                        "value": 500000
+                    },
+                    {
+                        "title": "Střednědobý",
+                        "value": 500000
+                    }
+                ]
+            },
+            "dsti": {
+                "title": "DSTI – Zvádnu splácet?",
+                "value": 28,
+                "rows": [
+                    {
+                        "title": "Krátkodobý",
+                        "value": 200000,
+                        "primary": true
+                    },
+                    {
+                        "title": "Střednědobý",
+                        "value": 500000
+                    },
+                    {
+                        "title": "Střednědobý",
+                        "value": 500000
+                    },
+                    {
+                        "title": "Střednědobý",
+                        "value": 500000
+                    }
+                ]
+            },
+            "ltv": {
+                "title": "LTV – Zástavní prostor",
+                "rows": [
+                    {
+                        "title": "Vlastní úspory",
+                        "value": 450000
+                    },
+                    {
+                        "title": "Dostupná bonita – Nemovitost 1",
+                        "value": 900000
+                    },
+                    {
+                        "title": "Dostupná bonita – Nemovitost 2",
+                        "value": 2000000
+                    }
+                ],
+                "own_resources": {
+                    "title": "Vlastní zdroje (20 %)",
+                    "value": 3350000
+                },
+                "max_loan": {
+                    "title": "Maximální výše úvěru",
+                    "value": 16750000
+                },
+                "chart": {
+                    "label1": "Dostupný kapitál",
+                    "label2": "Majetek",
+                    "value1": 15500000,
+                    "value2": 3000000
+                }
+            },
+            "footer": {
+                "percent": 74,
+                "status": "success"
+            }
+        }
+    },
+    "insurance": {
+        "currency": "CZK",
+        "rows": [
+            {
+                "title": "Životní pojištění",
+                "value": 3500,
+                "description": "Pojištěno do 31. 12. 2045",
+                "status": "success",
+                "note": "Kooperativa – smlouva č. 7842156",
+                "labels": [
+                    {
+                        "title": "Životní riziko",
+                        "status": "neutral"
+                    },
+                    {
+                        "title": "Invalidita",
+                        "status": "neutral"
+                    },
+                    {
+                        "title": "Smrt",
+                        "status": "neutral"
+                    },
+                    {
+                        "title": "Úraz",
+                        "status": "neutral"
+                    }
+                ]
+            },
+            {
+                "title": "Pojištění nemovitosti",
+                "value": 1200,
+                "description": "Pojištěno do 15. 03. 2026",
+                "status": "warning",
+                "note": "Česká pojišťovna – smlouva č. 3301847",
+                "labels": [
+                    {
+                        "title": "Požár & živel",
+                        "status": "neutral"
+                    },
+                    {
+                        "title": "Krádež",
+                        "status": "neutral"
+                    },
+                    {
+                        "title": "Odpovědnost",
+                        "status": "neutral"
+                    }
+                ]
+            },
+            {
+                "title": "Pojištění domácnosti",
+                "value": 0,
+                "description": "Stav: nesjednáno",
+                "status": "danger",
+                "note": "Doporučeno sjednat co nejdříve",
+                "labels": [
+                    {
+                        "title": "Chybí krytí",
+                        "status": "danger"
+                    }
+                ]
+            },
+            {
+                "title": "Autopojištění",
+                "value": 2800,
+                "description": "Pojištěno do 30. 09. 2026",
+                "status": "success",
+                "note": "Allianz – BMW 520d, smlouva č. 9910244",
+                "labels": [
+                    {
+                        "title": "POV",
+                        "status": "neutral"
+                    },
+                    {
+                        "title": "Havarijní",
+                        "status": "neutral"
+                    },
+                    {
+                        "title": "Úrazové připojištění",
+                        "status": "neutral"
+                    }
+                ]
+            },
+            {
+                "title": "Pojištění partnera",
+                "value": 1800,
+                "description": "Pojištěno do 31. 12. 2040",
+                "status": "success",
+                "note": "NN Životní pojišťovna – Kateřina Novotná",
+                "labels": [
+                    {
+                        "title": "Životní riziko",
+                        "status": "neutral"
+                    },
+                    {
+                        "title": "Invalidita",
+                        "status": "neutral"
+                    },
+                    {
+                        "title": "Nemoc",
+                        "status": "neutral"
+                    }
+                ]
+            },
+            {
+                "title": "Cestovní pojištění",
+                "value": 0,
+                "description": "Stav: nesjednáno",
+                "status": "danger",
+                "note": "Doporučeno pro celou rodinu",
+                "labels": [
+                    {
+                        "title": "Chybí krytí",
+                        "status": "danger"
+                    }
+                ]
+            }
+        ]
+    },
+    "goal": {
+        "currency": "CZK",
+        "summary": {
+            "value": 5000,
+            "percent": 7.54
+        },
+        "rows": [
+            {
+                "icon": "car",
+                "title": "Koupit nové auto",
+                "value": 400000,
+                "description": "Splněno do 14. 05. 2025, zbývá 400 000 Kč / 33 769 Kč p.m.",
+                "priority": "medium",
+                "labels": [
+                    {
+                        "title": "Střední priorita",
+                        "status": "warning"
+                    },
+                    {
+                        "title": "Krátkodobý cíl",
+                        "status": "neutral"
+                    }
+                ]
+            },
+            {
+                "icon": "plane",
+                "title": "Cesta kolem světa",
+                "value": 280000,
+                "description": "Splněno do 14. 05. 2025, zbývá 400 000 Kč / 33 769 Kč p.m.",
+                "priority": "low",
+                "labels": [
+                    {
+                        "title": "Nízká priorita",
+                        "status": "success"
+                    },
+                    {
+                        "title": "Střednědobý cíl",
+                        "status": "neutral"
+                    }
+                ]
+            },
+            {
+                "icon": "piggy",
+                "title": "Zajištění na stáří",
+                "value": 280000,
+                "description": "Splněno do 14. 05. 2025, zbývá 400 000 Kč / 33 769 Kč p.m.",
+                "priority": "high",
+                "labels": [
+                    {
+                        "title": "Vysoká priorita",
+                        "status": "danger"
+                    },
+                    {
+                        "title": "Dlouhodobý cíl",
+                        "status": "neutral"
+                    }
+                ]
+            }
+        ]
+    }
 }
