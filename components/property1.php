@@ -98,7 +98,7 @@ $colors = ['#8D6144', '#BD8D66', '#eeeeee'];
                                 <i class="<?= $iconCls ?> text-xs"></i>
                             </div>
                             <div class="overflow-hidden">
-                                <div class="text-ink/70 whitespace-nowrap overflow-hidden text-ellipsis"><?= htmlspecialchars($name) ?></div>
+                                <div class="text-ink/70 overflow-hidden text-ellipsis"><?= htmlspecialchars($name) ?></div>
                                 <div class="font-normal"><?= number_format($val, 0, ',', ' ') ?> <?= $cur ?></div>
                             </div>
                         </div>

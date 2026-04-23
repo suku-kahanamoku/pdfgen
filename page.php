@@ -34,9 +34,10 @@ if (!empty($property)) {
 }
 
 if (!empty($insurance)) {
-    include __DIR__ . '/components/insurance1.php';
+    include __DIR__ . '/components/insurance.php';
 }
 
 if (!empty($goal)) {
-    include __DIR__ . '/components/insurance2.php';
+    include __DIR__ . '/components/goal1.php';
+    include __DIR__ . '/components/goal2.php';
 }

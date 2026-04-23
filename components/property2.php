@@ -72,9 +72,9 @@ $barColors   = ['#e7e4e4', '#936746'];
                                 <div class="text-xs font-lora"><?= htmlspecialchars($desc) ?></div>
                             </div>
                             <?php $lblCount = count($labels); ?>
-                            <div class="<?= $lblCount > 3 ? 'grid grid-cols-2' : 'flex flex-col' ?> gap-1 min-w-72 flex-shrink-0">
+                            <div class="<?= $lblCount > 3 ? 'grid grid-cols-2' : 'flex flex-col' ?> gap-1 w-72 flex-shrink-0">
                                 <?php foreach ($labels as $i => $lbl): ?>
-                                    <div class="text-xs border border-primary/40 px-2 py-1.5 rounded-md text-center w-full box-border whitespace-nowrap <?= ($lblCount > 3 && $lblCount % 2 === 1 && $i === $lblCount - 1) ? 'col-span-2' : '' ?>"><?= htmlspecialchars($lbl) ?></div>
+                                    <div class="text-xs border border-primary/40 px-2 py-1.5 rounded-md text-center w-full box-border <?= ($lblCount > 3 && $lblCount % 2 === 1 && $i === $lblCount - 1) ? 'col-span-2' : '' ?>"><?= htmlspecialchars($lbl) ?></div>
                                 <?php endforeach; ?>
                             </div>
                         </div>

@@ -53,9 +53,9 @@ $insuranceRows = $insurance['rows'] ?? [];
                     <div class="flex-1 border border-ink/15 rounded-xl px-4 py-3 flex gap-4 items-center shadow-sm">
                         <!-- Left box -->
                         <div class="bg-ink/5 px-3 py-2 rounded-lg w-48 flex-shrink-0 flex flex-col gap-1">
-                            <div class="text-xs"><?= htmlspecialchars($note) ?></div>
+                            <div class="text-primary"><?= htmlspecialchars($note) ?></div>
                             <?php if ($value > 0): ?>
-                                <div class="text-primary text-lg font-lora"><?= number_format($value, 0, ',', ' ') ?> <?= $insuranceCur ?></div>
+                                <div class="font-lora"><?= number_format($value, 0, ',', ' ') ?> <?= $insuranceCur ?></div>
                             <?php else: ?>
                                 <div>Nechráněno</div>
                             <?php endif; ?>
@@ -70,9 +70,9 @@ $insuranceRows = $insurance['rows'] ?? [];
                         <!-- Labels -->
                         <?php $lblCount = count($labels); ?>
                         <?php if ($lblCount > 3): ?>
-                            <div class="grid grid-cols-2 gap-1 min-w-72 flex-shrink-0">
+                            <div class="grid grid-cols-2 gap-1 w-72 flex-shrink-0">
                             <?php else: ?>
-                                <div class="flex flex-col gap-1 min-w-72 flex-shrink-0">
+                                <div class="flex flex-col gap-1 w-72 flex-shrink-0">
                                 <?php endif; ?>
                                 <?php foreach ($labels as $i => $label):
                                     $tagTitle  = is_array($label) ? ($label['title'] ?? '') : $label;
@@ -80,11 +80,11 @@ $insuranceRows = $insurance['rows'] ?? [];
                                     $spanClass = ($lblCount > 3 && $lblCount % 2 === 1 && $i === $lblCount - 1) ? ' col-span-2' : '';
                                 ?>
                                     <?php if ($tagStatus === 'danger'): ?>
-                                        <div class="text-xs border border-error px-2 py-1.5 rounded-md text-center w-full box-border whitespace-nowrap<?= $spanClass ?>">
+                                        <div class="text-xs border border-error px-2 py-1.5 rounded-md text-center w-full box-border <?= $spanClass ?>">
                                             <?= htmlspecialchars($tagTitle) ?>
                                         </div>
                                     <?php else: ?>
-                                        <div class="text-xs border border-primary/40 px-2 py-1.5 rounded-md text-center w-full box-border whitespace-nowrap<?= $spanClass ?>">
+                                        <div class="text-xs border border-primary/40 px-2 py-1.5 rounded-md text-center w-full box-border <?= $spanClass ?>">
                                             <?= htmlspecialchars($tagTitle) ?>
                                         </div>
                                     <?php endif; ?>

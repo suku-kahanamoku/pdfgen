@@ -889,6 +889,45 @@
                     }
                 ]
             }
+        ],
+        "steps": [
+            {
+                "currency": "CZK",
+                "value": 450000,
+                "title": "Otevřený podílový fond NEMO 5 - 8,5 % p.a.",
+                "status": "success",
+                "note": "INVESTIKA a.s.",
+                "description": "od 15.8. 2024 do 15. 8. 2034",
+                "labels": [
+                    "Dlouhodobý cíl",
+                    "Výběr a reinvestice 450 000 Kč ze stavebního spoření"
+                ]
+            },
+            {
+                "currency": "CZK",
+                "value": 5000,
+                "title": "CREIF nemovitostní investiční fond 5 - 8,5 % p.a.",
+                "status": "success",
+                "note": "EFEKTA o.c.p.c",
+                "frequency": "měsíčně",
+                "description": "od 15.8. 2024 do 15. 8. 2034",
+                "labels": [
+                    "Krátkodobý cíl"
+                ]
+            },
+            {
+                "currency": "CZK",
+                "value": 7500,
+                "title": "HORIZONT Invest 5 - 8,5 % p.a.",
+                "status": "success",
+                "note": "CONSEQ a.s.",
+                "frequency": "měsíčně",
+                "description": "od 15.8. 2024 do 15. 8. 2034",
+                "labels": [
+                    "Střednědobý cíl",
+                    "Pravidelná investice přebytku rozpočtu"
+                ]
+            }
         ]
     }
 }
