@@ -940,5 +940,90 @@
             "percent": 85,
             "status": "success"
         }
+    },
+    "health": {
+        "rows": [
+            {
+                "icon": "fa-regular fa-heart",
+                "title": "Pojištění pro případ úmrtí",
+                "lines": [
+                    "Jaké závazky po sobě zanecháte?",
+                    "Přejete si své nejbližší finančně zajistit?"
+                ]
+            },
+            {
+                "icon": "fa-solid fa-bandage",
+                "title": "Úraz",
+                "lines": []
+            },
+            {
+                "icon": "fa-solid fa-briefcase-medical",
+                "title": "Pracovní neschopnost",
+                "lines": []
+            },
+            {
+                "icon": "fa-regular fa-hospital",
+                "title": "Hospitalizace",
+                "lines": []
+            },
+            {
+                "icon": "fa-solid fa-virus-covid",
+                "title": "Závažné onemocnění",
+                "lines": []
+            },
+            {
+                "icon": "fa-solid fa-wheelchair",
+                "title": "Invalidita",
+                "rows": [
+                    {
+                        "label": "Snížená schopnost práce",
+                        "value": ""
+                    },
+                    {
+                        "label": "I. stupeň",
+                        "value": "35% – 49%"
+                    },
+                    {
+                        "label": "II. stupeň",
+                        "value": "50% – 69%"
+                    },
+                    {
+                        "label": "III. stupeň",
+                        "value": "od 70%"
+                    }
+                ]
+            },
+            {
+                "icon": "fa-solid fa-bed",
+                "title": "Ztráta soběstačnosti",
+                "rows": [
+                    {
+                        "label": "Stupeň závislosti",
+                        "value": "Počet potřeb"
+                    },
+                    {
+                        "label": "I. lehká",
+                        "value": "3–4"
+                    },
+                    {
+                        "label": "II. střední",
+                        "value": "5–6"
+                    },
+                    {
+                        "label": "III. těžká",
+                        "value": "7–8"
+                    },
+                    {
+                        "label": "IV. úplná",
+                        "value": "9–10"
+                    }
+                ]
+            },
+            {
+                "icon": "fa-solid fa-stethoscope",
+                "title": "Trvalé následky",
+                "lines": []
+            }
+        ]
     }
 }

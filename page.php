@@ -7,6 +7,7 @@ $balance  = $rawData['balance']  ?? [];
 $property = $rawData['property'] ?? [];
 $insurance = $rawData['insurance'] ?? [];
 $goal      = $rawData['goal']      ?? [];
+$health   = $rawData['health']    ?? [];
 
 $curMap   = ['CZK' => 'Kč', 'EUR' => '€', 'USD' => '$'];
 
@@ -40,4 +41,8 @@ if (!empty($insurance)) {
 if (!empty($goal)) {
     include __DIR__ . '/components/goal1.php';
     include __DIR__ . '/components/goal2.php';
+}
+
+if (!empty($health)) {
+    include __DIR__ . '/components/health1.php';
 }
