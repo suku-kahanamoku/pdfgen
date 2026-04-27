@@ -942,8 +942,9 @@
         }
     },
     "health": {
-        "rows": [
+        "cards": [
             {
+                "cols": 1,
                 "icon": "fa-regular fa-heart",
                 "title": "Pojištění pro případ úmrtí",
                 "lines": [
@@ -952,26 +953,28 @@
                 ]
             },
             {
-                "icon": "fa-solid fa-bandage",
-                "title": "Úraz",
-                "lines": []
+                "cols": 2,
+                "items": [
+                    {
+                        "icon": "fa-solid fa-bandage",
+                        "title": "Úraz"
+                    },
+                    {
+                        "icon": "fa-solid fa-briefcase-medical",
+                        "title": "Pracovní neschopnost"
+                    },
+                    {
+                        "icon": "fa-regular fa-hospital",
+                        "title": "Hospitalizace"
+                    },
+                    {
+                        "icon": "fa-solid fa-virus-covid",
+                        "title": "Závažné onemocnění"
+                    }
+                ]
             },
             {
-                "icon": "fa-solid fa-briefcase-medical",
-                "title": "Pracovní neschopnost",
-                "lines": []
-            },
-            {
-                "icon": "fa-regular fa-hospital",
-                "title": "Hospitalizace",
-                "lines": []
-            },
-            {
-                "icon": "fa-solid fa-virus-covid",
-                "title": "Závažné onemocnění",
-                "lines": []
-            },
-            {
+                "cols": 1,
                 "icon": "fa-solid fa-wheelchair",
                 "title": "Invalidita",
                 "rows": [
@@ -994,6 +997,7 @@
                 ]
             },
             {
+                "cols": 1,
                 "icon": "fa-solid fa-bed",
                 "title": "Ztráta soběstačnosti",
                 "rows": [
@@ -1020,6 +1024,7 @@
                 ]
             },
             {
+                "cols": 1,
                 "icon": "fa-solid fa-stethoscope",
                 "title": "Trvalé následky",
                 "lines": []

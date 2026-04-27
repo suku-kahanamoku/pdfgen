@@ -2,7 +2,7 @@
 // ============================================================
 // HEALTH INSURANCE PAGE – CONTROLLER
 // ============================================================
-$healthRows = $health['rows'] ?? [];
+$healthRows = $health['cards'] ?? [];
 ?>
 
 <!-- ============================================================ -->
@@ -52,108 +52,64 @@ $healthRows = $health['rows'] ?? [];
         </div>
 
         <div class="grid grid-cols-3 gap-6">
-            <!-- Death card, spans left width -->
-            <div class="rounded-2xl border border-ink/15 bg-white px-5 py-5 shadow-sm col-span-1 min-h-[128px]">
-                <div class="mb-4 flex items-center gap-3">
-                    <i class="fa-regular fa-heart text-primary text-2xl"></i>
-                    <div class="font-semibold text-ink">Pojištění pro případ úmrtí</div>
-                </div>
-                <div class="flex flex-col gap-2 text-ink/70">
-                    <div>Jaké závazky po sobě zanecháte?</div>
-                    <div>Přejete si své nejbližší finančně zajistit?</div>
-                </div>
-            </div>
+            <?php foreach ($healthRows as $card): ?>
+                <?php $colSpan = 'col-span-' . ($card['cols'] ?? 1); ?>
 
-            <!-- Top right grouped risks -->
-            <div class="col-span-2 rounded-2xl border border-ink/15 bg-white px-5 py-5 shadow-sm min-h-[128px]">
-                <div class="grid grid-cols-2 gap-x-10 gap-y-6">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-bandage text-primary text-2xl"></i>
-                        <span class="text-ink">Úraz</span>
+                <?php if (!empty($card['items'])): ?>
+                    <!-- Multi-item grouped card -->
+                    <div class="<?= $colSpan ?> rounded-2xl border border-ink/15 bg-white px-5 py-5 shadow-sm min-h-[128px]">
+                        <div class="grid grid-cols-2 gap-x-10 gap-y-6">
+                            <?php foreach ($card['items'] as $item): ?>
+                                <div class="flex items-center gap-3">
+                                    <i class="<?= htmlspecialchars($item['icon']) ?> text-primary text-2xl"></i>
+                                    <span class="text-ink"><?= htmlspecialchars($item['title']) ?></span>
+                                </div>
+                            <?php endforeach ?>
+                        </div>
                     </div>
 
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-briefcase-medical text-primary text-2xl"></i>
-                        <span class="text-ink">Pracovní neschopnost</span>
+                <?php elseif (!empty($card['rows'])): ?>
+                    <!-- Label/value table card -->
+                    <div class="<?= $colSpan ?> rounded-2xl border border-ink/15 bg-white px-5 py-5 shadow-sm min-h-[150px]">
+                        <div class="mb-4 flex items-center gap-3">
+                            <i class="<?= htmlspecialchars($card['icon']) ?> text-primary text-2xl"></i>
+                            <div class="font-semibold text-ink"><?= htmlspecialchars($card['title']) ?></div>
+                        </div>
+                        <div class="flex flex-col gap-2 text-xs text-ink/70">
+                            <?php foreach ($card['rows'] as $row): ?>
+                                <div class="flex justify-between gap-4">
+                                    <span><?= htmlspecialchars($row['label']) ?></span>
+                                    <span><?= htmlspecialchars($row['value']) ?></span>
+                                </div>
+                            <?php endforeach ?>
+                        </div>
                     </div>
 
-                    <div class="flex items-center gap-3">
-                        <i class="fa-regular fa-hospital text-primary text-2xl"></i>
-                        <span class="text-ink">Hospitalizace</span>
+                <?php elseif (!empty($card['lines'])): ?>
+                    <!-- Lines card -->
+                    <div class="<?= $colSpan ?> rounded-2xl border border-ink/15 bg-white px-5 py-5 shadow-sm min-h-[128px]">
+                        <div class="mb-4 flex items-center gap-3">
+                            <i class="<?= htmlspecialchars($card['icon']) ?> text-primary text-2xl"></i>
+                            <div class="font-semibold text-ink"><?= htmlspecialchars($card['title']) ?></div>
+                        </div>
+                        <div class="flex flex-col gap-2 text-ink/70">
+                            <?php foreach ($card['lines'] as $line): ?>
+                                <div><?= htmlspecialchars($line) ?></div>
+                            <?php endforeach ?>
+                        </div>
                     </div>
 
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-virus-covid text-primary text-2xl"></i>
-                        <span class="text-ink">Závažné onemocnění</span>
+                <?php else: ?>
+                    <!-- Icon-only card -->
+                    <div class="<?= $colSpan ?> rounded-2xl border border-ink/15 bg-white px-5 py-5 shadow-sm min-h-[150px] flex items-center justify-center">
+                        <div class="flex items-center gap-4">
+                            <i class="<?= htmlspecialchars($card['icon']) ?> text-primary text-3xl"></i>
+                            <div class="font-semibold text-ink"><?= htmlspecialchars($card['title']) ?></div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                <?php endif ?>
 
-            <!-- Invalidita -->
-            <div class="rounded-2xl border border-ink/15 bg-white px-5 py-5 shadow-sm min-h-[150px]">
-                <div class="mb-4 flex items-center gap-3">
-                    <i class="fa-solid fa-wheelchair text-primary text-2xl"></i>
-                    <div class="font-semibold text-ink">Invalidita</div>
-                </div>
-
-                <div class="flex flex-col gap-2 text-xs text-ink/70">
-                    <div class="flex justify-between gap-4">
-                        <span>Snížená schopnost práce</span>
-                        <span></span>
-                    </div>
-                    <div class="flex justify-between gap-4">
-                        <span>I. stupeň</span>
-                        <span>35% – 49%</span>
-                    </div>
-                    <div class="flex justify-between gap-4">
-                        <span>II. stupeň</span>
-                        <span>50% – 69%</span>
-                    </div>
-                    <div class="flex justify-between gap-4">
-                        <span>III. stupeň</span>
-                        <span>od 70%</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Ztráta soběstačnosti -->
-            <div class="rounded-2xl border border-ink/15 bg-white px-5 py-5 shadow-sm min-h-[150px]">
-                <div class="mb-4 flex items-center gap-3">
-                    <i class="fa-solid fa-bed text-primary text-2xl"></i>
-                    <div class="font-semibold text-ink">Ztráta soběstačnosti</div>
-                </div>
-
-                <div class="flex flex-col gap-2 text-xs text-ink/70">
-                    <div class="flex justify-between gap-4">
-                        <span>Stupeň závislosti</span>
-                        <span>Počet potřeb</span>
-                    </div>
-                    <div class="flex justify-between gap-4">
-                        <span>I. lehká</span>
-                        <span>3–4</span>
-                    </div>
-                    <div class="flex justify-between gap-4">
-                        <span>II. střední</span>
-                        <span>5–6</span>
-                    </div>
-                    <div class="flex justify-between gap-4">
-                        <span>III. těžká</span>
-                        <span>7–8</span>
-                    </div>
-                    <div class="flex justify-between gap-4">
-                        <span>IV. úplná</span>
-                        <span>9–10</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Trvalé následky -->
-            <div class="rounded-2xl border border-ink/15 bg-white px-5 py-5 shadow-sm min-h-[150px] flex items-center justify-center">
-                <div class="flex items-center gap-4">
-                    <i class="fa-solid fa-stethoscope text-primary text-3xl"></i>
-                    <div class="font-semibold text-ink">Trvalé následky</div>
-                </div>
-            </div>
+            <?php endforeach ?>
         </div>
     </div>
 </div>
