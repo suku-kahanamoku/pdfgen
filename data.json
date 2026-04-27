@@ -1153,5 +1153,26 @@
                 }
             ]
         }
+    },
+    "footer": {
+        "logo": null,
+        "contact": [
+            {
+                "title": "Sídlo",
+                "text": "Pražákova 1008/69 Brno-město, 649 00 Brno"
+            },
+            {
+                "title": "Kancelář",
+                "text": "Tovačovského 2784/24, Kroměříž"
+            },
+            {
+                "title": "Centrála",
+                "text": "AZ TOWER, 11. Patro, Pražákova 1008/69, 639 00 Brno"
+            },
+            {
+                "title": "Collegas s.r.o.",
+                "text": "022 62 975\nC 80725"
+            }
+        ]
     }
 }
