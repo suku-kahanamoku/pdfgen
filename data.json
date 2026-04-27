@@ -942,6 +942,7 @@
         }
     },
     "health": {
+        "currency": "CZK",
         "cards": [
             {
                 "cols": 1,
@@ -1029,6 +1030,128 @@
                 "title": "Trvalé následky",
                 "lines": []
             }
-        ]
+        ],
+        "shortfall": {
+            "expense": -32000,
+            "reserve_months": "3,24 měsíce",
+            "rows": [],
+            "boxes": [],
+            "footer": {
+                "status": "danger",
+                "title": "Nedostatečné",
+                "text": "Aktuální nastavení vašeho zabezpečení",
+                "status_success_title": "Dobře nastavené",
+                "status_success_text": "Vaše pojistná ochrana je na doporučené úrovni"
+            }
+        },
+        "invalidity": {
+            "rows": [
+                {
+                    "title": "I. stupeň",
+                    "insured": 1500000,
+                    "monthly_left": 2000,
+                    "rows": [
+                        {
+                            "title": "Státní důchod",
+                            "value": 7485
+                        },
+                        {
+                            "title": "Pojištění",
+                            "value": 8546
+                        },
+                        {
+                            "title": "Přivýdělek",
+                            "value": 0
+                        },
+                        {
+                            "title": "Příjem partnera",
+                            "value": 23000
+                        },
+                        {
+                            "title": "Ostatní příjmy",
+                            "value": 2000
+                        },
+                        {
+                            "title": "Nezbytné výdaje",
+                            "value": -42000
+                        }
+                    ],
+                    "chart": {
+                        "expense": 35000,
+                        "income": 41000
+                    }
+                },
+                {
+                    "title": "II. stupeň",
+                    "insured": 0,
+                    "monthly_left": -2000,
+                    "rows": [
+                        {
+                            "title": "Státní důchod",
+                            "value": 14485
+                        },
+                        {
+                            "title": "Pojištění",
+                            "value": 8546
+                        },
+                        {
+                            "title": "Přivýdělek",
+                            "value": 0
+                        },
+                        {
+                            "title": "Příjem partnera",
+                            "value": 23000
+                        },
+                        {
+                            "title": "Ostatní příjmy",
+                            "value": 2000
+                        },
+                        {
+                            "title": "Nezbytné výdaje",
+                            "value": -42000
+                        }
+                    ],
+                    "chart": {
+                        "expense": 35000,
+                        "income": 28000
+                    }
+                },
+                {
+                    "title": "III. stupeň",
+                    "insured": 0,
+                    "monthly_left": -7000,
+                    "rows": [
+                        {
+                            "title": "Státní důchod",
+                            "value": 14485
+                        },
+                        {
+                            "title": "Pojištění",
+                            "value": 8546
+                        },
+                        {
+                            "title": "Přivýdělek",
+                            "value": 0
+                        },
+                        {
+                            "title": "Příjem partnera",
+                            "value": 23000
+                        },
+                        {
+                            "title": "Ostatní příjmy",
+                            "value": 2000
+                        },
+                        {
+                            "title": "Nezbytné výdaje",
+                            "value": -42000
+                        }
+                    ],
+                    "chart": {
+                        "expense": 35000,
+                        "income": 28500
+                    }
+                }
+            ]
+        }
     }
 }

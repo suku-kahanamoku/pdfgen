@@ -45,4 +45,5 @@ if (!empty($goal)) {
 
 if (!empty($health)) {
     include __DIR__ . '/components/health1.php';
+    include __DIR__ . '/components/health2.php';
 }
