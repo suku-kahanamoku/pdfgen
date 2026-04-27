@@ -2,11 +2,6 @@
 // ============================================================
 // HEALTH INSURANCE PAGE – CONTROLLER
 // ============================================================
-$healthTitle = $health['title'] ?? 'Zdravotní pojištění';
-$healthIntro = $health['intro'] ?? 'Zdravotní pojištění je klíčovým prvkem finanční ochrany v případě nemoci nebo úrazu. Poskytuje finanční podporu při léčbě, hospitalizaci a dalších zdravotních výdajích, což vám umožňuje soustředit se na zotavení bez zbytečného stresu z finančních nákladů.';
-
-$healthQuestion = $health['question'] ?? 'Jaké zdravotní pojištění je pro vás nejvhodnější?';
-
 $healthRows = $health['rows'] ?? [];
 ?>
 
@@ -19,11 +14,17 @@ $healthRows = $health['rows'] ?? [];
     <div class="flex items-start justify-between gap-8">
         <div class="flex-1">
             <h2 class="font-lora text-5xl font-semibold leading-none text-ink">
-                <?= htmlspecialchars($healthTitle) ?>
+                Životní pojištění
             </h2>
 
             <div class="mt-6 leading-relaxed text-ink/70">
-                <?= htmlspecialchars($healthIntro) ?>
+                Životní pojištění
+                Pojistné částky v případě smrti a podobných událostí jsou
+                často podceňovaným, ale velmi důležitým aspektem
+                našeho života. Může se zdát nepříjemné přemýšlet o
+                takových situacích, ale mít v těchto případech pojistnou
+                ochranu znamená, že vaše rodina bude finančně
+                zajištěna, i když se stane něco neočekávaného.
             </div>
         </div>
 
@@ -34,7 +35,7 @@ $healthRows = $health['rows'] ?? [];
 
     <!-- Question -->
     <div class="font-lora text-2xl font-semibold text-ink">
-        <?= htmlspecialchars($healthQuestion) ?>
+        K čemu slouží životní pojištění, a jak ho správně nastavit?
     </div>
 
     <!-- Main rows -->
