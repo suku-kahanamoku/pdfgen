@@ -1155,6 +1155,7 @@
         }
     },
     "footer": {
+        "logo_text": null,
         "logo": null,
         "contact": [
             {

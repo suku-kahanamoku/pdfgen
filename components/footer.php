@@ -2,16 +2,9 @@
 // ============================================================
 // FINAL CONTACT PAGE – CONTROLLER
 // ============================================================
-$contact    = $intro['contact'] ?? [];
-
-$finalTitle  = "Měníme vaše sny\nve skutečnost";
-$finalText   = "Pro další informace a případné dotazy\nmě neváhejte kontaktovat!";
-
-$logoText        = $footer['logo'] ?? (__DIR__ . '/../img/logo/wealth_management.png');
-
 $contactCards = $footer['contact'] ?? [];
-
-$decorImage  = $footer['final_decor_image'] ?? (__DIR__ . '/../img/logo/wealth.png');
+$logoText        = $footer['logo_text'] ?? (__DIR__ . '/../img/logo/wealth_management.png');
+$decorImage  = $footer['logo'] ?? (__DIR__ . '/../img/logo/wealth.png');
 ?>
 
 <!-- ============================================================ -->
@@ -20,29 +13,24 @@ $decorImage  = $footer['final_decor_image'] ?? (__DIR__ . '/../img/logo/wealth.p
 <div class="relative w-full box-border p-24 h-screen overflow-hidden flex flex-col break-after-page box-decoration-clone">
 
     <!-- Decorative background -->
-    <div class="absolute inset-x-0 bottom-0 h-[430px] bg-[#f1f1f0] rounded-tl-[320px] translate-x-44"></div>
+    <div class="absolute inset-x-0 bottom-0 h-[650px] bg-[#f1f1f0] rounded-tl-[600px] translate-x-[340px]"></div>
 
     <?php if ($decorImage): ?>
         <img
             src="<?= htmlspecialchars($decorImage) ?>"
             alt=""
             class="absolute left-[-100px] bottom-[-150px] w-[650px] max-w-none object-contain pointer-events-none">
-    <?php else: ?>
-        <!-- fallback abstract ribbons -->
-        <div class="absolute left-[235px] bottom-[-120px] h-64 w-64 rounded-full border-[36px] border-ink/35 rotate-[-22deg]"></div>
-        <div class="absolute left-[465px] bottom-[90px] h-44 w-28 rounded-full border-[36px] border-pebble rotate-[20deg]"></div>
-        <div class="absolute right-[-225px] bottom-[120px] h-28 w-56 rounded-full border-[34px] border-[#efc400] rotate-[-20deg]"></div>
     <?php endif; ?>
 
     <!-- Content -->
     <div class="relative z-10 flex flex-col">
         <h1 class="font-lora text-6xl font-semibold leading-none tracking-tight text-ink">
-            <span><?= nl2br(htmlspecialchars(explode("\n", $finalTitle)[0] ?? 'Měníme vaše sny')) ?></span><br>
-            <span class="text-primary"><?= htmlspecialchars(explode("\n", $finalTitle)[1] ?? 've skutečnost') ?></span>
+            <span>Měníme vaše sny</span><br>
+            <span class="text-primary">ve skutečnost</span>
         </h1>
 
         <div class="mt-8 max-w-xl text-3xl leading-tight text-ink/85">
-            <?= nl2br(htmlspecialchars($finalText)) ?>
+            Pro další informace a případné dotazy<br>mě neváhejte kontaktovat!
         </div>
 
         <div class="mt-16">
