@@ -1032,10 +1032,32 @@
             }
         ],
         "shortfall": {
-            "expense": -32000,
-            "reserve_months": "3,24 měsíce",
-            "rows": [],
-            "boxes": [],
+            "rows": [
+                {
+                    "title": "Snížený příjem",
+                    "value": 15000
+                },
+                {
+                    "title": "Nemocenská",
+                    "value": 8000
+                },
+                {
+                    "title": "Příjem partnera",
+                    "value": 5000
+                },
+                {
+                    "title": "Pronájem garáže",
+                    "value": 2000
+                }
+            ],
+            "expense": {
+                "title": "Výdaje",
+                "value": -32000
+            },
+            "reserve": {
+                "title": "Rezerva 120 000 vydrží na",
+                "value": 3.24
+            },
             "footer": {
                 "status": "danger"
             }

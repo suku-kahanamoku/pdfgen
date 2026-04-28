@@ -6,8 +6,10 @@ $cur    = $curMap[$health['currency'] ?? 'CZK'] ?? 'Kč';
 
 $shortfall      = $health['shortfall'] ?? [];
 $shortRows      = $shortfall['rows'] ?? [];
-$shortBoxes     = $shortfall['boxes'] ?? [];
+$shortExpense   = $shortfall['expense'] ?? [];
+$shortReserve   = $shortfall['reserve'] ?? [];
 $shortFooter    = $shortfall['footer'] ?? [];
+$shortBoxes    = $shortfall['boxes'] ?? [];
 
 $invalidity     = $health['invalidity'] ?? [];
 $invalidityRows = $invalidity['rows'] ?? [];
@@ -61,17 +63,13 @@ $chartIncomeLossId = 'chart-health-income-loss';
                 <?php endforeach; ?>
 
                 <div class="flex items-center justify-between rounded-lg border border-primary/40 px-3 py-2 text-ink">
-                    <span>Výdaje</span>
-                    <span><?= number_format((float)($shortfall['expense'] ?? -32000), 0, ',', ' ') ?> <?= $cur ?></span>
+                    <span><?= htmlspecialchars($shortExpense['title'] ?? '') ?></span>
+                    <span><?= number_format((float)($shortExpense['value'] ?? 0), 0, ',', ' ') ?> <?= $cur ?></span>
                 </div>
 
-                <div class="grid grid-cols-2 gap-3">
-                    <div class="rounded-lg border border-primary/40 px-3 py-2 text-ink">
-                        Rezerva 120 000 vydrží na
-                    </div>
-                    <div class="rounded-lg border border-primary/40 px-3 py-2 text-right text-ink">
-                        <?= htmlspecialchars($shortfall['reserve_months'] ?? '3,24 měsíce') ?>
-                    </div>
+                <div class="grid grid-cols-2 items-center rounded-lg border border-primary/40 px-3 py-2 text-ink">
+                    <span class="truncate"><?= htmlspecialchars($shortReserve['title'] ?? '') ?></span>
+                    <span class="text-right"><?= number_format((float)($shortReserve['value'] ?? 0), 2, ',', ' ') ?> měsíc</span>
                 </div>
             </div>
 
