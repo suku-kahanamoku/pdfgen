@@ -1037,11 +1037,7 @@
             "rows": [],
             "boxes": [],
             "footer": {
-                "status": "danger",
-                "title": "Nedostatečné",
-                "text": "Aktuální nastavení vašeho zabezpečení",
-                "status_success_title": "Dobře nastavené",
-                "status_success_text": "Vaše pojistná ochrana je na doporučené úrovni"
+                "status": "danger"
             }
         },
         "invalidity": {

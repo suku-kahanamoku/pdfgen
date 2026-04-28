@@ -21,68 +21,69 @@ $chartIncomeLossId = 'chart-health-income-loss';
 <div class="w-full box-border p-24 break-after-page overflow-visible flex flex-col gap-10 box-decoration-clone">
 
     <!-- Top section -->
-    <div class="grid grid-cols-[1fr_1.45fr] gap-12 items-start">
-        <!-- Left warning + chart -->
-        <div class="flex flex-col gap-8">
-            <div class="bg-primary/10 border border-primary rounded-xl px-5 py-7 min-h-28 flex flex-col gap-2">
-                <div class="font-lora text-2xl font-semibold text-ink">
-                    <?= htmlspecialchars($shortFooter['title'] ?? 'Nedostatečné') ?>
-                </div>
-                <div class="text-ink/70">
-                    <?= htmlspecialchars($shortFooter['text'] ?? 'Aktuální nastavení vašeho zabezpečení') ?>
-                </div>
+    <div class="grid grid-cols-[1fr_1.45fr] gap-12 items-stretch">
+        <!-- Left footer + right text -->
+        <?php if (($shortFooter['status'] ?? '') === 'success'): ?>
+            <div class="bg-secondary/10 border border-secondary -ml-24 pl-24 rounded-r-xl px-5 py-4 flex flex-col gap-1 justify-center">
+                <div class="font-semibold text-ink">Dobře nastavené</div>
+                <div class="text-ink/70">Vaše pojistná ochrana je na doporučené úrovni</div>
             </div>
+        <?php else: ?>
+            <div class="bg-primary/10 border border-primary -ml-24 pl-24 rounded-r-xl px-5 py-4 flex flex-col gap-1 justify-center">
+                <div class="font-semibold text-ink">Nedostatečné</div>
+                <div class="text-ink/70">Aktuální nastavení vašeho zabezpečení</div>
+            </div>
+        <?php endif; ?>
 
-            <div class="bg-paper rounded-3xl p-6 min-h-[230px]">
-                <canvas id="<?= $chartIncomeLossId ?>"></canvas>
-            </div>
+        <div>
+            <h3 class="font-lora text-4xl font-semibold leading-none text-ink">
+                Krátkodobý výpadek příjmu – do jednoho roku
+            </h3>
+            <p class="mt-4 leading-relaxed text-ink/70">
+                Při krátkodobé pracovní neschopnosti nebo úrazu se váš příjem může výrazně snížit. Státní nemocenská pokrývá pouze část výdajů, a bez dostatečné rezervy či pojistné ochrany může domácnost rychle sklouznout do finanční tísně.
+            </p>
+        </div>
+    </div>
+
+    <!-- Graf + right info -->
+    <div class="grid grid-cols-[1fr_1.45fr] gap-6 items-start">
+        <div class="bg-paper rounded-3xl p-6 min-h-[230px]">
+            <canvas id="<?= $chartIncomeLossId ?>"></canvas>
         </div>
 
-        <!-- Right calculation -->
-        <div class="flex flex-col gap-6">
-            <div>
-                <h3 class="font-lora text-4xl font-semibold leading-none text-ink">
-                    Krátkodobý výpadek příjmu – do jednoho roku
-                </h3>
-                <p class="mt-4 leading-relaxed text-ink/70">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Itaque earum rerum hic tenetur sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores.
-                </p>
+        <div class="grid grid-cols-[1fr_120px] gap-4 items-start">
+            <div class="flex flex-col gap-3">
+                <?php foreach ($shortRows as $row): ?>
+                    <div class="flex items-center justify-between border-b border-mist pb-2 text-ink/75">
+                        <span><?= htmlspecialchars($row['title'] ?? '') ?></span>
+                        <span><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $cur ?></span>
+                    </div>
+                <?php endforeach; ?>
+
+                <div class="flex items-center justify-between rounded-lg border border-primary/40 px-3 py-2 text-ink">
+                    <span>Výdaje</span>
+                    <span><?= number_format((float)($shortfall['expense'] ?? -32000), 0, ',', ' ') ?> <?= $cur ?></span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="rounded-lg border border-primary/40 px-3 py-2 text-ink">
+                        Rezerva 120 000 vydrží na
+                    </div>
+                    <div class="rounded-lg border border-primary/40 px-3 py-2 text-right text-ink">
+                        <?= htmlspecialchars($shortfall['reserve_months'] ?? '3,24 měsíce') ?>
+                    </div>
+                </div>
             </div>
 
-            <div class="grid grid-cols-[1fr_120px] gap-4 items-start">
-                <div class="flex flex-col gap-3">
-                    <?php foreach ($shortRows as $row): ?>
-                        <div class="flex items-center justify-between border-b border-mist pb-2 text-ink/75">
-                            <span><?= htmlspecialchars($row['title'] ?? '') ?></span>
-                            <span><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $cur ?></span>
-                        </div>
-                    <?php endforeach; ?>
-
-                    <div class="flex items-center justify-between rounded-lg border border-primary/40 px-3 py-2 text-ink">
-                        <span>Výdaje</span>
-                        <span><?= number_format((float)($shortfall['expense'] ?? -32000), 0, ',', ' ') ?> <?= $cur ?></span>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="rounded-lg border border-primary/40 px-3 py-2 text-ink">
-                            Rezerva 120 000 vydrží na
-                        </div>
-                        <div class="rounded-lg border border-primary/40 px-3 py-2 text-right text-ink">
-                            <?= htmlspecialchars($shortfall['reserve_months'] ?? '3,24 měsíce') ?>
+            <div class="flex flex-col gap-3">
+                <?php foreach ($shortBoxes as $box): ?>
+                    <div class="<?= !empty($box['dark']) ? 'bg-primary text-white' : 'bg-answer text-ink' ?> rounded-lg px-3 py-3">
+                        <div class="text-xs"><?= htmlspecialchars($box['title'] ?? '') ?></div>
+                        <div class="font-lora font-semibold text-right">
+                            <?= htmlspecialchars($box['value'] ?? '') ?>
                         </div>
                     </div>
-                </div>
-
-                <div class="flex flex-col gap-3">
-                    <?php foreach ($shortBoxes as $box): ?>
-                        <div class="<?= !empty($box['dark']) ? 'bg-primary text-white' : 'bg-answer text-ink' ?> rounded-lg px-3 py-3">
-                            <div class="text-xs"><?= htmlspecialchars($box['title'] ?? '') ?></div>
-                            <div class="font-lora font-semibold text-right">
-                                <?= htmlspecialchars($box['value'] ?? '') ?>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
@@ -93,7 +94,7 @@ $chartIncomeLossId = 'chart-health-income-loss';
             Dlouhodobý výpadek příjmu
         </h3>
         <p class="leading-relaxed text-ink/70">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Itaque earum rerum hic tenetur sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores.
+            Dlouhodobá invalidita nebo ztráta soběstačnosti patří mezi nejzávažnější finanční rizika. Státní dávky zpravidla nestačí pokrýt běžné výdaje domácnosti, proto je klíčové mít nastaveno pojištění, které rozdíl dorovná a zachová váš životní standard.
         </p>
     </div>
 
