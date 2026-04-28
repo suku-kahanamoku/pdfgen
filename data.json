@@ -1058,6 +1058,26 @@
                 "title": "Rezerva 120 000 vydrží na",
                 "value": 3.24
             },
+            "missing": [
+                {
+                    "title": "Denně chybí",
+                    "value": -15000
+                },
+                {
+                    "title": "Měsíčně chybí",
+                    "value": -5000
+                }
+            ],
+            "dose": [
+                {
+                    "title": "Denní dávka (od 30. dne) - pojištění",
+                    "value": 450
+                },
+                {
+                    "title": "Denní dávka (od 52. dne) - pojištění",
+                    "value": 600
+                }
+            ],
             "footer": {
                 "status": "danger"
             }

@@ -9,7 +9,8 @@ $shortRows      = $shortfall['rows'] ?? [];
 $shortExpense   = $shortfall['expense'] ?? [];
 $shortReserve   = $shortfall['reserve'] ?? [];
 $shortFooter    = $shortfall['footer'] ?? [];
-$shortBoxes    = $shortfall['boxes'] ?? [];
+$shortMissing   = $shortfall['missing'] ?? [];
+$shortDose      = $shortfall['dose'] ?? [];
 
 $invalidity     = $health['invalidity'] ?? [];
 $invalidityRows = $invalidity['rows'] ?? [];
@@ -48,12 +49,12 @@ $chartIncomeLossId = 'chart-health-income-loss';
     </div>
 
     <!-- Graf + right info -->
-    <div class="grid grid-cols-[1fr_1.45fr] gap-6 items-start">
+    <div class="grid grid-cols-2 gap-6 items-end">
         <div class="bg-paper rounded-3xl p-6 min-h-[230px]">
             <canvas id="<?= $chartIncomeLossId ?>"></canvas>
         </div>
 
-        <div class="grid grid-cols-[1fr_120px] gap-4 items-start">
+        <div class="grid grid-cols-[1fr_160px] gap-4 items-end text-sm">
             <div class="flex flex-col gap-3">
                 <?php foreach ($shortRows as $row): ?>
                     <div class="flex items-center justify-between border-b border-mist pb-2 text-ink/75">
@@ -62,24 +63,29 @@ $chartIncomeLossId = 'chart-health-income-loss';
                     </div>
                 <?php endforeach; ?>
 
-                <div class="flex items-center justify-between rounded-lg border border-primary/40 px-3 py-2 text-ink">
-                    <span><?= htmlspecialchars($shortExpense['title'] ?? '') ?></span>
-                    <span><?= number_format((float)($shortExpense['value'] ?? 0), 0, ',', ' ') ?> <?= $cur ?></span>
+                <div class="flex items-center justify-between rounded-lg border border-primary/40 px-2 py-1 text-ink">
+                    <span class="text-primary font-lora"><?= htmlspecialchars($shortExpense['title'] ?? '') ?></span>
+                    <span class="text-right"><?= number_format((float)($shortExpense['value'] ?? 0), 0, ',', ' ') ?> <?= $cur ?></span>
                 </div>
 
-                <div class="grid grid-cols-2 items-center rounded-lg border border-primary/40 px-3 py-2 text-ink">
-                    <span class="truncate"><?= htmlspecialchars($shortReserve['title'] ?? '') ?></span>
+                <div class="grid grid-cols-2 items-center rounded-lg border border-primary/40 px-2 py-1 text-ink">
+                    <span class="text-primary font-lora leading-none"><?= htmlspecialchars($shortReserve['title'] ?? '') ?></span>
                     <span class="text-right"><?= number_format((float)($shortReserve['value'] ?? 0), 2, ',', ' ') ?> měsíc</span>
                 </div>
             </div>
 
             <div class="flex flex-col gap-3">
-                <?php foreach ($shortBoxes as $box): ?>
-                    <div class="<?= !empty($box['dark']) ? 'bg-primary text-white' : 'bg-answer text-ink' ?> rounded-lg px-3 py-3">
-                        <div class="text-xs"><?= htmlspecialchars($box['title'] ?? '') ?></div>
-                        <div class="font-lora font-semibold text-right">
-                            <?= htmlspecialchars($box['value'] ?? '') ?>
-                        </div>
+                <?php foreach ($shortMissing as $missing): ?>
+                    <div class="grid grid-cols-2 items-center rounded-lg border border-primary/40 px-2 py-1 text-white bg-primary">
+                        <span class="font-lora leading-none"><?= htmlspecialchars($missing['title'] ?? '') ?></span>
+                        <span class="text-right"><?= number_format((float)($missing['value'] ?? 0), 0, ',', ' ') ?> <?= $cur ?></span>
+                    </div>
+                <?php endforeach; ?>
+
+                <?php foreach ($shortDose as $dose): ?>
+                    <div class="grid grid-cols-2 items-center rounded-lg border px-2 py-1 bg-primary/20">
+                        <span class="font-lora leading-none"><?= htmlspecialchars($dose['title'] ?? '') ?></span>
+                        <span class="text-right"><?= number_format((float)($dose['value'] ?? 0), 0, ',', ' ') ?> <?= $cur ?></span>
                     </div>
                 <?php endforeach; ?>
             </div>
