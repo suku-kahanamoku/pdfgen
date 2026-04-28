@@ -41,9 +41,9 @@ $chartIncomeLossId = 'chart-health-income-loss';
         <!-- Right calculation -->
         <div class="flex flex-col gap-6">
             <div>
-                <h2 class="font-lora text-4xl font-semibold leading-none text-ink">
+                <h3 class="font-lora text-4xl font-semibold leading-none text-ink">
                     Krátkodobý výpadek příjmu – do jednoho roku
-                </h2>
+                </h3>
                 <p class="mt-4 leading-relaxed text-ink/70">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Itaque earum rerum hic tenetur sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores.
                 </p>
@@ -89,9 +89,9 @@ $chartIncomeLossId = 'chart-health-income-loss';
 
     <!-- Long term -->
     <div class="flex flex-col gap-4">
-        <h2 class="font-lora text-3xl font-semibold leading-none text-ink">
+        <h3 class="font-lora text-4xl font-semibold leading-none text-ink">
             Dlouhodobý výpadek příjmu
-        </h2>
+        </h3>
         <p class="leading-relaxed text-ink/70">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Itaque earum rerum hic tenetur sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores.
         </p>

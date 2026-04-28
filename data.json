@@ -955,22 +955,22 @@
             },
             {
                 "cols": 2,
-                "items": [
+                "rows": [
                     {
                         "icon": "fa-solid fa-bandage",
-                        "title": "Úraz"
+                        "label": "Úraz"
                     },
                     {
                         "icon": "fa-solid fa-briefcase-medical",
-                        "title": "Pracovní neschopnost"
+                        "label": "Pracovní neschopnost"
                     },
                     {
                         "icon": "fa-regular fa-hospital",
-                        "title": "Hospitalizace"
+                        "label": "Hospitalizace"
                     },
                     {
                         "icon": "fa-solid fa-virus-covid",
-                        "title": "Závažné onemocnění"
+                        "label": "Závažné onemocnění"
                     }
                 ]
             },

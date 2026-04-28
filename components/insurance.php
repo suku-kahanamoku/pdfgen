@@ -96,3 +96,4 @@ $insuranceRows = $insurance['rows'] ?? [];
                 </div>
         </div>
     </div>
+</div>
