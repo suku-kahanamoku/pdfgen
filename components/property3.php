@@ -53,14 +53,14 @@ foreach ($sections as $p3sec) {
 <!-- ============================================================ -->
 <!-- PAGE 3 – Analýza portfolia                                   -->
 <!-- ============================================================ -->
-<div class="w-full box-border p-24 [page-break-after:always] [break-after:page] [box-decoration-break:clone] overflow-visible flex flex-col gap-16">
+<div class="w-full box-border p-24 break-after-page box-decoration-clone overflow-visible flex flex-col gap-16">
     <?php foreach ($sections as $p3sec):
         $rows    = $property[$p3sec['key']]['rows'] ?? [];
         $total   = array_sum(array_column($rows, 'value'));
         if ($total <= 0) $total = 1;
         $chartId = 'chart-p3-' . $p3sec['key'];
     ?>
-        <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
+        <div class="break-inside-avoid flex flex-col gap-8">
             <h3 class="font-lora text-4xl font-semibold"><?= $p3sec['title'] ?></h3>
             <div class="flex gap-8 items-center">
                 <div class="flex-1 flex flex-col gap-8">

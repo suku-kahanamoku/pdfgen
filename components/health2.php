@@ -18,7 +18,7 @@ $chartIncomeLossId = 'chart-health-income-loss';
 <!-- ============================================================ -->
 <!-- HEALTH PAGE                                                  -->
 <!-- ============================================================ -->
-<div class="w-full box-border p-24 [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-10 [box-decoration-break:clone]">
+<div class="w-full box-border p-24 break-after-page overflow-visible flex flex-col gap-10 box-decoration-clone">
 
     <!-- Top section -->
     <div class="grid grid-cols-[1fr_1.45fr] gap-12 items-start">
@@ -63,7 +63,7 @@ $chartIncomeLossId = 'chart-health-income-loss';
                         <span><?= number_format((float)($shortfall['expense'] ?? -32000), 0, ',', ' ') ?> <?= $cur ?></span>
                     </div>
 
-                    <div class="grid grid-cols-[1fr_1fr] gap-3">
+                    <div class="grid grid-cols-2 gap-3">
                         <div class="rounded-lg border border-primary/40 px-3 py-2 text-ink">
                             Rezerva 120 000 vydrží na
                         </div>
@@ -107,7 +107,7 @@ $chartIncomeLossId = 'chart-health-income-loss';
             <?php foreach ($invalidityRows as $i => $col):
                 $chartId = 'chart-health-invalidity-' . $i;
             ?>
-                <div class="flex flex-col gap-6 [page-break-inside:avoid] [break-inside:avoid]">
+                <div class="flex flex-col gap-6 break-inside-avoid">
                     <h4 class="font-lora text-2xl font-semibold text-ink">
                         <?= htmlspecialchars($col['title'] ?? '') ?>
                     </h4>

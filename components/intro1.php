@@ -6,7 +6,7 @@ $introTitle   = $intro['title'] ?? 'Collegas';
 
 $introContact = $intro['contact'] ?? [];
 ?>
-<div class="w-full box-border p-24 [page-break-after:always] [break-after:page] [box-decoration-break:clone] overflow-visible flex flex-col h-screen">
+<div class="w-full box-border p-24 break-after-page box-decoration-clone overflow-visible flex flex-col h-screen">
     <!-- Intro -->
     <div class="mb-14">
         <h3 class="text-3xl leading-tight">
@@ -82,7 +82,7 @@ $introContact = $intro['contact'] ?? [];
                 <img
                     src="<?= htmlspecialchars($introContact['photo'] ?? '') ?>"
                     alt="Profilová fotografie"
-                    class="h-full w-full object-cover object-[center_top]">
+                    class="h-full w-full object-cover object-top">
             </div>
 
             <div class="pt-px">

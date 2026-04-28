@@ -4,7 +4,7 @@
 // ============================================================
 $introSituation = (int)($intro['situation'] ?? 0);
 ?>
-<div class="w-full box-border p-24 flex h-screen flex-col [page-break-after:always] [break-after:page] [box-decoration-break:clone]">
+<div class="w-full box-border p-24 flex h-screen flex-col break-after-page box-decoration-clone">
 
     <!-- Nadpis -->
     <div class="mb-14">

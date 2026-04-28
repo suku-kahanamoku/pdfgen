@@ -17,7 +17,7 @@ $decorImage  = $footer['final_decor_image'] ?? (__DIR__ . '/../img/logo/wealth.p
 <!-- ============================================================ -->
 <!-- FINAL CONTACT PAGE                                           -->
 <!-- ============================================================ -->
-<div class="relative w-full box-border p-24 h-screen overflow-hidden flex flex-col [page-break-after:always] [break-after:page] [box-decoration-break:clone]">
+<div class="relative w-full box-border p-24 h-screen overflow-hidden flex flex-col break-after-page box-decoration-clone">
 
     <!-- Decorative background -->
     <div class="absolute inset-x-0 bottom-0 h-[430px] bg-[#f1f1f0] rounded-tl-[320px] translate-x-44"></div>
@@ -54,7 +54,7 @@ $decorImage  = $footer['final_decor_image'] ?? (__DIR__ . '/../img/logo/wealth.p
 
         <div class="mt-8 grid grid-cols-2 gap-6 max-w-4xl">
             <?php foreach ($contactCards as $card): ?>
-                <div class="rounded-2xl bg-white/80 px-6 py-5 shadow-md min-h-[112px]">
+                <div class="rounded-2xl bg-white/80 px-6 py-5 shadow-md min-h-28">
                     <div class="mb-2 font-lora text-xl font-semibold text-ink">
                         <?= htmlspecialchars($card['title'] ?? '') ?>
                     </div>

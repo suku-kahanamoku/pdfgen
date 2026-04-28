@@ -19,7 +19,7 @@ $colorPalette = ['peach', 'caramel', 'walnut', 'chestnut', 'umber'];
 <!-- ============================================================ -->
 <!-- FINANCE PAGE – Výdaje                                        -->
 <!-- ============================================================ -->
-<div class="w-full box-border p-24 [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16 [box-decoration-break:clone]">
+<div class="w-full box-border p-24 break-after-page overflow-visible flex flex-col gap-16 box-decoration-clone">
 
     <!-- Nadpis -->
     <h2 class="font-lora text-6xl font-semibold leading-none text-ink">
@@ -56,7 +56,7 @@ $colorPalette = ['peach', 'caramel', 'walnut', 'chestnut', 'umber'];
                 $catTitle = $cat['title'] ?? '';
                 if (empty($rows)) continue;
             ?>
-                <div class="flex gap-8 [page-break-inside:avoid] [break-inside:avoid]">
+                <div class="flex gap-8 break-inside-avoid">
                     <div class="w-28 pt-2">
                         <div class="inline-flex w-28 items-center justify-center rounded-lg bg-<?= $catColor ?> px-4 py-2 leading-none text-sm <?= $catColor === 'peach' ? 'text-ink' : 'text-white' ?>">
                             <?= htmlspecialchars($catTitle) ?>

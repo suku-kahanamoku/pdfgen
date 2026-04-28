@@ -9,10 +9,10 @@ $insuranceRows = $insurance['rows'] ?? [];
 <!-- ============================================================ -->
 <!-- INSURANCE PAGE – Chraňte svůj majetek a své příjmy           -->
 <!-- ============================================================ -->
-<div class="w-full box-border p-24 [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16 [box-decoration-break:clone]">
+<div class="w-full box-border p-24 break-after-page overflow-visible flex flex-col gap-16 box-decoration-clone">
 
     <!-- Sekce -->
-    <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
+    <div class="break-inside-avoid flex flex-col gap-8">
         <h2 class="font-lora text-5xl font-semibold leading-none flex items-center justify-between gap-4">
             Chraňte svůj majetek<br /> a své příjmy
             <i class="text-secondary fa-solid fa-shield-halved text-7xl"></i>
@@ -33,7 +33,7 @@ $insuranceRows = $insurance['rows'] ?? [];
                 $note        = $row['note'] ?? '';
                 $labels      = $row['labels'] ?? [];
             ?>
-                <div class="flex items-center gap-6 [page-break-inside:avoid] [break-inside:avoid]">
+                <div class="flex items-center gap-6 break-inside-avoid">
                     <!-- Status icon -->
                     <?php if ($status === 'success'): ?>
                         <div class="rounded-full w-8 h-8 flex justify-center items-center flex-shrink-0 border text-success border-success">

@@ -35,7 +35,7 @@ $goalLabelMap = [
 ?>
 
 <!-- Tmavý spodní blok -->
-<div class="w-full box-border bg-surface p-24 pb-16 text-white flex flex-col gap-16 [page-break-before:always] [break-before:page]">
+<div class="w-full box-border bg-surface p-24 pb-16 text-white flex flex-col gap-16 break-before-page">
     <!-- Horní část -->
     <div class="flex items-center justify-between gap-6">
         <h2 class="max-w-lg font-lora text-5xl font-semibold tracking-wide text-white">

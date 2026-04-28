@@ -8,7 +8,7 @@ $healthRows = $health['cards'] ?? [];
 <!-- ============================================================ -->
 <!-- HEALTH INSURANCE SECTION                                       -->
 <!-- ============================================================ -->
-<div class="w-full box-border p-24 [page-break-after:always] [break-after:page] [box-decoration-break:clone] overflow-visible flex flex-col gap-16">
+<div class="w-full box-border p-24 break-after-page box-decoration-clone overflow-visible flex flex-col gap-16">
 
     <!-- Header -->
     <div class="flex items-start justify-between gap-8">
@@ -47,7 +47,7 @@ $healthRows = $health['cards'] ?? [];
 
                 <?php if (!empty($lines)): ?>
                     <!-- Lines card -->
-                    <div class="<?= $colSpan ?> rounded-2xl border border-ink/15 bg-white px-5 py-5 shadow-sm min-h-[128px]">
+                    <div class="<?= $colSpan ?> rounded-2xl border border-ink/15 bg-white px-5 py-5 shadow-sm min-h-32">
                         <div class="mb-4 flex items-center gap-3">
                             <i class="<?= htmlspecialchars($card['icon']) ?> text-primary text-2xl"></i>
                             <div class="font-semibold text-ink"><?= htmlspecialchars($card['title']) ?></div>
@@ -61,7 +61,7 @@ $healthRows = $health['cards'] ?? [];
 
                 <?php elseif (!empty($rows)): ?>
                     <!-- Rows card -->
-                    <div class="<?= $colSpan ?> rounded-2xl border border-ink/15 bg-white px-5 py-5 shadow-sm min-h-[128px]">
+                    <div class="<?= $colSpan ?> rounded-2xl border border-ink/15 bg-white px-5 py-5 shadow-sm min-h-32">
                         <?php if (!empty($card['icon']) || !empty($card['title'])): ?>
                             <div class="mb-4 flex items-center gap-3">
                                 <?php if (!empty($card['icon'])): ?>

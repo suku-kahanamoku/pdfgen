@@ -36,12 +36,12 @@ $barColors   = ['#254b34', '#936746'];
 <!-- ============================================================ -->
 <!-- PAGE 2 – Aktiva & Pasiva                                     -->
 <!-- ============================================================ -->
-<div class="w-full box-border p-24 [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16 [box-decoration-break:clone]">
+<div class="w-full box-border p-24 break-after-page overflow-visible flex flex-col gap-16 box-decoration-clone">
     <?php foreach ($sections as $sec):
         $rows = $property[$sec['key']]['rows'] ?? [];
         if (empty($rows)) continue;
     ?>
-        <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
+        <div class="break-inside-avoid flex flex-col gap-8">
             <h3 class="flex items-center gap-4 font-lora text-4xl font-semibold">
                 <?= $sec['title'] ?>
                 <i class="text-secondary <?= $sec['icon'] ?>"></i>
@@ -58,7 +58,7 @@ $barColors   = ['#254b34', '#936746'];
                     $iconCls  = $statusMap[$status]['icon'] ?? 'fa-check';
                     $iconTw   = $statusMap[$status]['cls']  ?? 'text-success border-success';
                 ?>
-                    <div class="flex items-center gap-6 [page-break-inside:avoid] [break-inside:avoid]">
+                    <div class="flex items-center gap-6 break-inside-avoid">
                         <div class="rounded-full w-8 h-8 flex justify-center items-center flex-shrink-0 border <?= $iconTw ?>">
                             <i class="<?= $iconCls ?>"></i>
                         </div>
@@ -85,7 +85,7 @@ $barColors   = ['#254b34', '#936746'];
     <?php endforeach; ?>
 
     <!-- Bilance majetku -->
-    <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-6">
+    <div class="break-inside-avoid flex flex-col gap-6">
         <div class="flex gap-8 items-stretch w-full">
             <!-- Bar chart -->
             <div class="flex-1 flex items-stretch bg-paper rounded-3xl p-6 min-h-[340px]">

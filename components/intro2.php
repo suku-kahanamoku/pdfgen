@@ -9,7 +9,7 @@ $introExpectKeys = ['very_low', 'low', 'medium', 'high', 'very_high'];
 
 $introQuestions = $intro['questions'] ?? [];
 ?>
-<div class="w-full box-border p-24 flex h-screen flex-col [page-break-after:always] [break-after:page] [box-decoration-break:clone]">
+<div class="w-full box-border p-24 flex h-screen flex-col break-after-page box-decoration-clone">
     <!-- Horní obsah -->
     <!-- Nadpis -->
     <div class="mb-10">

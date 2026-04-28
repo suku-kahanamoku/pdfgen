@@ -19,7 +19,7 @@ $goalFooterPercent = (float)($goalFooter['percent'] ?? 0);
 <!-- ============================================================ -->
 <!-- ACTION STEPS PAGE – Spodní část bez horního banneru           -->
 <!-- ============================================================ -->
-<div class="w-full box-border p-24 [page-break-before:always] [break-before:page] [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-12 [box-decoration-break:clone]">
+<div class="w-full box-border p-24 break-before-page break-after-page overflow-visible flex flex-col gap-12 box-decoration-clone">
 
     <!-- Header row -->
     <div class="grid grid-cols-[1fr_220px] gap-8 items-start">
@@ -45,7 +45,7 @@ $goalFooterPercent = (float)($goalFooter['percent'] ?? 0);
             $labels  = $row['labels'] ?? [];
             $cur     = $curMap[$row['currency'] ?? 'CZK'] ?? 'Kč';
         ?>
-            <div class="flex items-center gap-6 [page-break-inside:avoid] [break-inside:avoid]">
+            <div class="flex items-center gap-6 break-inside-avoid">
                 <!-- Year crossing the vertical line -->
                 <div class="w-12 flex-shrink-0 flex justify-center">
                     <?php if (!empty($row['date'])): ?>

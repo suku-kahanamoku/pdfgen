@@ -46,7 +46,7 @@ $colors = ['#254b34', '#eeeeee'];
 <!-- ============================================================ -->
 <!-- PAGE 1 – Přehled majetku                                     -->
 <!-- ============================================================ -->
-<div class="w-full box-border p-24 [page-break-after:always] [break-after:page] [box-decoration-break:clone] overflow-visible flex flex-col gap-16">
+<div class="w-full box-border p-24 break-after-page box-decoration-clone overflow-visible flex flex-col gap-16">
     <div class="flex justify-between items-start gap-12">
         <div class="flex-1 flex flex-col gap-6">
             <h2 class="font-lora text-5xl font-semibold leading-[1.1] m-0">
@@ -93,7 +93,7 @@ $colors = ['#254b34', '#eeeeee'];
                         $iconCls = $statusIconMap[$status]['icon'] ?? 'fa-solid fa-check';
                         $iconTw  = $statusIconMap[$status]['cls']  ?? 'text-success border-success';
                     ?>
-                        <div class="border border-ink/15 p-3 rounded-lg flex items-center gap-4 shadow-sm [page-break-inside:avoid] [break-inside:avoid]">
+                        <div class="border border-ink/15 p-3 rounded-lg flex items-center gap-4 shadow-sm break-inside-avoid">
                             <div class="rounded-full w-5 h-5 flex justify-center items-center flex-shrink-0 border <?= $iconTw ?>">
                                 <i class="<?= $iconCls ?> text-xs"></i>
                             </div>

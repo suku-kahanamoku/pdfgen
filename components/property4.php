@@ -63,7 +63,7 @@ $formatPct = function ($value) {
 <!-- ============================================================ -->
 <!-- PAGE – Bonita / DTI / DSTI / LTV                             -->
 <!-- ============================================================ -->
-<div class="w-full box-border p-24 overflow-visible flex flex-col gap-12 [page-break-after:always] [break-after:page] [box-decoration-break:clone]">
+<div class="w-full box-border p-24 overflow-visible flex flex-col gap-12 break-after-page box-decoration-clone">
 
     <!-- Top summary row -->
     <div class="flex gap-8 items-center">
@@ -87,7 +87,7 @@ $formatPct = function ($value) {
     </div>
 
     <!-- DTI -->
-    <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
+    <div class="break-inside-avoid flex flex-col gap-8">
         <h3 class="font-lora text-4xl font-semibold leading-none text-ink">
             <?= htmlspecialchars($dtiTitle) ?>
         </h3>
@@ -117,7 +117,7 @@ $formatPct = function ($value) {
     </div>
 
     <!-- DSTI -->
-    <div class="[page-break-inside:avoid] [break-inside:avoid] flex flex-col gap-8">
+    <div class="break-inside-avoid flex flex-col gap-8">
         <h3 class="font-lora text-4xl font-semibold leading-none text-ink">
             <?= htmlspecialchars($dstiTitle) ?>
         </h3>
@@ -147,7 +147,7 @@ $formatPct = function ($value) {
     </div>
 
     <!-- LTV -->
-    <div class="[page-break-inside:avoid] [break-inside:avoid] flex gap-8 items-stretch w-full">
+    <div class="break-inside-avoid flex gap-8 items-stretch w-full">
         <div class="w-80 flex flex-col gap-8 justify-start">
             <h3 class="font-lora text-3xl font-semibold leading-none text-ink">
                 <?= htmlspecialchars($ltvTitle) ?>

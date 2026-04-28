@@ -9,10 +9,10 @@ $petsRows     = $user['pets']['rows']     ?? [];
 
 ?>
 
-<div class="w-full box-border p-24 flex flex-col gap-8 [page-break-after:always] [break-after:page] [box-decoration-break:clone]">
+<div class="w-full box-border p-24 flex flex-col gap-8 break-after-page box-decoration-clone">
 
     <!-- Sekce: Klient -->
-    <div class="rounded-3xl bg-white/80 px-8 py-8 shadow [break-inside:avoid]">
+    <div class="rounded-3xl bg-white/80 px-8 py-8 shadow break-inside-avoid">
         <h3 class="mb-4 font-lora text-3xl font-semibold">
             Základní údaje o klientovi
         </h3>
@@ -69,7 +69,7 @@ $petsRows     = $user['pets']['rows']     ?? [];
     </div>
 
     <!-- Sekce: Partner -->
-    <div class="rounded-3xl bg-white/80 px-8 py-8 shadow [break-inside:avoid]">
+    <div class="rounded-3xl bg-white/80 px-8 py-8 shadow break-inside-avoid">
         <h3 class="mb-4 font-lora text-3xl font-semibold">
             Partner
         </h3>
@@ -111,7 +111,7 @@ $petsRows     = $user['pets']['rows']     ?? [];
 
     <!-- Sekce: Děti -->
     <?php if (!empty($childrenRows)): ?>
-        <div class="rounded-3xl bg-white/80 px-8 py-8 shadow [break-inside:avoid]">
+        <div class="rounded-3xl bg-white/80 px-8 py-8 shadow break-inside-avoid">
             <h3 class="mb-4 font-lora text-3xl font-semibold">
                 Děti
             </h3>
@@ -139,7 +139,7 @@ $petsRows     = $user['pets']['rows']     ?? [];
 
     <!-- Sekce: Mazlíčci -->
     <?php if (!empty($petsRows)): ?>
-        <div class="rounded-3xl bg-white/80 px-8 py-8 shadow [break-inside:avoid]">
+        <div class="rounded-3xl bg-white/80 px-8 py-8 shadow break-inside-avoid">
             <h3 class="mb-4 font-lora text-3xl font-semibold">
                 Mazlíčci
             </h3>

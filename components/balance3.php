@@ -23,7 +23,7 @@ $barColors   = ['#e7e4e4', '#936746'];
 <!-- SUMMARY PAGE – ... ale stejně tak důležité je                -->
 <!-- myslet na budoucnost                                         -->
 <!-- ============================================================ -->
-<div class="w-full box-border p-24 flex flex-col [page-break-after:always] [break-after:page] overflow-visible gap-16 [box-decoration-break:clone]">
+<div class="w-full box-border p-24 flex flex-col break-after-page overflow-visible gap-16 box-decoration-clone">
 
     <!-- Nadpis -->
     <h2 class="font-lora text-5xl font-semibold tracking-wide">
@@ -41,7 +41,7 @@ $barColors   = ['#e7e4e4', '#936746'];
     </div>
 
     <!-- Hlavní obsah -->
-    <div class="flex-1 flex items-center [page-break-inside:avoid] [break-inside:avoid]">
+    <div class="flex-1 flex items-center break-inside-avoid">
         <div class="flex gap-8 items-stretch w-full">
             <!-- Chart -->
             <div class="flex-1 flex items-stretch bg-paper rounded-3xl p-6 min-h-[500px]">
