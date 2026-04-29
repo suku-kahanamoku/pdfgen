@@ -155,21 +155,21 @@ $chartIncomeLossId = 'chart-health-income-loss';
                     backgroundColor: '#e7e4e4',
                     borderWidth: 0,
                     stack: 'stack',
-                    barThickness: 18
+                    barThickness: 8
                 },
                 {
                     data: [12500, 12500, 12500, 12500, 6500, 12500, 12500, 12500, 12500, 12500, 12500, 12500],
                     backgroundColor: '#6E4525',
                     borderWidth: 0,
                     stack: 'stack',
-                    barThickness: 18
+                    barThickness: 8
                 },
                 {
                     data: [0, 0, 0, 0, 6000, 0, 0, 0, 0, 0, 0, 0],
                     backgroundColor: '#F0D3BC',
                     borderWidth: 0,
                     stack: 'stack',
-                    barThickness: 18
+                    barThickness: 8
                 }
             ]
         },
