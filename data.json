@@ -1033,11 +1033,11 @@
       ],
       "dose": [
         {
-          "title": "Denní dávka (od 30. dne) - pojištění",
+          "title": "Denní dávka(od 30. dne) - pojištění",
           "value": 450
         },
         {
-          "title": "Denní dávka (od 52. dne) - pojištění",
+          "title": "Denní dávka(od 52. dne) - pojištění",
           "value": 600
         }
       ],
