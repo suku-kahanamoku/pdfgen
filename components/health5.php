@@ -32,13 +32,11 @@ $statusMap = [
             </p>
         </div>
 
-        <div class="text-primary/90">
-            <i class="fa-solid fa-chart-simple text-6xl"></i>
-        </div>
+        <i class="fa-solid fa-chart-simple text-6xl text-secondary"></i>
     </div>
 
     <!-- Rows -->
-    <div class="flex flex-col gap-9">
+    <div class="flex flex-col gap-7">
         <?php foreach ($scoreRows as $row):
             $status  = $row['status'] ?? 'success';
             $iconCls = $statusMap[$status]['icon'] ?? 'fa-solid fa-check';
@@ -51,22 +49,21 @@ $statusMap = [
                 </div>
 
                 <!-- Card -->
-                <div class="flex-1 border border-ink/10 rounded-xl px-4 py-5 flex gap-8 items-center shadow-sm bg-white/70 min-h-[96px]">
+                <div class="flex-1 border border-ink/15 rounded-xl px-4 py-3 flex gap-4 items-center shadow-sm">
                     <!-- Left box -->
-                    <div class="bg-ink/5 px-4 py-3 rounded-lg w-48 flex-shrink-0 flex flex-col gap-1">
-                        <div class="font-lora text-xl font-semibold text-ink">
+                    <div class="bg-ink/5 px-3 py-2 rounded-lg w-48 flex-shrink-0 flex flex-col gap-1">
+                        <div class="text-primary font-lora font-semibold">
                             <?= htmlspecialchars($row['title'] ?? '') ?>
                         </div>
-                        <div class="text-sm text-ink/80 leading-snug">
+                        <div class="text-xs text-ink/80 leading-snug">
                             <?= htmlspecialchars($row['note'] ?? '') ?>
+                        </div>
+                        <div class="font-lora font-semibold">
+                            <?= number_format((float)($row['percent'] ?? 0), 0, ',', ' ') ?> %
                         </div>
                     </div>
 
                     <!-- Middle -->
-                    <div class="w-20 flex-shrink-0 font-semibold text-ink">
-                        <?= number_format((float)($row['percent'] ?? 0), 0, ',', ' ') ?> %
-                    </div>
-
                     <div class="flex-1 text-ink/75 leading-snug">
                         <?= htmlspecialchars($row['description'] ?? '') ?>
                     </div>
