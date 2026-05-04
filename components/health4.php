@@ -24,37 +24,32 @@ $resultGroups = $result['groups'] ?? [];
 <!-- ============================================================ -->
 <!-- HEALTH DETAIL PAGE – Death + Result                          -->
 <!-- ============================================================ -->
-<div class="w-full box-border p-24 [page-break-after:always] [break-after:page] overflow-visible flex flex-col gap-16 [box-decoration-break:clone]">
+<div class="w-full box-border p-24 break-after-page box-decoration-clone overflow-visible flex flex-col gap-16">
 
     <!-- Death section -->
     <div class="flex flex-col gap-6">
-        <h2 class="font-lora text-4xl font-semibold text-ink">
+        <h3 class="font-lora text-4xl font-semibold leading-none text-ink">
             Pojištění pro případ smrti
-        </h2>
+        </h3>
 
         <p class="max-w-5xl leading-relaxed text-ink/70">
             V případě úzmřtí zůstávají vašim nejbližším nejen vzpomínky, ale často také finanční závazky – hypotéka, spotřebitelské úvěry nebo náklady na běžný chod domácnosti. Správně nastavené životní pojištění zajistí, že vaše rodina nebude muset tyto závazky řešit sama a bude mít dostatek času se vyrovnat se situací bez finĊlního tlaku.
         </p>
-        </p>
 
-        <div class="flex gap-8 items-end">
-            <!-- Chart -->
-            <div class="flex-1 flex items-stretch bg-paper rounded-3xl p-6 min-h-[230px]">
-                <div class="rounded-2xl flex-1">
-                    <canvas id="chart-health-death"></canvas>
-                </div>
+        <div class="grid grid-cols-2 gap-6 items-end">
+            <div class="bg-paper rounded-3xl min-h-[230px]">
+                <canvas id="chart-health-death"></canvas>
             </div>
 
-            <!-- Right summary -->
-            <div class="w-96 flex flex-col gap-4">
+            <div class="flex flex-col gap-3 text-sm">
                 <?php foreach ($deathSummaryRows as $row): ?>
-                    <div class="flex items-end justify-between border-b border-mist pb-2 text-ink/75">
+                    <div class="flex items-center justify-between border-b border-mist pb-2 text-ink/75">
                         <span><?= htmlspecialchars($row['title'] ?? '') ?></span>
                         <span><?= number_format((float)($row['value'] ?? 0), 0, ',', ' ') ?> <?= $cur ?></span>
                     </div>
                 <?php endforeach; ?>
 
-                <div class="mt-4 flex items-end justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
+                <div class="flex items-center justify-between rounded-lg bg-primary px-4 py-3 font-lora font-semibold text-white">
                     <span><?= htmlspecialchars($deathCoverageTitle) ?></span>
                     <span><?= number_format($deathCoverage, 0, ',', ' ') ?> <?= $cur ?></span>
                 </div>
@@ -63,20 +58,18 @@ $resultGroups = $result['groups'] ?? [];
     </div>
 
     <!-- Result section -->
-    <div class="flex flex-col gap-10">
-        <div class="flex items-center justify-between gap-8">
-            <div>
-                <h2 class="font-lora text-5xl font-semibold leading-none text-ink">
-                    Celkový přehled Vašeho životního pojištění.
+    <div class="flex flex-col gap-10 mt-10">
+        <!-- Header -->
+        <div class="flex flex-col gap-8">
+            <div class="flex items-center justify-between gap-4">
+                <h2 class="font-lora text-4xl font-semibold leading-none text-ink">
+                    Celkový přehled Vašeho životního<br> pojištění.
                 </h2>
-
-                <div class="mt-6 text-xl text-ink/80">
-                    Hlavní pojištěný
-                </div>
+                <i class="text-secondary fa-solid fa-shield-halved text-5xl"></i>
             </div>
 
-            <div class="text-primary/90">
-                <i class="fa-solid fa-shield-halved text-7xl"></i>
+            <div class="leading-relaxed text-ink/70">
+                Hlavní pojištěný
             </div>
         </div>
 
@@ -97,7 +90,7 @@ $resultGroups = $result['groups'] ?? [];
                 $groupColor = $group['color'] ?? 'cream';
                 $sections = $group['sections'] ?? [];
             ?>
-                <div class="grid grid-cols-[46px_1fr] gap-4 items-stretch">
+                <div class="grid grid-cols-[46px_1fr] gap-4 items-stretch break-inside-avoid">
                     <!-- Vertical group label -->
                     <div class="rounded-md bg-<?= htmlspecialchars($groupColor) ?> flex items-center justify-center">
                         <div class="rotate-[-90deg] whitespace-nowrap text-xs font-lora text-ink">
@@ -107,7 +100,7 @@ $resultGroups = $result['groups'] ?? [];
 
                     <div class="flex flex-col gap-5">
                         <?php foreach ($sections as $section): ?>
-                            <div class="flex flex-col gap-3">
+                            <div class="flex flex-col gap-3 break-inside-avoid">
                                 <?php if (!empty($section['title'])): ?>
                                     <div class="font-lora text-lg font-semibold text-ink">
                                         <?= htmlspecialchars($section['title']) ?>
@@ -115,7 +108,7 @@ $resultGroups = $result['groups'] ?? [];
                                 <?php endif; ?>
 
                                 <?php foreach (($section['rows'] ?? []) as $row): ?>
-                                    <div class="grid grid-cols-[220px_1fr_1fr_1fr] gap-4 items-center">
+                                    <div class="grid grid-cols-[220px_1fr_1fr_1fr] gap-4 items-center break-inside-avoid">
                                         <div class="rounded-md border border-ink/15 px-3 py-2 text-sm text-ink/80">
                                             <?= htmlspecialchars($row['title'] ?? '') ?>
                                         </div>
@@ -178,7 +171,7 @@ $resultGroups = $result['groups'] ?? [];
                     ticks: {
                         color: '#b8b2ae',
                         font: {
-                            size: 10
+                            size: 8
                         },
                         callback: value => new Intl.NumberFormat('cs-CZ').format(value)
                     }
@@ -193,7 +186,7 @@ $resultGroups = $result['groups'] ?? [];
                     ticks: {
                         color: '#4A4541',
                         font: {
-                            size: 11
+                            size: 8
                         }
                     }
                 }

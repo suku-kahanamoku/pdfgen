@@ -56,7 +56,7 @@ $invalidityRows = $invalidity['rows'] ?? [];
                         </div>
                     </div>
 
-                    <div class="bg-paper rounded-3xl p-6 h-80">
+                    <div class="bg-paper rounded-3xl p-6 h-72">
                         <canvas id="<?= $chartId ?>"></canvas>
                     </div>
                 </div>
