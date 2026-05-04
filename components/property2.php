@@ -88,10 +88,8 @@ $barColors   = ['#254b34', '#936746'];
     <div class="break-inside-avoid flex flex-col gap-6">
         <div class="flex gap-8 items-stretch w-full">
             <!-- Bar chart -->
-            <div class="flex-1 flex items-stretch bg-paper rounded-3xl p-6 min-h-[340px]">
-                <div class="rounded-2xl flex-1">
-                    <canvas id="chart-bilance-p2"></canvas>
-                </div>
+            <div class="bg-paper rounded-3xl p-6 h-[340px]">
+                <canvas id="chart-bilance-p2"></canvas>
             </div>
 
             <!-- Pravý panel -->
@@ -184,7 +182,8 @@ $barColors   = ['#254b34', '#936746'];
                     },
                     ticks: {
                         stepSize: 500000,
-                        color: '#888888',
+                        color: '#b8b2ae',
+                        padding: 8,
                         font: {
                             size: 10
                         },

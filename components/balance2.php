@@ -56,10 +56,8 @@ $barColors   = ['#254b34', '#936746'];
     <div class="flex-1 flex items-center break-inside-avoid">
         <div class="flex gap-8 items-stretch w-full">
             <!-- Chart -->
-            <div class="flex-1 flex items-stretch bg-paper rounded-3xl p-6 min-h-[500px]">
-                <div class="rounded-2xl px-6 py-6 flex-1">
-                    <canvas id="chart-balance-p3"></canvas>
-                </div>
+            <div class="bg-paper rounded-3xl p-6 h-[500px]">
+                <canvas id="chart-balance-p3"></canvas>
             </div>
 
             <!-- Pravý panel -->

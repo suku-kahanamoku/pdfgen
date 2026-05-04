@@ -49,7 +49,7 @@ $chartIncomeLossId = 'chart-health-income-loss';
 
     <!-- Graf + right info -->
     <div class="grid grid-cols-2 gap-6 items-end">
-        <div class="bg-paper rounded-3xl min-h-[230px]">
+        <div class="bg-paper rounded-3xl p-6 h-72">
             <canvas id="<?= $chartIncomeLossId ?>"></canvas>
         </div>
 

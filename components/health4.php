@@ -37,7 +37,7 @@ $resultGroups = $result['groups'] ?? [];
         </p>
 
         <div class="grid grid-cols-2 gap-6 items-end">
-            <div class="bg-paper rounded-3xl min-h-[230px]">
+            <div class="bg-paper rounded-3xl p-6 h-[230px]">
                 <canvas id="chart-health-death"></canvas>
             </div>
 

@@ -44,10 +44,8 @@ $barColors   = ['#e7e4e4', '#936746'];
     <div class="flex-1 flex items-center break-inside-avoid">
         <div class="flex gap-8 items-stretch w-full">
             <!-- Chart -->
-            <div class="flex-1 flex items-stretch bg-paper rounded-3xl p-6 min-h-[500px]">
-                <div class="rounded-2xl px-6 py-6 flex-1">
-                    <canvas id="chart-summary-p4"></canvas>
-                </div>
+            <div class="bg-paper rounded-3xl p-6 h-[500px]">
+                <canvas id="chart-summary-p4"></canvas>
             </div>
 
             <!-- Pravý panel -->
@@ -148,7 +146,11 @@ $barColors   = ['#e7e4e4', '#936746'];
             scales: {
                 y: {
                     beginAtZero: true,
-                    suggestedMax: <?= max($chartValue1, $chartValue2) < 160000 ? 160000 : ceil(max($chartValue1, $chartValue2) / 20000) * 20000 ?>,
+                    suggestedMax: <?=
+                                    max($chartValue1, $chartValue2) < 160000
+                                        ? 160000
+                                        : ceil(max($chartValue1, $chartValue2) / 20000) * 20000
+                                    ?>,
                     grid: {
                         display: true,
                         color: '#dfdddd'
@@ -157,7 +159,7 @@ $barColors   = ['#e7e4e4', '#936746'];
                         display: false
                     },
                     ticks: {
-                        stepSize: 20000,
+                        stepSize: 10000,
                         color: '#b8b2ae',
                         padding: 8,
                         font: {
