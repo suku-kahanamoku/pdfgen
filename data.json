@@ -1172,6 +1172,103 @@
           }
         }
       ]
+    },
+    "death": {
+      "rows": [
+        {
+          "title": "Hypotéka",
+          "value": -3000000
+        },
+        {
+          "title": "Úvěry",
+          "value": -180000
+        },
+        {
+          "title": "Pojištění",
+          "value": 4020000
+        }
+      ],
+      "coverage": {
+        "title": "Předané krytí",
+        "value": 350000
+      },
+      "chart": {
+        "label1": "Výdaje",
+        "value1": 35000,
+        "label2": "Inv. I",
+        "value2": 42000
+      }
+    },
+    "result": {
+      "groups": [
+        {
+          "title": "Závazky",
+          "color": "cream",
+          "sections": [
+            {
+              "title": "Smrt obecná",
+              "rows": [
+                {
+                  "title": "Konstantní",
+                  "values": [1500000, 2500000, 2500000]
+                },
+                {
+                  "title": "Klesající",
+                  "values": [0, 1500000, 1500000]
+                },
+                {
+                  "title": "Úvěry",
+                  "values": [750000, 1750000, 1750000]
+                },
+                {
+                  "title": "Smrt úrazem",
+                  "values": [500000, 2500000, 2500000]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Krátkodobý výpadek příjmu",
+          "color": "linen",
+          "sections": [
+            {
+              "title": "Denní odškodné",
+              "rows": [
+                {
+                  "title": "od 21. dne",
+                  "values": [800, 700, 700]
+                },
+                {
+                  "title": "od 28. dne",
+                  "values": [0, 700, 700]
+                },
+                {
+                  "title": "od 42. dne",
+                  "values": [500, 700, 700]
+                }
+              ]
+            },
+            {
+              "title": "Pracovní neschopnost",
+              "rows": [
+                {
+                  "title": "od 21. dne",
+                  "values": [800, 700, 700]
+                },
+                {
+                  "title": "od 28. dne",
+                  "values": [0, 700, 700]
+                },
+                {
+                  "title": "od 42. dne",
+                  "values": [500, 700, 700]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   },
   "footer": {
