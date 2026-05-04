@@ -50,6 +50,7 @@ if (!empty($health)) {
     include __DIR__ . '/components/health2.php';
     include __DIR__ . '/components/health3.php';
     include __DIR__ . '/components/health4.php';
+    include __DIR__ . '/components/health5.php';
 }
 
 if (!empty($footer)) {

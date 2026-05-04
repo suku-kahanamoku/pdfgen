@@ -1339,7 +1339,52 @@
             }
           ]
         }
-      ]
+      ],
+      "score": {
+        "percent": 64,
+        "rows": [
+          {
+            "title": "Rozvaha",
+            "note": "Cashflow a finanční bilance",
+            "percent": 78,
+            "description": "Je potřeba snížit zbytečné výdaje.",
+            "status": "success",
+            "action": null
+          },
+          {
+            "title": "Portfolio",
+            "note": "Aktiva & Pasiva",
+            "percent": 28,
+            "description": "Váš majetek je výrazně zatížen pasivy.",
+            "status": "warning",
+            "action": "Akční plán na straně 21."
+          },
+          {
+            "title": "Zajištění majetku",
+            "note": "Pojištění vašich aktiv",
+            "percent": 55,
+            "description": "Téměř polovina majetku není chráněná.",
+            "status": "warning",
+            "action": "Akční plán na straně 21."
+          },
+          {
+            "title": "Finanční cíle",
+            "note": "Plánování a dosažení cílů",
+            "percent": 100,
+            "description": "Všechny cíle se nám podaří splnit.",
+            "status": "success",
+            "action": null
+          },
+          {
+            "title": "Zajištění zdraví",
+            "note": "Životní pojištění vás a vaší rodiny",
+            "percent": 65,
+            "description": "Některé oblasti je možné dále zlepšit.",
+            "status": "success",
+            "action": null
+          }
+        ]
+      }
     }
   },
   "footer": {
