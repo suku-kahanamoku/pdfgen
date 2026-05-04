@@ -1265,6 +1265,77 @@
                   "values": [500, 700, 700]
                 }
               ]
+            },
+            {
+              "title": "Hospitalizace",
+              "rows": [
+                {
+                  "title": "úraz",
+                  "values": [800, 700, 700]
+                },
+                {
+                  "title": "úraz / nemoc",
+                  "values": [0, 700, 700]
+                }
+              ]
+            },
+            {
+              "title": "Vážné onemocnění",
+              "rows": [
+                {
+                  "title": "Konstantní",
+                  "values": [800, 700, 700]
+                },
+                {
+                  "title": "Klesající",
+                  "values": [0, 700, 700]
+                },
+                {
+                  "title": "Úvěr",
+                  "values": [500, 700, 700]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Dlouhodobý výpadek příjmu",
+          "color": "taupe",
+          "textColor": "white",
+          "sections": [
+            {
+              "title": "Trvalé následky (progresivní plnění)",
+              "rows": [
+                {
+                  "title": "od 0,1 %",
+                  "values": [1500000, 2500000, 2500000]
+                },
+                {
+                  "title": "od 10 %",
+                  "values": [0, 1500000, 1500000]
+                },
+                {
+                  "title": "autonehoda od 25 %",
+                  "values": [750000, 1750000, 1750000]
+                }
+              ]
+            },
+            {
+              "title": "Invalidita",
+              "rows": [
+                {
+                  "title": "III. stupeň",
+                  "values": [800, 700, 700]
+                },
+                {
+                  "title": "II. stupeň",
+                  "values": [0, 700, 700]
+                },
+                {
+                  "title": "I. stupeň",
+                  "values": [500, 700, 700]
+                }
+              ]
             }
           ]
         }

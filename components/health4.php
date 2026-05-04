@@ -86,14 +86,15 @@ $resultGroups = $result['groups'] ?? [];
         <!-- Table groups -->
         <div class="flex flex-col gap-6">
             <?php foreach ($resultGroups as $group):
-                $groupTitle = $group['title'] ?? '';
-                $groupColor = $group['color'] ?? 'cream';
+                $groupTitle     = $group['title'] ?? '';
+                $groupColor     = $group['color'] ?? 'cream';
+                $groupTextColor = $group['textColor'] ?? 'ink';
                 $sections = $group['sections'] ?? [];
             ?>
-                <div class="grid grid-cols-[46px_1fr] gap-4 items-stretch break-inside-avoid">
+                <div class="grid grid-cols-[30px_1fr] gap-4 items-stretch break-inside-avoid">
                     <!-- Vertical group label -->
                     <div class="rounded-md bg-<?= htmlspecialchars($groupColor) ?> flex items-center justify-center">
-                        <div class="rotate-[-90deg] whitespace-nowrap text-xs font-lora text-ink">
+                        <div class="rotate-[-90deg] whitespace-nowrap font-lora text-<?= htmlspecialchars($groupTextColor) ?>">
                             <?= htmlspecialchars($groupTitle) ?>
                         </div>
                     </div>
