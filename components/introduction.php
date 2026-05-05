@@ -39,7 +39,7 @@ $introductionLogo = $introduction['logo_text'] ?? (__DIR__ . '/../img/logo/wealt
 
         <!-- Logo -->
         <div class="pt-24">
-            <img src="<?= htmlspecialchars($introductionLogo) ?>" alt="Collegas" class="h-10 opacity-90">
+            <img src="<?= htmlspecialchars($introductionLogo) ?>" alt="Collegas" class="h-16 opacity-90">
         </div>
     </div>
 </div>
