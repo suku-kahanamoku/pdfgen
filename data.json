@@ -1085,18 +1085,51 @@
         "datasets": [
           {
             "data": [
-              17500, 17500, 17500, 17500, 17500, 17500, 17500, 17500, 17500,
-              17500, 17500, 17500
+              17500,
+              17500,
+              17500,
+              17500,
+              17500,
+              17500,
+              17500,
+              17500,
+              17500,
+              17500,
+              17500,
+              17500
             ]
           },
           {
             "data": [
-              12500, 12500, 12500, 12500, 6500, 12500, 12500, 12500, 12500,
-              12500, 12500, 12500
+              12500,
+              12500,
+              12500,
+              12500,
+              6500,
+              12500,
+              12500,
+              12500,
+              12500,
+              12500,
+              12500,
+              12500
             ]
           },
           {
-            "data": [0, 0, 0, 0, 6000, 0, 0, 0, 0, 0, 0, 0]
+            "data": [
+              0,
+              0,
+              0,
+              0,
+              6000,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
           }
         ]
       },
@@ -1250,19 +1283,35 @@
               "rows": [
                 {
                   "title": "Konstantní",
-                  "values": [1500000, 2500000, 2500000]
+                  "values": [
+                    1500000,
+                    2500000,
+                    2500000
+                  ]
                 },
                 {
                   "title": "Klesající",
-                  "values": [0, 1500000, 1500000]
+                  "values": [
+                    0,
+                    1500000,
+                    1500000
+                  ]
                 },
                 {
                   "title": "Úvěry",
-                  "values": [750000, 1750000, 1750000]
+                  "values": [
+                    750000,
+                    1750000,
+                    1750000
+                  ]
                 },
                 {
                   "title": "Smrt úrazem",
-                  "values": [500000, 2500000, 2500000]
+                  "values": [
+                    500000,
+                    2500000,
+                    2500000
+                  ]
                 }
               ]
             }
@@ -1277,15 +1326,27 @@
               "rows": [
                 {
                   "title": "od 21. dne",
-                  "values": [800, 700, 700]
+                  "values": [
+                    800,
+                    700,
+                    700
+                  ]
                 },
                 {
                   "title": "od 28. dne",
-                  "values": [0, 700, 700]
+                  "values": [
+                    0,
+                    700,
+                    700
+                  ]
                 },
                 {
                   "title": "od 42. dne",
-                  "values": [500, 700, 700]
+                  "values": [
+                    500,
+                    700,
+                    700
+                  ]
                 }
               ]
             },
@@ -1294,15 +1355,27 @@
               "rows": [
                 {
                   "title": "od 21. dne",
-                  "values": [800, 700, 700]
+                  "values": [
+                    800,
+                    700,
+                    700
+                  ]
                 },
                 {
                   "title": "od 28. dne",
-                  "values": [0, 700, 700]
+                  "values": [
+                    0,
+                    700,
+                    700
+                  ]
                 },
                 {
                   "title": "od 42. dne",
-                  "values": [500, 700, 700]
+                  "values": [
+                    500,
+                    700,
+                    700
+                  ]
                 }
               ]
             },
@@ -1311,11 +1384,19 @@
               "rows": [
                 {
                   "title": "úraz",
-                  "values": [800, 700, 700]
+                  "values": [
+                    800,
+                    700,
+                    700
+                  ]
                 },
                 {
                   "title": "úraz / nemoc",
-                  "values": [0, 700, 700]
+                  "values": [
+                    0,
+                    700,
+                    700
+                  ]
                 }
               ]
             },
@@ -1324,15 +1405,27 @@
               "rows": [
                 {
                   "title": "Konstantní",
-                  "values": [800, 700, 700]
+                  "values": [
+                    800,
+                    700,
+                    700
+                  ]
                 },
                 {
                   "title": "Klesající",
-                  "values": [0, 700, 700]
+                  "values": [
+                    0,
+                    700,
+                    700
+                  ]
                 },
                 {
                   "title": "Úvěr",
-                  "values": [500, 700, 700]
+                  "values": [
+                    500,
+                    700,
+                    700
+                  ]
                 }
               ]
             }
@@ -1348,15 +1441,27 @@
               "rows": [
                 {
                   "title": "od 0,1 %",
-                  "values": [1500000, 2500000, 2500000]
+                  "values": [
+                    1500000,
+                    2500000,
+                    2500000
+                  ]
                 },
                 {
                   "title": "od 10 %",
-                  "values": [0, 1500000, 1500000]
+                  "values": [
+                    0,
+                    1500000,
+                    1500000
+                  ]
                 },
                 {
                   "title": "autonehoda od 25 %",
-                  "values": [750000, 1750000, 1750000]
+                  "values": [
+                    750000,
+                    1750000,
+                    1750000
+                  ]
                 }
               ]
             },
@@ -1365,15 +1470,27 @@
               "rows": [
                 {
                   "title": "III. stupeň",
-                  "values": [800, 700, 700]
+                  "values": [
+                    800,
+                    700,
+                    700
+                  ]
                 },
                 {
                   "title": "II. stupeň",
-                  "values": [0, 700, 700]
+                  "values": [
+                    0,
+                    700,
+                    700
+                  ]
                 },
                 {
                   "title": "I. stupeň",
-                  "values": [500, 700, 700]
+                  "values": [
+                    500,
+                    700,
+                    700
+                  ]
                 }
               ]
             }
@@ -1426,6 +1543,52 @@
         ]
       }
     }
+  },
+  "action_plan": {
+    "sections": [
+      {
+        "title": "Portfolio",
+        "subtitle": "Aktiva & Pasiva",
+        "percent": 28,
+        "description": "Váš majetek je výrazně zatížen pasivy.",
+        "status": "warning",
+        "actions": [
+          {
+            "title": "Stavební spoření",
+            "text": "V říjnu zažádat výpověď smlouvy. Ověříme podpis na formuláři. Prostředky budou k dispozici v únoru 2025."
+          },
+          {
+            "title": "Penzijní připojištění",
+            "text": "Lorem ipsum dolor sit amet..."
+          },
+          {
+            "title": "Investice do zlata",
+            "text": "Lorem ipsum dolor sit amet..."
+          }
+        ]
+      },
+      {
+        "title": "Zajištění majetku",
+        "subtitle": "Pojištění vašich aktiv",
+        "percent": 55,
+        "description": "Téměř polovina majetku není chráněná.",
+        "status": "warning",
+        "actions": [
+          {
+            "title": "Havarijní pojištění na auto",
+            "text": "Lorem ipsum dolor sit amet..."
+          },
+          {
+            "title": "Pojištění odpovědnosti ve výkonu práce",
+            "text": "Lorem ipsum dolor sit amet..."
+          },
+          {
+            "title": "Pojištění stroje",
+            "text": "Lorem ipsum dolor sit amet..."
+          }
+        ]
+      }
+    ]
   },
   "footer": {
     "logo_text": null,
