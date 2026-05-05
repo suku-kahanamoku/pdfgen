@@ -15,8 +15,38 @@ $actionPlan = $rawData['action_plan'] ?? [];
 
 $curMap   = ['CZK' => 'Kč', 'EUR' => '€', 'USD' => '$'];
 
+// ============================================================
+// Build TOC dynamically – order must match include order below
+// ============================================================
+$tocSectionsMap = [
+    'intro'       => ['title' => 'O nás',               'items' => ['Představení společnosti', 'Hodnoty & očekávání', 'Finanční chování klienta']],
+    'user'        => ['title' => 'Klient',              'items' => ['Profil klienta']],
+    'balance'     => ['title' => 'Cashflow',            'items' => ['Příjmy', 'Výdaje', 'Rezerva']],
+    'property'    => ['title' => 'Majetek',             'items' => ['Přehled majetku', 'Nemovitosti & aktiva', 'Detail majetku', 'Bilanční přehled']],
+    'insurance'   => ['title' => 'Pojištění',           'items' => ['Přehled pojištění']],
+    'goal'        => ['title' => 'Cíle',                'items' => ['Přehled cílů', 'Kroky k cílům']],
+    'health'      => ['title' => 'Zdraví & zajištění',  'items' => ['Přehled zdraví', 'Pracovní neschopnost', 'Invalidita I. stupeň', 'Invalidita II. stupeň', 'Invalidita III. stupeň']],
+    'action_plan' => ['title' => 'Akční plán',          'items' => ['Akční plán']],
+];
+
+// page 1 = introduction, page 2 = content/TOC, sections start at page 3
+$tocPageCounter = (!empty($introduction) ? 1 : 0) + 1 + 1;
+$tocSections = [];
+foreach ($tocSectionsMap as $key => $def) {
+    if (empty($rawData[$key])) continue;
+    $items = [];
+    foreach ($def['items'] as $itemTitle) {
+        $items[] = ['title' => $itemTitle, 'page' => $tocPageCounter++];
+    }
+    $tocSections[] = ['title' => $def['title'], 'items' => $items];
+}
+
 if (!empty($introduction)) {
     include __DIR__ . '/components/introduction.php';
+}
+
+if (!empty($tocSections)) {
+    include __DIR__ . '/components/content.php';
 }
 
 if (!empty($intro)) {

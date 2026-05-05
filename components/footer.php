@@ -24,10 +24,10 @@ $decorImage  = $footer['logo'] ?? (__DIR__ . '/../img/logo/wealth.png');
 
     <!-- Content -->
     <div class="relative z-10 flex flex-col">
-        <h1 class="font-lora text-6xl font-semibold leading-none tracking-tight text-ink">
+        <h2 class="font-lora text-6xl font-semibold leading-none tracking-tight text-ink">
             <span>Měníme vaše sny</span><br>
             <span class="text-primary">ve skutečnost</span>
-        </h1>
+        </h2>
 
         <div class="mt-8 max-w-xl text-3xl leading-tight text-ink/85">
             Pro další informace a případné dotazy<br>mě neváhejte kontaktovat!

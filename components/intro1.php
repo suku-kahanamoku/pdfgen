@@ -18,9 +18,9 @@ $introContact = $intro['contact'] ?? [];
 
     <!-- Hlavní nadpis -->
     <div class="mb-12">
-        <h1 class="font-lora text-6xl font-semibold">
+        <h2 class="font-lora text-6xl font-semibold">
             Finanční analýza
-        </h1>
+        </h2>
     </div>
 
     <!-- Blok 1 -->
