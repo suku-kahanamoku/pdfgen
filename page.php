@@ -24,9 +24,9 @@ if (!empty($intro)) {
     $pageDefinition['intro'] = [
         'title' => 'O nás',
         'items' => [
-            1 => ['title' => 'Představení společnosti', 'page' => $tocPageMap[1] ?? 0],
-            2 => ['title' => 'Hodnoty & očekávání', 'page' => $tocPageMap[2] ?? 0],
-            3 => ['title' => 'Finanční chování klienta', 'page' => $tocPageMap[3] ?? 0],
+            1 => ['title' => 'O finanční analýze a společnosti', 'page' => $tocPageMap[1] ?? 0],
+            2 => ['title' => 'Očekávání a hodnoty', 'page' => $tocPageMap[2] ?? 0],
+            3 => ['title' => 'Účastníci finančního plánu', 'page' => $tocPageMap[3] ?? 0],
         ],
     ];
 }
@@ -44,7 +44,7 @@ if (!empty($balance)) {
         'items' => [
             5 => ['title' => 'Výdaje', 'page' => $tocPageMap[5] ?? 0],
             6 => ['title' => 'Příjmy', 'page' => $tocPageMap[6] ?? 0],
-            7 => ['title' => 'Rezerva', 'page' => $tocPageMap[7] ?? 0],
+            7 => ['title' => 'Bilance', 'page' => $tocPageMap[7] ?? 0],
         ],
     ];
 }
@@ -52,10 +52,10 @@ if (!empty($property)) {
     $pageDefinition['property'] = [
         'title' => 'Majetek',
         'items' => [
-            8 => ['title' => 'Přehled majetku', 'page' => $tocPageMap[8] ?? 0],
-            9 => ['title' => 'Nemovitosti & aktiva', 'page' => $tocPageMap[9] ?? 0],
-            10 => ['title' => 'Detail majetku', 'page' => $tocPageMap[10] ?? 0],
-            11 => ['title' => 'Bilanční přehled', 'page' => $tocPageMap[11] ?? 0],
+            8 => ['title' => 'Přehled', 'page' => $tocPageMap[8] ?? 0],
+            9 => ['title' => 'Portfolio', 'page' => $tocPageMap[9] ?? 0],
+            10 => ['title' => 'Statistiky', 'page' => $tocPageMap[10] ?? 0],
+            11 => ['title' => 'Bonita', 'page' => $tocPageMap[11] ?? 0],
         ],
     ];
 }
