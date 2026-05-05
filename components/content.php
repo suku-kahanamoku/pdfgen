@@ -2,7 +2,7 @@
 // ============================================================
 // TABLE OF CONTENTS – CONTROLLER
 // ============================================================
-$tocItems = $tocSections ?? [];
+$tocItems = array_values($pageDefinition ?? []);
 ?>
 
 <!-- ============================================================ -->
@@ -32,7 +32,6 @@ $tocItems = $tocSections ?? [];
                     <div class="bg-white/70 rounded-b-xl px-4 py-3 shadow-sm">
                         <?php foreach ($section['items'] as $item): ?>
                             <div class="flex items-center text-sm text-ink/80 mb-2">
-
                                 <!-- Title -->
                                 <span class="whitespace-nowrap">
                                     <?= htmlspecialchars($item['title']) ?>

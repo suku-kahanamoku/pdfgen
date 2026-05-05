@@ -325,66 +325,6 @@
             "value": 250000,
             "title": "Kryptoměny",
             "status": "warning"
-          },
-          {
-            "currency": "CZK",
-            "value": 0,
-            "title": "Bankovní účty",
-            "status": "success"
-          },
-          {
-            "currency": "CZK",
-            "value": 620000,
-            "title": "Fondy & Akcie",
-            "status": "success"
-          },
-          {
-            "currency": "CZK",
-            "value": 0,
-            "title": "Dluhové CP",
-            "status": "warning"
-          },
-          {
-            "currency": "CZK",
-            "value": 0,
-            "title": "Deriváty",
-            "status": "danger"
-          },
-          {
-            "currency": "CZK",
-            "value": 250000,
-            "title": "Kryptoměny",
-            "status": "warning"
-          },
-          {
-            "currency": "CZK",
-            "value": 0,
-            "title": "Bankovní účty",
-            "status": "success"
-          },
-          {
-            "currency": "CZK",
-            "value": 620000,
-            "title": "Fondy & Akcie",
-            "status": "success"
-          },
-          {
-            "currency": "CZK",
-            "value": 0,
-            "title": "Dluhové CP",
-            "status": "warning"
-          },
-          {
-            "currency": "CZK",
-            "value": 0,
-            "title": "Deriváty",
-            "status": "danger"
-          },
-          {
-            "currency": "CZK",
-            "value": 250000,
-            "title": "Kryptoměny",
-            "status": "warning"
           }
         ]
       },
