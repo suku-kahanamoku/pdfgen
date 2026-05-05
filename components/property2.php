@@ -146,7 +146,6 @@ $barColors   = ['#254b34', '#936746'];
         <?php endif; ?>
     </div>
 </div>
-</div>
 
 <script>
     new Chart(document.getElementById('chart-bilance-p2'), {
