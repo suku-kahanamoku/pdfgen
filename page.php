@@ -19,64 +19,7 @@ $curMap = ['CZK' => 'Kč', 'EUR' => '€', 'USD' => '$'];
 // ============================================================
 
 $tocPageMap = $GLOBALS['pdfTocPageMap'] ?? [];
-
-if (!empty($intro)) {
-    $pageDefinition['intro'] = [
-        'title' => 'Úvod',
-        'items' => [
-            1 => ['title' => 'O finanční analýze a společnosti', 'page' => $tocPageMap[1] ?? 0],
-            2 => ['title' => 'Očekávání a hodnoty', 'page' => $tocPageMap[2] ?? 0],
-            3 => ['title' => 'Účastníci finančního plánu', 'page' => $tocPageMap[3] ?? 0],
-        ],
-    ];
-}
-if (!empty($balance)) {
-    $pageDefinition['balance'] = [
-        'title' => 'Rozvaha',
-        'items' => [
-            4 => ['title' => 'Výdaje',  'page' => $tocPageMap[4] ?? 0],
-            5 => ['title' => 'Příjmy',  'page' => $tocPageMap[5] ?? 0],
-            6 => ['title' => 'Bilance', 'page' => $tocPageMap[6] ?? 0],
-        ],
-    ];
-}
-if (!empty($property)) {
-    $pageDefinition['property'] = [
-        'title' => 'Přehled vašeho majetku',
-        'items' => [
-            7 => ['title' => 'Přehled',         'page' => $tocPageMap[7]  ?? 0],
-            8 => ['title' => 'Portfolio',        'page' => $tocPageMap[8]  ?? 0],
-            9 => ['title' => 'Statistiky',       'page' => $tocPageMap[9]  ?? 0],
-            10 => ['title' => 'Bonita',           'page' => $tocPageMap[10] ?? 0],
-            11 => ['title' => 'Ochrana majetku',  'page' => $tocPageMap[11] ?? 0],
-        ],
-    ];
-}
-if (!empty($goal)) {
-    $pageDefinition['goal'] = [
-        'title' => 'Sny a finanční cíle',
-        'items' => [
-            12 => ['title' => 'Vaše sny',     'page' => $tocPageMap[12] ?? 0],
-            13 => ['title' => 'Plán a řešení', 'page' => $tocPageMap[13] ?? 0],
-        ],
-    ];
-}
-if (!empty($health)) {
-    $pageDefinition['health'] = [
-        'title' => 'Pojištění zdraví',
-        'items' => [
-            14 => ['title' => 'Pojištění a pojitné částky', 'page' => $tocPageMap[14] ?? 0],
-        ],
-    ];
-}
-if (!empty($actionPlan)) {
-    $pageDefinition['action_plan'] = [
-        'title' => 'Vyhodnocení a akční plán',
-        'items' => [
-            15 => ['title' => 'Vyhodnocení', 'page' => $tocPageMap[15] ?? 0],
-        ],
-    ];
-}
+BUILD_PAGE_DEFINITION($rawData, $tocPageMap);
 
 // ============================================================
 // Renderování stránek
@@ -84,7 +27,8 @@ if (!empty($actionPlan)) {
 if (!empty($introduction)) {
     include __DIR__ . '/components/introduction.php';
 }
-if (!empty($pageDefinition)) {
+
+if (!empty($GLOBALS['page_definition'])) {
     include __DIR__ . '/components/content.php';
 }
 

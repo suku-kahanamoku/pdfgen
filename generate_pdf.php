@@ -43,8 +43,6 @@ if ($inputData === null) {
     $inputData = json_decode(file_get_contents($jsonFile), true);
 }
 
-$pageDefinition = [];
-
 function renderHtml(
     array $inputData,
     ?array $tocPageMap = null,
