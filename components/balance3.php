@@ -25,6 +25,8 @@ $barColors   = ['#e7e4e4', '#936746'];
 <!-- ============================================================ -->
 <div class="w-full box-border p-24 flex flex-col break-after-page overflow-visible gap-16 box-decoration-clone">
 
+    <?php emitMarker(); ?>
+
     <!-- Nadpis -->
     <h2 class="font-lora text-5xl font-semibold tracking-wide">
         <span class="text-pebble">... ale stejně tak důležité je</span><br>

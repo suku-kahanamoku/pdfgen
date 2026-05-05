@@ -12,6 +12,8 @@ $invalidityRows = $invalidity['rows'] ?? [];
 <!-- ============================================================ -->
 <div class="w-full box-border p-24 break-after-page overflow-visible flex flex-col gap-10 box-decoration-clone">
 
+    <?php emitMarker(); ?>
+
     <!-- Long term -->
     <div class="flex flex-col gap-4">
         <h3 class="font-lora text-4xl font-semibold leading-none text-ink">

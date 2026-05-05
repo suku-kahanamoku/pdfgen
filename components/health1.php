@@ -10,6 +10,8 @@ $healthRows = $health['cards'] ?? [];
 <!-- ============================================================ -->
 <div class="w-full box-border p-24 break-after-page box-decoration-clone overflow-visible flex flex-col gap-16">
 
+    <?php emitMarker(); ?>
+
     <!-- Header -->
     <div class="flex items-start justify-between gap-8">
         <div class="flex flex-col gap-8">

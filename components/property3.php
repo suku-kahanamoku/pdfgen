@@ -54,6 +54,8 @@ foreach ($sections as $p3sec) {
 <!-- PAGE 3 – Analýza portfolia                                   -->
 <!-- ============================================================ -->
 <div class="w-full box-border p-24 break-after-page box-decoration-clone overflow-visible flex flex-col gap-16">
+
+    <?php emitMarker(); ?>
     <?php foreach ($sections as $p3sec):
         $rows    = $property[$p3sec['key']]['rows'] ?? [];
         $total   = array_sum(array_column($rows, 'value'));

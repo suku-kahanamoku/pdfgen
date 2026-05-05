@@ -22,6 +22,8 @@ $chartIncomeLossId = 'chart-health-income-loss';
 <!-- ============================================================ -->
 <div class="w-full box-border p-24 break-after-page overflow-visible flex flex-col gap-10 box-decoration-clone">
 
+    <?php emitMarker(); ?>
+
     <!-- Top section -->
     <div class="grid grid-cols-[1fr_1.45fr] gap-12 items-stretch">
         <!-- Left footer + right text -->

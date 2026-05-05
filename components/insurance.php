@@ -11,6 +11,8 @@ $insuranceRows = $insurance['rows'] ?? [];
 <!-- ============================================================ -->
 <div class="w-full box-border p-24 break-after-page overflow-visible flex flex-col gap-16 box-decoration-clone">
 
+    <?php emitMarker(); ?>
+
     <!-- Sekce -->
     <div class="break-inside-avoid flex flex-col gap-8">
         <h2 class="font-lora text-5xl font-semibold leading-none flex items-center justify-between gap-4">

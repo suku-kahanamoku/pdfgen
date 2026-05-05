@@ -47,6 +47,8 @@ $colors = ['#254b34', '#eeeeee'];
 <!-- PAGE 1 – Přehled majetku                                     -->
 <!-- ============================================================ -->
 <div class="w-full box-border p-24 break-after-page box-decoration-clone overflow-visible flex flex-col gap-16">
+
+    <?php emitMarker(); ?>
     <div class="flex justify-between items-start gap-12">
         <div class="flex-1 flex flex-col gap-6">
             <h2 class="font-lora text-5xl font-semibold leading-[1.1] m-0">

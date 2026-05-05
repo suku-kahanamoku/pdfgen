@@ -98,13 +98,18 @@ if (!empty($actionPlan)) {
 }
 
 // ============================================================
-// Pomocník – emituje marker jen pokud je display_marker=true
+// Pomocník – nastaví marker pro komponentu (emituje se uvnitř)
 // ============================================================
-$marker = static function (int $id): void {
-    if (!empty($GLOBALS['display_marker'])) {
-        echo '<div style="position:absolute;font-size:8px;color:#000;line-height:1;margin:0;padding:0;">TOCMARKER_' . $id . '</div>';
+if (!function_exists('emitMarker')) {
+    function emitMarker(): void
+    {
+        if (!empty($GLOBALS['display_marker']) && isset($GLOBALS['_marker'])) {
+            $id = $GLOBALS['_marker'];
+            unset($GLOBALS['_marker']);
+            echo '<div style="position:absolute;font-size:8px;color:#000;line-height:1;margin:0;padding:0;">TOCMARKER_' . $id . '</div>';
+        }
     }
-};
+}
 
 // ============================================================
 // Renderování stránek
@@ -117,59 +122,59 @@ if (!empty($pageDefinition)) {
 }
 
 if (!empty($intro)) {
-    $marker(1);
+    $GLOBALS['_marker'] = 1;
     include __DIR__ . '/components/intro1.php';
-    $marker(2);
+    $GLOBALS['_marker'] = 2;
     include __DIR__ . '/components/intro2.php';
-    $marker(3);
+    $GLOBALS['_marker'] = 3;
     include __DIR__ . '/components/intro3.php';
 }
 if (!empty($user)) {
-    $marker(4);
+    $GLOBALS['_marker'] = 4;
     include __DIR__ . '/components/user1.php';
 }
 if (!empty($balance)) {
-    $marker(5);
+    $GLOBALS['_marker'] = 5;
     include __DIR__ . '/components/balance1.php';
-    $marker(6);
+    $GLOBALS['_marker'] = 6;
     include __DIR__ . '/components/balance2.php';
-    $marker(7);
+    $GLOBALS['_marker'] = 7;
     include __DIR__ . '/components/balance3.php';
 }
 if (!empty($property)) {
-    $marker(8);
+    $GLOBALS['_marker'] = 8;
     include __DIR__ . '/components/property1.php';
-    $marker(9);
+    $GLOBALS['_marker'] = 9;
     include __DIR__ . '/components/property2.php';
-    $marker(10);
+    $GLOBALS['_marker'] = 10;
     include __DIR__ . '/components/property3.php';
-    $marker(11);
+    $GLOBALS['_marker'] = 11;
     include __DIR__ . '/components/property4.php';
 }
 if (!empty($insurance)) {
-    $marker(12);
+    $GLOBALS['_marker'] = 12;
     include __DIR__ . '/components/insurance.php';
 }
 if (!empty($goal)) {
-    $marker(13);
+    $GLOBALS['_marker'] = 13;
     include __DIR__ . '/components/goal1.php';
-    $marker(14);
+    $GLOBALS['_marker'] = 14;
     include __DIR__ . '/components/goal2.php';
 }
 if (!empty($health)) {
-    $marker(15);
+    $GLOBALS['_marker'] = 15;
     include __DIR__ . '/components/health1.php';
-    $marker(16);
+    $GLOBALS['_marker'] = 16;
     include __DIR__ . '/components/health2.php';
-    $marker(17);
+    $GLOBALS['_marker'] = 17;
     include __DIR__ . '/components/health3.php';
-    $marker(18);
+    $GLOBALS['_marker'] = 18;
     include __DIR__ . '/components/health4.php';
-    $marker(19);
+    $GLOBALS['_marker'] = 19;
     include __DIR__ . '/components/health5.php';
 }
 if (!empty($actionPlan)) {
-    $marker(20);
+    $GLOBALS['_marker'] = 20;
     include __DIR__ . '/components/action-plan.php';
 }
 if (!empty($footer)) {

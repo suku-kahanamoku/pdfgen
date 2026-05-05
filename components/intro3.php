@@ -6,6 +6,8 @@ $introSituation = (int)($intro['situation'] ?? 0);
 ?>
 <div class="w-full box-border p-24 flex h-screen flex-col break-after-page box-decoration-clone">
 
+    <?php emitMarker(); ?>
+
     <!-- Nadpis -->
     <div class="mb-14">
         <h2 class="max-w-xl font-lora text-5xl font-semibold leading-none tracking-tight">

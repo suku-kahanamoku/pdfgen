@@ -16,6 +16,8 @@ $statusMap = [
 <!-- ============================================================ -->
 <div class="w-full box-border p-24 break-after-page overflow-visible flex flex-col gap-12 box-decoration-clone">
 
+    <?php emitMarker(); ?>
+
     <!-- Header -->
     <div class="flex flex-col gap-6">
         <div class="flex items-center justify-between">
