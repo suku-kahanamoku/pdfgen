@@ -11,8 +11,6 @@ $petsRows     = $user['pets']['rows']     ?? [];
 
 <div class="w-full box-border p-24 flex flex-col gap-8 break-after-page box-decoration-clone">
 
-    <?php emitMarker(); ?>
-
     <!-- Sekce: Klient -->
     <div class="rounded-3xl bg-white/80 px-8 py-8 shadow break-inside-avoid">
         <h3 class="mb-4 font-lora text-3xl font-semibold">

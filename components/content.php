@@ -55,7 +55,7 @@ $tocItems = array_values($pageDefinition ?? []);
 
     <!-- RIGHT DECOR -->
     <div class="overflow-hidden flex justify-center items-start">
-        <span class="font-lora text-[320px] leading-none select-none text-transparent tracking-wide [-webkit-text-stroke:1px_#9a6b45]"
+        <span class="font-lora text-[320px] leading-none select-none text-transparent [-webkit-text-stroke:1px_#9a6b45]"
             style="writing-mode: vertical-rl; transform: rotate(180deg);">
             Obsah
         </span>

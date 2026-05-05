@@ -22,7 +22,7 @@ $tocPageMap = $GLOBALS['pdfTocPageMap'] ?? [];
 
 if (!empty($intro)) {
     $pageDefinition['intro'] = [
-        'title' => 'O nás',
+        'title' => 'Úvod',
         'items' => [
             1 => ['title' => 'O finanční analýze a společnosti', 'page' => $tocPageMap[1] ?? 0],
             2 => ['title' => 'Očekávání a hodnoty', 'page' => $tocPageMap[2] ?? 0],
@@ -30,61 +30,46 @@ if (!empty($intro)) {
         ],
     ];
 }
-if (!empty($user)) {
-    $pageDefinition['user'] = [
-        'title' => 'Klient',
-        'items' => [
-            4 => ['title' => 'Profil klienta', 'page' => $tocPageMap[4] ?? 0],
-        ],
-    ];
-}
 if (!empty($balance)) {
     $pageDefinition['balance'] = [
-        'title' => 'Cashflow',
+        'title' => 'Rozvaha',
         'items' => [
-            5 => ['title' => 'Výdaje', 'page' => $tocPageMap[5] ?? 0],
-            6 => ['title' => 'Příjmy', 'page' => $tocPageMap[6] ?? 0],
-            7 => ['title' => 'Bilance', 'page' => $tocPageMap[7] ?? 0],
+            4 => ['title' => 'Výdaje',  'page' => $tocPageMap[4] ?? 0],
+            5 => ['title' => 'Příjmy',  'page' => $tocPageMap[5] ?? 0],
+            6 => ['title' => 'Bilance', 'page' => $tocPageMap[6] ?? 0],
         ],
     ];
 }
 if (!empty($property)) {
     $pageDefinition['property'] = [
-        'title' => 'Majetek',
+        'title' => 'Přehled vašeho majetku',
         'items' => [
-            8 => ['title' => 'Přehled', 'page' => $tocPageMap[8] ?? 0],
-            9 => ['title' => 'Portfolio', 'page' => $tocPageMap[9] ?? 0],
-            10 => ['title' => 'Statistiky', 'page' => $tocPageMap[10] ?? 0],
-            11 => ['title' => 'Bonita', 'page' => $tocPageMap[11] ?? 0],
-        ],
-    ];
-}
-if (!empty($insurance)) {
-    $pageDefinition['insurance'] = [
-        'title' => 'Pojištění',
-        'items' => [
-            12 => ['title' => 'Přehled pojištění', 'page' => $tocPageMap[12] ?? 0],
+            7 => ['title' => 'Přehled',         'page' => $tocPageMap[7]  ?? 0],
+            8 => ['title' => 'Portfolio',        'page' => $tocPageMap[8]  ?? 0],
+            9 => ['title' => 'Statistiky',       'page' => $tocPageMap[9]  ?? 0],
+            10 => ['title' => 'Bonita',           'page' => $tocPageMap[10] ?? 0],
+            11 => ['title' => 'Ochrana majetku',  'page' => $tocPageMap[11] ?? 0],
         ],
     ];
 }
 if (!empty($goal)) {
     $pageDefinition['goal'] = [
-        'title' => 'Cíle',
+        'title' => 'Sny a finanční cíle',
         'items' => [
-            13 => ['title' => 'Přehled cílů', 'page' => $tocPageMap[13] ?? 0],
-            14 => ['title' => 'Kroky k cílům', 'page' => $tocPageMap[14] ?? 0],
+            12 => ['title' => 'Vaše sny',     'page' => $tocPageMap[12] ?? 0],
+            13 => ['title' => 'Plán a řešení', 'page' => $tocPageMap[13] ?? 0],
         ],
     ];
 }
 if (!empty($health)) {
     $pageDefinition['health'] = [
-        'title' => 'Zdraví & zajištění',
+        'title' => 'Pojištění zdraví',
         'items' => [
-            15 => ['title' => 'Přehled zdraví', 'page' => $tocPageMap[15] ?? 0],
-            16 => ['title' => 'Pracovní neschopnost', 'page' => $tocPageMap[16] ?? 0],
-            17 => ['title' => 'Invalidita I. stupeň', 'page' => $tocPageMap[17] ?? 0],
-            18 => ['title' => 'Invalidita II. stupeň', 'page' => $tocPageMap[18] ?? 0],
-            19 => ['title' => 'Invalidita III. stupeň', 'page' => $tocPageMap[19] ?? 0],
+            14 => ['title' => 'Pojištění a pojistné částky', 'page' => $tocPageMap[14] ?? 0],
+            15 => ['title' => 'Pracovní neschopnost',        'page' => $tocPageMap[15] ?? 0],
+            16 => ['title' => 'Invalidita I. stupeň',        'page' => $tocPageMap[16] ?? 0],
+            17 => ['title' => 'Invalidita II. stupeň',       'page' => $tocPageMap[17] ?? 0],
+            18 => ['title' => 'Invalidita III. stupeň',      'page' => $tocPageMap[18] ?? 0],
         ],
     ];
 }
@@ -92,7 +77,7 @@ if (!empty($actionPlan)) {
     $pageDefinition['action_plan'] = [
         'title' => 'Akční plán',
         'items' => [
-            20 => ['title' => 'Akční plán', 'page' => $tocPageMap[20] ?? 0],
+            19 => ['title' => 'Akční plán', 'page' => $tocPageMap[19] ?? 0],
         ],
     ];
 }
@@ -130,51 +115,50 @@ if (!empty($intro)) {
     include __DIR__ . '/components/intro3.php';
 }
 if (!empty($user)) {
-    $GLOBALS['_marker'] = 4;
     include __DIR__ . '/components/user1.php';
 }
 if (!empty($balance)) {
-    $GLOBALS['_marker'] = 5;
+    $GLOBALS['_marker'] = 4;
     include __DIR__ . '/components/balance1.php';
-    $GLOBALS['_marker'] = 6;
+    $GLOBALS['_marker'] = 5;
     include __DIR__ . '/components/balance2.php';
-    $GLOBALS['_marker'] = 7;
+    $GLOBALS['_marker'] = 6;
     include __DIR__ . '/components/balance3.php';
 }
 if (!empty($property)) {
-    $GLOBALS['_marker'] = 8;
+    $GLOBALS['_marker'] = 7;
     include __DIR__ . '/components/property1.php';
-    $GLOBALS['_marker'] = 9;
+    $GLOBALS['_marker'] = 8;
     include __DIR__ . '/components/property2.php';
-    $GLOBALS['_marker'] = 10;
+    $GLOBALS['_marker'] = 9;
     include __DIR__ . '/components/property3.php';
-    $GLOBALS['_marker'] = 11;
+    $GLOBALS['_marker'] = 10;
     include __DIR__ . '/components/property4.php';
 }
 if (!empty($insurance)) {
-    $GLOBALS['_marker'] = 12;
+    $GLOBALS['_marker'] = 11;
     include __DIR__ . '/components/insurance.php';
 }
 if (!empty($goal)) {
-    $GLOBALS['_marker'] = 13;
+    $GLOBALS['_marker'] = 12;
     include __DIR__ . '/components/goal1.php';
-    $GLOBALS['_marker'] = 14;
+    $GLOBALS['_marker'] = 13;
     include __DIR__ . '/components/goal2.php';
 }
 if (!empty($health)) {
-    $GLOBALS['_marker'] = 15;
+    $GLOBALS['_marker'] = 14;
     include __DIR__ . '/components/health1.php';
-    $GLOBALS['_marker'] = 16;
+    $GLOBALS['_marker'] = 15;
     include __DIR__ . '/components/health2.php';
-    $GLOBALS['_marker'] = 17;
+    $GLOBALS['_marker'] = 16;
     include __DIR__ . '/components/health3.php';
-    $GLOBALS['_marker'] = 18;
+    $GLOBALS['_marker'] = 17;
     include __DIR__ . '/components/health4.php';
-    $GLOBALS['_marker'] = 19;
+    $GLOBALS['_marker'] = 18;
     include __DIR__ . '/components/health5.php';
 }
 if (!empty($actionPlan)) {
-    $GLOBALS['_marker'] = 20;
+    $GLOBALS['_marker'] = 19;
     include __DIR__ . '/components/action-plan.php';
 }
 if (!empty($footer)) {
