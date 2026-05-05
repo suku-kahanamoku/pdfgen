@@ -1,6 +1,45 @@
 <?php
 
 // ============================================================
+// RESOLVE_INPUT_DATA – načte vstupní data z requestu nebo data.json
+// ============================================================
+function RESOLVE_INPUT_DATA(): array
+{
+    // 1) POST or GET field named 'data'
+    if (!empty($_REQUEST['data'])) {
+        $decoded = json_decode($_REQUEST['data'], true);
+        if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
+            return $decoded;
+        }
+    }
+
+    // 2) Raw JSON body (Content-Type: application/json)
+    $rawInput = file_get_contents('php://input');
+    if (!empty($rawInput)) {
+        $decoded = json_decode($rawInput, true);
+        if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
+            // Unwrap {"data": "json_string"} or {"data": {...}}
+            if (isset($decoded['data']) && !isset($decoded['property'])) {
+                $inner = is_string($decoded['data'])
+                    ? json_decode($decoded['data'], true) : $decoded['data'];
+                if (json_last_error() === JSON_ERROR_NONE && is_array($inner)) {
+                    return $inner;
+                }
+            } else {
+                return $decoded;
+            }
+        }
+    }
+
+    // 3) Fallback: read from data.json file
+    $jsonFile = __DIR__ . '/data.json';
+    if (!file_exists($jsonFile)) {
+        die("Chyba: Soubor data.json nebyl nalezen ve složce " . __DIR__);
+    }
+    return json_decode(file_get_contents($jsonFile), true);
+}
+
+// ============================================================
 // EMIT_MARKER – emituje TOCMARKER div uvnitř komponenty
 // Volá se jako první child hlavního wrapper divu.
 // Aktivní jen pokud je $GLOBALS['display_marker'] = true.
