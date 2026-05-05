@@ -1,4 +1,7 @@
 {
+  "introduction": {
+    "logo_text": null
+  },
   "intro": {
     "title": "Collegas",
     "motto": "Nabízíme individuální finanční analýzy, které vám pomožou dosáhnout vašich finančních cílů efektivně a s jistotou.",
@@ -413,7 +416,11 @@
           "status": "success",
           "note": "Brno, Jugoslávská 15 – tržní hodnota",
           "description": "3+1, 85 m², 2. patro, výtah, po rekonstrukci",
-          "labels": ["Vlastní bydlení", "Aktiva", "Dlouhodobý"]
+          "labels": [
+            "Vlastní bydlení",
+            "Aktiva",
+            "Dlouhodobý"
+          ]
         },
         {
           "currency": "CZK",
@@ -422,7 +429,11 @@
           "status": "warning",
           "note": "Komerční banka – 3,49 % p.a.",
           "description": "od 15. 3. 2019 do 15. 3. 2036, zbývá 126 splátek",
-          "labels": ["Hypotéka", "Pasiva", "Dlouhodobý"]
+          "labels": [
+            "Hypotéka",
+            "Pasiva",
+            "Dlouhodobý"
+          ]
         },
         {
           "currency": "CZK",
@@ -449,7 +460,11 @@
           "status": "success",
           "note": "Spořicí účet ČSOB – 4,2 % p.a.",
           "description": "Pohotovostní rezerva na 6 měsíců výdajů",
-          "labels": ["Hotovost", "Aktiva", "Krátkodobý"]
+          "labels": [
+            "Hotovost",
+            "Aktiva",
+            "Krátkodobý"
+          ]
         },
         {
           "currency": "CZK",
@@ -458,7 +473,11 @@
           "status": "success",
           "note": "Portfolio S&P 500 ETF – průměr 9,4 % p.a.",
           "description": "Diverzifikované ETF portfolio přes Degiro",
-          "labels": ["Cenné papíry", "Aktiva", "Dlouhodobý"]
+          "labels": [
+            "Cenné papíry",
+            "Aktiva",
+            "Dlouhodobý"
+          ]
         },
         {
           "currency": "CZK",
@@ -467,7 +486,11 @@
           "status": "danger",
           "note": "Bitcoin + Ethereum – volatilní",
           "description": "Velká volatilita, doporučeno max. 5 % portfolia",
-          "labels": ["Kryptoměny", "Aktiva", "Krátkodobý"]
+          "labels": [
+            "Kryptoměny",
+            "Aktiva",
+            "Krátkodobý"
+          ]
         }
       ]
     },
@@ -480,7 +503,11 @@
           "status": "success",
           "note": "Tržní hodnota – odpis 8 % ročně",
           "description": "Rok 2021, najeto 62 000 km, servisní kniha",
-          "labels": ["Vozidlo", "Aktiva", "Střednědobý"]
+          "labels": [
+            "Vozidlo",
+            "Aktiva",
+            "Střednědobý"
+          ]
         },
         {
           "currency": "CZK",
@@ -489,7 +516,11 @@
           "status": "danger",
           "note": "Moneta Money Bank – 7,9 % p.a.",
           "description": "od 1. 6. 2023 do 1. 6. 2028, zbývá 49 splátek",
-          "labels": ["Úvěr", "Pasiva", "Střednědobý"]
+          "labels": [
+            "Úvěr",
+            "Pasiva",
+            "Střednědobý"
+          ]
         },
         {
           "currency": "CZK",
@@ -498,7 +529,11 @@
           "status": "success",
           "note": "Fotovoltaika + domácí vybavení",
           "description": "FVE 10 kWp (návratnost 7 let) + elektronika",
-          "labels": ["Majetek", "Aktiva", "Dlouhodobý"]
+          "labels": [
+            "Majetek",
+            "Aktiva",
+            "Dlouhodobý"
+          ]
         }
       ]
     },
@@ -878,7 +913,9 @@
         "note": "EFEKTA o.c.p.c",
         "frequency": "měsíčně",
         "description": "od 15.8. 2026 do 15. 8. 2036",
-        "labels": ["Krátkodobý cíl"]
+        "labels": [
+          "Krátkodobý cíl"
+        ]
       },
       {
         "currency": "CZK",
@@ -887,7 +924,10 @@
         "note": "CONSEQ a.s.",
         "frequency": "měsíčně",
         "description": "od 15.8. 2026 do 15. 8. 2036",
-        "labels": ["Střednědobý cíl", "Pravidelná investice přebytku rozpočtu"]
+        "labels": [
+          "Střednědobý cíl",
+          "Pravidelná investice přebytku rozpočtu"
+        ]
       },
       {
         "currency": "CZK",

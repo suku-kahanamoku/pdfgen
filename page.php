@@ -1,6 +1,7 @@
 <?php
 $rawData  = $GLOBALS['pdfData'];
 
+$introduction = $rawData['introduction'] ?? [];
 $intro    = $rawData['intro']    ?? [];
 $user     = $rawData['user']     ?? [];
 $balance  = $rawData['balance']  ?? [];
@@ -12,6 +13,10 @@ $health   = $rawData['health']    ?? [];
 $footer    = $rawData['footer']    ?? [];
 
 $curMap   = ['CZK' => 'Kč', 'EUR' => '€', 'USD' => '$'];
+
+if (!empty($introduction)) {
+    include __DIR__ . '/components/introduction.php';
+}
 
 if (!empty($intro)) {
     include __DIR__ . '/components/intro1.php';
