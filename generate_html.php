@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/helper.php'; ?>
 <!DOCTYPE html>
 <html lang="cs">
 

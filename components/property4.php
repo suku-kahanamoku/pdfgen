@@ -65,7 +65,7 @@ $formatPct = function ($value) {
 <!-- ============================================================ -->
 <div class="w-full box-border p-24 overflow-visible flex flex-col gap-12 break-after-page box-decoration-clone">
 
-    <?php emitMarker(); ?>
+    <?php EMIT_MARKER(); ?>
 
     <!-- Top summary row -->
     <div class="flex gap-8 items-center">

@@ -11,7 +11,7 @@ $introQuestions = $intro['questions'] ?? [];
 ?>
 <div class="w-full box-border p-24 flex h-screen flex-col break-after-page box-decoration-clone">
 
-    <?php emitMarker(); ?>
+    <?php EMIT_MARKER(); ?>
     <!-- Horní obsah -->
     <!-- Nadpis -->
     <div class="mb-10">

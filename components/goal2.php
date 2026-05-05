@@ -21,7 +21,7 @@ $goalFooterPercent = (float)($goalFooter['percent'] ?? 0);
 <!-- ============================================================ -->
 <div class="w-full box-border p-24 break-before-page break-after-page overflow-visible flex flex-col gap-12 box-decoration-clone">
 
-    <?php emitMarker(); ?>
+    <?php EMIT_MARKER(); ?>
 
     <!-- Header row -->
     <div class="grid grid-cols-[1fr_220px] gap-8 items-start">

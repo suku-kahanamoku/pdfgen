@@ -8,7 +8,7 @@ $introContact = $intro['contact'] ?? [];
 ?>
 <div class="w-full box-border p-24 break-after-page box-decoration-clone overflow-visible flex flex-col h-screen">
 
-    <?php emitMarker(); ?>
+    <?php EMIT_MARKER(); ?>
     <!-- Intro -->
     <div class="mb-14">
         <h3 class="text-3xl leading-tight">

@@ -79,20 +79,6 @@ if (!empty($actionPlan)) {
 }
 
 // ============================================================
-// Pomocník – nastaví marker pro komponentu (emituje se uvnitř)
-// ============================================================
-if (!function_exists('emitMarker')) {
-    function emitMarker(): void
-    {
-        if (!empty($GLOBALS['display_marker']) && isset($GLOBALS['_marker'])) {
-            $id = $GLOBALS['_marker'];
-            unset($GLOBALS['_marker']);
-            echo '<div style="position:absolute;font-size:8px;color:#000;line-height:1;margin:0;padding:0;">TOCMARKER_' . $id . '</div>';
-        }
-    }
-}
-
-// ============================================================
 // Renderování stránek
 // ============================================================
 if (!empty($introduction)) {
