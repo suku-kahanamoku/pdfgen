@@ -26,7 +26,6 @@ $resultGroups = $result['groups'] ?? [];
 <!-- ============================================================ -->
 <div class="w-full box-border p-24 break-after-page box-decoration-clone overflow-visible flex flex-col gap-16">
 
-    <?php emitMarker(); ?>
 
     <!-- Death section -->
     <div class="flex flex-col gap-6">

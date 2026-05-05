@@ -20,7 +20,6 @@ $statusMap = [
 <!-- ============================================================ -->
 <div class="w-full box-border p-24 break-after-page overflow-visible flex flex-col gap-14 box-decoration-clone">
 
-    <?php emitMarker(); ?>
 
     <!-- Header -->
     <div class="flex items-start justify-between gap-8">

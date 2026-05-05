@@ -65,19 +65,15 @@ if (!empty($health)) {
     $pageDefinition['health'] = [
         'title' => 'Pojištění zdraví',
         'items' => [
-            14 => ['title' => 'Pojištění a pojistné částky', 'page' => $tocPageMap[14] ?? 0],
-            15 => ['title' => 'Pracovní neschopnost',        'page' => $tocPageMap[15] ?? 0],
-            16 => ['title' => 'Invalidita I. stupeň',        'page' => $tocPageMap[16] ?? 0],
-            17 => ['title' => 'Invalidita II. stupeň',       'page' => $tocPageMap[17] ?? 0],
-            18 => ['title' => 'Invalidita III. stupeň',      'page' => $tocPageMap[18] ?? 0],
+            14 => ['title' => 'Pojištění a pojitné částky', 'page' => $tocPageMap[14] ?? 0],
         ],
     ];
 }
 if (!empty($actionPlan)) {
     $pageDefinition['action_plan'] = [
-        'title' => 'Akční plán',
+        'title' => 'Vyhodnocení a akční plán',
         'items' => [
-            19 => ['title' => 'Akční plán', 'page' => $tocPageMap[19] ?? 0],
+            15 => ['title' => 'Vyhodnocení', 'page' => $tocPageMap[15] ?? 0],
         ],
     ];
 }
@@ -148,17 +144,13 @@ if (!empty($goal)) {
 if (!empty($health)) {
     $GLOBALS['_marker'] = 14;
     include __DIR__ . '/components/health1.php';
-    $GLOBALS['_marker'] = 15;
     include __DIR__ . '/components/health2.php';
-    $GLOBALS['_marker'] = 16;
     include __DIR__ . '/components/health3.php';
-    $GLOBALS['_marker'] = 17;
     include __DIR__ . '/components/health4.php';
-    $GLOBALS['_marker'] = 18;
     include __DIR__ . '/components/health5.php';
 }
 if (!empty($actionPlan)) {
-    $GLOBALS['_marker'] = 19;
+    $GLOBALS['_marker'] = 15;
     include __DIR__ . '/components/action-plan.php';
 }
 if (!empty($footer)) {
