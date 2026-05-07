@@ -22,19 +22,19 @@ $statusIconMap = [
 $propertyColumns = [
     [
         'title' => 'Finanční aktiva',
-        'icon'  => 'fa-solid fa-money-bill-1',
+        'icon'  => __DIR__ . '/../img/icons/money.svg',
         'total' => (float)($propertySummary['active']['value'] ?? 0),
         'rows'  => $propertySummary['active']['rows'] ?? [],
     ],
     [
         'title' => 'Nemovitosti',
-        'icon'  => 'fa-solid fa-house',
+        'icon'  => __DIR__ . '/../img/icons/house.svg',
         'total' => (float)($propertySummary['estate']['value'] ?? 0),
         'rows'  => $propertySummary['estate']['rows'] ?? [],
     ],
     [
         'title' => 'Movitý majetek',
-        'icon'  => 'fa-solid fa-car',
+        'icon'  => __DIR__ . '/../img/icons/car.svg',
         'total' => (float)($propertySummary['properties']['value'] ?? 0),
         'rows'  => $propertySummary['properties']['rows'] ?? [],
     ],
@@ -79,7 +79,7 @@ $colors = ['#254b34', '#eeeeee'];
             <div class="flex-1 min-w-0 flex flex-col gap-8">
                 <div class="border border-primary rounded-md py-1 px-2 flex items-center">
                     <div class="text-primary text-3xl w-10 text-center">
-                        <i class="<?= $col['icon'] ?>"></i>
+                        <?= svg_icon($col['icon'], 'width:1.875rem;height:1.875rem', '', 'solid') ?>
                     </div>
                     <div class="ml-auto text-right">
                         <div class="font-semibold text-primary font-lora"><?= $col['title'] ?></div>

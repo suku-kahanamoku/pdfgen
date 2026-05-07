@@ -8,7 +8,7 @@ $goalTitle      = 'A teď společně naplníme vaše sny!';
 $goalItems      = $goal['rows'] ?? [];
 
 $goalSummary      = $goal['summary'] ?? [];
-$goalSummaryIcon  = 'fa-solid fa-bullseye';
+$goalSummaryIcon  = __DIR__ . '/../img/icons/target.svg';
 $goalValue      = number_format((float)($goalSummary['value'] ?? 0), 0, ',', ' ');
 $goalYield        = number_format((float)($goalSummary['percent'] ?? 0), 2, '.', '');
 $goalSummaryLine1 = 'Stačí pouze ' . $goalValue . ' Kč' . "\n" . 'měsíčně s výnosem ' . $goalYield . ' %';
@@ -17,12 +17,12 @@ $goalSummaryLine2 = "...a Vaše sny se stanou\nskutečností!";
 $goalCur = $curMap[$goal['currency'] ?? 'CZK'] ?? 'Kč';
 
 $goalIconMap = [
-    'car'      => 'fa-solid fa-car',
-    'plane'    => 'fa-solid fa-plane-departure',
-    'piggy'    => 'fa-solid fa-piggy-bank',
-    'house'    => 'fa-solid fa-house',
+    'car'      => __DIR__ . '/../img/icons/car.svg',
+    'plane'    => __DIR__ . '/../img/icons/plane.svg',
+    'piggy'    => __DIR__ . '/../img/icons/pig.svg',
+    'house'    => __DIR__ . '/../img/icons/house.svg',
     'heart'    => 'fa-solid fa-heart',
-    'target'   => 'fa-solid fa-bullseye',
+    'target'   => __DIR__ . '/../img/icons/target.svg',
     'default'  => 'fa-solid fa-star',
 ];
 
@@ -45,7 +45,7 @@ $goalLabelMap = [
         </h2>
 
         <div class="flex items-center justify-center text-answer">
-            <i class="fa-solid fa-wand-magic-sparkles text-6xl"></i>
+            <?= svg_icon(__DIR__ . '/../img/icons/magic.svg', 'width:3.75rem;height:3.75rem') ?>
         </div>
     </div>
 
@@ -61,7 +61,11 @@ $goalLabelMap = [
         ?>
             <div class="rounded-2xl bg-white/5 px-5 py-5 shadow-lg">
                 <div class="mb-4 text-answer">
-                    <i class="<?= $iconCls ?> text-3xl"></i>
+                    <?php if (str_ends_with($iconCls, '.svg')): ?>
+                        <?= svg_icon($iconCls, 'width:1.875rem;height:1.875rem') ?>
+                    <?php else: ?>
+                        <i class="<?= $iconCls ?> text-3xl"></i>
+                    <?php endif; ?>
                 </div>
 
                 <div class="mb-1 font-semibold text-white">
@@ -94,7 +98,11 @@ $goalLabelMap = [
         <!-- Levá info karta -->
         <div class="rounded-3xl bg-white/5 px-6 py-6 shadow-lg flex flex-col justify-center">
             <div class="mb-6 text-answer">
-                <i class="<?= htmlspecialchars($goalSummaryIcon) ?> text-4xl"></i>
+                <?php if (str_ends_with($goalSummaryIcon, '.svg')): ?>
+                    <?= svg_icon($goalSummaryIcon, 'width:2.25rem;height:2.25rem') ?>
+                <?php else: ?>
+                    <i class="<?= htmlspecialchars($goalSummaryIcon) ?> text-4xl"></i>
+                <?php endif; ?>
             </div>
 
             <div class="font-lora text-xl font-semibold text-white">

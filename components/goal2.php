@@ -5,10 +5,10 @@
 $steps = $goal['steps'] ?? [];
 
 $stepIconMap = [
-    'car'   => 'fa-solid fa-car',
-    'plane' => 'fa-solid fa-plane-departure',
-    'piggy' => 'fa-solid fa-piggy-bank',
-    'house' => 'fa-solid fa-house',
+    'car'   => __DIR__ . '/../img/icons/car.svg',
+    'plane' => __DIR__ . '/../img/icons/plane.svg',
+    'piggy' => __DIR__ . '/../img/icons/pig.svg',
+    'house' => __DIR__ . '/../img/icons/house.svg',
 ];
 
 $goalFooter        = $goal['footer'] ?? [];
@@ -67,7 +67,11 @@ $goalFooterPercent = (float)($goalFooter['percent'] ?? 0);
                         <div class="flex items-center gap-4 flex-1 min-w-0">
                             <?php $iconCls = $stepIconMap[$row['icon'] ?? ''] ?? null; ?>
                             <?php if ($iconCls): ?>
-                                <i class="<?= $iconCls ?> text-4xl flex-shrink-0"></i>
+                                <?php if (str_ends_with($iconCls, '.svg')): ?>
+                                    <?= svg_icon($iconCls, 'width:2.25rem;height:2.25rem;flex-shrink:0') ?>
+                                <?php else: ?>
+                                    <i class="<?= $iconCls ?> text-4xl flex-shrink-0"></i>
+                                <?php endif; ?>
                             <?php endif; ?>
                             <div class="flex flex-col gap-1 min-w-0">
                                 <div class="font-semibold font-lora overflow-hidden text-ellipsis"><?= htmlspecialchars($title) ?></div>

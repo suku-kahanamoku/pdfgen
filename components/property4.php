@@ -84,7 +84,7 @@ $formatPct = function ($value) {
         </div>
 
         <div class="w-56 flex-shrink-0 flex items-center justify-end text-primary/90">
-            <img src="<?= __DIR__ . '/../img/icons/trophy.svg' ?>" alt="trophy" />
+            <?= svg_icon(__DIR__ . '/../img/icons/trophy.svg') ?>
         </div>
     </div>
 

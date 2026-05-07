@@ -120,3 +120,34 @@ function BUILD_PAGE_DEFINITION(array $data, array $tocPageMap): void
 
     $GLOBALS['page_definition'] = $def;
 }
+
+// ============================================================
+// SVG_ICON – vloží SVG soubor přímo do HTML (inline)
+// $path    – absolutní cesta k .svg souboru
+// $style   – volitelný inline style (např. 'width:1.5rem;height:1.5rem')
+// $class   – volitelné CSS třídy (např. 'text-primary')
+// $variant – 'solid' (výchozí, vyplněná) nebo 'regular' (obrys, stroke)
+// Barva ikony se ovládá přes CSS 'color' / Tailwind 'text-*'
+// ============================================================
+function svg_icon(string $path, string $style = '', string $class = '', string $variant = 'solid'): string
+{
+    if (!file_exists($path)) return '';
+    $svg = file_get_contents($path);
+
+    if ($variant === 'regular') {
+        // Nahradí fill="currentColor" na tvarových elementech za fill="none" + stroke
+        $svg = preg_replace(
+            '/(<(?:path|circle|rect|polygon|polyline|ellipse|line)\b[^>]*)\bfill="currentColor"/',
+            '$1fill="none" stroke="currentColor" stroke-width="1.5"',
+            $svg
+        );
+    }
+
+    $attrs = '';
+    if ($class !== '') $attrs .= ' class="' . htmlspecialchars($class, ENT_QUOTES) . '"';
+    if ($style !== '') $attrs .= ' style="' . htmlspecialchars($style, ENT_QUOTES) . '"';
+    if ($attrs !== '') {
+        $svg = preg_replace('/<svg\b/', '<svg' . $attrs, $svg, 1);
+    }
+    return $svg;
+}

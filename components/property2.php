@@ -23,9 +23,9 @@ $statusMap = [
 ];
 
 $sections = [
-    ['key' => 'estate',     'title' => 'Nemovitosti',     'icon' => 'fa-solid fa-house',        'desc' => 'Přehled vašich nemovitostí – vlastní bydlení, investiční objekty a související závazky jako hypotéky. Zahrnuje také tržní ocenění a míru zadluženosti.'],
-    ['key' => 'active',     'title' => 'Finanční aktiva', 'icon' => 'fa-solid fa-money-bill-1', 'desc' => 'Finanční nástroje a investice – hotovost, cenné papíry, deriváty, kryptoměny a další likvidní aktiva. Zobrazuje celkovou hodnotu portfolia a jeho výnosnost.'],
-    ['key' => 'properties', 'title' => 'Movitý majetek',  'icon' => 'fa-solid fa-car',          'desc' => 'Hmotný majetek movité povahy – vozidla, stroje, vybavení a případné spotřebitelské úvěry s nimi spojené. Reflektuje aktuální zůstatkovou hodnotu majetku.'],
+    ['key' => 'estate',     'title' => 'Nemovitosti',     'icon' => __DIR__ . '/../img/icons/house.svg',  'desc' => 'Přehled vašich nemovitostí – vlastní bydlení, investiční objekty a související závazky jako hypotéky. Zahrnuje také tržní ocenění a míru zadluženosti.'],
+    ['key' => 'active',     'title' => 'Finanční aktiva', 'icon' => __DIR__ . '/../img/icons/money.svg',  'desc' => 'Finanční nástroje a investice – hotovost, cenné papíry, deriváty, kryptoměny a další likvidní aktiva. Zobrazuje celkovou hodnotu portfolia a jeho výnosnost.'],
+    ['key' => 'properties', 'title' => 'Movitý majetek',  'icon' => __DIR__ . '/../img/icons/car.svg',    'desc' => 'Hmotný majetek movité povahy – vozidla, stroje, vybavení a případné spotřebitelské úvěry s nimi spojené. Reflektuje aktuální zůstatkovou hodnotu majetku.'],
 ];
 
 $chartLabel1 = htmlspecialchars($propertyBalance['active']['title'] ?? 'Aktiva');
@@ -46,7 +46,7 @@ $barColors   = ['#254b34', '#936746'];
         <div class="break-inside-avoid flex flex-col gap-8">
             <h3 class="flex items-center gap-4 font-lora text-4xl font-semibold">
                 <?= $sec['title'] ?>
-                <i class="text-secondary <?= $sec['icon'] ?>"></i>
+                <?= svg_icon($sec['icon'], 'width:2.25rem;height:2.25rem', 'text-secondary') ?>
             </h3>
             <div class="text-ink/70"><?= $sec['desc'] ?></div>
             <div class="flex flex-col gap-7">
