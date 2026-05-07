@@ -29,7 +29,7 @@ $introSituation = (int)($intro['situation'] ?? 0);
     <!-- Graf (nahrazen obrázkem) -->
     <div class="mb-20">
         <div class="w-full">
-            <?php include __DIR__ . '/info-graph.php'; ?>
+            <img src="<?= __DIR__ . '/../img/icons/info-graph.svg' ?>" alt="info-graph" style="width:100%" />
         </div>
 
         <!-- Popisky pod grafem -->

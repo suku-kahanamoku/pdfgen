@@ -107,6 +107,6 @@ $goalLabelMap = [
         </div>
 
         <!-- Pravý graf jako obrázek -->
-        <?php include __DIR__ . '/info-graph2.php'; ?>
+        <img src="<?= __DIR__ . '/../img/icons/info-graph2.svg' ?>" alt="info-graph" style="width:100%" />
     </div>
 </div>
