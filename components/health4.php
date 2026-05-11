@@ -64,9 +64,9 @@ $resultGroups = $result['groups'] ?? [];
         <div class="flex flex-col gap-8">
             <div class="flex items-center justify-between gap-4">
                 <h2 class="font-lora text-4xl font-semibold leading-none text-ink">
-                    Celkový přehled Vašeho životního<br> pojištění.
+                    Celkový přehled Vašeho<br> životního pojištění.
                 </h2>
-                <i class="text-secondary fa-solid fa-shield-halved text-5xl"></i>
+                <?= svg_icon(__DIR__ . '/../img/icons/shield.svg', 'width:3rem;height:3rem', 'text-secondary') ?>
             </div>
 
             <div class="leading-relaxed text-ink/70">

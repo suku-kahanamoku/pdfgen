@@ -5,10 +5,10 @@
 $steps = $goal['steps'] ?? [];
 
 $stepIconMap = [
-    'car'   => __DIR__ . '/../img/icons/car.svg',
-    'plane' => __DIR__ . '/../img/icons/plane.svg',
-    'piggy' => __DIR__ . '/../img/icons/pig.svg',
-    'house' => __DIR__ . '/../img/icons/house.svg',
+    'car'   => __DIR__ . '/../img/icons/car-solid.svg',
+    'plane' => __DIR__ . '/../img/icons/plane-solid.svg',
+    'piggy' => __DIR__ . '/../img/icons/pig-solid.svg',
+    'house' => __DIR__ . '/../img/icons/house-solid.svg',
 ];
 
 $goalFooter        = $goal['footer'] ?? [];

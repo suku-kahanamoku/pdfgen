@@ -2,7 +2,10 @@
 // ============================================================
 // FINANCIAL PLAN COVER PAGE – CONTROLLER
 // ============================================================
-$introductionLogo = $introduction['logo_text'] ?? (__DIR__ . '/../img/logo/wealth_management.png');
+$_introLogo       = $introduction['logo_text'] ?? null;
+$introductionLogo = $_introLogo
+    ? (str_starts_with($_introLogo, '/') ? $_introLogo : __DIR__ . '/../' . $_introLogo)
+    : null;
 ?>
 
 <!-- ============================================================ -->
@@ -39,7 +42,9 @@ $introductionLogo = $introduction['logo_text'] ?? (__DIR__ . '/../img/logo/wealt
 
         <!-- Logo -->
         <div class="pt-24">
-            <img src="<?= htmlspecialchars($introductionLogo) ?>" alt="Collegas" class="h-16 opacity-90">
+            <?php if ($introductionLogo): ?>
+                <img src="<?= htmlspecialchars($introductionLogo) ?>" alt="Collegas" class="h-16 opacity-90">
+            <?php endif; ?>
         </div>
     </div>
 </div>

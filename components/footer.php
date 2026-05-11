@@ -3,8 +3,14 @@
 // FINAL CONTACT PAGE – CONTROLLER
 // ============================================================
 $contactCards = $footer['contact'] ?? [];
-$logoText        = $footer['logo_text'] ?? (__DIR__ . '/../img/logo/wealth_management.png');
-$decorImage  = $footer['logo'] ?? (__DIR__ . '/../img/logo/wealth.png');
+$_footerLogo = $introduction['logo_text'] ?? null;
+$logoText    = $_footerLogo
+    ? (str_starts_with($_footerLogo, '/') ? $_footerLogo : __DIR__ . '/../' . $_footerLogo)
+    : null;
+$_decorLogo  = $introduction['logo'] ?? null;
+$decorImage  = $_decorLogo
+    ? (str_starts_with($_decorLogo, '/') ? $_decorLogo : __DIR__ . '/../' . $_decorLogo)
+    : null;
 ?>
 
 <!-- ============================================================ -->
@@ -33,12 +39,14 @@ $decorImage  = $footer['logo'] ?? (__DIR__ . '/../img/logo/wealth.png');
             Pro další informace a případné dotazy<br>mě neváhejte kontaktovat!
         </div>
 
-        <div class="mt-16">
-            <img
-                src="<?= htmlspecialchars($logoText) ?>"
-                alt="Collegas Wealth Management"
-                class="h-12 w-auto object-contain">
-        </div>
+        <?php if ($logoText): ?>
+            <div class="mt-16">
+                <img
+                    src="<?= htmlspecialchars($logoText) ?>"
+                    alt="Collegas Wealth Management"
+                    class="h-12 w-auto object-contain">
+            </div>
+        <?php endif; ?>
 
         <div class="mt-8 grid grid-cols-2 gap-6 max-w-4xl">
             <?php foreach ($contactCards as $card): ?>

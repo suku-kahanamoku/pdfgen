@@ -55,7 +55,7 @@ $introQuestions = $intro['questions'] ?? [];
                     Zásadní otázky pro vaši finanční pohodu
                 </h3>
 
-                <div class="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10/10 text-3xl text-white/85 shadow-md">
+                <div class="font-lora flex h-16 w-16 items-center justify-center rounded-xl border border-white/10/10 text-5xl text-white/85 shadow-md">
                     ?
                 </div>
             </div>

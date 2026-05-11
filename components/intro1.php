@@ -54,7 +54,7 @@ $introContact = $intro['contact'] ?? [];
     <div class="mb-14">
         <div class="flex items-start gap-4">
             <div class="flex h-14 w-14 shrink-0 items-center justify-center text-secondary">
-                <i class="fa-solid fa-chart-line text-4xl"></i>
+                <?= svg_icon(__DIR__ . '/../img/icons/chart-arrow.svg', 'width:2.25rem;height:2.25rem') ?>
             </div>
 
             <div class="max-w-lg">

@@ -33,7 +33,7 @@ $statusMap = [
             </p>
         </div>
 
-        <i class="fa-solid fa-chart-simple text-6xl text-secondary"></i>
+        <?= svg_icon(__DIR__ . '/../img/icons/chart.svg', 'width:5rem;height:5rem', 'text-secondary') ?>
     </div>
 
     <!-- Rows -->

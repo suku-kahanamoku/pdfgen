@@ -8,7 +8,7 @@ $goalTitle      = 'A teď společně naplníme vaše sny!';
 $goalItems      = $goal['rows'] ?? [];
 
 $goalSummary      = $goal['summary'] ?? [];
-$goalSummaryIcon  = __DIR__ . '/../img/icons/target.svg';
+$goalSummaryIcon  = __DIR__ . '/../img/icons/target-solid.svg';
 $goalValue      = number_format((float)($goalSummary['value'] ?? 0), 0, ',', ' ');
 $goalYield        = number_format((float)($goalSummary['percent'] ?? 0), 2, '.', '');
 $goalSummaryLine1 = 'Stačí pouze ' . $goalValue . ' Kč' . "\n" . 'měsíčně s výnosem ' . $goalYield . ' %';
@@ -17,12 +17,12 @@ $goalSummaryLine2 = "...a Vaše sny se stanou\nskutečností!";
 $goalCur = $curMap[$goal['currency'] ?? 'CZK'] ?? 'Kč';
 
 $goalIconMap = [
-    'car'      => __DIR__ . '/../img/icons/car.svg',
-    'plane'    => __DIR__ . '/../img/icons/plane.svg',
-    'piggy'    => __DIR__ . '/../img/icons/pig.svg',
-    'house'    => __DIR__ . '/../img/icons/house.svg',
+    'car'      => __DIR__ . '/../img/icons/car-solid.svg',
+    'plane'    => __DIR__ . '/../img/icons/plane-solid.svg',
+    'piggy'    => __DIR__ . '/../img/icons/pig-solid.svg',
+    'house'    => __DIR__ . '/../img/icons/house-solid.svg',
     'heart'    => 'fa-solid fa-heart',
-    'target'   => __DIR__ . '/../img/icons/target.svg',
+    'target'   => __DIR__ . '/../img/icons/target-solid.svg',
     'default'  => 'fa-solid fa-star',
 ];
 
@@ -45,7 +45,7 @@ $goalLabelMap = [
         </h2>
 
         <div class="flex items-center justify-center text-answer">
-            <?= svg_icon(__DIR__ . '/../img/icons/magic.svg', 'width:3.75rem;height:3.75rem') ?>
+            <?= svg_icon(__DIR__ . '/../img/icons/magic.svg', 'width:5rem;height:5rem') ?>
         </div>
     </div>
 

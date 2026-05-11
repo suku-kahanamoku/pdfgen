@@ -1,6 +1,7 @@
 {
   "introduction": {
-    "logo_text": null
+    "logo": "img/logo/wealth.png",
+    "logo_text": "img/logo/wealth_management.png"
   },
   "intro": {
     "title": "Collegas",
@@ -416,11 +417,7 @@
           "status": "success",
           "note": "Brno, Jugoslávská 15 – tržní hodnota",
           "description": "3+1, 85 m², 2. patro, výtah, po rekonstrukci",
-          "labels": [
-            "Vlastní bydlení",
-            "Aktiva",
-            "Dlouhodobý"
-          ]
+          "labels": ["Vlastní bydlení", "Aktiva", "Dlouhodobý"]
         },
         {
           "currency": "CZK",
@@ -429,11 +426,7 @@
           "status": "warning",
           "note": "Komerční banka – 3,49 % p.a.",
           "description": "od 15. 3. 2019 do 15. 3. 2036, zbývá 126 splátek",
-          "labels": [
-            "Hypotéka",
-            "Pasiva",
-            "Dlouhodobý"
-          ]
+          "labels": ["Hypotéka", "Pasiva", "Dlouhodobý"]
         },
         {
           "currency": "CZK",
@@ -460,11 +453,7 @@
           "status": "success",
           "note": "Spořicí účet ČSOB – 4,2 % p.a.",
           "description": "Pohotovostní rezerva na 6 měsíců výdajů",
-          "labels": [
-            "Hotovost",
-            "Aktiva",
-            "Krátkodobý"
-          ]
+          "labels": ["Hotovost", "Aktiva", "Krátkodobý"]
         },
         {
           "currency": "CZK",
@@ -473,11 +462,7 @@
           "status": "success",
           "note": "Portfolio S&P 500 ETF – průměr 9,4 % p.a.",
           "description": "Diverzifikované ETF portfolio přes Degiro",
-          "labels": [
-            "Cenné papíry",
-            "Aktiva",
-            "Dlouhodobý"
-          ]
+          "labels": ["Cenné papíry", "Aktiva", "Dlouhodobý"]
         },
         {
           "currency": "CZK",
@@ -486,11 +471,7 @@
           "status": "danger",
           "note": "Bitcoin + Ethereum – volatilní",
           "description": "Velká volatilita, doporučeno max. 5 % portfolia",
-          "labels": [
-            "Kryptoměny",
-            "Aktiva",
-            "Krátkodobý"
-          ]
+          "labels": ["Kryptoměny", "Aktiva", "Krátkodobý"]
         }
       ]
     },
@@ -503,11 +484,7 @@
           "status": "success",
           "note": "Tržní hodnota – odpis 8 % ročně",
           "description": "Rok 2021, najeto 62 000 km, servisní kniha",
-          "labels": [
-            "Vozidlo",
-            "Aktiva",
-            "Střednědobý"
-          ]
+          "labels": ["Vozidlo", "Aktiva", "Střednědobý"]
         },
         {
           "currency": "CZK",
@@ -516,11 +493,7 @@
           "status": "danger",
           "note": "Moneta Money Bank – 7,9 % p.a.",
           "description": "od 1. 6. 2023 do 1. 6. 2028, zbývá 49 splátek",
-          "labels": [
-            "Úvěr",
-            "Pasiva",
-            "Střednědobý"
-          ]
+          "labels": ["Úvěr", "Pasiva", "Střednědobý"]
         },
         {
           "currency": "CZK",
@@ -529,11 +502,7 @@
           "status": "success",
           "note": "Fotovoltaika + domácí vybavení",
           "description": "FVE 10 kWp (návratnost 7 let) + elektronika",
-          "labels": [
-            "Majetek",
-            "Aktiva",
-            "Dlouhodobý"
-          ]
+          "labels": ["Majetek", "Aktiva", "Dlouhodobý"]
         }
       ]
     },
@@ -913,9 +882,7 @@
         "note": "EFEKTA o.c.p.c",
         "frequency": "měsíčně",
         "description": "od 15.8. 2026 do 15. 8. 2036",
-        "labels": [
-          "Krátkodobý cíl"
-        ]
+        "labels": ["Krátkodobý cíl"]
       },
       {
         "currency": "CZK",
@@ -924,10 +891,7 @@
         "note": "CONSEQ a.s.",
         "frequency": "měsíčně",
         "description": "od 15.8. 2026 do 15. 8. 2036",
-        "labels": [
-          "Střednědobý cíl",
-          "Pravidelná investice přebytku rozpočtu"
-        ]
+        "labels": ["Střednědobý cíl", "Pravidelná investice přebytku rozpočtu"]
       },
       {
         "currency": "CZK",
@@ -949,7 +913,7 @@
     "cards": [
       {
         "cols": 1,
-        "icon": "fa-regular fa-heart",
+        "icon": "heart",
         "title": "Pojištění pro případ úmrtí",
         "lines": [
           "Jaké závazky po sobě zanecháte?",
@@ -960,26 +924,26 @@
         "cols": 2,
         "rows": [
           {
-            "icon": "fa-solid fa-bandage",
+            "icon": "bandage",
             "label": "Úraz"
           },
           {
-            "icon": "fa-solid fa-briefcase-medical",
+            "icon": "briefcase-medical",
             "label": "Pracovní neschopnost"
           },
           {
-            "icon": "fa-regular fa-hospital",
+            "icon": "hospital",
             "label": "Hospitalizace"
           },
           {
-            "icon": "fa-solid fa-virus-covid",
+            "icon": "virus",
             "label": "Závažné onemocnění"
           }
         ]
       },
       {
         "cols": 1,
-        "icon": "fa-solid fa-wheelchair",
+        "icon": "wheelchair",
         "title": "Invalidita",
         "rows": [
           {
@@ -1002,7 +966,7 @@
       },
       {
         "cols": 1,
-        "icon": "fa-solid fa-bed",
+        "icon": "bed",
         "title": "Ztráta soběstačnosti",
         "rows": [
           {
@@ -1029,7 +993,7 @@
       },
       {
         "cols": 1,
-        "icon": "fa-solid fa-stethoscope",
+        "icon": "stethoscope",
         "title": "Trvalé následky",
         "lines": []
       }
@@ -1085,51 +1049,18 @@
         "datasets": [
           {
             "data": [
-              17500,
-              17500,
-              17500,
-              17500,
-              17500,
-              17500,
-              17500,
-              17500,
-              17500,
-              17500,
-              17500,
-              17500
+              17500, 17500, 17500, 17500, 17500, 17500, 17500, 17500, 17500,
+              17500, 17500, 17500
             ]
           },
           {
             "data": [
-              12500,
-              12500,
-              12500,
-              12500,
-              6500,
-              12500,
-              12500,
-              12500,
-              12500,
-              12500,
-              12500,
-              12500
+              12500, 12500, 12500, 12500, 6500, 12500, 12500, 12500, 12500,
+              12500, 12500, 12500
             ]
           },
           {
-            "data": [
-              0,
-              0,
-              0,
-              0,
-              6000,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ]
+            "data": [0, 0, 0, 0, 6000, 0, 0, 0, 0, 0, 0, 0]
           }
         ]
       },
@@ -1283,35 +1214,19 @@
               "rows": [
                 {
                   "title": "Konstantní",
-                  "values": [
-                    1500000,
-                    2500000,
-                    2500000
-                  ]
+                  "values": [1500000, 2500000, 2500000]
                 },
                 {
                   "title": "Klesající",
-                  "values": [
-                    0,
-                    1500000,
-                    1500000
-                  ]
+                  "values": [0, 1500000, 1500000]
                 },
                 {
                   "title": "Úvěry",
-                  "values": [
-                    750000,
-                    1750000,
-                    1750000
-                  ]
+                  "values": [750000, 1750000, 1750000]
                 },
                 {
                   "title": "Smrt úrazem",
-                  "values": [
-                    500000,
-                    2500000,
-                    2500000
-                  ]
+                  "values": [500000, 2500000, 2500000]
                 }
               ]
             }
@@ -1326,27 +1241,15 @@
               "rows": [
                 {
                   "title": "od 21. dne",
-                  "values": [
-                    800,
-                    700,
-                    700
-                  ]
+                  "values": [800, 700, 700]
                 },
                 {
                   "title": "od 28. dne",
-                  "values": [
-                    0,
-                    700,
-                    700
-                  ]
+                  "values": [0, 700, 700]
                 },
                 {
                   "title": "od 42. dne",
-                  "values": [
-                    500,
-                    700,
-                    700
-                  ]
+                  "values": [500, 700, 700]
                 }
               ]
             },
@@ -1355,27 +1258,15 @@
               "rows": [
                 {
                   "title": "od 21. dne",
-                  "values": [
-                    800,
-                    700,
-                    700
-                  ]
+                  "values": [800, 700, 700]
                 },
                 {
                   "title": "od 28. dne",
-                  "values": [
-                    0,
-                    700,
-                    700
-                  ]
+                  "values": [0, 700, 700]
                 },
                 {
                   "title": "od 42. dne",
-                  "values": [
-                    500,
-                    700,
-                    700
-                  ]
+                  "values": [500, 700, 700]
                 }
               ]
             },
@@ -1384,19 +1275,11 @@
               "rows": [
                 {
                   "title": "úraz",
-                  "values": [
-                    800,
-                    700,
-                    700
-                  ]
+                  "values": [800, 700, 700]
                 },
                 {
                   "title": "úraz / nemoc",
-                  "values": [
-                    0,
-                    700,
-                    700
-                  ]
+                  "values": [0, 700, 700]
                 }
               ]
             },
@@ -1405,27 +1288,15 @@
               "rows": [
                 {
                   "title": "Konstantní",
-                  "values": [
-                    800,
-                    700,
-                    700
-                  ]
+                  "values": [800, 700, 700]
                 },
                 {
                   "title": "Klesající",
-                  "values": [
-                    0,
-                    700,
-                    700
-                  ]
+                  "values": [0, 700, 700]
                 },
                 {
                   "title": "Úvěr",
-                  "values": [
-                    500,
-                    700,
-                    700
-                  ]
+                  "values": [500, 700, 700]
                 }
               ]
             }
@@ -1441,27 +1312,15 @@
               "rows": [
                 {
                   "title": "od 0,1 %",
-                  "values": [
-                    1500000,
-                    2500000,
-                    2500000
-                  ]
+                  "values": [1500000, 2500000, 2500000]
                 },
                 {
                   "title": "od 10 %",
-                  "values": [
-                    0,
-                    1500000,
-                    1500000
-                  ]
+                  "values": [0, 1500000, 1500000]
                 },
                 {
                   "title": "autonehoda od 25 %",
-                  "values": [
-                    750000,
-                    1750000,
-                    1750000
-                  ]
+                  "values": [750000, 1750000, 1750000]
                 }
               ]
             },
@@ -1470,27 +1329,15 @@
               "rows": [
                 {
                   "title": "III. stupeň",
-                  "values": [
-                    800,
-                    700,
-                    700
-                  ]
+                  "values": [800, 700, 700]
                 },
                 {
                   "title": "II. stupeň",
-                  "values": [
-                    0,
-                    700,
-                    700
-                  ]
+                  "values": [0, 700, 700]
                 },
                 {
                   "title": "I. stupeň",
-                  "values": [
-                    500,
-                    700,
-                    700
-                  ]
+                  "values": [500, 700, 700]
                 }
               ]
             }
@@ -1591,8 +1438,6 @@
     ]
   },
   "footer": {
-    "logo_text": null,
-    "logo": null,
     "contact": [
       {
         "title": "Sídlo",

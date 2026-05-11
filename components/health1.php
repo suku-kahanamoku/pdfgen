@@ -17,7 +17,7 @@ $healthRows = $health['cards'] ?? [];
         <div class="flex flex-col gap-8">
             <h2 class="font-lora text-5xl font-semibold leading-none text-ink flex items-center justify-between gap-4">
                 Životní pojištění
-                <i class="text-secondary fa-solid fa-shield-halved text-5xl"></i>
+                <?= svg_icon(__DIR__ . '/../img/icons/shield.svg', 'width:3rem;height:3rem', 'text-secondary') ?>
             </h2>
 
             <div class="leading-relaxed text-ink/70">
@@ -51,7 +51,7 @@ $healthRows = $health['cards'] ?? [];
                     <!-- Lines card -->
                     <div class="<?= $colSpan ?> rounded-2xl border border-ink/15 bg-white px-5 py-5 shadow-sm min-h-32">
                         <div class="mb-4 flex items-center gap-3">
-                            <i class="<?= htmlspecialchars($card['icon']) ?> text-primary text-2xl"></i>
+                            <?= svg_icon(__DIR__ . '/../img/icons/' . ($card['icon'] ?? '') . '.svg', 'width:1.5rem;height:1.5rem', 'text-primary') ?>
                             <div class="font-semibold text-ink"><?= htmlspecialchars($card['title']) ?></div>
                         </div>
                         <div class="flex flex-col gap-2 text-ink/70">
@@ -67,7 +67,7 @@ $healthRows = $health['cards'] ?? [];
                         <?php if (!empty($card['icon']) || !empty($card['title'])): ?>
                             <div class="mb-4 flex items-center gap-3">
                                 <?php if (!empty($card['icon'])): ?>
-                                    <i class="<?= htmlspecialchars($card['icon']) ?> text-primary text-2xl"></i>
+                                    <?= svg_icon(__DIR__ . '/../img/icons/' . $card['icon'] . '.svg', 'width:1.5rem;height:1.5rem', 'text-primary') ?>
                                 <?php endif ?>
                                 <?php if (!empty($card['title'])): ?>
                                     <div class="font-semibold text-ink"><?= htmlspecialchars($card['title']) ?></div>
@@ -78,7 +78,7 @@ $healthRows = $health['cards'] ?? [];
                             <?php foreach ($rows as $row): ?>
                                 <?php if (!empty($row['icon'])): ?>
                                     <div class="flex items-center gap-3">
-                                        <i class="<?= htmlspecialchars($row['icon']) ?> text-primary text-2xl"></i>
+                                        <?= svg_icon(__DIR__ . '/../img/icons/' . $row['icon'] . '.svg', 'width:1.5rem;height:1.5rem', 'text-primary') ?>
                                         <span class="text-ink"><?= htmlspecialchars($row['label'] ?? '') ?></span>
                                     </div>
                                 <?php else: ?>
@@ -95,7 +95,7 @@ $healthRows = $health['cards'] ?? [];
                     <!-- Icon-only card -->
                     <div class="<?= $colSpan ?> rounded-2xl border border-ink/15 bg-white px-5 py-5 shadow-sm min-h-[150px] flex items-center justify-center">
                         <div class="flex items-center gap-4">
-                            <i class="<?= htmlspecialchars($card['icon']) ?> text-primary text-3xl"></i>
+                            <?= svg_icon(__DIR__ . '/../img/icons/' . ($card['icon'] ?? '') . '.svg', 'width:1.875rem;height:1.875rem', 'text-primary') ?>
                             <div class="font-semibold text-ink"><?= htmlspecialchars($card['title']) ?></div>
                         </div>
                     </div>

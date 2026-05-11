@@ -97,6 +97,7 @@ foreach ($sections as $p3sec) {
         </div>
 
         <div class="w-56 flex-shrink-0 flex items-center justify-end text-primary/90">
+            <?= svg_icon(__DIR__ . '/../img/icons/trophy.svg') ?>
         </div>
     </div>
 </div>

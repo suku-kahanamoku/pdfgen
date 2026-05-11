@@ -25,7 +25,7 @@ $statusMap = [
                 Akční plán
             </h2>
 
-            <i class="text-secondary fa-solid fa-route text-6xl"></i>
+            <?= svg_icon(__DIR__ . '/../img/icons/chart-line.svg', 'width:3rem;height:3rem', 'text-secondary') ?>
         </div>
 
         <p class="text-ink/70 max-w-4xl">

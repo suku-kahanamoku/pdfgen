@@ -28,13 +28,13 @@ $propertyColumns = [
     ],
     [
         'title' => 'Nemovitosti',
-        'icon'  => __DIR__ . '/../img/icons/house.svg',
+        'icon'  => __DIR__ . '/../img/icons/house-solid.svg',
         'total' => (float)($propertySummary['estate']['value'] ?? 0),
         'rows'  => $propertySummary['estate']['rows'] ?? [],
     ],
     [
         'title' => 'Movitý majetek',
-        'icon'  => __DIR__ . '/../img/icons/car.svg',
+        'icon'  => __DIR__ . '/../img/icons/car-side-solid.svg',
         'total' => (float)($propertySummary['properties']['value'] ?? 0),
         'rows'  => $propertySummary['properties']['rows'] ?? [],
     ],
